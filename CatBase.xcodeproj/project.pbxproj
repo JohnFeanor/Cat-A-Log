@@ -12,6 +12,15 @@
 		4F38B8621B6D8CCA006356DD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F38B8611B6D8CCA006356DD /* Images.xcassets */; };
 		4F38B8651B6D8CCA006356DD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F38B8631B6D8CCA006356DD /* MainMenu.xib */; };
 		4F38B8711B6D8CCA006356DD /* CatBaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F38B8701B6D8CCA006356DD /* CatBaseTests.swift */; };
+		4F38B8821B6D8ED3006356DD /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F38B8801B6D8ED3006356DD /* MainWindowController.swift */; };
+		4F38B8831B6D8ED3006356DD /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F38B8811B6D8ED3006356DD /* MainWindowController.xib */; };
+		4F38B8881B6D9156006356DD /* Cat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F38B8841B6D9156006356DD /* Cat.swift */; };
+		4F38B8891B6D9156006356DD /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F38B8851B6D9156006356DD /* Entry.swift */; };
+		4F38B88A1B6D9156006356DD /* Litter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F38B8861B6D9156006356DD /* Litter.swift */; };
+		4F38B88B1B6D9156006356DD /* Show.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F38B8871B6D9156006356DD /* Show.swift */; };
+		4F3EFAE31B6DB98C00DA2F5C /* AddShowWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3EFAE11B6DB98C00DA2F5C /* AddShowWindowController.swift */; };
+		4F3EFAE41B6DB98C00DA2F5C /* AddShowWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F3EFAE21B6DB98C00DA2F5C /* AddShowWindowController.xib */; };
+		4F3EFAE61B6DEE1500DA2F5C /* Breeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3EFAE51B6DEE1500DA2F5C /* Breeds.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +43,15 @@
 		4F38B86A1B6D8CCA006356DD /* CatBaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CatBaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F38B86F1B6D8CCA006356DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F38B8701B6D8CCA006356DD /* CatBaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatBaseTests.swift; sourceTree = "<group>"; };
+		4F38B8801B6D8ED3006356DD /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		4F38B8811B6D8ED3006356DD /* MainWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindowController.xib; sourceTree = "<group>"; };
+		4F38B8841B6D9156006356DD /* Cat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat.swift; path = Models/Cat.swift; sourceTree = "<group>"; };
+		4F38B8851B6D9156006356DD /* Entry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Entry.swift; path = Models/Entry.swift; sourceTree = "<group>"; };
+		4F38B8861B6D9156006356DD /* Litter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Litter.swift; path = Models/Litter.swift; sourceTree = "<group>"; };
+		4F38B8871B6D9156006356DD /* Show.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Show.swift; path = Models/Show.swift; sourceTree = "<group>"; };
+		4F3EFAE11B6DB98C00DA2F5C /* AddShowWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddShowWindowController.swift; path = Controllers/AddShowWindowController.swift; sourceTree = "<group>"; };
+		4F3EFAE21B6DB98C00DA2F5C /* AddShowWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddShowWindowController.xib; path = Controllers/AddShowWindowController.xib; sourceTree = "<group>"; };
+		4F3EFAE51B6DEE1500DA2F5C /* Breeds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Breeds.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,9 +93,15 @@
 		4F38B8591B6D8CCA006356DD /* CatBase */ = {
 			isa = PBXGroup;
 			children = (
+				4F38B88C1B6D9162006356DD /* Models */,
+				4F3EFAE51B6DEE1500DA2F5C /* Breeds.swift */,
 				4F38B85C1B6D8CCA006356DD /* AppDelegate.swift */,
+				4F38B8801B6D8ED3006356DD /* MainWindowController.swift */,
+				4F3EFAE11B6DB98C00DA2F5C /* AddShowWindowController.swift */,
 				4F38B8611B6D8CCA006356DD /* Images.xcassets */,
 				4F38B8631B6D8CCA006356DD /* MainMenu.xib */,
+				4F38B8811B6D8ED3006356DD /* MainWindowController.xib */,
+				4F3EFAE21B6DB98C00DA2F5C /* AddShowWindowController.xib */,
 				4F38B85E1B6D8CCA006356DD /* CatBase.xcdatamodeld */,
 				4F38B85A1B6D8CCA006356DD /* Supporting Files */,
 			);
@@ -107,6 +131,17 @@
 				4F38B86F1B6D8CCA006356DD /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4F38B88C1B6D9162006356DD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4F38B8841B6D9156006356DD /* Cat.swift */,
+				4F38B8851B6D9156006356DD /* Entry.swift */,
+				4F38B8861B6D9156006356DD /* Litter.swift */,
+				4F38B8871B6D9156006356DD /* Show.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,6 +225,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F38B8621B6D8CCA006356DD /* Images.xcassets in Resources */,
+				4F38B8831B6D8ED3006356DD /* MainWindowController.xib in Resources */,
+				4F3EFAE41B6DB98C00DA2F5C /* AddShowWindowController.xib in Resources */,
 				4F38B8651B6D8CCA006356DD /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -208,8 +245,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F38B8891B6D9156006356DD /* Entry.swift in Sources */,
+				4F38B8881B6D9156006356DD /* Cat.swift in Sources */,
 				4F38B85D1B6D8CCA006356DD /* AppDelegate.swift in Sources */,
+				4F38B88A1B6D9156006356DD /* Litter.swift in Sources */,
+				4F3EFAE61B6DEE1500DA2F5C /* Breeds.swift in Sources */,
+				4F38B88B1B6D9156006356DD /* Show.swift in Sources */,
 				4F38B8601B6D8CCA006356DD /* CatBase.xcdatamodeld in Sources */,
+				4F3EFAE31B6DB98C00DA2F5C /* AddShowWindowController.swift in Sources */,
+				4F38B8821B6D8ED3006356DD /* MainWindowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +444,7 @@
 				4F38B8761B6D8CCA006356DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4F38B8771B6D8CCA006356DD /* Build configuration list for PBXNativeTarget "CatBaseTests" */ = {
 			isa = XCConfigurationList;
@@ -408,6 +453,7 @@
 				4F38B8791B6D8CCA006356DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
