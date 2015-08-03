@@ -343,6 +343,9 @@
                                         <string key="keyEquivalent">=</string>
                                         <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                                     </buttonCell>
+                                    <connections>
+                                        <action selector="addEntry:" target="-2" id="FBO-Br-6of"/>
+                                    </connections>
                                 </button>
                                 <button toolTip="Press to delete selected entry (shortcut ⌘-)" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ics-Lq-c5W">
                                     <rect key="frame" x="434" y="7" width="110" height="32"/>
@@ -356,6 +359,7 @@
                                         <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                                     </buttonCell>
                                     <connections>
+                                        <action selector="remove:" target="lq1-w2-pGH" id="wW7-0H-wVn"/>
                                         <binding destination="lq1-w2-pGH" name="enabled" keyPath="canRemove" id="beR-nj-n1v"/>
                                     </connections>
                                 </button>
@@ -395,6 +399,7 @@ DQ
 </string>
                                     </buttonCell>
                                     <connections>
+                                        <action selector="editEntry:" target="-2" id="5CI-Gn-Sbh"/>
                                         <binding destination="lq1-w2-pGH" name="enabled" keyPath="canRemove" id="7Kt-ue-8IP"/>
                                     </connections>
                                 </button>

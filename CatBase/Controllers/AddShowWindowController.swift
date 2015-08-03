@@ -36,7 +36,7 @@ class AddShowWindowController: NSWindowController {
   
   private dynamic let timeUnits = ["Months", "Weeks"]
 
-  var showData: NSDictionary {
+  var asDictionary: NSDictionary {
     get {
       return NSDictionary(objects: [affiliation, date, judgeLH1, judgeLH2, judgeLH3, judgeLH4, judgeLH5, judgeLH6, judgeSH1, judgeSH2, judgeSH3, judgeSH4, judgeSH5, judgeSH6, minimumAgeMonths, minimumAgeWeeks, name, numberOfRings], forKeys: Show.properties)
     }
@@ -54,10 +54,6 @@ class AddShowWindowController: NSWindowController {
   
   func setDataTo(data: NSDictionary) {
     self.setValuesForKeysWithDictionary(data as [NSObject : AnyObject])
-//    for property in Show.properties {
-//      println("adding \(data[property]) for key \(property)")
-//      self.setValue(data[property], forKey:property)
-//    }
   }
   
   @IBAction func okButtonPressed(sender: NSButton) {

@@ -53,14 +53,6 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iOR-Pz-Jpp">
-                        <rect key="frame" x="256" y="281" width="92" height="17"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Judges initials" id="i6s-GH-3So">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8rA-tU-HOw">
                         <rect key="frame" x="221" y="233" width="44" height="17"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Ring 1" id="0rd-JF-1xF">
@@ -311,7 +303,7 @@ DQ
                         </connections>
                     </button>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gbw-d5-58k">
-                        <rect key="frame" x="65" y="267" width="138" height="22"/>
+                        <rect key="frame" x="65" y="267" width="185" height="22"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="DHD-pf-Ofx">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -323,7 +315,7 @@ DQ
                         </connections>
                     </textField>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QBQ-kn-d6g">
-                        <rect key="frame" x="132" y="230" width="60" height="22"/>
+                        <rect key="frame" x="126" y="230" width="60" height="22"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="TMN-o1-R0O">
                             <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="sjN-X9-wqT"/>
                             <font key="font" metaFont="system"/>
@@ -397,10 +389,25 @@ DQ
                             </menu>
                         </popUpButtonCell>
                         <connections>
-                            <binding destination="TOx-1r-PbH" name="content" keyPath="arrangedObjects" id="0Bs-l0-WJn"/>
                             <binding destination="-2" name="selectedIndex" keyPath="affiliation" previousBinding="0Bs-l0-WJn" id="pjv-Hj-U6j"/>
+                            <binding destination="TOx-1r-PbH" name="content" keyPath="arrangedObjects" id="0Bs-l0-WJn"/>
                         </connections>
                     </popUpButton>
+                    <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LK8-0v-mnk">
+                        <rect key="frame" x="191" y="230" width="19" height="27"/>
+                        <stepperCell key="cell" continuous="YES" alignment="left" minValue="1" maxValue="100" doubleValue="1" id="jSB-vL-EBl"/>
+                        <connections>
+                            <binding destination="-2" name="value" keyPath="numberOfRings" id="kLK-Wz-cye"/>
+                        </connections>
+                    </stepper>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iOR-Pz-Jpp">
+                        <rect key="frame" x="298" y="281" width="92" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Judges initials" id="i6s-GH-3So">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
                 </subviews>
             </view>
             <connections>

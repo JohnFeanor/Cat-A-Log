@@ -61,27 +61,29 @@ class Cat: NSManagedObject {
   @NSManaged var vaccinated: NSNumber
   @NSManaged var entries: NSSet?
   
-  convenience init(catData: CatRecord, insertIntoManagedObjectContext context: NSManagedObjectContext?) {
+  convenience init(catData: NSDictionary, insertIntoManagedObjectContext context: NSManagedObjectContext?) {
     let catEntity = NSEntityDescription.entityForName(Cat.entity, inManagedObjectContext: context!)
     if catEntity == nil {
       println("Cannot create new cat entity")
       abort()
     } else {
       self.init(entity: catEntity!, insertIntoManagedObjectContext: context)
-      self.birthDate = catData.birthDate
-      self.breed = catData.breed
-      self.breeder = catData.breeder
-      self.challenge = catData.challenge
-      self.colour = catData.colour
-      self.dam = catData.dam
-      self.exhibitor = catData.exhibitor
-      self.name = catData.name
-      self.registration = catData.registration
-      self.sex = catData.sex
-      self.sire = catData.sire
-      self.title = catData.title
-      self.vaccinated = catData.vaccinated
+      self.setValuesTo(catData)
     }
+  }
+
+  func setValuesTo(catData: NSDictionary) {
+    self.setValuesForKeysWithDictionary(catData as [NSObject : AnyObject])
+  }
+  
+  func dictionary()  -> NSDictionary {
+    return self.dictionaryWithValuesForKeys(Show.properties)
+  }
+
+  // MARK: - YES/NO queries
+  
+  var registrationPending: Bool {
+    return self.registration.caseInsensitiveCompare("Pending") == NSComparisonResult.OrderedSame
   }
 }
 
