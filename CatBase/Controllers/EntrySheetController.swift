@@ -8,37 +8,39 @@
 
 import Cocoa
 
-class EntrySheetController: NSWindowController {
+struct EntrySheetData {
+  var registration        = "Pending"
+  var title               = ""
+  var name                = ""
+  var breed               = ""
+  var colour              = ""
+  var sex                 = ""
+  var challenge           = ""
+  var birthDate           = NSDate()
+  var sire                = ""
+  var dam                 = ""
+  var breeder             = ""
+  var exhibitor           = ""
   
-  private dynamic var registration        = "Pending"
-  private dynamic var title               = ""
-  private dynamic var name                = ""
-  private dynamic var breed               = ""
-  private dynamic var colour              = ""
-  private dynamic var sex                 = ""
-  private dynamic var challenge           = ""
-  private dynamic var birthDate           = NSDate()
-  private dynamic var sire                = ""
-  private dynamic var dam                 = ""
-  private dynamic var breeder             = ""
-  private dynamic var exhibitor           = ""
+  var cageType            = NSNumber(integer: 0)
+  var cageSize            = NSNumber(integer: 110)
+  var hireCage            = NSNumber(bool: false)
+  var litter              = NSNumber(bool: false)
+  
+  var ring1               = NSNumber(bool: true)
+  var ring2               = NSNumber(bool: true)
+  var ring3               = NSNumber(bool: true)
+  var ring4               = NSNumber(bool: false)
+  var ring5               = NSNumber(bool: false)
+  var ring6               = NSNumber(bool: false)
+  var willWork            = NSNumber(bool: false)
+  var catalogueRequired   = NSNumber(bool: false)
+  var vaccinated          = NSNumber(bool: false)
+  var cat                 = NSNumber(bool: false)
+  var toBeDeleted         = NSNumber(bool: false)
+}
 
-  private dynamic var cageType            = NSNumber(integer: 0)
-  private dynamic var cageSize            = NSNumber(integer: 110)
-  private dynamic var hireCage            = NSNumber(bool: false)
-  private dynamic var litter              = NSNumber(bool: false)
-
-  private dynamic var ring1               = NSNumber(bool: true)
-  private dynamic var ring2               = NSNumber(bool: true)
-  private dynamic var ring3               = NSNumber(bool: true)
-  private dynamic var ring4               = NSNumber(bool: false)
-  private dynamic var ring5               = NSNumber(bool: false)
-  private dynamic var ring6               = NSNumber(bool: false)
-  private dynamic var willWork            = NSNumber(bool: false)
-  private dynamic var catalogueRequired   = NSNumber(bool: false)
-  private dynamic var vaccinated          = NSNumber(bool: false)
-  private dynamic var cat                 = NSNumber(bool: false)
-  private dynamic var toBeDeleted         = NSNumber(bool: false)
+class EntrySheetController: NSWindowController {
 
   @IBOutlet var allCapsFormatter: AllCapsFormatter!
   @IBOutlet var nameFormatter: NameFormatter!
@@ -58,6 +60,256 @@ class EntrySheetController: NSWindowController {
   @IBOutlet weak var breederTextField: NSTextField!
   @IBOutlet weak var exhibitorTextField: NSTextField!
   
+  // MARK: - Entry sheet items
+  
+  var entrySheetData = EntrySheetData()
+  
+  dynamic var registration: String {
+    get {
+      return self.entrySheetData.registration
+    }
+    set {
+      self.entrySheetData.registration = newValue
+    }
+  }
+  
+  dynamic var title: String {
+    get {
+      return self.entrySheetData.title
+    }
+    set {
+      self.entrySheetData.title = newValue
+    }
+  }
+  
+  dynamic var name: String {
+    get {
+      return self.entrySheetData.name
+    }
+    set {
+      self.entrySheetData.name = newValue
+    }
+  }
+  
+  dynamic var breed: String {
+    get {
+      return self.entrySheetData.breed
+    }
+    set {
+      self.entrySheetData.breed = newValue
+    }
+  }
+  
+  dynamic var colour: String {
+    get {
+      return self.entrySheetData.colour
+    }
+    set {
+      self.entrySheetData.colour = newValue
+    }
+  }
+  
+  dynamic var sex: String {
+    get {
+      return self.entrySheetData.sex
+    }
+    set {
+      self.entrySheetData.sex = newValue
+      print("cat sex is now \(newValue)")
+    }
+  }
+  
+  dynamic var challenge: String {
+    get {
+      return self.entrySheetData.challenge
+    }
+    set {
+      self.entrySheetData.challenge = newValue
+    }
+  }
+  
+  dynamic var birthDate: NSDate {
+    get {
+      return self.entrySheetData.birthDate
+    }
+    set {
+      self.entrySheetData.birthDate = newValue
+    }
+  }
+  
+  dynamic var sire: String {
+    get {
+      return self.entrySheetData.sire
+    }
+    set {
+      self.entrySheetData.sire = newValue
+    }
+  }
+  
+  dynamic var dam: String {
+    get {
+      return self.entrySheetData.dam
+    }
+    set {
+      self.entrySheetData.dam = newValue
+    }
+  }
+  
+  dynamic var breeder: String {
+    get {
+      return self.entrySheetData.breeder
+    }
+    set {
+      self.entrySheetData.breeder = newValue
+    }
+  }
+  
+  dynamic var exhibitor: String {
+    get {
+      return self.entrySheetData.exhibitor
+    }
+    set {
+      self.entrySheetData.exhibitor = newValue
+    }
+  }
+  
+  dynamic var cageType: NSNumber {
+    get {
+      return self.entrySheetData.cageType
+    }
+    set {
+      self.entrySheetData.cageType = newValue
+    }
+  }
+  
+  dynamic var cageSize: NSNumber {
+    get {
+      return self.entrySheetData.cageSize
+    }
+    set {
+      self.entrySheetData.cageSize = newValue
+    }
+  }
+  
+  dynamic var hireCage: NSNumber {
+    get {
+      return self.entrySheetData.hireCage
+    }
+    set {
+      self.entrySheetData.hireCage = newValue
+    }
+  }
+  
+  dynamic var litter: NSNumber {
+    get {
+      return self.entrySheetData.litter
+    }
+    set {
+      self.entrySheetData.litter = newValue
+    }
+  }
+  
+  dynamic var ring1: NSNumber {
+    get {
+      return self.entrySheetData.ring1
+    }
+    set {
+      self.entrySheetData.ring1 = newValue
+    }
+  }
+  
+  dynamic var ring2: NSNumber {
+    get {
+      return self.entrySheetData.ring2
+    }
+    set {
+      self.entrySheetData.ring2 = newValue
+    }
+  }
+  
+  dynamic var ring3: NSNumber {
+    get {
+      return self.entrySheetData.ring3
+    }
+    set {
+      self.entrySheetData.ring3 = newValue
+    }
+  }
+  
+  dynamic var ring4: NSNumber {
+    get {
+      return self.entrySheetData.ring4
+    }
+    set {
+      self.entrySheetData.ring4 = newValue
+    }
+  }
+  
+  dynamic var ring5: NSNumber {
+    get {
+      return self.entrySheetData.ring5
+    }
+    set {
+      self.entrySheetData.ring5 = newValue
+    }
+  }
+  
+  dynamic var ring6: NSNumber {
+    get {
+      return self.entrySheetData.ring6
+    }
+    set {
+      self.entrySheetData.ring6 = newValue
+    }
+  }
+  
+  dynamic var willWork: NSNumber {
+    get {
+      return self.entrySheetData.willWork
+    }
+    set {
+      self.entrySheetData.willWork = newValue
+    }
+  }
+  
+  dynamic var catalogueRequired: NSNumber {
+    get {
+      return self.entrySheetData.catalogueRequired
+    }
+    set {
+      self.entrySheetData.catalogueRequired = newValue
+    }
+  }
+  
+  dynamic var vaccinated: NSNumber {
+    get {
+      return self.entrySheetData.vaccinated
+    }
+    set {
+      self.entrySheetData.vaccinated = newValue
+    }
+  }
+  
+  dynamic var cat: NSNumber {
+    get {
+      return self.entrySheetData.cat
+    }
+    set {
+      self.entrySheetData.cat = newValue
+    }
+  }
+  
+  dynamic var toBeDeleted: NSNumber {
+    get {
+      return self.entrySheetData.toBeDeleted
+    }
+    set {
+      self.entrySheetData.toBeDeleted = newValue
+    }
+  }
+
+  // MARK: - Methods
+  
   override var windowNibName: String {
     return "EntrySheetController"
   }
@@ -68,14 +320,16 @@ class EntrySheetController: NSWindowController {
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
   }
   
+  // MARK: - IBActions
+  
   @IBAction func okButtonPressed(sender: NSButton) {
     window?.endEditingFor(nil)
-    println("dismissing entry sheet with OK response")
+    print("dismissing entry sheet with OK response")
     dismissWithModalResponse(NSModalResponseOK)
   }
   
   @IBAction func cancelButtonPressed(sender: NSButton) {
-    println("dismissing entry sheet with cancel response")
+    print("dismissing entry sheet with cancel response")
     dismissWithModalResponse(NSModalResponseCancel)
   }
   

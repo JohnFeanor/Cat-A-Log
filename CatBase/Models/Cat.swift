@@ -9,24 +9,6 @@
 import Foundation
 import CoreData
 
-struct CatRecord {
-  var birthDate       = NSDate()
-  var breed           = ""
-  var breeder         = ""
-  var challenge       = ""
-  var colour          = ""
-  var dam             = ""
-  var exhibitor       = ""
-  var name            = ""
-  var registration    = ""
-  var sex             = ""
-  var sire            = ""
-  var title           = ""
-  var vaccinated      = NSNumber(bool: false)
-
-}
-
-
 class Cat: NSManagedObject {
   
   static var entity = "Cat"
@@ -64,7 +46,7 @@ class Cat: NSManagedObject {
   convenience init(catData: NSDictionary, insertIntoManagedObjectContext context: NSManagedObjectContext?) {
     let catEntity = NSEntityDescription.entityForName(Cat.entity, inManagedObjectContext: context!)
     if catEntity == nil {
-      println("Cannot create new cat entity")
+      print("Cannot create new cat entity")
       abort()
     } else {
       self.init(entity: catEntity!, insertIntoManagedObjectContext: context)
@@ -73,7 +55,7 @@ class Cat: NSManagedObject {
   }
 
   func setValuesTo(catData: NSDictionary) {
-    self.setValuesForKeysWithDictionary(catData as [NSObject : AnyObject])
+    self.setValuesForKeysWithDictionary(catData as! [String : AnyObject])
   }
   
   func dictionary()  -> NSDictionary {

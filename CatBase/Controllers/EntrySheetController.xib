@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="8164.2" systemVersion="14E46" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8164.2"/>
+        <capability name="box content view" minToolsVersion="7.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="EntrySheetController" customModule="CatBase" customModuleProvider="target">
@@ -51,14 +52,13 @@ DQ
                         <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="aWR-RS-H82">
                             <font key="font" metaFont="system"/>
                             <calendarDate key="date" timeIntervalSinceReferenceDate="-595929600" calendarFormat="%Y-%m-%d %H:%M:%S %z">
-                                <!--1982-02-12 16:00:00 +0000-->
+                                <!--1982-02-12 08:00:00 -0800-->
                                 <timeZone key="timeZone" name="US/Pacific"/>
                             </calendarDate>
                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         </datePickerCell>
                         <connections>
-                            <binding destination="-2" name="value" keyPath="birthDate" id="ukM-9O-kPX"/>
                             <outlet property="nextKeyView" destination="NBW-b2-THN" id="IJ5-Sa-oFV"/>
                         </connections>
                     </datePicker>
@@ -70,7 +70,6 @@ DQ
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                         <connections>
-                            <binding destination="-2" name="value" keyPath="sire" id="zMA-oH-OUT"/>
                             <outlet property="delegate" destination="XzH-lI-Qvg" id="IYB-FY-Qya"/>
                             <outlet property="formatter" destination="XzH-lI-Qvg" id="kGv-UY-TFe"/>
                             <outlet property="nextKeyView" destination="Msg-uW-9G3" id="M2C-hR-oUz"/>
@@ -84,7 +83,6 @@ DQ
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                         <connections>
-                            <binding destination="-2" name="value" keyPath="dam" id="bUR-gk-O5p"/>
                             <outlet property="delegate" destination="XzH-lI-Qvg" id="MjF-b3-ELt"/>
                             <outlet property="formatter" destination="XzH-lI-Qvg" id="dDA-jZ-qTg"/>
                             <outlet property="nextKeyView" destination="qxR-0u-Rp9" id="JAe-K2-sDd"/>
@@ -98,7 +96,6 @@ DQ
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                         <connections>
-                            <binding destination="-2" name="value" keyPath="breeder" id="UFc-Rw-yW4"/>
                             <outlet property="delegate" destination="XzH-lI-Qvg" id="clS-Nt-8b8"/>
                             <outlet property="formatter" destination="XzH-lI-Qvg" id="cdc-Nb-XIO"/>
                             <outlet property="nextKeyView" destination="cDg-yD-uuK" id="sE5-67-M1r"/>
@@ -228,7 +225,7 @@ Gw
                     </textField>
                     <box autoresizesSubviews="NO" toolTip="Select the size of the cage for this entry" fixedFrame="YES" title="Cage size" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="QZE-aw-yQc">
                         <rect key="frame" x="17" y="16" width="180" height="169"/>
-                        <view key="contentView">
+                        <view key="contentView" id="Hzx-QW-0dV">
                             <rect key="frame" x="1" y="1" width="178" height="153"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
@@ -247,7 +244,7 @@ Gw
                                     </popUpButtonCell>
                                 </popUpButton>
                                 <textField toolTip="If the cage is not standard size, type the size in mm here" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gaI-ya-d8O">
-                                    <rect key="frame" x="108" y="116" width="58" height="22"/>
+                                    <rect key="frame" x="107" y="116" width="58" height="22"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="fbl-bV-0tV">
                                         <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#,##0.###" negativeFormat="#,##0.###" numberStyle="decimal" paddingCharacter="*" minimumIntegerDigits="1" maximumIntegerDigits="309" maximumFractionDigits="3" decimalSeparator="." groupingSeparator="," currencyDecimalSeparator="." plusSign="+" minusSign="-" notANumberSymbol="NaN" perMillSymbol="‰" percentSymbol="%" exponentSymbol="E" positivePrefix="" positiveSuffix="" negativePrefix="-" negativeSuffix="" id="CGF-k4-Ea8"/>
                                         <font key="font" metaFont="system"/>
@@ -304,6 +301,8 @@ Gw
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </comboBoxCell>
                         <connections>
+                            <binding destination="-2" name="value" keyPath="sex" id="QjZ-9M-T51"/>
+                            <outlet property="dataSource" destination="Aqp-dz-6Vt" id="kbq-Xw-8uA"/>
                             <outlet property="nextKeyView" destination="aOc-Wk-spl" id="zr3-H4-cSv"/>
                         </connections>
                     </comboBox>
@@ -326,7 +325,6 @@ Gw
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                         <connections>
-                            <binding destination="-2" name="value" keyPath="registration" id="4W2-a4-WpX"/>
                             <outlet property="delegate" destination="wsP-9s-N2s" id="rfd-XC-eED"/>
                             <outlet property="formatter" destination="wsP-9s-N2s" id="xH4-oN-CLA"/>
                             <outlet property="nextKeyView" destination="ZSd-Bd-tcU" id="wXs-n8-ikU"/>
@@ -340,7 +338,6 @@ Gw
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                         <connections>
-                            <binding destination="-2" name="value" keyPath="name" id="68Z-Q3-61F"/>
                             <outlet property="delegate" destination="XzH-lI-Qvg" id="v2o-KD-JhQ"/>
                             <outlet property="formatter" destination="XzH-lI-Qvg" id="BjT-c9-wlu"/>
                             <outlet property="nextKeyView" destination="ggx-l8-b8A" id="hCP-y1-GKN"/>
@@ -348,7 +345,7 @@ Gw
                     </textField>
                     <box autoresizesSubviews="NO" toolTip="Press CMD 3 to toggle this button" fixedFrame="YES" title="Rings entered" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="2VI-5Q-LXg">
                         <rect key="frame" x="207" y="65" width="166" height="112"/>
-                        <view key="contentView">
+                        <view key="contentView" id="ty7-QM-Ih2">
                             <rect key="frame" x="1" y="1" width="164" height="96"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
@@ -360,9 +357,6 @@ Gw
                                         <string key="keyEquivalent">1</string>
                                         <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                                     </buttonCell>
-                                    <connections>
-                                        <binding destination="-2" name="value" keyPath="ring1" id="Mn3-Us-hte"/>
-                                    </connections>
                                 </button>
                                 <button toolTip="Select this checkbox if the cat is entered into ring two (shortcut ⌘2)" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eTg-i7-0L3">
                                     <rect key="frame" x="85" y="70" width="65" height="18"/>
@@ -372,9 +366,6 @@ Gw
                                         <string key="keyEquivalent">2</string>
                                         <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                                     </buttonCell>
-                                    <connections>
-                                        <binding destination="-2" name="value" keyPath="ring2" id="R72-s0-fP2"/>
-                                    </connections>
                                 </button>
                                 <button toolTip="Select this checkbox if the cat is entered into ring three (shortcut ⌘3)" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HSW-5e-Cvq">
                                     <rect key="frame" x="10" y="41" width="65" height="18"/>
@@ -384,9 +375,6 @@ Gw
                                         <string key="keyEquivalent">3</string>
                                         <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                                     </buttonCell>
-                                    <connections>
-                                        <binding destination="-2" name="value" keyPath="ring3" id="9OZ-am-YmA"/>
-                                    </connections>
                                 </button>
                                 <button toolTip="Select this checkbox if the cat is entered into ring four (shortcut ⌘4)" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vcV-8J-fOv">
                                     <rect key="frame" x="85" y="41" width="65" height="18"/>
@@ -396,9 +384,6 @@ Gw
                                         <string key="keyEquivalent">4</string>
                                         <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                                     </buttonCell>
-                                    <connections>
-                                        <binding destination="-2" name="value" keyPath="ring4" id="BPk-Kd-ePk"/>
-                                    </connections>
                                 </button>
                                 <button toolTip="Select this checkbox if the cat is entered into ring four (shortcut ⌘4)" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OgS-W1-X5D">
                                     <rect key="frame" x="85" y="12" width="65" height="18"/>
@@ -408,9 +393,6 @@ Gw
                                         <string key="keyEquivalent">6</string>
                                         <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                                     </buttonCell>
-                                    <connections>
-                                        <binding destination="-2" name="value" keyPath="ring6" id="PLg-dq-r4o"/>
-                                    </connections>
                                 </button>
                                 <button toolTip="Select this checkbox if the cat is entered into ring four (shortcut ⌘4)" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NdX-OW-AHY">
                                     <rect key="frame" x="10" y="12" width="65" height="18"/>
@@ -420,9 +402,6 @@ Gw
                                         <string key="keyEquivalent">5</string>
                                         <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                                     </buttonCell>
-                                    <connections>
-                                        <binding destination="-2" name="value" keyPath="ring5" id="vze-UB-NIa"/>
-                                    </connections>
                                 </button>
                             </subviews>
                         </view>
@@ -437,9 +416,6 @@ Gw
                             <string key="keyEquivalent">w</string>
                             <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                         </buttonCell>
-                        <connections>
-                            <binding destination="-2" name="value" keyPath="willWork" id="n8O-yC-WoZ"/>
-                        </connections>
                     </button>
                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="glv-86-nD1">
                         <rect key="frame" x="385" y="144" width="140" height="18"/>
@@ -449,9 +425,6 @@ Gw
                             <string key="keyEquivalent">c</string>
                             <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                         </buttonCell>
-                        <connections>
-                            <binding destination="-2" name="value" keyPath="catalogueRequired" id="4Fx-s1-GJX"/>
-                        </connections>
                     </button>
                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yPz-gW-zCe">
                         <rect key="frame" x="385" y="114" width="90" height="18"/>
@@ -461,9 +434,6 @@ Gw
                             <string key="keyEquivalent">v</string>
                             <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                         </buttonCell>
-                        <connections>
-                            <binding destination="-2" name="value" keyPath="vaccinated" id="f3b-Re-fFo"/>
-                        </connections>
                     </button>
                 </subviews>
             </view>
@@ -474,5 +444,7 @@ Gw
         <userDefaultsController representsSharedInstance="YES" id="QS3-xg-ubt"/>
         <customFormatter id="XzH-lI-Qvg" customClass="NameFormatter" customModule="CatBase" customModuleProvider="target"/>
         <customFormatter id="wsP-9s-N2s" customClass="AllCapsFormatter" customModule="CatBase" customModuleProvider="target"/>
+        <customObject id="vma-tc-bSW" customClass="Breeds" customModule="CatBase" customModuleProvider="target"/>
+        <customObject id="Aqp-dz-6Vt" customClass="Sex" customModule="CatBase" customModuleProvider="target"/>
     </objects>
 </document>

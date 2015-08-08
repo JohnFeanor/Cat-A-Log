@@ -21,6 +21,10 @@
 		4F3EFAE31B6DB98C00DA2F5C /* AddShowWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3EFAE11B6DB98C00DA2F5C /* AddShowWindowController.swift */; };
 		4F3EFAE41B6DB98C00DA2F5C /* AddShowWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F3EFAE21B6DB98C00DA2F5C /* AddShowWindowController.xib */; };
 		4F3EFAE61B6DEE1500DA2F5C /* Breeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3EFAE51B6DEE1500DA2F5C /* Breeds.swift */; };
+		4FB9D11F1B75ABA800046CBA /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB9D11E1B75ABA800046CBA /* DataSource.swift */; };
+		4FB9D1211B75B61F00046CBA /* Sex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB9D1201B75B61F00046CBA /* Sex.swift */; };
+		4FEB56AE1B70ABEF00EECA78 /* ShowFormats.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4FEB56AD1B70ABEF00EECA78 /* ShowFormats.plist */; };
+		4FEB56B01B70BFC700EECA78 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEB56AF1B70BFC700EECA78 /* Globals.swift */; };
 		4FFE16C81B6E421A0020E1D0 /* EntrySheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFE16C61B6E421A0020E1D0 /* EntrySheetController.swift */; };
 		4FFE16C91B6E421A0020E1D0 /* EntrySheetController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FFE16C71B6E421A0020E1D0 /* EntrySheetController.xib */; };
 		4FFE16CC1B6ECB320020E1D0 /* AllCapsFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFE16CA1B6ECB320020E1D0 /* AllCapsFormatter.swift */; };
@@ -56,6 +60,10 @@
 		4F3EFAE11B6DB98C00DA2F5C /* AddShowWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddShowWindowController.swift; path = Controllers/AddShowWindowController.swift; sourceTree = "<group>"; };
 		4F3EFAE21B6DB98C00DA2F5C /* AddShowWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddShowWindowController.xib; path = Controllers/AddShowWindowController.xib; sourceTree = "<group>"; };
 		4F3EFAE51B6DEE1500DA2F5C /* Breeds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Breeds.swift; sourceTree = "<group>"; };
+		4FB9D11E1B75ABA800046CBA /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataSource.swift; path = "Data Sources.swift/DataSource.swift"; sourceTree = "<group>"; };
+		4FB9D1201B75B61F00046CBA /* Sex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Sex.swift; path = "Data Sources.swift/Sex.swift"; sourceTree = "<group>"; };
+		4FEB56AD1B70ABEF00EECA78 /* ShowFormats.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ShowFormats.plist; path = pLists/ShowFormats.plist; sourceTree = "<group>"; };
+		4FEB56AF1B70BFC700EECA78 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		4FFE16C61B6E421A0020E1D0 /* EntrySheetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EntrySheetController.swift; path = Controllers/EntrySheetController.swift; sourceTree = "<group>"; };
 		4FFE16C71B6E421A0020E1D0 /* EntrySheetController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EntrySheetController.xib; path = Controllers/EntrySheetController.xib; sourceTree = "<group>"; };
 		4FFE16CA1B6ECB320020E1D0 /* AllCapsFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AllCapsFormatter.swift; path = Formatters/AllCapsFormatter.swift; sourceTree = "<group>"; };
@@ -103,7 +111,8 @@
 			children = (
 				4FFE16CE1B6ECB400020E1D0 /* Formatters */,
 				4F38B88C1B6D9162006356DD /* Models */,
-				4F3EFAE51B6DEE1500DA2F5C /* Breeds.swift */,
+				4FB9D11D1B7407C800046CBA /* Data sources */,
+				4FEB56AF1B70BFC700EECA78 /* Globals.swift */,
 				4F38B85C1B6D8CCA006356DD /* AppDelegate.swift */,
 				4F38B8801B6D8ED3006356DD /* MainWindowController.swift */,
 				4F3EFAE11B6DB98C00DA2F5C /* AddShowWindowController.swift */,
@@ -122,6 +131,7 @@
 		4F38B85A1B6D8CCA006356DD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4FEB56AD1B70ABEF00EECA78 /* ShowFormats.plist */,
 				4F38B85B1B6D8CCA006356DD /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -153,6 +163,16 @@
 				4F38B8871B6D9156006356DD /* Show.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		4FB9D11D1B7407C800046CBA /* Data sources */ = {
+			isa = PBXGroup;
+			children = (
+				4F3EFAE51B6DEE1500DA2F5C /* Breeds.swift */,
+				4FB9D1201B75B61F00046CBA /* Sex.swift */,
+				4FB9D11E1B75ABA800046CBA /* DataSource.swift */,
+			);
+			name = "Data sources";
 			sourceTree = "<group>";
 		};
 		4FFE16CE1B6ECB400020E1D0 /* Formatters */ = {
@@ -208,7 +228,9 @@
 		4F38B84F1B6D8CCA006356DD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Feanor;
 				TargetAttributes = {
 					4F38B8561B6D8CCA006356DD = {
@@ -247,6 +269,7 @@
 				4F38B8621B6D8CCA006356DD /* Images.xcassets in Resources */,
 				4F38B8831B6D8ED3006356DD /* MainWindowController.xib in Resources */,
 				4FFE16C91B6E421A0020E1D0 /* EntrySheetController.xib in Resources */,
+				4FEB56AE1B70ABEF00EECA78 /* ShowFormats.plist in Resources */,
 				4F3EFAE41B6DB98C00DA2F5C /* AddShowWindowController.xib in Resources */,
 				4F38B8651B6D8CCA006356DD /* MainMenu.xib in Resources */,
 			);
@@ -266,12 +289,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FB9D11F1B75ABA800046CBA /* DataSource.swift in Sources */,
 				4F38B8891B6D9156006356DD /* Entry.swift in Sources */,
 				4F38B8881B6D9156006356DD /* Cat.swift in Sources */,
 				4F38B85D1B6D8CCA006356DD /* AppDelegate.swift in Sources */,
 				4F38B88A1B6D9156006356DD /* Litter.swift in Sources */,
+				4FB9D1211B75B61F00046CBA /* Sex.swift in Sources */,
 				4F3EFAE61B6DEE1500DA2F5C /* Breeds.swift in Sources */,
 				4F38B88B1B6D9156006356DD /* Show.swift in Sources */,
+				4FEB56B01B70BFC700EECA78 /* Globals.swift in Sources */,
 				4F38B8601B6D8CCA006356DD /* CatBase.xcdatamodeld in Sources */,
 				4F3EFAE31B6DB98C00DA2F5C /* AddShowWindowController.swift in Sources */,
 				4FFE16C81B6E421A0020E1D0 /* EntrySheetController.swift in Sources */,
@@ -332,6 +358,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -398,6 +425,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = CatBase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Feanor.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -409,6 +437,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = CatBase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Feanor.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -428,6 +457,7 @@
 				);
 				INFOPLIST_FILE = CatBaseTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Feanor.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CatBase.app/Contents/MacOS/CatBase";
 			};
@@ -444,6 +474,7 @@
 				);
 				INFOPLIST_FILE = CatBaseTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Feanor.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CatBase.app/Contents/MacOS/CatBase";
 			};

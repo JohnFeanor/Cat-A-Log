@@ -15,12 +15,16 @@ class MainWindowController: NSWindowController {
   
   var addShowWindowController: AddShowWindowController? = nil
   var addEntryWindowController: EntrySheetController? = nil
+  dynamic var currentShows = [Show]() {
+    didSet {
+      print("currentShows changed to \(currentShows)")
+    }
+  }
   var currentShow: Show? = nil
-  
-  dynamic let sectionNames = Breeds.sectionNames
-  
+    
   
   dynamic var sortByDate = [NSSortDescriptor(key: "date", ascending: false)]
+  dynamic var sortByName = [NSSortDescriptor(key: "name", ascending: true)]
   
   override var windowNibName: String {
     return "MainWindowController"
@@ -35,18 +39,15 @@ class MainWindowController: NSWindowController {
     
     let numberOfShows = managedObjectContext.countForFetchRequest(fetchRequest, error: &error)
     if numberOfShows < 1 {
-      println("no shows in database")
+      print("no shows in database")
       return
     } else {
-      println("There are \(numberOfShows) shows in the database")
+      print("There are \(numberOfShows) shows in the database")
     }
-    let results = managedObjectContext.executeFetchRequest(fetchRequest,
-      error: &error) as! [Show]?
+    let results = try! managedObjectContext.executeFetchRequest(fetchRequest) as! [Show]
     
-    if let results = results {
-      for object in results {
-        theShowController.addObject(object)
-      }
+    for object in results {
+      theShowController.addObject(object)
     }
     theShowController.rearrangeObjects()
   }
@@ -54,7 +55,7 @@ class MainWindowController: NSWindowController {
   // MARK: - Show IBActions
   
   @IBAction func changeShow(sender: NSButton) {
-    println("change show button clicked")
+    print("change show button clicked")
 
     if let window = window {
       
@@ -64,11 +65,11 @@ class MainWindowController: NSWindowController {
       currentShow = theShowController.selectedObjects[0] as? Show
       // prepopulate our sheet with the current show's values
       sheetController.setDataTo(currentShow!.dictionary())
-      println("Starting edit show window sheet")
+      print("Starting edit show window sheet")
       window.beginSheet(sheetController.window!, completionHandler: { response in
         // The sheet has finished. Did the user click 'OK'?
         if response == NSModalResponseOK {
-          println("edited show")
+          print("edited show")
           self.currentShow!.setValuesTo(self.addShowWindowController!.asDictionary)
         }
         // All done with the window controller
@@ -85,19 +86,26 @@ class MainWindowController: NSWindowController {
       
       // Create and configure the window controller to present as a sheet:
       let sheetController = AddShowWindowController()
-      println("Starting add show window sheet")
+      print("Starting add show window sheet")
       window.beginSheet(sheetController.window!, completionHandler: { response in
         // The sheet has finished. Did the user click 'OK'?
         if response == NSModalResponseOK {
           let newShow = Show(showData: self.addShowWindowController!.asDictionary, insertIntoManagedObjectContext: self.managedObjectContext)
-          println("created new show")
+          print("created new show")
           self.theShowController.addObject(newShow)
-          println("Added new cat: \(newShow.name)")
+          print("Added new cat: \(newShow.name)")
         }
         // All done with the window controller
         self.addShowWindowController = nil
       })
       addShowWindowController = sheetController
+    }
+  }
+  
+  @IBAction func editShow(sender: NSButton) {
+    if let window = window {
+      let currentShow = theShowController.selectedObjects[0] as! Show
+      
     }
   }
   
@@ -107,11 +115,11 @@ class MainWindowController: NSWindowController {
     if let window = window {
       
       let sheetController = EntrySheetController()
-      println("Starting add entry sheet")
+      print("Starting add entry sheet")
       window.beginSheet(sheetController.window!, completionHandler: { response in
         // The sheet has finished. Did the user click 'OK'?
         if response == NSModalResponseOK {
-          println("create a new entry here")
+          print("create a new entry here")
         }
         self.addEntryWindowController = nil
       })

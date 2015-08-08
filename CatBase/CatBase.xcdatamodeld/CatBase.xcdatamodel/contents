@@ -8,8 +8,8 @@
         <attribute name="colour" attributeType="String" syncable="YES"/>
         <attribute name="dam" attributeType="String" syncable="YES"/>
         <attribute name="exhibitor" attributeType="String" syncable="YES"/>
-        <attribute name="name" attributeType="String" syncable="YES"/>
-        <attribute name="registration" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="registration" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="sex" attributeType="String" syncable="YES"/>
         <attribute name="sire" attributeType="String" syncable="YES"/>
         <attribute name="title" attributeType="String" syncable="YES"/>

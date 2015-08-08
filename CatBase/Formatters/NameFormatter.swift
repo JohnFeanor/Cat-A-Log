@@ -52,13 +52,13 @@ class NameFormatter: NSFormatter {
   func  firstKeyForPartialString(prefix: String?) -> String? {
     if let prefix = prefix {
       var currentChoice: String? = nil
-      var lowercaseprefix = prefix.lowercaseString
+      let lowercaseprefix = prefix.lowercaseString
       
       for string in list {
         if string.lowercaseString.hasPrefix(lowercaseprefix) {
           if currentChoice == nil {
             currentChoice = string
-          } else if count(string) < count(currentChoice!) {
+          } else if string.characters.count < (currentChoice!).characters.count {
             currentChoice = string
           }
         }
@@ -74,7 +74,7 @@ class NameFormatter: NSFormatter {
     if text.isEmpty {
       return text
     }
-    var sentence = map(text, {String($0)})
+    var sentence = text.characters.map({String($0)})
     let sentenceLength = sentence.count
     
     // Capitialize the first letter of a sentence
@@ -104,10 +104,10 @@ class NameFormatter: NSFormatter {
     for x in startOfWord ... endOfSentence {
       let letter = sentence[x]
       if alphaCharacter.evaluateWithObject(letter) {
-        lastWord.splice(letter, atIndex: lastWord.endIndex)
+        lastWord += letter
       } else {
         if letter == apostrophy {
-          lastWord.splice(letter, atIndex: lastWord.endIndex)
+          lastWord += letter
         }
         break
       }
@@ -127,7 +127,7 @@ class NameFormatter: NSFormatter {
         sentence[startOfWord] = sentence[startOfWord].uppercaseString
       }
     }
-    return reduce(sentence, "", {$0 + $1})
+    return sentence.reduce("", combine: {$0 + $1})
   }
   
   // MARK: - general formatter methods that must be overwritten
@@ -153,10 +153,10 @@ class NameFormatter: NSFormatter {
     var partialStringCount = 0
     if partialStringPtr.memory != nil {
       partialString = partialStringPtr.memory! as String
-      partialStringCount = count(partialString)
+      partialStringCount = partialString.characters.count
     }
     
-    var match = self.firstKeyForPartialString(partialString)
+    let match = self.firstKeyForPartialString(partialString)
     
     if let match = match {
       
@@ -166,7 +166,7 @@ class NameFormatter: NSFormatter {
       }
       
       // if the partial string is shorter than the match, set the selection
-      let matchCount = count(match)
+      let matchCount = match.characters.count
       if matchCount != partialStringCount {
         proposedSelRangePtr.memory.length = matchCount - partialStringCount
         partialStringPtr.memory = match

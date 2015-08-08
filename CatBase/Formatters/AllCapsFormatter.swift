@@ -54,13 +54,13 @@ class AllCapsFormatter: NSFormatter {
     var partialStringCount = 0
     if partialStringPtr.memory != nil {
       partialString = partialStringPtr.memory! as String
-      partialStringCount = count(partialString)
+      partialStringCount = partialString.characters.count
     }
     
     let match = capitalized(partialString)
     
     // if the partial string is shorter than the match, set the selection
-    let matchCount = count(match)
+    let matchCount = match.characters.count
     if matchCount != partialStringCount {
       proposedSelRangePtr.memory.length = matchCount - partialStringCount
     }

@@ -44,7 +44,7 @@ class Entry: NSManagedObject {
   convenience init(entryData: NSDictionary, insertIntoManagedObjectContext context: NSManagedObjectContext?) {
     let entryEntity = NSEntityDescription.entityForName(Entry.entity, inManagedObjectContext: context!)
     if entryEntity == nil {
-      println("Cannot create new entry entity")
+      print("Cannot create new entry entity")
       abort()
     } else {
       self.init(entity: entryEntity!, insertIntoManagedObjectContext: context)
@@ -53,7 +53,7 @@ class Entry: NSManagedObject {
   }
   
   func setValuesTo(entryData: NSDictionary) {
-    self.setValuesForKeysWithDictionary(entryData as [NSObject : AnyObject])
+    self.setValuesForKeysWithDictionary(entryData as! [String : AnyObject])
   }
   
   func dictionary()  -> NSDictionary {

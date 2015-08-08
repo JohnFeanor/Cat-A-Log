@@ -56,7 +56,7 @@ class Show: NSManagedObject {
   convenience init(showData:NSDictionary, insertIntoManagedObjectContext context: NSManagedObjectContext?) {
     let showEntity = NSEntityDescription.entityForName(Show.entity, inManagedObjectContext: context!)
     if showEntity == nil {
-      println("Cannot create new cat entity")
+      print("Cannot create new cat entity")
       abort()
     } else {
       self.init(entity: showEntity!, insertIntoManagedObjectContext: context)
@@ -65,7 +65,7 @@ class Show: NSManagedObject {
   }
   
   func setValuesTo(showData: NSDictionary) {
-    self.setValuesForKeysWithDictionary(showData as [NSObject : AnyObject])
+    self.setValuesForKeysWithDictionary(showData as! [String : AnyObject])
   }
   
   func dictionary()  -> NSDictionary {
