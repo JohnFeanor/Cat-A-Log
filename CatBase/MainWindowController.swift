@@ -55,7 +55,7 @@ class MainWindowController: NSWindowController {
 
   func tableViewSelectionDidChange(aNotification: NSNotification) {
     if aNotification.object as? NSTableView == tableView {
-      currentShow = theShowController.selectedObjects[0] as? Show
+      Globals.currentShow = theShowController.selectedObjects[0] as? Show
     }
   }
   
@@ -87,13 +87,13 @@ class MainWindowController: NSWindowController {
   @IBAction func editShow(sender: NSButton) {
     if let window = window {
       let sheetController = AddShowWindowController()
-      if currentShow != nil {
+      if Globals.currentShow != nil {
         print("   ***\nStarting editing show window sheet")
-        sheetController.setToShow(show: currentShow!)
+        sheetController.setToShow(show: Globals.currentShow!)
         window.beginSheet(sheetController.window!, completionHandler: { response in
           // The sheet has finished. Did the user click 'OK'?
           if response == NSModalResponseOK {
-            currentShow!.setValuesTo(self.addShowWindowController!.addShowDataSheet)
+            Globals.currentShow!.setValuesTo(self.addShowWindowController!.addShowDataSheet)
           }
           // All done with the window controller
           self.addShowWindowController = nil
@@ -104,6 +104,14 @@ class MainWindowController: NSWindowController {
       }
     }
   }
+  
+  // MARK: - handle change of show type
+  
+//  @IBAction func showTypeChanged(sender: NSPopUpButton) {
+//    cu = sender.stringValue
+//    print("*** show type is now: \(Globals.currentShow)")
+//    
+//  }
   
   // ========================
   // MARK: - Entry IBActions
@@ -128,5 +136,7 @@ class MainWindowController: NSWindowController {
   
   @IBAction func editEntry(sender: NSButton) {
   }
+  
+  
   
 }

@@ -15,12 +15,6 @@ let months = "Months"
 let weeks = "Weeks"
 let speaker = NSSpeechSynthesizer()
 
-var currentShow: Show? = nil
-
-var dataByGroup:[String : NSDictionary] = {
-  return dictFromPList("ShowFormats") as! [String : NSDictionary]
-}()
-
 func dictFromPList(listName: String) -> NSDictionary {
   let path = NSBundle.mainBundle().pathForResource(listName, ofType:"plist")
   if let path = path {
@@ -38,4 +32,22 @@ func errorAlert(message message: String) {
   alert.alertStyle = .WarningAlertStyle
   speaker.startSpeakingString("Excuse me, \(message)")
   alert.runModal()
+}
+
+class Globals: NSObject {
+  
+  static var currentShow: Show? = nil
+  
+  static var dataByGroup:[String : NSDictionary] = {
+    return dictFromPList("ShowFormats") as! [String : NSDictionary]
+    }()
+  
+  static var showTypes: [String] = {
+    let allKeys = dataByGroup.keys.array
+    return allKeys.sort(>)
+  }()
+  
+  dynamic var showTypes: [String] {
+    return Globals.showTypes
+  }
 }

@@ -11,6 +11,13 @@
 			<string>Neuter</string>
 			<string>Spay</string>
 		</array>
+		<key>Challenges</key>
+		<array>
+			<string>Kitten</string>
+			<string>Open</string>
+			<string>Gold</string>
+			<string>Platinum</string>
+		</array>
 		<key>Groups</key>
 		<array>
 			<dict>
@@ -126,6 +133,13 @@
 			<string>Female</string>
 			<string>Neuter</string>
 			<string>Spay</string>
+		</array>
+		<key>Challenges</key>
+		<array>
+			<string>Kitten</string>
+			<string>Open</string>
+			<string>Gold</string>
+			<string>Platinum</string>
 		</array>
 		<key>Groups</key>
 		<array>
@@ -268,6 +282,13 @@
 			<string>Female</string>
 			<string>Neuter</string>
 			<string>Spay</string>
+		</array>
+		<key>Challenges</key>
+		<array>
+			<string>Kitten</string>
+			<string>Open</string>
+			<string>Gold</string>
+			<string>Platinum</string>
 		</array>
 		<key>Groups</key>
 		<array>

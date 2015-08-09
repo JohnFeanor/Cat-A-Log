@@ -21,7 +21,7 @@ class AddShowWindowController: NSWindowController {
   
   var addShowDataSheet = AddShowDataSheet()
   
-  private dynamic var affiliation: NSNumber {
+  private dynamic var affiliation: String {
     get {
       return addShowDataSheet.affiliation
     }
@@ -159,12 +159,10 @@ class AddShowWindowController: NSWindowController {
   
   private dynamic var timeUnit: String {
     get {
-      print("returned timeline of \(addShowDataSheet.timeUnit)")
       return addShowDataSheet.timeUnit
     }
     set {
       self.window!.makeFirstResponder(self.minAgeTextField)
-      print("Timeunit set to \(newValue)")
       addShowDataSheet.timeUnit = newValue
     }
   }
@@ -215,6 +213,7 @@ class AddShowWindowController: NSWindowController {
   
   @IBAction func timeUnitChanged(sender: NSPopUpButton) {
     // Seems to be a problem with binding a variable to the value of a popup, so using this way instead
+    print("Starting to change time unit")
     let newValue = sender.titleOfSelectedItem
     self.timeUnit = newValue ?? months
   }

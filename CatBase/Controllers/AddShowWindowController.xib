@@ -350,7 +350,7 @@ DQ
                             </menu>
                         </popUpButtonCell>
                         <connections>
-                            <action selector="timeUnitChanged:" target="-2" id="0NV-b4-7ms"/>
+                            <action selector="timeUnitChanged:" target="-2" id="kzY-kT-e4A"/>
                             <binding destination="2OS-os-dRg" name="content" keyPath="arrangedObjects" id="qLb-z4-wpm"/>
                         </connections>
                     </popUpButton>
@@ -391,8 +391,8 @@ DQ
                             </menu>
                         </popUpButtonCell>
                         <connections>
-                            <binding destination="-2" name="selectedIndex" keyPath="affiliation" previousBinding="PJO-F4-maO" id="wBX-Fd-dNa"/>
-                            <binding destination="9TA-Pb-ICR" name="content" keyPath="showTypes" id="PJO-F4-maO"/>
+                            <binding destination="lOg-cF-emU" name="content" keyPath="showTypes" id="WmA-b1-JFn"/>
+                            <binding destination="-2" name="selectedObject" keyPath="affiliation" previousBinding="WmA-b1-JFn" id="f0Y-b8-sK7"/>
                         </connections>
                     </popUpButton>
                     <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LK8-0v-mnk">
@@ -419,6 +419,7 @@ DQ
             <point key="canvasLocation" x="258" y="371.5"/>
         </window>
         <customObject id="9TA-Pb-ICR" userLabel="Breeds" customClass="Breeds" customModule="CatBase" customModuleProvider="target"/>
+        <customObject id="lOg-cF-emU" customClass="Globals" customModule="CatBase" customModuleProvider="target"/>
         <userDefaultsController representsSharedInstance="YES" id="own-a1-638"/>
         <arrayController objectClassName="String" id="2OS-os-dRg" userLabel="TimeUnits">
             <connections>

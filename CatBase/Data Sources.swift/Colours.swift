@@ -20,11 +20,6 @@ class Colours: DataSource {
    override class func initialize() {
     dispatch_once(&coloursToken) {
       list = dictFromPList(Colours.entity) as! DictOfStringArray
-      print("  ***\nColours read in:")
-      for (breed, _) in list {
-        print("\(breed) ", appendNewline: false)
-      }
-      print("*****")
     }
   }
   

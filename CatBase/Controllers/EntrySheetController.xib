@@ -332,6 +332,8 @@ Gw
                         </comboBoxCell>
                         <connections>
                             <binding destination="-2" name="value" keyPath="challenge" id="gSs-Se-9AQ"/>
+                            <outlet property="dataSource" destination="jL6-YC-Zvs" id="6SS-qa-4Im"/>
+                            <outlet property="delegate" destination="jL6-YC-Zvs" id="SG2-Ms-bCh"/>
                             <outlet property="nextKeyView" destination="mII-qX-lyH" id="wnd-h6-VfF"/>
                         </connections>
                     </comboBox>
@@ -492,6 +494,7 @@ Gw
         <customFormatter id="XzH-lI-Qvg" customClass="NameFormatter" customModule="CatBase" customModuleProvider="target"/>
         <customFormatter id="wsP-9s-N2s" customClass="AllCapsFormatter" customModule="CatBase" customModuleProvider="target"/>
         <customObject id="vma-tc-bSW" customClass="Breeds" customModule="CatBase" customModuleProvider="target"/>
+        <customObject id="jL6-YC-Zvs" customClass="Challenges" customModule="CatBase" customModuleProvider="target"/>
         <customObject id="U9a-Jd-s8a" customClass="Colours" customModule="CatBase" customModuleProvider="target"/>
         <customObject id="Aqp-dz-6Vt" customClass="Sex" customModule="CatBase" customModuleProvider="target"/>
     </objects>

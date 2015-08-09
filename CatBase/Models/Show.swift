@@ -11,11 +11,11 @@ import CoreData
 
 
 struct AddShowDataSheet {
-  var affiliation   = NSNumber(integer: 0)
+  var affiliation   = Globals.showTypes[0]
   var date          = NSDate()
   var judges        = [["", "", "", "", "", ""], ["", "", "", "", "", ""]]
-  var minimumAge    = NSNumber(integer: 13)
-  var timeUnit      = weeks
+  var minimumAge    = NSNumber(integer: 4)
+  var timeUnit      = months
   var name: String  = "New Show"
   var numberOfRings = NSNumber(integer: 3)
 }
@@ -46,7 +46,7 @@ class Show: NSManagedObject {
   static var name              = "name"
   static var numberOfRings     = "numberOfRings"
   
-  @NSManaged var affiliation: NSNumber
+  @NSManaged var affiliation: String
   @NSManaged var date: NSDate
   @NSManaged var judgeLH1: String
   @NSManaged var judgeLH2: String

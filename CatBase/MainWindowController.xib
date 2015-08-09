@@ -271,7 +271,7 @@
                                     </popUpButtonCell>
                                     <connections>
                                         <binding destination="YEi-gJ-8Ck" name="content" keyPath="arrangedObjects" id="KoG-ge-mqk"/>
-                                        <binding destination="zuf-cK-OoZ" name="selectedIndex" keyPath="selection.affiliation" previousBinding="KoG-ge-mqk" id="gap-9A-Tgn"/>
+                                        <binding destination="zuf-cK-OoZ" name="selectedValue" keyPath="selection.affiliation" previousBinding="KoG-ge-mqk" id="IRR-xY-gNJ"/>
                                     </connections>
                                 </popUpButton>
                                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PAG-Af-cqE">
@@ -628,7 +628,7 @@ DQ
                 <outlet property="initialFirstResponder" destination="MAW-BI-f28" id="a9C-bT-5pw"/>
             </connections>
         </window>
-        <customObject id="kUE-c4-tNr" customClass="Breeds" customModule="CatBase" customModuleProvider="target"/>
+        <customObject id="z8R-RM-aC6" userLabel="Globals" customClass="Globals" customModule="CatBase" customModuleProvider="target"/>
         <arrayController mode="entity" entityName="CatBase.Show" id="zuf-cK-OoZ" userLabel="TheShows">
             <connections>
                 <binding destination="-2" name="managedObjectContext" keyPath="managedObjectContext" id="Uru-k1-v1G"/>
@@ -637,7 +637,7 @@ DQ
         </arrayController>
         <arrayController objectClassName="String" editable="NO" automaticallyRearrangesObjects="YES" id="YEi-gJ-8Ck" userLabel="ShowTypes">
             <connections>
-                <binding destination="kUE-c4-tNr" name="contentArray" keyPath="showTypes" id="3W9-jV-dI1"/>
+                <binding destination="z8R-RM-aC6" name="contentArray" keyPath="showTypes" id="oaU-Z3-7Re"/>
             </connections>
         </arrayController>
         <arrayController id="lq1-w2-pGH" userLabel="EntriesInShow">

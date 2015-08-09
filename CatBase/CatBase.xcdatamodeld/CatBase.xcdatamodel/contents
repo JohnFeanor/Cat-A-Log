@@ -46,7 +46,7 @@
         <relationship name="entries" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Entry" inverseName="litter" inverseEntity="Entry" syncable="YES"/>
     </entity>
     <entity name="Show" representedClassName="CatBase.Show" syncable="YES">
-        <attribute name="affiliation" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="affiliation" attributeType="String" syncable="YES"/>
         <attribute name="date" attributeType="Date" syncable="YES"/>
         <attribute name="judgeLH1" attributeType="String" defaultValueString="R1" syncable="YES"/>
         <attribute name="judgeLH2" attributeType="String" defaultValueString="R2" syncable="YES"/>

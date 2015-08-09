@@ -13,18 +13,14 @@ var breedsToken: dispatch_once_t = 0
 class Breeds: DataSource {
   
   static var entity = "Breeds"
-  
-  static var showTypes     = [String]()
   static var groupBreeds   = DictOfStringArray()
   
   override class func initialize() {
     dispatch_once(&breedsToken) {       // This will only ever execute once
-      let allKeys = dataByGroup.keys.array
-      showTypes = allKeys.sort(>)
       
       // load in an array of the group names & breeds in the group for each of the show types
       // for each show type e.g. QFA, ACF or COWOCA
-      for (showType, dict1) in dataByGroup {
+      for (showType, dict1) in Globals.dataByGroup {
         let groups = dict1["Groups"] as! [NSDictionary]
         var tempBreeds = [String]()
         for dict2 in groups {
@@ -36,15 +32,10 @@ class Breeds: DataSource {
     }
   }
   
-  dynamic var showTypes: [String] {
-    get {
-      return Breeds.showTypes
-    }
-  }
-  
   override var list: [String] {
-    if let theShow = currentShow {
-      let currentShowType = showTypes[theShow.affiliation.integerValue]
+    if let theShow = Globals.currentShow {
+      let currentShowType = theShow.affiliation
+      
       return Breeds.groupBreeds[currentShowType]!
     } else {
       return []
