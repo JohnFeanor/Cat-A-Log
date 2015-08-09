@@ -7,6 +7,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController" customModule="CatBase" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="TL9-CP-4vc" id="fqt-h5-AL7"/>
                 <outlet property="theShowController" destination="zuf-cK-OoZ" id="M7C-yR-50t"/>
                 <outlet property="window" destination="5Gn-sJ-p9G" id="Bt4-dM-6JV"/>
             </connections>
@@ -83,6 +84,7 @@
                                                     <binding destination="zuf-cK-OoZ" name="content" keyPath="arrangedObjects" id="pBU-y6-svd"/>
                                                     <binding destination="zuf-cK-OoZ" name="selectionIndexes" keyPath="selectionIndexes" previousBinding="pBU-y6-svd" id="njY-9V-0dl"/>
                                                     <binding destination="zuf-cK-OoZ" name="sortDescriptors" keyPath="sortDescriptors" previousBinding="njY-9V-0dl" id="8ge-7V-Sxb"/>
+                                                    <outlet property="delegate" destination="-2" id="5ma-oN-4di"/>
                                                 </connections>
                                             </tableView>
                                         </subviews>
@@ -279,7 +281,7 @@
                                         <font key="font" metaFont="smallSystemBold"/>
                                     </buttonCell>
                                     <connections>
-                                        <action selector="changeShow:" target="-2" id="ahX-Ff-e5U"/>
+                                        <action selector="editShow:" target="-2" id="XU4-1J-KI3"/>
                                         <binding destination="zuf-cK-OoZ" name="enabled" keyPath="canRemove" id="77m-Zd-0Cq"/>
                                     </connections>
                                 </button>

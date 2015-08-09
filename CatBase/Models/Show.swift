@@ -9,10 +9,23 @@
 import Foundation
 import CoreData
 
+
+struct AddShowDataSheet {
+  var affiliation   = NSNumber(integer: 0)
+  var date          = NSDate()
+  var judges        = [["", "", "", "", "", ""], ["", "", "", "", "", ""]]
+  var minimumAge    = NSNumber(integer: 13)
+  var timeUnit      = weeks
+  var name: String  = "New Show"
+  var numberOfRings = NSNumber(integer: 3)
+}
+
 class Show: NSManagedObject {
   
   static var entity = "Show"
-  static var properties = [Show.affiliation, Show.date, Show.judgeLH1, Show.judgeLH2, Show.judgeLH3, Show.judgeLH4, Show.judgeLH5, Show.judgeLH6, Show.judgeSH1, Show.judgeSH2, Show.judgeSH3, Show.judgeSH4, Show.judgeSH5, Show.judgeSH6, Show.minimumAgeMonths, Show.minimumAgeWeeks, Show.name, Show.numberOfRings]
+  static var properties = [Show.affiliation, Show.date, Show.judgeLH1, Show.judgeLH2, Show.judgeLH3, Show.judgeLH4, Show.judgeLH5, Show.judgeLH6, Show.judgeSH1, Show.judgeSH2, Show.judgeSH3, Show.judgeSH4, Show.judgeSH5, Show.judgeSH6, Show.minimumAge, Show.timeUnit, Show.name, Show.numberOfRings]
+  let judgesLH = ["judgeLH1", "judgeLH2", "judgeLH3", "judgeLH4", "judgeLH5", "judgeLH6"]
+  let judgesSH = ["judgeSH1", "judgeSH2", "judgeSH3", "judgeSH4", "judgeSH5", "judgeSH6"]
   
   static var affiliation       = "affiliation"
   static var date              = "date"
@@ -28,8 +41,8 @@ class Show: NSManagedObject {
   static var judgeSH4          = "judgeSH4"
   static var judgeSH5          = "judgeSH5"
   static var judgeSH6          = "judgeSH6"
-  static var minimumAgeMonths  = "minimumAgeMonths"
-  static var minimumAgeWeeks   = "minimumAgeWeeks"
+  static var minimumAge        = "minimumAge"
+  static var timeUnit          = "timeUnit"
   static var name              = "name"
   static var numberOfRings     = "numberOfRings"
   
@@ -47,13 +60,13 @@ class Show: NSManagedObject {
   @NSManaged var judgeSH4: String
   @NSManaged var judgeSH5: String
   @NSManaged var judgeSH6: String
-  @NSManaged var minimumAgeMonths: NSNumber
-  @NSManaged var minimumAgeWeeks: NSNumber
+  @NSManaged var minimumAge: NSNumber
+  @NSManaged var timeUnit: String
   @NSManaged var name: String
   @NSManaged var numberOfRings: NSNumber
   @NSManaged var entries: NSSet?
     
-  convenience init(showData:NSDictionary, insertIntoManagedObjectContext context: NSManagedObjectContext?) {
+  convenience init(showData:AddShowDataSheet, insertIntoManagedObjectContext context: NSManagedObjectContext?) {
     let showEntity = NSEntityDescription.entityForName(Show.entity, inManagedObjectContext: context!)
     if showEntity == nil {
       print("Cannot create new cat entity")
@@ -66,6 +79,26 @@ class Show: NSManagedObject {
   
   func setValuesTo(showData: NSDictionary) {
     self.setValuesForKeysWithDictionary(showData as! [String : AnyObject])
+  }
+  
+  func setValuesTo(showData: AddShowDataSheet) {
+    
+    self.affiliation = showData.affiliation
+    self.date = showData.date
+    var count = 0
+    for judge in judgesLH {
+      self.setValue(showData.judges[LH][count++], forKey: judge)
+    }
+    count = 0
+    for judge in judgesSH {
+      self.setValue(showData.judges[SH][count++], forKey: judge)
+      
+      self.minimumAge = showData.minimumAge
+      self.timeUnit = showData.timeUnit
+      
+      self.name = showData.name
+      self.numberOfRings = showData.numberOfRings
+    }
   }
   
   func dictionary()  -> NSDictionary {

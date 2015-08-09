@@ -8,26 +8,15 @@
 
 import Cocoa
 
-struct AddShowDataSheet {
-  var affiliation   = NSNumber(integer: 0)
-  var date          = NSDate()
-  var judges        = [["", "", "", "", "", ""], ["", "", "", "", "", ""]]
-  var minimumAge    = ["months" : NSNumber(integer: 4), "weeks" : NSNumber(integer: 13)]
-  var name: String  = "New Show"
-  var numberOfRings = NSNumber(integer: 3)
-}
-
 let LH = 0
 let SH = 1
-private let months = "Months"
-private let weeks = "Weeks"
 
 
 class AddShowWindowController: NSWindowController {
   
-  private dynamic var timeUnit = months
   private dynamic let timeUnits = [months, weeks]
   
+  @IBOutlet weak var minAgeTextField: NSTextField!
   @IBOutlet weak var timeUnitsPopup: NSPopUpButton!
   
   var addShowDataSheet = AddShowDataSheet()
@@ -158,21 +147,25 @@ class AddShowWindowController: NSWindowController {
     }
   }
   
-  private dynamic var minimumAgeMonths: NSNumber {
+  private dynamic var minimumAge: NSNumber {
     get {
-      return addShowDataSheet.minimumAge[months]!
+      return addShowDataSheet.minimumAge
     }
     set {
-      addShowDataSheet.minimumAge[months] = newValue
+      addShowDataSheet.minimumAge = newValue
+      print("minimum age set to \(self.minimumAge)")
     }
   }
   
-  private dynamic var minimumAgeWeeks: NSNumber {
+  private dynamic var timeUnit: String {
     get {
-      return addShowDataSheet.minimumAge[weeks]!
+      print("returned timeline of \(addShowDataSheet.timeUnit)")
+      return addShowDataSheet.timeUnit
     }
     set {
-      addShowDataSheet.minimumAge[weeks] = newValue
+      self.window!.makeFirstResponder(self.minAgeTextField)
+      print("Timeunit set to \(newValue)")
+      addShowDataSheet.timeUnit = newValue
     }
   }
   
@@ -194,17 +187,14 @@ class AddShowWindowController: NSWindowController {
     }
   }
   
-  private var minimumAge = NSNumber(integer: 4)
-  
-  var asDictionary: NSDictionary {
-    get {
-      return NSDictionary(objects: [affiliation, date, judgeLH1, judgeLH2, judgeLH3, judgeLH4, judgeLH5, judgeLH6, judgeSH1, judgeSH2, judgeSH3, judgeSH4, judgeSH5, judgeSH6, minimumAgeMonths, minimumAgeWeeks, name, numberOfRings], forKeys: Show.properties)
-    }
-  }
   
   override var windowNibName: String {
     return "AddShowWindowController"
   }
+  
+  // ====================
+  // MARK: - Methods
+  // ====================
   
   override func windowDidLoad() {
     super.windowDidLoad()
@@ -212,26 +202,33 @@ class AddShowWindowController: NSWindowController {
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
   }
   
-  func setDataTo(data: NSDictionary) {
-    self.setValuesForKeysWithDictionary(data as! [String : AnyObject])
+  func setToShow(show show: Show) {
+    for property in Show.properties {
+      self.setValue(show.valueForKey(property), forKey: property)
+    }
+    timeUnitsPopup.selectItemWithTitle(self.timeUnit)
   }
   
+  // ====================
+  // MARK: - IBActions
+  // ====================
+  
+  @IBAction func timeUnitChanged(sender: NSPopUpButton) {
+    // Seems to be a problem with binding a variable to the value of a popup, so using this way instead
+    let newValue = sender.titleOfSelectedItem
+    self.timeUnit = newValue ?? months
+  }
+
+  
   @IBAction func okButtonPressed(sender: NSButton) {
-    if timeUnit == months {
-      self.minimumAgeMonths = self.minimumAge
-      self.minimumAgeWeeks = NSNumber(integer: 0)
-    } else {
-      self.minimumAgeWeeks = self.minimumAge
-      self.minimumAgeMonths = NSNumber(integer: 0)
-    }
     window?.endEditingFor(nil)
-    print("dismissing sheet with OK response")
+    print("dismissing sheet with OK response\n*****")
     dismissWithModalResponse(NSModalResponseOK)
   }
   
   
   @IBAction func cancelButtonPressed(sender: NSButton) {
-    print("dismissing sheet with cancel response")
+    print("dismissing sheet with cancel response\n****")
     dismissWithModalResponse(NSModalResponseCancel)
   }
   

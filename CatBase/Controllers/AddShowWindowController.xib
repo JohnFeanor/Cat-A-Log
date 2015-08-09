@@ -6,7 +6,8 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="AddShowWindowController" customModule="CatBase" customModuleProvider="target">
             <connections>
-                <outlet property="timeUnitsPopup" destination="4Fv-dL-qkh" id="jlU-8j-fPR"/>
+                <outlet property="minAgeTextField" destination="hap-fO-xBV" id="jRS-qU-6I5"/>
+                <outlet property="timeUnitsPopup" destination="4Fv-dL-qkh" id="LvZ-gT-TyZ"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -349,13 +350,13 @@ DQ
                             </menu>
                         </popUpButtonCell>
                         <connections>
+                            <action selector="timeUnitChanged:" target="-2" id="0NV-b4-7ms"/>
                             <binding destination="2OS-os-dRg" name="content" keyPath="arrangedObjects" id="qLb-z4-wpm"/>
-                            <binding destination="-2" name="selectedValue" keyPath="timeUnit" previousBinding="qLb-z4-wpm" id="KSe-mx-r2U"/>
                         </connections>
                     </popUpButton>
                     <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6GZ-37-T43">
                         <rect key="frame" x="188" y="66" width="19" height="27"/>
-                        <stepperCell key="cell" continuous="YES" alignment="left" minValue="1" maxValue="100" doubleValue="1" id="pMf-pE-koW"/>
+                        <stepperCell key="cell" continuous="YES" alignment="left" maxValue="100" doubleValue="1" id="pMf-pE-koW"/>
                         <connections>
                             <binding destination="-2" name="value" keyPath="minimumAge" id="yaA-KG-Fqp"/>
                         </connections>
@@ -390,8 +391,8 @@ DQ
                             </menu>
                         </popUpButtonCell>
                         <connections>
-                            <binding destination="-2" name="selectedIndex" keyPath="affiliation" previousBinding="0Bs-l0-WJn" id="pjv-Hj-U6j"/>
-                            <binding destination="TOx-1r-PbH" name="content" keyPath="arrangedObjects" id="0Bs-l0-WJn"/>
+                            <binding destination="-2" name="selectedIndex" keyPath="affiliation" previousBinding="PJO-F4-maO" id="wBX-Fd-dNa"/>
+                            <binding destination="9TA-Pb-ICR" name="content" keyPath="showTypes" id="PJO-F4-maO"/>
                         </connections>
                     </popUpButton>
                     <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LK8-0v-mnk">
@@ -417,16 +418,13 @@ DQ
             </connections>
             <point key="canvasLocation" x="258" y="371.5"/>
         </window>
+        <customObject id="9TA-Pb-ICR" userLabel="Breeds" customClass="Breeds" customModule="CatBase" customModuleProvider="target"/>
         <userDefaultsController representsSharedInstance="YES" id="own-a1-638"/>
         <arrayController objectClassName="String" id="2OS-os-dRg" userLabel="TimeUnits">
             <connections>
                 <binding destination="-2" name="contentArray" keyPath="timeUnits" id="Uxo-vQ-ezi"/>
             </connections>
         </arrayController>
-        <arrayController objectClassName="String" id="TOx-1r-PbH" userLabel="SectionNames">
-            <connections>
-                <binding destination="-2" name="contentArray" keyPath="sectionNames" id="k6j-Sm-e7g"/>
-            </connections>
-        </arrayController>
+        <arrayController objectClassName="String" id="TOx-1r-PbH" userLabel="SectionNames"/>
     </objects>
 </document>

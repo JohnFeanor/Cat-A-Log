@@ -11,7 +11,6 @@ import Cocoa
 class AllCapsFormatter: NSFormatter {
 
   var exempted: NSArray = ["P", "Pe", "Pen", "Pend", "Pendi", "Pendin", "Pending"]
-  var text: String = ""
   
   override var description: String {
     get {
@@ -35,9 +34,14 @@ class AllCapsFormatter: NSFormatter {
   
   // MARK: - general formatter methods that must be overwritten
 
-  override func stringForObjectValue(obj: AnyObject) -> String? {
-    return text
+  override func stringForObjectValue(obj: AnyObject?) -> String? {
+    // watch out for obj being nil
+    if obj == nil {
+      return nil
+    }
+    return obj as? String
   }
+  
   override func getObjectValue(obj: AutoreleasingUnsafeMutablePointer<AnyObject?>, forString string: String, errorDescription error: AutoreleasingUnsafeMutablePointer<NSString?>) -> Bool {
     obj.memory = string
     return true
@@ -68,15 +72,5 @@ class AllCapsFormatter: NSFormatter {
     partialStringPtr.memory = match
     return false
     }
-  
-  // MARK: - TextField delegate methods
-
-  override func controlTextDidChange(aNotification: NSNotification) {
-    if let info: [NSObject : AnyObject] = aNotification.userInfo {
-      if let myText = info["NSFieldEditor"] as? NSText{
-        text = myText.string!
-      }
-    }
-  }
 
 }

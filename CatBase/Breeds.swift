@@ -10,7 +10,7 @@ import Cocoa
 
 var breedsToken: dispatch_once_t = 0
 
-class Breeds: NSObject {
+class Breeds: DataSource {
   
   static var entity = "Breeds"
   
@@ -19,8 +19,6 @@ class Breeds: NSObject {
   
   override class func initialize() {
     dispatch_once(&breedsToken) {       // This will only ever execute once
-      loadPListData()
-      
       let allKeys = dataByGroup.keys.array
       showTypes = allKeys.sort(>)
       
@@ -44,23 +42,21 @@ class Breeds: NSObject {
     }
   }
   
-  // MARK: - ComboBox datasource methods
-  
-  func numberOfItemsInComboBox(aComboBox: NSComboBox) -> Int {
-      return Breeds.showTypes.count
-  }
-  
-  func comboBox(aComboBox: NSComboBox, objectValueForItemAtIndex index: Int) -> AnyObject {
-    if index < Breeds.showTypes.count {
-      return Breeds.showTypes[index]
+  override var list: [String] {
+    if let theShow = currentShow {
+      let currentShowType = showTypes[theShow.affiliation.integerValue]
+      return Breeds.groupBreeds[currentShowType]!
     } else {
-      return ""
+      return []
     }
   }
   
+  // MARK: - ComboBox datasource methods
+  
+  
   func comboBox(aComboBox: NSComboBox, indexOfItemWithStringValue aString: String) -> Int {
     var count = 0
-    for s in Breeds.showTypes {
+    for s in list {
       if aString == s {
         break
       }

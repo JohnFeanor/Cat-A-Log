@@ -36,8 +36,6 @@ struct EntrySheetData {
   var willWork            = NSNumber(bool: false)
   var catalogueRequired   = NSNumber(bool: false)
   var vaccinated          = NSNumber(bool: false)
-  var cat                 = NSNumber(bool: false)
-  var toBeDeleted         = NSNumber(bool: false)
 }
 
 class EntrySheetController: NSWindowController {
@@ -88,6 +86,15 @@ class EntrySheetController: NSWindowController {
     }
     set {
       self.entrySheetData.name = newValue
+      let prefixes = newValue.componentsSeparatedByString(" ")
+      if !prefixes.isEmpty {
+        if sire.isEmpty {
+          sire = prefixes[0] + " "
+        }
+        if dam.isEmpty {
+          dam = prefixes[0] + " "
+        }
+      }
     }
   }
   
@@ -161,6 +168,9 @@ class EntrySheetController: NSWindowController {
     }
     set {
       self.entrySheetData.breeder = newValue
+      if self.exhibitor.isEmpty {
+        self.exhibitor = newValue
+      }
     }
   }
   
@@ -169,6 +179,7 @@ class EntrySheetController: NSWindowController {
       return self.entrySheetData.exhibitor
     }
     set {
+      print("Setting exhibitor to \(newValue)")
       self.entrySheetData.exhibitor = newValue
     }
   }
@@ -289,24 +300,6 @@ class EntrySheetController: NSWindowController {
       self.entrySheetData.vaccinated = newValue
     }
   }
-  
-  dynamic var cat: NSNumber {
-    get {
-      return self.entrySheetData.cat
-    }
-    set {
-      self.entrySheetData.cat = newValue
-    }
-  }
-  
-  dynamic var toBeDeleted: NSNumber {
-    get {
-      return self.entrySheetData.toBeDeleted
-    }
-    set {
-      self.entrySheetData.toBeDeleted = newValue
-    }
-  }
 
   // MARK: - Methods
   
@@ -319,13 +312,44 @@ class EntrySheetController: NSWindowController {
     
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
   }
+
+  let possibleFaults = ["registration", "name", "breed", "colour", "sex", "challenge", "sire", "dam", "breeder", "exhibitor"]
+
+  func validateSheet() -> String? {
+    var faults = "Have not given "
+    var okToGo = true
+    var count = 0
+    
+    for fault in possibleFaults {
+      let value = self.valueForKey(fault) as! String
+      if value.isEmpty {
+        if count++ > 0 {
+          faults += ", "
+        }
+        faults += fault
+        okToGo = false
+      }
+    }
+    
+    if okToGo {
+      return nil
+    } else {
+      return faults
+    }
+  }
   
   // MARK: - IBActions
   
   @IBAction func okButtonPressed(sender: NSButton) {
-    window?.endEditingFor(nil)
-    print("dismissing entry sheet with OK response")
-    dismissWithModalResponse(NSModalResponseOK)
+    if let bad = self.validateSheet() {
+      errorAlert(message: bad)
+    } else {
+      window?.endEditingFor(nil)
+      print("dismissing entry sheet with OK response")
+      print("Sheet values are:")
+      print(entrySheetData)
+      dismissWithModalResponse(NSModalResponseOK)
+    }
   }
   
   @IBAction func cancelButtonPressed(sender: NSButton) {

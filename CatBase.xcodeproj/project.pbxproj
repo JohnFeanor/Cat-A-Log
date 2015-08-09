@@ -23,6 +23,8 @@
 		4F3EFAE61B6DEE1500DA2F5C /* Breeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3EFAE51B6DEE1500DA2F5C /* Breeds.swift */; };
 		4FB9D11F1B75ABA800046CBA /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB9D11E1B75ABA800046CBA /* DataSource.swift */; };
 		4FB9D1211B75B61F00046CBA /* Sex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB9D1201B75B61F00046CBA /* Sex.swift */; };
+		4FD803241B774DA500D7FAD2 /* Colours.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4FD803231B774DA500D7FAD2 /* Colours.plist */; };
+		4FD803261B774E8100D7FAD2 /* Colours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD803251B774E8100D7FAD2 /* Colours.swift */; };
 		4FEB56AE1B70ABEF00EECA78 /* ShowFormats.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4FEB56AD1B70ABEF00EECA78 /* ShowFormats.plist */; };
 		4FEB56B01B70BFC700EECA78 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEB56AF1B70BFC700EECA78 /* Globals.swift */; };
 		4FFE16C81B6E421A0020E1D0 /* EntrySheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFE16C61B6E421A0020E1D0 /* EntrySheetController.swift */; };
@@ -62,6 +64,8 @@
 		4F3EFAE51B6DEE1500DA2F5C /* Breeds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Breeds.swift; sourceTree = "<group>"; };
 		4FB9D11E1B75ABA800046CBA /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataSource.swift; path = "Data Sources.swift/DataSource.swift"; sourceTree = "<group>"; };
 		4FB9D1201B75B61F00046CBA /* Sex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Sex.swift; path = "Data Sources.swift/Sex.swift"; sourceTree = "<group>"; };
+		4FD803231B774DA500D7FAD2 /* Colours.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Colours.plist; path = pLists/Colours.plist; sourceTree = "<group>"; };
+		4FD803251B774E8100D7FAD2 /* Colours.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Colours.swift; path = "Data Sources.swift/Colours.swift"; sourceTree = "<group>"; };
 		4FEB56AD1B70ABEF00EECA78 /* ShowFormats.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ShowFormats.plist; path = pLists/ShowFormats.plist; sourceTree = "<group>"; };
 		4FEB56AF1B70BFC700EECA78 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		4FFE16C61B6E421A0020E1D0 /* EntrySheetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EntrySheetController.swift; path = Controllers/EntrySheetController.swift; sourceTree = "<group>"; };
@@ -131,6 +135,7 @@
 		4F38B85A1B6D8CCA006356DD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4FD803231B774DA500D7FAD2 /* Colours.plist */,
 				4FEB56AD1B70ABEF00EECA78 /* ShowFormats.plist */,
 				4F38B85B1B6D8CCA006356DD /* Info.plist */,
 			);
@@ -169,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				4F3EFAE51B6DEE1500DA2F5C /* Breeds.swift */,
+				4FD803251B774E8100D7FAD2 /* Colours.swift */,
 				4FB9D1201B75B61F00046CBA /* Sex.swift */,
 				4FB9D11E1B75ABA800046CBA /* DataSource.swift */,
 			);
@@ -266,6 +272,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FD803241B774DA500D7FAD2 /* Colours.plist in Resources */,
 				4F38B8621B6D8CCA006356DD /* Images.xcassets in Resources */,
 				4F38B8831B6D8ED3006356DD /* MainWindowController.xib in Resources */,
 				4FFE16C91B6E421A0020E1D0 /* EntrySheetController.xib in Resources */,
@@ -304,6 +311,7 @@
 				4FFE16CC1B6ECB320020E1D0 /* AllCapsFormatter.swift in Sources */,
 				4F38B8821B6D8ED3006356DD /* MainWindowController.swift in Sources */,
 				4FFE16CD1B6ECB320020E1D0 /* NameFormatter.swift in Sources */,
+				4FD803261B774E8100D7FAD2 /* Colours.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

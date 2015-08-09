@@ -11,16 +11,13 @@ import Cocoa
 class MainWindowController: NSWindowController {
   
   @IBOutlet var theShowController: NSArrayController!
+  
+  @IBOutlet weak var tableView: NSTableView!
+  
   var managedObjectContext: NSManagedObjectContext!
   
   var addShowWindowController: AddShowWindowController? = nil
   var addEntryWindowController: EntrySheetController? = nil
-  dynamic var currentShows = [Show]() {
-    didSet {
-      print("currentShows changed to \(currentShows)")
-    }
-  }
-  var currentShow: Show? = nil
     
   
   dynamic var sortByDate = [NSSortDescriptor(key: "date", ascending: false)]
@@ -52,45 +49,30 @@ class MainWindowController: NSWindowController {
     theShowController.rearrangeObjects()
   }
   
-  // MARK: - Show IBActions
-  
-  @IBAction func changeShow(sender: NSButton) {
-    print("change show button clicked")
+  // ========================
+  // MARK: - Methods
+  // ========================
 
-    if let window = window {
-      
-      // Create and configure the window controller to present as a sheet:
-      let sheetController = AddShowWindowController()
-      // get the current selected show
+  func tableViewSelectionDidChange(aNotification: NSNotification) {
+    if aNotification.object as? NSTableView == tableView {
       currentShow = theShowController.selectedObjects[0] as? Show
-      // prepopulate our sheet with the current show's values
-      sheetController.setDataTo(currentShow!.dictionary())
-      print("Starting edit show window sheet")
-      window.beginSheet(sheetController.window!, completionHandler: { response in
-        // The sheet has finished. Did the user click 'OK'?
-        if response == NSModalResponseOK {
-          print("edited show")
-          self.currentShow!.setValuesTo(self.addShowWindowController!.asDictionary)
-        }
-        // All done with the window controller
-        self.addShowWindowController = nil
-        self.currentShow = nil
-      })
-      addShowWindowController = sheetController
     }
-    
   }
+  
+  // ========================
+  // MARK: - Show IBActions
+  // ========================
   
   @IBAction func addShow(sender: NSButton) {
     if let window = window {
       
       // Create and configure the window controller to present as a sheet:
       let sheetController = AddShowWindowController()
-      print("Starting add show window sheet")
+      print("\nStarting add show window sheet\n ****")
       window.beginSheet(sheetController.window!, completionHandler: { response in
         // The sheet has finished. Did the user click 'OK'?
         if response == NSModalResponseOK {
-          let newShow = Show(showData: self.addShowWindowController!.asDictionary, insertIntoManagedObjectContext: self.managedObjectContext)
+          let newShow = Show(showData: self.addShowWindowController!.addShowDataSheet, insertIntoManagedObjectContext: self.managedObjectContext)
           print("created new show")
           self.theShowController.addObject(newShow)
           print("Added new cat: \(newShow.name)")
@@ -104,12 +86,28 @@ class MainWindowController: NSWindowController {
   
   @IBAction func editShow(sender: NSButton) {
     if let window = window {
-      let currentShow = theShowController.selectedObjects[0] as! Show
-      
+      let sheetController = AddShowWindowController()
+      if currentShow != nil {
+        print("   ***\nStarting editing show window sheet")
+        sheetController.setToShow(show: currentShow!)
+        window.beginSheet(sheetController.window!, completionHandler: { response in
+          // The sheet has finished. Did the user click 'OK'?
+          if response == NSModalResponseOK {
+            currentShow!.setValuesTo(self.addShowWindowController!.addShowDataSheet)
+          }
+          // All done with the window controller
+          self.addShowWindowController = nil
+        })
+        addShowWindowController = sheetController
+      } else {
+        print("trying to edit a nil show")
+      }
     }
   }
   
+  // ========================
   // MARK: - Entry IBActions
+  // ========================
   
   @IBAction func addEntry(sender: NSButton) {
     if let window = window {

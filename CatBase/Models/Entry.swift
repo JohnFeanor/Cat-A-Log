@@ -35,7 +35,6 @@ class Entry: NSManagedObject {
   @NSManaged var ring4: NSNumber
   @NSManaged var ring5: NSNumber
   @NSManaged var ring6: NSNumber
-  @NSManaged var toBeDeleted: NSNumber
   @NSManaged var willWork: NSNumber
   @NSManaged var cat: Cat?
   @NSManaged var litter: Litter?

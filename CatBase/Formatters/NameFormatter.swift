@@ -35,7 +35,6 @@ class NameFormatter: NSFormatter {
   
   @IBOutlet var inField: NSTextField!
   
-  var text: String = ""
   var list:[String] = []
   
   // MARK: - Convenience method to store completion strings
@@ -132,9 +131,12 @@ class NameFormatter: NSFormatter {
   
   // MARK: - general formatter methods that must be overwritten
   
-  override func stringForObjectValue(obj: AnyObject) -> String? {
-    // obj not thread-safe; can be nil
-    return text
+  override func stringForObjectValue(obj: AnyObject?) -> String? {
+    // watch out for obj being nil
+    if obj == nil {
+      return nil
+    }
+    return obj as? String
   }
   
   override func getObjectValue(obj: AutoreleasingUnsafeMutablePointer<AnyObject?>, forString string: String, errorDescription error: AutoreleasingUnsafeMutablePointer<NSString?>) -> Bool {
@@ -183,21 +185,8 @@ class NameFormatter: NSFormatter {
   
   // MARK: - TextField delegate methods
   
-  override func controlTextDidChange(aNotification: NSNotification) {
-    if let info: [NSObject : AnyObject] = aNotification.userInfo {
-      if let myText = info["NSFieldEditor"] as? NSText{
-        text = myText.string!
-      }
-    }
-  }
-  
-  func control(control: NSControl, textShouldBeginEditing fieldEditor: NSText) -> Bool {
-    text = control.stringValue
-    return true
-  }
-  
   func control(control: NSControl, textShouldEndEditing fieldEditor: NSText) -> Bool {
-    text = control.stringValue
+    let text = control.stringValue
     self.addToList(text)
     return true
   }

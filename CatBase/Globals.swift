@@ -6,24 +6,36 @@
 //  Copyright (c) 2015 Feanor. All rights reserved.
 //
 
-import Foundation
+import Cocoa
 
 typealias DictOfStringArray = [String : [String]]
 
-var dataByGroup:[String : NSDictionary]! = nil
 
-func dictFromPList(listName: String) -> [String : NSDictionary] {
+let months = "Months"
+let weeks = "Weeks"
+let speaker = NSSpeechSynthesizer()
+
+var currentShow: Show? = nil
+
+var dataByGroup:[String : NSDictionary] = {
+  return dictFromPList("ShowFormats") as! [String : NSDictionary]
+}()
+
+func dictFromPList(listName: String) -> NSDictionary {
   let path = NSBundle.mainBundle().pathForResource(listName, ofType:"plist")
   if let path = path {
     print("Reading plist from: \(path)")
-    return NSDictionary(contentsOfFile:path) as! [String : NSDictionary]
+    return NSDictionary(contentsOfFile:path)!
   } else {
     fatalError("Cannot load internal data \(listName)")
   }
 }
 
-func loadPListData() {
-  if dataByGroup == nil {
-    dataByGroup = dictFromPList("ShowFormats")
-  }
+func errorAlert(message message: String) {
+  let alert = NSAlert()
+  alert.addButtonWithTitle("OK")
+  alert.messageText = message
+  alert.alertStyle = .WarningAlertStyle
+  speaker.startSpeakingString("Excuse me, \(message)")
+  alert.runModal()
 }
