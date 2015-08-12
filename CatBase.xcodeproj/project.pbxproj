@@ -22,6 +22,8 @@
 		4F3EFAE41B6DB98C00DA2F5C /* AddShowWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F3EFAE21B6DB98C00DA2F5C /* AddShowWindowController.xib */; };
 		4F3EFAE61B6DEE1500DA2F5C /* Breeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3EFAE51B6DEE1500DA2F5C /* Breeds.swift */; };
 		4F7107FE1B77748E00E21AAC /* Challenges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7107FD1B77748E00E21AAC /* Challenges.swift */; };
+		4F9235FE1B7952B70096ADFD /* Titles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9235FD1B7952B70096ADFD /* Titles.swift */; };
+		4F9236001B7953500096ADFD /* Titles.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F9235FF1B7953500096ADFD /* Titles.plist */; };
 		4FB9D11F1B75ABA800046CBA /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB9D11E1B75ABA800046CBA /* DataSource.swift */; };
 		4FB9D1211B75B61F00046CBA /* Sex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB9D1201B75B61F00046CBA /* Sex.swift */; };
 		4FD803241B774DA500D7FAD2 /* Colours.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4FD803231B774DA500D7FAD2 /* Colours.plist */; };
@@ -64,6 +66,8 @@
 		4F3EFAE21B6DB98C00DA2F5C /* AddShowWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddShowWindowController.xib; path = Controllers/AddShowWindowController.xib; sourceTree = "<group>"; };
 		4F3EFAE51B6DEE1500DA2F5C /* Breeds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Breeds.swift; sourceTree = "<group>"; };
 		4F7107FD1B77748E00E21AAC /* Challenges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Challenges.swift; path = "Data Sources.swift/Challenges.swift"; sourceTree = "<group>"; };
+		4F9235FD1B7952B70096ADFD /* Titles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Titles.swift; path = "Data Sources.swift/Titles.swift"; sourceTree = "<group>"; };
+		4F9235FF1B7953500096ADFD /* Titles.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Titles.plist; path = pLists/Titles.plist; sourceTree = "<group>"; };
 		4FB9D11E1B75ABA800046CBA /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataSource.swift; path = "Data Sources.swift/DataSource.swift"; sourceTree = "<group>"; };
 		4FB9D1201B75B61F00046CBA /* Sex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Sex.swift; path = "Data Sources.swift/Sex.swift"; sourceTree = "<group>"; };
 		4FD803231B774DA500D7FAD2 /* Colours.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Colours.plist; path = pLists/Colours.plist; sourceTree = "<group>"; };
@@ -137,6 +141,7 @@
 		4F38B85A1B6D8CCA006356DD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4F9235FF1B7953500096ADFD /* Titles.plist */,
 				4FD803231B774DA500D7FAD2 /* Colours.plist */,
 				4FEB56AD1B70ABEF00EECA78 /* ShowFormats.plist */,
 				4F38B85B1B6D8CCA006356DD /* Info.plist */,
@@ -179,6 +184,7 @@
 				4F7107FD1B77748E00E21AAC /* Challenges.swift */,
 				4FD803251B774E8100D7FAD2 /* Colours.swift */,
 				4FB9D1201B75B61F00046CBA /* Sex.swift */,
+				4F9235FD1B7952B70096ADFD /* Titles.swift */,
 				4FB9D11E1B75ABA800046CBA /* DataSource.swift */,
 			);
 			name = "Data sources";
@@ -278,6 +284,7 @@
 				4FD803241B774DA500D7FAD2 /* Colours.plist in Resources */,
 				4F38B8621B6D8CCA006356DD /* Images.xcassets in Resources */,
 				4F38B8831B6D8ED3006356DD /* MainWindowController.xib in Resources */,
+				4F9236001B7953500096ADFD /* Titles.plist in Resources */,
 				4FFE16C91B6E421A0020E1D0 /* EntrySheetController.xib in Resources */,
 				4FEB56AE1B70ABEF00EECA78 /* ShowFormats.plist in Resources */,
 				4F3EFAE41B6DB98C00DA2F5C /* AddShowWindowController.xib in Resources */,
@@ -311,6 +318,7 @@
 				4F38B8601B6D8CCA006356DD /* CatBase.xcdatamodeld in Sources */,
 				4F3EFAE31B6DB98C00DA2F5C /* AddShowWindowController.swift in Sources */,
 				4FFE16C81B6E421A0020E1D0 /* EntrySheetController.swift in Sources */,
+				4F9235FE1B7952B70096ADFD /* Titles.swift in Sources */,
 				4FFE16CC1B6ECB320020E1D0 /* AllCapsFormatter.swift in Sources */,
 				4F38B8821B6D8ED3006356DD /* MainWindowController.swift in Sources */,
 				4FFE16CD1B6ECB320020E1D0 /* NameFormatter.swift in Sources */,

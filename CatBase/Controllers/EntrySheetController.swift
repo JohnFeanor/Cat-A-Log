@@ -320,6 +320,7 @@ class EntrySheetController: NSWindowController {
     var okToGo = true
     var count = 0
     
+    // Check to see all compusary fields have been entered
     for fault in possibleFaults {
       let value = self.valueForKey(fault) as! String
       if value.isEmpty {
@@ -330,6 +331,46 @@ class EntrySheetController: NSWindowController {
         okToGo = false
       }
     }
+    
+    // Now check to see if kitten is not too old or too young,  or if the cat should be in kittens
+    if okToGo {
+      faults = ""
+    } else {
+      faults += "\n"
+    }
+    
+    let dateOfShow = Globals.currentShow?.date
+    if let showDate = dateOfShow {
+  // Check for a cat entered as a kitten
+      let itIsAKitten = birthDate.lessThan(months: 9, before: showDate)
+      if self.challenge == Challenges.kitten() { // they say it is
+        if !itIsAKitten {
+          okToGo = false
+          faults += "This cat is too old to be a kitten"
+        }
+      } else if itIsAKitten {
+  // Check for a kitten entered as a cat
+        okToGo = false
+        faults += "This cat should be in kittens"
+      }
+      
+  // Check to see the cat is not too young for the show
+      let minAgeForShow = Globals.minimumAge
+      let isTooYoungForShow = birthDate.lessThan(weeks: minAgeForShow.weeks, months: minAgeForShow.months, before: showDate)
+      if isTooYoungForShow {
+        okToGo = false
+        faults += "This kitten is under age"
+        
+   // Ensure 'Pending' is not used as registration for pedigree cats older than 4 months
+        
+      }
+    } else {
+      print("!! EntrySheetController cannot get a show date !!")
+    }
+    
+    
+    
+    
     
     if okToGo {
       return nil

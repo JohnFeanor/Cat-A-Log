@@ -4,6 +4,20 @@
 <dict>
 	<key>ACF Show</key>
 	<dict>
+		<key>MinAge</key>
+		<dict>
+			<key>minimumMonths</key>
+			<integer>3</integer>
+			<key>minimumWeeks</key>
+			<integer>0</integer>
+		</dict>
+		<key>Pending</key>
+		<dict>
+			<key>minimumMonths</key>
+			<integer>4</integer>
+			<key>minimumWeeks</key>
+			<integer>0</integer>
+		</dict>
 		<key>Sexes</key>
 		<array>
 			<string>Male</string>
@@ -127,6 +141,20 @@
 	</dict>
 	<key>COAWA Show</key>
 	<dict>
+		<key>MinAge</key>
+		<dict>
+			<key>minimumMonths</key>
+			<integer>3</integer>
+			<key>minimumWeeks</key>
+			<integer>0</integer>
+		</dict>
+		<key>Pending</key>
+		<dict>
+			<key>minimumMonths</key>
+			<integer>4</integer>
+			<key>minimumWeeks</key>
+			<integer>0</integer>
+		</dict>
 		<key>Sexes</key>
 		<array>
 			<string>Male</string>
@@ -276,6 +304,20 @@
 	</dict>
 	<key>QFA Show</key>
 	<dict>
+		<key>MinAge</key>
+		<dict>
+			<key>minimumMonths</key>
+			<integer>3</integer>
+			<key>minimumWeeks</key>
+			<integer>0</integer>
+		</dict>
+		<key>Pending</key>
+		<dict>
+			<key>minimumMonths</key>
+			<integer>4</integer>
+			<key>minimumWeeks</key>
+			<integer>0</integer>
+		</dict>
 		<key>Sexes</key>
 		<array>
 			<string>Male</string>

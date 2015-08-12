@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8166.2" systemVersion="14E46" minimumToolsVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8175.2" systemVersion="14E46" minimumToolsVersion="Automatic">
     <entity name="Cat" representedClassName="CatBase.Cat" syncable="YES">
         <attribute name="birthDate" attributeType="Date" syncable="YES"/>
         <attribute name="breed" attributeType="String" syncable="YES"/>
@@ -60,10 +60,10 @@
         <attribute name="judgeSH4" attributeType="String" defaultValueString="R4" syncable="YES"/>
         <attribute name="judgeSH5" attributeType="String" defaultValueString="R5" syncable="YES"/>
         <attribute name="judgeSH6" attributeType="String" defaultValueString="R6" syncable="YES"/>
-        <attribute name="minimumAge" attributeType="Integer 16" minValueString="0" defaultValueString="3" syncable="YES"/>
+        <attribute name="minimumMonths" attributeType="Integer 16" minValueString="0" defaultValueString="3" syncable="YES"/>
+        <attribute name="minimumWeeks" attributeType="Integer 16" minValueString="0" defaultValueString="0" syncable="YES"/>
         <attribute name="name" attributeType="String" defaultValueString="New Show" syncable="YES"/>
         <attribute name="numberOfRings" attributeType="Integer 16" minValueString="1" maxValueString="6" defaultValueString="3" syncable="YES"/>
-        <attribute name="timeUnit" attributeType="String" minValueString="0" syncable="YES"/>
         <relationship name="entries" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Entry" inverseName="show" inverseEntity="Entry" syncable="YES"/>
     </entity>
     <elements>

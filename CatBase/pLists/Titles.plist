@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<string>CH </string>
+	<string>GD CH </string>
+	<string>DB GD CH </string>
+	<string>Bronze </string>
+	<string>Silver </string>
+	<string>Gold </string>
+	<string>Plat </string>
+	<string>Ruby </string>
+	<string>Emer </string>
+	<string>BRZ </string>
+	<string>Platinum </string>
+	<string>Sapphire </string>
+	<string>Emerald </string>
+	<string>Diamond </string>
+	<string>ACF </string>
+	<string>AoE </string>
+	<string>QFA </string>
+	<string>QICC </string>
+	<string>FCCQ </string>
+	<string>CFCCQ </string>
+	<string>CCCA </string>
+	<string>CFA </string>
+	<string>Pr </string>
+	<string>DGC </string>
+	<string>BDGC </string>
+	<string>SDGC </string>
+	<string>GDGC </string>
+</array>
+</plist>

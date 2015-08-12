@@ -75,7 +75,7 @@ class MainWindowController: NSWindowController {
           let newShow = Show(showData: self.addShowWindowController!.addShowDataSheet, insertIntoManagedObjectContext: self.managedObjectContext)
           print("created new show")
           self.theShowController.addObject(newShow)
-          print("Added new cat: \(newShow.name)")
+          print("Added new show: \(newShow.name)")
         }
         // All done with the window controller
         self.addShowWindowController = nil

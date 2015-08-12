@@ -26,6 +26,16 @@ class Challenges: DataSource {
     }
   }
   
+  class func kitten() -> String {
+    if let theShow = Globals.currentShow {
+      let currentShowType = theShow.affiliation
+      if let challenges = Challenges.list[currentShowType] {
+        return challenges[0]
+      }
+    }
+    return "Kitten"
+  }
+  
   override init() {
     super.init()
     self.limitToList = true

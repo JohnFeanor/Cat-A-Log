@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="8164.2" systemVersion="14E46" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14E46" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8164.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8173.3"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="AddShowWindowController" customModule="CatBase" customModuleProvider="target">
             <connections>
                 <outlet property="minAgeTextField" destination="hap-fO-xBV" id="jRS-qU-6I5"/>
+                <outlet property="nameTextField" destination="gbw-d5-58k" id="IlS-PG-0K8"/>
                 <outlet property="timeUnitsPopup" destination="4Fv-dL-qkh" id="LvZ-gT-TyZ"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
@@ -17,7 +18,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="436" height="315"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="800"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
             <view key="contentView" id="se5-gp-TjO">
                 <rect key="frame" x="0.0" y="7" width="436" height="315"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -303,18 +304,6 @@ DQ
                             <action selector="okButtonPressed:" target="-2" id="PuB-BE-UNf"/>
                         </connections>
                     </button>
-                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gbw-d5-58k">
-                        <rect key="frame" x="65" y="267" width="185" height="22"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="DHD-pf-Ofx">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                        <connections>
-                            <binding destination="-2" name="value" keyPath="name" id="2SS-Yc-Vdc"/>
-                            <outlet property="nextKeyView" destination="QBQ-kn-d6g" id="Ps9-gU-dCJ"/>
-                        </connections>
-                    </textField>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QBQ-kn-d6g">
                         <rect key="frame" x="126" y="230" width="60" height="22"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="TMN-o1-R0O">
@@ -391,8 +380,8 @@ DQ
                             </menu>
                         </popUpButtonCell>
                         <connections>
-                            <binding destination="lOg-cF-emU" name="content" keyPath="showTypes" id="WmA-b1-JFn"/>
                             <binding destination="-2" name="selectedObject" keyPath="affiliation" previousBinding="WmA-b1-JFn" id="f0Y-b8-sK7"/>
+                            <binding destination="lOg-cF-emU" name="content" keyPath="showTypes" id="WmA-b1-JFn"/>
                         </connections>
                     </popUpButton>
                     <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LK8-0v-mnk">
@@ -409,6 +398,18 @@ DQ
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gbw-d5-58k">
+                        <rect key="frame" x="65" y="267" width="185" height="22"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="DHD-pf-Ofx">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="-2" name="value" keyPath="name" id="2SS-Yc-Vdc"/>
+                            <outlet property="nextKeyView" destination="QBQ-kn-d6g" id="Ps9-gU-dCJ"/>
+                        </connections>
                     </textField>
                 </subviews>
             </view>

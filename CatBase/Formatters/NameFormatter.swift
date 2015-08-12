@@ -8,21 +8,6 @@
 
 import Cocoa
 
-// let hypen = "-"
-let space = " "
-let apostrophy = "'"
-
-let strLower = "[a-z]";
-let strUpper = "[A-Z]"
-let alpha = "[A-Z,a-z]"
-let wordChar = "[A-Z,a-z,']"
-
-let lowerCase = NSPredicate(format:"SELF MATCHES %@", strLower)
-let upperCase = NSPredicate(format:"SELF MATCHES %@", strUpper)
-let alphaCharacter = NSPredicate(format: "SELF MATCHES %@", alpha)
-let breakCharacter = NSPredicate(format: "NOT SELF MATCHES %@", wordChar)
-let wordCharacter = NSPredicate(format: "SELF MATCHES %@", wordChar)
-
 class NameFormatter: NSFormatter {
   
   var exempted: NSArray = ["a", "da", "de", "vo", "von", "der"]

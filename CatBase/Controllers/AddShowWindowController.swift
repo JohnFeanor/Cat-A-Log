@@ -18,6 +18,7 @@ class AddShowWindowController: NSWindowController {
   
   @IBOutlet weak var minAgeTextField: NSTextField!
   @IBOutlet weak var timeUnitsPopup: NSPopUpButton!
+  @IBOutlet weak var nameTextField: NSTextField!
   
   var addShowDataSheet = AddShowDataSheet()
   
@@ -147,23 +148,50 @@ class AddShowWindowController: NSWindowController {
     }
   }
   
-  private dynamic var minimumAge: NSNumber {
+  private dynamic var minimumMonths: NSNumber {
     get {
-      return addShowDataSheet.minimumAge
+      return addShowDataSheet.minimumMonths
     }
     set {
-      addShowDataSheet.minimumAge = newValue
-      print("minimum age set to \(self.minimumAge)")
+      addShowDataSheet.minimumMonths = newValue
+      if addShowDataSheet.minimumMonths.integerValue > 0 {
+        self.timeUnit = months
+      }
     }
   }
   
-  private dynamic var timeUnit: String {
+  private dynamic var minimumWeeks: NSNumber {
     get {
-      return addShowDataSheet.timeUnit
+      return addShowDataSheet.minimumWeeks
     }
     set {
+      addShowDataSheet.minimumWeeks = newValue
+      if addShowDataSheet.minimumMonths.integerValue > 0 {
+        self.timeUnit = weeks
+      }
+    }
+  }
+ 
+  private dynamic var minimumAge: NSNumber {
+    get {
+      if self.timeUnit == months {
+        return addShowDataSheet.minimumMonths
+      } else {
+        return addShowDataSheet.minimumWeeks
+      }
+    }
+    set {
+      if self.timeUnit == months {
+        addShowDataSheet.minimumMonths = newValue
+      } else {
+        addShowDataSheet.minimumWeeks = newValue
+      }
+    }
+  }
+  
+  private dynamic var timeUnit: String = months {
+    willSet {
       self.window!.makeFirstResponder(self.minAgeTextField)
-      addShowDataSheet.timeUnit = newValue
     }
   }
   
@@ -201,10 +229,14 @@ class AddShowWindowController: NSWindowController {
   }
   
   func setToShow(show show: Show) {
+    print("Setting to show \(show)")
+    print("Properties are: \(Show.properties)\n")
     for property in Show.properties {
+      print("  setting \(property)")
       self.setValue(show.valueForKey(property), forKey: property)
     }
     timeUnitsPopup.selectItemWithTitle(self.timeUnit)
+    self.window!.makeFirstResponder(self.nameTextField)
   }
   
   // ====================
