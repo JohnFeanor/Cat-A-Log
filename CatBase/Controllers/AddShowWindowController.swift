@@ -8,9 +8,8 @@
 
 import Cocoa
 
-let LH = 0
-let SH = 1
 private let zero = NSNumber(integer: 0)
+private let three = NSNumber(integer: 3)
 
 private let months = 0
 private let weeks = 1
@@ -18,162 +17,48 @@ private let weeks = 1
 
 class AddShowWindowController: NSWindowController {
   
-  private dynamic let timeUnits = ["Months", "Weeks"]
-  
-  var showDataSheet: [String : AnyObject] = [:]
-  
   @IBOutlet weak var minAgeTextField: NSTextField!
   @IBOutlet weak var nameTextField: NSTextField!
+
+  private dynamic let timeUnits = ["Months", "Weeks"]
   
-  @IBOutlet weak var timeUnitPopup: NSPopUpButton!
-  
-  var addShowDataSheet = AddShowDataSheet()
-  
-  private dynamic var affiliation: String {
-    get {
-      return addShowDataSheet.affiliation
-    }
-    set {
-      addShowDataSheet.affiliation = newValue
-    }
+  var showData: [String : AnyObject]  {
+    return self.dictionaryWithValuesForKeys(Show.properties)
   }
   
-  private dynamic var date: NSDate {
-    get {
-      return addShowDataSheet.date
-    }
-    set {
-      addShowDataSheet.date = newValue
-    }
+  override var windowNibName: String {
+    return "AddShowWindowController"
   }
   
-  private dynamic var judgeLH1: String {
-    get {
-      return addShowDataSheet.judges[LH][0]
-    }
-    set {
-      addShowDataSheet.judges[LH][0] = newValue
-    }
-  }
+  // MARK: - show properties
   
-  private dynamic var judgeLH2: String {
-    get {
-      return addShowDataSheet.judges[LH][1]
-    }
-    set {
-      addShowDataSheet.judges[LH][1] = newValue
-    }
-  }
+  private dynamic var affiliation: String = "QFA"
+  private dynamic var name: String = "New Show"
   
-  private dynamic var judgeLH3: String {
-    get {
-      return addShowDataSheet.judges[LH][2]
-    }
-    set {
-      addShowDataSheet.judges[LH][2] = newValue
-    }
-  }
+  private dynamic var date: NSDate = NSDate()
   
-  private dynamic var judgeLH4: String {
-    get {
-      return addShowDataSheet.judges[LH][3]
-    }
-    set {
-      addShowDataSheet.judges[LH][3] = newValue
-    }
-  }
+  private dynamic var judgeLH1: String = ""
+  private dynamic var judgeLH2: String = ""
+  private dynamic var judgeLH3: String = ""
+  private dynamic var judgeLH4: String = ""
+  private dynamic var judgeLH5: String = ""
+  private dynamic var judgeLH6: String = ""
   
-  private dynamic var judgeLH5: String {
-    get {
-      return addShowDataSheet.judges[LH][4]
-    }
-    set {
-      addShowDataSheet.judges[LH][4] = newValue
-    }
-  }
+  private dynamic var judgeSH1: String = ""
+  private dynamic var judgeSH2: String = ""
+  private dynamic var judgeSH3: String = ""
+  private dynamic var judgeSH4: String = ""
+  private dynamic var judgeSH5: String = ""
+  private dynamic var judgeSH6: String = ""
   
-  private dynamic var judgeLH6: String {
-    get {
-      return addShowDataSheet.judges[LH][5]
-    }
-    set {
-      addShowDataSheet.judges[LH][5] = newValue
-    }
-  }
-  
-  private dynamic var judgeSH1: String {
-    get {
-      return addShowDataSheet.judges[SH][0]
-    }
-    set {
-      addShowDataSheet.judges[SH][0] = newValue
-    }
-  }
-  
-  private dynamic var judgeSH2: String {
-    get {
-      return addShowDataSheet.judges[SH][1]
-    }
-    set {
-      addShowDataSheet.judges[SH][1] = newValue
-    }
-  }
-  
-  private dynamic var judgeSH3: String {
-    get {
-      return addShowDataSheet.judges[SH][2]
-    }
-    set {
-      addShowDataSheet.judges[SH][2] = newValue
-    }
-  }
-  
-  private dynamic var judgeSH4: String {
-    get {
-      return addShowDataSheet.judges[SH][3]
-    }
-    set {
-      addShowDataSheet.judges[SH][3] = newValue
-    }
-  }
-  
-  private dynamic var judgeSH5: String {
-    get {
-      return addShowDataSheet.judges[SH][4]
-    }
-    set {
-      addShowDataSheet.judges[SH][4] = newValue
-    }
-  }
-  
-  private dynamic var judgeSH6: String {
-    get {
-      return addShowDataSheet.judges[SH][5]
-    }
-    set {
-      addShowDataSheet.judges[SH][5] = newValue
-    }
-  }
-  
-  private dynamic var minimumMonths: NSNumber {
-    get {
-      return addShowDataSheet.minimumMonths
-    }
-    set {
-      addShowDataSheet.minimumMonths = newValue
-    }
-  }
-  
-  private dynamic var minimumWeeks: NSNumber {
-    get {
-      return addShowDataSheet.minimumWeeks
-    }
-    set {
-      addShowDataSheet.minimumWeeks = newValue
-    }
-  }
+  private dynamic var minimumMonths: NSNumber = three
+  private dynamic var minimumWeeks: NSNumber = zero
+  private dynamic var numberOfRings: NSNumber = three
  
-  private dynamic var minimumAge: NSNumber = NSNumber(integer: 3)
+  private dynamic var minimumAge: NSNumber = three
+  
+  
+  // MARK: - Variables for the entry sheet not part of a show
   
   private var _timeUnit: Int = months
   
@@ -183,33 +68,8 @@ class AddShowWindowController: NSWindowController {
     }
     set {
       _timeUnit = newValue
-      let unit = newValue == months ? "Months" : "Weeks"
-      print("*& time unit \(newValue) becoming \(unit)")
       self.window!.makeFirstResponder(self.minAgeTextField)
     }
-  }
-  
-  private dynamic var name: String {
-    get {
-      return addShowDataSheet.name
-    }
-    set {
-      addShowDataSheet.name = newValue
-    }
-  }
-  
-  private dynamic var numberOfRings: NSNumber {
-    get {
-      return addShowDataSheet.numberOfRings
-    }
-    set {
-      addShowDataSheet.numberOfRings = newValue
-    }
-  }
-  
-  
-  override var windowNibName: String {
-    return "AddShowWindowController"
   }
   
   // ====================
@@ -221,6 +81,9 @@ class AddShowWindowController: NSWindowController {
     
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
   }
+  
+  
+  // initialize the sheet to an existing Show
   
   func setToShow(show show: Show) {
     for property in Show.properties {
@@ -251,7 +114,7 @@ class AddShowWindowController: NSWindowController {
       minimumWeeks = minimumAge
       minimumMonths = zero
     }
-    print("Setting Months to: \(minimumMonths) and Weeks to: \(minimumWeeks)")
+    
     dismissWithModalResponse(NSModalResponseOK)
   }
   

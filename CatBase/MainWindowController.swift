@@ -92,7 +92,7 @@ class MainWindowController: NSWindowController {
       window.beginSheet(sheetController.window!, completionHandler: { response in
         // The sheet has finished. Did the user click 'OK'?
         if response == NSModalResponseOK {
-          let newShow = Show(showData: self.addShowWindowController!.addShowDataSheet, insertIntoManagedObjectContext: self.managedObjectContext)
+          let newShow = Show(showData: self.addShowWindowController!.showData, insertIntoManagedObjectContext: self.managedObjectContext)
           print("created new show")
           self.theShowController.addObject(newShow)
           print("Added new show: \(newShow.name)")
@@ -113,7 +113,7 @@ class MainWindowController: NSWindowController {
         window.beginSheet(sheetController.window!, completionHandler: { response in
           // The sheet has finished. Did the user click 'OK'?
           if response == NSModalResponseOK {
-            Globals.currentShow!.setValuesTo(self.addShowWindowController!.addShowDataSheet)
+            Globals.currentShow!.setValuesTo(self.addShowWindowController!.showData)
           }
           // All done with the window controller
           self.addShowWindowController = nil

@@ -66,7 +66,7 @@ class Show: NSManagedObject {
   @NSManaged var numberOfRings: NSNumber
   @NSManaged var entries: NSSet?
     
-  convenience init(showData:AddShowDataSheet, insertIntoManagedObjectContext context: NSManagedObjectContext?) {
+  convenience init(showData:[String : AnyObject], insertIntoManagedObjectContext context: NSManagedObjectContext?) {
     let showEntity = NSEntityDescription.entityForName(Show.entity, inManagedObjectContext: context!)
     if showEntity == nil {
       print("Cannot create new show entity")
@@ -81,27 +81,27 @@ class Show: NSManagedObject {
     self.setValuesForKeysWithDictionary(showData)
   }
   
-  func setValuesTo(showData: AddShowDataSheet) {
-    
-    self.affiliation = showData.affiliation
-    self.date = showData.date
-    var count = 0
-    for judge in judgesLH {
-      self.setValue(showData.judges[LH][count++], forKey: judge)
-    }
-    count = 0
-    for judge in judgesSH {
-      self.setValue(showData.judges[SH][count++], forKey: judge)
-      
-      self.minimumMonths = showData.minimumMonths
-      self.minimumWeeks = showData.minimumWeeks
-      
-      self.name = showData.name
-      self.numberOfRings = showData.numberOfRings
-    }
-  }
+//  func setValuesTo(showData: AddShowDataSheet) {
+//    
+//    self.affiliation = showData.affiliation
+//    self.date = showData.date
+//    var count = 0
+//    for judge in judgesLH {
+//      self.setValue(showData.judges[LH][count++], forKey: judge)
+//    }
+//    count = 0
+//    for judge in judgesSH {
+//      self.setValue(showData.judges[SH][count++], forKey: judge)
+//      
+//      self.minimumMonths = showData.minimumMonths
+//      self.minimumWeeks = showData.minimumWeeks
+//      
+//      self.name = showData.name
+//      self.numberOfRings = showData.numberOfRings
+//    }
+//  }
   
-  func dictionary()  -> NSDictionary {
-    return self.dictionaryWithValuesForKeys(Show.properties)
-  }
+//  func dictionary()  -> NSDictionary {
+//    return self.dictionaryWithValuesForKeys(Show.properties)
+//  }
 }
