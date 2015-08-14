@@ -49,6 +49,26 @@ class MainWindowController: NSWindowController {
     theShowController.rearrangeObjects()
   }
   
+  // ================================
+  // MARK: - Undo methods
+  // ================================
+  
+  override var undoManager: NSUndoManager {
+    get {
+      return self.managedObjectContext.undoManager!
+    }
+  }
+
+  func windowWillReturnUndoManager(window: NSWindow) -> NSUndoManager? {
+    // The undo menu item is only enabled if we return a undoManager here
+    return self.undoManager
+  }
+  
+  @IBAction func undo(sender: NSButton) {
+    print("Undoing")
+    undoManager.undo()
+  }
+  
   // ========================
   // MARK: - Methods
   // ========================
@@ -105,13 +125,14 @@ class MainWindowController: NSWindowController {
     }
   }
   
-  // MARK: - handle change of show type
-  
-//  @IBAction func showTypeChanged(sender: NSPopUpButton) {
-//    cu = sender.stringValue
-//    print("*** show type is now: \(Globals.currentShow)")
-//    
-//  }
+  @IBAction func removeShow(sender: NSButton) {
+    if areYouSure("Do you really want to delete this show?") {
+      undoManager.beginUndoGrouping()
+      undoManager.setActionName("remove show")
+      theShowController.remove(sender)
+      undoManager.endUndoGrouping()
+    }
+  }
   
   // ========================
   // MARK: - Entry IBActions

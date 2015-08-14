@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="8164.2" systemVersion="14E46" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14E46" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8164.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8173.3"/>
         <capability name="box content view" minToolsVersion="7.0"/>
     </dependencies>
     <objects>
@@ -149,7 +149,7 @@
                                         <font key="font" metaFont="system" size="10"/>
                                     </buttonCell>
                                     <connections>
-                                        <action selector="remove:" target="zuf-cK-OoZ" id="dLF-F1-KfV"/>
+                                        <action selector="removeShow:" target="-2" id="gPp-gL-PBx"/>
                                         <binding destination="zuf-cK-OoZ" name="enabled" keyPath="canRemove" id="QQG-VE-LBT"/>
                                     </connections>
                                 </button>
@@ -625,11 +625,12 @@ DQ
                 </constraints>
             </view>
             <connections>
+                <outlet property="delegate" destination="-2" id="zPy-X5-fnq"/>
                 <outlet property="initialFirstResponder" destination="MAW-BI-f28" id="a9C-bT-5pw"/>
             </connections>
         </window>
         <customObject id="z8R-RM-aC6" userLabel="Globals" customClass="Globals" customModule="CatBase" customModuleProvider="target"/>
-        <arrayController mode="entity" entityName="CatBase.Show" id="zuf-cK-OoZ" userLabel="TheShows">
+        <arrayController mode="entity" entityName="Show" automaticallyPreparesContent="YES" id="zuf-cK-OoZ" userLabel="TheShows">
             <connections>
                 <binding destination="-2" name="managedObjectContext" keyPath="managedObjectContext" id="Uru-k1-v1G"/>
                 <binding destination="-2" name="sortDescriptors" keyPath="sortByDate" id="kS4-yC-sXt"/>
