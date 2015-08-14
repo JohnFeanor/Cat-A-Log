@@ -31,8 +31,8 @@ let breakCharacter = NSPredicate(format: "NOT SELF MATCHES %@", wordChar)
 let wordCharacter = NSPredicate(format: "SELF MATCHES %@", wordChar)
 
 
-let months = "Months"
-let weeks = "Weeks"
+//let months = "Months"
+//let weeks = "Weeks"
 let speaker = NSSpeechSynthesizer()
 
 // MARK: - reading in and writing arrays and dictionaries to Plists

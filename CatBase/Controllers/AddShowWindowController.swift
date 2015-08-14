@@ -10,15 +10,22 @@ import Cocoa
 
 let LH = 0
 let SH = 1
+private let zero = NSNumber(integer: 0)
+
+private let months = 0
+private let weeks = 1
 
 
 class AddShowWindowController: NSWindowController {
   
-  private dynamic let timeUnits = [months, weeks]
+  private dynamic let timeUnits = ["Months", "Weeks"]
+  
+  var showDataSheet: [String : AnyObject] = [:]
   
   @IBOutlet weak var minAgeTextField: NSTextField!
-  @IBOutlet weak var timeUnitsPopup: NSPopUpButton!
   @IBOutlet weak var nameTextField: NSTextField!
+  
+  @IBOutlet weak var timeUnitPopup: NSPopUpButton!
   
   var addShowDataSheet = AddShowDataSheet()
   
@@ -154,9 +161,6 @@ class AddShowWindowController: NSWindowController {
     }
     set {
       addShowDataSheet.minimumMonths = newValue
-      if addShowDataSheet.minimumMonths.integerValue > 0 {
-        self.timeUnit = months
-      }
     }
   }
   
@@ -166,31 +170,21 @@ class AddShowWindowController: NSWindowController {
     }
     set {
       addShowDataSheet.minimumWeeks = newValue
-      if addShowDataSheet.minimumMonths.integerValue > 0 {
-        self.timeUnit = weeks
-      }
     }
   }
  
-  private dynamic var minimumAge: NSNumber {
+  private dynamic var minimumAge: NSNumber = NSNumber(integer: 3)
+  
+  private var _timeUnit: Int = months
+  
+  private dynamic var timeUnit: Int  {
     get {
-      if self.timeUnit == months {
-        return addShowDataSheet.minimumMonths
-      } else {
-        return addShowDataSheet.minimumWeeks
-      }
+      return _timeUnit
     }
     set {
-      if self.timeUnit == months {
-        addShowDataSheet.minimumMonths = newValue
-      } else {
-        addShowDataSheet.minimumWeeks = newValue
-      }
-    }
-  }
-  
-  private dynamic var timeUnit: String = months {
-    willSet {
+      _timeUnit = newValue
+      let unit = newValue == months ? "Months" : "Weeks"
+      print("*& time unit \(newValue) becoming \(unit)")
       self.window!.makeFirstResponder(self.minAgeTextField)
     }
   }
@@ -229,31 +223,35 @@ class AddShowWindowController: NSWindowController {
   }
   
   func setToShow(show show: Show) {
-    print("Setting to show \(show)")
-    print("Properties are: \(Show.properties)\n")
     for property in Show.properties {
-      print("  setting \(property)")
       self.setValue(show.valueForKey(property), forKey: property)
     }
-    timeUnitsPopup.selectItemWithTitle(self.timeUnit)
+    if minimumMonths == zero {
+      minimumAge = minimumWeeks
+      _timeUnit = weeks
+    } else {
+      minimumAge = minimumMonths
+      _timeUnit = months
+    }
     self.window!.makeFirstResponder(self.nameTextField)
   }
   
   // ====================
   // MARK: - IBActions
   // ====================
-  
-  @IBAction func timeUnitChanged(sender: NSPopUpButton) {
-    // Seems to be a problem with binding a variable to the value of a popup, so using this way instead
-    print("Starting to change time unit")
-    let newValue = sender.titleOfSelectedItem
-    self.timeUnit = newValue ?? months
-  }
 
   
   @IBAction func okButtonPressed(sender: NSButton) {
     window?.endEditingFor(nil)
-    print("dismissing sheet with OK response\n*****")
+
+    if timeUnit == months {
+      minimumMonths = minimumAge
+      minimumWeeks = zero
+    } else {
+      minimumWeeks = minimumAge
+      minimumMonths = zero
+    }
+    print("Setting Months to: \(minimumMonths) and Weeks to: \(minimumWeeks)")
     dismissWithModalResponse(NSModalResponseOK)
   }
   

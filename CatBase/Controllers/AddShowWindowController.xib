@@ -8,7 +8,6 @@
             <connections>
                 <outlet property="minAgeTextField" destination="hap-fO-xBV" id="jRS-qU-6I5"/>
                 <outlet property="nameTextField" destination="gbw-d5-58k" id="IlS-PG-0K8"/>
-                <outlet property="timeUnitsPopup" destination="4Fv-dL-qkh" id="LvZ-gT-TyZ"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -325,24 +324,6 @@ DQ
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Fv-dL-qkh">
-                        <rect key="frame" x="18" y="67" width="100" height="26"/>
-                        <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="D8d-1X-cBt" id="Lkd-jl-W3d">
-                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="menu"/>
-                            <menu key="menu" id="XoT-HS-SnK">
-                                <items>
-                                    <menuItem title="Item 1" state="on" id="D8d-1X-cBt"/>
-                                    <menuItem title="Item 2" id="SK6-KL-mSP"/>
-                                    <menuItem title="Item 3" id="hBM-Bl-X0S"/>
-                                </items>
-                            </menu>
-                        </popUpButtonCell>
-                        <connections>
-                            <action selector="timeUnitChanged:" target="-2" id="kzY-kT-e4A"/>
-                            <binding destination="2OS-os-dRg" name="content" keyPath="arrangedObjects" id="qLb-z4-wpm"/>
-                        </connections>
-                    </popUpButton>
                     <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6GZ-37-T43">
                         <rect key="frame" x="188" y="66" width="19" height="27"/>
                         <stepperCell key="cell" continuous="YES" alignment="left" maxValue="100" doubleValue="1" id="pMf-pE-koW"/>
@@ -411,6 +392,24 @@ DQ
                             <outlet property="nextKeyView" destination="QBQ-kn-d6g" id="Ps9-gU-dCJ"/>
                         </connections>
                     </textField>
+                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MyE-aE-xlp">
+                        <rect key="frame" x="18" y="68" width="100" height="26"/>
+                        <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="GHV-MS-S1e" id="79H-Ug-hhW">
+                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="menu"/>
+                            <menu key="menu" id="Mva-0l-VMy">
+                                <items>
+                                    <menuItem title="Item 1" state="on" id="GHV-MS-S1e"/>
+                                    <menuItem title="Item 2" id="Rea-XS-OcB"/>
+                                    <menuItem title="Item 3" id="oFl-7q-LGr"/>
+                                </items>
+                            </menu>
+                        </popUpButtonCell>
+                        <connections>
+                            <binding destination="-2" name="content" keyPath="timeUnits" id="lPl-mD-bcb"/>
+                            <binding destination="-2" name="selectedIndex" keyPath="timeUnit" previousBinding="lPl-mD-bcb" id="BuN-fM-yxQ"/>
+                        </connections>
+                    </popUpButton>
                 </subviews>
             </view>
             <connections>
@@ -421,12 +420,12 @@ DQ
         </window>
         <customObject id="9TA-Pb-ICR" userLabel="Breeds" customClass="Breeds" customModule="CatBase" customModuleProvider="target"/>
         <customObject id="lOg-cF-emU" customClass="Globals" customModule="CatBase" customModuleProvider="target"/>
-        <userDefaultsController representsSharedInstance="YES" id="own-a1-638"/>
-        <arrayController objectClassName="String" id="2OS-os-dRg" userLabel="TimeUnits">
+        <arrayController id="5dg-KZ-1Wf" userLabel="TimeUnits">
             <connections>
-                <binding destination="-2" name="contentArray" keyPath="timeUnits" id="Uxo-vQ-ezi"/>
+                <binding destination="-2" name="contentArray" keyPath="timeUnits" id="6eP-w9-VbS"/>
             </connections>
         </arrayController>
+        <userDefaultsController representsSharedInstance="YES" id="own-a1-638"/>
         <arrayController objectClassName="String" id="TOx-1r-PbH" userLabel="SectionNames"/>
     </objects>
 </document>

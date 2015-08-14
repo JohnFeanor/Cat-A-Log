@@ -77,8 +77,8 @@ class Show: NSManagedObject {
     }
   }
   
-  func setValuesTo(showData: NSDictionary) {
-    self.setValuesForKeysWithDictionary(showData as! [String : AnyObject])
+  func setValuesTo(showData: [String : AnyObject]) {
+    self.setValuesForKeysWithDictionary(showData)
   }
   
   func setValuesTo(showData: AddShowDataSheet) {
