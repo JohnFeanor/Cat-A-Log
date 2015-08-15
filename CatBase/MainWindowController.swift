@@ -65,7 +65,6 @@ class MainWindowController: NSWindowController {
   }
   
   @IBAction func undo(sender: NSButton) {
-    print("Undoing")
     undoManager.undo()
   }
   
@@ -92,10 +91,11 @@ class MainWindowController: NSWindowController {
       window.beginSheet(sheetController.window!, completionHandler: { response in
         // The sheet has finished. Did the user click 'OK'?
         if response == NSModalResponseOK {
+          self.undoManager.beginUndoGrouping()
+          self.undoManager.setActionName("add show")
           let newShow = Show(showData: self.addShowWindowController!.showData, insertIntoManagedObjectContext: self.managedObjectContext)
-          print("created new show")
           self.theShowController.addObject(newShow)
-          print("Added new show: \(newShow.name)")
+          self.undoManager.endUndoGrouping()
         }
         // All done with the window controller
         self.addShowWindowController = nil
@@ -108,12 +108,14 @@ class MainWindowController: NSWindowController {
     if let window = window {
       let sheetController = AddShowWindowController()
       if Globals.currentShow != nil {
-        print("   ***\nStarting editing show window sheet")
         sheetController.setToShow(show: Globals.currentShow!)
         window.beginSheet(sheetController.window!, completionHandler: { response in
           // The sheet has finished. Did the user click 'OK'?
           if response == NSModalResponseOK {
+            self.undoManager.beginUndoGrouping()
+            self.undoManager.setActionName("edit show")
             Globals.currentShow!.setValuesTo(self.addShowWindowController!.showData)
+            self.undoManager.endUndoGrouping()
           }
           // All done with the window controller
           self.addShowWindowController = nil

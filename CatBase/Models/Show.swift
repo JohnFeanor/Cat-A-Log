@@ -46,6 +46,10 @@ class Show: NSManagedObject {
   static var name              = "name"
   static var numberOfRings     = "numberOfRings"
   
+  // ************************************
+  // MARK: - Properties
+  // ************************************
+  
   @NSManaged var affiliation: String
   @NSManaged var date: NSDate
   @NSManaged var judgeLH1: String
@@ -65,7 +69,11 @@ class Show: NSManagedObject {
   @NSManaged var name: String
   @NSManaged var numberOfRings: NSNumber
   @NSManaged var entries: NSSet?
-    
+  
+  // ************************************
+  // MARK: - Initializer
+  // ************************************
+  
   convenience init(showData:[String : AnyObject], insertIntoManagedObjectContext context: NSManagedObjectContext?) {
     let showEntity = NSEntityDescription.entityForName(Show.entity, inManagedObjectContext: context!)
     if showEntity == nil {
@@ -77,31 +85,51 @@ class Show: NSManagedObject {
     }
   }
   
+  // ************************************
+  // MARK: - Methods
+  // ************************************
+  
+  // Set this show's properties to the values in a supplied dictionary
+  // -----------------------------------------------------------------
   func setValuesTo(showData: [String : AnyObject]) {
     self.setValuesForKeysWithDictionary(showData)
   }
+ 
+  // Private helper methods
+  // ----------------------
+  private func minAges(key: String) -> (months: Int, weeks: Int) {
+    if let showDict = Globals.dataByGroup[self.affiliation] {
+      let ages = showDict.valueForKey(key) as! [Int]
+     return (ages[0], ages[1])
+    }
+    return (0, 0)
+  }
   
-//  func setValuesTo(showData: AddShowDataSheet) {
-//    
-//    self.affiliation = showData.affiliation
-//    self.date = showData.date
-//    var count = 0
-//    for judge in judgesLH {
-//      self.setValue(showData.judges[LH][count++], forKey: judge)
-//    }
-//    count = 0
-//    for judge in judgesSH {
-//      self.setValue(showData.judges[SH][count++], forKey: judge)
-//      
-//      self.minimumMonths = showData.minimumMonths
-//      self.minimumWeeks = showData.minimumWeeks
-//      
-//      self.name = showData.name
-//      self.numberOfRings = showData.numberOfRings
-//    }
-//  }
   
-//  func dictionary()  -> NSDictionary {
-//    return self.dictionaryWithValuesForKeys(Show.properties)
-//  }
+  // ************************************
+  // MARK: - Queries about the show
+  // ************************************
+  
+  // Is a cat born on a given date a kitten at this show?
+  // ----------------------------------------------------
+  func isKittenIfBornOn(birthDate: NSDate) -> Bool {
+    let isAKitten = birthDate.lessThan(weeks: 0, months: 9, before: self.date)
+    return isAKitten
+  }
+  
+  // Is a cat born on a given date too young to enter this show?
+  // -----------------------------------------------------------
+  func isItTooYoungForShow(birthDate: NSDate) -> Bool {
+    let minAge = self.minAges(Headings.minAge)
+    let isTooYoungForShow = birthDate.lessThan(weeks: minAge.weeks, months: minAge.months, before: self.date)
+    return isTooYoungForShow
+  }
+  
+  // Is a cat born on a given date able to be pending at this show?
+  // --------------------------------------------------------------
+  func canItBePending(birthDate: NSDate) -> Bool {
+    let minAge = self.minAges(Headings.pending)
+    let canBePending = birthDate.lessThan(weeks: minAge.weeks, months: minAge.months, before: self.date)
+    return canBePending
+  }
 }

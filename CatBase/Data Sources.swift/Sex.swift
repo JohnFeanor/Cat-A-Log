@@ -20,7 +20,7 @@ class Sex: DataSource {
       // for each show type e.g. QFA, ACF or COWOCA
       print("** Loading Sexes")
       for (showType, dict1) in Globals.dataByGroup {
-        let sexes = dict1["Sexes"] as! [String]
+        let sexes = dict1[Headings.sexes] as! [String]
         list[showType] = sexes
       }
     }

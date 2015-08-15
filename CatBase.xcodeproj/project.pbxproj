@@ -64,7 +64,7 @@
 		4F38B8871B6D9156006356DD /* Show.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Show.swift; path = Models/Show.swift; sourceTree = "<group>"; };
 		4F3EFAE11B6DB98C00DA2F5C /* AddShowWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddShowWindowController.swift; path = Controllers/AddShowWindowController.swift; sourceTree = "<group>"; };
 		4F3EFAE21B6DB98C00DA2F5C /* AddShowWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddShowWindowController.xib; path = Controllers/AddShowWindowController.xib; sourceTree = "<group>"; };
-		4F3EFAE51B6DEE1500DA2F5C /* Breeds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Breeds.swift; sourceTree = "<group>"; };
+		4F3EFAE51B6DEE1500DA2F5C /* Breeds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Breeds.swift; path = "Data Sources.swift/Breeds.swift"; sourceTree = "<group>"; };
 		4F7107FD1B77748E00E21AAC /* Challenges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Challenges.swift; path = "Data Sources.swift/Challenges.swift"; sourceTree = "<group>"; };
 		4F9235FD1B7952B70096ADFD /* Titles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Titles.swift; path = "Data Sources.swift/Titles.swift"; sourceTree = "<group>"; };
 		4F9235FF1B7953500096ADFD /* Titles.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Titles.plist; path = pLists/Titles.plist; sourceTree = "<group>"; };

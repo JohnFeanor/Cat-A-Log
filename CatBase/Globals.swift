@@ -15,6 +15,17 @@ struct AgeStruct {
   var timeUnit : String
 }
 
+struct Headings {
+  static let minAge     = "MinAge"
+  static let pending    = "Pending"
+  static let sexes      = "Sexes"
+  static let challenges = "Challenges"
+  static let groups     = "Groups"
+  static let group      = "group"
+  static let subgroups  = "subgroups"
+  static let breeds     = "breeds"
+}
+
 
 let space = " "
 let apostrophy = "'"
@@ -83,6 +94,7 @@ func runAlertWithMessage(message: String, buttons: String ...) -> NSModalRespons
   }
   alert.messageText = message
   alert.alertStyle = .WarningAlertStyle
+  speaker.startSpeakingString("Excuse me, \(message)")
   return alert.runModal()
 }
 
@@ -115,37 +127,6 @@ class Globals: NSObject {
   static var dataByGroup:[String : NSDictionary] = {
     return dictFromPList("ShowFormats") as! [String : NSDictionary]
     }()
-  
-  static var minAges: [String : [NSNumber]] = {
-    var temp: [String : [NSNumber]] = [:]
-    for (showType, dict) in Globals.dataByGroup {
-      let age = dict.valueForKey("MinAge") as! [NSNumber]
-      temp[showType] = age
-    }
-    return temp
-  }()
-  
-  static var pendingAges: [String : [NSNumber]] = {
-    var temp: [String : [NSNumber]] = [:]
-    for (showType, dict) in Globals.dataByGroup {
-      let age = dict.valueForKey("Pending") as! [NSNumber]
-      temp[showType] = age
-    }
-    return temp
-  }()
-  
-  static var minimumAge: (weeks: Int, months: Int) {
-    let showType = Globals.currentShow?.affiliation
-    if let showType = showType {
-      let weeks = Globals.minAges[showType]?[0]
-      let months = Globals.minAges[showType]?[1]
-      if (weeks != nil && months != nil) {
-        return (weeks!.integerValue, months!.integerValue)
-      }
-    }
-    // Had some sort of problem - return default value
-    return (0, 3)
-  }
   
   static var showTypes: [String] = {
     let allKeys = dataByGroup.keys.array

@@ -32,7 +32,7 @@ class AddShowWindowController: NSWindowController {
   
   // MARK: - show properties
   
-  private dynamic var affiliation: String = "QFA"
+  private dynamic var affiliation: String = "QFA Show"
   private dynamic var name: String = "New Show"
   
   private dynamic var date: NSDate = NSDate()
@@ -60,14 +60,8 @@ class AddShowWindowController: NSWindowController {
   
   // MARK: - Variables for the entry sheet not part of a show
   
-  private var _timeUnit: Int = months
-  
-  private dynamic var timeUnit: Int  {
-    get {
-      return _timeUnit
-    }
-    set {
-      _timeUnit = newValue
+  private dynamic var timeUnit: Int = months  {
+    didSet {
       self.window!.makeFirstResponder(self.minAgeTextField)
     }
   }
@@ -91,10 +85,10 @@ class AddShowWindowController: NSWindowController {
     }
     if minimumMonths == zero {
       minimumAge = minimumWeeks
-      _timeUnit = weeks
+      timeUnit = weeks
     } else {
       minimumAge = minimumMonths
-      _timeUnit = months
+      timeUnit = months
     }
     self.window!.makeFirstResponder(self.nameTextField)
   }
@@ -120,7 +114,6 @@ class AddShowWindowController: NSWindowController {
   
   
   @IBAction func cancelButtonPressed(sender: NSButton) {
-    print("dismissing sheet with cancel response\n****")
     dismissWithModalResponse(NSModalResponseCancel)
   }
   

@@ -312,7 +312,13 @@ class EntrySheetController: NSWindowController {
     
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
   }
+  
+  // =============================================
+  // MARK: - Ensure all data needed is in and OK
+  // =============================================
 
+  // list of the fields that must be filled in correctly
+  // ----------------------------------------------------
   let possibleFaults = ["registration", "name", "breed", "colour", "sex", "challenge", "sire", "dam", "breeder", "exhibitor"]
 
   func validateSheet() -> String? {
@@ -321,6 +327,7 @@ class EntrySheetController: NSWindowController {
     var count = 0
     
     // Check to see all compusary fields have been entered
+    // ----------------------------------------------------
     for fault in possibleFaults {
       let value = self.valueForKey(fault) as! String
       if value.isEmpty {
@@ -333,44 +340,60 @@ class EntrySheetController: NSWindowController {
     }
     
     // Now check to see if kitten is not too old or too young,  or if the cat should be in kittens
+    // -------------------------------------------------------------------------------------------
     if okToGo {
       faults = ""
     } else {
-      faults += "\n"
+      faults += ".\n"
     }
     
-    let dateOfShow = Globals.currentShow?.date
-    if let showDate = dateOfShow {
-  // Check for a cat entered as a kitten
-      let itIsAKitten = birthDate.lessThan(months: 9, before: showDate)
-      if self.challenge == Challenges.kitten() { // they say it is
+    if let currentShow = Globals.currentShow {
+      
+      // Check for a cat entered as a kitten or vice versa
+      // ----------------------------------------------------
+      let itIsAKitten = currentShow.isKittenIfBornOn(self.birthDate)
+      if self.challenge == Challenges.kitten() {
+
+        // it is entered as a kitten
+        // ----------------------------------------------------
         if !itIsAKitten {
+
+          // but it is not
+          // ----------------------------------------------------
           okToGo = false
-          faults += "This cat is too old to be a kitten"
+          faults += "This cat is too old to be a kitten.\n"
         }
-      } else if itIsAKitten {
-  // Check for a kitten entered as a cat
-        okToGo = false
-        faults += "This cat should be in kittens"
+      } else
+
+        // it is entered as a cat/desexed
+        // ----------------------------------------------------
+        if itIsAKitten {
+
+          // but it is a kitten
+          // ----------------------------------------------------
+          okToGo = false
+          faults += "This cat should be in kittens.\n"
       }
       
-  // Check to see the cat is not too young for the show
-      let minAgeForShow = Globals.minimumAge
-      let isTooYoungForShow = birthDate.lessThan(weeks: minAgeForShow.weeks, months: minAgeForShow.months, before: showDate)
-      if isTooYoungForShow {
+      // Check to see the cat is not too young for the show
+      // ---------------------------------------------------
+      let isTooYoungForShow = currentShow.isItTooYoungForShow(self.birthDate)
+      if  isTooYoungForShow {
         okToGo = false
-        faults += "This kitten is under age"
-        
-   // Ensure 'Pending' is not used as registration for pedigree cats older than 4 months
-        
+        faults += "This kitten is under age.\n"
       }
+      
+      // Ensure 'Pending' is not used as registration for pedigree cats older than 4 months
+      // -----------------------------------------------------------------------------------
+      let pendingAllowed = currentShow.canItBePending(self.birthDate)
+      if !Breeds.nonPedigreeBreed(self.breed) && !pendingAllowed {
+        okToGo == false
+        faults += "This kitten is too old for pending.\n"
+      }
+      
     } else {
       print("!! EntrySheetController cannot get a show date !!")
     }
-    
-    
-    
-    
     
     if okToGo {
       return nil
@@ -379,11 +402,13 @@ class EntrySheetController: NSWindowController {
     }
   }
   
+  // =============================================
   // MARK: - IBActions
+  // =============================================
   
   @IBAction func okButtonPressed(sender: NSButton) {
-    if let bad = self.validateSheet() {
-      errorAlert(message: bad)
+    if let faults = self.validateSheet() {
+      errorAlert(message: faults)
     } else {
       window?.endEditingFor(nil)
       print("dismissing entry sheet with OK response")

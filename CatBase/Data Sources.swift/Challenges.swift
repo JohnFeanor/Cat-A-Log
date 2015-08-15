@@ -13,14 +13,14 @@ var challengesToken: dispatch_once_t = 0
 class Challenges: DataSource {
   
   static var entity = "Challenges"
-  static var list = DictOfStringArray()
+  static var list = [String : [String]]()
   
   override class func initialize() {
     dispatch_once(&challengesToken) {       // This will only ever execute once
       // load in an array of the challenge classes in the group
       // for each show type e.g. QFA, ACF or COWOCA
       for (showType, dict1) in Globals.dataByGroup {
-        let challenges = dict1[Challenges.entity] as! [String]
+        let challenges = dict1[Headings.challenges] as! [String]
         list[showType] = challenges
       }
     }
@@ -44,6 +44,7 @@ class Challenges: DataSource {
   override var list: [String] {
     if let theShow = Globals.currentShow {
       let currentShowType = theShow.affiliation
+      print("Current show affiliation is: \(currentShowType)")
       return Challenges.list[currentShowType]!
     } else {
       return []
