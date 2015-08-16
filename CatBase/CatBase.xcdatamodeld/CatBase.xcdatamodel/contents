@@ -20,6 +20,7 @@
         <attribute name="cageSize" attributeType="Integer 16" defaultValueString="YES" syncable="YES"/>
         <attribute name="catalogueRequired" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="hireCage" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="litterCage" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="ring1" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
         <attribute name="ring2" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
         <attribute name="ring3" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
@@ -68,7 +69,7 @@
     </entity>
     <elements>
         <element name="Cat" positionX="-27" positionY="18" width="128" height="255"/>
-        <element name="Entry" positionX="18" positionY="171" width="128" height="240"/>
+        <element name="Entry" positionX="18" positionY="171" width="128" height="255"/>
         <element name="Litter" positionX="54" positionY="225" width="128" height="225"/>
         <element name="Show" positionX="18" positionY="171" width="128" height="330"/>
     </elements>

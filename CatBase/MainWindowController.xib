@@ -8,6 +8,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController" customModule="CatBase" customModuleProvider="target">
             <connections>
                 <outlet property="tableView" destination="TL9-CP-4vc" id="fqt-h5-AL7"/>
+                <outlet property="theEntriesController" destination="lq1-w2-pGH" id="2hm-fa-ozN"/>
                 <outlet property="theShowController" destination="zuf-cK-OoZ" id="M7C-yR-50t"/>
                 <outlet property="window" destination="5Gn-sJ-p9G" id="Bt4-dM-6JV"/>
             </connections>
@@ -18,7 +19,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="253" y="236" width="884" height="455"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="800"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
             <value key="minSize" type="size" width="869" height="413"/>
             <view key="contentView" id="m1x-mY-ltb">
                 <rect key="frame" x="0.0" y="0.0" width="884" height="455"/>
@@ -348,6 +349,7 @@
                                     </buttonCell>
                                     <connections>
                                         <action selector="addEntry:" target="-2" id="FBO-Br-6of"/>
+                                        <binding destination="zuf-cK-OoZ" name="enabled" keyPath="canRemove" id="e8r-1d-vpG"/>
                                     </connections>
                                 </button>
                                 <button toolTip="Press to delete selected entry (shortcut ⌘-)" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ics-Lq-c5W">
@@ -377,12 +379,12 @@
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                     <connections>
-                                        <binding destination="lq1-w2-pGH" name="displayPatternValue2" keyPath="arrangedObjects.@count" previousBinding="hal-Fw-b5l" id="JJn-dN-RyL">
+                                        <binding destination="lq1-w2-pGH" name="displayPatternValue2" keyPath="arrangedObjects.@count" previousBinding="C3v-f3-rYL" id="e9L-HV-i36">
                                             <dictionary key="options">
                                                 <string key="NSDisplayPattern">%{value1}@ out of %{value2}@</string>
                                             </dictionary>
                                         </binding>
-                                        <binding destination="lq1-w2-pGH" name="displayPatternValue1" keyPath="selection.count" id="hal-Fw-b5l">
+                                        <binding destination="lq1-w2-pGH" name="displayPatternValue1" keyPath="selection.@count" id="C3v-f3-rYL">
                                             <dictionary key="options">
                                                 <string key="NSDisplayPattern">%{value1}@ out of %{value2}@</string>
                                             </dictionary>
@@ -455,7 +457,7 @@ DQ
                                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                         </textFieldCell>
                                                                         <connections>
-                                                                            <binding destination="SOe-an-0Ms" name="value" keyPath="objectValue.registration" id="EIQ-mC-ac0"/>
+                                                                            <binding destination="SOe-an-0Ms" name="value" keyPath="objectValue.cat.registration" id="igu-Q0-6yV"/>
                                                                         </connections>
                                                                     </textField>
                                                                 </subviews>
@@ -490,7 +492,7 @@ DQ
                                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                         </textFieldCell>
                                                                         <connections>
-                                                                            <binding destination="559-l8-Fak" name="value" keyPath="objectValue.title" id="HTB-xH-CC0"/>
+                                                                            <binding destination="559-l8-Fak" name="value" keyPath="objectValue.cat.title" id="TVt-yC-ASy"/>
                                                                         </connections>
                                                                     </textField>
                                                                 </subviews>
@@ -518,14 +520,14 @@ DQ
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <subviews>
                                                                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KQy-Za-pO8">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="17"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="228" height="17"/>
                                                                         <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="3N0-p9-tsX">
                                                                             <font key="font" metaFont="system"/>
                                                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                         </textFieldCell>
                                                                         <connections>
-                                                                            <binding destination="htL-Fu-9CJ" name="value" keyPath="objectValue.name" id="qwu-jR-KcX"/>
+                                                                            <binding destination="htL-Fu-9CJ" name="value" keyPath="objectValue.cat.name" id="3Cf-Hx-qhE"/>
                                                                         </connections>
                                                                     </textField>
                                                                 </subviews>
@@ -560,7 +562,7 @@ DQ
                                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                         </textFieldCell>
                                                                         <connections>
-                                                                            <binding destination="DAz-PT-PlI" name="value" keyPath="objectValue.breed" id="v2h-eF-FwN"/>
+                                                                            <binding destination="DAz-PT-PlI" name="value" keyPath="objectValue.cat.breed" id="qcK-aH-diW"/>
                                                                         </connections>
                                                                     </textField>
                                                                 </subviews>
@@ -573,6 +575,7 @@ DQ
                                                 </tableColumns>
                                                 <connections>
                                                     <binding destination="lq1-w2-pGH" name="content" keyPath="arrangedObjects" id="s9i-M8-SNv"/>
+                                                    <binding destination="lq1-w2-pGH" name="selectionIndexes" keyPath="selectionIndexes" previousBinding="s9i-M8-SNv" id="l6U-LU-Siz"/>
                                                 </connections>
                                             </tableView>
                                         </subviews>
@@ -641,8 +644,9 @@ DQ
                 <binding destination="z8R-RM-aC6" name="contentArray" keyPath="showTypes" id="oaU-Z3-7Re"/>
             </connections>
         </arrayController>
-        <arrayController id="lq1-w2-pGH" userLabel="EntriesInShow">
+        <arrayController mode="entity" entityName="Entry" automaticallyRearrangesObjects="YES" id="lq1-w2-pGH" userLabel="EntriesInShow">
             <connections>
+                <binding destination="-2" name="managedObjectContext" keyPath="managedObjectContext" id="DCg-ha-vrn"/>
                 <binding destination="zuf-cK-OoZ" name="contentSet" keyPath="selection.entries" id="Ft8-im-ZSc"/>
             </connections>
         </arrayController>

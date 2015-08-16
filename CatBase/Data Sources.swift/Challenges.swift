@@ -26,14 +26,14 @@ class Challenges: DataSource {
     }
   }
   
-  class func kitten() -> String {
+  class func  isAKitten(name: String) -> Bool {
     if let theShow = Globals.currentShow {
       let currentShowType = theShow.affiliation
       if let challenges = Challenges.list[currentShowType] {
-        return challenges[0]
+        return name == challenges[0]
       }
     }
-    return "Kitten"
+    return name == "Kitten"
   }
   
   override init() {
@@ -44,7 +44,6 @@ class Challenges: DataSource {
   override var list: [String] {
     if let theShow = Globals.currentShow {
       let currentShowType = theShow.affiliation
-      print("Current show affiliation is: \(currentShowType)")
       return Challenges.list[currentShowType]!
     } else {
       return []

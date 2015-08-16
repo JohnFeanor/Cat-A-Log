@@ -6,87 +6,57 @@
 //  Copyright (c) 2015 Feanor. All rights reserved.
 //
 
-import Cocoa
+private let zero  = NSNumber(integer: 0)
+private let NO    = NSNumber(bool: false)
+private let YES   = NSNumber(bool: true)
 
-struct EntrySheetData {
-  var registration        = "Pending"
-  var title               = ""
-  var name                = ""
-  var breed               = ""
-  var colour              = ""
-  var sex                 = ""
-  var challenge           = ""
-  var birthDate           = NSDate()
-  var sire                = ""
-  var dam                 = ""
-  var breeder             = ""
-  var exhibitor           = ""
-  
-  var cageType            = NSNumber(integer: 0)
-  var cageSize            = NSNumber(integer: 110)
-  var hireCage            = NSNumber(bool: false)
-  var litter              = NSNumber(bool: false)
-  
-  var ring1               = NSNumber(bool: true)
-  var ring2               = NSNumber(bool: true)
-  var ring3               = NSNumber(bool: true)
-  var ring4               = NSNumber(bool: false)
-  var ring5               = NSNumber(bool: false)
-  var ring6               = NSNumber(bool: false)
-  var willWork            = NSNumber(bool: false)
-  var catalogueRequired   = NSNumber(bool: false)
-  var vaccinated          = NSNumber(bool: false)
-}
+import Cocoa
 
 class EntrySheetController: NSWindowController {
 
-  @IBOutlet var allCapsFormatter: AllCapsFormatter!
-  @IBOutlet var nameFormatter: NameFormatter!
+// -------------------------------
+  @IBOutlet weak var cageSizeTextField: NSTextField!
+  @IBOutlet weak var initialTextField: NSTextField!
   
-  // MARK: - hooks to the textfields
+  var entryData: [String : AnyObject] {
+    let properties = Entry.properties + Cat.properties
+    return self.dictionaryWithValuesForKeys(properties)
+  }
   
-  @IBOutlet weak var registrationTextField: NSTextField!
-  @IBOutlet weak var titleComboBox: NSComboBox!
-  @IBOutlet weak var nameTextField: NSTextField!
-  @IBOutlet weak var breedComboBox: NSComboBox!
-  @IBOutlet weak var colourComboBox: NSComboBox!
-  @IBOutlet weak var sexComboBox: NSComboBox!
-  @IBOutlet weak var challengeComboBox: NSComboBox!
-  @IBOutlet weak var birthDatePicker: NSDatePicker!
-  @IBOutlet weak var sireTextField: NSTextField!
-  @IBOutlet weak var damTextField: NSTextField!
-  @IBOutlet weak var breederTextField: NSTextField!
-  @IBOutlet weak var exhibitorTextField: NSTextField!
+  var cageNames = Globals.cageTypes.names
+  let cageSizes = Globals.cageTypes.sizes
   
+  let _litterCage: Int = {
+    if Globals.cageTypes.names.count > 0 {
+      return Globals.cageTypes.names.count - 1
+    } else {
+      return 0
+    }
+  }()
+  
+  let _hireCage: Int = {
+    if Globals.cageTypes.names.count > 1 {
+      return Globals.cageTypes.names.count - 2
+    } else {
+      return 0
+    }
+  }()
+  
+  let _otherCage: Int = {
+    if Globals.cageTypes.names.count > 2 {
+      return Globals.cageTypes.names.count - 3
+    } else {
+      return 0
+    }
+    }()
+
   // MARK: - Entry sheet items
-  
-  var entrySheetData = EntrySheetData()
-  
-  dynamic var registration: String {
-    get {
-      return self.entrySheetData.registration
-    }
-    set {
-      self.entrySheetData.registration = newValue
-    }
-  }
-  
-  dynamic var title: String {
-    get {
-      return self.entrySheetData.title
-    }
-    set {
-      self.entrySheetData.title = newValue
-    }
-  }
-  
-  dynamic var name: String {
-    get {
-      return self.entrySheetData.name
-    }
-    set {
-      self.entrySheetData.name = newValue
-      let prefixes = newValue.componentsSeparatedByString(" ")
+  // -------------------------
+  dynamic var registration = pending
+  dynamic var title = String()
+  dynamic var name = String() {
+    didSet {
+      let prefixes = name.componentsSeparatedByString(" ")
       if !prefixes.isEmpty {
         if sire.isEmpty {
           sire = prefixes[0] + " "
@@ -98,210 +68,63 @@ class EntrySheetController: NSWindowController {
     }
   }
   
-  dynamic var breed: String {
-    get {
-      return self.entrySheetData.breed
-    }
-    set {
-      self.entrySheetData.breed = newValue
-    }
-  }
-  
-  dynamic var colour: String {
-    get {
-      return self.entrySheetData.colour
-    }
-    set {
-      self.entrySheetData.colour = newValue
-    }
-  }
-  
-  dynamic var sex: String {
-    get {
-      return self.entrySheetData.sex
-    }
-    set {
-      self.entrySheetData.sex = newValue
-      print("cat sex is now \(newValue)")
-    }
-  }
-  
-  dynamic var challenge: String {
-    get {
-      return self.entrySheetData.challenge
-    }
-    set {
-      self.entrySheetData.challenge = newValue
-    }
-  }
-  
-  dynamic var birthDate: NSDate {
-    get {
-      return self.entrySheetData.birthDate
-    }
-    set {
-      self.entrySheetData.birthDate = newValue
-    }
-  }
-  
-  dynamic var sire: String {
-    get {
-      return self.entrySheetData.sire
-    }
-    set {
-      self.entrySheetData.sire = newValue
-    }
-  }
-  
-  dynamic var dam: String {
-    get {
-      return self.entrySheetData.dam
-    }
-    set {
-      self.entrySheetData.dam = newValue
-    }
-  }
-  
-  dynamic var breeder: String {
-    get {
-      return self.entrySheetData.breeder
-    }
-    set {
-      self.entrySheetData.breeder = newValue
+  dynamic var breed     = String()
+  dynamic var colour    = String()
+  dynamic var sex       = String()
+  dynamic var challenge = String()
+  dynamic var birthDate = NSDate()
+  dynamic var sire      = String()
+  dynamic var dam       = String()
+  dynamic var exhibitor = String()
+  dynamic var breeder   = String() {
+    didSet {
       if self.exhibitor.isEmpty {
-        self.exhibitor = newValue
+        self.exhibitor = breeder
       }
     }
   }
   
-  dynamic var exhibitor: String {
-    get {
-      return self.entrySheetData.exhibitor
-    }
-    set {
-      print("Setting exhibitor to \(newValue)")
-      self.entrySheetData.exhibitor = newValue
+  dynamic var cageType = zero {
+    didSet {
+      let cageInt = cageType.integerValue
+      cageSize = Globals.cageTypes.sizes[cageInt]
+      if cageInt == _otherCage {
+        enableCageSizeTextField = true
+        self.window?.makeFirstResponder(self.cageSizeTextField)
+      } else {
+        enableCageSizeTextField = false
+        if oldValue == _otherCage {
+          self.window?.makeFirstResponder(initialTextField)
+        }
+      }
+      litterCage = (cageInt == _litterCage)
+      hireCage = (cageInt == _hireCage)
     }
   }
+  dynamic var cageSize = NSNumber(integer: Globals.cageTypes.sizes[0])
   
-  dynamic var cageType: NSNumber {
-    get {
-      return self.entrySheetData.cageType
-    }
-    set {
-      self.entrySheetData.cageType = newValue
-    }
-  }
+  dynamic var hireCage    = NO
+  dynamic var litterCage  = NO
   
-  dynamic var cageSize: NSNumber {
-    get {
-      return self.entrySheetData.cageSize
-    }
-    set {
-      self.entrySheetData.cageSize = newValue
-    }
-  }
+  dynamic var ring1 = YES
+  dynamic var ring2 = YES
+  dynamic var ring3 = YES
+  dynamic var ring4 = NO
+  dynamic var ring5 = NO
+  dynamic var ring6 = NO
   
-  dynamic var hireCage: NSNumber {
-    get {
-      return self.entrySheetData.hireCage
-    }
-    set {
-      self.entrySheetData.hireCage = newValue
-    }
-  }
+  dynamic var willWork = NO
+  dynamic var catalogueRequired = NO
+  dynamic var vaccinated = NO
   
-  dynamic var litter: NSNumber {
-    get {
-      return self.entrySheetData.litter
-    }
-    set {
-      self.entrySheetData.litter = newValue
-    }
-  }
-  
-  dynamic var ring1: NSNumber {
-    get {
-      return self.entrySheetData.ring1
-    }
-    set {
-      self.entrySheetData.ring1 = newValue
-    }
-  }
-  
-  dynamic var ring2: NSNumber {
-    get {
-      return self.entrySheetData.ring2
-    }
-    set {
-      self.entrySheetData.ring2 = newValue
-    }
-  }
-  
-  dynamic var ring3: NSNumber {
-    get {
-      return self.entrySheetData.ring3
-    }
-    set {
-      self.entrySheetData.ring3 = newValue
-    }
-  }
-  
-  dynamic var ring4: NSNumber {
-    get {
-      return self.entrySheetData.ring4
-    }
-    set {
-      self.entrySheetData.ring4 = newValue
-    }
-  }
-  
-  dynamic var ring5: NSNumber {
-    get {
-      return self.entrySheetData.ring5
-    }
-    set {
-      self.entrySheetData.ring5 = newValue
-    }
-  }
-  
-  dynamic var ring6: NSNumber {
-    get {
-      return self.entrySheetData.ring6
-    }
-    set {
-      self.entrySheetData.ring6 = newValue
-    }
-  }
-  
-  dynamic var willWork: NSNumber {
-    get {
-      return self.entrySheetData.willWork
-    }
-    set {
-      self.entrySheetData.willWork = newValue
-    }
-  }
-  
-  dynamic var catalogueRequired: NSNumber {
-    get {
-      return self.entrySheetData.catalogueRequired
-    }
-    set {
-      self.entrySheetData.catalogueRequired = newValue
-    }
-  }
-  
-  dynamic var vaccinated: NSNumber {
-    get {
-      return self.entrySheetData.vaccinated
-    }
-    set {
-      self.entrySheetData.vaccinated = newValue
-    }
-  }
+  // MARK: - Other variables for sheet
+  dynamic var enableCageSizeTextField = false
 
   // MARK: - Methods
+  
+  @IBAction func cageSizeMenuChosen(sender: NSPopUpButton) {
+    // not doing anything, just ensuring this class is the target of the popup
+  }
   
   override var windowNibName: String {
     return "EntrySheetController"
@@ -311,6 +134,16 @@ class EntrySheetController: NSWindowController {
     super.windowDidLoad()
     
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+  }
+  
+  override func validateMenuItem(menuItem: NSMenuItem) -> Bool {
+    let selector = menuItem.action
+    let tag = menuItem.tag
+    if (tag == _litterCage) && (selector == Selector("cageSizeMenuChosen:")) {
+      return Challenges.isAKitten(self.challenge)
+    } else {
+      return true
+    }
   }
   
   // =============================================
@@ -352,7 +185,7 @@ class EntrySheetController: NSWindowController {
       // Check for a cat entered as a kitten or vice versa
       // ----------------------------------------------------
       let itIsAKitten = currentShow.isKittenIfBornOn(self.birthDate)
-      if self.challenge == Challenges.kitten() {
+      if  Challenges.isAKitten(self.challenge) {
 
         // it is entered as a kitten
         // ----------------------------------------------------
@@ -410,10 +243,8 @@ class EntrySheetController: NSWindowController {
     if let faults = self.validateSheet() {
       errorAlert(message: faults)
     } else {
-      window?.endEditingFor(nil)
+      window!.endEditingFor(nil)
       print("dismissing entry sheet with OK response")
-      print("Sheet values are:")
-      print(entrySheetData)
       dismissWithModalResponse(NSModalResponseOK)
     }
   }

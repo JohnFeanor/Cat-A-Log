@@ -11,6 +11,7 @@ import Cocoa
 class MainWindowController: NSWindowController {
   
   @IBOutlet var theShowController: NSArrayController!
+  @IBOutlet var theEntriesController: NSArrayController!
   
   @IBOutlet weak var tableView: NSTableView!
   
@@ -32,17 +33,8 @@ class MainWindowController: NSWindowController {
     
     
     let fetchRequest = NSFetchRequest(entityName: Show.entity)
-    var error: NSError? = nil
     
-    let numberOfShows = managedObjectContext.countForFetchRequest(fetchRequest, error: &error)
-    if numberOfShows < 1 {
-      print("no shows in database")
-      return
-    } else {
-      print("There are \(numberOfShows) shows in the database")
-    }
     let results = try! managedObjectContext.executeFetchRequest(fetchRequest) as! [Show]
-    
     for object in results {
       theShowController.addObject(object)
     }
@@ -74,7 +66,14 @@ class MainWindowController: NSWindowController {
 
   func tableViewSelectionDidChange(aNotification: NSNotification) {
     if aNotification.object as? NSTableView == tableView {
-      Globals.currentShow = theShowController.selectedObjects[0] as? Show
+      if let selectedShows = theShowController.selectedObjects {
+        if selectedShows.count > 0 {
+           Globals.currentShow = selectedShows[0] as? Show
+          return
+        }
+      }
+      // there are no shows selected
+      Globals.currentShow = nil
     }
   }
   
@@ -117,7 +116,7 @@ class MainWindowController: NSWindowController {
             Globals.currentShow!.setValuesTo(self.addShowWindowController!.showData)
             self.undoManager.endUndoGrouping()
           }
-          // All done with the window controller
+          // all done with the entry sheet controller
           self.addShowWindowController = nil
         })
         addShowWindowController = sheetController
@@ -144,20 +143,30 @@ class MainWindowController: NSWindowController {
     if let window = window {
       
       let sheetController = EntrySheetController()
-      print("Starting add entry sheet")
       window.beginSheet(sheetController.window!, completionHandler: { response in
         // The sheet has finished. Did the user click 'OK'?
         if response == NSModalResponseOK {
-          print("create a new entry here")
+          self.undoManager.beginUndoGrouping()
+          self.undoManager.setActionName("add entry")
+          let newEntry = Entry(entryData: sheetController.entryData, insertIntoManagedObjectContext: self.managedObjectContext)
+          self.theEntriesController.addObject(newEntry)
+          self.theEntriesController.rearrangeObjects()
+          self.undoManager.endUndoGrouping()
         }
+        // all done with the entry sheet controller
         self.addEntryWindowController = nil
+        print("finished adding entry")
       })
       addEntryWindowController = sheetController
     }
   }
   
+  @IBAction func removeEntry(sender: NSButton) {
+    print("Remove Entry selected")
+  }
   
   @IBAction func editEntry(sender: NSButton) {
+    print("Edit Entry selected")
   }
   
   

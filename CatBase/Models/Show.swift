@@ -68,7 +68,7 @@ class Show: NSManagedObject {
   @NSManaged var minimumWeeks:  NSNumber
   @NSManaged var name: String
   @NSManaged var numberOfRings: NSNumber
-  @NSManaged var entries: NSSet?
+  @NSManaged var entries: NSMutableSet?
   
   // ************************************
   // MARK: - Initializer

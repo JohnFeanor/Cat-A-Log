@@ -43,7 +43,7 @@ class Cat: NSManagedObject {
   @NSManaged var vaccinated: NSNumber
   @NSManaged var entries: NSSet?
   
-  convenience init(catData: NSDictionary, insertIntoManagedObjectContext context: NSManagedObjectContext?) {
+  convenience init(catData: [String : AnyObject], insertIntoManagedObjectContext context: NSManagedObjectContext?) {
     let catEntity = NSEntityDescription.entityForName(Cat.entity, inManagedObjectContext: context!)
     if catEntity == nil {
       print("Cannot create new cat entity")
@@ -54,10 +54,18 @@ class Cat: NSManagedObject {
     }
   }
 
-  func setValuesTo(catData: NSDictionary) {
-    self.setValuesForKeysWithDictionary(catData as! [String : AnyObject])
+  func setValuesTo(entryData: [String : AnyObject]) {
+    for key in Cat.properties {
+      if let value = entryData[key] {
+        setValue(value, forKey: key)
+      }
+    }
   }
   
+  override func setValue(value: AnyObject?, forUndefinedKey key: String) {
+    print("Cat given undefined key: \(key)")
+  }
+
   func dictionary()  -> NSDictionary {
     return self.dictionaryWithValuesForKeys(Show.properties)
   }

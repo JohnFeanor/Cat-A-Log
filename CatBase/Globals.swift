@@ -26,6 +26,8 @@ struct Headings {
   static let breeds     = "breeds"
 }
 
+let pending = "Pending"
+
 
 let space = " "
 let apostrophy = "'"
@@ -131,6 +133,24 @@ class Globals: NSObject {
   static var showTypes: [String] = {
     let allKeys = dataByGroup.keys.array
     return allKeys.sort(>)
+  }()
+  
+  static var cageTypes: (names:[String], sizes:[Int]) = {
+    let path = NSBundle.mainBundle().pathForResource("CageTypes", ofType:"plist")
+    if let path = path {
+      let data = NSArray(contentsOfFile:path) as! [NSArray]
+      var names: [String] = []
+      var sizes: [Int] = []
+      for item in data {
+        let name = item[0] as! String
+        let size = item[1] as! Int
+        names += [name]
+        sizes += [size]
+      }
+      return (names, sizes)
+    } else {
+      fatalError("Cannot load internal data: CageTypes")
+    }
   }()
   
   dynamic var showTypes: [String] {
