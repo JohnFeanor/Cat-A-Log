@@ -66,14 +66,7 @@ class MainWindowController: NSWindowController {
 
   func tableViewSelectionDidChange(aNotification: NSNotification) {
     if aNotification.object as? NSTableView == tableView {
-      if let selectedShows = theShowController.selectedObjects {
-        if selectedShows.count > 0 {
-           Globals.currentShow = selectedShows[0] as? Show
-          return
-        }
-      }
-      // there are no shows selected
-      Globals.currentShow = nil
+      Globals.currentShow = theShowController.selectedObjects?.first as? Show
     }
   }
   
@@ -143,6 +136,7 @@ class MainWindowController: NSWindowController {
     if let window = window {
       
       let sheetController = EntrySheetController()
+      sheetController.managedObjectContext = self.managedObjectContext
       window.beginSheet(sheetController.window!, completionHandler: { response in
         // The sheet has finished. Did the user click 'OK'?
         if response == NSModalResponseOK {
@@ -155,14 +149,18 @@ class MainWindowController: NSWindowController {
         }
         // all done with the entry sheet controller
         self.addEntryWindowController = nil
-        print("finished adding entry")
       })
       addEntryWindowController = sheetController
     }
   }
   
   @IBAction func removeEntry(sender: NSButton) {
-    print("Remove Entry selected")
+    if areYouSure("Do you really want to delete this entry?") {
+      undoManager.beginUndoGrouping()
+      undoManager.setActionName("remove entry")
+      theEntriesController.remove(sender)
+      undoManager.endUndoGrouping()
+    }
   }
   
   @IBAction func editEntry(sender: NSButton) {

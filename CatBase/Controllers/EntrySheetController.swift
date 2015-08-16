@@ -18,6 +18,8 @@ class EntrySheetController: NSWindowController {
   @IBOutlet weak var cageSizeTextField: NSTextField!
   @IBOutlet weak var initialTextField: NSTextField!
   
+  var managedObjectContext: NSManagedObjectContext!
+  
   var entryData: [String : AnyObject] {
     let properties = Entry.properties + Cat.properties
     return self.dictionaryWithValuesForKeys(properties)
@@ -52,7 +54,16 @@ class EntrySheetController: NSWindowController {
 
   // MARK: - Entry sheet items
   // -------------------------
-  dynamic var registration = pending
+  dynamic var registration = pending {
+    didSet {
+      // find out if this cat is in the database
+      // and fill in the details if it is
+      if registration != pending && !filledFields {
+        let same = self.fetchCatEntityUsing("registration LIKE[c] '\(self.registration)'")
+        copyPropertiesFrom(same.first, except: [Cat.registration])
+      }
+    }
+  }
   dynamic var title = String()
   dynamic var name = String() {
     didSet {
@@ -63,6 +74,15 @@ class EntrySheetController: NSWindowController {
         }
         if dam.isEmpty {
           dam = prefixes[0] + " "
+        }
+      }
+      if !filledFields {
+        let same = self.fetchCatEntityUsing("name LIKE[c] '\(self.name)'")
+        let cat = same.first
+        copyPropertiesFrom(cat, except: [Cat.registration, Cat.name])
+        let noRego = registration.isEmpty || registration == pending
+        if noRego && cat != nil {
+          registration = cat!.registration
         }
       }
     }
@@ -118,9 +138,13 @@ class EntrySheetController: NSWindowController {
   dynamic var vaccinated = NO
   
   // MARK: - Other variables for sheet
+  // ---------------------------------
   dynamic var enableCageSizeTextField = false
+  var filledFields = false
 
+  // ****************
   // MARK: - Methods
+  // ****************
   
   @IBAction func cageSizeMenuChosen(sender: NSPopUpButton) {
     // not doing anything, just ensuring this class is the target of the popup
@@ -136,6 +160,9 @@ class EntrySheetController: NSWindowController {
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
   }
   
+  
+  // Litter cage type not selectable unless the entry is a kitten
+  // -------------------------------------------------------------
   override func validateMenuItem(menuItem: NSMenuItem) -> Bool {
     let selector = menuItem.action
     let tag = menuItem.tag
@@ -145,6 +172,49 @@ class EntrySheetController: NSWindowController {
       return true
     }
   }
+  
+  // ***********************
+  // MARK: - Helper Methods
+  // ***********************
+  
+  // Helper method to do a fetch request on data base
+  // -------------------------------------------------
+  func fetchCatEntityUsing(format: String) -> [Cat] {
+    let fetchRequest = NSFetchRequest(entityName: Cat.entity)
+    fetchRequest.predicate = NSPredicate(format: format)
+    let fetchResult: [Cat]?
+    do {
+      fetchResult = try managedObjectContext.executeFetchRequest(fetchRequest) as? [Cat]
+    } catch {
+      print("\n** Error in fetch request **\n")
+      return []
+    }
+    if let fetchResult = fetchResult {
+      print("Entry sheet fetched \(fetchResult.count) cats")
+      return fetchResult
+    } else {
+      return []
+    }
+  }
+  
+  // Helper method to copy items from an existing Cat
+  // ------------------------------------------------
+  func copyPropertiesFrom(original: Cat?, except exceptions: [String]?) {
+    if let original = original {
+      let properties: [String]
+      if exceptions == nil {
+        properties = Cat.properties
+      } else {
+        properties = Cat.properties.filter { !exceptions!.contains($0) }
+      }
+      for key in properties {
+        self.setValue(original.valueForKey(key), forKey: key)
+      }
+      filledFields = true
+    }
+  }
+
+
   
   // =============================================
   // MARK: - Ensure all data needed is in and OK

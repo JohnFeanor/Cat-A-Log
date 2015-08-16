@@ -18,7 +18,6 @@ class Sex: DataSource {
     dispatch_once(&sexesToken) {       // This will only ever execute once
       // load in an array of the group names & breeds in the group
       // for each show type e.g. QFA, ACF or COWOCA
-      print("** Loading Sexes")
       for (showType, dict1) in Globals.dataByGroup {
         let sexes = dict1[Headings.sexes] as! [String]
         list[showType] = sexes

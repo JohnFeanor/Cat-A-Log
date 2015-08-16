@@ -53,7 +53,6 @@ let speaker = NSSpeechSynthesizer()
 func dictFromPList(listName: String) -> NSDictionary {
   let path = NSBundle.mainBundle().pathForResource(listName, ofType:"plist")
   if let path = path {
-    print("Reading plist from: \(path)")
     return NSDictionary(contentsOfFile:path)!
   } else {
     fatalError("Cannot load internal data \(listName)")
@@ -63,7 +62,6 @@ func dictFromPList(listName: String) -> NSDictionary {
 func arrayFromPList(listName: String) -> [String]? {
   let path = NSBundle.mainBundle().pathForResource(listName, ofType:"plist")
   if let path = path {
-    print("Reading plist from: \(path)")
     return (NSArray(contentsOfFile:path) as! [String]?)
   } else {
     fatalError("Cannot load internal data \(listName)")

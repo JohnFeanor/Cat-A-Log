@@ -93,17 +93,18 @@ class Entry: NSManagedObject {
   func fetchEntitiesNamed(entityName: String, inContext context:NSManagedObjectContext, usingFormat format: String) -> [NSManagedObject] {
     let fetchRequest = NSFetchRequest(entityName: entityName)
     fetchRequest.predicate = NSPredicate(format: format)
-    let fetchResult: [NSManagedObject]
+    let fetchResult: [NSManagedObject]?
     do {
-      fetchResult = try context.executeFetchRequest(fetchRequest) as! [NSManagedObject]
+      fetchResult = try context.executeFetchRequest(fetchRequest) as? [NSManagedObject]
     } catch {
       print("\n** Error in fetch request **\n")
-      fetchResult = []
+      return []
     }
-    print("****\nFetched these entities")
-    print(fetchResult)
-    print("")
-    return fetchResult
+    if let fetchResult = fetchResult {
+      return fetchResult
+    } else {
+      return []
+    }
   }
   
   override func setValue(value: AnyObject?, forUndefinedKey key: String) {

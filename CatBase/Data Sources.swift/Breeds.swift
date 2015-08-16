@@ -37,7 +37,6 @@ class Breeds: DataSource {
             nonPedigreesByShowType[showTypeName] = (nonPedigree[Headings.breeds] as! [String])
         }
         breedsByGroupAndShowtype[showTypeName] = tempBreeds
-        print("****\nNon pedigree cats are:\(nonPedigreesByShowType)")
       }
     }
   }
