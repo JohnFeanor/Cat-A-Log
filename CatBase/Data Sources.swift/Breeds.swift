@@ -49,7 +49,6 @@ class Breeds: DataSource {
     if let theShow = Globals.currentShow {
       let currentShowType = theShow.affiliation
       if let currentBreeds = Breeds.nonPedigreesByShowType[currentShowType] {
-        print("****\nNon pedigree breeds are:\n\(currentBreeds)\n****")
         return currentBreeds.contains(breedName)
       }
     }

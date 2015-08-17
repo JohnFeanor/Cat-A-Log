@@ -52,6 +52,43 @@ class Entry: NSManagedObject {
     }
   }
   
+  /*
+  // find any cats with the same registration (unless pending)
+  let registration = catData[Cat.registration] as! String
+  let sameRego: [Cat]
+  if registration != pending {
+  sameRego  = self.fetchCatEntityUsing("registration LIKE[c] '\(registration)'")
+  } else {
+  sameRego = []
+  }
+  
+  // find any cats with the same name
+  let name = catData[Cat.name] as! String
+  let sameName = self.fetchCatEntityUsing("name LIKE[c] '\(name)'")
+  
+  // put all those found cats into one big array
+  let same = sameRego + sameName.filter { !sameRego.contains($0)}
+  
+  if same.isEmpty {
+  // have no existing cats, so create a new one
+  let newEntry = Entry(entryData: catData, insertIntoManagedObjectContext: self.managedObjectContext)
+  self.theEntriesController.addObject(newEntry)
+  } else {
+  // set the first foud cat to these new values
+  let cat = same.first!
+  cat.setValuesTo(catData)
+  // delete any other found cats
+  let excessCats = same.count - 1
+  if excessCats > 0 {
+  for i in 1 ... excessCats {
+  self.managedObjectContext.deleteObject(same[i])
+  }
+  }
+  print("deleted \(excessCats) cats from database")
+  }
+
+*/
+  
   convenience init(entryData: [String : AnyObject], insertIntoManagedObjectContext context: NSManagedObjectContext?) {
     if let context = context {
       let entryEntity = NSEntityDescription.entityForName(Entry.entity, inManagedObjectContext: context)
@@ -62,28 +99,44 @@ class Entry: NSManagedObject {
         self.init(entity: entryEntity!, insertIntoManagedObjectContext: context)
         self.setValuesTo(entryData)
         
-        // find and delete any Cat entities with the same registration (bar Pending)
-        // -------------------------------------------------------------------------
+        // find any cats with the same registration (unless pending)
         let registration = entryData[Cat.registration] as! String
+        let sameRego: [Cat]
         if registration != pending {
-          let fetchResult = fetchEntitiesNamed(Cat.entity, inContext: context, usingFormat: "\(Cat.registration) LIKE[c] '\(registration)'")
-          for object in fetchResult {
-            context.deleteObject(object)
-          }
+          sameRego  = fetchEntitiesNamed(Cat.entity, inContext: context, usingFormat: "\(Cat.registration) LIKE[c] '\(registration)'") as! [Cat]
+        } else {
+          sameRego = []
         }
-        
-        // find and delete any Cat entities with the same name
-        // ----------------------------------------------------
+
+        // find any cats with the same name
         let name = entryData[Cat.name] as! String
-        let fetchResult = fetchEntitiesNamed(Cat.entity, inContext: context, usingFormat: "\(Cat.name) LIKE[c] '\(name)'")
-        for object in fetchResult {
-          context.deleteObject(object)
-        }
+        let sameName = fetchEntitiesNamed(Cat.entity, inContext: context, usingFormat: "\(Cat.name) LIKE[c] '\(name)'") as! [Cat]
         
-        // create a new cat and set it as this entry's cat
-        // -----------------------------------------------
-        let newCat = Cat(catData: entryData, insertIntoManagedObjectContext: context)
-        self.cat = newCat
+        // put all those found cats into one big array
+        let same = sameRego + sameName.filter { !sameRego.contains($0)}
+
+        if same.isEmpty {
+          // have no existing cats, so create a new one
+          // -------------------------------------------
+          let newCat = Cat(catData: entryData, insertIntoManagedObjectContext: context)
+          self.cat = newCat
+        } else {
+          // set the first found cat to these new values
+          // -------------------------------------------
+          let newCat = same.first!
+          newCat.setValuesTo(entryData)
+          self.cat = newCat
+          
+          // delete any other found cats
+          // ---------------------------
+          let excessCats = same.count - 1
+          if excessCats > 0 {
+            for i in 1 ... excessCats {
+              context.deleteObject(same[i])
+            }
+          }
+          print("deleted \(excessCats) cats from database")
+        }
       }
     } else {
       fatalError("Database corrupt - cannot load managedObjectContext")

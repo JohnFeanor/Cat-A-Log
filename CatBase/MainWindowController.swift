@@ -70,6 +70,26 @@ class MainWindowController: NSWindowController {
     }
   }
   
+  // Helper method to do a fetch request on data base
+  // -------------------------------------------------
+//  func fetchCatEntityUsing(format: String) -> [Cat] {
+//    let fetchRequest = NSFetchRequest(entityName: Cat.entity)
+//    fetchRequest.predicate = NSPredicate(format: format)
+//    let fetchResult: [Cat]?
+//    do {
+//      fetchResult = try managedObjectContext.executeFetchRequest(fetchRequest) as? [Cat]
+//    } catch {
+//      print("\n** Error in fetch request **\n")
+//      return []
+//    }
+//    if let fetchResult = fetchResult {
+//      print("Main window controller fetched \(fetchResult.count) cats")
+//      return fetchResult
+//    } else {
+//      return []
+//    }
+//  }
+  
   // ========================
   // MARK: - Show IBActions
   // ========================
