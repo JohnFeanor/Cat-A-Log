@@ -65,30 +65,9 @@ class MainWindowController: NSWindowController {
   // ========================
 
   func tableViewSelectionDidChange(aNotification: NSNotification) {
-    if aNotification.object as? NSTableView == tableView {
-      Globals.currentShow = theShowController.selectedObjects?.first as? Show
-    }
+    Globals.currentShow = theShowController.selectedObjects?.first as? Show
+    Globals.currentEntry = theEntriesController.selectedObjects?.first as? Entry
   }
-  
-  // Helper method to do a fetch request on data base
-  // -------------------------------------------------
-//  func fetchCatEntityUsing(format: String) -> [Cat] {
-//    let fetchRequest = NSFetchRequest(entityName: Cat.entity)
-//    fetchRequest.predicate = NSPredicate(format: format)
-//    let fetchResult: [Cat]?
-//    do {
-//      fetchResult = try managedObjectContext.executeFetchRequest(fetchRequest) as? [Cat]
-//    } catch {
-//      print("\n** Error in fetch request **\n")
-//      return []
-//    }
-//    if let fetchResult = fetchResult {
-//      print("Main window controller fetched \(fetchResult.count) cats")
-//      return fetchResult
-//    } else {
-//      return []
-//    }
-//  }
   
   // ========================
   // MARK: - Show IBActions
@@ -108,6 +87,10 @@ class MainWindowController: NSWindowController {
           let newShow = Show(showData: self.addShowWindowController!.showData, insertIntoManagedObjectContext: self.managedObjectContext)
           self.theShowController.addObject(newShow)
           self.undoManager.endUndoGrouping()
+          do { try self.managedObjectContext.save() }
+          catch{
+            print("Error trying to save managed object context after adding of show")
+          }
         }
         // All done with the window controller
         self.addShowWindowController = nil
@@ -131,6 +114,10 @@ class MainWindowController: NSWindowController {
           }
           // all done with the entry sheet controller
           self.addShowWindowController = nil
+          do { try self.managedObjectContext.save() }
+          catch{
+            print("Error trying to save managed object context after edit of show")
+          }
         })
         addShowWindowController = sheetController
       } else {
@@ -145,6 +132,10 @@ class MainWindowController: NSWindowController {
       undoManager.setActionName("remove show")
       theShowController.remove(sender)
       undoManager.endUndoGrouping()
+      do { try self.managedObjectContext.save() }
+      catch{
+        print("Error trying to save managed object context after removal of show")
+      }
     }
   }
   
@@ -155,6 +146,10 @@ class MainWindowController: NSWindowController {
   @IBAction func addEntry(sender: NSButton) {
     if let window = window {
       
+      if Globals.currentShow == nil {
+        print("Trying to add entry when current show is nil")
+        return
+      }
       let sheetController = EntrySheetController()
       sheetController.managedObjectContext = self.managedObjectContext
       window.beginSheet(sheetController.window!, completionHandler: { response in
@@ -169,6 +164,10 @@ class MainWindowController: NSWindowController {
         }
         // all done with the entry sheet controller
         self.addEntryWindowController = nil
+        do { try self.managedObjectContext.save() }
+        catch{
+          print("Error trying to save managed object context after adding of entry")
+        }
       })
       addEntryWindowController = sheetController
     }
@@ -180,13 +179,44 @@ class MainWindowController: NSWindowController {
       undoManager.setActionName("remove entry")
       theEntriesController.remove(sender)
       undoManager.endUndoGrouping()
+      do { try self.managedObjectContext.save() }
+      catch{
+        print("Error trying to save managed object context after removal of entry")
+      }
     }
   }
   
-  @IBAction func editEntry(sender: NSButton) {
-    print("Edit Entry selected")
+  @IBAction func editEntry(sender: NSObject) {
+    if let window = window {
+      
+      if Globals.currentEntry == nil {
+        print("Trying to edit entry when current entry is nil")
+        return
+      }
+      let sheetController = EntrySheetController()
+      sheetController.managedObjectContext = self.managedObjectContext
+      sheetController.setSheetTo(Globals.currentEntry!)
+      window.beginSheet(sheetController.window!, completionHandler: { response in
+        // The sheet has finished. Did the user click 'OK'?
+        if response == NSModalResponseOK {
+          self.undoManager.beginUndoGrouping()
+          self.undoManager.setActionName("edit entry")
+          if Globals.currentEntry == nil {
+            print("current entry has become nil while editing it")
+          }
+          Globals.currentEntry?.updateTo(self.addEntryWindowController!.entryData)
+          self.theEntriesController.rearrangeObjects()
+          self.undoManager.endUndoGrouping()
+        }
+        // all done with the entry sheet controller
+        self.addEntryWindowController = nil
+        do { try self.managedObjectContext.save() }
+        catch{
+          print("Error trying to save managed object context after edit of entry")
+        }
+      })
+      addEntryWindowController = sheetController
+    }
   }
-  
-  
   
 }

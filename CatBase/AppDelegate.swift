@@ -201,5 +201,46 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     return .TerminateNow
   }
   
+  
+  // ========================
+  // MARK: - Menu actions
+  // ========================
+  
+  /*
+  - (IBAction)importCatsChosen:(id)sender
+  {
+  
+  // Create and configure the panel.
+  NSOpenPanel* panel = [NSOpenPanel openPanel];
+  [panel setCanChooseDirectories:NO];
+  [panel setAllowsMultipleSelection:NO];
+  [panel setMessage:@"Name of file to import."];
+  
+  // Display the panel attached to the document's window.
+  [panel beginSheetModalForWindow:_window completionHandler:^(NSInteger result){
+  if (result == NSFileHandlingPanelOKButton) {
+  [self importCatsFrom:[panel URLs]];
+  }
+  }];
+  }
+  */
+  
+  @IBAction func importACatFile(sender: NSObject) {
+    if let window = self.window {
+      let panel = NSOpenPanel()
+      panel.canChooseDirectories = false
+      panel.allowsMultipleSelection = false
+      panel.message = "Name of file to import"
+      
+      panel.beginSheetModalForWindow(window) { response in
+        // The sheet has finished. Did the user click 'OK'?
+        if response == NSModalResponseOK {
+          
+        }
+      }
+    }
+  }
+
+  
 }
 

@@ -15,7 +15,13 @@ class Colours: DataSource {
   static var entity = "Colours"
   static var list = DictOfStringArray()
   
-  var currentBreed: String? = nil
+  // breedSource must be bound to a control which will return a valid breed name
+  @IBOutlet weak var breedSource: NSControl!
+  
+  var currentBreed: String? {
+    // this may be called before the binding is set up
+    return breedSource?.stringValue
+  }
 
    override class func initialize() {
     dispatch_once(&coloursToken) {
@@ -29,16 +35,6 @@ class Colours: DataSource {
     } else {
       return []
     }
-  }
-  
-  @IBAction func newBreedChosen(sender: NSComboBox) {
-    currentBreed = sender.stringValue
-    print("Selected breed now: \(currentBreed)")
-    let colours = list
-    for colour in colours {
-      print("\(colour) ", appendNewline: false)
-    }
-    print("****")
   }
   
 }

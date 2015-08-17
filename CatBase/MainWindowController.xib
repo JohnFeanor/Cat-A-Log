@@ -364,7 +364,7 @@
                                         <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                                     </buttonCell>
                                     <connections>
-                                        <action selector="remove:" target="lq1-w2-pGH" id="wW7-0H-wVn"/>
+                                        <action selector="removeEntry:" target="-2" id="ITt-Yc-RYe"/>
                                         <binding destination="lq1-w2-pGH" name="enabled" keyPath="canRemove" id="beR-nj-n1v"/>
                                     </connections>
                                 </button>
@@ -574,8 +574,10 @@ DQ
                                                     </tableColumn>
                                                 </tableColumns>
                                                 <connections>
+                                                    <action trigger="doubleAction" selector="editEntry:" target="-2" id="nYI-fc-Luu"/>
                                                     <binding destination="lq1-w2-pGH" name="content" keyPath="arrangedObjects" id="s9i-M8-SNv"/>
                                                     <binding destination="lq1-w2-pGH" name="selectionIndexes" keyPath="selectionIndexes" previousBinding="s9i-M8-SNv" id="l6U-LU-Siz"/>
+                                                    <outlet property="delegate" destination="-2" id="gmR-1L-uuM"/>
                                                 </connections>
                                             </tableView>
                                         </subviews>

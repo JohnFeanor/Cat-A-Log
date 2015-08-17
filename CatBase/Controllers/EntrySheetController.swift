@@ -213,6 +213,17 @@ class EntrySheetController: NSWindowController {
       filledFields = true
     }
   }
+  
+  func setSheetTo(original: Entry) {
+    if let cat = original.cat {
+      for key in Cat.properties {
+        self.setValue(cat.valueForKey(key), forKey: key)
+      }
+    }
+    for key in Entry.properties {
+      self.setValue(original.valueForKey(key), forKey: key)
+    }
+  }
 
 
   

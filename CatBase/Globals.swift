@@ -123,6 +123,7 @@ extension NSDate {
 class Globals: NSObject {
   
   static var currentShow: Show? = nil
+  static var currentEntry: Entry? = nil
   
   static var dataByGroup:[String : NSDictionary] = {
     return dictFromPList("ShowFormats") as! [String : NSDictionary]

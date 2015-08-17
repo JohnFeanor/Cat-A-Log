@@ -51,44 +51,7 @@ class Entry: NSManagedObject {
       print("?? someone trying to set the count in Entry")
     }
   }
-  
-  /*
-  // find any cats with the same registration (unless pending)
-  let registration = catData[Cat.registration] as! String
-  let sameRego: [Cat]
-  if registration != pending {
-  sameRego  = self.fetchCatEntityUsing("registration LIKE[c] '\(registration)'")
-  } else {
-  sameRego = []
-  }
-  
-  // find any cats with the same name
-  let name = catData[Cat.name] as! String
-  let sameName = self.fetchCatEntityUsing("name LIKE[c] '\(name)'")
-  
-  // put all those found cats into one big array
-  let same = sameRego + sameName.filter { !sameRego.contains($0)}
-  
-  if same.isEmpty {
-  // have no existing cats, so create a new one
-  let newEntry = Entry(entryData: catData, insertIntoManagedObjectContext: self.managedObjectContext)
-  self.theEntriesController.addObject(newEntry)
-  } else {
-  // set the first foud cat to these new values
-  let cat = same.first!
-  cat.setValuesTo(catData)
-  // delete any other found cats
-  let excessCats = same.count - 1
-  if excessCats > 0 {
-  for i in 1 ... excessCats {
-  self.managedObjectContext.deleteObject(same[i])
-  }
-  }
-  print("deleted \(excessCats) cats from database")
-  }
-
-*/
-  
+    
   convenience init(entryData: [String : AnyObject], insertIntoManagedObjectContext context: NSManagedObjectContext?) {
     if let context = context {
       let entryEntity = NSEntityDescription.entityForName(Entry.entity, inManagedObjectContext: context)
@@ -164,7 +127,7 @@ class Entry: NSManagedObject {
     print("Entry given undefined key: \(key)")
   }
   
-  func setValuesTo(entryData: [String : AnyObject]) {
+  private func setValuesTo(entryData: [String : AnyObject]) {
     for key in Entry.properties {
       print("setting Entry property: \(key) ", appendNewline: false)
       if let value = entryData[key] {
@@ -173,6 +136,11 @@ class Entry: NSManagedObject {
       }
       
     }
+  }
+  
+  func updateTo(entryData: [String : AnyObject]) {
+    self.setValuesTo(entryData)
+    self.cat?.setValuesTo(entryData)
   }
   
   func dictionary()  -> [String : AnyObject] {

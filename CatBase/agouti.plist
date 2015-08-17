@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>breeds</key>
+	<array>
+		<string>Maine Coon</string>
+		<string>Norwegian Forest</string>
+		<string>Siberian</string>
+		<string>American Curl</string>
+		<string>American Curl Longhair</string>
+		<string>Manx</string>
+		<string>Manx Stumpy</string>
+		<string>Cymric</string>
+		<string>Cymric Stumpy</string>
+		<string>Selkirk Rex</string>
+		<string>Selkirk Rex Longhair</string>
+		<string>Cornish Rex</string>
+		<string>Devon Rex</string>
+		<string>German Rex</string>
+		<string>Sphynx</string>
+		<string>La Perm</string>
+		<string>La Perm Longhair</string>
+		<string>Scottish Fold</string>
+		<string>Scottish Fold Longhair</string>
+		<string>Scottish Shorthair</string>
+		<string>Scottish Longhair</string>
+	</array>
+	<key>classes</key>
+	<array>
+		<string>Agouti</string>
+		<string>Agouti &amp; White</string>
+		<string>Non Agouti</string>
+		<string>Non Agouti &amp; White</string>
+	</array>
+</dict>
+</plist>
