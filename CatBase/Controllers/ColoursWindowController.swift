@@ -35,7 +35,6 @@ class ColoursWindowController: NSWindowController {
   }
   
   @IBAction func newBreedselected(sender: NSTableView) {
-    print("asking colours to reload")
     coloursTableView.reloadData()
   }
 

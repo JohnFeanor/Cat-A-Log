@@ -274,7 +274,7 @@ Gw
                             <outlet property="nextKeyView" destination="zSI-bh-k8T" id="oSw-lN-oPf"/>
                         </connections>
                     </comboBox>
-                    <comboBox identifier="breedSelector" toolTip="Type the entry's breed into this box or select using the drop down menu" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ggx-l8-b8A" customClass="MyComboBox" customModule="CatBase" customModuleProvider="target">
+                    <comboBox identifier="breedSelector" toolTip="Type the entry's breed into this box or select using the drop down menu" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ggx-l8-b8A">
                         <rect key="frame" x="62" y="343" width="181" height="26"/>
                         <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Breed" drawsBackground="YES" usesDataSource="YES" numberOfVisibleItems="5" id="stI-OA-Uwb">
                             <font key="font" metaFont="system"/>

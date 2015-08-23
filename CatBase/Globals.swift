@@ -10,8 +10,28 @@ import Cocoa
 
 typealias DictOfStringArray = [String : [String]]
 
-@objc protocol BreedSelector {
-  var currentBreed: String { get }
+extension NSControl {
+  var currentBreed: String {
+    get {
+      return stringValue
+    }
+  }
+}
+
+extension NSTableView {
+  override var currentBreed: String {
+    get {
+      let row = self.selectedRow
+      if row > -1 {
+        let view = self.viewAtColumn(0, row: row, makeIfNecessary: false) as? NSTableCellView
+        let text = view?.objectValue as? String
+        if let text = text {
+          return text
+        }
+      }
+      return ""
+    }
+  }
 }
 
 struct AgeStruct {
@@ -56,10 +76,21 @@ let speaker = NSSpeechSynthesizer()
 
 func dictFromPList(listName: String) -> NSDictionary {
   let path = NSBundle.mainBundle().pathForResource(listName, ofType:"plist")
+  print("Path for reading: \(path)")
   if let path = path {
     return NSDictionary(contentsOfFile:path)!
   } else {
     fatalError("Cannot load internal data \(listName)")
+  }
+}
+
+func dict(dict: NSDictionary, toPlist listName: String) -> Bool {
+  let path = NSBundle.mainBundle().pathForResource(listName, ofType:"plist")
+  print("Path for saving: \(path)")
+  if let path = path {
+    return dict.writeToFile(path, atomically: true)
+  } else {
+    return false
   }
 }
 

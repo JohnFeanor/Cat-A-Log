@@ -12,12 +12,18 @@ var coloursToken: dispatch_once_t = 0
 
 class Colours: DataSource, NSTableViewDataSource {
   
+  static var isDirty = false
+  
   static var entity = "Colours"
-  static var list = DictOfStringArray()
+  private static var list = DictOfStringArray() {
+    didSet {
+      isDirty = true
+    }
+  }
   
   // breedSource must be bound to a control which will return a valid breed name
   
-  @IBOutlet weak var breedSource: BreedSelector!
+  @IBOutlet weak var breedSource: NSControl!
   
   var currentBreed: String? {
     if let breedSource = breedSource {
@@ -30,6 +36,15 @@ class Colours: DataSource, NSTableViewDataSource {
   override class func initialize() {
     dispatch_once(&coloursToken) {
       list = dictFromPList(Colours.entity) as! DictOfStringArray
+    }
+  }
+  
+  class func saveColours() {
+    if isDirty {
+      if !dict(list as NSDictionary, toPlist: Colours.entity) {
+        print("Could not save colours")
+      }
+      isDirty = false
     }
   }
   

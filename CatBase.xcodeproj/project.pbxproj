@@ -29,8 +29,6 @@
 		4FB9D1211B75B61F00046CBA /* Sex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB9D1201B75B61F00046CBA /* Sex.swift */; };
 		4FBD2EE41B81A84500E28D93 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4FBD2EE31B81A84500E28D93 /* Credits.rtf */; };
 		4FBD2EE61B81A91E00E28D93 /* agouti.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4FBD2EE51B81A91E00E28D93 /* agouti.plist */; };
-		4FBED6581B873EDE0065F041 /* MyComboBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBED6571B873EDE0065F041 /* MyComboBox.swift */; };
-		4FBED65A1B8741110065F041 /* MyTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBED6591B8741110065F041 /* MyTableView.swift */; };
 		4FD803241B774DA500D7FAD2 /* Colours.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4FD803231B774DA500D7FAD2 /* Colours.plist */; };
 		4FD803261B774E8100D7FAD2 /* Colours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD803251B774E8100D7FAD2 /* Colours.swift */; };
 		4FD8384E1B832F3D00A8C7A7 /* ColoursWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD8384C1B832F3D00A8C7A7 /* ColoursWindowController.swift */; };
@@ -81,8 +79,6 @@
 		4FBD2EE31B81A84500E28D93 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		4FBD2EE51B81A91E00E28D93 /* agouti.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = agouti.plist; sourceTree = "<group>"; };
 		4FBD2EE71B81AF9900E28D93 /* CatBase.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = CatBase.entitlements; sourceTree = "<group>"; };
-		4FBED6571B873EDE0065F041 /* MyComboBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyComboBox.swift; sourceTree = "<group>"; };
-		4FBED6591B8741110065F041 /* MyTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableView.swift; sourceTree = "<group>"; };
 		4FD803231B774DA500D7FAD2 /* Colours.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Colours.plist; path = pLists/Colours.plist; sourceTree = "<group>"; };
 		4FD803251B774E8100D7FAD2 /* Colours.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Colours.swift; path = "Data Sources.swift/Colours.swift"; sourceTree = "<group>"; };
 		4FD8384C1B832F3D00A8C7A7 /* ColoursWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColoursWindowController.swift; path = Controllers/ColoursWindowController.swift; sourceTree = "<group>"; };
@@ -207,8 +203,6 @@
 				4FB9D1201B75B61F00046CBA /* Sex.swift */,
 				4F9235FD1B7952B70096ADFD /* Titles.swift */,
 				4FB9D11E1B75ABA800046CBA /* DataSource.swift */,
-				4FBED6571B873EDE0065F041 /* MyComboBox.swift */,
-				4FBED6591B8741110065F041 /* MyTableView.swift */,
 			);
 			name = "Data sources";
 			sourceTree = "<group>";
@@ -275,7 +269,7 @@
 						CreatedOnToolsVersion = 6.4;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -350,14 +344,12 @@
 				4FEB56B01B70BFC700EECA78 /* Globals.swift in Sources */,
 				4F38B8601B6D8CCA006356DD /* CatBase.xcdatamodeld in Sources */,
 				4F3EFAE31B6DB98C00DA2F5C /* AddShowWindowController.swift in Sources */,
-				4FBED65A1B8741110065F041 /* MyTableView.swift in Sources */,
 				4FFE16C81B6E421A0020E1D0 /* EntrySheetController.swift in Sources */,
 				4F9235FE1B7952B70096ADFD /* Titles.swift in Sources */,
 				4FFE16CC1B6ECB320020E1D0 /* AllCapsFormatter.swift in Sources */,
 				4F38B8821B6D8ED3006356DD /* MainWindowController.swift in Sources */,
 				4FFE16CD1B6ECB320020E1D0 /* NameFormatter.swift in Sources */,
 				4F7107FE1B77748E00E21AAC /* Challenges.swift in Sources */,
-				4FBED6581B873EDE0065F041 /* MyComboBox.swift in Sources */,
 				4FD803261B774E8100D7FAD2 /* Colours.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -478,7 +470,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = CatBase/CatBase.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = CatBase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -491,7 +482,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = CatBase/CatBase.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = CatBase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
