@@ -16,6 +16,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   @IBOutlet weak var window: NSWindow!
   
   var mainWindowController: MainWindowController?
+  var coloursEditorController: ColoursWindowController?
   
   func applicationDidFinishLaunching(aNotification: NSNotification) {
     // Create a window controller
@@ -206,24 +207,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   // MARK: - Menu actions
   // ========================
   
-  /*
-  - (IBAction)importCatsChosen:(id)sender
-  {
   
-  // Create and configure the panel.
-  NSOpenPanel* panel = [NSOpenPanel openPanel];
-  [panel setCanChooseDirectories:NO];
-  [panel setAllowsMultipleSelection:NO];
-  [panel setMessage:@"Name of file to import."];
-  
-  // Display the panel attached to the document's window.
-  [panel beginSheetModalForWindow:_window completionHandler:^(NSInteger result){
-  if (result == NSFileHandlingPanelOKButton) {
-  [self importCatsFrom:[panel URLs]];
+  @IBAction func openColoursEditor(sender: NSObject) {
+    let coloursEditorsController = ColoursWindowController()
+    coloursEditorsController.showWindow(self)
+    self.coloursEditorController = coloursEditorsController
   }
-  }];
-  }
-  */
   
   @IBAction func importACatFile(sender: NSObject) {
     if let window = self.window {
@@ -235,7 +224,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       panel.beginSheetModalForWindow(window) { response in
         // The sheet has finished. Did the user click 'OK'?
         if response == NSModalResponseOK {
-          
+          // import the cats
         }
       }
     }

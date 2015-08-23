@@ -29,8 +29,12 @@
 		4FB9D1211B75B61F00046CBA /* Sex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB9D1201B75B61F00046CBA /* Sex.swift */; };
 		4FBD2EE41B81A84500E28D93 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4FBD2EE31B81A84500E28D93 /* Credits.rtf */; };
 		4FBD2EE61B81A91E00E28D93 /* agouti.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4FBD2EE51B81A91E00E28D93 /* agouti.plist */; };
+		4FBED6581B873EDE0065F041 /* MyComboBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBED6571B873EDE0065F041 /* MyComboBox.swift */; };
+		4FBED65A1B8741110065F041 /* MyTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBED6591B8741110065F041 /* MyTableView.swift */; };
 		4FD803241B774DA500D7FAD2 /* Colours.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4FD803231B774DA500D7FAD2 /* Colours.plist */; };
 		4FD803261B774E8100D7FAD2 /* Colours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD803251B774E8100D7FAD2 /* Colours.swift */; };
+		4FD8384E1B832F3D00A8C7A7 /* ColoursWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD8384C1B832F3D00A8C7A7 /* ColoursWindowController.swift */; };
+		4FD8384F1B832F3D00A8C7A7 /* ColoursWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FD8384D1B832F3D00A8C7A7 /* ColoursWindowController.xib */; };
 		4FEB56AE1B70ABEF00EECA78 /* ShowFormats.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4FEB56AD1B70ABEF00EECA78 /* ShowFormats.plist */; };
 		4FEB56B01B70BFC700EECA78 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEB56AF1B70BFC700EECA78 /* Globals.swift */; };
 		4FFE16C81B6E421A0020E1D0 /* EntrySheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFE16C61B6E421A0020E1D0 /* EntrySheetController.swift */; };
@@ -77,8 +81,12 @@
 		4FBD2EE31B81A84500E28D93 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		4FBD2EE51B81A91E00E28D93 /* agouti.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = agouti.plist; sourceTree = "<group>"; };
 		4FBD2EE71B81AF9900E28D93 /* CatBase.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = CatBase.entitlements; sourceTree = "<group>"; };
+		4FBED6571B873EDE0065F041 /* MyComboBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyComboBox.swift; sourceTree = "<group>"; };
+		4FBED6591B8741110065F041 /* MyTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableView.swift; sourceTree = "<group>"; };
 		4FD803231B774DA500D7FAD2 /* Colours.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Colours.plist; path = pLists/Colours.plist; sourceTree = "<group>"; };
 		4FD803251B774E8100D7FAD2 /* Colours.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Colours.swift; path = "Data Sources.swift/Colours.swift"; sourceTree = "<group>"; };
+		4FD8384C1B832F3D00A8C7A7 /* ColoursWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColoursWindowController.swift; path = Controllers/ColoursWindowController.swift; sourceTree = "<group>"; };
+		4FD8384D1B832F3D00A8C7A7 /* ColoursWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ColoursWindowController.xib; path = Controllers/ColoursWindowController.xib; sourceTree = "<group>"; };
 		4FEB56AD1B70ABEF00EECA78 /* ShowFormats.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ShowFormats.plist; path = pLists/ShowFormats.plist; sourceTree = "<group>"; };
 		4FEB56AF1B70BFC700EECA78 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		4FFE16C61B6E421A0020E1D0 /* EntrySheetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EntrySheetController.swift; path = Controllers/EntrySheetController.swift; sourceTree = "<group>"; };
@@ -135,11 +143,13 @@
 				4F38B8801B6D8ED3006356DD /* MainWindowController.swift */,
 				4F3EFAE11B6DB98C00DA2F5C /* AddShowWindowController.swift */,
 				4FFE16C61B6E421A0020E1D0 /* EntrySheetController.swift */,
+				4FD8384C1B832F3D00A8C7A7 /* ColoursWindowController.swift */,
 				4F38B8611B6D8CCA006356DD /* Images.xcassets */,
 				4F38B8631B6D8CCA006356DD /* MainMenu.xib */,
 				4F38B8811B6D8ED3006356DD /* MainWindowController.xib */,
 				4F3EFAE21B6DB98C00DA2F5C /* AddShowWindowController.xib */,
 				4FFE16C71B6E421A0020E1D0 /* EntrySheetController.xib */,
+				4FD8384D1B832F3D00A8C7A7 /* ColoursWindowController.xib */,
 				4F38B85E1B6D8CCA006356DD /* CatBase.xcdatamodeld */,
 				4F38B85A1B6D8CCA006356DD /* Supporting Files */,
 			);
@@ -197,6 +207,8 @@
 				4FB9D1201B75B61F00046CBA /* Sex.swift */,
 				4F9235FD1B7952B70096ADFD /* Titles.swift */,
 				4FB9D11E1B75ABA800046CBA /* DataSource.swift */,
+				4FBED6571B873EDE0065F041 /* MyComboBox.swift */,
+				4FBED6591B8741110065F041 /* MyTableView.swift */,
 			);
 			name = "Data sources";
 			sourceTree = "<group>";
@@ -300,6 +312,7 @@
 				4FD803241B774DA500D7FAD2 /* Colours.plist in Resources */,
 				4F9B6C091B7FF6EA00C2964B /* CageTypes.plist in Resources */,
 				4F38B8621B6D8CCA006356DD /* Images.xcassets in Resources */,
+				4FD8384F1B832F3D00A8C7A7 /* ColoursWindowController.xib in Resources */,
 				4FBD2EE61B81A91E00E28D93 /* agouti.plist in Resources */,
 				4F38B8831B6D8ED3006356DD /* MainWindowController.xib in Resources */,
 				4F9236001B7953500096ADFD /* Titles.plist in Resources */,
@@ -333,15 +346,18 @@
 				4FB9D1211B75B61F00046CBA /* Sex.swift in Sources */,
 				4F3EFAE61B6DEE1500DA2F5C /* Breeds.swift in Sources */,
 				4F38B88B1B6D9156006356DD /* Show.swift in Sources */,
+				4FD8384E1B832F3D00A8C7A7 /* ColoursWindowController.swift in Sources */,
 				4FEB56B01B70BFC700EECA78 /* Globals.swift in Sources */,
 				4F38B8601B6D8CCA006356DD /* CatBase.xcdatamodeld in Sources */,
 				4F3EFAE31B6DB98C00DA2F5C /* AddShowWindowController.swift in Sources */,
+				4FBED65A1B8741110065F041 /* MyTableView.swift in Sources */,
 				4FFE16C81B6E421A0020E1D0 /* EntrySheetController.swift in Sources */,
 				4F9235FE1B7952B70096ADFD /* Titles.swift in Sources */,
 				4FFE16CC1B6ECB320020E1D0 /* AllCapsFormatter.swift in Sources */,
 				4F38B8821B6D8ED3006356DD /* MainWindowController.swift in Sources */,
 				4FFE16CD1B6ECB320020E1D0 /* NameFormatter.swift in Sources */,
 				4F7107FE1B77748E00E21AAC /* Challenges.swift in Sources */,
+				4FBED6581B873EDE0065F041 /* MyComboBox.swift in Sources */,
 				4FD803261B774E8100D7FAD2 /* Colours.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

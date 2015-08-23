@@ -10,7 +10,7 @@ import Cocoa
 
 var breedsToken: dispatch_once_t = 0
 
-class Breeds: DataSource {
+class Breeds: DataSource, NSTableViewDataSource {
   
   static var entity = "Breeds"
   private static var breedsByGroupAndShowtype   = [String : [String : [String]]]()
@@ -86,6 +86,26 @@ class Breeds: DataSource {
       count++
     }
     return count
+  }
+  
+  // ************************************
+  // MARK: - TableView datasource methods
+  // ************************************
+  
+  func numberOfRowsInTableView(tableView: NSTableView) -> Int {
+    let count = self.list.count
+    return count
+  }
+  
+  func tableView(aTableView: NSTableView,
+    objectValueForTableColumn aTableColumn: NSTableColumn?,
+    row rowIndex: Int) -> AnyObject? {
+      if rowIndex < self.list.count && rowIndex > -1 {
+        return self.list[rowIndex]
+      } else {
+        print("Asked for value of breed row: \(rowIndex) out of bounds: \(self.list.count)")
+        return ""
+      }
   }
 
 }

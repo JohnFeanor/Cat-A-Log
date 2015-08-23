@@ -10,6 +10,10 @@ import Cocoa
 
 typealias DictOfStringArray = [String : [String]]
 
+@objc protocol BreedSelector {
+  var currentBreed: String { get }
+}
+
 struct AgeStruct {
   var minimumAge: Int
   var timeUnit : String
