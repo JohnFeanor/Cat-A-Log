@@ -21,7 +21,7 @@ class Titles: DataSource {
     dispatch_once(&titlesToken) {
       let temp = arrayFromPList(Titles.entity)
       if temp != nil {
-        list = temp!
+        list = temp as! [String]
       } else {
         fatalError("Cannot read in Titles list")
       }

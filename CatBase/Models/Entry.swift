@@ -1,6 +1,6 @@
 //
 //  Entry.swift
-//  
+//
 //
 //  Created by John Sandercock on 2/08/2015.
 //
@@ -51,7 +51,7 @@ class Entry: NSManagedObject {
       print("?? someone trying to set the count in Entry")
     }
   }
-    
+  
   convenience init(entryData: [String : AnyObject], insertIntoManagedObjectContext context: NSManagedObjectContext?) {
     if let context = context {
       let entryEntity = NSEntityDescription.entityForName(Entry.entity, inManagedObjectContext: context)
@@ -64,62 +64,31 @@ class Entry: NSManagedObject {
         
         // find any cats with the same registration (unless pending)
         let registration = entryData[Cat.registration] as! String
-        let sameRego: [Cat]
-        if registration != pending {
-          sameRego  = fetchEntitiesNamed(Cat.entity, inContext: context, usingFormat: "\(Cat.registration) LIKE[c] '\(registration)'") as! [Cat]
-        } else {
-          sameRego = []
-        }
-
-        // find any cats with the same name
         let name = entryData[Cat.name] as! String
-        let sameName = fetchEntitiesNamed(Cat.entity, inContext: context, usingFormat: "\(Cat.name) LIKE[c] '\(name)'") as! [Cat]
         
-        // put all those found cats into one big array
-        let same = sameRego + sameName.filter { !sameRego.contains($0)}
-
-        if same.isEmpty {
-          // have no existing cats, so create a new one
-          // -------------------------------------------
-          let newCat = Cat(catData: entryData, insertIntoManagedObjectContext: context)
-          self.cat = newCat
-        } else {
+        if let existingCats = existingCatsWithRegistration(registration, orName: name, inContext: context) {
           // set the first found cat to these new values
           // -------------------------------------------
-          let newCat = same.first!
-          newCat.setValuesTo(entryData)
-          self.cat = newCat
+          let existingCat = existingCats.first!
+          existingCat.setValuesTo(entryData)
+          self.cat = existingCat
           
           // delete any other found cats
           // ---------------------------
-          let excessCats = same.count - 1
+          let excessCats = existingCats.count - 1
           if excessCats > 0 {
             for i in 1 ... excessCats {
-              context.deleteObject(same[i])
+              context.deleteObject(existingCats[i])
             }
           }
           print("deleted \(excessCats) cats from database")
+        } else {
+          let newCat = Cat(catData: entryData, insertIntoManagedObjectContext: context)
+          self.cat = newCat
         }
       }
     } else {
       fatalError("Database corrupt - cannot load managedObjectContext")
-    }
-  }
-  
-  func fetchEntitiesNamed(entityName: String, inContext context:NSManagedObjectContext, usingFormat format: String) -> [NSManagedObject] {
-    let fetchRequest = NSFetchRequest(entityName: entityName)
-    fetchRequest.predicate = NSPredicate(format: format)
-    let fetchResult: [NSManagedObject]?
-    do {
-      fetchResult = try context.executeFetchRequest(fetchRequest) as? [NSManagedObject]
-    } catch {
-      print("\n** Error in fetch request **\n")
-      return []
-    }
-    if let fetchResult = fetchResult {
-      return fetchResult
-    } else {
-      return []
     }
   }
   
@@ -129,7 +98,7 @@ class Entry: NSManagedObject {
   
   private func setValuesTo(entryData: [String : AnyObject]) {
     for key in Entry.properties {
-      print("setting Entry property: \(key) ", appendNewline: false)
+      print("setting Entry property: \(key) ", terminator: "")
       if let value = entryData[key] {
         print("to: \(value)")
         setValue(value, forKey: key)
@@ -146,5 +115,5 @@ class Entry: NSManagedObject {
   func dictionary()  -> [String : AnyObject] {
     return self.dictionaryWithValuesForKeys(Show.properties)
   }
-
+  
 }

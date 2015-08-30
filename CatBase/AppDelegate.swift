@@ -18,6 +18,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   var mainWindowController: MainWindowController?
   var coloursEditorController: ColoursWindowController?
   
+  var openPanel: NSOpenPanel? = nil
+  
   func applicationDidFinishLaunching(aNotification: NSNotification) {
     // Create a window controller
     let mainWindowController = MainWindowController()
@@ -27,6 +29,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     //Set the property to point to the window controller
     self.mainWindowController = mainWindowController
+    
+    let ages = Globals.kittenGroups
   }
   
   
@@ -226,11 +230,60 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // The sheet has finished. Did the user click 'OK'?
         if response == NSModalResponseOK {
           // import the cats
+          let url = self.openPanel?.URL
+          self.importCatsAtURL(url)
+          self.openPanel = nil
         }
       }
+      openPanel = panel
     }
   }
-
+  
+  func importCatsAtURL(url: NSURL?) {
+    guard let url = url
+      else {
+        return
+    }
+    let buffer: NSString
+    do {
+      buffer = try NSString(contentsOfURL: url, encoding: NSUTF8StringEncoding)
+    }
+    catch {
+      errorAlert(message: "Error trying to read Cats file")
+      return
+    }
+    
+    let strings = buffer.componentsSeparatedByString("\t")
+    strings.count
+    
+    let numberOfCatProperties = Cat.positions.count
+    let numberOfCats = strings.count / numberOfCatProperties
+    
+    var start = 0
+    var count = 0
+    
+    for _ in 0 ..< numberOfCats {
+      let end = start + numberOfCatProperties
+      let thisCat = strings[start ..< end]
+      // setValue(array[Cat.positions[property]!], forKey: property)
+      let registration = thisCat[Cat.positions[Cat.registration]!]
+      let name = thisCat[Cat.positions[Cat.name]!]
+      
+      if existingCatsWithRegistration(registration, orName: name, inContext: self.managedObjectContext!) == nil {
+        let _ = Cat(array: thisCat, insertIntoManagedObjectContext: self.managedObjectContext)
+        count++
+      } else {
+        print("Importing duplicate cat")
+      }
+      start = end
+    }
+    print("Added \(count) cats to the database")
+    do { try self.managedObjectContext!.save() }
+    catch{
+      print("Error trying to save managed object context after importing of cats")
+    }
+  }
   
 }
+
 

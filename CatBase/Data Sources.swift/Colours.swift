@@ -12,6 +12,14 @@ var coloursToken: dispatch_once_t = 0
 
 class Colours: DataSource, NSTableViewDataSource {
   
+  // breedSource must be bound to a control which will return a valid breed name
+  // ----------------------------------------------------------------------------
+  @IBOutlet weak var breedSource: NSControl!
+  
+  // *************************
+  // MARK: - class properties
+  // *************************
+  
   static var isDirty = false
   
   static var entity = "Colours"
@@ -20,18 +28,10 @@ class Colours: DataSource, NSTableViewDataSource {
       isDirty = true
     }
   }
-  
-  // breedSource must be bound to a control which will return a valid breed name
-  
-  @IBOutlet weak var breedSource: NSControl!
-  
-  var currentBreed: String? {
-    if let breedSource = breedSource {
-      return breedSource.currentBreed
-    } else {
-      return nil
-    }
-  }
+
+  // *************************
+  // MARK: - class methods
+  // *************************
   
   override class func initialize() {
     dispatch_once(&coloursToken) {
@@ -48,8 +48,23 @@ class Colours: DataSource, NSTableViewDataSource {
     }
   }
   
-  func indexInBounds(index: Int) -> Bool {
-    return (index > -1 && index < self.list.count)
+  class func rankOf(colour: String, forBreed breed: String) -> Int? {
+    if let colours = Colours.list[breed] {
+      return colours.indexOf(colour)
+    }
+    return nil
+  }
+  
+  // ****************************
+  // MARK: - instance properties
+  // ****************************
+  
+  var currentBreed: String? {
+    if let breedSource = breedSource {
+      return breedSource.currentBreed
+    } else {
+      return nil
+    }
   }
   
   override var list: [String] {
@@ -60,6 +75,14 @@ class Colours: DataSource, NSTableViewDataSource {
         return []
       }
     }
+  }
+  
+  // *************************
+  // MARK: - instance methods
+  // *************************
+  
+  private func indexInBounds(index: Int) -> Bool {
+    return (index > -1 && index < self.list.count)
   }
   
   func  colourAtIndex(index: Int) -> String {

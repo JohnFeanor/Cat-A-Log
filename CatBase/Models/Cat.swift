@@ -14,6 +14,8 @@ class Cat: NSManagedObject {
   static var entity = "Cat"
   static var properties = [Cat.birthDate, Cat.breed, Cat.breeder, Cat.challenge, Cat.colour, Cat.dam, Cat.exhibitor, Cat.name, Cat.registration, Cat.sex, Cat.sire, Cat.title, Cat.vaccinated]
   
+  static var positions: [String : Int] = [Cat.name : 0, Cat.registration : 1, Cat.title : 2, Cat.birthDate : 3, Cat.breed : 4, Cat.exhibitor : 5, Cat.challenge : 6, Cat.colour : 7, Cat.sire : 8, Cat.breeder : 9, Cat.sex : 10, Cat.dam : 11]
+  
   static var birthDate    = "birthDate"
   static var breed        = "breed"
   static var breeder      = "breeder"
@@ -53,7 +55,31 @@ class Cat: NSManagedObject {
       self.setValuesTo(catData)
     }
   }
-
+  
+  convenience init(array: ArraySlice<String>, insertIntoManagedObjectContext context: NSManagedObjectContext?) {
+    let catEntity = NSEntityDescription.entityForName(Cat.entity, inManagedObjectContext: context!)
+    if catEntity == nil {
+      print("Cannot create new cat entity")
+      abort()
+    } else {
+      self.init(entity: catEntity!, insertIntoManagedObjectContext: context)
+      print("**  Next birthdate is: \(array[Cat.positions[Cat.birthDate]!])")
+      for property in Cat.properties {
+        switch property {
+        case Cat.birthDate:
+          let dateFormatter = NSDateFormatter()
+          dateFormatter.dateFormat = "dd/MM/yy"
+          let dateString = array[Cat.positions[Cat.birthDate]!]
+          self.birthDate = dateFormatter.dateFromString(dateString)!
+        case Cat.vaccinated:
+          self.vaccinated = false
+        default:
+          setValue(array[Cat.positions[property]!], forKey: property)
+        }
+      }
+    }
+  }
+  
   func setValuesTo(entryData: [String : AnyObject]) {
     for key in Cat.properties {
       if let value = entryData[key] {
@@ -65,16 +91,170 @@ class Cat: NSManagedObject {
   override func setValue(value: AnyObject?, forUndefinedKey key: String) {
     print("Cat given undefined key: \(key)")
   }
-
+  
   func dictionary()  -> NSDictionary {
     return self.dictionaryWithValuesForKeys(Show.properties)
   }
-
+  
+  // ************************
   // MARK: - YES/NO queries
+  // ************************
   
   var registrationPending: Bool {
     return self.registration.caseInsensitiveCompare("Pending") == NSComparisonResult.OrderedSame
   }
+  
+  var isKitten: Bool {
+    if let showDate = Globals.currentShow?.date {
+      let ageInMonths = showDate.monthsDifferenceTo(self.birthDate)
+      return ageInMonths < 9
+    } else {
+      return false
+    }
+  }
+  
+  var isEntire: Bool {
+    return Sex.isEntire(self.sex) ?? false
+  }
+  
+  
+  // *************************
+  // MARK: - Ranking queries
+  // *************************
+  
+  var groupNumber: Int {
+    return Breeds.groupNumberOf(self.breed) ?? -1
+  }
+  
+  var section: Section {
+    if self.isKitten {
+      return .kitten
+    }
+    if self.isEntire {
+      return .entire
+    }
+    return .desexed
+  }
+  
+  var breedRank: Int {
+    return Breeds.rankOf(self.breed) ?? 999
+  }
+  
+  var agoutiRank: Int {
+    if let ans = Globals.agoutiClasses.indexOf(self.breed) {
+      return ans + 1
+    } else {
+      return 0
+    }
+  }
+  
+  var colourRank: Int {
+    
+    if let ans = Colours.rankOf(self.colour, forBreed: self.breed) {
+      return ans
+    } else {
+      return 999
+    }
+  }
+  
+  var ageRank: Int {
+    if let showDate = Globals.currentShow?.date {
+      let catAge = showDate.monthsDifferenceTo(self.birthDate)
+      let ages = Globals.kittenGroups
+      for age in ages {
+        if catAge < age {
+          return age
+        }
+      }
+    }
+    return 999
+  }
+  
+  var sexRank: Int {
+    return Sex.rankOf(self.sex) ?? 999
+  }
+  
+  // *************************
+  // MARK: - Cat comparision
+  // *************************
+  
+  func compareWith(anotherCat: Cat) -> NSComparisonResult {
+    
+    // first compare on group
+    // ----------------------
+    if self.groupNumber < anotherCat.groupNumber {
+      return .OrderedAscending
+    }
+    if self.groupNumber > anotherCat.groupNumber {
+      return .OrderedDescending
+    }
+    
+    // then compare on section<kitten, entire, desexed>
+    // -------------------------------------------------
+    if self.section < anotherCat.section {
+      return .OrderedAscending
+    }
+    if self.section > anotherCat.section {
+      return .OrderedDescending
+    }
+    
+    // then compare on breed
+    // ----------------------
+    if self.breedRank < anotherCat.breedRank {
+      return .OrderedAscending
+    }
+    if self.breedRank > anotherCat.breedRank {
+      return .OrderedDescending
+    }
+    
+    // then on agouti (if agouti)
+    // --------------------------
+    if self.agoutiRank < anotherCat.agoutiRank {
+      return .OrderedAscending
+    }
+    if self.agoutiRank > anotherCat.agoutiRank {
+      return .OrderedDescending
+    }
+    
+    // then on colour
+    // --------------
+    if self.colourRank < anotherCat.colourRank {
+      return .OrderedAscending
+    }
+    if self.colourRank > anotherCat.colourRank {
+      return .OrderedDescending
+    }
+    
+    // then on age ranking
+    // --------------------
+    if self.ageRank < anotherCat.ageRank {
+      return .OrderedAscending
+    }
+    if self.ageRank > anotherCat.ageRank {
+      return .OrderedDescending
+    }
+    
+    // then on <male>, <female>, <neuter>, <spay>
+    // -------------------------------------------
+    if self.sexRank < anotherCat.sexRank {
+      return .OrderedAscending
+    }
+    if self.sexRank > anotherCat.sexRank {
+      return .OrderedDescending
+    }
+    
+    // then on age
+    // ------------
+    let comparison = self.birthDate.compare(anotherCat.birthDate)
+    switch comparison {
+    case .OrderedAscending, .OrderedDescending:
+      return comparison
+    default:
+      break
+    }
+    
+    //lastly on name
+    return self.name.caseInsensitiveCompare(anotherCat.name)
+  }
 }
-
 

@@ -72,7 +72,7 @@ class NameFormatter: NSFormatter {
     var lengthOfWord = 0
     let endOfSentence = sentenceLength - 1
     let start = wordCharacter.evaluateWithObject(sentence[endOfSentence]) ? endOfSentence : endOfSentence - 1
-    for x in stride(from: start, through: 0, by: -1) {
+    for x in start.stride(through: 0, by: -1) {
       let letter = sentence[x]
       if alphaCharacter.evaluateWithObject(letter) || x == start {
         lengthOfWord++

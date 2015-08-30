@@ -12,6 +12,10 @@ var sexesToken: dispatch_once_t = 0
 
 class Sex: DataSource {
   
+  // ******************************
+  // Class methods and properties
+  // ******************************
+  
   static var list = DictOfStringArray()
   
   override class func initialize() {
@@ -25,18 +29,44 @@ class Sex: DataSource {
     }
   }
   
+  class func isEntire(gender: String) -> Bool? {
+    if let showAffiliation = Globals.currentShow?.affiliation {
+      let list = Sex.list[showAffiliation]
+      return list?.indexOf(gender) != (Section.desexed.rawValue)
+    }
+    return nil
+  }
+  
+  class func rankOf(gender: String) -> Int? {
+    if let showAffiliation = Globals.currentShow?.affiliation {
+      let list = Sex.list[showAffiliation]
+      return list?.indexOf(gender)
+    }
+    return nil
+  }
+  
+  class func nameOf(number: Int) -> String? {
+    if let showAffiliation = Globals.currentShow?.affiliation {
+      let list = Sex.list[showAffiliation]
+      return list?[number]
+    }
+    return nil
+  }
+  
+  // *********************************
+  // Instance methods and properties
+  // ********************************
+  
   override init() {
     super.init()
     self.limitToList = true
   }
   
   override var list: [String] {
-    if let theShow = Globals.currentShow {
-      let currentShowType = theShow.affiliation
-      return Sex.list[currentShowType]!
+    if let showAffiliation = Globals.currentShow?.affiliation {
+      return Sex.list[showAffiliation]!
     } else {
       return []
     }
   }
-
 }

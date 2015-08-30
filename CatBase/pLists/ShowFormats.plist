@@ -4,6 +4,12 @@
 <dict>
 	<key>ACF Show</key>
 	<dict>
+		<key>kittenAges</key>
+		<array>
+			<integer>5</integer>
+			<integer>7</integer>
+			<integer>9</integer>
+		</array>
 		<key>MinAge</key>
 		<array>
 			<integer>3</integer>
@@ -137,6 +143,12 @@
 	</dict>
 	<key>COAWA Show</key>
 	<dict>
+		<key>kittenAges</key>
+		<array>
+			<integer>5</integer>
+			<integer>7</integer>
+			<integer>9</integer>
+		</array>
 		<key>MinAge</key>
 		<array>
 			<integer>3</integer>
@@ -296,6 +308,12 @@
 	</dict>
 	<key>QFA Show</key>
 	<dict>
+		<key>kittenAges</key>
+		<array>
+			<integer>5</integer>
+			<integer>7</integer>
+			<integer>9</integer>
+		</array>
 		<key>MinAge</key>
 		<array>
 			<integer>3</integer>

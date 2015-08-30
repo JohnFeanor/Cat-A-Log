@@ -10,11 +10,36 @@ import Cocoa
 
 var breedsToken: dispatch_once_t = 0
 
+private struct BreedList {
+  var groupName = ""
+  var breeds = [String]()
+}
+
 class Breeds: DataSource, NSTableViewDataSource {
   
   static var entity = "Breeds"
-  private static var breedsByGroupAndShowtype   = [String : [String : [String]]]()
+  private static var breedsByGroupAndShowtype   = [String : [BreedList]]()
   private static var nonPedigreesByShowType = [String : [String]]()
+  
+  private static var groups:[BreedList]? {
+    if let currentShowAffiliation = Globals.currentShow?.affiliation {
+      return Breeds.breedsByGroupAndShowtype[currentShowAffiliation]
+    }
+    print("Breeds: currentShow == nil")
+    return nil
+  }
+  
+  private static var list: [String]? {
+      if let groups = Breeds.groups {
+        var ans = [String]()
+        for group in groups {
+          ans += group.breeds
+        }
+        return ans
+      }
+    print("Breeds: breedsByGroupAndShowtype is nil")
+    return nil
+  }
   
   // ************************************
   // MARK: - Class initializer
@@ -27,14 +52,14 @@ class Breeds: DataSource, NSTableViewDataSource {
       // for each show type e.g. QFA, ACF or COWOCA
       for (showTypeName, showTypeData) in Globals.dataByGroup {
         let groups = showTypeData.valueForKey(Headings.groups) as! [[String : AnyObject]]
-        var tempBreeds = [String : [String]]()
+        var tempBreeds = [BreedList]()
         for group in groups {
           let groupBreeds = group[Headings.breeds] as! [String]
           let groupName = group[Headings.group] as! String
-          tempBreeds[groupName] = groupBreeds
+          tempBreeds.append(BreedList(groupName: groupName, breeds: groupBreeds))
         }
         if let nonPedigree = groups.last {
-            nonPedigreesByShowType[showTypeName] = (nonPedigree[Headings.breeds] as! [String])
+          nonPedigreesByShowType[showTypeName] = (nonPedigree[Headings.breeds] as! [String])
         }
         breedsByGroupAndShowtype[showTypeName] = tempBreeds
       }
@@ -46,8 +71,7 @@ class Breeds: DataSource, NSTableViewDataSource {
   // ************************************
   
   class func nonPedigreeBreed(breedName: String) -> Bool {
-    if let theShow = Globals.currentShow {
-      let currentShowType = theShow.affiliation
+    if let currentShowType = Globals.currentShow?.affiliation {
       if let currentBreeds = Breeds.nonPedigreesByShowType[currentShowType] {
         return currentBreeds.contains(breedName)
       }
@@ -55,6 +79,49 @@ class Breeds: DataSource, NSTableViewDataSource {
     return false
   }
   
+  class func groupNumberOf(breedName: String) -> Int? {
+    if let groups = Breeds.groups {
+      var breedsGroup = 0
+      for group in groups {
+        if group.breeds.contains(breedName) {
+          return breedsGroup
+        }
+        breedsGroup++
+      }
+      print("group number for \(breedName) not found")
+    }
+    return nil
+  }
+  
+  class func nameOfGroupNumber(index: Int) -> String? {
+    if let groups = Breeds.groups {
+      if (index < 0) || (index >= groups.count) {
+        print("name for group \(index) not found")
+      } else {
+        return groups[index].groupName
+      }
+    }
+    return nil
+  }
+  
+  class func rankOf(breedName: String) -> Int? {
+    if let list = Breeds.list {
+      return list.indexOf(breedName)
+    }
+    return nil
+  }
+  
+  class func nameOf(index: Int) -> String? {
+    if let list = Breeds.list {
+      if (index < 0) || (index >= list.count) {
+        return nil
+      } else {
+        return list[index]
+      }
+    }
+    return nil
+  }
+
   // ************************************
   // MARK: - the list
   // ************************************
@@ -63,14 +130,14 @@ class Breeds: DataSource, NSTableViewDataSource {
     if let theShow = Globals.currentShow {
       let currentShowType = theShow.affiliation
       var answer = [String]()
-      if let currentBreeds = Breeds.breedsByGroupAndShowtype[currentShowType] {
-        for (_, breeds) in currentBreeds {
-          answer += breeds
+      if let groups = Breeds.breedsByGroupAndShowtype[currentShowType] {
+        for group in groups {
+          answer += group.breeds
         }
         return answer
       }
     }
-      return []
+    return []
   }
   
   // ************************************
@@ -107,5 +174,5 @@ class Breeds: DataSource, NSTableViewDataSource {
         return ""
       }
   }
-
+  
 }

@@ -59,8 +59,8 @@ class EntrySheetController: NSWindowController {
       // find out if this cat is in the database
       // and fill in the details if it is
       if registration != pending && !filledFields {
-        let same = self.fetchCatEntityUsing("registration LIKE[c] '\(self.registration)'")
-        copyPropertiesFrom(same.first, except: [Cat.registration])
+        let same = fetchCatsWithRegistration(registration, inContext: self.managedObjectContext)
+        setSheetTo(same.first, except: [Cat.registration])
       }
     }
   }
@@ -77,9 +77,9 @@ class EntrySheetController: NSWindowController {
         }
       }
       if !filledFields {
-        let same = self.fetchCatEntityUsing("name LIKE[c] '\(self.name)'")
+        let same = fetchCatsWithName(self.name, inContext: self.managedObjectContext)
         let cat = same.first
-        copyPropertiesFrom(cat, except: [Cat.registration, Cat.name])
+        setSheetTo(cat, except: [Cat.registration, Cat.name])
         let noRego = registration.isEmpty || registration == pending
         if noRego && cat != nil {
           registration = cat!.registration
@@ -176,30 +176,10 @@ class EntrySheetController: NSWindowController {
   // ***********************
   // MARK: - Helper Methods
   // ***********************
-  
-  // Helper method to do a fetch request on data base
-  // -------------------------------------------------
-  func fetchCatEntityUsing(format: String) -> [Cat] {
-    let fetchRequest = NSFetchRequest(entityName: Cat.entity)
-    fetchRequest.predicate = NSPredicate(format: format)
-    let fetchResult: [Cat]?
-    do {
-      fetchResult = try managedObjectContext.executeFetchRequest(fetchRequest) as? [Cat]
-    } catch {
-      print("\n** Error in fetch request **\n")
-      return []
-    }
-    if let fetchResult = fetchResult {
-      print("Entry sheet fetched \(fetchResult.count) cats")
-      return fetchResult
-    } else {
-      return []
-    }
-  }
-  
-  // Helper method to copy items from an existing Cat
-  // ------------------------------------------------
-  func copyPropertiesFrom(original: Cat?, except exceptions: [String]?) {
+    
+  // Helper methods to copy items from an existing Cat or Entry
+  // ----------------------------------------------------------
+  func setSheetTo(original: Cat?, except exceptions: [String]?) {
     if let original = original {
       let properties: [String]
       if exceptions == nil {

@@ -61,15 +61,6 @@ class MainWindowController: NSWindowController {
   }
   
   // ========================
-  // MARK: - Methods
-  // ========================
-
-  func tableViewSelectionDidChange(aNotification: NSNotification) {
-    Globals.currentShow = theShowController.selectedObjects?.first as? Show
-    Globals.currentEntry = theEntriesController.selectedObjects?.first as? Entry
-  }
-  
-  // ========================
   // MARK: - Show IBActions
   // ========================
   
