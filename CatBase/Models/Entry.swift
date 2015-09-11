@@ -14,6 +14,8 @@ class Entry: NSManagedObject {
   static var entity = "Entry"
   static var properties = [Entry.cageSize, Entry.catalogueRequired, Entry.hireCage, Entry.litterCage, Entry.ring1, Entry.ring2, Entry.ring3, Entry.ring4, Entry.ring5, Entry.ring6, Entry.willWork]
   
+  private static var rings = ["ring1", "ring2", "ring3", "ring4", "ring5", "ring6"]
+  
   static var cageSize           = "cageSize"
   static var catalogueRequired  = "catalogueRequired"
   static var hireCage           = "hireCage"
@@ -27,29 +29,27 @@ class Entry: NSManagedObject {
   static var willWork           = "willWork"
   
   
-  @NSManaged var cageSize: NSNumber
-  @NSManaged var catalogueRequired: NSNumber
-  @NSManaged var hireCage: NSNumber
-  @NSManaged var litterCage: NSNumber
-  @NSManaged var ring1: NSNumber
-  @NSManaged var ring2: NSNumber
-  @NSManaged var ring3: NSNumber
-  @NSManaged var ring4: NSNumber
-  @NSManaged var ring5: NSNumber
-  @NSManaged var ring6: NSNumber
-  @NSManaged var willWork: NSNumber
-  @NSManaged var cat: Cat?
-  @NSManaged var litter: Litter?
-  @NSManaged var show: Show
+  @NSManaged private(set) var cageSize: NSNumber
+  @NSManaged private(set) var catalogueRequired: NSNumber
+  @NSManaged private(set) var hireCage: NSNumber
+  @NSManaged private(set) var litterCage: NSNumber
+  @NSManaged private(set) var ring1: NSNumber
+  @NSManaged private(set) var ring2: NSNumber
+  @NSManaged private(set) var ring3: NSNumber
+  @NSManaged private(set) var ring4: NSNumber
+  @NSManaged private(set) var ring5: NSNumber
+  @NSManaged private(set) var ring6: NSNumber
+  @NSManaged private(set) var willWork: NSNumber
+  @NSManaged private(set) var cat: Cat
+  @NSManaged private(set) var show: Show
   
-  dynamic var count: Int {
-    get {
-      print("?? someone trying to count Entry \(cat?.name)")
-      return 1
-    }
-    set {
-      print("?? someone trying to set the count in Entry")
-    }
+  
+  override var description: String {
+      return "\(self.cat.name)  \(self.cat.breed)"
+  }
+  
+  dynamic var name: String {
+    return cat.name
   }
   
   convenience init(entryData: [String : AnyObject], insertIntoManagedObjectContext context: NSManagedObjectContext?) {
@@ -91,16 +91,31 @@ class Entry: NSManagedObject {
       fatalError("Database corrupt - cannot load managedObjectContext")
     }
   }
+
+  
+  // **********************************
+  // MARK: - Changing property values
+  // **********************************
   
   override func setValue(value: AnyObject?, forUndefinedKey key: String) {
     print("Entry given undefined key: \(key)")
   }
   
+  var litter: Bool {
+    get {
+      return self.litterCage.boolValue
+    }
+    set {
+     self.litterCage = NSNumber(bool: newValue)
+      if let size = Globals.cageTypes.sizes.last where newValue {
+        cageSize = size
+      }
+    }
+  }
+  
   private func setValuesTo(entryData: [String : AnyObject]) {
     for key in Entry.properties {
-      print("setting Entry property: \(key) ", terminator: "")
       if let value = entryData[key] {
-        print("to: \(value)")
         setValue(value, forKey: key)
       }
       
@@ -109,11 +124,83 @@ class Entry: NSManagedObject {
   
   func updateTo(entryData: [String : AnyObject]) {
     self.setValuesTo(entryData)
-    self.cat?.setValuesTo(entryData)
+    self.cat.setValuesTo(entryData)
   }
   
   func dictionary()  -> [String : AnyObject] {
     return self.dictionaryWithValuesForKeys(Show.properties)
   }
   
+  
+  // **********************************
+  // MARK: - Queries about the Entry
+  // **********************************
+  
+  var isInLitter: Bool {
+      return litterCage.boolValue
+  }
+  
+  func isInLitter(litter: Litter) -> Bool {
+    
+    // ** must not be a companion
+    if cat.isCompanion { return false }
+    
+    // ** must be a kitten
+    if !cat.isKitten { return false }
+    
+    // ** must have the same birthdate
+    if !cat.birthDate.isEqualToDate(litter.birthDate) { return false}
+    
+    // ** must have the same sire
+    if cat.sire != litter.sire { return false }
+    
+    // ** must have the same dam
+    if cat.dam != litter.dam { return false }
+    
+    // if all are true, kitten is part of this litter
+    return true
+  }
+  
+  var typeOfCage: String {
+    return Globals.cageTypes.names[self.cageSize.integerValue]
+  }
+  
+  var rings: String {
+    var ans = ""
+    var count = 1
+    for ring in Entry.rings {
+      if let inThisRing = self.valueForKey(ring) as? NSNumber {
+        if inThisRing.boolValue {
+          ans += "\(count)"
+        }
+      }
+      count++
+    }
+    return ans
+  }
+  
+  func sameChallangeAs(other: Entry) -> Bool {
+    // Kittens do not get challenges
+    if self.cat.isKitten { return false }
+    
+    // Must be same sex
+    if self.cat.sex != other.cat.sex { return false }
+    
+    // Must be same breed
+    if self.cat.breed != other.cat.breed { return false }
+    
+    return self.sameColourAs(other)
+  }
+  
+  func sameColourAs(other: Entry) -> Bool {
+    
+    // Must be the same agouti class
+    if self.cat.agoutiRank != other.cat.agoutiRank { return false }
+    
+    // Must be the same colour
+    if self.cat.colour != other.cat.colour { return false }
+    
+    return true
+  }
+
 }

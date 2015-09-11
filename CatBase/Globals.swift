@@ -63,14 +63,7 @@ func <(left: Section, right: Section) -> Bool {
   return left.rawValue < right.rawValue
 }
 
-//struct Section {
-//  static let kitten   = 0
-//  static let entire   = 1
-//  static let desexed  = 2
-//}
-
 let pending = "Pending"
-
 
 let space = " "
 let apostrophy = "'"

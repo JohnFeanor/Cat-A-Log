@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14F27" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="8187.4" systemVersion="14F27" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8173.3"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8187.4"/>
         <capability name="box content view" minToolsVersion="7.0"/>
     </dependencies>
     <objects>
@@ -84,7 +84,7 @@
                                                 <connections>
                                                     <binding destination="zuf-cK-OoZ" name="content" keyPath="arrangedObjects" id="pBU-y6-svd"/>
                                                     <binding destination="zuf-cK-OoZ" name="selectionIndexes" keyPath="selectionIndexes" previousBinding="pBU-y6-svd" id="njY-9V-0dl"/>
-                                                    <binding destination="zuf-cK-OoZ" name="sortDescriptors" keyPath="sortDescriptors" previousBinding="njY-9V-0dl" id="8ge-7V-Sxb"/>
+                                                    <binding destination="zuf-cK-OoZ" name="sortDescriptors" keyPath="sortDescriptors" previousBinding="njY-9V-0dl" id="68f-Kg-WuT"/>
                                                     <outlet property="delegate" destination="z8R-RM-aC6" id="4GT-eB-KKq"/>
                                                 </connections>
                                             </tableView>
@@ -443,6 +443,7 @@ DQ
                                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
+                                                        <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="cat.registration"/>
                                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                         <prototypeCellViews>
                                                             <tableCellView id="SOe-an-0Ms">
@@ -478,6 +479,7 @@ DQ
                                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
+                                                        <sortDescriptor key="sortDescriptorPrototype" selector="caseInsensitiveCompare:" sortKey="cat.title"/>
                                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                         <prototypeCellViews>
                                                             <tableCellView id="559-l8-Fak">
@@ -513,6 +515,7 @@ DQ
                                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
+                                                        <sortDescriptor key="sortDescriptorPrototype" selector="caseInsensitiveCompare:" sortKey="name"/>
                                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                         <prototypeCellViews>
                                                             <tableCellView id="htL-Fu-9CJ">
@@ -548,6 +551,7 @@ DQ
                                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
+                                                        <sortDescriptor key="sortDescriptorPrototype" selector="caseInsensitiveCompare:" sortKey="cat.breed"/>
                                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                         <prototypeCellViews>
                                                             <tableCellView id="DAz-PT-PlI">
@@ -577,6 +581,7 @@ DQ
                                                     <action trigger="doubleAction" selector="editEntry:" target="-2" id="nYI-fc-Luu"/>
                                                     <binding destination="lq1-w2-pGH" name="content" keyPath="arrangedObjects" id="s9i-M8-SNv"/>
                                                     <binding destination="lq1-w2-pGH" name="selectionIndexes" keyPath="selectionIndexes" previousBinding="s9i-M8-SNv" id="l6U-LU-Siz"/>
+                                                    <binding destination="lq1-w2-pGH" name="sortDescriptors" keyPath="sortDescriptors" previousBinding="l6U-LU-Siz" id="yKN-jD-3r0"/>
                                                     <outlet property="delegate" destination="z8R-RM-aC6" id="5oO-Jv-MTA"/>
                                                 </connections>
                                             </tableView>
@@ -655,6 +660,7 @@ DQ
             <connections>
                 <binding destination="-2" name="managedObjectContext" keyPath="managedObjectContext" id="DCg-ha-vrn"/>
                 <binding destination="zuf-cK-OoZ" name="contentSet" keyPath="selection.entries" id="Ft8-im-ZSc"/>
+                <binding destination="-2" name="sortDescriptors" keyPath="sortByName" id="72e-pi-Z18"/>
             </connections>
         </arrayController>
     </objects>

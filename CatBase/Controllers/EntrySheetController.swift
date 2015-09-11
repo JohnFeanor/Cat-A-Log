@@ -25,7 +25,7 @@ class EntrySheetController: NSWindowController {
     return self.dictionaryWithValuesForKeys(properties)
   }
   
-  var cageNames = Globals.cageTypes.names
+  let cageNames = Globals.cageTypes.names
   let cageSizes = Globals.cageTypes.sizes
   
   let _litterCage: Int = {
@@ -123,19 +123,19 @@ class EntrySheetController: NSWindowController {
   }
   dynamic var cageSize = NSNumber(integer: Globals.cageTypes.sizes[0])
   
-  dynamic var hireCage    = NO
-  dynamic var litterCage  = NO
+  dynamic var hireCage    = false
+  dynamic var litterCage  = false
   
-  dynamic var ring1 = YES
-  dynamic var ring2 = YES
-  dynamic var ring3 = YES
-  dynamic var ring4 = NO
-  dynamic var ring5 = NO
-  dynamic var ring6 = NO
+  dynamic var ring1 = true
+  dynamic var ring2 = true
+  dynamic var ring3 = true
+  dynamic var ring4 = false
+  dynamic var ring5 = false
+  dynamic var ring6 = false
   
-  dynamic var willWork = NO
-  dynamic var catalogueRequired = NO
-  dynamic var vaccinated = NO
+  dynamic var willWork = false
+  dynamic var catalogueRequired = false
+  dynamic var vaccinated = false
   
   // MARK: - Other variables for sheet
   // ---------------------------------
@@ -195,18 +195,16 @@ class EntrySheetController: NSWindowController {
   }
   
   func setSheetTo(original: Entry) {
-    if let cat = original.cat {
-      for key in Cat.properties {
-        self.setValue(cat.valueForKey(key), forKey: key)
-      }
+    for key in Cat.properties {
+      self.setValue(original.cat.valueForKey(key), forKey: key)
     }
     for key in Entry.properties {
       self.setValue(original.valueForKey(key), forKey: key)
     }
   }
-
-
   
+
+
   // =============================================
   // MARK: - Ensure all data needed is in and OK
   // =============================================

@@ -18,6 +18,14 @@ class Sex: DataSource {
   
   static var list = DictOfStringArray()
   
+  static var sexes: [String] {
+    if let showAffiliation = Globals.currentShow?.affiliation {
+      return Sex.list[showAffiliation]!
+    } else {
+      return []
+    }
+  }
+  
   override class func initialize() {
     dispatch_once(&sexesToken) {       // This will only ever execute once
       // load in an array of the group names & breeds in the group
@@ -53,6 +61,7 @@ class Sex: DataSource {
     return nil
   }
   
+  
   // *********************************
   // Instance methods and properties
   // ********************************
@@ -63,10 +72,6 @@ class Sex: DataSource {
   }
   
   override var list: [String] {
-    if let showAffiliation = Globals.currentShow?.affiliation {
-      return Sex.list[showAffiliation]!
-    } else {
-      return []
-    }
+    return Sex.sexes
   }
 }

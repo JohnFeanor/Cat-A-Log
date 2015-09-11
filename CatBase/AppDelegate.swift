@@ -30,7 +30,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     //Set the property to point to the window controller
     self.mainWindowController = mainWindowController
     
-    let ages = Globals.kittenGroups
   }
   
   
@@ -264,13 +263,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     for _ in 0 ..< numberOfCats {
       let end = start + numberOfCatProperties
-      let thisCat = strings[start ..< end]
-      // setValue(array[Cat.positions[property]!], forKey: property)
+      let thisCat = Array(strings[start ..< end])
       let registration = thisCat[Cat.positions[Cat.registration]!]
       let name = thisCat[Cat.positions[Cat.name]!]
       
       if existingCatsWithRegistration(registration, orName: name, inContext: self.managedObjectContext!) == nil {
-        let _ = Cat(array: thisCat, insertIntoManagedObjectContext: self.managedObjectContext)
+        let _ = Cat(array: Array(thisCat), insertIntoManagedObjectContext: self.managedObjectContext)
         count++
       } else {
         print("Importing duplicate cat")

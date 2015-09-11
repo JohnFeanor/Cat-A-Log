@@ -10,7 +10,15 @@ import Cocoa
 
 class NameFormatter: NSFormatter {
   
-  var exempted: NSArray = ["a", "da", "de", "vo", "von", "der"]
+  enum Action {
+    case leave
+    case capitalize
+    case uppercase
+  }
+  
+  static var list: [String] = []
+  
+  let exempted = ["a", "da", "de", "vo", "von", "der"]
   
   override var description: String {
     get {
@@ -18,16 +26,17 @@ class NameFormatter: NSFormatter {
     }
   }
   
-  @IBOutlet var inField: NSTextField!
+  var list:[String] {
+    return NameFormatter.list
+  }
   
-  var list:[String] = []
+  @IBOutlet var inField: NSTextField!
   
   // MARK: - Convenience method to store completion strings
   
   func addToList(name: String) {
-    let nList: NSArray = list as NSArray
-    if !nList.containsObject(name) {
-      list.append(name)
+    if !NameFormatter.list.contains(name) {
+      NameFormatter.list.append(name)
     }
   }
   
@@ -37,7 +46,6 @@ class NameFormatter: NSFormatter {
     if let prefix = prefix {
       var currentChoice: String? = nil
       let lowercaseprefix = prefix.lowercaseString
-      
       for string in list {
         if string.lowercaseString.hasPrefix(lowercaseprefix) {
           if currentChoice == nil {
@@ -97,22 +105,46 @@ class NameFormatter: NSFormatter {
       }
     }
     
-    let endOfWord = breakCharacter.evaluateWithObject(sentence[endOfSentence])
-    
-    // Only capitalize a one letter word if we have reached an end-of-word
-    if lengthOfWord == 1 {
-      if endOfWord {
-        if !exempted.containsObject(lastWord) {
-          sentence[startOfWord] = sentence[startOfWord].uppercaseString
-        }
+    // does it need capitalization?
+    let preceding: String? = startOfWord > 0 ? sentence[startOfWord - 1] : nil
+    let last = startOfWord + lengthOfWord
+    let following: String? = last >= sentenceLength ? nil : sentence[last]
+    switch capitalize(lastWord, preceding: preceding, following: following) {
+    case .capitalize:
+      sentence[startOfWord] = sentence[startOfWord].uppercaseString
+    case .uppercase:
+      for i in startOfWord ..< last {
+        sentence[i] = sentence[i].uppercaseString
       }
-    } else {  // Otherwise capitalize them all
-      if !exempted.containsObject(lastWord) {
-        sentence[startOfWord] = sentence[startOfWord].uppercaseString
-      }
+    default:
+      break
     }
+
     return sentence.reduce("", combine: {$0 + $1})
   }
+  
+  func capitalize(word: String, preceding: String?, following: String?) -> Action {
+    
+    if !exempted.contains(word) {
+      // Words with more than one letter get capitalized
+      if word.characters.count > 1 {
+        return .capitalize
+      }
+      
+      // First letter in a sentence gets capitalized
+      if preceding == nil { return .capitalize }
+      
+      // Last letter in a partial sentence does not get capitalized
+      if following == nil { return .leave }
+      
+      // Otherwise capitalize a one letter word unless it is a special case
+      if preceding! != "'" {
+        return .capitalize
+      }
+    }
+    return .leave
+  }
+
   
   // MARK: - general formatter methods that must be overwritten
   

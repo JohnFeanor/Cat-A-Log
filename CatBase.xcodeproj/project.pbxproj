@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F0564EA1BA2B48500285C46 /* CatNameFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0564E91BA2B48500285C46 /* CatNameFormatter.swift */; settings = {ASSET_TAGS = (); }; };
 		4F38B85D1B6D8CCA006356DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F38B85C1B6D8CCA006356DD /* AppDelegate.swift */; };
 		4F38B8601B6D8CCA006356DD /* CatBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4F38B85E1B6D8CCA006356DD /* CatBase.xcdatamodeld */; };
 		4F38B8621B6D8CCA006356DD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F38B8611B6D8CCA006356DD /* Images.xcassets */; };
@@ -16,7 +17,6 @@
 		4F38B8831B6D8ED3006356DD /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F38B8811B6D8ED3006356DD /* MainWindowController.xib */; };
 		4F38B8881B6D9156006356DD /* Cat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F38B8841B6D9156006356DD /* Cat.swift */; };
 		4F38B8891B6D9156006356DD /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F38B8851B6D9156006356DD /* Entry.swift */; };
-		4F38B88A1B6D9156006356DD /* Litter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F38B8861B6D9156006356DD /* Litter.swift */; };
 		4F38B88B1B6D9156006356DD /* Show.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F38B8871B6D9156006356DD /* Show.swift */; };
 		4F3EFAE31B6DB98C00DA2F5C /* AddShowWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3EFAE11B6DB98C00DA2F5C /* AddShowWindowController.swift */; };
 		4F3EFAE41B6DB98C00DA2F5C /* AddShowWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F3EFAE21B6DB98C00DA2F5C /* AddShowWindowController.xib */; };
@@ -29,6 +29,7 @@
 		4FB9D1211B75B61F00046CBA /* Sex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB9D1201B75B61F00046CBA /* Sex.swift */; };
 		4FBD2EE41B81A84500E28D93 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4FBD2EE31B81A84500E28D93 /* Credits.rtf */; };
 		4FBD2EE61B81A91E00E28D93 /* agouti.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4FBD2EE51B81A91E00E28D93 /* agouti.plist */; };
+		4FC1DA071B9BAFA000E321EA /* Printing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC1DA061B9BAFA000E321EA /* Printing.swift */; settings = {ASSET_TAGS = (); }; };
 		4FD803241B774DA500D7FAD2 /* Colours.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4FD803231B774DA500D7FAD2 /* Colours.plist */; };
 		4FD803261B774E8100D7FAD2 /* Colours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD803251B774E8100D7FAD2 /* Colours.swift */; };
 		4FD8384E1B832F3D00A8C7A7 /* ColoursWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD8384C1B832F3D00A8C7A7 /* ColoursWindowController.swift */; };
@@ -52,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F0564E91BA2B48500285C46 /* CatNameFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatNameFormatter.swift; sourceTree = "<group>"; };
 		4F38B8571B6D8CCA006356DD /* CatBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatBase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F38B85B1B6D8CCA006356DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F38B85C1B6D8CCA006356DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,7 +67,6 @@
 		4F38B8811B6D8ED3006356DD /* MainWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindowController.xib; sourceTree = "<group>"; };
 		4F38B8841B6D9156006356DD /* Cat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat.swift; path = Models/Cat.swift; sourceTree = "<group>"; };
 		4F38B8851B6D9156006356DD /* Entry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Entry.swift; path = Models/Entry.swift; sourceTree = "<group>"; };
-		4F38B8861B6D9156006356DD /* Litter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Litter.swift; path = Models/Litter.swift; sourceTree = "<group>"; };
 		4F38B8871B6D9156006356DD /* Show.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Show.swift; path = Models/Show.swift; sourceTree = "<group>"; };
 		4F3EFAE11B6DB98C00DA2F5C /* AddShowWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddShowWindowController.swift; path = Controllers/AddShowWindowController.swift; sourceTree = "<group>"; };
 		4F3EFAE21B6DB98C00DA2F5C /* AddShowWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddShowWindowController.xib; path = Controllers/AddShowWindowController.xib; sourceTree = "<group>"; };
@@ -79,6 +80,7 @@
 		4FBD2EE31B81A84500E28D93 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		4FBD2EE51B81A91E00E28D93 /* agouti.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = agouti.plist; sourceTree = "<group>"; };
 		4FBD2EE71B81AF9900E28D93 /* CatBase.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = CatBase.entitlements; sourceTree = "<group>"; };
+		4FC1DA061B9BAFA000E321EA /* Printing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Printing.swift; sourceTree = "<group>"; };
 		4FD803231B774DA500D7FAD2 /* Colours.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Colours.plist; path = pLists/Colours.plist; sourceTree = "<group>"; };
 		4FD803251B774E8100D7FAD2 /* Colours.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Colours.swift; path = "Data Sources.swift/Colours.swift"; sourceTree = "<group>"; };
 		4FD8384C1B832F3D00A8C7A7 /* ColoursWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColoursWindowController.swift; path = Controllers/ColoursWindowController.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				4FB9D11D1B7407C800046CBA /* Data sources */,
 				4FEB56AF1B70BFC700EECA78 /* Globals.swift */,
 				4F38B85C1B6D8CCA006356DD /* AppDelegate.swift */,
+				4FC1DA061B9BAFA000E321EA /* Printing.swift */,
 				4F38B8801B6D8ED3006356DD /* MainWindowController.swift */,
 				4F3EFAE11B6DB98C00DA2F5C /* AddShowWindowController.swift */,
 				4FFE16C61B6E421A0020E1D0 /* EntrySheetController.swift */,
@@ -188,7 +191,6 @@
 			children = (
 				4F38B8841B6D9156006356DD /* Cat.swift */,
 				4F38B8851B6D9156006356DD /* Entry.swift */,
-				4F38B8861B6D9156006356DD /* Litter.swift */,
 				4F38B8871B6D9156006356DD /* Show.swift */,
 			);
 			name = Models;
@@ -212,6 +214,7 @@
 			children = (
 				4FFE16CA1B6ECB320020E1D0 /* AllCapsFormatter.swift */,
 				4FFE16CB1B6ECB320020E1D0 /* NameFormatter.swift */,
+				4F0564E91BA2B48500285C46 /* CatNameFormatter.swift */,
 			);
 			name = Formatters;
 			sourceTree = "<group>";
@@ -339,7 +342,7 @@
 				4F38B8891B6D9156006356DD /* Entry.swift in Sources */,
 				4F38B8881B6D9156006356DD /* Cat.swift in Sources */,
 				4F38B85D1B6D8CCA006356DD /* AppDelegate.swift in Sources */,
-				4F38B88A1B6D9156006356DD /* Litter.swift in Sources */,
+				4FC1DA071B9BAFA000E321EA /* Printing.swift in Sources */,
 				4FB9D1211B75B61F00046CBA /* Sex.swift in Sources */,
 				4F3EFAE61B6DEE1500DA2F5C /* Breeds.swift in Sources */,
 				4F38B88B1B6D9156006356DD /* Show.swift in Sources */,
@@ -353,6 +356,7 @@
 				4F38B8821B6D8ED3006356DD /* MainWindowController.swift in Sources */,
 				4FFE16CD1B6ECB320020E1D0 /* NameFormatter.swift in Sources */,
 				4F7107FE1B77748E00E21AAC /* Challenges.swift in Sources */,
+				4F0564EA1BA2B48500285C46 /* CatNameFormatter.swift in Sources */,
 				4FD803261B774E8100D7FAD2 /* Colours.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

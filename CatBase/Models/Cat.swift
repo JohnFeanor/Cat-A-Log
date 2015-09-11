@@ -56,14 +56,14 @@ class Cat: NSManagedObject {
     }
   }
   
-  convenience init(array: ArraySlice<String>, insertIntoManagedObjectContext context: NSManagedObjectContext?) {
+  convenience init(array: [String], insertIntoManagedObjectContext context: NSManagedObjectContext?) {
     let catEntity = NSEntityDescription.entityForName(Cat.entity, inManagedObjectContext: context!)
     if catEntity == nil {
       print("Cannot create new cat entity")
       abort()
     } else {
+      print("Creating new cat entity")
       self.init(entity: catEntity!, insertIntoManagedObjectContext: context)
-      print("**  Next birthdate is: \(array[Cat.positions[Cat.birthDate]!])")
       for property in Cat.properties {
         switch property {
         case Cat.birthDate:
@@ -73,6 +73,12 @@ class Cat: NSManagedObject {
           self.birthDate = dateFormatter.dateFromString(dateString)!
         case Cat.vaccinated:
           self.vaccinated = false
+        case Cat.title:
+          if array[Cat.positions[property]!] == "(null)" {
+            self.title = ""
+          } else {
+            self.title = array[Cat.positions[property]!]
+          }
         default:
           setValue(array[Cat.positions[property]!], forKey: property)
         }
@@ -117,6 +123,13 @@ class Cat: NSManagedObject {
     return Sex.isEntire(self.sex) ?? false
   }
   
+  var isCompanion: Bool {
+    return !Breeds.nonPedigreeBreed(self.breed)
+  }
+  
+  var isAgouti: Bool {
+    return self.agoutiRank > -1
+  }
   
   // *************************
   // MARK: - Ranking queries
@@ -142,9 +155,9 @@ class Cat: NSManagedObject {
   
   var agoutiRank: Int {
     if let ans = Globals.agoutiClasses.indexOf(self.breed) {
-      return ans + 1
+      return ans
     } else {
-      return 0
+      return -1
     }
   }
   

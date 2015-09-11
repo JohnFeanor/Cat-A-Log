@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8175.2" systemVersion="14E46" minimumToolsVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8193.2" systemVersion="14F27" minimumToolsVersion="Automatic">
     <entity name="Cat" representedClassName="CatBase.Cat" syncable="YES">
         <attribute name="birthDate" attributeType="Date" syncable="YES"/>
         <attribute name="breed" attributeType="String" syncable="YES"/>
@@ -14,7 +14,7 @@
         <attribute name="sire" attributeType="String" syncable="YES"/>
         <attribute name="title" attributeType="String" syncable="YES"/>
         <attribute name="vaccinated" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
-        <relationship name="entries" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Entry" inverseName="cat" inverseEntity="Entry" syncable="YES"/>
+        <relationship name="entries" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Entry" inverseName="cat" inverseEntity="Entry" syncable="YES"/>
     </entity>
     <entity name="Entry" representedClassName="CatBase.Entry" syncable="YES">
         <attribute name="cageSize" attributeType="Integer 16" defaultValueString="YES" syncable="YES"/>
@@ -28,23 +28,8 @@
         <attribute name="ring5" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="ring6" attributeType="Boolean" syncable="YES"/>
         <attribute name="willWork" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
-        <relationship name="cat" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Cat" inverseName="entries" inverseEntity="Cat" syncable="YES"/>
-        <relationship name="litter" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Litter" inverseName="entries" inverseEntity="Litter" syncable="YES"/>
-        <relationship name="show" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Show" inverseName="entries" inverseEntity="Show" syncable="YES"/>
-    </entity>
-    <entity name="Litter" representedClassName="CatBase.Litter" syncable="YES">
-        <attribute name="birthDate" attributeType="Date" syncable="YES"/>
-        <attribute name="breed" attributeType="String" syncable="YES"/>
-        <attribute name="breeder" attributeType="String" syncable="YES"/>
-        <attribute name="dam" attributeType="String" syncable="YES"/>
-        <attribute name="exhibitor" attributeType="String" syncable="YES"/>
-        <attribute name="females" attributeType="Integer 16" minValueString="0" defaultValueString="0" syncable="YES"/>
-        <attribute name="males" attributeType="Integer 16" minValueString="0" defaultValueString="0" syncable="YES"/>
-        <attribute name="name" attributeType="String" syncable="YES"/>
-        <attribute name="neuters" attributeType="Integer 16" minValueString="0" defaultValueString="0" syncable="YES"/>
-        <attribute name="sire" attributeType="String" syncable="YES"/>
-        <attribute name="speys" attributeType="Integer 16" minValueString="0" defaultValueString="0" syncable="YES"/>
-        <relationship name="entries" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Entry" inverseName="litter" inverseEntity="Entry" syncable="YES"/>
+        <relationship name="cat" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Cat" inverseName="entries" inverseEntity="Cat" syncable="YES"/>
+        <relationship name="show" maxCount="1" deletionRule="Nullify" destinationEntity="Show" inverseName="entries" inverseEntity="Show" syncable="YES"/>
     </entity>
     <entity name="Show" representedClassName="CatBase.Show" syncable="YES">
         <attribute name="affiliation" attributeType="String" syncable="YES"/>
@@ -69,8 +54,7 @@
     </entity>
     <elements>
         <element name="Cat" positionX="-27" positionY="18" width="128" height="255"/>
-        <element name="Entry" positionX="18" positionY="171" width="128" height="255"/>
-        <element name="Litter" positionX="54" positionY="225" width="128" height="225"/>
+        <element name="Entry" positionX="18" positionY="171" width="128" height="240"/>
         <element name="Show" positionX="18" positionY="171" width="128" height="330"/>
     </elements>
 </model>

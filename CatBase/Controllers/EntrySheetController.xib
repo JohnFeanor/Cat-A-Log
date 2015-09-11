@@ -53,7 +53,7 @@ DQ
                             <outlet property="nextKeyView" destination="NBW-b2-THN" id="IJ5-Sa-oFV"/>
                         </connections>
                     </datePicker>
-                    <textField toolTip="Type the entry's sire's name into this box" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NBW-b2-THN">
+                    <textField identifier="Sire" toolTip="Type the entry's sire's name into this box" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NBW-b2-THN">
                         <rect key="frame" x="60" y="289" width="449" height="22"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Sire" drawsBackground="YES" id="RQG-eh-SGv">
                             <font key="font" metaFont="system"/>
@@ -62,8 +62,8 @@ DQ
                         </textFieldCell>
                         <connections>
                             <binding destination="-2" name="value" keyPath="sire" id="6Uo-WB-Op6"/>
-                            <outlet property="delegate" destination="XzH-lI-Qvg" id="IYB-FY-Qya"/>
-                            <outlet property="formatter" destination="XzH-lI-Qvg" id="kGv-UY-TFe"/>
+                            <outlet property="delegate" destination="Ocz-My-xQH" id="jHv-rd-e6a"/>
+                            <outlet property="formatter" destination="Ocz-My-xQH" id="jZT-cC-AoO"/>
                             <outlet property="nextKeyView" destination="Msg-uW-9G3" id="M2C-hR-oUz"/>
                         </connections>
                     </textField>
@@ -76,8 +76,8 @@ DQ
                         </textFieldCell>
                         <connections>
                             <binding destination="-2" name="value" keyPath="dam" id="wAU-SE-jWR"/>
-                            <outlet property="delegate" destination="XzH-lI-Qvg" id="MjF-b3-ELt"/>
-                            <outlet property="formatter" destination="XzH-lI-Qvg" id="dDA-jZ-qTg"/>
+                            <outlet property="delegate" destination="Ocz-My-xQH" id="hAp-o2-vJN"/>
+                            <outlet property="formatter" destination="Ocz-My-xQH" id="jDz-Tn-DsM"/>
                             <outlet property="nextKeyView" destination="qxR-0u-Rp9" id="JAe-K2-sDd"/>
                         </connections>
                     </textField>
@@ -171,7 +171,7 @@ Gw
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hKe-Yy-nyZ">
-                        <rect key="frame" x="169" y="321" width="38" height="17"/>
+                        <rect key="frame" x="168" y="321" width="39" height="17"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Class" id="syg-h5-vCv">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -271,6 +271,8 @@ Gw
                         </comboBoxCell>
                         <connections>
                             <binding destination="-2" name="value" keyPath="title" id="KsO-Yw-nub"/>
+                            <outlet property="dataSource" destination="y5v-nH-jCQ" id="93U-oI-73x"/>
+                            <outlet property="delegate" destination="y5v-nH-jCQ" id="qB7-Mc-BAD"/>
                             <outlet property="nextKeyView" destination="zSI-bh-k8T" id="oSw-lN-oPf"/>
                         </connections>
                     </comboBox>
@@ -343,7 +345,7 @@ Gw
                             <outlet property="nextKeyView" destination="ZSd-Bd-tcU" id="wXs-n8-ikU"/>
                         </connections>
                     </textField>
-                    <textField toolTip="Type the entry's name into this box" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zSI-bh-k8T">
+                    <textField identifier="Name" toolTip="Type the entry's name into this box" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zSI-bh-k8T">
                         <rect key="frame" x="62" y="375" width="447" height="22"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Name" drawsBackground="YES" id="UkL-Kv-o4z">
                             <font key="font" metaFont="system"/>
@@ -352,8 +354,8 @@ Gw
                         </textFieldCell>
                         <connections>
                             <binding destination="-2" name="value" keyPath="name" id="pPX-O4-G8b"/>
-                            <outlet property="delegate" destination="XzH-lI-Qvg" id="v2o-KD-JhQ"/>
-                            <outlet property="formatter" destination="XzH-lI-Qvg" id="BjT-c9-wlu"/>
+                            <outlet property="delegate" destination="Ocz-My-xQH" id="qXm-4F-HjO"/>
+                            <outlet property="formatter" destination="Ocz-My-xQH" id="6kR-wl-eAd"/>
                             <outlet property="nextKeyView" destination="ggx-l8-b8A" id="hCP-y1-GKN"/>
                         </connections>
                     </textField>
@@ -484,6 +486,7 @@ Gw
         </window>
         <userDefaultsController representsSharedInstance="YES" id="QS3-xg-ubt"/>
         <customFormatter id="XzH-lI-Qvg" customClass="NameFormatter" customModule="CatBase" customModuleProvider="target"/>
+        <customFormatter id="Ocz-My-xQH" customClass="CatNameFormatter" customModule="CatBase" customModuleProvider="target"/>
         <customFormatter id="wsP-9s-N2s" customClass="AllCapsFormatter" customModule="CatBase" customModuleProvider="target"/>
         <customObject id="vma-tc-bSW" customClass="Breeds" customModule="CatBase" customModuleProvider="target"/>
         <customObject id="jL6-YC-Zvs" customClass="Challenges" customModule="CatBase" customModuleProvider="target"/>
@@ -492,6 +495,7 @@ Gw
                 <outlet property="breedSource" destination="ggx-l8-b8A" id="Yta-e3-NZe"/>
             </connections>
         </customObject>
+        <customObject id="y5v-nH-jCQ" customClass="Titles" customModule="CatBase" customModuleProvider="target"/>
         <customObject id="Aqp-dz-6Vt" customClass="Sex" customModule="CatBase" customModuleProvider="target"/>
     </objects>
 </document>
