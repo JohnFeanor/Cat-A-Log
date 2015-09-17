@@ -19,11 +19,7 @@ class Sex: DataSource {
   static var list = DictOfStringArray()
   
   static var sexes: [String] {
-    if let showAffiliation = Globals.currentShow?.affiliation {
-      return Sex.list[showAffiliation]!
-    } else {
-      return []
-    }
+    return Sex.list[Globals.currentShowType] ?? []
   }
   
   override class func initialize() {
@@ -38,27 +34,20 @@ class Sex: DataSource {
   }
   
   class func isEntire(gender: String) -> Bool? {
-    if let showAffiliation = Globals.currentShow?.affiliation {
-      let list = Sex.list[showAffiliation]
-      return list?.indexOf(gender) != (Section.desexed.rawValue)
-    }
-    return nil
+    let list = Sex.list[Globals.currentShowType]
+    return list?.indexOf(gender) < 2
   }
   
-  class func rankOf(gender: String) -> Int? {
-    if let showAffiliation = Globals.currentShow?.affiliation {
-      let list = Sex.list[showAffiliation]
-      return list?.indexOf(gender)
-    }
-    return nil
+  class func rankOf(gender: String) -> Int {
+    guard let ans = Sex.list[Globals.currentShowType]?.indexOf(gender)
+      else { fatalError("Given unknown sex for cat \"\(gender)\" for show type: \(Globals.currentShowType)") }
+    return ans
   }
   
-  class func nameOf(number: Int) -> String? {
-    if let showAffiliation = Globals.currentShow?.affiliation {
-      let list = Sex.list[showAffiliation]
-      return list?[number]
-    }
-    return nil
+  class func nameOf(number: Int) -> String {
+    guard let ans = Sex.list[Globals.currentShowType]? [number]
+      else { fatalError("Cannot get sex number \(number) for show type \(Globals.currentShowType)") }
+    return ans
   }
   
   

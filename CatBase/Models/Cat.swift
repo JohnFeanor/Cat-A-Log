@@ -102,11 +102,17 @@ class Cat: NSManagedObject {
     return self.dictionaryWithValuesForKeys(Show.properties)
   }
   
+  var prefix: String {
+    let parts = self.name.componentsSeparatedByString(" ")
+    let first = parts.first
+    return first ?? ""
+  }
+  
   // ************************
   // MARK: - YES/NO queries
   // ************************
   
-  var registrationPending: Bool {
+  var registrationIsPending: Bool {
     return self.registration.caseInsensitiveCompare("Pending") == NSComparisonResult.OrderedSame
   }
   
@@ -131,6 +137,44 @@ class Cat: NSManagedObject {
     return self.agoutiRank > -1
   }
   
+  var isMale: Bool {
+    return (Sex.rankOf(self.sex) % 2 != 0)
+  }
+ 
+  // *************************
+  // MARK: - String queries
+  // *************************
+  
+  var gender: String {
+    if self.isKitten { return Challenges.nameOf(.kitten) }
+    return self.sex
+  }
+  
+  var group: String {
+    return Breeds.nameOfGroupForBreed(self.breed)
+  }
+  
+  var ageCategory: String {
+    if Globals.kittenGroups.count < 3 {
+      fatalError("There are \(Globals.kittenGroups.count) kitten age groups instead of 3")
+    }
+    let m = ageInMonths
+    if m < Globals.kittenGroups[0] {
+      return "under \(Globals.kittenGroups[0]) mths"
+    }
+    if m < Globals.kittenGroups[1] {
+      return "under \(Globals.kittenGroups[1]) mths"
+    }
+    return "under \(Globals.kittenGroups[2]) mths"
+  }
+  
+  var age: String {
+    if let showDate = Globals.currentShow?.date {
+      return self.birthDate.differenceInMonthsAndYears(showDate)
+    }
+    fatalError("Could not determine cat: \(self.name)'s age")
+  }
+  
   // *************************
   // MARK: - Ranking queries
   // *************************
@@ -139,14 +183,11 @@ class Cat: NSManagedObject {
     return Breeds.groupNumberOf(self.breed) ?? -1
   }
   
-  var section: Section {
-    if self.isKitten {
-      return .kitten
-    }
-    if self.isEntire {
-      return .entire
-    }
-    return .desexed
+  var section: String {
+    if self.isCompanion { return "Companion" }
+    if self.isKitten { return "Kitten" }
+    if self.isEntire { return "Entire" }
+    return "Desexed"
   }
   
   var breedRank: Int {
@@ -181,6 +222,13 @@ class Cat: NSManagedObject {
       }
     }
     return 999
+  }
+  
+  var ageInMonths: Int {
+    if let showDate = Globals.currentShow?.date {
+      return showDate.monthsDifferenceTo(self.birthDate)
+    }
+    return 0
   }
   
   var sexRank: Int {

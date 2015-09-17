@@ -179,7 +179,14 @@ class Entry: NSManagedObject {
     return ans
   }
   
-  func sameChallangeAs(other: Entry) -> Bool {
+  func inRing(ring: Int) -> Bool {
+    if let inThisRing = self.valueForKey(Entry.rings[ring - 1]) as? NSNumber {
+      return inThisRing.boolValue
+    }
+    return false
+  }
+  
+  func sameChallengeAs(other: Entry) -> Bool {
     // Kittens do not get challenges
     if self.cat.isKitten { return false }
     
@@ -203,4 +210,16 @@ class Entry: NSManagedObject {
     return true
   }
 
+  func differentBreedTo(other: Entry) -> Bool {
+    return self.cat.breed != other.cat.breed
+  }
+  
+  func newBreedTo(other: Entry) -> Bool {
+     return !self.cat.isCompanion && self.differentBreedTo(other)
+  }
+  
+  func newColourTo(other: Entry) -> Bool {
+    return !sameColourAs(other) || differentBreedTo(other)
+  }
+  
 }

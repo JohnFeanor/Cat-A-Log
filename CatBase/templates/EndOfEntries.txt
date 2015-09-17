@@ -1,0 +1,63 @@
+  <br clear="all" style="page-break-before:always;mso-break-type:section-break">
+</span>
+
+<div class="WordSection3">
+
+<p class="Breed" style="margin-top:0mm;margin-right:148.5pt;margin-bottom:4.0pt;margin-left:50.0mm">
+  <span style="font-size:18.0pt;mso-bidi-font-size:14.0pt">
+    Best of Breed
+  </span>
+</p>
+
+<div align="center">
+
+<table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt; mso-yfti-tbllook:160;mso-padding-alt:0mm 5.4pt 0mm 5.4pt">
+  <tbody>
+    <tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes;height:17.0pt">
+      <td width="130" style="width:130.25pt;border-top:double 1.5pt;border-left:double 1.5pt;
+        border-bottom:solid 1.0pt;border-right:solid 1.0pt;border-color:windowtext;
+        mso-border-top-alt:double 1.5pt;mso-border-left-alt:double 1.5pt;mso-border-bottom-alt:solid .5pt;
+        mso-border-right-alt:solid .5pt;mso-border-color-alt:windowtext;background:#F2F2F2;mso-background-themecolor:background1;
+        mso-background-themeshade:242;padding:0mm 5.4pt 0mm 5.4pt;height:17.0pt">
+        <p class="MsoNormal" style="margin-top:3.0pt;margin-right:0mm;margin-bottom:3.0pt;margin-left:2.85pt;mso-pagination:none;page-break-after:avoid">
+          <span style="font-size:12.0pt;font-family:&quot;Arial Rounded MT Bold&quot;;letter-spacing:1.0pt">
+            Breed
+          </span>
+        </p>
+      </td>
+      <td width="71" style="width:70.9pt;border-top:double windowtext 1.5pt;border-left:none;border-bottom:solid windowtext 1.0pt;
+        border-right:solid windowtext 1.0pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+        mso-border-top-alt:double windowtext 1.5pt;background:#F2F2F2;mso-background-themecolor:background1;
+        mso-background-themeshade:242;padding:0mm 5.4pt 0mm 5.4pt;height:17.0pt">
+          <p class="MsoNormal" align="center" style="margin-top:3.0pt;margin-right:0mm;margin-bottom:3.0pt;margin-left:0mm;
+            text-align:center;mso-pagination:none;page-break-after:avoid">
+            <span style="font-size:12.0pt;font-family:&quot;Arial Rounded MT Bold&quot;;letter-spacing:1.0pt">
+              Ring 1
+            </span>
+          </p>
+        </td>
+        <td width="71" style="width:70.9pt;border-top:double windowtext 1.5pt;border-left:none;border-bottom:solid windowtext 1.0pt;
+          border-right:solid windowtext 1.0pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+          mso-border-top-alt:double windowtext 1.5pt;background:#F2F2F2;mso-background-themecolor:background1;
+          mso-background-themeshade:242;padding:0mm 5.4pt 0mm 5.4pt;height:17.0pt">
+          <p class="MsoNormal" align="center" style="margin-top:3.0pt;margin-right:0mm;margin-bottom:3.0pt;margin-left:0mm;
+            text-align:center;mso-pagination:none;page-break-after:avoid">
+            <span style="font-size:12.0pt;font-family:&quot;Arial Rounded MT Bold&quot;;letter-spacing:1.0pt">
+              Ring 2
+            </span>
+          </p>
+        </td>
+        <td width="71" style="width:70.9pt;border-top:double windowtext 1.5pt;border-left:none;border-bottom:solid windowtext 1.0pt;
+          border-right:double windowtext 1.5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-top-alt:double 1.5pt;
+          mso-border-left-alt:solid .5pt;mso-border-bottom-alt:solid .5pt;mso-border-right-alt:double 1.5pt;
+          mso-border-color-alt:windowtext;background:#F2F2F2;mso-background-themecolor:background1;mso-background-themeshade:242;
+          padding:0mm 5.4pt 0mm 5.4pt;height:17.0pt">
+          <p class="MsoNormal" align="center" style="margin-top:3.0pt;margin-right:0mm;margin-bottom:3.0pt;margin-left:0mm;text-align:center;
+            mso-pagination:none;page-break-after:avoid">
+            <span style="font-size:12.0pt;font-family:&quot;Arial Rounded MT Bold&quot;;letter-spacing:1.0pt">
+              Ring 3
+            </span>
+          </p>
+        </td>
+      </tr>
+ 

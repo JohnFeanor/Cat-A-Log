@@ -33,11 +33,60 @@ extension NSTableView {
     }
   }
 }
-//
-//struct AgeStruct {
-//  var minimumAge: Int
-//  var timeUnit : String
-//}
+
+extension String {
+  var data: NSData {
+    if let ans = self.dataUsingEncoding(NSUTF8StringEncoding) {
+      return ans
+    } else {
+      fatalError("Cannot encode \"\(self)\"")
+    }
+  }
+}
+
+extension NSDate {
+  
+  var string: String {
+    let formatter = NSDateFormatter()
+    formatter.dateFormat = "dd-MM-yy"
+    return formatter.stringFromDate(self)
+  }
+
+  func lessThan(weeks weeks:Int = 0, months: Int = 0, before date2: NSDate) -> Bool {
+    let interval = NSDateComponents()
+    interval.day = weeks * 7
+    interval.month = months
+    let calendar = NSCalendar.currentCalendar()
+    let testDate = calendar.dateByAddingComponents(interval, toDate: self, options: [])
+    if let testDate = testDate {
+      if testDate.compare(date2) == NSComparisonResult.OrderedDescending {
+        return true
+      } else {
+        return false
+      }
+    }
+    print("Could not get a date from the calendar")
+    return false
+  }
+  
+  func monthsDifferenceTo(otherDate: NSDate) -> Int {
+    let calendar = NSCalendar.currentCalendar()
+    let components = calendar.components(.Month, fromDate: self, toDate: otherDate, options: [])
+    return components.month
+  }
+  
+  func differenceInMonthsAndYears(otherDate: NSDate) -> String {
+    let calendar = NSCalendar.currentCalendar()
+    let components = calendar.components([.Month, .Year], fromDate: self, toDate: otherDate, options: [])
+    let month: String
+    if components.month < 10 {
+      month = "0\(components.month)"
+    } else {
+      month = "\(components.month)"
+    }
+    return "\(components.year).\(month)"
+  }
+}
 
 struct Headings {
   static let minAge     = "MinAge"
@@ -51,19 +100,9 @@ struct Headings {
   static let breeds     = "breeds"
 }
 
-enum Section: Int {
-  case kitten = 0, entire, desexed
-}
-
-func >(left: Section, right: Section) -> Bool {
-  return left.rawValue > right.rawValue
-}
-
-func <(left: Section, right: Section) -> Bool {
-  return left.rawValue < right.rawValue
-}
-
 let pending = "Pending"
+
+let maxNumberOfRings = 6
 
 let space = " "
 let apostrophy = "'"
@@ -167,6 +206,18 @@ func array(array: [String], ToPlist listName: String) -> Bool {
   }
 }
 
+func readFile(fileName: String) -> NSData {
+  let path = NSBundle.mainBundle().pathForResource(fileName, ofType: "txt")
+  
+  if let path = path {
+    let d = NSFileManager.defaultManager().contentsAtPath(path)
+    if let d = d {
+      return d
+    }
+  }
+  fatalError("Cannot read data from \"\(fileName).txt\"")
+}
+
 // MARK: - querying the user
 
 func areYouSure(message: String) -> Bool {
@@ -188,34 +239,6 @@ func runAlertWithMessage(message: String, buttons: String ...) -> NSModalRespons
   return alert.runModal()
 }
 
-extension NSDate {
-
-  func lessThan(weeks weeks:Int = 0, months: Int = 0, before date2: NSDate) -> Bool {
-    let interval = NSDateComponents()
-    interval.day = weeks * 7
-    interval.month = months
-    let calendar = NSCalendar.currentCalendar()
-    let testDate = calendar.dateByAddingComponents(interval, toDate: self, options: [])
-    if let testDate = testDate {
-      if testDate.compare(date2) == NSComparisonResult.OrderedDescending {
-        return true
-      } else {
-        return false
-      }
-    }
-    print("Could not get a date from the calendar")
-    return false
-  }
-  
-  func monthsDifferenceTo(otherDate: NSDate) -> Int {
-    let calendar = NSCalendar.currentCalendar()
-    let components = calendar.components(.Month, fromDate: self, toDate: otherDate, options: [])
-    return components.month
-    
-  }
-}
-
-
 class Globals: NSObject {
 
   @IBOutlet var theShowController: NSArrayController!
@@ -223,16 +246,51 @@ class Globals: NSObject {
 
   static var currentShow: Show? = nil
   static var currentEntry: Entry? = nil
+  static var defaultShowAffliation: String {
+    let ans = Globals.showTypes.first ?? "ACF Show"
+    return ans
+  }
+  
+  static var currentShowName: String {
+    if currentShow == nil {
+      fatalError("Nil show when trying to get name for nil show")
+    }
+    return currentShow!.name
+  }
+  
+  static var currentShowDate: String {
+    if currentShow == nil {
+      fatalError("Nil show when trying to get date for nil show")
+    }
+    let longDate = NSDateFormatter()
+    longDate.timeStyle = .NoStyle
+    longDate.dateStyle = .LongStyle
+    longDate.locale = NSLocale.currentLocale()
+    return longDate.stringFromDate(currentShow!.date)
+  }
+  
+  static var currentShowType: String {
+    if currentShow == nil {
+      print("Nil show when trying to get type for nil show")
+    }
+    return Globals.currentShow?.affiliation ?? Globals.defaultShowAffliation
+  }
+  
+  static var numberOfRingsInShow: Int {
+    if let show = Globals.currentShow {
+      return show.numberOfRings.integerValue
+    } else {
+      return 0
+    }
+  }
   
   static var dataByGroup:[String : NSDictionary] = {
     return dictFromPList("ShowFormats") as! [String : NSDictionary]
     }()
   
   static var kittenGroups: [Int] {
-    if let currentAffiliation = Globals.currentShow?.affiliation {
-      if let kittenAges = Globals.dataByGroup[currentAffiliation]?[Headings.kittenAges] as? [Int] {
-        return kittenAges
-      }
+    if let kittenAges = Globals.dataByGroup[Globals.currentShowType]?[Headings.kittenAges] as? [Int] {
+      return kittenAges
     }
     return []
   }

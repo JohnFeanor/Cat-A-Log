@@ -22,11 +22,7 @@ class Breeds: DataSource, NSTableViewDataSource {
   private static var nonPedigreesByShowType = [String : [String]]()
   
   private static var groups:[BreedList]? {
-    if let currentShowAffiliation = Globals.currentShow?.affiliation {
-      return Breeds.breedsByGroupAndShowtype[currentShowAffiliation]
-    }
-    print("Breeds: currentShow == nil")
-    return nil
+    return Breeds.breedsByGroupAndShowtype[Globals.currentShowType]
   }
   
   private static var list: [String]? {
@@ -71,10 +67,8 @@ class Breeds: DataSource, NSTableViewDataSource {
   // ************************************
   
   class func nonPedigreeBreed(breedName: String) -> Bool {
-    if let currentShowType = Globals.currentShow?.affiliation {
-      if let currentBreeds = Breeds.nonPedigreesByShowType[currentShowType] {
-        return currentBreeds.contains(breedName)
-      }
+    if let currentBreeds = Breeds.nonPedigreesByShowType[Globals.currentShowType] {
+      return currentBreeds.contains(breedName)
     }
     return false
   }
@@ -91,6 +85,33 @@ class Breeds: DataSource, NSTableViewDataSource {
       print("group number for \(breedName) not found")
     }
     return nil
+  }
+  
+  class func ACFgroupNumberOf(breedName: String) -> Int {
+    if let groups = Breeds.breedsByGroupAndShowtype["ACF Show"] {
+      var breedsGroup = 0
+      for group in groups {
+        if group.breeds.contains(breedName) {
+          return breedsGroup
+        }
+        breedsGroup++
+      }
+      fatalError("Cannot determine ACF group number for \(breedName)")
+    }
+    fatalError("Cannot find breeds for ACF type show")
+  }
+  
+  class func nameOfGroupForBreed(breedName: String) -> String {
+    if let groups = Breeds.groups {
+      var breedsGroup = 0
+      for group in groups {
+        if group.breeds.contains(breedName) {
+          return groups[breedsGroup].groupName
+        }
+        breedsGroup++
+      }
+    }
+    fatalError("group name for \(breedName) not found")
   }
   
   class func nameOfGroupNumber(index: Int) -> String? {
@@ -111,15 +132,22 @@ class Breeds: DataSource, NSTableViewDataSource {
     return nil
   }
   
-  class func nameOf(index: Int) -> String? {
+  class func nameOf(index: Int) -> String {
     if let list = Breeds.list {
       if (index < 0) || (index >= list.count) {
-        return nil
+        fatalError("Out of bounds. Breed name for index: \(index)")
       } else {
         return list[index]
       }
     }
-    return nil
+    fatalError("Cannot access Breed name list in nameOf:")
+  }
+  
+  static var numberOfBreeds: Int {
+    if let list = Breeds.list {
+        return list.count
+    }
+    return 0
   }
 
   // ************************************
@@ -127,17 +155,14 @@ class Breeds: DataSource, NSTableViewDataSource {
   // ************************************
   
   override var list: [String] {
-    if let theShow = Globals.currentShow {
-      let currentShowType = theShow.affiliation
-      var answer = [String]()
-      if let groups = Breeds.breedsByGroupAndShowtype[currentShowType] {
-        for group in groups {
-          answer += group.breeds
-        }
-        return answer
-      }
+    guard let groups = Breeds.breedsByGroupAndShowtype[Globals.currentShowType]
+      else { return [] }
+    
+    var answer = [String]()
+    for group in groups {
+      answer += group.breeds
     }
-    return []
+    return answer
   }
   
   // ************************************

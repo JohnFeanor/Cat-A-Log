@@ -211,7 +211,7 @@ class EntrySheetController: NSWindowController {
 
   // list of the fields that must be filled in correctly
   // ----------------------------------------------------
-  let possibleFaults = ["registration", "name", "breed", "colour", "sex", "challenge", "sire", "dam", "breeder", "exhibitor"]
+  private let possibleFaults = ["registration", "name", "breed", "colour", "sex", "challenge", "sire", "dam", "breeder", "exhibitor"]
 
   func validateSheet() -> String? {
     var faults = "Have not given "
@@ -284,7 +284,7 @@ class EntrySheetController: NSWindowController {
       }
       
     } else {
-      print("!! EntrySheetController cannot get a show date !!")
+      errorAlert(message: "!! No show date specified !!\nLocation: EntryShowController.validateSheet")
     }
     
     if okToGo {
@@ -295,7 +295,7 @@ class EntrySheetController: NSWindowController {
   }
   
   // =============================================
-  // MARK: - IBActions
+  //: # MARK: - IBActions
   // =============================================
   
   @IBAction func okButtonPressed(sender: NSButton) {

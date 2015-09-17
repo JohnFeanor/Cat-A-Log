@@ -49,22 +49,20 @@ class Colours: DataSource, NSTableViewDataSource {
   }
   
   class func rankOf(colour: String, forBreed breed: String) -> Int? {
-    if let colours = Colours.list[breed] {
-      return colours.indexOf(colour)
-    }
-    return nil
+    guard let colours = Colours.list[breed]
+      else { return nil }
+    return colours.indexOf(colour)
   }
+  
   
   // ****************************
   // MARK: - instance properties
   // ****************************
   
   var currentBreed: String? {
-    if let breedSource = breedSource {
-      return breedSource.currentBreed
-    } else {
-      return nil
-    }
+    guard let breedSource = breedSource
+      else { return nil }
+    return breedSource.currentBreed
   }
   
   override var list: [String] {

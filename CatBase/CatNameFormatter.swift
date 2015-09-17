@@ -28,30 +28,27 @@ class CatNameFormatter: NameFormatter {
   
   override func capitalize(word: String, preceding: String?, following: String?) -> Action {
     
-    if !exempted.contains(word) {
-      // Words with more than one letter get capitalized
-      if word.characters.count > 1 {
-        if !uppercase.contains(word) {
-          return .capitalize
-        } else {
-          if following != nil && breakCharacter.evaluateWithObject(following!) {
-            return .uppercase
-          }
-          return .capitalize
+    if exempted.contains(word) { return .leave }
+    
+    // Words with more than one letter get capitalized
+    if word.characters.count > 1 {
+      if uppercase.contains(word) {
+        if following != nil && breakCharacter.evaluateWithObject(following!) {
+          // if they are an ancronym for a country they get fully uppercased
+          return .uppercase
         }
       }
-      
-      // First letter in a sentence gets capitalized
-      if preceding == nil { return .capitalize }
-      
-      // Last letter in a partial sentence does not get capitalized
-      if following == nil { return .leave }
-      
-      // Otherwise capitalize a one letter word unless it is a special case
-      if preceding! != "'" {
-        return .capitalize
-      }
+      return .capitalize
     }
+    
+    // First letter in a sentence gets capitalized
+    if preceding == nil { return .capitalize }
+    
+    // Last letter in a partial sentence does not get capitalized
+    if following == nil { return .leave }
+    
+    // Otherwise capitalize a one letter word unless it is a special case
+    if preceding! != "'" { return .capitalize }
     return .leave
   }
 

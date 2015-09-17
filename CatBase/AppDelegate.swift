@@ -211,6 +211,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   // MARK: - Menu actions
   // ========================
   
+  @IBAction func writeFiles(sender: NSMenuItem) {
+  }
   
   @IBAction func openColoursEditor(sender: NSObject) {
     let coloursEditorsController = ColoursWindowController()

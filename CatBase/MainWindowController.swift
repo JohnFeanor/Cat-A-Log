@@ -10,6 +10,70 @@ import Cocoa
 
 class MainWindowController: NSWindowController {
   
+  let nbspace        = "&nbsp;".data
+  
+  let  headerPt2     = readFile("headerPt2")
+  let  header1       = readFile("Header1")
+  let  header2       = readFile("Header2")
+  let  header2judge  = readFile("Header2judge")
+  let  tableStart    = readFile("Table start")
+  let  tableEnd      = readFile("Table end")
+  let  rowEnd        = "</tr>".data
+  
+  let  section1      = readFile("Section1")
+  let  section2      = readFile("Section2")
+  let  breed1        = readFile("Breed1")
+  let  breed2        = readFile("Breed2")
+  let  colour1       = readFile("Colour1")
+  let  colour2       = readFile("Colour2")
+  let  colour3       = readFile("Colour3")
+  let  name1         = readFile("Name1")
+  let  name1Litter   = readFile("Name1 litter")
+  let  name2         = readFile("Name2")
+  let  name2Litter   = readFile("Name2 litter")
+  let  name3         = readFile("Name3")
+  let  name4         = readFile("Name4")
+  let  details1      = readFile("Details1")
+  let  details1Litter = readFile("Details1 Litter")
+  let  details2      = readFile("Details2")
+  let  details3      = readFile("Details3")
+  let  details3Litter = readFile("Details3Litter")
+  let  details4      = readFile("Details4")
+  let  details5      = readFile("Details5")
+  let  challenge1    = readFile("Challenge1")
+  let  challenge2    = readFile("Challenge2")
+  let  challenge3    = readFile("Challenge3")
+  let  prestige1     = readFile("Prestige1")
+  let  bestAward1    = readFile("BestAward1")
+  let  bestAward2    = readFile("BestAward2")
+  let  bestAward3    = readFile("BestAward3")
+  let  bestAward4    = readFile("BestAward4")
+  let  entered       = readFile("Box entered")
+  let  notEntered    = readFile("Box not entered")
+  let  underlined    = readFile("Box underlined")
+  let  noRing        = readFile("Box no ring")
+  let  endOfEntries      = readFile("EndOfEntries")
+  let  bestOfBreedStart  = readFile("BestOfBreedStart")
+  let  bestOfBreedEnd    = readFile("BestOfBreedEnd")
+  let  spacer            = readFile("Spacer")
+  
+  let  ACFstartTable     = readFile("ACFAward start table")
+  let  ACFstartRow       = readFile("ACFAward start row")
+  let  ACFendRow         = readFile("ACFAward end row")
+  
+  let  ACFAoEstart       = readFile("ACFAoE start")
+  let  ACFAoEstartRow    = readFile("ACFAoE start row")
+  let  ACFAoEendRow      = readFile("ACFAoE end row")
+  
+  let  topTenStartTable  = readFile("Top ten start table")
+  let  topTenEndTable    = readFile("Top ten end table")
+  
+  let  endOfFile         = readFile("End of file")
+  let  endOfFileJudge    = readFile("End of file judge")
+
+  let challenge    = NSLocalizedString("challenge", tableName: "general", comment: "challenge")
+  let awardOfMerit  = NSLocalizedString("Award of Merit", tableName: "general", comment: "award of merit")
+    
   @IBOutlet var theShowController: NSArrayController!
   @IBOutlet var theEntriesController: NSArrayController!
   
@@ -208,6 +272,25 @@ class MainWindowController: NSWindowController {
       })
       addEntryWindowController = sheetController
     }
+  }
+  
+  // *****************************
+  // MARK: - Write out catalogue
+  // *****************************
+  
+  func displaySavePanel() {
+    let savePanel = NSSavePanel()
+    savePanel.allowedFileTypes = ["html"]
+    savePanel.extensionHidden = false
+    savePanel.canSelectHiddenExtension = false
+    savePanel.nameFieldStringValue = "\(Globals.currentShowName).html"
+    
+    savePanel.beginSheetModalForWindow(window!, completionHandler: {
+      [unowned savePanel] (result) in
+      if result == NSModalResponseOK {
+        self.printCatalog(savePanel.nameFieldStringValue, to: savePanel.URL!)
+      }
+    })
   }
   
 }

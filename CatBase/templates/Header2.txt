@@ -1,0 +1,1968 @@
+</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>John Sandercock</o:Author>
+  <o:LastAuthor>John Sandercock</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>9</o:TotalTime>
+  <o:LastPrinted>2012-11-17T05:51:00Z</o:LastPrinted>
+  <o:Created>2013-03-06T08:30:00Z</o:Created>
+  <o:LastSaved>2013-03-06T08:30:00Z</o:LastSaved>
+  <o:Pages>6</o:Pages>
+  <o:Words>2167</o:Words>
+  <o:Characters>12355</o:Characters>
+  <o:Company>Feanor Birmans</o:Company>
+  <o:Lines>102</o:Lines>
+  <o:Paragraphs>28</o:Paragraphs>
+  <o:CharactersWithSpaces>14494</o:CharactersWithSpaces>
+  <o:Version>14.0</o:Version>
+ </o:DocumentProperties>
+ <o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+ </o:OfficeDocumentSettings>
+</xml><![endif]-->
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:Zoom>125</w:Zoom>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:TrackMoves/>
+  <w:TrackFormatting/>
+  <w:PunctuationKerning/>
+  <w:DrawingGridHorizontalSpacing>18 pt</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>18 pt</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-US</w:LidThemeOther>
+  <w:LidThemeAsian>JA</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:EnableOpenTypeKerning/>
+   <w:DontFlipMirrorIndents/>
+   <w:OverrideTableStyleHps/>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapRight/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="subSup"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
+  DefSemiHidden="true" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="276">
+  <w:LsdException Locked="false" Priority="0" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="0" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 9"/>
+  <w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" Priority="10" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" Priority="11" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" Priority="22" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" Priority="0" Name="Plain Text"/>
+  <w:LsdException Locked="false" Priority="59" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Table Grid"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" UnhideWhenUsed="false"
+   QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:Arial;
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:-536859905 -1073711037 9 0 511 0;}
+@font-face
+	{font-family:"Courier New";
+	panose-1:2 7 3 9 2 2 5 2 4 4;
+	mso-font-charset:0;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:-536859905 -1073711037 9 0 511 0;}
+@font-face
+	{font-family:Times;
+	panose-1:2 0 5 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:"\FF2D\FF33 \660E\671D";
+	mso-font-charset:78;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:-536870145 1791491579 18 0 131231 0;}
+@font-face
+	{font-family:"\FF2D\FF33 \660E\671D";
+	mso-font-charset:78;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:-536870145 1791491579 18 0 131231 0;}
+@font-face
+	{font-family:"Arial Rounded MT Bold";
+	panose-1:2 15 7 4 3 5 4 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:"Arial Narrow";
+	panose-1:2 11 5 6 2 2 2 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:647 2048 0 0 159 0;}
+@font-face
+	{font-family:"Kozuka Mincho Pro B";
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-alt:"\5C0F\585A\660E\671D Pro R";
+	mso-font-charset:128;
+	mso-generic-font-family:roman;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:-536870145 1791491327 18 0 131077 0;}
+@font-face
+	{font-family:"Arial Black";
+	panose-1:2 11 10 4 2 1 2 2 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:"Lucida Grande";
+	panose-1:2 11 6 0 4 5 2 2 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:-520090897 1342218751 0 0 447 0;}
+ /* Style Definitions */
+
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin:0mm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Times;
+	mso-fareast-font-family:"\FF2D\FF33 \660E\671D";
+	mso-fareast-theme-font:minor-fareast;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
+h3
+	{mso-style-noshow:yes;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 3 Char";
+	mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0mm;
+	margin-bottom:3.0pt;
+	margin-left:0mm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:3;
+	font-size:13.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-priority:99;
+	mso-style-link:"Header Char";
+	margin:0mm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 216.0pt right 432.0pt;
+	font-size:10.0pt;
+	font-family:Times;
+	mso-fareast-font-family:"\FF2D\FF33 \660E\671D";
+	mso-fareast-theme-font:minor-fareast;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-priority:99;
+	mso-style-link:"Footer Char";
+	margin:0mm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 216.0pt right 432.0pt;
+	font-size:10.0pt;
+	font-family:Times;
+	mso-fareast-font-family:"\FF2D\FF33 \660E\671D";
+	mso-fareast-theme-font:minor-fareast;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
+strong
+	{mso-style-priority:22;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	font-family:"Arial Narrow";
+	mso-ascii-font-family:"Arial Narrow";
+	mso-fareast-font-family:"Kozuka Mincho Pro B";
+	mso-hansi-font-family:"Arial Narrow";
+	mso-bidi-font-family:Arial;
+	color:#7030A0;
+	mso-bidi-font-weight:normal;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{mso-style-noshow:yes;
+	mso-style-link:"Plain Text Char";
+	margin:0mm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-link:"Balloon Text Char";
+	margin:0mm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:9.0pt;
+	font-family:"Lucida Grande";
+	mso-fareast-font-family:"\FF2D\FF33 \660E\671D";
+	mso-fareast-theme-font:minor-fareast;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	margin-top:0mm;
+	margin-right:0mm;
+	margin-bottom:0mm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-type:export-only;
+	margin-top:0mm;
+	margin-right:0mm;
+	margin-bottom:0mm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-type:export-only;
+	margin-top:0mm;
+	margin-right:0mm;
+	margin-bottom:0mm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-type:export-only;
+	margin-top:0mm;
+	margin-right:0mm;
+	margin-bottom:0mm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-noshow:yes;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Heading 3";
+	mso-ansi-font-size:13.0pt;
+	mso-bidi-font-size:13.0pt;
+	font-family:Arial;
+	mso-ascii-font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:Arial;
+	font-weight:bold;}
+span.HeaderChar
+	{mso-style-name:"Header Char";
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:Header;
+	font-family:Times;
+	mso-ascii-font-family:Times;
+	mso-hansi-font-family:Times;}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:Footer;
+	font-family:Times;
+	mso-ascii-font-family:Times;
+	mso-hansi-font-family:Times;}
+span.PlainTextChar
+	{mso-style-name:"Plain Text Char";
+	mso-style-noshow:yes;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Plain Text";
+	font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";}
+p.Breed, li.Breed, div.Breed
+	{mso-style-name:Breed;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	margin-top:6.0pt;
+	margin-right:0mm;
+	margin-bottom:3.0pt;
+	margin-left:0mm;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"\FF2D\FF33 \660E\671D";
+	mso-fareast-theme-font:minor-fareast;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.Colour, li.Colour, div.Colour
+	{mso-style-name:Colour;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	margin-top:6.0pt;
+	margin-right:0mm;
+	margin-bottom:4.0pt;
+	margin-left:0mm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"\FF2D\FF33 \660E\671D";
+	mso-fareast-theme-font:minor-fareast;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;
+	text-decoration:underline;
+	text-underline:single;}
+p.Number, li.Number, div.Number
+	{mso-style-name:Number;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	margin-top:6.0pt;
+	margin-right:0mm;
+	margin-bottom:4.0pt;
+	margin-left:0mm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"\FF2D\FF33 \660E\671D";
+	mso-fareast-theme-font:minor-fareast;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.Name, li.Name, div.Name
+	{mso-style-name:Name;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:Number;
+	margin-top:6.0pt;
+	margin-right:0mm;
+	margin-bottom:4.0pt;
+	margin-left:0mm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Arial Narrow";
+	mso-fareast-font-family:"\FF2D\FF33 \660E\671D";
+	mso-fareast-theme-font:minor-fareast;
+	mso-bidi-font-family:Arial;
+	text-transform:uppercase;
+	font-weight:bold;}
+p.CatDetails, li.CatDetails, div.CatDetails
+	{mso-style-name:"Cat Details";
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	margin:0mm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Arial Narrow";
+	mso-fareast-font-family:"\FF2D\FF33 \660E\671D";
+	mso-fareast-theme-font:minor-fareast;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-font-width:90%;}
+p.ChallengeDetails, li.ChallengeDetails, div.ChallengeDetails
+	{mso-style-name:"Challenge Details";
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	margin-top:6.0pt;
+	margin-right:0mm;
+	margin-bottom:4.0pt;
+	margin-left:0mm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Arial Rounded MT Bold";
+	mso-fareast-font-family:"\FF2D\FF33 \660E\671D";
+	mso-fareast-theme-font:minor-fareast;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
+p.Bestof, li.Bestof, div.Bestof
+	{mso-style-name:"Best of";
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	margin-top:6.0pt;
+	margin-right:0mm;
+	margin-bottom:6.0pt;
+	margin-left:0mm;
+	text-align:right;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Arial Rounded MT Bold";
+	mso-fareast-font-family:"\FF2D\FF33 \660E\671D";
+	mso-fareast-theme-font:minor-fareast;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
+p.Box, li.Box, div.Box
+	{mso-style-name:Box;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	margin:0mm;
+	margin-bottom:.0001pt;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Arial Rounded MT Bold";
+	mso-fareast-font-family:"\FF2D\FF33 \660E\671D";
+	mso-fareast-theme-font:minor-fareast;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
+p.Challengeheader, li.Challengeheader, div.Challengeheader
+	{mso-style-name:"Challenge header";
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	margin-top:6.0pt;
+	margin-right:0mm;
+	margin-bottom:4.0pt;
+	margin-left:0mm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	font-size:11.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Arial Rounded MT Bold";
+	mso-fareast-font-family:"\FF2D\FF33 \660E\671D";
+	mso-fareast-theme-font:minor-fareast;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
+p.List-Rules, li.List-Rules, div.List-Rules
+	{mso-style-name:"List - Rules";
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"Plain Text";
+	margin-top:0mm;
+	margin-right:0mm;
+	margin-bottom:0mm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-18.0pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial Narrow";
+	mso-fareast-font-family:"Kozuka Mincho Pro B";
+	mso-bidi-font-family:Arial;}
+p.Section, li.Section, div.Section
+	{mso-style-name:Section;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:Breed;
+	margin-top:6.0pt;
+	margin-right:0mm;
+	margin-bottom:3.0pt;
+	margin-left:0mm;
+	text-align:center;
+	page-break-before:always;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"\FF2D\FF33 \660E\671D";
+	mso-fareast-theme-font:minor-fareast;
+	mso-bidi-font-family:"Times New Roman";
+	font-weight:bold;
+	mso-bidi-font-weight:normal;
+	mso-no-proof:yes;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Balloon Text";
+	mso-ansi-font-size:9.0pt;
+	mso-bidi-font-size:9.0pt;
+	font-family:"Lucida Grande";
+	mso-ascii-font-family:"Lucida Grande";
+	mso-hansi-font-family:"Lucida Grande";
+	mso-bidi-font-family:"Lucida Grande";}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-size:10.0pt;
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Cambria;
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:"\FF2D\FF33 \660E\671D";
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
+ /* Page Definitions */
+@page
+	{mso-mirror-margins:yes;
+	mso-footnote-separator:url(":Catalog_files:header.htm") fs;
+	mso-footnote-continuation-separator:url(":Catalog_files:header.htm") fcs;
+	mso-endnote-separator:url(":Catalog_files:header.htm") es;
+	mso-endnote-continuation-separator:url(":Catalog_files:header.htm") ecs;}
+@page WordSection1
+	{size:595.0pt 842.0pt;
+	margin:51.05pt 34.0pt 51.05pt 45.35pt;
+	mso-header-margin:0mm;
+	mso-footer-margin:0mm;
+	mso-paper-source:0;}
+div.WordSection1
+	{page:WordSection1;}
+@page WordSection2
+	{size:595.0pt 842.0pt;
+	margin:53.85pt 34.0pt 53.85pt 45.35pt;
+	mso-header-margin:17.85pt;
+	mso-footer-margin:17.85pt;
+	mso-header:url(":Catalog_files:header.htm") h2;
+	mso-footer:url(":Catalog_files:header.htm") f2;
+	mso-paper-source:0;}
+div.WordSection2
+	{page:WordSection2;}
+@page WordSection3
+	{size:595.0pt 842.0pt;
+	margin:53.85pt 34.0pt 53.85pt 45.35pt;
+	mso-header-margin:17.85pt;
+	mso-footer-margin:17.85pt;
+	mso-header:url(":Catalog_files:header.htm") h3;
+	mso-footer:url(":Catalog_files:header.htm") f2;
+	mso-paper-source:0;}
+div.WordSection3
+	{page:WordSection3;}
+ /* List Definitions */
+
+@list l0
+	{mso-list-id:1886218081;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1877830226 67698703 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l0:level1
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l0:level4
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level5
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level6
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l0:level7
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level8
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level9
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+ol
+	{margin-bottom:0mm;}
+ul
+	{margin-bottom:0mm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+
+table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0mm 5.4pt 0mm 5.4pt;
+	mso-para-margin:0mm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Cambria;
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:minor-latin;}
+table.MsoTableGrid
+	{mso-style-name:"Table Grid";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-priority:59;
+	mso-style-unhide:no;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0mm 5.4pt 0mm 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0mm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:Cambria;
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:minor-latin;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1027"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body bgcolor=white lang=EN-AU style='tab-interval:36.0pt'>
+
+  <div class=WordSection1>
+
+    <p class=MsoNormal align=center style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;text-align:center'>
+      <span style='font-size:24.0pt;font-family:"Arial Black";mso-bidi-font-family:"Times New Roman"'>
+        Show Details <br>
+        List of Judges <br>
+        List of show personnel 
+      </span>
+    </p>
+
+    <span style='font-size:12.0pt;font-family:Times'>
+      <br clear=all style='page-break-before:always'>
+    </span>
+
+    <p class=MsoNormal align=center style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;text-align:center'>
+      <span style='font-size:18.0pt;mso-bidi-font-family:"Times New Roman"'>
+        Welcome 
+      </span>
+    </p>
+
+    <span style='font-size:12.0pt;font-family:Times'>
+      <br clear=all style='page-break-before:always'>
+    </span>
+
+    <p class=MsoNormal align=center style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;text-align:center'>
+      <span style='font-size:18.0pt;mso-bidi-font-family:"Times New Roman"'>
+        Judge backgrounds 
+      </span>
+    </p>
+
+    <span style='font-size:12.0pt;font-family:Times'>
+      <br clear=all style='page-break-before:always'>
+    </span>
+
+    <p class=MsoNormal align=center style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;text-align:center'>
+      <span style='font-size:18.0pt;mso-bidi-font-family:"Times New Roman"'>
+        Sponsor Promos 
+      </span>
+    </p>
+
+    <span style='font-size:12.0pt;font-family:Times'>
+      <br clear=all style='page-break-before:always'>
+    </span>
+
+    <h3 align=center style='margin-top:6.0pt;text-align:center'>
+      <span style='font-size:16.0pt;font-family:"Times New Roman";mso-fareast-font-family:"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;color:maroon'>
+        Queensland Feline Association Inc.
+      </span>
+    </h3>
+
+    <p class=MsoNormal align=center style='text-align:center'>
+      <b style='mso-bidi-font-weight:normal'>
+        <span style='mso-fareast-font-family:"Kozuka Mincho Pro B";color:#660066'>
+          SHOW RULES
+        </span>
+      </b>
+    </p>
+
+    <p class=MsoPlainText align=center style='text-align:center'>
+      <span style='font-size:9.5pt;font-family:"Arial Narrow";mso-fareast-font-family:"Kozuka Mincho Pro B";mso-bidi-font-family:Arial'>
+        This Show is conducted under the Rules and Regulations of the QFA Inc.
+      </span>
+    </p>
+
+    <p class=MsoPlainText align=center style='text-align:center'>
+      <span style='font-size:9.5pt;font-family:"Arial Narrow";mso-fareast-font-family:"Kozuka Mincho Pro B";mso-bidi-font-family:Arial'>
+        A complete copy of the QFA Inc. Rules will be available at the Show for exhibitors&rsquo; perusal
+      </span>
+    </p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;mso-layout-grid-align:auto;
+punctuation-wrap:hanging;text-autospace:ideograph-numeric ideograph-other;
+mso-vertical-align-alt:auto'><b style='mso-bidi-font-weight:normal'><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;color:#7030A0;mso-ansi-language:
+X-NONE'>General Show Administration</span></b></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+0pt;mso-list:l18 level1 lfo3;mso-layout-grid-align:auto;punctuation-wrap:hanging;
+text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:auto'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:Cambria;mso-bidi-font-family:Cambria;
+mso-ansi-language:X-NONE'><span style='mso-list:Ignore'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span></b><![endif]><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;mso-ansi-language:X-NONE'>Fees
+must accompany the Entry Form.<span style="mso-spacerun:yes">&nbsp;
+</span>Entries not shown MUST be paid for.<span style="mso-spacerun:yes">&nbsp;
+</span>No refunds will be made.<span style="mso-spacerun:yes">&nbsp;
+</span>Cheques etc. MUST be drawn in the favour of the Club or Body conducting
+the Show.</span></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+0pt;mso-list:l18 level1 lfo3;mso-layout-grid-align:auto;punctuation-wrap:hanging;
+text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:auto'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:Cambria;mso-bidi-font-family:Cambria;
+mso-ansi-language:X-NONE'><span style='mso-list:Ignore'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span></b><![endif]><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;mso-ansi-language:X-NONE'>The
+Club reserves the right to refuse any entry</span><span style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:"Kozuka Mincho Pro B";mso-bidi-font-family:
+Arial'>.</span><span lang=X-NONE style='font-size:7.0pt;font-family:Cambria;
+mso-fareast-font-family:"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;
+mso-ansi-language:X-NONE'></span></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+0pt;mso-list:l18 level1 lfo3;mso-layout-grid-align:auto;punctuation-wrap:hanging;
+text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:auto'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:Cambria;mso-bidi-font-family:Cambria;
+mso-ansi-language:X-NONE'><span style='mso-list:Ignore'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span></b><![endif]><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;mso-ansi-language:X-NONE'>The
+Club reserves the right to replace contracted judges or appoint additional
+judges if required.</span></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+0pt;mso-list:l18 level1 lfo3;mso-layout-grid-align:auto;punctuation-wrap:hanging;
+text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:auto'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:Cambria;mso-bidi-font-family:Cambria;
+mso-ansi-language:X-NONE'><span style='mso-list:Ignore'>4.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span></b><![endif]><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;mso-ansi-language:X-NONE'>The
+entry Form itself must contain an Exhibitors Declaration:<span
+style="mso-spacerun:yes">&nbsp; </span>&quot;I hereby declare that the
+particulars contained herein are true and correct to the best of my knowledge
+and belief, and enter exhibit/s at my own risk.<span
+style="mso-spacerun:yes">&nbsp; </span>I declare that I am the bonafide Owner
+or Lessee, and agree to abide by the Rules of QFA Inc under which this Show is
+conducted.<span style="mso-spacerun:yes">&nbsp; </span>My exhibit/s have not
+been in contact with an infectious/contagious disease within thirty (30) days
+prior to this Show.</span></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+0pt;mso-list:l18 level1 lfo3;mso-layout-grid-align:auto;punctuation-wrap:hanging;
+text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:auto'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:Cambria;mso-bidi-font-family:Cambria;
+mso-ansi-language:X-NONE'><span style='mso-list:Ignore'>5.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span></b><![endif]><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;mso-ansi-language:X-NONE'>Clubs
+must nominate a Member of the Executive or Delegate or a judge of QFA Inc to
+act as QFA Inc Representative at QFA Inc Shows, such representatives to be
+noted on Show Schedules.</span></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+0pt;mso-list:l18 level1 lfo3;mso-layout-grid-align:auto;punctuation-wrap:hanging;
+text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:auto'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:Cambria;mso-bidi-font-family:Cambria;
+mso-ansi-language:X-NONE'><span style='mso-list:Ignore'>6.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span></b><![endif]><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;mso-ansi-language:X-NONE'>All
+complaints regarding the Show must be in writing and accompanied by a fee of
+twenty ($20.00) dollars and in the hands of the Show Manager within seven (7)
+days of the Show.<span style="mso-spacerun:yes">&nbsp; </span>Fees are
+refundable if upheld.<span style="mso-spacerun:yes">&nbsp; </span>No complaint
+against the running of the Show will be entertained by QFA Inc unless lodged in
+accordance with this Rule.</span></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+0pt;mso-list:l18 level1 lfo3;mso-layout-grid-align:auto;punctuation-wrap:hanging;
+text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:auto'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:Cambria;mso-bidi-font-family:Cambria;
+mso-ansi-language:X-NONE'><span style='mso-list:Ignore'>7.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span></b><![endif]><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;mso-ansi-language:X-NONE'>No
+exhibit can be removed from the Show or from their designated (by the Show
+Manager) cage, to another without the consent of the Show Manager.<span
+style="mso-spacerun:yes">&nbsp; </span>EXHIBITS CANNOT LEAVE SHOW CAGE UNTIL
+ALL JUDGING IS FINALISED.</span></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+0pt;mso-list:l18 level1 lfo3;mso-layout-grid-align:auto;punctuation-wrap:hanging;
+text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:auto'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:Cambria;mso-bidi-font-family:Cambria;
+mso-ansi-language:X-NONE'><span style='mso-list:Ignore'>8.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span></b><![endif]><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;mso-ansi-language:X-NONE'>All
+reasonable care will be taken of exhibits.<span style="mso-spacerun:yes">&nbsp;
+</span>QFA Inc and organizing Clubs, their Officials and Members accept NO
+responsibility for any loss or damage to any person, feline or property.</span></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+0pt;mso-list:l18 level1 lfo3;mso-layout-grid-align:auto;punctuation-wrap:hanging;
+text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:auto'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:Cambria;mso-bidi-font-family:Cambria;
+mso-ansi-language:X-NONE'><span style='mso-list:Ignore'>9.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span></b><![endif]><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;mso-ansi-language:X-NONE'>Any
+Judge appointed to judge at QFA Inc sanctioned shows may not judge an exhibit
+bred by themself unless a period of six (6) months has elapsed since the
+exhibit left their residence.</span></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+0pt;mso-list:l18 level1 lfo3;mso-layout-grid-align:auto;punctuation-wrap:hanging;
+text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:auto'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:Cambria;mso-bidi-font-family:Cambria;
+mso-ansi-language:X-NONE'><span style='mso-list:Ignore'>10.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span></b><![endif]><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;mso-ansi-language:X-NONE'>Any
+judge who is active on the floor of the Show may exhibit in any Section or Ring
+other than the one in which they are judging.<span
+style="mso-spacerun:yes">&nbsp; </span>Judges may act as Stewards at OPEN SHOWS
+only.<span style="mso-spacerun:yes">&nbsp; </span>Judges are permitted to bench
+their own exhibits but must bench early and leave the cage area immediately.</span></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;mso-layout-grid-align:
+auto;punctuation-wrap:hanging;text-autospace:ideograph-numeric ideograph-other;
+mso-vertical-align-alt:auto'><b style='mso-bidi-font-weight:normal'><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;color:#7030A0;mso-ansi-language:
+X-NONE'>Registration of Exhibits</span></b></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+0pt;mso-list:l18 level1 lfo3;mso-layout-grid-align:auto;punctuation-wrap:hanging;
+text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:auto'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:Cambria;mso-bidi-font-family:Cambria;
+mso-ansi-language:X-NONE'><span style='mso-list:Ignore'>11.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span></b><![endif]><span
+style='font-size:7.0pt;font-family:Cambria'>A photocopy of the certificate of
+registration and pedigree for each exhibit must accompany the completed entry
+form.&nbsp; The only exception is for kittens under the age of four (4) months
+where registration is pending.<span style="mso-spacerun:yes">&nbsp; </span>In
+this situation the relevant details must be filled in on the entry form.</span><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;mso-ansi-language:X-NONE'></span></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+0pt;mso-list:l18 level1 lfo3;mso-layout-grid-align:auto;punctuation-wrap:hanging;
+text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:auto'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:Cambria;mso-bidi-font-family:Cambria;
+mso-ansi-language:X-NONE'><span style='mso-list:Ignore'>12.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span></b><![endif]><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;mso-ansi-language:X-NONE'>All
+exhibits (except Companions) over the age of four (4) months MUST be
+registered, and registration number listed on the Entry Form.<span
+style="mso-spacerun:yes">&nbsp; </span>All exhibits domiciled in Queensland
+(except in joint interstate prefixes), MUST be registered with a recognized
+Queensland Governing Body.<span style="mso-spacerun:yes">&nbsp; </span>Only the
+Queensland registration number will be accepted.<span
+style="mso-spacerun:yes">&nbsp; </span>(ACF Inc/CCCA Inc recognized throughout
+Australia).</span><span lang=X-NONE style='font-size:7.0pt;font-family:Cambria;
+mso-ansi-language:X-NONE'> </span><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:"Kozuka Mincho Pro B";mso-bidi-font-family:
+Arial;mso-ansi-language:X-NONE'>For interstate/overseas transfers “Upon the
+sale, exchange, lease or gift of a cat for breeding/exhibiting, the transfer of
+ownership section on the original certificate must be lodged with the Registrar
+WITHIN TWO (2) CALENDAR MONTHS of such disposition”.</span></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+0pt;mso-list:l18 level1 lfo3;mso-layout-grid-align:auto;punctuation-wrap:hanging;
+text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:auto'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:Cambria;mso-bidi-font-family:Cambria;
+mso-ansi-language:X-NONE'><span style='mso-list:Ignore'>13.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span></b><![endif]><span
+style='font-size:7.0pt;font-family:Cambria'>Entries to QFA Inc sanctioned shows
+for exhibits registered with any other Australian body other than&nbsp;ACF or
+CCCA affiliates must be accompanied by a 4 generation pedigree.<span
+style="mso-spacerun:yes">&nbsp; </span>Entries must be received in sufficient
+time to allow the registrar to verify that the exhibits pedigree conforms to
+ACF breeding guidelines</span><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:"Kozuka Mincho Pro B";mso-bidi-font-family:
+Arial;mso-ansi-language:X-NONE'></span></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;mso-layout-grid-align:
+auto;punctuation-wrap:hanging;text-autospace:ideograph-numeric ideograph-other;
+mso-vertical-align-alt:auto'><b style='mso-bidi-font-weight:normal'><span
+style='font-size:7.0pt;font-family:Cambria'>13a.</span></b><span
+style='font-family:"Arial Narrow"'> </span><span style='font-size:7.0pt;
+font-family:Cambria'>All Burmese and Tonkinese entries to QFA Inc sanctioned
+shows (including kittens under 4 months of age) registered with a body other
+than QFA must be accompanied by a 4 generation pedigree.&nbsp;&nbsp; Entries
+must be received in sufficient time to allow the registrar to verify that the
+exhibits pedigree conforms to ACF breeding guidelines.</span><span lang=X-NONE
+style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:"Kozuka Mincho Pro B";
+mso-bidi-font-family:Arial;mso-ansi-language:X-NONE'></span></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+0pt;mso-list:l18 level1 lfo3;mso-layout-grid-align:auto;punctuation-wrap:hanging;
+text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:auto'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:Cambria;mso-bidi-font-family:Cambria;
+mso-ansi-language:X-NONE'><span style='mso-list:Ignore'>14.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span></b><![endif]><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;mso-ansi-language:X-NONE'>Age
+of each exhibit will be calculated to be the actual age on the day of Show or
+the first day of a multi-day show.</span></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+0pt;mso-list:l18 level1 lfo3;mso-layout-grid-align:auto;punctuation-wrap:hanging;
+text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:auto'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:Cambria;mso-bidi-font-family:Cambria;
+mso-ansi-language:X-NONE'><span style='mso-list:Ignore'>15.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span></b><![endif]><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;mso-ansi-language:X-NONE'>No
+kitten under the age of ten (10) weeks is permitted to be shown. </span></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;mso-layout-grid-align:
+auto;punctuation-wrap:hanging;text-autospace:ideograph-numeric ideograph-other;
+mso-vertical-align-alt:auto'><span style='font-size:7.0pt;font-family:Cambria;
+mso-fareast-font-family:"Kozuka Mincho Pro B";mso-bidi-font-family:Arial'>16a.<span
+style='mso-tab-count:1'> </span></span><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:"Kozuka Mincho Pro B";mso-bidi-font-family:
+Arial;mso-ansi-language:X-NONE'>All exhibits must be entered in Show with
+information (including colour and pattern) as detailed on their registration
+certificate.<span style="mso-spacerun:yes">&nbsp; </span>Exhibits must be
+judged according to this information.<span style="mso-spacerun:yes">&nbsp;
+</span>Adult exhibits (9 months and over) CANNOT be reclassified for colour or pattern
+prior to judging on the day or during judging BUT ONLY AFTER all the judging is
+completed.<span style="mso-spacerun:yes">&nbsp; </span>Reclassification may
+then be made after examination and agreement by three (3) QFA Inc judges.</span></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+-.55pt;mso-list:l3 level1 lfo20;mso-layout-grid-align:auto;punctuation-wrap:
+hanging;text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:
+auto'><![if !supportLists]><b style='mso-bidi-font-weight:normal'><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+Cambria;mso-bidi-font-family:Cambria;mso-ansi-language:X-NONE'><span
+style='mso-list:Ignore'>16.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span></b><![endif]><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:"Kozuka Mincho Pro B";mso-bidi-font-family:
+Arial;mso-ansi-language:X-NONE'>Kittens may be reclassified before judging or
+during the first ring of judging with the owner’s consent on the understanding
+that the kitten cannot be changed again for the duration of the show.</span></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+-.55pt;mso-list:l3 level1 lfo20;mso-layout-grid-align:auto;punctuation-wrap:
+hanging;text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:
+auto'><![if !supportLists]><b style='mso-bidi-font-weight:normal'><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+Cambria;mso-bidi-font-family:Cambria;mso-ansi-language:X-NONE'><span
+style='mso-list:Ignore'>17.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span></b><![endif]><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:"Kozuka Mincho Pro B";mso-bidi-font-family:
+Arial;mso-ansi-language:X-NONE'>Companion exhibits over the age of six (6)
+months must be desexed.</span></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+0pt;mso-list:l3 level1 lfo20;mso-layout-grid-align:auto;punctuation-wrap:hanging;
+text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:auto'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:Cambria;mso-bidi-font-family:Cambria;
+mso-ansi-language:X-NONE'><span style='mso-list:Ignore'>18.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span></b><![endif]><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;mso-ansi-language:X-NONE'>Exhibition
+of Experimental Programme and Sub-Register Exhibits to be in accordance with
+the current QFA Inc Regulations and By-laws. </span></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;mso-layout-grid-align:
+auto;punctuation-wrap:hanging;text-autospace:ideograph-numeric ideograph-other;
+mso-vertical-align-alt:auto'><b style='mso-bidi-font-weight:normal'><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;mso-ansi-language:X-NONE'>Health,
+Safety and Welfare of Cats</span></b></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+0pt;mso-list:l3 level1 lfo20;mso-layout-grid-align:auto;punctuation-wrap:hanging;
+text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:auto'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:Cambria;mso-bidi-font-family:Cambria;
+mso-ansi-language:X-NONE'><span style='mso-list:Ignore'>19.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span></b><![endif]><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;mso-ansi-language:X-NONE'>All
+exhibits must be currently vaccinated to enter in a QFA Inc sanctioned show.</span></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+0pt;mso-list:l3 level1 lfo20;mso-layout-grid-align:auto;punctuation-wrap:hanging;
+text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:auto'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:Cambria;mso-bidi-font-family:Cambria;
+mso-ansi-language:X-NONE'><span style='mso-list:Ignore'>20.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span></b><![endif]><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;mso-ansi-language:X-NONE'>All
+exhibits must have claws clipped (front and back).</span></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+0pt;mso-list:l3 level1 lfo20;mso-layout-grid-align:auto;punctuation-wrap:hanging;
+text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:auto'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:Cambria;mso-bidi-font-family:Cambria;
+mso-ansi-language:X-NONE'><span style='mso-list:Ignore'>21.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span></b><![endif]><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;mso-ansi-language:X-NONE'>All
+exhibits must be brought to the Show in suitable container, not on leashes or
+carried in arms.</span></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+0pt;mso-list:l3 level1 lfo20;mso-layout-grid-align:auto;punctuation-wrap:hanging;
+text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:auto'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:Cambria;mso-bidi-font-family:Cambria;
+mso-ansi-language:X-NONE'><span style='mso-list:Ignore'>22.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span></b><![endif]><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;mso-ansi-language:X-NONE'>When
+benching time is listed on Schedule, exhibits MUST be benched by advertised
+time.<span style="mso-spacerun:yes">&nbsp; </span>If exhibitor arrives after
+stipulated time, and judging has commenced, exhibitor must forfeit being judged
+in that Ring and wait until the judge has completed the Finals in that
+particular Ring, before benching their exhibit/s.</span></p>
+
+<p class=MsoNormal style='margin-left:-14.2pt;text-align:justify'><b><span
+style='font-size:7.0pt;font-family:Cambria'>23a.<span style='mso-tab-count:
+1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><span
+style='font-size:7.0pt;font-family:Cambria'>Where a QFA Show has no vetting;
+the s</span><span lang=X-NONE style='font-size:7.0pt;font-family:Cambria;
+mso-ansi-language:X-NONE'>how committee </span><span style='font-size:7.0pt;
+font-family:Cambria'>reserves the right to remove any</span><span lang=X-NONE
+style='font-size:7.0pt;font-family:Cambria;mso-ansi-language:X-NONE'> exhibit </span><span
+style='font-size:7.0pt;font-family:Cambria'>that is </span><b><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-ansi-language:X-NONE'>NOT
+IN SHOW CONDITION. </span></b><b><span style='font-size:7.0pt;font-family:Cambria'>Or</span></b></p>
+
+<p class=MsoNormal style='margin-left:-14.2pt;text-align:justify'><b><span
+style='font-size:7.0pt;font-family:Cambria'>23b.<span style='mso-tab-count:
+1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+</span></b><span style='font-size:7.0pt;font-family:Cambria'>Where a QFA show
+has vetting any exhibit<b> </b>which is, in the opinion of the veterinarian,
+unfit for exhibition, will be removed from the hall immediately. If, in the
+opinion of the veterinarian, it is so desirable, all exhibits from the same
+cattery shall be banned from attending the show.&nbsp; <b>THE VETERINARIAN’S
+DECISION IS FINAL.</b></span><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:"Kozuka Mincho Pro B";mso-bidi-font-family:
+Arial;mso-ansi-language:X-NONE'></span></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+-.55pt;mso-list:l12 level1 lfo21;mso-layout-grid-align:auto;punctuation-wrap:
+hanging;text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:
+auto'><![if !supportLists]><b style='mso-bidi-font-weight:normal'><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+Cambria;mso-bidi-font-family:Cambria;mso-ansi-language:X-NONE'><span
+style='mso-list:Ignore'>24.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span></b><![endif]><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:"Kozuka Mincho Pro B";mso-bidi-font-family:
+Arial;mso-ansi-language:X-NONE'>Female cats obviously in kitten or lactating
+queens without their Litters MUST NOT BE SHOWN.</span></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+0pt;mso-list:l12 level1 lfo21;mso-layout-grid-align:auto;punctuation-wrap:hanging;
+text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:auto'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:Cambria;mso-bidi-font-family:Cambria;
+mso-ansi-language:X-NONE'><span style='mso-list:Ignore'>25.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span></b><![endif]><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;mso-ansi-language:X-NONE'>Unilateral
+or bilateral cryptorchids over the age of nine (9) months, vasectomized males,
+or females which have undergone tubal ligation, must not be shown.<span
+style="mso-spacerun:yes">&nbsp; </span>Any person who knowingly contravenes
+this Rule will have their exhibit disqualified and all entry fees forfeited.</span></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+0pt;mso-list:l12 level1 lfo21;mso-layout-grid-align:auto;punctuation-wrap:hanging;
+text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:auto'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:Cambria;mso-bidi-font-family:Cambria;
+mso-ansi-language:X-NONE'><span style='mso-list:Ignore'>26.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span></b><![endif]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:"Kozuka Mincho Pro B";mso-bidi-font-family:
+Arial;mso-ansi-language:X-NONE'>Litter trays may be left in cages for kittens
+up to 4 (four) months of age during judging.</span></b></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+0pt;mso-list:l12 level1 lfo21;mso-layout-grid-align:auto;punctuation-wrap:hanging;
+text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:auto'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:Cambria;mso-bidi-font-family:Cambria;
+mso-ansi-language:X-NONE'><span style='mso-list:Ignore'>27.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span></b><![endif]><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;mso-ansi-language:X-NONE'><span
+style="mso-spacerun:yes">&nbsp;</span>Litters requiring hire cages will
+automatically receive a second adjoining cage at no extra cost.<span
+style="mso-spacerun:yes">&nbsp; </span>If the Dam of such Litter is being
+exhibited, she may only be placed in with her Litter after judging or between
+Rings.</span></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+0pt;mso-list:l12 level1 lfo21;mso-layout-grid-align:auto;punctuation-wrap:hanging;
+text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:auto'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:Cambria;mso-bidi-font-family:Cambria;
+mso-ansi-language:X-NONE'><span style='mso-list:Ignore'>28.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span></b><![endif]><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;mso-ansi-language:X-NONE'>Only
+one exhibit may be benched per cage unless entered in a litter.</span></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+0pt;mso-list:l12 level1 lfo21;mso-layout-grid-align:auto;punctuation-wrap:hanging;
+text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:auto'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:Cambria;mso-bidi-font-family:Cambria;
+mso-ansi-language:X-NONE'><span style='mso-list:Ignore'>29.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span></b><![endif]><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;mso-ansi-language:X-NONE'>Tattoos
+(on desexed exhibits only) or microchips under the skin will not penalize an
+exhibit.</span></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+0pt;mso-list:l12 level1 lfo21;mso-layout-grid-align:auto;punctuation-wrap:hanging;
+text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:auto'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:Cambria;mso-bidi-font-family:Cambria;
+mso-ansi-language:X-NONE'><span style='mso-list:Ignore'>30.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span></b><![endif]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:"Kozuka Mincho Pro B";mso-bidi-font-family:
+Arial;mso-ansi-language:X-NONE'>Cages must be kept clean by exhibitors prior to
+and after judging.<span style="mso-spacerun:yes">&nbsp; </span>No food to be
+left in cages until judging is completed for the day.</span></b></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+0pt;mso-list:l12 level1 lfo21;mso-layout-grid-align:auto;punctuation-wrap:hanging;
+text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:auto'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:Cambria;mso-bidi-font-family:Cambria;
+mso-ansi-language:X-NONE'><span style='mso-list:Ignore'>31.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span></b><![endif]><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;mso-ansi-language:X-NONE'>Exhibitor
+owned cages must be fitted with suitable solid barriers on both sides and back
+to prevent direct contact between benched cats.</span></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;mso-layout-grid-align:
+auto;punctuation-wrap:hanging;text-autospace:ideograph-numeric ideograph-other;
+mso-vertical-align-alt:auto'><b style='mso-bidi-font-weight:normal'><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;mso-ansi-language:X-NONE'>Competing
+For Awards</span></b></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+0pt;mso-list:l12 level1 lfo21;mso-layout-grid-align:auto;punctuation-wrap:hanging;
+text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:auto'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:Cambria;mso-bidi-font-family:Cambria;
+mso-ansi-language:X-NONE'><span style='mso-list:Ignore'>32.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span></b><![endif]><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;mso-ansi-language:X-NONE'>Exhibits
+registered as AOC/AOV in accordance with current ACF standards may be entered
+in QFA Inc shows but will not be eligible for challenges, best of breed, ACF
+awards, Top 10 placings or COY awards.</span></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+0pt;mso-list:l12 level1 lfo21;mso-layout-grid-align:auto;punctuation-wrap:hanging;
+text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:auto'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:Cambria;mso-bidi-font-family:Cambria;
+mso-ansi-language:X-NONE'><span style='mso-list:Ignore'>33.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span></b><![endif]><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;mso-ansi-language:X-NONE'>Breeds
+and or colours and or patterns that are not recognised by QFA Inc<span
+style="mso-spacerun:yes">&nbsp; </span>may not be entered into a QFA Inc show.</span></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+0pt;mso-list:l12 level1 lfo21;mso-layout-grid-align:auto;punctuation-wrap:hanging;
+text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:auto'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:Cambria;mso-bidi-font-family:Cambria;
+mso-ansi-language:X-NONE'><span style='mso-list:Ignore'>34.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span></b><![endif]><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;mso-ansi-language:X-NONE'>Neuter
+or spay (desexed) kittens under the age of nine (9) months will compete with
+entire kittens in age classes and for Best in Show Awards.</span></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+0pt;mso-list:l12 level1 lfo21;mso-layout-grid-align:auto;punctuation-wrap:hanging;
+text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:auto'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:Cambria;mso-bidi-font-family:Cambria;
+mso-ansi-language:X-NONE'><span style='mso-list:Ignore'>35.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span></b><![endif]><span
+style='font-size:7.0pt;font-family:Cambria'>Any unregistered kittens under 4
+months shown without a name will not be eligible for QFA COTY or Best of Breed
+points.</span><span lang=EN-US style='font-size:7.0pt;font-family:Cambria;
+mso-fareast-font-family:"\30D2\30E9\30AE\30CE\89D2\30B4 Pro W3";mso-ansi-language:
+EN-US'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;mso-ansi-language:X-NONE'></span></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+0pt;mso-list:l12 level1 lfo21;mso-layout-grid-align:auto;punctuation-wrap:hanging;
+text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:auto'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:Cambria;mso-bidi-font-family:Cambria;
+mso-ansi-language:X-NONE'><span style='mso-list:Ignore'>36.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span></b><![endif]><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;mso-ansi-language:X-NONE'><span
+style="mso-spacerun:yes">&nbsp;</span>All adult cats with the exception of Gold
+Double Grand Champions, Platinum, Sapphire, Ruby, Emerald, and Diamond Double
+Grand Champions, compete together for one challenge in the Open Class for each
+breed/colour, Male-Female-Neuter-spay.</span></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;mso-layout-grid-align:
+auto;punctuation-wrap:hanging;text-autospace:ideograph-numeric ideograph-other;
+mso-vertical-align-alt:auto'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:"Kozuka Mincho Pro B";mso-bidi-font-family:
+Arial;mso-ansi-language:X-NONE'>36a.<span style='mso-tab-count:1'> </span>Companion
+exhibits will compete in colour classes.<span style="mso-spacerun:yes">&nbsp;
+</span>Companion adult exhibits must be registered as Companions to be eligible
+for award certificates towards titles of Champion and higher which will be
+attained in the same manner as pedigreed exhibits.<span
+style="mso-spacerun:yes">&nbsp;&nbsp; </span>Adult Companions will compete in
+Neuter-spay classes only.</span></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+0pt;mso-list:l12 level1 lfo21;mso-layout-grid-align:auto;punctuation-wrap:hanging;
+text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:auto'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:Cambria;mso-bidi-font-family:Cambria;
+mso-ansi-language:X-NONE'><span style='mso-list:Ignore'>37.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span></b><![endif]><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;mso-ansi-language:X-NONE'><span
+style="mso-spacerun:yes">&nbsp;</span>Gold Double Grand Champions of each Group
+(Longhair and Shorthair and Companion in metropolitan shows; Groups 1, 2, 3 and
+4 for northern shows) compete together for one certificate in
+Male-Female-Neuter-spay. Platinum, Sapphire, Ruby, Emerald and Diamond Double
+Grand Champions of each Group (as above) compete together for one challenge in
+Male-Female-Neuter-spay.</span></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+0pt;mso-list:l12 level1 lfo21;mso-layout-grid-align:auto;punctuation-wrap:hanging;
+text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:auto'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:Cambria;mso-bidi-font-family:Cambria;
+mso-ansi-language:X-NONE'><span style='mso-list:Ignore'>38.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span></b><![endif]><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;mso-ansi-language:X-NONE'><span
+style="mso-spacerun:yes">&nbsp;</span>ACF Certificates may only be awarded to
+the Best Male &#8211; Female &#8211; Neuter &#8211; spay of each Group (Groups
+1, 2 and 3 for both metropolitan and northern shows)</span></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+0pt;mso-list:l12 level1 lfo21;mso-layout-grid-align:auto;punctuation-wrap:hanging;
+text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:auto'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:Cambria;mso-bidi-font-family:Cambria;
+mso-ansi-language:X-NONE'><span style='mso-list:Ignore'>39.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span></b><![endif]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:"Kozuka Mincho Pro B";mso-bidi-font-family:
+Arial;mso-ansi-language:X-NONE'><span style="mso-spacerun:yes">&nbsp;</span></span></b><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;mso-ansi-language:X-NONE'>In
+the event of a ‘Withheld Challenge’ in an Open Class or first place declined in
+a Kitten Class, then no Best in Section or Best of Breed shall be awarded if
+that exhibit is the sole entry in its’ Breed/Colour Section.</span></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+0pt;mso-list:l12 level1 lfo21;mso-layout-grid-align:auto;punctuation-wrap:hanging;
+text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:auto'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:Cambria;mso-bidi-font-family:Cambria;
+mso-ansi-language:X-NONE'><span style='mso-list:Ignore'>40.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span></b><![endif]><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;mso-ansi-language:X-NONE'>The
+judge’s decision as to the quality of the exhibit is final.<span
+style="mso-spacerun:yes">&nbsp; </span>The judge is empowered to withhold any
+award in any class or Special Award if, in the judges’ opinion, the exhibit
+does not possess sufficient merit.</span></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+0pt;mso-list:l12 level1 lfo21;mso-layout-grid-align:auto;punctuation-wrap:hanging;
+text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:auto'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:Cambria;mso-bidi-font-family:Cambria;
+mso-ansi-language:X-NONE'><span style='mso-list:Ignore'>41.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span></b><![endif]><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;mso-ansi-language:X-NONE'>The
+following Awards MUST be made at QFA Inc Shows in each Group - BEST - RESERVE -
+THIRD BEST CATS, KITTENS and DESEXED.<span style="mso-spacerun:yes">&nbsp;
+</span>RESERVE CHALLENGE winners should also be noted in the event of a protest
+or other Show Rule anomaly.</span></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;mso-layout-grid-align:
+auto;punctuation-wrap:hanging;text-autospace:ideograph-numeric ideograph-other;
+mso-vertical-align-alt:auto'><b style='mso-bidi-font-weight:normal'><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;mso-ansi-language:X-NONE'>Fractious
+Cats</span></b></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+0pt;mso-list:l12 level1 lfo21;mso-layout-grid-align:auto;punctuation-wrap:hanging;
+text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:auto'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:Cambria;mso-bidi-font-family:Cambria;
+mso-ansi-language:X-NONE'><span style='mso-list:Ignore'>42.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span></b><![endif]><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;mso-ansi-language:X-NONE'>No
+cat is to be entered into Shows if it has a history of fractious
+behaviour.<span style="mso-spacerun:yes">&nbsp; </span>It is the Exhibitors’
+Duty of Care not to expose any judge or official to injury by any exhibit.<span
+style="mso-spacerun:yes">&nbsp; </span>Judges are not required to restrain or
+judge any exhibit showing any signs of aggression.</span></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+0pt;mso-list:l12 level1 lfo21;mso-layout-grid-align:auto;punctuation-wrap:hanging;
+text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:auto'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:Cambria;mso-bidi-font-family:Cambria;
+color:red;mso-ansi-language:X-NONE'><span style='mso-list:Ignore'>43.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span></b><![endif]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:"Kozuka Mincho Pro B";mso-bidi-font-family:
+Arial;color:red;mso-ansi-language:X-NONE'>Exhibits may only be handled by the
+owner, at the invitation of the judge</span></b><b style='mso-bidi-font-weight:
+normal'><span style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;color:red'> unless the show has
+been approved as an owner/handler show. All exhibitors at these shows must
+record their name and sign the insurance book provided by the club to ensure
+they are covered under the QFA Voluntary workers insurance policy.</span></b><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:"Kozuka Mincho Pro B";mso-bidi-font-family:
+Arial;color:red;mso-ansi-language:X-NONE'></span></b></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+-.55pt;mso-list:l12 level1 lfo21;mso-layout-grid-align:auto;punctuation-wrap:
+hanging;text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:
+auto'><![if !supportLists]><b style='mso-bidi-font-weight:normal'><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+Cambria;mso-bidi-font-family:Cambria;color:red;mso-ansi-language:X-NONE'><span
+style='mso-list:Ignore'>44.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;color:red;mso-ansi-language:
+X-NONE'>An Exhibit which is Unable to be handled (UTH): deliberate biting or
+attacking of a judge, steward or any </span></b><b style='mso-bidi-font-weight:
+normal'><span style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;color:red'>other person</span></b><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:"Kozuka Mincho Pro B";mso-bidi-font-family:
+Arial;color:red;mso-ansi-language:X-NONE'>. No further judging or showing of
+this cat will take place. The steward must report this to the show manager or
+QFA Inc. representative who will record this by completing a QFA UTH Report.
+The cat will be banned from showing for life. CCCA, ACF and all Queensland
+councils will be notified of this decision in writing by the QFA Inc.
+secretary. The owner must be notified in writing and no appeal will be considered.
+This is for reasons of insurance as well as the cat’s welfare.</span></b></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+0pt;mso-list:l12 level1 lfo21;mso-layout-grid-align:auto;punctuation-wrap:hanging;
+text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:auto'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:Cambria;mso-bidi-font-family:Cambria;
+mso-ansi-language:X-NONE'><span style='mso-list:Ignore'>45.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span></b><![endif]><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;mso-ansi-language:X-NONE'>An
+exhibit, which acts less aggressively but is not able to be effectively
+judged/assessed will be issued with an Unable to be Judged (UTJ) warning and a
+yellow card will be placed on its cage to warn following judges and personnel
+of the situation.<span style="mso-spacerun:yes">&nbsp; </span>An exhibit issued
+with a yellow card is not automatically disqualified from further rings on the
+day and these warnings alone will not result in barring from shows. </span></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;mso-layout-grid-align:
+auto;punctuation-wrap:hanging;text-autospace:ideograph-numeric ideograph-other;
+mso-vertical-align-alt:auto'><b style='mso-bidi-font-weight:normal'><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;mso-ansi-language:X-NONE'>Exhibitor
+Behaviour and Etiquette</span></b></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+0pt;mso-list:l12 level1 lfo21;mso-layout-grid-align:auto;punctuation-wrap:hanging;
+text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:auto'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:Cambria;mso-bidi-font-family:Cambria;
+mso-ansi-language:X-NONE'><span style='mso-list:Ignore'>46.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span></b><![endif]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:"Kozuka Mincho Pro B";mso-bidi-font-family:
+Arial;mso-ansi-language:X-NONE'>Any person/persons who, by their actions or
+words, intimidate any judge, show official, or any other person/persons at or
+in the vicinity of the show hall are liable to disciplinary action.</span></b></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+0pt;mso-list:l12 level1 lfo21;mso-layout-grid-align:auto;punctuation-wrap:hanging;
+text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:auto'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:Cambria;mso-bidi-font-family:Cambria;
+mso-ansi-language:X-NONE'><span style='mso-list:Ignore'>47.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span></b><![endif]><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;mso-ansi-language:X-NONE'>Mobile
+phones must be in Silent Mode during judging.</span></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+0pt;mso-list:l12 level1 lfo21;mso-layout-grid-align:auto;punctuation-wrap:hanging;
+text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:auto'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:Cambria;mso-bidi-font-family:Cambria;
+mso-ansi-language:X-NONE'><span style='mso-list:Ignore'>48.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span></b><![endif]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:"Kozuka Mincho Pro B";mso-bidi-font-family:
+Arial;mso-ansi-language:X-NONE'>No flash cameras to be used within the show
+hall without the express permission of the Show Manager.</span></b></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+0pt;mso-list:l12 level1 lfo21;mso-layout-grid-align:auto;punctuation-wrap:hanging;
+text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:auto'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:Cambria;mso-bidi-font-family:Cambria;
+mso-ansi-language:X-NONE'><span style='mso-list:Ignore'>49.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span></b><![endif]><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;mso-ansi-language:X-NONE'>No
+ribbons, prize cards, certificates etc are to be displayed during judging, or
+any won at previous shows displayed.</span></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+0pt;mso-list:l12 level1 lfo21;mso-layout-grid-align:auto;punctuation-wrap:hanging;
+text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:auto'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:Cambria;mso-bidi-font-family:Cambria;
+mso-ansi-language:X-NONE'><span style='mso-list:Ignore'>50.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span></b><![endif]><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;mso-ansi-language:X-NONE'>No
+Alcohol is allowed to be consumed in the Show Hall</span></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;mso-layout-grid-align:
+auto;punctuation-wrap:hanging;text-autospace:ideograph-numeric ideograph-other;
+mso-vertical-align-alt:auto'><b style='mso-bidi-font-weight:normal'><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;color:#7030A0;mso-ansi-language:
+X-NONE'>Grooming in Show Hall </span></b></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+0pt;mso-list:l12 level1 lfo21;mso-layout-grid-align:auto;punctuation-wrap:hanging;
+text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:auto'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:Cambria;mso-bidi-font-family:Cambria;
+mso-ansi-language:X-NONE'><span style='mso-list:Ignore'>51.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span></b><![endif]><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;mso-ansi-language:X-NONE'>No
+powder, aerosol sprays or Methylated Spirits are allowed in the vicinity of the
+cages.<span style="mso-spacerun:yes">&nbsp; </span>Exhibitors or handlers must
+not use talcum powder or other like substances on an exhibit while it is caged
+or in vicinity of other cages.</span></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+0pt;mso-list:l12 level1 lfo21;mso-layout-grid-align:auto;punctuation-wrap:hanging;
+text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:auto'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:Cambria;mso-bidi-font-family:Cambria;
+mso-ansi-language:X-NONE'><span style='mso-list:Ignore'>52.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span></b><![endif]><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;mso-ansi-language:X-NONE'>Judges
+shall be instructed to disqualify an exhibit upon which there is colouring
+matter or powder residue.</span></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+0pt;mso-list:l12 level1 lfo21;mso-layout-grid-align:auto;punctuation-wrap:hanging;
+text-autospace:ideograph-numeric ideograph-other;mso-vertical-align-alt:auto'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:Cambria;mso-bidi-font-family:Cambria;
+mso-ansi-language:X-NONE'><span style='mso-list:Ignore'>53.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span></b><![endif]><span
+lang=X-NONE style='font-size:7.0pt;font-family:Cambria;mso-fareast-font-family:
+"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;mso-ansi-language:X-NONE'>Exhibits
+cannot be groomed during judging while the judge is in the Ring (Stewards
+cleaning after an exhibit’s mishap not included in this Rule).<span
+style="mso-spacerun:yes">&nbsp; </span>If mishap occurs QFA Inc Show
+Representative must be informed. </span></p>
+
+<p class=MsoNormal style='margin-top:0pt;margin-right:-9.25pt;margin-bottom:
+0pt;margin-left:-14.2pt;margin-bottom:.0001pt;text-align:justify;mso-layout-grid-align:
+auto;punctuation-wrap:hanging;text-autospace:ideograph-numeric ideograph-other;
+mso-vertical-align-alt:auto'><span lang=X-NONE style='font-size:7.0pt;
+font-family:Cambria;mso-fareast-font-family:"Kozuka Mincho Pro B";mso-bidi-font-family:
+Arial;mso-ansi-language:X-NONE'>&nbsp;</span></p>
+
+<h3 style='text-align:justify'><span lang=X-NONE style='font-size:7.0pt;
+mso-fareast-font-family:"Kozuka Mincho Pro B";mso-bidi-font-family:Arial;
+mso-ansi-language:X-NONE'>Updated </span><span style='font-size:7.0pt;
+mso-fareast-font-family:"Kozuka Mincho Pro B";mso-bidi-font-family:Arial'>18<sup>th</sup>
+February 2015</span><span style='font-family:Arial;color:red;font-weight:normal;
+mso-bidi-font-weight:bold'></span></h3>
+
+</div>
+
+
+    <span style='font-size:11.0pt;font-family:Times;mso-fareast-font-family:"Kozuka Mincho Pro B";
+    mso-bidi-font-family:Arial;mso-ansi-language:EN-AU;mso-fareast-language:EN-US;
+    mso-bidi-language:AR-SA'><br clear=all style='mso-special-character:line-break;
+    page-break-before:always'>
+    </span>
+
+    <p class=MsoNormal><span style='font-size:11.0pt;mso-fareast-font-family:"Kozuka Mincho Pro B";
+    mso-bidi-font-family:Arial'>&nbsp;</span></p>
+
+    <p class=MsoNormal align=center style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+    auto;text-align:center'><span style='font-size:18.0pt;mso-bidi-font-family:
+    "Times New Roman"'>Upcoming shows</span></p>
+
+    <p class=MsoNormal style='margin-top:9.0pt;margin-right:0mm;margin-bottom:0mm;
+    margin-left:18.0pt;margin-bottom:.0001pt;text-align:justify;text-justify:inter-ideograph;
+    text-indent:-18.0pt'><span style='font-size:11.0pt;mso-fareast-font-family:
+    "Kozuka Mincho Pro B";mso-bidi-font-family:Arial'>&nbsp;</span></p>
+
+    </div>
+
+    <span style='font-size:10.0pt;font-family:Times;mso-fareast-font-family:"\FF2D\FF33 \660E\671D";
+    mso-fareast-theme-font:minor-fareast;mso-bidi-font-family:"Times New Roman";
+    mso-bidi-theme-font:minor-bidi;mso-ansi-language:EN-AU;mso-fareast-language:
+    EN-US;mso-bidi-language:AR-SA'><br clear=all style='page-break-before:always;
+    mso-break-type:section-break'>
+    </span>
+
+    <div class=WordSection2>
+

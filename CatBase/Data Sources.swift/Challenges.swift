@@ -10,6 +10,20 @@ import Foundation
 
 var challengesToken: dispatch_once_t = 0
 
+
+enum ChallengeTypes: Int {
+  case kitten = 0
+  case open
+  case gold
+  case platinum
+  
+  var description: String {
+    guard let ans = Challenges.list[Globals.currentShowType]?[self.rawValue]
+      else { fatalError("Cannot get description of challenge \(self.rawValue)") }
+    return ans
+  }
+}
+
 class Challenges: DataSource {
   
   static var entity = "Challenges"
@@ -27,27 +41,42 @@ class Challenges: DataSource {
   }
   
   class func  isAKitten(name: String) -> Bool {
-    if let theShow = Globals.currentShow {
-      let currentShowType = theShow.affiliation
-      if let challenges = Challenges.list[currentShowType] {
-        return name == challenges[0]
-      }
+    guard let challenges = Challenges.list[Globals.currentShowType]
+      else {
+        print("Cannot get kitten name for show type: \(Globals.currentShowType)")
+        print("returning default of'Kitten'")
+        return name == "Kitten"
     }
-    return name == "Kitten"
+    return name == challenges[0]
   }
-  
+
   override init() {
     super.init()
     self.limitToList = true
   }
   
   override var list: [String] {
-    if let theShow = Globals.currentShow {
-      let currentShowType = theShow.affiliation
-      return Challenges.list[currentShowType]!
-    } else {
-      return []
-    }
+    guard let ans = Challenges.list[Globals.currentShowType]
+      else { return [] }
+    return ans
+  }
+  
+  // *****************
+  // MARK: - Queries
+  // *****************
+  
+  class func type(entry: Entry) -> ChallengeTypes {
+    guard let index = Challenges.list[Globals.currentShowType]?.indexOf(entry.cat.challenge)
+      else { fatalError("Cannot get challenge type of entry for show type: \(Globals.currentShowType)") }
+    
+    guard let ans = ChallengeTypes(rawValue: index)
+      else { fatalError("Cannot determine challenge type of entry: \(entry.cat.name)") }
+    return ans
   }
 
+  class func nameOf(rank: ChallengeTypes) -> String {
+    guard let ans = Challenges.list[Globals.currentShowType]?[rank.rawValue]
+      else { fatalError("Cannot determine name of challenge of rank: \(rank) in show type: \(Globals.currentShowType)") }
+    return ans
+  }
 }
