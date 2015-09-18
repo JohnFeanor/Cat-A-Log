@@ -1,0 +1,23 @@
+/* 
+  general.strings
+  Cat-a-log
+
+  Created by John Sandercock on 6/01/12.
+  Copyright (c) 2012 Feanor Birmans. All rights reserved.
+*/
+"cancel"            = "Cancel";
+"ok"                = "OK";
+"excuseMe"          = "Excuse me";
+"add Entry"         = "add Entry";
+"remove Entry"      = "remove Entry";
+"edit Entry"        = "edit Entry";
+"add Show"          = "add Show";
+"remove Show"       = "remove Show";
+"edit Show"         = "edit Show";
+"too old"           = "This kitten is over 9 months";
+"too young"         = "This kitten is under ";
+"no pending"        = "This kitten is over 4 months old, and cannot have a 'Pending' registration";
+"not cat"           = "This cat is still a kitten";
+"Challenge"         = "Challenge";
+"Award of Merit"    = "Award of Merit";
+"Cannot be litter"  = "This cat cannot be in a litter as it is not a kitten";

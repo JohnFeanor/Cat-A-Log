@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Start workbook</key>
+	<string>&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;Workbook xmlns=&quot;urn:schemas-microsoft-com:office:spreadsheet&quot;
+ xmlns:o=&quot;urn:schemas-microsoft-com:office:office&quot;
+ xmlns:x=&quot;urn:schemas-microsoft-com:office:excel&quot;
+ xmlns:ss=&quot;urn:schemas-microsoft-com:office:spreadsheet&quot;
+ xmlns:html=&quot;http://www.w3.org/TR/REC-html40&quot;&gt;
+ &lt;DocumentProperties xmlns=&quot;urn:schemas-microsoft-com:office:office&quot;&gt;
+  &lt;Author&gt;John Sandercock&lt;/Author&gt;
+  &lt;LastAuthor&gt;John Sandercock&lt;/LastAuthor&gt;
+  &lt;Created&gt;2012-07-20T07:02:01Z&lt;/Created&gt;
+  &lt;LastSaved&gt;2012-07-20T06:58:21Z&lt;/LastSaved&gt;
+  &lt;Company&gt;QFA&lt;/Company&gt;
+  &lt;Version&gt;14.0&lt;/Version&gt;
+ &lt;/DocumentProperties&gt;
+ &lt;OfficeDocumentSettings xmlns=&quot;urn:schemas-microsoft-com:office:office&quot;&gt;
+  &lt;AllowPNG/&gt;
+ &lt;/OfficeDocumentSettings&gt;
+ &lt;ExcelWorkbook xmlns=&quot;urn:schemas-microsoft-com:office:excel&quot;&gt;
+  &lt;WindowHeight&gt;10740&lt;/WindowHeight&gt;
+  &lt;WindowWidth&gt;24240&lt;/WindowWidth&gt;
+  &lt;WindowTopX&gt;300&lt;/WindowTopX&gt;
+  &lt;WindowTopY&gt;180&lt;/WindowTopY&gt;
+  &lt;ActiveSheet&gt;0&lt;/ActiveSheet&gt;
+  &lt;Date1904/&gt;
+  &lt;ProtectStructure&gt;False&lt;/ProtectStructure&gt;
+  &lt;ProtectWindows&gt;False&lt;/ProtectWindows&gt;
+ &lt;/ExcelWorkbook&gt;
+ &lt;Styles&gt;
+  &lt;Style ss:ID=&quot;Default&quot; ss:Name=&quot;Normal&quot;&gt;
+   &lt;Alignment ss:Vertical=&quot;Bottom&quot;/&gt;
+   &lt;Borders/&gt;
+   &lt;Font ss:FontName=&quot;Calibri&quot; x:Family=&quot;Swiss&quot; ss:Size=&quot;12&quot; ss:Color=&quot;#000000&quot;/&gt;
+   &lt;Interior/&gt;
+   &lt;NumberFormat/&gt;
+   &lt;Protection/&gt;
+  &lt;/Style&gt;
+  &lt;Style ss:ID=&quot;s63&quot;&gt;
+   &lt;Font ss:FontName=&quot;Calibri&quot; ss:Size=&quot;12&quot; ss:Color=&quot;#000000&quot; ss:Bold=&quot;1&quot;
+    ss:Underline=&quot;Single&quot;/&gt;
+  &lt;/Style&gt;
+  &lt;Style ss:ID=&quot;s65&quot;&gt;
+   &lt;Font ss:FontName=&quot;Calibri&quot; ss:Size=&quot;12&quot; ss:Color=&quot;#000000&quot;
+    ss:Underline=&quot;Single&quot;/&gt;
+  &lt;/Style&gt;
+ &lt;/Styles&gt;
+</string>
+	<key>Open sheet</key>
+	<string> &lt;Worksheet ss:Name=&quot;Open&quot;&gt;
+  &lt;Table ss:ExpandedColumnCount=&quot;15&quot; x:FullColumns=&quot;1&quot;
+   x:FullRows=&quot;1&quot; ss:DefaultColumnWidth=&quot;65&quot; ss:DefaultRowHeight=&quot;15&quot;&gt;
+   &lt;Column ss:Width=&quot;31&quot;/&gt;
+   &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;107&quot;/&gt;
+   &lt;Column ss:Index=&quot;4&quot; ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;143&quot;/&gt;
+   &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;44&quot;/&gt;
+   &lt;Column ss:Width=&quot;113&quot;/&gt;
+   &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;47&quot;/&gt;
+   &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;98&quot; ss:Span=&quot;1&quot;/&gt;
+   &lt;Column ss:Index=&quot;10&quot; ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;41&quot;/&gt;
+   &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;95&quot; ss:Span=&quot;3&quot;/&gt;
+   &lt;Row ss:AutoFitHeight=&quot;0&quot; ss:StyleID=&quot;s63&quot;&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Cage&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Rego&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Title&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Name&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Sex&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Colour&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Breed&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Group&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Exhibitor&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Breeder&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Class&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Judge1&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Judge2&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Judge3&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Judge4&lt;/Data&gt;&lt;/Cell&gt;
+   &lt;/Row&gt;
+</string>
+	<key>End open</key>
+	<string>  &lt;/Table&gt;
+  &lt;WorksheetOptions xmlns=&quot;urn:schemas-microsoft-com:office:excel&quot;&gt;
+   &lt;Unsynced/&gt;
+   &lt;PageLayoutZoom&gt;0&lt;/PageLayoutZoom&gt;
+   &lt;Selected/&gt;
+   &lt;Panes&gt;
+    &lt;Pane&gt;
+     &lt;Number&gt;3&lt;/Number&gt;
+     &lt;ActiveCol&gt;9&lt;/ActiveCol&gt;
+     &lt;RangeSelection&gt;C10&lt;/RangeSelection&gt;
+    &lt;/Pane&gt;
+   &lt;/Panes&gt;
+   &lt;ProtectObjects&gt;False&lt;/ProtectObjects&gt;
+   &lt;ProtectScenarios&gt;False&lt;/ProtectScenarios&gt;
+  &lt;/WorksheetOptions&gt;
+ &lt;/Worksheet&gt;
+</string>
+	<key>Gold sheet</key>
+	<string> &lt;Worksheet ss:Name=&quot;Gold&quot;&gt;
+  &lt;Table ss:ExpandedColumnCount=&quot;15&quot; x:FullColumns=&quot;1&quot;
+   x:FullRows=&quot;1&quot; ss:DefaultColumnWidth=&quot;65&quot; ss:DefaultRowHeight=&quot;15&quot;&gt;
+   &lt;Column ss:Width=&quot;31&quot;/&gt;
+   &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;107&quot;/&gt;
+   &lt;Column ss:Width=&quot;55&quot;/&gt;
+   &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;121&quot;/&gt;
+   &lt;Column ss:Width=&quot;32&quot;/&gt;
+   &lt;Column ss:Width=&quot;40&quot;/&gt;
+   &lt;Column ss:Width=&quot;67&quot;/&gt;
+   &lt;Column ss:Width=&quot;51&quot;/&gt;
+   &lt;Column ss:Width=&quot;47&quot;/&gt;
+   &lt;Column ss:Width=&quot;32&quot;/&gt;
+   &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;95&quot; ss:Span=&quot;3&quot;/&gt;
+   &lt;Row ss:AutoFitHeight=&quot;0&quot; ss:StyleID=&quot;s63&quot;&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Cage&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Rego&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Title&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Name&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Sex&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Colour&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Breed&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Group&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Exhibitor&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Breeder&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Class&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Judge1&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Judge2&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Judge3&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Judge4&lt;/Data&gt;&lt;/Cell&gt;
+   &lt;/Row&gt;
+</string>
+	<key>End gold</key>
+	<string>  &lt;/Table&gt;
+  &lt;WorksheetOptions xmlns=&quot;urn:schemas-microsoft-com:office:excel&quot;&gt;
+   &lt;Unsynced/&gt;
+   &lt;PageLayoutZoom&gt;0&lt;/PageLayoutZoom&gt;
+   &lt;Panes&gt;
+    &lt;Pane&gt;
+     &lt;Number&gt;3&lt;/Number&gt;
+     &lt;ActiveCol&gt;1&lt;/ActiveCol&gt;
+     &lt;RangeSelection&gt;C2&lt;/RangeSelection&gt;
+    &lt;/Pane&gt;
+   &lt;/Panes&gt;
+   &lt;ProtectObjects&gt;False&lt;/ProtectObjects&gt;
+   &lt;ProtectScenarios&gt;False&lt;/ProtectScenarios&gt;
+  &lt;/WorksheetOptions&gt;
+ &lt;/Worksheet&gt;
+</string>
+	<key>Platinum sheet</key>
+	<string> &lt;Worksheet ss:Name=&quot;Platinum&quot;&gt;
+  &lt;Table ss:ExpandedColumnCount=&quot;15&quot; x:FullColumns=&quot;1&quot;
+   x:FullRows=&quot;1&quot; ss:DefaultColumnWidth=&quot;65&quot; ss:DefaultRowHeight=&quot;15&quot;&gt;
+   &lt;Column ss:Width=&quot;31&quot;/&gt;
+   &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;107&quot;/&gt;
+   &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;71&quot;/&gt;
+   &lt;Column ss:Width=&quot;115&quot;/&gt;
+   &lt;Column ss:Width=&quot;42&quot;/&gt;
+   &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;102&quot;/&gt;
+   &lt;Column ss:Width=&quot;67&quot;/&gt;
+   &lt;Column ss:Width=&quot;63&quot;/&gt;
+   &lt;Column ss:Width=&quot;74&quot;/&gt;
+   &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;49&quot;/&gt;
+   &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;95&quot; ss:Span=&quot;3&quot;/&gt;
+   &lt;Row ss:AutoFitHeight=&quot;0&quot; ss:StyleID=&quot;s63&quot;&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Cage&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Rego&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Title&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Name&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Sex&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Colour&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Breed&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Group&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Exhibitor&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Breeder&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Class&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Judge1&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Judge2&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Judge3&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Judge4&lt;/Data&gt;&lt;/Cell&gt;
+   &lt;/Row&gt;
+</string>
+	<key>End platinum</key>
+	<string>  &lt;/Table&gt;
+  &lt;WorksheetOptions xmlns=&quot;urn:schemas-microsoft-com:office:excel&quot;&gt;
+   &lt;Unsynced/&gt;
+   &lt;PageLayoutZoom&gt;0&lt;/PageLayoutZoom&gt;
+   &lt;Panes&gt;
+    &lt;Pane&gt;
+     &lt;Number&gt;3&lt;/Number&gt;
+     &lt;ActiveCol&gt;1&lt;/ActiveCol&gt;
+     &lt;RangeSelection&gt;C2&lt;/RangeSelection&gt;
+    &lt;/Pane&gt;
+   &lt;/Panes&gt;
+   &lt;ProtectObjects&gt;False&lt;/ProtectObjects&gt;
+   &lt;ProtectScenarios&gt;False&lt;/ProtectScenarios&gt;
+  &lt;/WorksheetOptions&gt;
+ &lt;/Worksheet&gt;
+</string>
+	<key>Companion sheet</key>
+	<string> &lt;Worksheet ss:Name=&quot;Companion&quot;&gt;
+  &lt;Table ss:ExpandedColumnCount=&quot;15&quot; x:FullColumns=&quot;1&quot;
+   x:FullRows=&quot;1&quot; ss:DefaultColumnWidth=&quot;65&quot; ss:DefaultRowHeight=&quot;15&quot;&gt;
+   &lt;Column ss:Width=&quot;31&quot;/&gt;
+   &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;107&quot;/&gt;
+   &lt;Column ss:Width=&quot;82&quot;/&gt;
+   &lt;Column ss:Width=&quot;87&quot;/&gt;
+   &lt;Column ss:Width=&quot;31&quot;/&gt;
+   &lt;Column ss:Width=&quot;56&quot;/&gt;
+   &lt;Column ss:Width=&quot;63&quot;/&gt;
+   &lt;Column ss:Width=&quot;51&quot;/&gt;
+   &lt;Column ss:Width=&quot;47&quot;/&gt;
+   &lt;Column ss:Width=&quot;34&quot;/&gt;
+   &lt;Row ss:AutoFitHeight=&quot;0&quot; ss:StyleID=&quot;s63&quot;&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Cage&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Rego&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Title&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Name&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Sex&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Colour&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Breed&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Group&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Exhibitor&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Breeder&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Class&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Judge1&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Judge2&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Judge3&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Judge4&lt;/Data&gt;&lt;/Cell&gt;
+   &lt;/Row&gt;
+</string>
+	<key>End companion</key>
+	<string>  &lt;/Table&gt;
+  &lt;WorksheetOptions xmlns=&quot;urn:schemas-microsoft-com:office:excel&quot;&gt;
+   &lt;Unsynced/&gt;
+   &lt;PageLayoutZoom&gt;0&lt;/PageLayoutZoom&gt;
+   &lt;Panes&gt;
+    &lt;Pane&gt;
+     &lt;Number&gt;3&lt;/Number&gt;
+     &lt;ActiveCol&gt;1&lt;/ActiveCol&gt;
+     &lt;RangeSelection&gt;C2&lt;/RangeSelection&gt;
+    &lt;/Pane&gt;
+   &lt;/Panes&gt;
+   &lt;ProtectObjects&gt;False&lt;/ProtectObjects&gt;
+   &lt;ProtectScenarios&gt;False&lt;/ProtectScenarios&gt;
+  &lt;/WorksheetOptions&gt;
+ &lt;/Worksheet&gt;
+</string>
+	<key>Kitten sheet</key>
+	<string> &lt;Worksheet ss:Name=&quot;Kitten&quot;&gt;
+  &lt;Table ss:ExpandedColumnCount=&quot;15&quot; x:FullColumns=&quot;1&quot;
+   x:FullRows=&quot;1&quot; ss:DefaultColumnWidth=&quot;65&quot; ss:DefaultRowHeight=&quot;15&quot;&gt;
+   &lt;Column ss:Width=&quot;31&quot;/&gt;
+   &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;107&quot;/&gt;
+   &lt;Column ss:Width=&quot;82&quot;/&gt;
+   &lt;Column ss:Width=&quot;87&quot;/&gt;
+   &lt;Column ss:Width=&quot;31&quot;/&gt;
+   &lt;Column ss:Width=&quot;56&quot;/&gt;
+   &lt;Column ss:Width=&quot;63&quot;/&gt;
+   &lt;Column ss:Width=&quot;51&quot;/&gt;
+   &lt;Column ss:Width=&quot;47&quot;/&gt;
+   &lt;Column ss:Width=&quot;34&quot;/&gt;
+   &lt;Row ss:AutoFitHeight=&quot;0&quot; ss:StyleID=&quot;s63&quot;&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Cage&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Rego&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Title&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Name&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Sex&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Colour&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Breed&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Group&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Exhibitor&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Breeder&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Class&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Judge1&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Judge2&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Judge3&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Judge4&lt;/Data&gt;&lt;/Cell&gt;
+   &lt;/Row&gt;
+</string>
+	<key>End kitten</key>
+	<string>  &lt;/Table&gt;
+  &lt;WorksheetOptions xmlns=&quot;urn:schemas-microsoft-com:office:excel&quot;&gt;
+   &lt;Unsynced/&gt;
+   &lt;PageLayoutZoom&gt;0&lt;/PageLayoutZoom&gt;
+   &lt;Panes&gt;
+    &lt;Pane&gt;
+     &lt;Number&gt;3&lt;/Number&gt;
+     &lt;ActiveCol&gt;1&lt;/ActiveCol&gt;
+     &lt;RangeSelection&gt;A1&lt;/RangeSelection&gt;
+    &lt;/Pane&gt;
+   &lt;/Panes&gt;
+   &lt;ProtectObjects&gt;False&lt;/ProtectObjects&gt;
+   &lt;ProtectScenarios&gt;False&lt;/ProtectScenarios&gt;
+  &lt;/WorksheetOptions&gt;
+ &lt;/Worksheet&gt;
+</string>
+	<key>List sheet</key>
+	<string> &lt;Worksheet ss:Name=&quot;list&quot;&gt;
+  &lt;Table ss:ExpandedColumnCount=&quot;6&quot; x:FullColumns=&quot;1&quot;
+   x:FullRows=&quot;1&quot; ss:DefaultColumnWidth=&quot;65&quot; ss:DefaultRowHeight=&quot;15&quot;&gt;
+   &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;31&quot;/&gt;
+   &lt;Column ss:Width=&quot;166&quot;/&gt;
+   &lt;Column ss:Width=&quot;136&quot;/&gt;
+   &lt;Column ss:Width=&quot;87&quot;/&gt;
+   &lt;Column ss:Width=&quot;48&quot;/&gt;
+   &lt;Column ss:Width=&quot;61&quot;/&gt;
+   &lt;Row ss:AutoFitHeight=&quot;0&quot; ss:StyleID=&quot;s63&quot;&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;CAGE&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;NAME&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;EXHIBITOR&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;BREED&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;GENDER&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;CAGE TYPE&lt;/Data&gt;&lt;/Cell&gt;
+   &lt;/Row&gt;
+</string>
+	<key>End list</key>
+	<string>  &lt;/Table&gt;
+  &lt;WorksheetOptions xmlns=&quot;urn:schemas-microsoft-com:office:excel&quot;&gt;
+   &lt;Unsynced/&gt;
+   &lt;PageLayoutZoom&gt;0&lt;/PageLayoutZoom&gt;
+   &lt;Panes&gt;
+    &lt;Pane&gt;
+     &lt;Number&gt;3&lt;/Number&gt;
+     &lt;RangeSelection&gt;R1&lt;/RangeSelection&gt;
+    &lt;/Pane&gt;
+   &lt;/Panes&gt;
+   &lt;ProtectObjects&gt;False&lt;/ProtectObjects&gt;
+   &lt;ProtectScenarios&gt;False&lt;/ProtectScenarios&gt;
+  &lt;/WorksheetOptions&gt;
+ &lt;/Worksheet&gt;
+</string>
+	<key>Statistics sheet</key>
+	<string> &lt;Worksheet ss:Name=&quot;statistics&quot;&gt;
+  &lt;Table ss:ExpandedColumnCount=&quot;6&quot; x:FullColumns=&quot;1&quot;
+   x:FullRows=&quot;1&quot; ss:DefaultColumnWidth=&quot;65&quot; ss:DefaultRowHeight=&quot;15&quot;&gt;
+   &lt;Column ss:Width=&quot;122&quot;/&gt;
+   &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;27&quot;/&gt;
+   &lt;Column ss:Width=&quot;35&quot;/&gt;
+   &lt;Column ss:Width=&quot;42&quot;/&gt;
+   &lt;Column ss:Width=&quot;31&quot;/&gt;
+   &lt;Column ss:Width=&quot;27&quot;/&gt;
+   &lt;Row ss:AutoFitHeight=&quot;0&quot; ss:StyleID=&quot;s65&quot;&gt;
+    &lt;Cell ss:StyleID=&quot;s63&quot;&gt;&lt;Data ss:Type=&quot;String&quot;&gt;CAGE STATISTICS&lt;/Data&gt;&lt;/Cell&gt;
+   &lt;/Row&gt;
+</string>
+	<key>End statistics</key>
+	<string>  &lt;/Table&gt;
+  &lt;WorksheetOptions xmlns=&quot;urn:schemas-microsoft-com:office:excel&quot;&gt;
+   &lt;Unsynced/&gt;
+   &lt;PageLayoutZoom&gt;0&lt;/PageLayoutZoom&gt;
+   &lt;Panes&gt;
+    &lt;Pane&gt;
+     &lt;Number&gt;3&lt;/Number&gt;
+     &lt;ActiveRow&gt;21&lt;/ActiveRow&gt;
+     &lt;RangeSelection&gt;R22&lt;/RangeSelection&gt;
+    &lt;/Pane&gt;
+   &lt;/Panes&gt;
+   &lt;ProtectObjects&gt;False&lt;/ProtectObjects&gt;
+   &lt;ProtectScenarios&gt;False&lt;/ProtectScenarios&gt;
+  &lt;/WorksheetOptions&gt;
+ &lt;/Worksheet&gt;
+</string>
+	<key>Number data</key>
+	<string>    &lt;Cell&gt;&lt;Data ss:Type=&quot;Number&quot;&gt;</string>
+	<key>String data</key>
+	<string>    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;</string>
+	<key>Start row</key>
+	<string>   &lt;Row ss:AutoFitHeight=&quot;0&quot;&gt;
+</string>
+	<key>End row</key>
+	<string>   &lt;/Row&gt;
+</string>
+	<key>End cell</key>
+	<string>&lt;/Data&gt;&lt;/Cell&gt;
+</string>
+	<key>End sheet</key>
+	<string>  &lt;/Table&gt;
+  &lt;WorksheetOptions xmlns=&quot;urn:schemas-microsoft-com:office:excel&quot;&gt;
+   &lt;PageLayoutZoom&gt;0&lt;/PageLayoutZoom&gt;
+   &lt;LeftColumnVisible&gt;3&lt;/LeftColumnVisible&gt;
+   &lt;Panes&gt;
+    &lt;Pane&gt;
+     &lt;Number&gt;3&lt;/Number&gt;
+     &lt;RangeSelection&gt;C1:C10&lt;/RangeSelection&gt;
+    &lt;/Pane&gt;
+   &lt;/Panes&gt;
+   &lt;ProtectObjects&gt;False&lt;/ProtectObjects&gt;
+   &lt;ProtectScenarios&gt;False&lt;/ProtectScenarios&gt;
+  &lt;/WorksheetOptions&gt;
+ &lt;/Worksheet&gt;
+</string>
+	<key>Hiring row</key>
+	<string>   &lt;Row&gt;
+   &lt;/Row&gt;
+   &lt;Row ss:AutoFitHeight=&quot;0&quot; ss:StyleID=&quot;s65&quot;&gt;
+    &lt;Cell ss:StyleID=&quot;s63&quot;&gt;&lt;Data ss:Type=&quot;String&quot;&gt;People hiring cages&lt;/Data&gt;&lt;/Cell&gt;
+   &lt;/Row&gt;
+</string>
+	<key>Workers row</key>
+	<string>    &lt;Row ss:AutoFitHeight=&quot;0&quot; ss:StyleID=&quot;s65&quot;&gt;
+    &lt;Cell ss:StyleID=&quot;s63&quot;&gt;&lt;Data ss:Type=&quot;String&quot;&gt;People willing to work&lt;/Data&gt;&lt;/Cell&gt;
+   &lt;/Row&gt;
+ </string>
+	<key>Catalogue row</key>
+	<string>&lt;Row ss:AutoFitHeight=&quot;0&quot; ss:StyleID=&quot;s65&quot;&gt;
+    &lt;Cell ss:StyleID=&quot;s63&quot;&gt;&lt;Data ss:Type=&quot;String&quot;&gt;People requiring a catalogue&lt;/Data&gt;&lt;/Cell&gt;
+   &lt;/Row&gt;
+ </string>
+	<key>End workbook</key>
+	<string>&lt;/Workbook&gt;
+</string>
+</dict>
+</plist>

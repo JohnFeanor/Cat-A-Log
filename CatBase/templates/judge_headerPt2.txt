@@ -1,0 +1,32 @@
+        Ring [Insert number here]
+      <span style='mso-tab-count:1'>
+      </span>
+      Judge: Name
+    </span>
+  </p>
+  <p class=MsoHeader style='tab-stops:center 362.1pt 404.7pt 447.3pt 489.9pt'>
+    <span style='font-size:14.0pt;font-family:"Arial Rounded MT Bold"'>
+      &nbsp;
+    </span>
+  </p>
+</div>
+
+<div style='mso-element:footer' id=f1>
+
+<p class=MsoFooter style='tab-stops:269.8pt right 515.65pt'>
+	<span style='font-size:12.0pt;font-family:"Times New Roman";mso-bidi-font-family:"Times New Roman";mso-bidi-theme-font:minor-bidi'>
+	Signatures
+	</span>
+</p>
+
+<p class=MsoFooter style='tab-stops:dotted 227.2pt right 489.9pt'>
+	<span style='font-size:12.0pt;font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-bidi-theme-font:minor-bidi'>Judge: 
+		<span style='mso-tab-count:1 dotted'>............................................................. </span>
+		<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;</span>
+		Steward / Ring clerk:
+		<span style='mso-tab-count:1 dotted'>.............................................. </span>
+	</span>
+</p>
+
+<p class=MsoFooter style='margin-top:6.0pt;tab-stops:right 482.8pt'>
+	<span style='font-size:10.0pt;font-family:"Times New Roman";mso-bidi-font-family:"Times New Roman";mso-bidi-theme-font:minor-bidi'>
