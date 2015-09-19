@@ -195,17 +195,19 @@ private func xmlString(str: String) -> NSData {
   if xmlStr == "Platinum" {
     xmlStr = "Platinum or above"
   }
-  let ans = excelSheet[String_data] as! NSMutableData
+  let ans = NSMutableData()
+  ans.appendData(excelSheet[String_data]!)
   ans.appendData(xmlStr.data)
   ans.appendData(excelSheet[End_cell]!)
   return ans as NSData
 }
 
 private func xmlNumber(num: Int) -> NSData {
-  let ans = excelSheet[Number_data] as! NSMutableData
+  let ans = NSMutableData()
+  ans.appendData(excelSheet[Number_data]!)
   ans.appendData(String(num).data)
   ans.appendData(excelSheet[End_cell]!)
-    return ans as NSData
+  return ans as NSData
 }
 
 private let xmlEmptyRow: NSData = {
@@ -219,6 +221,8 @@ private let xmlEmptyRow: NSData = {
 // *********************************
 // MARK: - print the catalog
 // *********************************
+
+var debugCount = 1
 
 extension MainWindowController {
   func printCatalog(name: String, to url: NSURL) {
@@ -454,22 +458,23 @@ extension MainWindowController {
     // ----------------------
     
     func doOpenChallengesFor(thisEntry: Entry?, changingColour changeColour: Bool ) {
-      if let thisEntry = thisEntry {
-        // ** Kittens do not have challenges
-        if thisEntry.cat.isKitten { return }
-        
-        if openChallenges.isEmpty {
-          addData(spacer)
-          if thisEntry.cat.isCompanion {
-            writeChallenges(openChallenges, ofType: awardOfMerit)
-          } else {
-            writeChallenges(openChallenges, ofType: challenge)
-          }
-          if !changeColour {
-            addData(spacer)
-          }
-          openChallenges = []
+      // ** check to make sure this is an entry
+      guard let thisEntry = thisEntry
+        else { return }
+      // ** Kittens do not have challenges
+      if thisEntry.cat.isKitten { return }
+      
+      if openChallenges.isEmpty {
+        addData(spacer)
+        if thisEntry.cat.isCompanion {
+          writeChallenges(openChallenges, ofType: awardOfMerit)
+        } else {
+          writeChallenges(openChallenges, ofType: challenge)
         }
+        if !changeColour {
+          addData(spacer)
+        }
+        openChallenges = []
       }
     }
     
@@ -610,25 +615,22 @@ extension MainWindowController {
         
         // MARK: - write out open challenges & best of colour
         // ---------------------------------------------------
-        if !entry.sameChallengeAs(lastEntry) || !entry.sameColourAs(lastEntry) {
+        if entry.newChallengeColourTo(lastEntry) {
           doOpenChallengesFor(lastEntry, changingColour: lastEntry.cat.colour == entry.cat.colour)
-          
-          if entry.newChallengeColourTo(lastEntry) {
-            doBestOfColourFor(lastEntry, with: colourCount)
-            colourCount = 1
-          } else {
-            colourCount++
-          }
-          
-          // Check to see if we need to write out best of breed
-          if entry.newBreedTo(lastEntry) {
-            doBestOfBreedFor(lastEntry, with: breedCount)
-            breedCount = 1
-          } else {
-            breedCount++
-          }
+          doBestOfColourFor(lastEntry, with: colourCount)
+          colourCount = 1
+        } else {
+          colourCount++
         }
-     
+        
+        // Check to see if we need to write out best of breed
+        if entry.newBreedTo(lastEntry) {
+          doBestOfBreedFor(lastEntry, with: breedCount)
+          breedCount = 1
+        } else {
+          breedCount++
+        }
+        
       
         // MARK: - Are we on a new section?
         // ---------------------------------
@@ -738,24 +740,26 @@ extension MainWindowController {
         
         // MARK: - Determine what sort of challenge this is
         // -------------------------------------------------
-        
+      
         // Add to excel sheet
-        func updateExcelData(inout thisChallengeData: NSMutableData) {
-          thisChallengeData.appendData(excelSheet[Start_row]!)
-          thisChallengeData.appendData(xmlNumber(cageNumber))
-          thisChallengeData.appendData(xmlString(entry.cat.registration))
-          thisChallengeData.appendData(xmlString(entry.cat.title))
-          thisChallengeData.appendData(xmlString(entry.cat.name))
-          thisChallengeData.appendData(xmlString(entry.cat.gender))
-          thisChallengeData.appendData(xmlString(entry.cat.colour))
-          thisChallengeData.appendData(xmlString(entry.cat.breed))
-          thisChallengeData.appendData(xmlString(entry.cat.group))
-          thisChallengeData.appendData(xmlString(entry.cat.exhibitor))
-          thisChallengeData.appendData(xmlString(entry.cat.breeder))
-          thisChallengeData.appendData(xmlString(entry.cat.challenge))
-          thisChallengeData.appendData(excelSheet[End_row]!)
-        }
-        
+      func excelDataFor(cat: Cat) -> NSData {
+        let myData = NSMutableData()
+        myData.appendData(excelSheet[Start_row]!)
+        myData.appendData(xmlNumber(cageNumber))
+        myData.appendData(xmlString(cat.registration))
+        myData.appendData(xmlString(cat.title))
+        myData.appendData(xmlString(cat.name))
+        myData.appendData(xmlString(cat.gender))
+        myData.appendData(xmlString(cat.colour))
+        myData.appendData(xmlString(cat.breed))
+        myData.appendData(xmlString(cat.group))
+        myData.appendData(xmlString(cat.exhibitor))
+        myData.appendData(xmlString(cat.breeder))
+        myData.appendData(xmlString(cat.challenge))
+        myData.appendData(excelSheet[End_row]!)
+        return myData as NSData
+      }
+      
         func updateChallengeFor(entry: Entry) {
           let maleCat = entry.cat.isMale
           switch Challenges.type(entry) {
@@ -772,27 +776,27 @@ extension MainWindowController {
             break
           }
         }
-        
-        if entry.cat.isCompanion {
-          updateExcelData(&companionData)
-          if !entry.cat.isKitten && !entry.cat.registrationIsPending {
-            updateChallengeFor(entry)
-          }
-        } else if entry.cat.isKitten && !entry.cat.isCompanion {
-          updateExcelData(&kittenData)
-        } else if Challenges.type(entry) == .gold {
+      
+      if entry.cat.isCompanion {
+        companionData.appendData(excelDataFor(entry.cat))
+        if !entry.cat.isKitten && !entry.cat.registrationIsPending {
           updateChallengeFor(entry)
-          updateExcelData(&goldData)
-        } else if Challenges.type(entry) == .platinum {
-          updateChallengeFor(entry)
-          updateExcelData(&platinumData)
-        } else if Challenges.type(entry) == .open {
-          updateChallengeFor(entry)
-          updateExcelData(&openData)
         }
-        
-        // MARK: - Write out new colour
-        if entry.newChallengeColourTo(lastEntry) {
+      } else if entry.cat.isKitten {
+        kittenData.appendData(excelDataFor(entry.cat))
+      } else if Challenges.type(entry) == .gold {
+        updateChallengeFor(entry)
+        goldData.appendData(excelDataFor(entry.cat))
+      } else if Challenges.type(entry) == .platinum {
+        updateChallengeFor(entry)
+        platinumData.appendData(excelDataFor(entry.cat))
+      } else if Challenges.type(entry) == .open {
+        updateChallengeFor(entry)
+        openData.appendData(excelDataFor(entry.cat))
+      }
+      
+      // MARK: - Write out new colour
+      if entry.newChallengeColourTo(lastEntry) {
           if lastAgouti != Agouti.notAgouti {
             addData(bestAward1)
           }
@@ -861,7 +865,7 @@ extension MainWindowController {
           catClass = "\(entry.cat.sex) class"
         }
         
-        if entry.newBreedTo(lastEntry) || entry.newColourTo(lastEntry) || catClass != lastClass {
+        if entry.newChallengeColourTo(lastEntry) {
           addData(catClass)
           lastClass = catClass
         } else {

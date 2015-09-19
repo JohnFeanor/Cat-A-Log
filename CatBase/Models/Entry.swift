@@ -188,33 +188,7 @@ class Entry: NSManagedObject {
     }
     return false
   }
-  
-  func sameChallengeAs(other: Entry) -> Bool {
-    // Kittens do not get challenges
-    if self.cat.isKitten { return false }
-    
-    // Must be same sex
-    if self.cat.sex != other.cat.sex { return false }
-    
-    // Must be same breed
-    if self.cat.breed != other.cat.breed { return false }
-    
-    return self.sameColourAs(other)
-  }
-  
-  func sameColourAs(other: Entry?) -> Bool {
-    
-    guard let other = other
-      else { return true }
-    // Must be the same agouti class
-    if self.cat.agoutiRank != other.cat.agoutiRank { return false }
-    
-    // Must be the same colour
-    if self.cat.colour != other.cat.colour { return false }
-    
-    return true
-  }
-
+ 
   func differentBreedTo(other: Entry?) -> Bool {
     guard let other = other
       else { return true }
@@ -233,18 +207,23 @@ class Entry: NSManagedObject {
     return cat.agoutiRank != other.cat.agoutiRank
   }
   
+  // return true if other is different breed or colour
+  // not concerned about agouti type
   func newColourTo(other: Entry?) -> Bool {
     guard let other = other
       else { return true }
-    return !sameColourAs(other) || differentBreedTo(other)
+    if differentBreedTo(other) { return true }
+    return self.cat.colour != other.cat.colour
   }
   
+  // return true if other is different challenge colour
+  // takes agouti type into account
   func newChallengeColourTo(other: Entry?) -> Bool {
     guard let other = other
       else { return true }
     if differentBreedTo(other) { return true }
     if cat.isAgouti { return cat.agoutiRank != other.cat.agoutiRank }
-    return !sameColourAs(other)
+    return self.cat.colour != other.cat.colour
   }
   
   func compareWith(anotherEntry: Entry) -> NSComparisonResult {
