@@ -95,16 +95,20 @@ class EntrySheetController: NSWindowController {
   dynamic var sex       = String()
   dynamic var challenge = String() {
     didSet {
-      let today = NSDate()
       if challenge != Challenges.nameOf(ChallengeTypes.kitten) && !dateSet {
+        let showdate = Globals.currentShow?.date ?? NSDate()
         let calendar = NSCalendar.currentCalendar()
-        if let lastYear = calendar.dateByAddingUnit(NSCalendarUnit.Year, value: -1, toDate: today, options: []) {
+        if let lastYear = calendar.dateByAddingUnit(NSCalendarUnit.Year, value: -1, toDate: showdate, options: []) {
           birthDate = lastYear
         }
       }
     }
   }
-  dynamic var birthDate = NSDate()
+  dynamic var birthDate: NSDate = {
+    let showdate = Globals.currentShow?.date ?? NSDate()
+    let calendar = NSCalendar.currentCalendar()
+    return calendar.dateByAddingUnit(.Month, value: -5, toDate: showdate, options: []) ?? showdate
+  }()
   dynamic var sire      = String()
   dynamic var dam       = String()
   dynamic var exhibitor = String()

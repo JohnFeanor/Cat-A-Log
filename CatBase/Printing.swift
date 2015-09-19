@@ -308,7 +308,7 @@ extension MainWindowController {
       if let thisEntry = thisEntry {
         addData(bestAward1)
         
-        if numCats == 0 { return }
+        if numCats < 2 { return }
         
         let count = sizeFor(numCats)
         if count == 0 { return }
