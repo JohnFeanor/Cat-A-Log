@@ -4,6 +4,11 @@
 <dict>
 	<key>ACF Show</key>
 	<dict>
+		<key>litterAges</key>
+		<array>
+			<integer>0</integer>
+			<integer>5</integer>
+		</array>
 		<key>kittenAges</key>
 		<array>
 			<integer>5</integer>
@@ -143,6 +148,11 @@
 	</dict>
 	<key>COAWA Show</key>
 	<dict>
+		<key>litterAges</key>
+		<array>
+			<integer>0</integer>
+			<integer>5</integer>
+		</array>
 		<key>kittenAges</key>
 		<array>
 			<integer>5</integer>
@@ -308,6 +318,11 @@
 	</dict>
 	<key>QFA Show</key>
 	<dict>
+		<key>litterAges</key>
+		<array>
+			<integer>0</integer>
+			<integer>5</integer>
+		</array>
 		<key>kittenAges</key>
 		<array>
 			<integer>5</integer>

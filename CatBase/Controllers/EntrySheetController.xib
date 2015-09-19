@@ -460,8 +460,6 @@ Gw
                         <buttonCell key="cell" type="check" title="Catalogue required" bezelStyle="regularSquare" imagePosition="left" inset="2" id="zTu-Ul-OSE">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
-                            <string key="keyEquivalent">c</string>
-                            <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                         </buttonCell>
                         <connections>
                             <binding destination="-2" name="value" keyPath="catalogueRequired" id="AcZ-gU-qS5"/>
@@ -473,7 +471,7 @@ Gw
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                             <string key="keyEquivalent">v</string>
-                            <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            <modifierMask key="keyEquivalentModifierMask" option="YES"/>
                         </buttonCell>
                         <connections>
                             <binding destination="-2" name="value" keyPath="vaccinated" id="WCn-F6-wA5"/>

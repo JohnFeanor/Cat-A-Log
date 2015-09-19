@@ -270,6 +270,7 @@ class MainWindowController: NSWindowController {
       let sheetController = EntrySheetController()
       sheetController.managedObjectContext = self.managedObjectContext
       sheetController.setSheetTo(Globals.currentEntry!)
+      sheetController.dateSet = true
       speaker.startSpeakingString("editing \(Globals.currentEntry!.cat.name)")
       window.beginSheet(sheetController.window!, completionHandler: { response in
         // The sheet has finished. Did the user click 'OK'?

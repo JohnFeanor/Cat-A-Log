@@ -18,7 +18,7 @@ class EntrySheetController: NSWindowController {
   @IBOutlet weak var cageSizeTextField: NSTextField!
   @IBOutlet weak var initialTextField: NSTextField!
   
-  private var dateSet = false
+  var dateSet = false
   
   var managedObjectContext: NSManagedObjectContext!
   
@@ -62,6 +62,7 @@ class EntrySheetController: NSWindowController {
       // and fill in the details if it is
       if registration != pending && !filledFields {
         let same = fetchCatsWithRegistration(registration, inContext: self.managedObjectContext)
+        dateSet = true
         setSheetTo(same.first, except: [Cat.registration])
       }
     }
@@ -81,6 +82,7 @@ class EntrySheetController: NSWindowController {
       if !filledFields {
         let same = fetchCatsWithName(self.name, inContext: self.managedObjectContext)
         let cat = same.first
+        dateSet = true
         setSheetTo(cat, except: [Cat.registration, Cat.name])
         let noRego = registration.isEmpty || registration == pending
         if noRego && cat != nil {
@@ -217,6 +219,12 @@ class EntrySheetController: NSWindowController {
     for key in Entry.properties {
       self.setValue(original.valueForKey(key), forKey: key)
     }
+    // set the cage type menu
+    if let index = Globals.cageTypes.sizes.indexOf(original.cageSize.integerValue) {
+      cageType = NSNumber(integer: index)
+    } else {
+      cageType = zero
+    }
   }
   
 
@@ -230,6 +238,8 @@ class EntrySheetController: NSWindowController {
   private let possibleFaults = ["registration", "name", "breed", "colour", "sex", "challenge", "sire", "dam", "breeder", "exhibitor"]
 
   func validateSheet() -> String? {
+    print("Set cat \(name) litter to: \(litterCage)")
+    
     var faults = "Have not given "
     var okToGo = true
     var count = 0
@@ -261,26 +271,22 @@ class EntrySheetController: NSWindowController {
       // ----------------------------------------------------
       let itIsAKitten = currentShow.isKittenIfBornOn(self.birthDate)
       if  Challenges.isAKitten(self.challenge) {
-
+        
         // it is entered as a kitten
         // ----------------------------------------------------
         if !itIsAKitten {
-
+          
           // but it is not
           // ----------------------------------------------------
           okToGo = false
           faults += "This cat is too old to be a kitten.\n"
         }
-      } else
-
-        // it is entered as a cat/desexed
+      } else if itIsAKitten {
+        
+        // entered as cat but it is a kitten
         // ----------------------------------------------------
-        if itIsAKitten {
-
-          // but it is a kitten
-          // ----------------------------------------------------
-          okToGo = false
-          faults += "This cat should be in kittens.\n"
+        okToGo = false
+        faults += "This cat should be in kittens.\n"
       }
       
       // Check to see the cat is not too young for the show
@@ -291,14 +297,20 @@ class EntrySheetController: NSWindowController {
         faults += "This kitten is under age.\n"
       }
       
-      // Ensure 'Pending' is not used as registration for pedigree cats older than 4 months
-      // -----------------------------------------------------------------------------------
-      let pendingAllowed = currentShow.canItBePending(self.birthDate)
-      if !Breeds.nonPedigreeBreed(self.breed) && !pendingAllowed {
-        okToGo == false
-        faults += "This kitten is too old for pending.\n"
+      // Check to see kitten is not too old to be in litter
+      // ---------------------------------------------------
+      let isTooOldForLitter = !currentShow.canItBeInALitter(self.birthDate)
+      if isTooOldForLitter && litterCage {
+        okToGo = false
+        faults += "This kitten is too old to be in a litter.\n"
       }
       
+      // Ensure 'Pending' is not used as registration for pedigree cats older than 4 months
+      // -----------------------------------------------------------------------------------
+      if registration.isPending && Breeds.pedigreeBreed(self.breed) && !currentShow.canItBePending(self.birthDate) {
+        okToGo = false
+        faults += "This kitten is too old for pending.\n"
+      }
     } else {
       errorAlert(message: "!! No show date specified !!\nLocation: EntryShowController.validateSheet")
     }

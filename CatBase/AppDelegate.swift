@@ -173,7 +173,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       }
       
       if !moc.hasChanges {
-        print("No managed object context changes to save")
         return .TerminateNow
       }
       

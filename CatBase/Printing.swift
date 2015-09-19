@@ -393,12 +393,13 @@ extension MainWindowController {
     // ---------------------
     
     func writeLittersForGroup(currentGroupNumber: Int) {
+      print(litters)
       var first = true
       for litter in litters {
         if litter.groupNumber == currentGroupNumber {
           if first {
             first = false
-            addData(breed1, "\(Breeds.nameOfGroupNumber(currentGroupNumber)) Litters", breed2)
+            addData(breed1, "\(Breeds.nameOfGroupNumber(currentGroupNumber)!) Litters", breed2)
           }
           addData(tableStart)
           addData(name1Litter, "Litter \(litter.number)", name2Litter)
@@ -569,7 +570,6 @@ extension MainWindowController {
     // ***************************************
     
     for entry in sortedEntrys {
-      
       var newLitter = true
       if entry.isInLitter {
         for litter in litters {
@@ -578,9 +578,9 @@ extension MainWindowController {
             break
           }
         }
-      }
-      if newLitter {
-        litters += [Litter(entry: entry)]
+        if newLitter {
+          litters += [Litter(entry: entry)]
+        }
       }
     }
     
@@ -637,7 +637,9 @@ extension MainWindowController {
         if entry.inDifferentSectionTo(lastEntry) {
           
           // MARK: - Write out litters for this group
-          if lastEntry.cat.isKitten && !lastEntry.cat.isCompanion {
+          if lastEntry.isLitterKitten {
+            print("\(lastEntry.cat.name) is in litter (Y)")
+            print("Writing litters for group: \(lastEntry.cat.groupNumber)")
             writeLittersForGroup(lastEntry.cat.groupNumber)
           }
           

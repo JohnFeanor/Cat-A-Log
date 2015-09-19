@@ -132,4 +132,12 @@ class Show: NSManagedObject {
     let canBePending = birthDate.lessThan(weeks: minAge.weeks, months: minAge.months, before: self.date)
     return canBePending
   }
+  
+  // Is a cat born on a given date able to be in a litter?
+  // ------------------------------------------------------
+  func canItBeInALitter(birthDate: NSDate) -> Bool {
+    let maxAge = self.minAges(Headings.litterAge)
+    let canBeInLitter = birthDate.lessThan(weeks: maxAge.weeks, months: maxAge.months, before: self.date)
+    return canBeInLitter
+  }
 }

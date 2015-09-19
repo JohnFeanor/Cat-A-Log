@@ -101,6 +101,10 @@ class Entry: NSManagedObject {
     print("Entry given undefined key: \(key)")
   }
   
+  func setCageToSmall() {
+    cageSize = NSNumber(integer: 0)
+  }
+  
   var litter: Bool {
     get {
       return self.litterCage.boolValue
@@ -159,6 +163,12 @@ class Entry: NSManagedObject {
     
     // if all are true, kitten is part of this litter
     return true
+  }
+  
+  var isLitterKitten: Bool {
+    if Breeds.nonPedigreeBreed(cat.breed) { return false }
+    if !cat.isKitten { return false }
+    return isInLitter
   }
   
   var typeOfCage: String {

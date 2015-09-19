@@ -113,12 +113,21 @@ class Cat: NSManagedObject {
   // ************************
   
   var registrationIsPending: Bool {
-    return self.registration.caseInsensitiveCompare("Pending") == NSComparisonResult.OrderedSame
+    return self.registration.isPending
+  }
+  
+  var ageinMonths: Int {
+    if let showDate = Globals.currentShow?.date {
+      let ageInMonths = showDate.monthsDifferenceTo(self.birthDate)
+      return ageInMonths
+    } else {
+      return -1
+    }
   }
   
   var isKitten: Bool {
     if let showDate = Globals.currentShow?.date {
-      let ageInMonths = showDate.monthsDifferenceTo(self.birthDate)
+      let ageInMonths = self.birthDate.monthsDifferenceTo(showDate)
       return ageInMonths < 9
     } else {
       return false

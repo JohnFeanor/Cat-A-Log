@@ -10,6 +10,11 @@ import Cocoa
 
 typealias DictOfStringArray = [String : [String]]
 
+
+// ********************************
+// MARK: - Extensions
+// *******************************
+
 extension NSControl {
   var currentBreed: String {
     get {
@@ -62,7 +67,8 @@ extension NSDate {
   func monthsDifferenceTo(otherDate: NSDate) -> Int {
     let calendar = NSCalendar.currentCalendar()
     let components = calendar.components(.Month, fromDate: self, toDate: otherDate, options: [])
-    return components.month
+    
+    return components.month < 0 ? components.month * -1 : components.month
   }
   
   func differenceInMonthsAndYears(otherDate: NSDate) -> String {
@@ -78,7 +84,18 @@ extension NSDate {
   }
 }
 
+extension String {
+  var isPending: Bool {
+    return self.caseInsensitiveCompare(pending) == NSComparisonResult.OrderedSame
+  }
+}
+
+// ********************************
+// MARK: - Structures
+// *******************************
+
 struct Headings {
+  static let litterAge  = "litterAges"
   static let minAge     = "MinAge"
   static let kittenAges = "kittenAges"
   static let pending    = "Pending"
@@ -90,8 +107,11 @@ struct Headings {
   static let breeds     = "breeds"
 }
 
-let pending = "Pending"
+// ********************************
+// MARK: - Constants
+// *******************************
 
+let pending = "Pending"
 let maxNumberOfRings = 6
 
 let space = " "
