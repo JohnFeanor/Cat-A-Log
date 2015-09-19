@@ -76,8 +76,10 @@ class MainWindowController: NSWindowController {
     
   @IBOutlet var theShowController: NSArrayController!
   @IBOutlet var theEntriesController: NSArrayController!
-  
+    
   @IBOutlet weak var tableView: NSTableView!
+  
+  weak var appDelegate: AppDelegate!
   
   var managedObjectContext: NSManagedObjectContext!
   
@@ -92,9 +94,12 @@ class MainWindowController: NSWindowController {
     return "MainWindowController"
   }
   
+  // ================================
+  // MARK: - Methods
+  // ================================
+  
   override func windowDidLoad() {
     super.windowDidLoad()
-    
     
     let fetchRequest = NSFetchRequest(entityName: Show.entity)
     
@@ -103,6 +108,18 @@ class MainWindowController: NSWindowController {
       theShowController.addObject(object)
     }
     theShowController.rearrangeObjects()
+    
+    let centre = NSNotificationCenter.defaultCenter()
+    centre.addObserver(self, selector: Selector("tableViewSelectionDidChange:"), name: NSTableViewSelectionDidChangeNotification, object: tableView)
+  }
+  
+  func tableViewSelectionDidChange(aNotification: NSNotification) {
+    if Globals.currentShowName.isEmpty {
+      appDelegate.writeMenuTitle = "No show selected"
+      appDelegate.writeMenuAvailable = false
+    } else {
+      appDelegate.writeMenuTitle = "Write \(Globals.currentShowName) ..."
+    }
   }
   
   // ================================
@@ -207,6 +224,7 @@ class MainWindowController: NSWindowController {
       }
       let sheetController = EntrySheetController()
       sheetController.managedObjectContext = self.managedObjectContext
+      speaker.startSpeakingString("adding an entry")
       window.beginSheet(sheetController.window!, completionHandler: { response in
         // The sheet has finished. Did the user click 'OK'?
         if response == NSModalResponseOK {
@@ -229,7 +247,8 @@ class MainWindowController: NSWindowController {
   }
   
   @IBAction func removeEntry(sender: NSButton) {
-    if areYouSure("Do you really want to delete this entry?") {
+    let name = Globals.currentEntry!.cat.name
+    if areYouSure("Do you really want to delete \(name)?") {
       undoManager.beginUndoGrouping()
       undoManager.setActionName("remove entry")
       theEntriesController.remove(sender)
@@ -251,6 +270,7 @@ class MainWindowController: NSWindowController {
       let sheetController = EntrySheetController()
       sheetController.managedObjectContext = self.managedObjectContext
       sheetController.setSheetTo(Globals.currentEntry!)
+      speaker.startSpeakingString("editing \(Globals.currentEntry!.cat.name)")
       window.beginSheet(sheetController.window!, completionHandler: { response in
         // The sheet has finished. Did the user click 'OK'?
         if response == NSModalResponseOK {

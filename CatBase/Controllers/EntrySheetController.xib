@@ -325,9 +325,10 @@ Gw
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </comboBoxCell>
                         <connections>
+                            <action selector="datePressed:" target="-2" id="dWj-ZS-1ed"/>
                             <binding destination="-2" name="value" keyPath="challenge" id="gSs-Se-9AQ"/>
                             <outlet property="dataSource" destination="jL6-YC-Zvs" id="6SS-qa-4Im"/>
-                            <outlet property="delegate" destination="jL6-YC-Zvs" id="SG2-Ms-bCh"/>
+                            <outlet property="delegate" destination="jL6-YC-Zvs" id="pIa-Kk-bUK"/>
                             <outlet property="nextKeyView" destination="mII-qX-lyH" id="wnd-h6-VfF"/>
                         </connections>
                     </comboBox>

@@ -15,6 +15,27 @@ postfix func ++(inout c: Character) -> Character {
   return Character(UnicodeScalar(i))
 }
 
+
+protocol Datamaker {
+  var data: NSData {get }
+}
+
+extension String: Datamaker {
+  var data: NSData {
+    if let ans = self.dataUsingEncoding(NSUTF8StringEncoding) {
+      return ans
+    } else {
+      fatalError("Cannot encode \"\(self)\"")
+    }
+  }
+}
+
+extension NSData: Datamaker {
+  var data: NSData {
+    return self
+  }
+}
+
 // MARK: - names of keys used
 
 private let Start_workbook      = "Start workbook"
@@ -48,10 +69,10 @@ private let TITLE   = "Title"
 
 
 extension NSMutableData{
-  func appendRow(data: NSData ...) {
+  func appendRow(data: Datamaker ...) {
     self.appendData(excelSheet[Start_row]!)
     for datum in data {
-      self.appendData(datum)
+      self.appendData(datum.data)
     }
     self.appendData(excelSheet[End_row]!)
   }
@@ -229,10 +250,10 @@ extension MainWindowController {
     var platinumChallenges = PrestigeChallenge(prestige: .platinum)
     
     
-    func addData(newData: NSData...) {
+    func addData(newData: Datamaker...) {
       for next in newData {
-        data.appendData(next)
-        judgesNotes.appendData(next)
+        data.appendData(next.data)
+        judgesNotes.appendData(next.data)
       }
     }
     
@@ -273,7 +294,7 @@ extension MainWindowController {
       
       for i in 0 ..< count {
         
-        addData(bestAward3, places[i], info.data, bestAward4)
+        addData(bestAward3, places[i], info, bestAward4)
         
         writeBoxesFor(nil, usingforJudges: entered)
         
@@ -294,11 +315,11 @@ extension MainWindowController {
         
         let info: String
         if thisEntry.cat.isAgouti {
-          info = "\(Globals.agoutiClasses[thisEntry.cat.agoutiRank]) \(thisEntry.cat.breed) \(thisEntry.cat.section))"
+          info = " \(Globals.agoutiClasses[thisEntry.cat.agoutiRank]) \(thisEntry.cat.breed) \(thisEntry.cat.sectionName)"
         } else if thisEntry.cat.isCompanion {
-          info = "\(thisEntry.cat.colour) \(thisEntry.cat.breed)"
+          info = " \(thisEntry.cat.colour) \(thisEntry.cat.breed)"
         } else {
-          info = "\(thisEntry.cat.colour) \(thisEntry.cat.breed) \(thisEntry.cat.section)"
+          info = " \(thisEntry.cat.colour) \(thisEntry.cat.breed) \(thisEntry.cat.sectionName)"
         }
         
         writeTableFor(count, catsWithInfo: info)
@@ -322,7 +343,7 @@ extension MainWindowController {
         if thisEntry.cat.isCompanion {
           info = thisEntry.cat.breed
         } else {
-          info = "\(thisEntry.cat.breed) \(thisEntry.cat.section)"
+          info = "\(thisEntry.cat.breed) \(thisEntry.cat.sectionName)"
         }
         
         writeTableFor(count, catsWithInfo: info)
@@ -347,7 +368,7 @@ extension MainWindowController {
       guard count > 0
         else { return }
       
-      addData(challenge1, title.data, challenge2)
+      addData(challenge1, title, challenge2)
       
       let start: String
       if count > 1 {
@@ -355,7 +376,7 @@ extension MainWindowController {
       } else {
         start = "\(theChallenges)"
       }
-      addData(start.data, challenge3)
+      addData(start, challenge3)
       
       writeBoxesFor(nil, usingforJudges: entered)
       
@@ -373,10 +394,10 @@ extension MainWindowController {
         if litter.groupNumber == currentGroupNumber {
           if first {
             first = false
-            addData(breed1, "\(Breeds.nameOfGroupNumber(currentGroupNumber)) Litters".data, breed2)
+            addData(breed1, "\(Breeds.nameOfGroupNumber(currentGroupNumber)) Litters", breed2)
           }
           addData(tableStart)
-          addData(name1Litter, "Litter \(litter.number)".data, name2Litter)
+          addData(name1Litter, "Litter \(litter.number)", name2Litter)
           
           data.appendData("\(litter.name)\(litter.breed) Litter".data)
           judgesNotes.appendData(nbspace)
@@ -402,12 +423,12 @@ extension MainWindowController {
             if litter.spays > 1 { numberOfKittens += "s" }
           }
           
-          addData(numberOfKittens.data, name4)
+          addData(numberOfKittens, name4)
           
           judgesNotes.appendData(name4)
           
-          addData(details1Litter, litter.birthDate.string.data, details2)
-          addData(litter.age.data, details3Litter)
+          addData(details1Litter, litter.birthDate.string, details2)
+          addData(litter.age, details3Litter)
           
           data.appendData("\(litter.sire)/\(litter.dam)".data)
           judgesNotes.appendData(nbspace)
@@ -509,7 +530,7 @@ extension MainWindowController {
     
     var countOfCats   = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
     
-    var lastAgouti  = 0
+    var lastAgouti  = -1
     var thisAgouti  = 0
     var colourCount = 1
     var breedCount  = 1
@@ -533,7 +554,7 @@ extension MainWindowController {
     
     // ** for Catalogue
     // -----------------
-    addData(header1, name.data)
+    addData(header1, name)
     
     data.appendData(header2)
     judgesNotes.appendData(header2judge)
@@ -578,21 +599,21 @@ extension MainWindowController {
     // MARK: - BEGIN LOOPING THROUGH THE ENTRIES
     // ****************************************************
     
-    var _lastEntry: Entry? = nil
+    var lastEntry: Entry? = nil
     
     for entry in sortedEntrys {
       
       let thisBreed   = entry.cat.breed
       
-      if let lastEntry = _lastEntry {
-        let lastAgouti = lastEntry.cat.agoutiRank
+      if let lastEntry = lastEntry {
+        lastAgouti = lastEntry.cat.agoutiRank
         
         // MARK: - write out open challenges & best of colour
         // ---------------------------------------------------
         if !entry.sameChallengeAs(lastEntry) || !entry.sameColourAs(lastEntry) {
           doOpenChallengesFor(lastEntry, changingColour: lastEntry.cat.colour == entry.cat.colour)
           
-          if !entry.sameColourAs(lastEntry) {
+          if entry.newChallengeColourTo(lastEntry) {
             doBestOfColourFor(lastEntry, with: colourCount)
             colourCount = 1
           } else {
@@ -607,10 +628,11 @@ extension MainWindowController {
             breedCount++
           }
         }
-        
+     
+      
         // MARK: - Are we on a new section?
         // ---------------------------------
-        if entry.cat.section != lastEntry.cat.section {
+        if entry.inDifferentSectionTo(lastEntry) {
           
           // MARK: - Write out litters for this group
           if lastEntry.cat.isKitten && !lastEntry.cat.isCompanion {
@@ -660,20 +682,25 @@ extension MainWindowController {
             }
             judgesNotes.appendData(tableEnd)
           }
-          
+        }
+      }
+      
           // MARK: - Write up section heading
           // --------------------------------
+        if entry.inDifferentSectionTo(lastEntry) {
           let s: String
           if entry.cat.isCompanion {
-            s = "\(Breeds.nameOfGroupForBreed(entry.cat.breed))\n)"
+            print("\(entry.cat.name) is Companion")
+            s = "\(Breeds.nameOfGroupForBreed(entry.cat.breed))s)"
           } else {
-            s = "\(Breeds.nameOfGroupForBreed(entry.cat.breed)) \(entry.cat.section)\n"
+            s = "\(Breeds.nameOfGroupForBreed(entry.cat.breed)) \(entry.cat.sectionName)s"
           }
-          addData(section1, s.data, section2)
+          addData(section1, s, section2)
           
           // reset lastBreed
           lastBreed = ""
         }
+      
         
         // MARK: - Are we on a new breed
         // ------------------------------
@@ -689,7 +716,7 @@ extension MainWindowController {
           }
           // Write out new breed
           // -------------------
-          addData(breed1, "\(thisBreed) \(entry.cat.section)".data, breed2)
+          addData(breed1, "\(thisBreed) \(entry.cat.sectionName)s", breed2)
           
           lastBreed = thisBreed
           lastColour  = ""
@@ -765,20 +792,24 @@ extension MainWindowController {
         }
         
         // MARK: - Write out new colour
-        if !entry.sameColourAs(lastEntry) || entry.differentBreedTo(lastEntry){
-          if lastEntry.cat.isAgouti {
+        if entry.newChallengeColourTo(lastEntry) {
+          if lastAgouti != Agouti.notAgouti {
             addData(bestAward1)
           }
           addData(colour1)
           
-          if entry.cat.isAgouti && entry.cat.agoutiRank == lastEntry.cat.agoutiRank {
-            // A new Agouti grouping
-            // write agouti heading
-            addData(Globals.agoutiClasses[entry.cat.agoutiRank].data, colour2, colour3)
+          if !entry.cat.isAgouti {
+            lastAgouti = Agouti.notAgouti
+          } else {
+            if entry.newAgoutiTo(lastEntry) {
+              // A new Agouti grouping
+              // write agouti heading
+              addData(Globals.agoutiClasses[entry.cat.agoutiRank], colour2, colour3)
+            }
           }
           
           // then write the new colour
-          addData(entry.cat.colour.data, colour2)
+          addData(entry.cat.colour, colour2)
           lastColour = entry.cat.colour
           lastClass = ""
         }
@@ -809,7 +840,7 @@ extension MainWindowController {
         
         // Write out the cage number
         // --------------------------
-        addData(name1, String(cageNumber++).data, name2)
+        addData(name1, String(cageNumber++), name2)
         
         // Write out title and name
         // -------------------------
@@ -831,7 +862,7 @@ extension MainWindowController {
         }
         
         if entry.newBreedTo(lastEntry) || entry.newColourTo(lastEntry) || catClass != lastClass {
-          addData(catClass.data)
+          addData(catClass)
           lastClass = catClass
         } else {
           addData(nbspace)
@@ -842,7 +873,7 @@ extension MainWindowController {
         
         // Write the birthdate and age
         // ----------------------------
-        addData(details1, entry.cat.birthDate.string.data, details2, entry.cat.age.data, details3)
+        addData(details1, entry.cat.birthDate.string, details2, entry.cat.age, details3)
         
         // Write sire and dam names
         // -------------------------
@@ -885,18 +916,18 @@ extension MainWindowController {
         
         // Add up cage sizes
         if !entry.isInLitter { cagelength += entry.cageSize.integerValue }
-      }
-      _lastEntry = entry
+      
+      lastEntry = entry
     } // end of looping through the entries
     
     // MARK: - Do best of colour
     // --------------------------
-    doOpenChallengesFor(_lastEntry!, changingColour: true)
-    doBestOfColourFor(_lastEntry, with: colourCount)
-    doBestOfBreedFor(_lastEntry, with: breedCount)
+    doOpenChallengesFor(lastEntry, changingColour: true)
+    doBestOfColourFor(lastEntry, with: colourCount)
+    doBestOfBreedFor(lastEntry, with: breedCount)
     
-    doPrestigeChallengesFor(_lastEntry, with: &goldChallenges)
-    doPrestigeChallengesFor(_lastEntry, with: &platinumChallenges)
+    doPrestigeChallengesFor(lastEntry, with: &goldChallenges)
+    doPrestigeChallengesFor(lastEntry, with: &platinumChallenges)
     
     addData(endOfEntries)
     
@@ -904,14 +935,14 @@ extension MainWindowController {
     // ------------------------------
     for i in 0 ..< Breeds.numberOfBreeds {
       if breedsPresent.contains(Breeds.nameOf(i)) {
-        addData(bestOfBreedStart, Breeds.nameOf(i).data, bestOfBreedEnd)
+        addData(bestOfBreedStart, Breeds.nameOf(i), bestOfBreedEnd)
       }
     }
     addData(tableEnd)
     
     // MARK: - Add count of cats to list sheet
     // ----------------------------------------
-    listData.appendRow("".data)
+    listData.appendRow("")
     
     for group in 1 ... 3 {
       listData.appendRow(xmlString("Group \(group)"))
@@ -965,7 +996,7 @@ extension MainWindowController {
         }
       }
     } else {
-      openData.appendRow("NONE".data)
+      openData.appendRow("NONE")
     }
     
     // MARK: - Check to see if we have some workers
@@ -977,7 +1008,7 @@ extension MainWindowController {
         openData.appendRow(xmlString(person))
       }
     } else {
-      openData.appendRow("None".data)
+      openData.appendRow("None")
     }
 
     // MARK: - Check to see who needs catalogues

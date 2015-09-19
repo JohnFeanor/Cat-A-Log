@@ -16,6 +16,11 @@ class Colours: DataSource, NSTableViewDataSource {
   // ----------------------------------------------------------------------------
   @IBOutlet weak var breedSource: NSControl!
   
+  override init() {
+    super.init()
+    limitToList = true
+  }
+  
   // *************************
   // MARK: - class properties
   // *************************
@@ -126,5 +131,26 @@ class Colours: DataSource, NSTableViewDataSource {
         print("Asked for value of colour row: \(rowIndex) out of bounds: \(self.list.count)")
         return ""
       }
+  }
+  
+  // ==============================
+  // MARK: - Combo box data sources
+  // ==============================
+  
+  override func firstRowMatchingPrefix(prefix: String) -> String? {
+    let lowerCasePrefix = prefix.lowercaseString
+    var currentChoice: String? = nil
+    
+    // find the smallest string that matches
+    for string in list {
+      if string.lowercaseString.hasPrefix(lowerCasePrefix) {
+        if currentChoice == nil {
+          currentChoice = string
+        } else if string.characters.count < currentChoice!.characters.count {
+          currentChoice = string
+        }
+      }
+    }
+    return currentChoice
   }
 }

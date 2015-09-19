@@ -18,6 +18,8 @@ class EntrySheetController: NSWindowController {
   @IBOutlet weak var cageSizeTextField: NSTextField!
   @IBOutlet weak var initialTextField: NSTextField!
   
+  private var dateSet = false
+  
   var managedObjectContext: NSManagedObjectContext!
   
   var entryData: [String : AnyObject] {
@@ -91,7 +93,17 @@ class EntrySheetController: NSWindowController {
   dynamic var breed     = String()
   dynamic var colour    = String()
   dynamic var sex       = String()
-  dynamic var challenge = String()
+  dynamic var challenge = String() {
+    didSet {
+      let today = NSDate()
+      if challenge != Challenges.nameOf(ChallengeTypes.kitten) && !dateSet {
+        let calendar = NSCalendar.currentCalendar()
+        if let lastYear = calendar.dateByAddingUnit(NSCalendarUnit.Year, value: -1, toDate: today, options: []) {
+          birthDate = lastYear
+        }
+      }
+    }
+  }
   dynamic var birthDate = NSDate()
   dynamic var sire      = String()
   dynamic var dam       = String()
@@ -303,19 +315,23 @@ class EntrySheetController: NSWindowController {
       errorAlert(message: faults)
     } else {
       window!.endEditingFor(nil)
-      print("dismissing entry sheet with OK response")
+      speaker.startSpeakingString("adding \(self.name)")
       dismissWithModalResponse(NSModalResponseOK)
     }
   }
   
   @IBAction func cancelButtonPressed(sender: NSButton) {
-    print("dismissing entry sheet with cancel response")
+    speaker.startSpeakingString("Cancelled")
     dismissWithModalResponse(NSModalResponseCancel)
   }
   
   func dismissWithModalResponse(response: NSModalResponse)
   {
     window!.sheetParent!.endSheet(window!, returnCode: response)
+  }
+  
+  @IBAction func datePressed(sender: AnyObject) {
+    dateSet = true
   }
  
 }

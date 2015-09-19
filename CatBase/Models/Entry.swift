@@ -162,7 +162,10 @@ class Entry: NSManagedObject {
   }
   
   var typeOfCage: String {
-    return Globals.cageTypes.names[self.cageSize.integerValue]
+    if let index = Globals.cageTypes.sizes.indexOf(self.cageSize.integerValue) {
+      return Globals.cageTypes.names[index]
+    }
+    return Globals.cageTypes.names[0]
   }
   
   var rings: String {
@@ -199,8 +202,10 @@ class Entry: NSManagedObject {
     return self.sameColourAs(other)
   }
   
-  func sameColourAs(other: Entry) -> Bool {
+  func sameColourAs(other: Entry?) -> Bool {
     
+    guard let other = other
+      else { return true }
     // Must be the same agouti class
     if self.cat.agoutiRank != other.cat.agoutiRank { return false }
     
@@ -210,16 +215,45 @@ class Entry: NSManagedObject {
     return true
   }
 
-  func differentBreedTo(other: Entry) -> Bool {
+  func differentBreedTo(other: Entry?) -> Bool {
+    guard let other = other
+      else { return true }
     return self.cat.breed != other.cat.breed
   }
   
-  func newBreedTo(other: Entry) -> Bool {
+  func newBreedTo(other: Entry?) -> Bool {
      return !self.cat.isCompanion && self.differentBreedTo(other)
   }
   
-  func newColourTo(other: Entry) -> Bool {
+  func newAgoutiTo(other: Entry? ) -> Bool {
+    if !cat.isAgouti { return false }
+    guard let other = other
+      else { return true }
+    if differentBreedTo(other) { return true }
+    return cat.agoutiRank != other.cat.agoutiRank
+  }
+  
+  func newColourTo(other: Entry?) -> Bool {
+    guard let other = other
+      else { return true }
     return !sameColourAs(other) || differentBreedTo(other)
   }
   
+  func newChallengeColourTo(other: Entry?) -> Bool {
+    guard let other = other
+      else { return true }
+    if differentBreedTo(other) { return true }
+    if cat.isAgouti { return cat.agoutiRank != other.cat.agoutiRank }
+    return !sameColourAs(other)
+  }
+  
+  func compareWith(anotherEntry: Entry) -> NSComparisonResult {
+    return self.cat.compareWith(anotherEntry.cat)
+  }
+  
+  func inDifferentSectionTo(other: Entry?) -> Bool {
+    guard let other = other
+      else { return true }
+    return self.cat.section != other.cat.section
+  }
 }

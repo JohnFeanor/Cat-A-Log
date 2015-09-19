@@ -67,10 +67,9 @@ class Breeds: DataSource, NSTableViewDataSource {
   // ************************************
   
   class func nonPedigreeBreed(breedName: String) -> Bool {
-    if let currentBreeds = Breeds.nonPedigreesByShowType[Globals.currentShowType] {
-      return currentBreeds.contains(breedName)
-    }
-    return false
+    guard let currentBreeds = Breeds.nonPedigreesByShowType[Globals.currentShowType]
+      else { return false }
+    return currentBreeds.contains(breedName)
   }
   
   class func groupNumberOf(breedName: String) -> Int? {

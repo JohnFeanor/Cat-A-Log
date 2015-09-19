@@ -130,11 +130,11 @@ class Cat: NSManagedObject {
   }
   
   var isCompanion: Bool {
-    return !Breeds.nonPedigreeBreed(self.breed)
+    return Breeds.nonPedigreeBreed(self.breed)
   }
   
   var isAgouti: Bool {
-    return self.agoutiRank > -1
+    return Globals.agoutiBreeds.indexOf(self.breed) != nil
   }
   
   var isMale: Bool {
@@ -175,6 +175,13 @@ class Cat: NSManagedObject {
     fatalError("Could not determine cat: \(self.name)'s age")
   }
   
+  var sectionName: String {
+    if self.isCompanion { return "Companion" }
+    if self.isKitten { return "Kitten" }
+    if self.isEntire { return "Entire" }
+    return "Desexed"
+  }
+  
   // *************************
   // MARK: - Ranking queries
   // *************************
@@ -183,23 +190,27 @@ class Cat: NSManagedObject {
     return Breeds.groupNumberOf(self.breed) ?? -1
   }
   
-  var section: String {
-    if self.isCompanion { return "Companion" }
-    if self.isKitten { return "Kitten" }
-    if self.isEntire { return "Entire" }
-    return "Desexed"
-  }
-  
   var breedRank: Int {
     return Breeds.rankOf(self.breed) ?? 999
   }
   
+  var section: Int {
+    if self.isKitten { return 1 }
+    if self.isEntire { return 2 }
+    return 3
+  }
+  
   var agoutiRank: Int {
-    if let ans = Globals.agoutiClasses.indexOf(self.breed) {
-      return ans
-    } else {
-      return -1
+    if self.isAgouti {
+      if isTabby(self.colour) {
+        if andWhite(self.colour) { return Agouti.agoutiWhite }
+        return Agouti.agouti
+      } else {
+        if andWhite(self.colour) { return Agouti.nonAgoutiWhite }
+        return Agouti.nonAgouti
+      }
     }
+      return Agouti.notAgouti
   }
   
   var colourRank: Int {

@@ -77,7 +77,9 @@
                             </menuItem>
                             <menuItem title="Write catalog…" keyEquivalent="w" id="pOA-hf-o36">
                                 <connections>
-                                    <action selector="writeFiles:" target="Voe-Tx-rLC" id="oGD-ct-uLJ"/>
+                                    <action selector="writeFiles:" target="Voe-Tx-rLC" id="pjE-bE-cRU"/>
+                                    <binding destination="Voe-Tx-rLC" name="enabled" keyPath="writeMenuAvailable" id="5c0-Ry-JW6"/>
+                                    <binding destination="Voe-Tx-rLC" name="title" keyPath="writeMenuTitle" id="uyA-UD-ZzW"/>
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="nbk-Ad-iHu"/>

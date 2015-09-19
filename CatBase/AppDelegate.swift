@@ -14,11 +14,14 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
   
   @IBOutlet weak var window: NSWindow!
-  
+    
   var mainWindowController: MainWindowController?
   var coloursEditorController: ColoursWindowController?
   
   var openPanel: NSOpenPanel? = nil
+  
+  dynamic var writeMenuTitle = "Write catalogue ..."
+  dynamic var writeMenuAvailable = true
   
   func applicationDidFinishLaunching(aNotification: NSNotification) {
     // Create a window controller
@@ -26,10 +29,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     mainWindowController.managedObjectContext = self.managedObjectContext
     //Put the window of the window controller on screen
     mainWindowController.showWindow(self)
+    mainWindowController.appDelegate = self
     
     //Set the property to point to the window controller
     self.mainWindowController = mainWindowController
-    
   }
   
   
@@ -212,6 +215,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   // ========================
   
   @IBAction func writeFiles(sender: NSMenuItem) {
+    if let mainWindowController = self.mainWindowController {
+      mainWindowController.displaySavePanel()
+    }
   }
   
   @IBAction func openColoursEditor(sender: NSObject) {

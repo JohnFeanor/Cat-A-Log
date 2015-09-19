@@ -18,7 +18,7 @@ class NameFormatter: NSFormatter {
   
   static var list: [String] = []
   
-  let exempted = ["a", "da", "de", "vo", "von", "der"]
+  let exempted = ["a", "da", "de", "of", "vo", "von", "der", "th", "the"]
   
   override var description: String {
     get {

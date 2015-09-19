@@ -34,16 +34,6 @@ extension NSTableView {
   }
 }
 
-extension String {
-  var data: NSData {
-    if let ans = self.dataUsingEncoding(NSUTF8StringEncoding) {
-      return ans
-    } else {
-      fatalError("Cannot encode \"\(self)\"")
-    }
-  }
-}
-
 extension NSDate {
   
   var string: String {
@@ -118,12 +108,39 @@ let alphaCharacter = NSPredicate(format: "SELF MATCHES %@", alpha)
 let breakCharacter = NSPredicate(format: "NOT SELF MATCHES %@", wordChar)
 let wordCharacter = NSPredicate(format: "SELF MATCHES %@", wordChar)
 
-
-//let months = "Months"
-//let weeks = "Weeks"
 let speaker = NSSpeechSynthesizer()
 
+
+// ********************************
+// MARK: - Agouti helper functions
+// *******************************
+
+struct Agouti {
+  static let notAgouti      = -1
+  static let agouti         = 0
+  static let agoutiWhite    = 1
+  static let nonAgouti      = 2
+  static let nonAgoutiWhite  = 3
+}
+
+func isTabby(colour: String) -> Bool {
+  let color = colour.lowercaseString
+  return color.containsString("tabby")
+}
+
+func andWhite(colour: String) -> Bool {
+  let color = colour.lowercaseString
+  if color.containsString("white")     { return true }
+  if color.containsString("bi-colour") { return true }
+  if color.containsString("bicolour")  { return true }
+  if color.containsString("van")       { return true }
+  
+  return false
+}
+
+// *************************************************
 // MARK: - fetching from the Managed Object Context
+// *************************************************
 
 func existingCatsWithRegistration(rego: String, orName name: String, inContext context: NSManagedObjectContext) -> [Cat]? {
   // find any cats with the same registration (unless pending)
@@ -168,7 +185,9 @@ func fetchCatsWithName(name: String, inContext context: NSManagedObjectContext) 
   return fetchEntitiesNamed(Cat.entity, inContext: context, usingFormat: "\(Cat.name) LIKE[c] \"\(name)\"") as! [Cat]
 }
 
+// ******************************************************************
 // MARK: - reading in and writing arrays and dictionaries to Plists
+// ******************************************************************
 
 func dictFromPList(listName: String) -> NSDictionary {
   let url = NSBundle.mainBundle().URLForResource(listName, withExtension:"plist")
@@ -218,7 +237,9 @@ func readFile(fileName: String) -> NSData {
   fatalError("Cannot read data from \"\(fileName).txt\"")
 }
 
+// ***************************
 // MARK: - querying the user
+// ***************************
 
 func areYouSure(message: String) -> Bool {
   return runAlertWithMessage(message, buttons: "OK", "Cancel") == NSAlertFirstButtonReturn
@@ -239,6 +260,10 @@ func runAlertWithMessage(message: String, buttons: String ...) -> NSModalRespons
   return alert.runModal()
 }
 
+// *******************
+// MARK: - Globals
+//********************
+
 class Globals: NSObject {
 
   @IBOutlet var theShowController: NSArrayController!
@@ -253,7 +278,7 @@ class Globals: NSObject {
   
   static var currentShowName: String {
     if currentShow == nil {
-      fatalError("Nil show when trying to get name for nil show")
+      return ""
     }
     return currentShow!.name
   }
