@@ -19,7 +19,7 @@ enum ChallengeTypes: Int {
   
   var description: String {
     guard let ans = Challenges.list[Globals.currentShowType]?[self.rawValue]
-      else { fatalError("Cannot get description of challenge \(self.rawValue)") }
+      else { fatalError("Cannot get description of challenge \(self)") }
     return ans
   }
 }
@@ -35,6 +35,8 @@ class Challenges: DataSource {
       // for each show type e.g. QFA, ACF or COWOCA
       for (showType, dict1) in Globals.dataByGroup {
         let challenges = dict1[Headings.challenges] as! [String]
+        print("Challenges are:")
+        print(challenges)
         list[showType] = challenges
       }
     }

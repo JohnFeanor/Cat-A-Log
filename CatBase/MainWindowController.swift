@@ -71,8 +71,8 @@ class MainWindowController: NSWindowController {
   let  endOfFile         = readFile("End of file")
   let  endOfFileJudge    = readFile("End of file judge")
 
-  let challenge    = NSLocalizedString("challenge", tableName: "general", comment: "challenge")
-  let awardOfMerit  = NSLocalizedString("Award of Merit", tableName: "general", comment: "award of merit")
+  let challenge    = NSLocalizedString("Challenge", tableName: "general", comment: "Challenge")
+  let awardOfMerit  = NSLocalizedString("Award of Merit", tableName: "general", comment: "Award of merit")
     
   @IBOutlet var theShowController: NSArrayController!
   @IBOutlet var theEntriesController: NSArrayController!

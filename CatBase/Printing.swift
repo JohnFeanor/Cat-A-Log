@@ -465,7 +465,7 @@ extension MainWindowController {
       // ** Kittens do not have challenges
       if thisEntry.cat.isKitten { return }
       
-      if openChallenges.isEmpty {
+      if !openChallenges.isEmpty {
         addData(spacer)
         if thisEntry.cat.isCompanion {
           writeChallenges(openChallenges, ofType: awardOfMerit)
@@ -510,10 +510,10 @@ extension MainWindowController {
         }
         
         if m != 0 {
-          writeChallenges(theChallenges.males, ofType: "\(male) \(theChallenges.title) \(awardType)")
+          writeChallenges(theChallenges.males, ofType: "\(male) \(theChallenges.title.description) \(awardType)")
         }
         if f != 0 {
-          writeChallenges(theChallenges.females, ofType: "\(female) \(theChallenges.title) \(awardType)")
+          writeChallenges(theChallenges.females, ofType: "\(female) \(theChallenges.title.description) \(awardType)")
         }
         
         theChallenges.males = []
@@ -617,6 +617,8 @@ extension MainWindowController {
         // ---------------------------------------------------
         if entry.newChallengeColourTo(lastEntry) {
           doOpenChallengesFor(lastEntry, changingColour: lastEntry.cat.colour == entry.cat.colour)
+        }
+        if entry.newColourTo(lastEntry) {
           doBestOfColourFor(lastEntry, with: colourCount)
           colourCount = 1
         } else {
@@ -632,18 +634,18 @@ extension MainWindowController {
         }
         
       
-        // MARK: - Are we on a new section?
+        // MARK: Are we on a new section?
         // ---------------------------------
         if entry.inDifferentSectionTo(lastEntry) {
           
-          // MARK: - Write out litters for this group
+          // MARK: Write out litters for this group
           if lastEntry.isLitterKitten {
             print("\(lastEntry.cat.name) is in litter (Y)")
             print("Writing litters for group: \(lastEntry.cat.groupNumber)")
             writeLittersForGroup(lastEntry.cat.groupNumber)
           }
           
-          // MARK: - Write top ten and prestige challenge boxes
+          // MARK: Write top ten and prestige challenge boxes
           judgesNotes.appendData(topTenStartTable)
           judgesNotes.appendData("\(Breeds.nameOfGroupForBreed(lastEntry.cat.breed)) \(lastEntry.cat.section)".data)
           judgesNotes.appendData(topTenEndTable)
@@ -651,7 +653,7 @@ extension MainWindowController {
           doPrestigeChallengesFor(lastEntry, with: &goldChallenges)
           doPrestigeChallengesFor(lastEntry, with: &platinumChallenges)
           
-          // MARK: - Do ACF awards for judges notes
+          // MARK: Do ACF awards for judges notes
           if !lastEntry.cat.isKitten && !lastEntry.cat.isCompanion {
             judgesNotes.appendData(ACFAoEstart)
             
@@ -736,7 +738,7 @@ extension MainWindowController {
           if i < 4 && j < 4 {
             countOfCats[i][j] += 1
           } else {
-            print("Given bogus number for updating count of cats. i \(i); j = \(j)")
+            print("Given bogus number for updating count of cats. i = \(i); j = \(j)")
           }
         }
         
@@ -798,22 +800,22 @@ extension MainWindowController {
       }
       
       // MARK: - Write out new colour
-      if entry.newChallengeColourTo(lastEntry) {
+      if entry.newColourOrBreedTo(lastEntry) {
           if lastAgouti != Agouti.notAgouti {
             addData(bestAward1)
           }
           addData(colour1)
           
-          if !entry.cat.isAgouti {
-            lastAgouti = Agouti.notAgouti
-          } else {
-            if entry.newAgoutiTo(lastEntry) {
-              // A new Agouti grouping
-              // write agouti heading
-              addData(Globals.agoutiClasses[entry.cat.agoutiRank], colour2, colour3)
-            }
+        if entry.cat.isAgouti {
+          if entry.newAgoutiTo(lastEntry) {
+            // A new Agouti grouping
+            // write agouti heading
+            addData(Globals.agoutiClasses[entry.cat.agoutiRank], colour2, colour3)
           }
-          
+        } else {
+          lastAgouti = Agouti.notAgouti
+        }
+        
           // then write the new colour
           addData(entry.cat.colour, colour2)
           lastColour = entry.cat.colour
@@ -846,7 +848,7 @@ extension MainWindowController {
         
         // Write out the cage number
         // --------------------------
-        addData(name1, String(cageNumber++), name2)
+        addData(name1, String(cageNumber), name2)
         
         // Write out title and name
         // -------------------------
@@ -867,7 +869,7 @@ extension MainWindowController {
           catClass = "\(entry.cat.sex) class"
         }
         
-        if entry.newChallengeColourTo(lastEntry) {
+        if entry.newColourTo(lastEntry) || catClass != lastClass {
           addData(catClass)
           lastClass = catClass
         } else {
@@ -924,6 +926,7 @@ extension MainWindowController {
         if !entry.isInLitter { cagelength += entry.cageSize.integerValue }
       
       lastEntry = entry
+      cageNumber++
     } // end of looping through the entries
     
     // MARK: - Do best of colour

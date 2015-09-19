@@ -14,7 +14,7 @@ class Cat: NSManagedObject {
   static var entity = "Cat"
   static var properties = [Cat.birthDate, Cat.breed, Cat.breeder, Cat.challenge, Cat.colour, Cat.dam, Cat.exhibitor, Cat.name, Cat.registration, Cat.sex, Cat.sire, Cat.title, Cat.vaccinated]
   
-  static var positions: [String : Int] = [Cat.name : 0, Cat.registration : 1, Cat.title : 2, Cat.birthDate : 3, Cat.breed : 4, Cat.exhibitor : 5, Cat.challenge : 6, Cat.colour : 7, Cat.sire : 8, Cat.breeder : 9, Cat.sex : 10, Cat.dam : 11]
+  static var positions: [String : Int] = [Cat.name : 0, Cat.registration : 1, Cat.title : 2, Cat.birthDate : 3, Cat.breed : 4, Cat.breeder : 5, Cat.challenge : 6, Cat.colour : 7, Cat.dam : 8, Cat.exhibitor : 9, Cat.sex : 10, Cat.sire : 11]
   
   static var birthDate    = "birthDate"
   static var breed        = "breed"
@@ -94,6 +94,14 @@ class Cat: NSManagedObject {
     }
   }
   
+  func setValuesToArray(array: [String]) {
+    setValue(array[Cat.positions[Cat.dam]!], forKey: Cat.dam)
+    setValue(array[Cat.positions[Cat.sire]!], forKey: Cat.sire)
+    setValue(array[Cat.positions[Cat.breeder]!], forKey: Cat.breeder)
+    setValue(array[Cat.positions[Cat.exhibitor]!], forKey: Cat.exhibitor)
+
+  }
+  
   override func setValue(value: AnyObject?, forUndefinedKey key: String) {
     print("Cat given undefined key: \(key)")
   }
@@ -147,7 +155,7 @@ class Cat: NSManagedObject {
   }
   
   var isMale: Bool {
-    return (Sex.rankOf(self.sex) % 2 != 0)
+    return (Sex.rankOf(self.sex) % 2 == 0)
   }
  
   // *************************

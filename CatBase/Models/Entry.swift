@@ -210,7 +210,6 @@ class Entry: NSManagedObject {
   }
   
   func newAgoutiTo(other: Entry? ) -> Bool {
-    if !cat.isAgouti { return false }
     guard let other = other
       else { return true }
     if differentBreedTo(other) { return true }
@@ -228,10 +227,24 @@ class Entry: NSManagedObject {
   
   // return true if other is different challenge colour
   // takes agouti type into account
+  func newColourOrBreedTo(other: Entry?) -> Bool {
+    guard let other = other
+      else { return true }
+    if differentBreedTo(other) { return true }
+    return self.cat.colour != other.cat.colour
+  }
+  
+  // return true if other is different challenge colour
+  // takes agouti type into account
   func newChallengeColourTo(other: Entry?) -> Bool {
     guard let other = other
       else { return true }
     if differentBreedTo(other) { return true }
+    if self.cat.isMale {
+      if !other.cat.isMale { return true }
+    } else {
+      if other.cat.isMale { return true }
+    }
     if cat.isAgouti { return cat.agoutiRank != other.cat.agoutiRank }
     return self.cat.colour != other.cat.colour
   }

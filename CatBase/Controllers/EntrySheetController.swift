@@ -62,8 +62,11 @@ class EntrySheetController: NSWindowController {
       // and fill in the details if it is
       if registration != pending && !filledFields {
         let same = fetchCatsWithRegistration(registration, inContext: self.managedObjectContext)
-        dateSet = true
-        setSheetTo(same.first, except: [Cat.registration])
+        let cat = same.first
+        setSheetTo(cat, except: [Cat.registration, Cat.title])
+        if title.isEmpty && cat != nil {
+          title = cat!.title
+        }
       }
     }
   }
@@ -82,11 +85,13 @@ class EntrySheetController: NSWindowController {
       if !filledFields {
         let same = fetchCatsWithName(self.name, inContext: self.managedObjectContext)
         let cat = same.first
-        dateSet = true
-        setSheetTo(cat, except: [Cat.registration, Cat.name])
+        setSheetTo(cat, except: [Cat.registration, Cat.title, Cat.name])
         let noRego = registration.isEmpty || registration == pending
         if noRego && cat != nil {
           registration = cat!.registration
+        }
+        if title.isEmpty && cat != nil {
+          title = cat!.title
         }
       }
     }
@@ -97,6 +102,7 @@ class EntrySheetController: NSWindowController {
   dynamic var sex       = String()
   dynamic var challenge = String() {
     didSet {
+      print("Challenge changed - date set: \(dateSet)")
       if challenge != Challenges.nameOf(ChallengeTypes.kitten) && !dateSet {
         let showdate = Globals.currentShow?.date ?? NSDate()
         let calendar = NSCalendar.currentCalendar()
@@ -108,8 +114,9 @@ class EntrySheetController: NSWindowController {
   }
   dynamic var birthDate: NSDate = {
     let showdate = Globals.currentShow?.date ?? NSDate()
-    let calendar = NSCalendar.currentCalendar()
-    return calendar.dateByAddingUnit(.Month, value: -5, toDate: showdate, options: []) ?? showdate
+    let ans = NSCalendar.currentCalendar().dateByAddingUnit(.Month, value: -5, toDate: showdate, options: []) ?? showdate
+    print("Setting birth date to \(ans.string)")
+    return ans
   }()
   dynamic var sire      = String()
   dynamic var dam       = String()
@@ -199,6 +206,8 @@ class EntrySheetController: NSWindowController {
   // ----------------------------------------------------------
   func setSheetTo(original: Cat?, except exceptions: [String]?) {
     if let original = original {
+      dateSet = true
+      filledFields = true
       let properties: [String]
       if exceptions == nil {
         properties = Cat.properties
@@ -208,12 +217,13 @@ class EntrySheetController: NSWindowController {
       for key in properties {
         self.setValue(original.valueForKey(key), forKey: key)
       }
-      filledFields = true
     }
   }
   
   func setSheetTo(original: Entry) {
     for key in Cat.properties {
+      dateSet = true
+      filledFields = true
       self.setValue(original.cat.valueForKey(key), forKey: key)
     }
     for key in Entry.properties {
@@ -238,7 +248,6 @@ class EntrySheetController: NSWindowController {
   private let possibleFaults = ["registration", "name", "breed", "colour", "sex", "challenge", "sire", "dam", "breeder", "exhibitor"]
 
   func validateSheet() -> String? {
-    print("Set cat \(name) litter to: \(litterCage)")
     
     var faults = "Have not given "
     var okToGo = true
