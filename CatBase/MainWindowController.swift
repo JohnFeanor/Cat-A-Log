@@ -89,6 +89,7 @@ class MainWindowController: NSWindowController {
   
   dynamic var sortByDate = [NSSortDescriptor(key: "date", ascending: false)]
   dynamic var sortByName = [NSSortDescriptor(key: "name", ascending: true)]
+  dynamic var sortByNameAndBreed  = [NSSortDescriptor(key: "breed", ascending: true), NSSortDescriptor(key: "name", ascending: true)]
   
   override var windowNibName: String {
     return "MainWindowController"
@@ -228,12 +229,32 @@ class MainWindowController: NSWindowController {
       window.beginSheet(sheetController.window!, completionHandler: { response in
         // The sheet has finished. Did the user click 'OK'?
         if response == NSModalResponseOK {
-          self.undoManager.beginUndoGrouping()
-          self.undoManager.setActionName("add entry")
-          let newEntry = Entry(entryData: sheetController.entryData, insertIntoManagedObjectContext: self.managedObjectContext)
-          self.theEntriesController.addObject(newEntry)
-          self.theEntriesController.rearrangeObjects()
-          self.undoManager.endUndoGrouping()
+          
+          // check to make sure this cat is not already in the show
+          var problem = false
+          if let name = sheetController.entryData[Cat.name] as? String, let entries = Globals.currentShow?.entries {
+            var duplicate = false
+            for entry in entries {
+              guard let entry = entry as? Entry
+                else { break }
+              if entry.cat.name == name {
+                duplicate = true
+                break
+              }
+            }
+            if duplicate {
+              problem = !areYouSure("\(name) is already in the catalogue.\nDo you really want to add \(name) again?")
+            }
+          }
+          
+          if !problem {
+            self.undoManager.beginUndoGrouping()
+            self.undoManager.setActionName("add entry")
+            let newEntry = Entry(entryData: sheetController.entryData, insertIntoManagedObjectContext: self.managedObjectContext)
+            self.theEntriesController.addObject(newEntry)
+            self.theEntriesController.rearrangeObjects()
+            self.undoManager.endUndoGrouping()
+          }
         }
         // all done with the entry sheet controller
         self.addEntryWindowController = nil
@@ -253,10 +274,10 @@ class MainWindowController: NSWindowController {
       undoManager.setActionName("remove entry")
       theEntriesController.remove(sender)
       undoManager.endUndoGrouping()
-      do { try self.managedObjectContext.save() }
-      catch{
-        print("Error trying to save managed object context after removal of entry")
-      }
+//      do { try self.managedObjectContext.save() }
+//      catch{
+//        print("Error trying to save managed object context after removal of entry")
+//      }
     }
   }
   

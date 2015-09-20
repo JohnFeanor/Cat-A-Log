@@ -150,7 +150,7 @@ func isTabby(colour: String) -> Bool {
 
 func andWhite(colour: String) -> Bool {
   let color = colour.lowercaseString
-  if color.containsString("white")     { return true }
+  if color.containsString(" white")    { return true }
   if color.containsString("bi-colour") { return true }
   if color.containsString("bicolour")  { return true }
   if color.containsString("van")       { return true }

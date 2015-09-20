@@ -52,20 +52,21 @@ class Titles: DataSource {
     Titles.list.removeAtIndex(index)
   }
   
-  // MARK: - Data source methods
-  
+  // ==============================
+  // MARK: - Combo box data sources
+  // ==============================
   
   override func firstRowMatchingPrefix(prefix: String) -> String? {
     var currentChoice: String? = nil
     let words = prefix.componentsSeparatedByString(" ")
-    let lowercaseprefix = words.last?.lowercaseString
+    let lowerCasePrefix = words.last?.lowercaseString
     
-    if let lowercaseprefix = lowercaseprefix {
+    if let lowerCasePrefix = lowerCasePrefix {
       for string in list {
-        if string.lowercaseString.hasPrefix(lowercaseprefix) {
+        if string.lowercaseString.hasPrefix(lowerCasePrefix) {
           if currentChoice == nil {
             currentChoice = string
-          } else if string.characters.count < (currentChoice!).characters.count {
+          } else if string.characters.count < currentChoice!.characters.count {
             currentChoice = string
           }
         }
@@ -86,6 +87,10 @@ class Titles: DataSource {
       return (answer + currentChoice!)
     }
   }
+  
+  // ==============================
+  // MARK: - Tableview data sources
+  // ==============================
   
   func numberOfRowsInTableView(aTableView: NSTableView) -> Int {
     if list.isEmpty {

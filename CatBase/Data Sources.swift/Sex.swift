@@ -38,9 +38,9 @@ class Sex: DataSource {
     return list?.indexOf(gender) < 2
   }
   
-  class func rankOf(gender: String) -> Int {
+  class func rankOf(gender: String) -> Int? {
     guard let ans = Sex.list[Globals.currentShowType]?.indexOf(gender)
-      else { fatalError("Given unknown sex for cat \"\(gender)\" for show type: \(Globals.currentShowType)") }
+      else { return nil }
     return ans
   }
   
@@ -57,6 +57,11 @@ class Sex: DataSource {
   
   override init() {
     super.init()
+    self.limitToList = true
+  }
+
+  required init?(coder aDecoder: NSCoder) {
+      super.init(coder: aDecoder)
     self.limitToList = true
   }
   

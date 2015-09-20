@@ -134,12 +134,9 @@ class Cat: NSManagedObject {
   }
   
   var isKitten: Bool {
-    if let showDate = Globals.currentShow?.date {
-      let ageInMonths = self.birthDate.monthsDifferenceTo(showDate)
-      return ageInMonths < 9
-    } else {
-      return false
-    }
+    guard let currentShow = Globals.currentShow
+      else { fatalError("CurrentShow is nil when trying to determine if cat is a kitten") }
+    return currentShow.isKittenIfBornOn(self.birthDate)
   }
   
   var isEntire: Bool {
@@ -155,7 +152,9 @@ class Cat: NSManagedObject {
   }
   
   var isMale: Bool {
-    return (Sex.rankOf(self.sex) % 2 == 0)
+    guard let rank = Sex.rankOf(self.sex)
+      else { return false }
+    return (rank % 2 == 0)
   }
  
   // *************************

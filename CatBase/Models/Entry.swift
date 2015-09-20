@@ -52,6 +52,10 @@ class Entry: NSManagedObject {
     return cat.name
   }
   
+  dynamic var breed: String {
+    return cat.breed
+  }
+  
   convenience init(entryData: [String : AnyObject], insertIntoManagedObjectContext context: NSManagedObjectContext?) {
     if let context = context {
       let entryEntity = NSEntityDescription.entityForName(Entry.entity, inManagedObjectContext: context)

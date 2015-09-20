@@ -102,7 +102,6 @@ class EntrySheetController: NSWindowController {
   dynamic var sex       = String()
   dynamic var challenge = String() {
     didSet {
-      print("Challenge changed - date set: \(dateSet)")
       if challenge != Challenges.nameOf(ChallengeTypes.kitten) && !dateSet {
         let showdate = Globals.currentShow?.date ?? NSDate()
         let calendar = NSCalendar.currentCalendar()
@@ -114,9 +113,7 @@ class EntrySheetController: NSWindowController {
   }
   dynamic var birthDate: NSDate = {
     let showdate = Globals.currentShow?.date ?? NSDate()
-    let ans = NSCalendar.currentCalendar().dateByAddingUnit(.Month, value: -5, toDate: showdate, options: []) ?? showdate
-    print("Setting birth date to \(ans.string)")
-    return ans
+    return NSCalendar.currentCalendar().dateByAddingUnit(.Month, value: -5, toDate: showdate, options: []) ?? showdate
   }()
   dynamic var sire      = String()
   dynamic var dam       = String()
@@ -237,6 +234,21 @@ class EntrySheetController: NSWindowController {
     }
   }
   
+  private func checkField(field: String) -> Bool {
+    if let theField = self.valueForKey(field) as? String {
+      if theField.isEmpty { return false }
+      switch field {
+      case Cat.sex:
+        return Sex.rankOf(theField) != nil
+      case Cat.breed:
+        return Breeds.rankOf(theField) != nil
+      default:
+        break;
+      }
+    }
+    return true
+  }
+  
 
 
   // =============================================
@@ -253,11 +265,11 @@ class EntrySheetController: NSWindowController {
     var okToGo = true
     var count = 0
     
-    // Check to see all compusary fields have been entered
+    // Check to see all compulsary fields have been entered
     // ----------------------------------------------------
     for fault in possibleFaults {
-      let value = self.valueForKey(fault) as! String
-      if value.isEmpty {
+      
+      if !checkField(fault) {
         if count++ > 0 {
           faults += ", "
         }

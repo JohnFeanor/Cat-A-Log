@@ -20,6 +20,11 @@ class Colours: DataSource, NSTableViewDataSource {
     super.init()
     limitToList = true
   }
+
+  required init?(coder aDecoder: NSCoder) {
+      super.init(coder: aDecoder)
+    limitToList = true
+  }
   
   // *************************
   // MARK: - class properties

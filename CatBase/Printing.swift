@@ -696,10 +696,11 @@ extension MainWindowController {
         if entry.inDifferentSectionTo(lastEntry) {
           let s: String
           if entry.cat.isCompanion {
-            print("\(entry.cat.name) is Companion")
             s = "\(Breeds.nameOfGroupForBreed(entry.cat.breed))s)"
-          } else {
+          } else if entry.cat.isKitten || entry.cat.isEntire {
             s = "\(Breeds.nameOfGroupForBreed(entry.cat.breed)) \(entry.cat.sectionName)s"
+          } else {
+            s = "\(Breeds.nameOfGroupForBreed(entry.cat.breed)) \(entry.cat.sectionName)"
           }
           addData(section1, s, section2)
           
@@ -734,7 +735,7 @@ extension MainWindowController {
         // ---------------------------------
         if !entry.cat.isKitten && !entry.cat.isCompanion {
           let i = Breeds.ACFgroupNumberOf(thisBreed)
-          let j = Sex.rankOf(entry.cat.sex)
+          let j = Sex.rankOf(entry.cat.sex) ?? 4
           if i < 4 && j < 4 {
             countOfCats[i][j] += 1
           } else {

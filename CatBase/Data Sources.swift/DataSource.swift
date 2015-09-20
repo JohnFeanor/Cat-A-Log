@@ -8,9 +8,9 @@
 
 import Cocoa
 
-class DataSource: NSObject {
+class DataSource: NSFormatter {
   
-  var limitToList: Bool
+  var limitToList: Bool = false
   
   var list: [String] {
       return []
@@ -27,6 +27,10 @@ class DataSource: NSObject {
   convenience init(willLimit:Bool) {
     self.init()
     self.limitToList = willLimit
+  }
+
+  required init?(coder aDecoder: NSCoder) {
+      super.init(coder: aDecoder)
   }
   
   // ==============================
@@ -60,5 +64,51 @@ class DataSource: NSObject {
   func comboBox(aComboBox: NSComboBox, completedString uncompletedString: String) -> String?{
       let candidate = firstRowMatchingPrefix(uncompletedString)
     return candidate ?? uncompletedString
+  }
+  
+  // ==========================================================
+  // Formatter source methods
+  // ==========================================================
+
+  override func stringForObjectValue(obj: AnyObject?) -> String? {
+    guard obj != nil
+      else { return nil }
+    guard let returnString = obj as? String
+      else { return "@" }
+    print("Checking for string for: \"\(returnString)\"")
+    return firstRowMatchingPrefix(returnString)
+  }
+  
+  override func getObjectValue(obj: AutoreleasingUnsafeMutablePointer<AnyObject?>,
+    forString string: String,
+    errorDescription error: AutoreleasingUnsafeMutablePointer<NSString?>) -> Bool {
+      if string.isEmpty {
+        obj.memory = ""
+        return true
+      } else if let returnString = firstRowMatchingPrefix(string) {
+        obj.memory = returnString
+        return true
+      } else {
+        let index1 = string.endIndex.advancedBy(-1)
+        let substring = string.substringToIndex(index1)
+        print("Substring is \"\(substring)\"")
+        obj.memory = substring
+        return true
+      }
+  }
+  
+  
+  override func isPartialStringValid(partialString: String, newEditingString newString: AutoreleasingUnsafeMutablePointer<NSString?>, errorDescription error: AutoreleasingUnsafeMutablePointer<NSString?>) -> Bool {
+    
+    if !limitToList { return true }
+    
+    //Zero length strings are OK
+    if partialString.isEmpty { return true }
+    
+    // do not allow if there is no match
+    let maybeMatch = firstRowMatchingPrefix(partialString)
+    guard let _ = maybeMatch
+      else { return false }
+    return true
   }
 }

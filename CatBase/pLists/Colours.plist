@@ -79,6 +79,25 @@
 		<string>Lilac Tortie Smoke</string>
 		<string>Cinnamon Tortie Smoke</string>
 		<string>Fawn Tortie Smoke</string>
+		<string>Golden Silver</string>
+		<string>Black Silver</string>
+		<string>Black Silver Pewter</string>
+		<string>Blue Silver</string>
+		<string>Blue Silver Pewter</string>
+		<string>Chocolate Silver</string>
+		<string>Chocolate Silver Pewter</string>
+		<string>Lilac Silver</string>
+		<string>Lilac Silver Pewter</string>
+		<string>Red Silver Cameo</string>
+		<string>Cream Silver Cameo</string>
+		<string>Cinnamon Silver</string>
+		<string>Fawn Silver</string>
+		<string>Cinnamon Tortie Silver</string>
+		<string>Fawn Tortie Silver</string>
+		<string>Black Tortie Silver</string>
+		<string>Blue Tortie Silver</string>
+		<string>Chocolate Tortie Silver</string>
+		<string>Lilac Tortie Silver</string>
 		<string>Black Silver Classic Tabby (Green Eyed)</string>
 		<string>Black Silver Classic Tabby (Orange Eyed)</string>
 		<string>Black Silver Classic Tabby</string>
@@ -99,20 +118,20 @@
 		<string>Cream Silver Classic Tabby</string>
 		<string>Cinnamon Silver Classic Tabby</string>
 		<string>Fawn Silver Classic Tabby</string>
-		<string>Black Silver Tortie Classic Tabby (Green Eyed)</string>
-		<string>Black Silver Tortie Classic Tabby (Orange Eyed)</string>
-		<string>Black Silver Tortie Classic Tabby</string>
-		<string>Blue Silver Tortie Classic Tabby (Green Eyed)</string>
-		<string>Blue Silver Tortie Classic Tabby (Orange Eyed)</string>
-		<string>Blue Silver Tortie Classic Tabby</string>
-		<string>Chocolate Silver Tortie Classic Tabby (Green Eyed)</string>
-		<string>Chocolate Silver Tortie Classic Tabby (Orange Eyed)</string>
-		<string>Chocolate Silver Tortie Classic Tabby</string>
-		<string>Lilac Silver Tortie Classic Tabby (Green Eyed)</string>
-		<string>Lilac Silver Tortie Classic Tabby (Orange Eyed)</string>
-		<string>Lilac Silver Tortie Classic Tabby</string>
-		<string>Cinnamon Silver Tortie Classic Tabby</string>
-		<string>Fawn Silver Tortie Classic Tabby</string>
+		<string>Black Tortie Silver Classic Tabby (Green Eyed)</string>
+		<string>Black Tortie Silver Classic Tabby (Orange Eyed)</string>
+		<string>Black Tortie Silver Classic Tabby</string>
+		<string>Blue Tortie Silver Classic Tabby (Green Eyed)</string>
+		<string>Blue Tortie Silver Classic Tabby (Orange Eyed)</string>
+		<string>Blue Tortie Silver Classic Tabby</string>
+		<string>Chocolate Tortie Silver Classic Tabby (Green Eyed)</string>
+		<string>Chocolate Tortie Silver Classic Tabby (Orange Eyed)</string>
+		<string>Chocolate Tortie Silver Classic Tabby</string>
+		<string>Lilac Tortie Silver Classic Tabby (Green Eyed)</string>
+		<string>Lilac Tortie Silver Classic Tabby (Orange Eyed)</string>
+		<string>Lilac Tortie Silver Classic Tabby</string>
+		<string>Cinnamon Tortie Silver Classic Tabby</string>
+		<string>Fawn Tortie Silver Classic Tabby</string>
 		<string>Golden Classic Tabby</string>
 		<string>Black Classic Tabby</string>
 		<string>Blue Classic Tabby</string>
@@ -148,20 +167,20 @@
 		<string>Cream Silver Mackerel Tabby</string>
 		<string>Cinnamon Silver Mackerel Tabby</string>
 		<string>Fawn Silver Mackerel Tabby</string>
-		<string>Black Silver Tortie Mackerel Tabby (Green Eyed)</string>
-		<string>Black Silver Tortie Mackerel Tabby (Orange Eyed)</string>
-		<string>Black Silver Tortie Mackerel Tabby</string>
-		<string>Blue Silver Tortie Mackerel Tabby (Green Eyed)</string>
-		<string>Blue Silver Tortie Mackerel Tabby (Orange Eyed)</string>
-		<string>Blue Silver Tortie Mackerel Tabby</string>
-		<string>Chocolate Silver Tortie Mackerel Tabby (Green Eyed)</string>
-		<string>Chocolate Silver Tortie Mackerel Tabby (Orange Eyed)</string>
-		<string>Chocolate Silver Tortie Mackerel Tabby</string>
-		<string>Lilac Silver Tortie Mackerel Tabby (Green Eyed)</string>
-		<string>Lilac Silver Tortie Mackerel Tabby (Orange Eyed)</string>
-		<string>Lilac Silver Tortie Mackerel Tabby</string>
-		<string>Cinnamon Silver Tortie Mackerel Tabby</string>
-		<string>Fawn Silver Tortie Mackerel Tabby</string>
+		<string>Black Tortie Silver Mackerel Tabby (Green Eyed)</string>
+		<string>Black Tortie Silver Mackerel Tabby (Orange Eyed)</string>
+		<string>Black Tortie Silver Mackerel Tabby</string>
+		<string>Blue Tortie Silver Mackerel Tabby (Green Eyed)</string>
+		<string>Blue Tortie Silver Mackerel Tabby (Orange Eyed)</string>
+		<string>Blue Tortie Silver Mackerel Tabby</string>
+		<string>Chocolate Tortie Silver Mackerel Tabby (Green Eyed)</string>
+		<string>Chocolate Tortie Silver Mackerel Tabby (Orange Eyed)</string>
+		<string>Chocolate Tortie Silver Mackerel Tabby</string>
+		<string>Lilac Tortie Silver Mackerel Tabby (Green Eyed)</string>
+		<string>Lilac Tortie Silver Mackerel Tabby (Orange Eyed)</string>
+		<string>Lilac Tortie Silver Mackerel Tabby</string>
+		<string>Cinnamon Tortie Silver Mackerel Tabby</string>
+		<string>Fawn Tortie Silver Mackerel Tabby</string>
 		<string>Golden Mackerel Tabby</string>
 		<string>Black Mackerel Tabby</string>
 		<string>Blue Mackerel Tabby</string>
@@ -197,20 +216,20 @@
 		<string>Cream Silver Spotted Tabby</string>
 		<string>Cinnamon Silver Spotted Tabby</string>
 		<string>Fawn Silver Spotted Tabby</string>
-		<string>Black Silver Tortie Spotted Tabby (Green Eyed)</string>
-		<string>Black Silver Tortie Spotted Tabby (Orange Eyed)</string>
-		<string>Black Silver Tortie Spotted Tabby</string>
-		<string>Blue Silver Tortie Spotted Tabby (Green Eyed)</string>
-		<string>Blue Silver Tortie Spotted Tabby (Orange Eyed)</string>
-		<string>Blue Silver Tortie Spotted Tabby</string>
-		<string>Chocolate Silver Tortie Spotted Tabby (Green Eyed)</string>
-		<string>Chocolate Silver Tortie Spotted Tabby (Orange Eyed)</string>
-		<string>Chocolate Silver Tortie Spotted Tabby</string>
-		<string>Lilac Silver Tortie Spotted Tabby (Green Eyed)</string>
-		<string>Lilac Silver Tortie Spotted Tabby (Orange Eyed)</string>
-		<string>Lilac Silver Tortie Spotted Tabby</string>
-		<string>Cinnamon Silver Tortie Spotted Tabby</string>
-		<string>Fawn Silver Tortie Spotted Tabby</string>
+		<string>Black Tortie Silver Spotted Tabby (Green Eyed)</string>
+		<string>Black Tortie Silver Spotted Tabby (Orange Eyed)</string>
+		<string>Black Tortie Silver Spotted Tabby</string>
+		<string>Blue Tortie Silver Spotted Tabby (Green Eyed)</string>
+		<string>Blue Tortie Silver Spotted Tabby (Orange Eyed)</string>
+		<string>Blue Tortie Silver Spotted Tabby</string>
+		<string>Chocolate Tortie Silver Spotted Tabby (Green Eyed)</string>
+		<string>Chocolate Tortie Silver Spotted Tabby (Orange Eyed)</string>
+		<string>Chocolate Tortie Silver Spotted Tabby</string>
+		<string>Lilac Tortie Silver Spotted Tabby (Green Eyed)</string>
+		<string>Lilac Tortie Silver Spotted Tabby (Orange Eyed)</string>
+		<string>Lilac Tortie Silver Spotted Tabby</string>
+		<string>Cinnamon Tortie Silver Spotted Tabby</string>
+		<string>Fawn Tortie Silver Spotted Tabby</string>
 		<string>Golden Spotted Tabby</string>
 		<string>Black Spotted Tabby</string>
 		<string>Blue Spotted Tabby</string>
@@ -246,20 +265,59 @@
 		<string>Cream Silver Ticked Tabby</string>
 		<string>Cinnamon Silver Ticked Tabby</string>
 		<string>Fawn Silver Ticked Tabby</string>
-		<string>Black Silver Tortie Ticked Tabby (Green Eyed)</string>
-		<string>Black Silver Tortie Ticked Tabby (Orange Eyed)</string>
-		<string>Black Silver Tortie Ticked Tabby</string>
-		<string>Blue Silver Tortie Ticked Tabby (Green Eyed)</string>
-		<string>Blue Silver Tortie Ticked Tabby (Orange Eyed)</string>
-		<string>Blue Silver Tortie Ticked Tabby</string>
-		<string>Chocolate Silver Tortie Ticked Tabby (Green Eyed)</string>
-		<string>Chocolate Silver Tortie Ticked Tabby (Orange Eyed)</string>
-		<string>Chocolate Silver Tortie Ticked Tabby</string>
-		<string>Lilac Silver Tortie Ticked Tabby (Green Eyed)</string>
-		<string>Lilac Silver Tortie Ticked Tabby (Orange Eyed)</string>
-		<string>Lilac Silver Tortie Ticked Tabby</string>
-		<string>Cinnamon Silver Tortie Ticked Tabby</string>
-		<string>Fawn Silver Tortie Ticked Tabby</string>
+		<string>Black Tortie Silver Ticked Tabby (Green Eyed)</string>
+		<string>Black Tortie Silver Ticked Tabby (Orange Eyed)</string>
+		<string>Black Tortie Silver Ticked Tabby</string>
+		<string>Blue Tortie Silver Ticked Tabby (Green Eyed)</string>
+		<string>Blue Tortie Silver Ticked Tabby (Orange Eyed)</string>
+		<string>Blue Tortie Silver Ticked Tabby</string>
+		<string>Chocolate Tortie Silver Ticked Tabby (Green Eyed)</string>
+		<string>Chocolate Tortie Silver Ticked Tabby (Orange Eyed)</string>
+		<string>Chocolate Tortie Silver Ticked Tabby</string>
+		<string>Lilac Tortie Silver Ticked Tabby (Green Eyed)</string>
+		<string>Lilac Tortie Silver Ticked Tabby (Orange Eyed)</string>
+		<string>Lilac Tortie Silver Ticked Tabby</string>
+		<string>Cinnamon Tortie Silver Spotted Tabby</string>
+		<string>Fawn Tortie Silver Spotted Tabby</string>
+		<string>Golden Spotted Tabby</string>
+		<string>Black Spotted Tabby</string>
+		<string>Blue Spotted Tabby</string>
+		<string>Chocolate Spotted Tabby</string>
+		<string>Lilac Spotted Tabby</string>
+		<string>Red Spotted Tabby</string>
+		<string>Cream Spotted Tabby</string>
+		<string>Cinnamon Spotted Tabby</string>
+		<string>Fawn Spotted Tabby</string>
+		<string>Black Tortie Spotted Tabby</string>
+		<string>Blue Tortie Spotted Tabby</string>
+		<string>Chocolate Tortie Spotted Tabby</string>
+		<string>Lilac Tortie Spotted Tabby</string>
+		<string>Cinnamon Tortie Spotted Tabby</string>
+		<string>Fawn Tortie Spotted Tabby</string>
+		<string>Black Silver Ticked Tabby (Green Eyed)</string>
+		<string>Black Silver Ticked Tabby (Orange Eyed)</string>
+		<string>Blue Silver Ticked Tabby (Green Eyed)</string>
+		<string>Blue Silver Ticked Tabby (Orange Eyed)</string>
+		<string>Chocolate Silver Ticked Tabby (Green Eyed)</string>
+		<string>Chocolate Silver Ticked Tabby (Orange Eyed)</string>
+		<string>Lilac Silver Ticked Tabby (Green Eyed)</string>
+		<string>Lilac Silver Ticked Tabby (Orange Eyed)</string>
+		<string>Red Silver Ticked Tabby (Green Eyed)</string>
+		<string>Red Silver Ticked Tabby (Orange Eyed)</string>
+		<string>Cream Silver Ticked Tabby (Green Eyed)</string>
+		<string>Cream Silver Ticked Tabby (Orange Eyed)</string>
+		<string>Cinnamon Silver Ticked Tabby</string>
+		<string>Fawn Silver Ticked Tabby</string>
+		<string>Black Tortie Silver Ticked Tabby (Green Eyed)</string>
+		<string>Black Tortie Silver Ticked Tabby (Orange Eyed)</string>
+		<string>Blue Tortie Silver Ticked Tabby (Green Eyed)</string>
+		<string>Blue Tortie Silver Ticked Tabby (Orange Eyed)</string>
+		<string>Chocolate Tortie Silver Ticked Tabby (Green Eyed)</string>
+		<string>Chocolate Tortie Silver Ticked Tabby (Orange Eyed)</string>
+		<string>Lilac Tortie Silver Ticked Tabby (Green Eyed)</string>
+		<string>Lilac Tortie Silver Ticked Tabby (Orange Eyed)</string>
+		<string>Cinnamon Tortie Silver Ticked Tabby</string>
+		<string>Fawn Tortie Silver Ticked Tabby</string>
 		<string>Golden Ticked Tabby</string>
 		<string>Black Ticked Tabby</string>
 		<string>Blue Ticked Tabby</string>
@@ -660,6 +718,74 @@
 		<string>Lilac Tortie Smoke</string>
 		<string>Cinnamon Tortie Smoke</string>
 		<string>Fawn Tortie Smoke</string>
+		<string>Golden Silver</string>
+		<string>Black Silver</string>
+		<string>Black Silver Pewter</string>
+		<string>Blue Silver</string>
+		<string>Blue Silver Pewter</string>
+		<string>Chocolate Silver</string>
+		<string>Chocolate Silver Pewter</string>
+		<string>Lilac Silver</string>
+		<string>Lilac Silver Pewter</string>
+		<string>Red Silver Cameo</string>
+		<string>Cream Silver Cameo</string>
+		<string>Cinnamon Silver</string>
+		<string>Fawn Silver</string>
+		<string>Cinnamon Tortie Silver</string>
+		<string>Fawn Tortie Silver</string>
+		<string>Black Tortie Silver</string>
+		<string>Blue Tortie Silver</string>
+		<string>Chocolate Tortie Silver</string>
+		<string>Lilac Tortie Silver</string>
+		<string>Black Silver Classic Tabby (Green Eyed)</string>
+		<string>Black Silver Classic Tabby (Orange Eyed)</string>
+		<string>Black Silver Classic Tabby</string>
+		<string>Blue Silver Classic Tabby (Green Eyed)</string>
+		<string>Blue Silver Classic Tabby (Orange Eyed)</string>
+		<string>Blue Silver Classic Tabby</string>
+		<string>Chocolate Silver Classic Tabby (Green Eyed)</string>
+		<string>Chocolate Silver Classic Tabby (Orange Eyed)</string>
+		<string>Chocolate Silver Classic Tabby</string>
+		<string>Lilac Silver Classic Tabby (Green Eyed)</string>
+		<string>Lilac Silver Classic Tabby (Orange Eyed)</string>
+		<string>Lilac Silver Classic Tabby</string>
+		<string>Red Silver Classic Tabby (Green Eyed)</string>
+		<string>Red Silver Classic Tabby (Orange Eyed)</string>
+		<string>Red Silver Classic Tabby</string>
+		<string>Cream Silver Classic Tabby (Green Eyed)</string>
+		<string>Cream Silver Classic Tabby (Orange Eyed)</string>
+		<string>Cream Silver Classic Tabby</string>
+		<string>Cinnamon Silver Classic Tabby</string>
+		<string>Fawn Silver Classic Tabby</string>
+		<string>Black Tortie Silver Classic Tabby (Green Eyed)</string>
+		<string>Black Tortie Silver Classic Tabby (Orange Eyed)</string>
+		<string>Black Tortie Silver Classic Tabby</string>
+		<string>Blue Tortie Silver Classic Tabby (Green Eyed)</string>
+		<string>Blue Tortie Silver Classic Tabby (Orange Eyed)</string>
+		<string>Blue Tortie Silver Classic Tabby</string>
+		<string>Chocolate Tortie Silver Classic Tabby (Green Eyed)</string>
+		<string>Chocolate Tortie Silver Classic Tabby (Orange Eyed)</string>
+		<string>Chocolate Tortie Silver Classic Tabby</string>
+		<string>Lilac Tortie Silver Classic Tabby (Green Eyed)</string>
+		<string>Lilac Tortie Silver Classic Tabby (Orange Eyed)</string>
+		<string>Lilac Tortie Silver Classic Tabby</string>
+		<string>Cinnamon Tortie Silver Classic Tabby</string>
+		<string>Fawn Tortie Silver Classic Tabby</string>
+		<string>Golden Classic Tabby</string>
+		<string>Black Classic Tabby</string>
+		<string>Blue Classic Tabby</string>
+		<string>Chocolate Classic Tabby</string>
+		<string>Lilac Classic Tabby</string>
+		<string>Red Classic Tabby</string>
+		<string>Cream Classic Tabby</string>
+		<string>Cinnamon Classic Tabby</string>
+		<string>Fawn Classic Tabby</string>
+		<string>Black Tortie Classic Tabby</string>
+		<string>Blue Tortie Classic Tabby</string>
+		<string>Chocolate Tortie Classic Tabby</string>
+		<string>Lilac Tortie Classic Tabby</string>
+		<string>Cinnamon Tortie Classic Tabby</string>
+		<string>Fawn Tortie Classic Tabby</string>
 		<string>Black Silver Mackerel Tabby (Green Eyed)</string>
 		<string>Black Silver Mackerel Tabby (Orange Eyed)</string>
 		<string>Black Silver Mackerel Tabby</string>
@@ -680,20 +806,20 @@
 		<string>Cream Silver Mackerel Tabby</string>
 		<string>Cinnamon Silver Mackerel Tabby</string>
 		<string>Fawn Silver Mackerel Tabby</string>
-		<string>Black Silver Tortie Mackerel Tabby (Green Eyed)</string>
-		<string>Black Silver Tortie Mackerel Tabby (Orange Eyed)</string>
-		<string>Black Silver Tortie Mackerel Tabby</string>
-		<string>Blue Silver Tortie Mackerel Tabby (Green Eyed)</string>
-		<string>Blue Silver Tortie Mackerel Tabby (Orange Eyed)</string>
-		<string>Blue Silver Tortie Mackerel Tabby</string>
-		<string>Chocolate Silver Tortie Mackerel Tabby (Green Eyed)</string>
-		<string>Chocolate Silver Tortie Mackerel Tabby (Orange Eyed)</string>
-		<string>Chocolate Silver Tortie Mackerel Tabby</string>
-		<string>Lilac Silver Tortie Mackerel Tabby (Green Eyed)</string>
-		<string>Lilac Silver Tortie Mackerel Tabby (Orange Eyed)</string>
-		<string>Lilac Silver Tortie Mackerel Tabby</string>
-		<string>Cinnamon Silver Tortie Mackerel Tabby</string>
-		<string>Fawn Silver Tortie Mackerel Tabby</string>
+		<string>Black Tortie Silver Mackerel Tabby (Green Eyed)</string>
+		<string>Black Tortie Silver Mackerel Tabby (Orange Eyed)</string>
+		<string>Black Tortie Silver Mackerel Tabby</string>
+		<string>Blue Tortie Silver Mackerel Tabby (Green Eyed)</string>
+		<string>Blue Tortie Silver Mackerel Tabby (Orange Eyed)</string>
+		<string>Blue Tortie Silver Mackerel Tabby</string>
+		<string>Chocolate Tortie Silver Mackerel Tabby (Green Eyed)</string>
+		<string>Chocolate Tortie Silver Mackerel Tabby (Orange Eyed)</string>
+		<string>Chocolate Tortie Silver Mackerel Tabby</string>
+		<string>Lilac Tortie Silver Mackerel Tabby (Green Eyed)</string>
+		<string>Lilac Tortie Silver Mackerel Tabby (Orange Eyed)</string>
+		<string>Lilac Tortie Silver Mackerel Tabby</string>
+		<string>Cinnamon Tortie Silver Mackerel Tabby</string>
+		<string>Fawn Tortie Silver Mackerel Tabby</string>
 		<string>Golden Mackerel Tabby</string>
 		<string>Black Mackerel Tabby</string>
 		<string>Blue Mackerel Tabby</string>
@@ -729,20 +855,20 @@
 		<string>Cream Silver Spotted Tabby</string>
 		<string>Cinnamon Silver Spotted Tabby</string>
 		<string>Fawn Silver Spotted Tabby</string>
-		<string>Black Silver Tortie Spotted Tabby (Green Eyed)</string>
-		<string>Black Silver Tortie Spotted Tabby (Orange Eyed)</string>
-		<string>Black Silver Tortie Spotted Tabby</string>
-		<string>Blue Silver Tortie Spotted Tabby (Green Eyed)</string>
-		<string>Blue Silver Tortie Spotted Tabby (Orange Eyed)</string>
-		<string>Blue Silver Tortie Spotted Tabby</string>
-		<string>Chocolate Silver Tortie Spotted Tabby (Green Eyed)</string>
-		<string>Chocolate Silver Tortie Spotted Tabby (Orange Eyed)</string>
-		<string>Chocolate Silver Tortie Spotted Tabby</string>
-		<string>Lilac Silver Tortie Spotted Tabby (Green Eyed)</string>
-		<string>Lilac Silver Tortie Spotted Tabby (Orange Eyed)</string>
-		<string>Lilac Silver Tortie Spotted Tabby</string>
-		<string>Cinnamon Silver Tortie Spotted Tabby</string>
-		<string>Fawn Silver Tortie Spotted Tabby</string>
+		<string>Black Tortie Silver Spotted Tabby (Green Eyed)</string>
+		<string>Black Tortie Silver Spotted Tabby (Orange Eyed)</string>
+		<string>Black Tortie Silver Spotted Tabby</string>
+		<string>Blue Tortie Silver Spotted Tabby (Green Eyed)</string>
+		<string>Blue Tortie Silver Spotted Tabby (Orange Eyed)</string>
+		<string>Blue Tortie Silver Spotted Tabby</string>
+		<string>Chocolate Tortie Silver Spotted Tabby (Green Eyed)</string>
+		<string>Chocolate Tortie Silver Spotted Tabby (Orange Eyed)</string>
+		<string>Chocolate Tortie Silver Spotted Tabby</string>
+		<string>Lilac Tortie Silver Spotted Tabby (Green Eyed)</string>
+		<string>Lilac Tortie Silver Spotted Tabby (Orange Eyed)</string>
+		<string>Lilac Tortie Silver Spotted Tabby</string>
+		<string>Cinnamon Tortie Silver Spotted Tabby</string>
+		<string>Fawn Tortie Silver Spotted Tabby</string>
 		<string>Golden Spotted Tabby</string>
 		<string>Black Spotted Tabby</string>
 		<string>Blue Spotted Tabby</string>
@@ -778,20 +904,59 @@
 		<string>Cream Silver Ticked Tabby</string>
 		<string>Cinnamon Silver Ticked Tabby</string>
 		<string>Fawn Silver Ticked Tabby</string>
-		<string>Black Silver Tortie Ticked Tabby (Green Eyed)</string>
-		<string>Black Silver Tortie Ticked Tabby (Orange Eyed)</string>
-		<string>Black Silver Tortie Ticked Tabby</string>
-		<string>Blue Silver Tortie Ticked Tabby (Green Eyed)</string>
-		<string>Blue Silver Tortie Ticked Tabby (Orange Eyed)</string>
-		<string>Blue Silver Tortie Ticked Tabby</string>
-		<string>Chocolate Silver Tortie Ticked Tabby (Green Eyed)</string>
-		<string>Chocolate Silver Tortie Ticked Tabby (Orange Eyed)</string>
-		<string>Chocolate Silver Tortie Ticked Tabby</string>
-		<string>Lilac Silver Tortie Ticked Tabby (Green Eyed)</string>
-		<string>Lilac Silver Tortie Ticked Tabby (Orange Eyed)</string>
-		<string>Lilac Silver Tortie Ticked Tabby</string>
-		<string>Cinnamon Silver Tortie Ticked Tabby</string>
-		<string>Fawn Silver Tortie Ticked Tabby</string>
+		<string>Black Tortie Silver Ticked Tabby (Green Eyed)</string>
+		<string>Black Tortie Silver Ticked Tabby (Orange Eyed)</string>
+		<string>Black Tortie Silver Ticked Tabby</string>
+		<string>Blue Tortie Silver Ticked Tabby (Green Eyed)</string>
+		<string>Blue Tortie Silver Ticked Tabby (Orange Eyed)</string>
+		<string>Blue Tortie Silver Ticked Tabby</string>
+		<string>Chocolate Tortie Silver Ticked Tabby (Green Eyed)</string>
+		<string>Chocolate Tortie Silver Ticked Tabby (Orange Eyed)</string>
+		<string>Chocolate Tortie Silver Ticked Tabby</string>
+		<string>Lilac Tortie Silver Ticked Tabby (Green Eyed)</string>
+		<string>Lilac Tortie Silver Ticked Tabby (Orange Eyed)</string>
+		<string>Lilac Tortie Silver Ticked Tabby</string>
+		<string>Cinnamon Tortie Silver Spotted Tabby</string>
+		<string>Fawn Tortie Silver Spotted Tabby</string>
+		<string>Golden Spotted Tabby</string>
+		<string>Black Spotted Tabby</string>
+		<string>Blue Spotted Tabby</string>
+		<string>Chocolate Spotted Tabby</string>
+		<string>Lilac Spotted Tabby</string>
+		<string>Red Spotted Tabby</string>
+		<string>Cream Spotted Tabby</string>
+		<string>Cinnamon Spotted Tabby</string>
+		<string>Fawn Spotted Tabby</string>
+		<string>Black Tortie Spotted Tabby</string>
+		<string>Blue Tortie Spotted Tabby</string>
+		<string>Chocolate Tortie Spotted Tabby</string>
+		<string>Lilac Tortie Spotted Tabby</string>
+		<string>Cinnamon Tortie Spotted Tabby</string>
+		<string>Fawn Tortie Spotted Tabby</string>
+		<string>Black Silver Ticked Tabby (Green Eyed)</string>
+		<string>Black Silver Ticked Tabby (Orange Eyed)</string>
+		<string>Blue Silver Ticked Tabby (Green Eyed)</string>
+		<string>Blue Silver Ticked Tabby (Orange Eyed)</string>
+		<string>Chocolate Silver Ticked Tabby (Green Eyed)</string>
+		<string>Chocolate Silver Ticked Tabby (Orange Eyed)</string>
+		<string>Lilac Silver Ticked Tabby (Green Eyed)</string>
+		<string>Lilac Silver Ticked Tabby (Orange Eyed)</string>
+		<string>Red Silver Ticked Tabby (Green Eyed)</string>
+		<string>Red Silver Ticked Tabby (Orange Eyed)</string>
+		<string>Cream Silver Ticked Tabby (Green Eyed)</string>
+		<string>Cream Silver Ticked Tabby (Orange Eyed)</string>
+		<string>Cinnamon Silver Ticked Tabby</string>
+		<string>Fawn Silver Ticked Tabby</string>
+		<string>Black Tortie Silver Ticked Tabby (Green Eyed)</string>
+		<string>Black Tortie Silver Ticked Tabby (Orange Eyed)</string>
+		<string>Blue Tortie Silver Ticked Tabby (Green Eyed)</string>
+		<string>Blue Tortie Silver Ticked Tabby (Orange Eyed)</string>
+		<string>Chocolate Tortie Silver Ticked Tabby (Green Eyed)</string>
+		<string>Chocolate Tortie Silver Ticked Tabby (Orange Eyed)</string>
+		<string>Lilac Tortie Silver Ticked Tabby (Green Eyed)</string>
+		<string>Lilac Tortie Silver Ticked Tabby (Orange Eyed)</string>
+		<string>Cinnamon Tortie Silver Ticked Tabby</string>
+		<string>Fawn Tortie Silver Ticked Tabby</string>
 		<string>Golden Ticked Tabby</string>
 		<string>Black Ticked Tabby</string>
 		<string>Blue Ticked Tabby</string>
@@ -1192,6 +1357,74 @@
 		<string>Lilac Tortie Smoke</string>
 		<string>Cinnamon Tortie Smoke</string>
 		<string>Fawn Tortie Smoke</string>
+		<string>Golden Silver</string>
+		<string>Black Silver</string>
+		<string>Black Silver Pewter</string>
+		<string>Blue Silver</string>
+		<string>Blue Silver Pewter</string>
+		<string>Chocolate Silver</string>
+		<string>Chocolate Silver Pewter</string>
+		<string>Lilac Silver</string>
+		<string>Lilac Silver Pewter</string>
+		<string>Red Silver Cameo</string>
+		<string>Cream Silver Cameo</string>
+		<string>Cinnamon Silver</string>
+		<string>Fawn Silver</string>
+		<string>Cinnamon Tortie Silver</string>
+		<string>Fawn Tortie Silver</string>
+		<string>Black Tortie Silver</string>
+		<string>Blue Tortie Silver</string>
+		<string>Chocolate Tortie Silver</string>
+		<string>Lilac Tortie Silver</string>
+		<string>Black Silver Classic Tabby (Green Eyed)</string>
+		<string>Black Silver Classic Tabby (Orange Eyed)</string>
+		<string>Black Silver Classic Tabby</string>
+		<string>Blue Silver Classic Tabby (Green Eyed)</string>
+		<string>Blue Silver Classic Tabby (Orange Eyed)</string>
+		<string>Blue Silver Classic Tabby</string>
+		<string>Chocolate Silver Classic Tabby (Green Eyed)</string>
+		<string>Chocolate Silver Classic Tabby (Orange Eyed)</string>
+		<string>Chocolate Silver Classic Tabby</string>
+		<string>Lilac Silver Classic Tabby (Green Eyed)</string>
+		<string>Lilac Silver Classic Tabby (Orange Eyed)</string>
+		<string>Lilac Silver Classic Tabby</string>
+		<string>Red Silver Classic Tabby (Green Eyed)</string>
+		<string>Red Silver Classic Tabby (Orange Eyed)</string>
+		<string>Red Silver Classic Tabby</string>
+		<string>Cream Silver Classic Tabby (Green Eyed)</string>
+		<string>Cream Silver Classic Tabby (Orange Eyed)</string>
+		<string>Cream Silver Classic Tabby</string>
+		<string>Cinnamon Silver Classic Tabby</string>
+		<string>Fawn Silver Classic Tabby</string>
+		<string>Black Tortie Silver Classic Tabby (Green Eyed)</string>
+		<string>Black Tortie Silver Classic Tabby (Orange Eyed)</string>
+		<string>Black Tortie Silver Classic Tabby</string>
+		<string>Blue Tortie Silver Classic Tabby (Green Eyed)</string>
+		<string>Blue Tortie Silver Classic Tabby (Orange Eyed)</string>
+		<string>Blue Tortie Silver Classic Tabby</string>
+		<string>Chocolate Tortie Silver Classic Tabby (Green Eyed)</string>
+		<string>Chocolate Tortie Silver Classic Tabby (Orange Eyed)</string>
+		<string>Chocolate Tortie Silver Classic Tabby</string>
+		<string>Lilac Tortie Silver Classic Tabby (Green Eyed)</string>
+		<string>Lilac Tortie Silver Classic Tabby (Orange Eyed)</string>
+		<string>Lilac Tortie Silver Classic Tabby</string>
+		<string>Cinnamon Tortie Silver Classic Tabby</string>
+		<string>Fawn Tortie Silver Classic Tabby</string>
+		<string>Golden Classic Tabby</string>
+		<string>Black Classic Tabby</string>
+		<string>Blue Classic Tabby</string>
+		<string>Chocolate Classic Tabby</string>
+		<string>Lilac Classic Tabby</string>
+		<string>Red Classic Tabby</string>
+		<string>Cream Classic Tabby</string>
+		<string>Cinnamon Classic Tabby</string>
+		<string>Fawn Classic Tabby</string>
+		<string>Black Tortie Classic Tabby</string>
+		<string>Blue Tortie Classic Tabby</string>
+		<string>Chocolate Tortie Classic Tabby</string>
+		<string>Lilac Tortie Classic Tabby</string>
+		<string>Cinnamon Tortie Classic Tabby</string>
+		<string>Fawn Tortie Classic Tabby</string>
 		<string>Black Silver Mackerel Tabby (Green Eyed)</string>
 		<string>Black Silver Mackerel Tabby (Orange Eyed)</string>
 		<string>Black Silver Mackerel Tabby</string>
@@ -1212,20 +1445,20 @@
 		<string>Cream Silver Mackerel Tabby</string>
 		<string>Cinnamon Silver Mackerel Tabby</string>
 		<string>Fawn Silver Mackerel Tabby</string>
-		<string>Black Silver Tortie Mackerel Tabby (Green Eyed)</string>
-		<string>Black Silver Tortie Mackerel Tabby (Orange Eyed)</string>
-		<string>Black Silver Tortie Mackerel Tabby</string>
-		<string>Blue Silver Tortie Mackerel Tabby (Green Eyed)</string>
-		<string>Blue Silver Tortie Mackerel Tabby (Orange Eyed)</string>
-		<string>Blue Silver Tortie Mackerel Tabby</string>
-		<string>Chocolate Silver Tortie Mackerel Tabby (Green Eyed)</string>
-		<string>Chocolate Silver Tortie Mackerel Tabby (Orange Eyed)</string>
-		<string>Chocolate Silver Tortie Mackerel Tabby</string>
-		<string>Lilac Silver Tortie Mackerel Tabby (Green Eyed)</string>
-		<string>Lilac Silver Tortie Mackerel Tabby (Orange Eyed)</string>
-		<string>Lilac Silver Tortie Mackerel Tabby</string>
-		<string>Cinnamon Silver Tortie Mackerel Tabby</string>
-		<string>Fawn Silver Tortie Mackerel Tabby</string>
+		<string>Black Tortie Silver Mackerel Tabby (Green Eyed)</string>
+		<string>Black Tortie Silver Mackerel Tabby (Orange Eyed)</string>
+		<string>Black Tortie Silver Mackerel Tabby</string>
+		<string>Blue Tortie Silver Mackerel Tabby (Green Eyed)</string>
+		<string>Blue Tortie Silver Mackerel Tabby (Orange Eyed)</string>
+		<string>Blue Tortie Silver Mackerel Tabby</string>
+		<string>Chocolate Tortie Silver Mackerel Tabby (Green Eyed)</string>
+		<string>Chocolate Tortie Silver Mackerel Tabby (Orange Eyed)</string>
+		<string>Chocolate Tortie Silver Mackerel Tabby</string>
+		<string>Lilac Tortie Silver Mackerel Tabby (Green Eyed)</string>
+		<string>Lilac Tortie Silver Mackerel Tabby (Orange Eyed)</string>
+		<string>Lilac Tortie Silver Mackerel Tabby</string>
+		<string>Cinnamon Tortie Silver Mackerel Tabby</string>
+		<string>Fawn Tortie Silver Mackerel Tabby</string>
 		<string>Golden Mackerel Tabby</string>
 		<string>Black Mackerel Tabby</string>
 		<string>Blue Mackerel Tabby</string>
@@ -1261,20 +1494,20 @@
 		<string>Cream Silver Spotted Tabby</string>
 		<string>Cinnamon Silver Spotted Tabby</string>
 		<string>Fawn Silver Spotted Tabby</string>
-		<string>Black Silver Tortie Spotted Tabby (Green Eyed)</string>
-		<string>Black Silver Tortie Spotted Tabby (Orange Eyed)</string>
-		<string>Black Silver Tortie Spotted Tabby</string>
-		<string>Blue Silver Tortie Spotted Tabby (Green Eyed)</string>
-		<string>Blue Silver Tortie Spotted Tabby (Orange Eyed)</string>
-		<string>Blue Silver Tortie Spotted Tabby</string>
-		<string>Chocolate Silver Tortie Spotted Tabby (Green Eyed)</string>
-		<string>Chocolate Silver Tortie Spotted Tabby (Orange Eyed)</string>
-		<string>Chocolate Silver Tortie Spotted Tabby</string>
-		<string>Lilac Silver Tortie Spotted Tabby (Green Eyed)</string>
-		<string>Lilac Silver Tortie Spotted Tabby (Orange Eyed)</string>
-		<string>Lilac Silver Tortie Spotted Tabby</string>
-		<string>Cinnamon Silver Tortie Spotted Tabby</string>
-		<string>Fawn Silver Tortie Spotted Tabby</string>
+		<string>Black Tortie Silver Spotted Tabby (Green Eyed)</string>
+		<string>Black Tortie Silver Spotted Tabby (Orange Eyed)</string>
+		<string>Black Tortie Silver Spotted Tabby</string>
+		<string>Blue Tortie Silver Spotted Tabby (Green Eyed)</string>
+		<string>Blue Tortie Silver Spotted Tabby (Orange Eyed)</string>
+		<string>Blue Tortie Silver Spotted Tabby</string>
+		<string>Chocolate Tortie Silver Spotted Tabby (Green Eyed)</string>
+		<string>Chocolate Tortie Silver Spotted Tabby (Orange Eyed)</string>
+		<string>Chocolate Tortie Silver Spotted Tabby</string>
+		<string>Lilac Tortie Silver Spotted Tabby (Green Eyed)</string>
+		<string>Lilac Tortie Silver Spotted Tabby (Orange Eyed)</string>
+		<string>Lilac Tortie Silver Spotted Tabby</string>
+		<string>Cinnamon Tortie Silver Spotted Tabby</string>
+		<string>Fawn Tortie Silver Spotted Tabby</string>
 		<string>Golden Spotted Tabby</string>
 		<string>Black Spotted Tabby</string>
 		<string>Blue Spotted Tabby</string>
@@ -1310,20 +1543,20 @@
 		<string>Cream Silver Ticked Tabby</string>
 		<string>Cinnamon Silver Ticked Tabby</string>
 		<string>Fawn Silver Ticked Tabby</string>
-		<string>Black Silver Tortie Ticked Tabby (Green Eyed)</string>
-		<string>Black Silver Tortie Ticked Tabby (Orange Eyed)</string>
-		<string>Black Silver Tortie Ticked Tabby</string>
-		<string>Blue Silver Tortie Ticked Tabby (Green Eyed)</string>
-		<string>Blue Silver Tortie Ticked Tabby (Orange Eyed)</string>
-		<string>Blue Silver Tortie Ticked Tabby</string>
-		<string>Chocolate Silver Tortie Ticked Tabby (Green Eyed)</string>
-		<string>Chocolate Silver Tortie Ticked Tabby (Orange Eyed)</string>
-		<string>Chocolate Silver Tortie Ticked Tabby</string>
-		<string>Lilac Silver Tortie Ticked Tabby (Green Eyed)</string>
-		<string>Lilac Silver Tortie Ticked Tabby (Orange Eyed)</string>
-		<string>Lilac Silver Tortie Ticked Tabby</string>
-		<string>Cinnamon Silver Tortie Spotted Tabby</string>
-		<string>Fawn Silver Tortie Spotted Tabby</string>
+		<string>Black Tortie Silver Ticked Tabby (Green Eyed)</string>
+		<string>Black Tortie Silver Ticked Tabby (Orange Eyed)</string>
+		<string>Black Tortie Silver Ticked Tabby</string>
+		<string>Blue Tortie Silver Ticked Tabby (Green Eyed)</string>
+		<string>Blue Tortie Silver Ticked Tabby (Orange Eyed)</string>
+		<string>Blue Tortie Silver Ticked Tabby</string>
+		<string>Chocolate Tortie Silver Ticked Tabby (Green Eyed)</string>
+		<string>Chocolate Tortie Silver Ticked Tabby (Orange Eyed)</string>
+		<string>Chocolate Tortie Silver Ticked Tabby</string>
+		<string>Lilac Tortie Silver Ticked Tabby (Green Eyed)</string>
+		<string>Lilac Tortie Silver Ticked Tabby (Orange Eyed)</string>
+		<string>Lilac Tortie Silver Ticked Tabby</string>
+		<string>Cinnamon Tortie Silver Spotted Tabby</string>
+		<string>Fawn Tortie Silver Spotted Tabby</string>
 		<string>Golden Spotted Tabby</string>
 		<string>Black Spotted Tabby</string>
 		<string>Blue Spotted Tabby</string>
@@ -1353,16 +1586,16 @@
 		<string>Cream Silver Ticked Tabby (Orange Eyed)</string>
 		<string>Cinnamon Silver Ticked Tabby</string>
 		<string>Fawn Silver Ticked Tabby</string>
-		<string>Black Silver Tortie Ticked Tabby (Green Eyed)</string>
-		<string>Black Silver Tortie Ticked Tabby (Orange Eyed)</string>
-		<string>Blue Silver Tortie Ticked Tabby (Green Eyed)</string>
-		<string>Blue Silver Tortie Ticked Tabby (Orange Eyed)</string>
-		<string>Chocolate Silver Tortie Ticked Tabby (Green Eyed)</string>
-		<string>Chocolate Silver Tortie Ticked Tabby (Orange Eyed)</string>
-		<string>Lilac Silver Tortie Ticked Tabby (Green Eyed)</string>
-		<string>Lilac Silver Tortie Ticked Tabby (Orange Eyed)</string>
-		<string>Cinnamon Silver Tortie Ticked Tabby</string>
-		<string>Fawn Silver Tortie Ticked Tabby</string>
+		<string>Black Tortie Silver Ticked Tabby (Green Eyed)</string>
+		<string>Black Tortie Silver Ticked Tabby (Orange Eyed)</string>
+		<string>Blue Tortie Silver Ticked Tabby (Green Eyed)</string>
+		<string>Blue Tortie Silver Ticked Tabby (Orange Eyed)</string>
+		<string>Chocolate Tortie Silver Ticked Tabby (Green Eyed)</string>
+		<string>Chocolate Tortie Silver Ticked Tabby (Orange Eyed)</string>
+		<string>Lilac Tortie Silver Ticked Tabby (Green Eyed)</string>
+		<string>Lilac Tortie Silver Ticked Tabby (Orange Eyed)</string>
+		<string>Cinnamon Tortie Silver Ticked Tabby</string>
+		<string>Fawn Tortie Silver Ticked Tabby</string>
 		<string>Golden Ticked Tabby</string>
 		<string>Black Ticked Tabby</string>
 		<string>Blue Ticked Tabby</string>

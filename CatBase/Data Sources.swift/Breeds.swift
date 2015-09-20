@@ -62,6 +62,16 @@ class Breeds: DataSource, NSTableViewDataSource {
     }
   }
   
+  override init() {
+    super.init()
+    limitToList = true
+  }
+  
+  required init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+    limitToList = true
+  }
+  
   // ************************************
   // MARK: - Class methods
   // ************************************

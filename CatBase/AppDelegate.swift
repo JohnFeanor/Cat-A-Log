@@ -168,7 +168,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     if let moc = managedObjectContext {
       if !moc.commitEditing() {
-        NSLog("\(NSStringFromClass(self.dynamicType)) unable to commit editing to terminate")
+        print("\(NSStringFromClass(self.dynamicType)) unable to commit editing to terminate")
         return .TerminateCancel
       }
       
@@ -195,8 +195,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let alert = NSAlert()
         alert.messageText = question
         alert.informativeText = info
-        alert.addButtonWithTitle(quitButton)
         alert.addButtonWithTitle(cancelButton)
+        alert.addButtonWithTitle(quitButton)
         
         let answer = alert.runModal()
         if answer == NSAlertFirstButtonReturn {

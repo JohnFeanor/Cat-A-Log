@@ -10,7 +10,7 @@ import Cocoa
 
 class AllCapsFormatter: NSFormatter {
 
-  var exempted: NSArray = ["P", "Pe", "Pen", "Pend", "Pendi", "Pendin", "Pending"]
+  let exempted: NSArray = ["P", "Pe", "Pen", "Pend", "Pendi", "Pendin", "Pending"]
   
   override var description: String {
     get {

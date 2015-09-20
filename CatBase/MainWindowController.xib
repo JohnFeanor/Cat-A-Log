@@ -656,9 +656,13 @@ DQ
         </arrayController>
         <arrayController mode="entity" entityName="Entry" automaticallyRearrangesObjects="YES" id="lq1-w2-pGH" userLabel="EntriesInShow">
             <connections>
+                <binding destination="zuf-cK-OoZ" name="contentSet" keyPath="selection.entries" id="xIA-0A-Y2l">
+                    <dictionary key="options">
+                        <bool key="NSDeletesObjectsOnRemove" value="YES"/>
+                    </dictionary>
+                </binding>
                 <binding destination="-2" name="managedObjectContext" keyPath="managedObjectContext" id="DCg-ha-vrn"/>
-                <binding destination="zuf-cK-OoZ" name="contentSet" keyPath="selection.entries" id="Ft8-im-ZSc"/>
-                <binding destination="-2" name="sortDescriptors" keyPath="sortByName" id="72e-pi-Z18"/>
+                <binding destination="-2" name="sortDescriptors" keyPath="sortByNameAndBreed" id="CET-VN-DLh"/>
             </connections>
         </arrayController>
     </objects>

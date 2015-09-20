@@ -10,18 +10,24 @@ import Foundation
 
 class CatNameFormatter: NameFormatter {
   
+  static var catList: [String] = []
+  
   let uppercase = ["nz", "Nz", "Usa", "uk", "Uk"]
+  
+  override var exempted: [String] {
+    return ["a", "da", "de", "of", "vo", "von", "der", "th", "the"]
+  }
 
   override var list:[String] {
-    return CatNameFormatter.list
+    return CatNameFormatter.catList
   }
   
   override func addToList(name: String) {
-    if !CatNameFormatter.list.contains(name) {
-      CatNameFormatter.list.append(name)
+    if !CatNameFormatter.catList.contains(name) {
+      CatNameFormatter.catList.append(name)
       let parts = name.componentsSeparatedByString(" ")
-      if parts.count > 1 {
-        CatNameFormatter.list.append(parts[0] + " ")
+      if parts.count > 1 && !CatNameFormatter.catList.contains(parts[0] + " "){
+        CatNameFormatter.catList.append(parts[0] + " ")
       }
     }
   }

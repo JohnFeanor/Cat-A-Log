@@ -287,6 +287,7 @@ Gw
                             <binding destination="-2" name="value" keyPath="breed" id="5Kf-nz-tjE"/>
                             <outlet property="dataSource" destination="vma-tc-bSW" id="FSh-yG-g51"/>
                             <outlet property="delegate" destination="vma-tc-bSW" id="qx0-Y5-0l2"/>
+                            <outlet property="formatter" destination="vma-tc-bSW" id="xKm-OI-0UL"/>
                             <outlet property="nextKeyView" destination="Puu-lD-BRh" id="6wz-yd-FIq"/>
                         </connections>
                     </comboBox>
@@ -301,6 +302,7 @@ Gw
                             <binding destination="-2" name="value" keyPath="colour" id="JFq-8S-TAH"/>
                             <outlet property="dataSource" destination="U9a-Jd-s8a" id="tti-9v-aLV"/>
                             <outlet property="delegate" destination="U9a-Jd-s8a" id="CuR-oF-WiJ"/>
+                            <outlet property="formatter" destination="U9a-Jd-s8a" id="opM-3b-b0s"/>
                             <outlet property="nextKeyView" destination="d3l-y7-oor" id="4Ar-f4-UgB"/>
                         </connections>
                     </comboBox>
@@ -314,6 +316,7 @@ Gw
                         <connections>
                             <binding destination="-2" name="value" keyPath="sex" id="QjZ-9M-T51"/>
                             <outlet property="dataSource" destination="Aqp-dz-6Vt" id="kbq-Xw-8uA"/>
+                            <outlet property="formatter" destination="Aqp-dz-6Vt" id="4i2-oT-Cze"/>
                             <outlet property="nextKeyView" destination="aOc-Wk-spl" id="zr3-H4-cSv"/>
                         </connections>
                     </comboBox>
@@ -329,6 +332,7 @@ Gw
                             <binding destination="-2" name="value" keyPath="challenge" id="gSs-Se-9AQ"/>
                             <outlet property="dataSource" destination="jL6-YC-Zvs" id="6SS-qa-4Im"/>
                             <outlet property="delegate" destination="jL6-YC-Zvs" id="pIa-Kk-bUK"/>
+                            <outlet property="formatter" destination="jL6-YC-Zvs" id="cwc-Hl-tAi"/>
                             <outlet property="nextKeyView" destination="mII-qX-lyH" id="wnd-h6-VfF"/>
                         </connections>
                     </comboBox>

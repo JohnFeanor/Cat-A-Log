@@ -35,11 +35,13 @@ class Challenges: DataSource {
       // for each show type e.g. QFA, ACF or COWOCA
       for (showType, dict1) in Globals.dataByGroup {
         let challenges = dict1[Headings.challenges] as! [String]
-        print("Challenges are:")
-        print(challenges)
         list[showType] = challenges
       }
     }
+  }
+  
+  required init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
   }
   
   class func  isAKitten(name: String) -> Bool {
