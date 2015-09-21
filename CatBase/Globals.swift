@@ -95,10 +95,10 @@ extension String {
 // *******************************
 
 struct Headings {
-  static let litterAge  = "litterAges"
-  static let minAge     = "MinAge"
-  static let kittenAges = "kittenAges"
-  static let pending    = "Pending"
+  static let maxLitterAge     = "maxLitterAge"
+  static let minShowAge       = "minShowAge"
+  static let kittenAgeGroups  = "kittenAgeGroups"
+  static let maxPendingAge    = "maxPendingAge"
   static let sexes      = "Sexes"
   static let challenges = "Challenges"
   static let groups     = "Groups"
@@ -130,7 +130,6 @@ let wordCharacter = NSPredicate(format: "SELF MATCHES %@", wordChar)
 
 let speaker = NSSpeechSynthesizer()
 
-
 // ********************************
 // MARK: - Agouti helper functions
 // *******************************
@@ -156,6 +155,22 @@ func andWhite(colour: String) -> Bool {
   if color.containsString("van")       { return true }
   
   return false
+}
+
+// ********************************
+// MARK: - Other helper functions
+// *******************************
+
+func minAges(key: String) -> (months: Int, weeks: Int) {
+  if let dict = Globals.dataByGroup[Globals.currentShowType] {
+    let ages = dict.valueForKey(key) as! [Int]
+    return (ages[0], ages[1])
+  }
+  return (0, 0)
+}
+
+func setAge(key: String, toWeeks weeks:Int? = nil, andMonths months: Int? = nil) {
+  
 }
 
 // *************************************************
@@ -288,6 +303,10 @@ class Globals: NSObject {
 
   @IBOutlet var theShowController: NSArrayController!
   @IBOutlet var theEntriesController: NSArrayController!
+  
+  static var dataByGroup:[String : NSDictionary] = {
+    return dictFromPList("ShowFormats") as! [String : [String : [AnyObject]]]
+    }()
 
   static var currentShow: Show? = nil
   static var currentEntry: Entry? = nil
@@ -314,6 +333,15 @@ class Globals: NSObject {
     return longDate.stringFromDate(currentShow!.date)
   }
   
+  dynamic var showTypes: [String] {
+    return Globals.showTypes
+  }
+  
+  static var showTypes: [String] = {
+    let allKeys = Array(dataByGroup.keys)
+    return allKeys.sort(>)
+    }()
+ 
   static var currentShowType: String {
     if currentShow == nil {
       print("Nil show when trying to get type for nil show")
@@ -329,17 +357,6 @@ class Globals: NSObject {
     }
   }
   
-  static var dataByGroup:[String : NSDictionary] = {
-    return dictFromPList("ShowFormats") as! [String : NSDictionary]
-    }()
-  
-  static var kittenGroups: [Int] {
-    if let kittenAges = Globals.dataByGroup[Globals.currentShowType]?[Headings.kittenAges] as? [Int] {
-      return kittenAges
-    }
-    return []
-  }
-  
   private static var agouti: [String: [String]] = {
     return dictFromPList("agouti") as! [String: [String]]
   }()
@@ -351,11 +368,6 @@ class Globals: NSObject {
   static var agoutiClasses: [String] {
     return Globals.agouti["classes"]!
   }
-  
-  static var showTypes: [String] = {
-    let allKeys = Array(dataByGroup.keys)
-    return allKeys.sort(>)
-  }()
   
   static var cageTypes: (names:[String], sizes:[Int]) = {
     let path = NSBundle.mainBundle().pathForResource("CageTypes", ofType:"plist")
@@ -375,11 +387,67 @@ class Globals: NSObject {
     }
   }()
   
-  dynamic var showTypes: [String] {
-    return Globals.showTypes
+  // ========================
+  // MARK: - Critical ages
+  // ========================
+
+  static var criticalAges: [String : [Int]] = {
+    return dictFromPList("CriticalAges") as! [String : [Int]]
+  }()
+  
+  static var minShowAge: (weeks: Int, months: Int) {
+    return (Globals.criticalAges[Headings.minShowAge]![0], Globals.criticalAges[Headings.minShowAge]![1])
   }
   
+  static var maxLitterAge: (weeks: Int, months: Int) {
+    return (Globals.criticalAges[Headings.maxLitterAge]![0], Globals.criticalAges[Headings.maxLitterAge]![1])
+  }
   
+  static var maxPendingAge: (weeks: Int, months: Int) {
+    return (Globals.criticalAges[Headings.maxPendingAge]![0], Globals.criticalAges[Headings.maxPendingAge]![1])
+  }
+  
+  static var kittenAgeGroups: [Int] {
+    return Globals.criticalAges[Headings.kittenAgeGroups]!
+  }
+  
+  static var maxKittenAge: Int {
+    return kittenAgeGroups[2]
+  }
+  
+  class func setMinShowAge(weeks weeks:Int? = nil, months: Int? = nil) {
+    if weeks != nil { Globals.criticalAges[Headings.minShowAge]![0] = weeks! }
+    if months != nil { Globals.criticalAges[Headings.minShowAge]![1] = months! }
+  }
+  
+  class func setMaxLitterAge(weeks weeks:Int? = nil, months: Int? = nil) {
+    if weeks != nil { Globals.criticalAges[Headings.maxLitterAge]![0] = weeks! }
+    if months != nil { Globals.criticalAges[Headings.maxLitterAge]![1] = months! }
+  }
+  
+  class func setMaxPendingAge(weeks weeks:Int? = nil, months: Int? = nil) {
+    if weeks != nil { Globals.criticalAges[Headings.maxPendingAge]![0] = weeks! }
+    if months != nil { Globals.criticalAges[Headings.maxPendingAge]![1] = months! }
+  }
+  
+  class func setKittenAgeGroups(values: [Int]) {
+    let size = values.count < 3 ? values.count : 3
+    for index in 0 ..< size {
+      Globals.criticalAges[Headings.kittenAgeGroups]![index] = values[index]
+    }
+  }
+  
+  class func setMaxKittenAge(months months: Int) {
+    Globals.criticalAges[Headings.kittenAgeGroups]![2] = months
+  }
+  
+  class func saveCriticalAges() {
+    if !dict(Globals.criticalAges, toPlist: "CriticalAges") {
+      print("Could not save critical ages")
+    }
+  }
+
+ 
   // ========================
   // MARK: - Methods
   // ========================

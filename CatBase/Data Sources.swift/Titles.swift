@@ -17,6 +17,8 @@ class Titles: DataSource {
   
   var currentBreed: String? = nil
   
+  @IBOutlet weak var titleTable: NSTableView!
+  
   override class func initialize() {
     dispatch_once(&titlesToken) {
       let temp = arrayFromPList(Titles.entity)
@@ -29,6 +31,8 @@ class Titles: DataSource {
   }
   
   class func saveTitles() {
+    print("Titles are now:")
+    print(list)
     if !array(list, ToPlist: Titles.entity) {
       print("Could not save the tiles")
     }
@@ -44,12 +48,41 @@ class Titles: DataSource {
   
   // MARK: - Insert or delete titles
   
-  func insertNewTitleAtIndex(index: Int) {
-    Titles.list.insert("", atIndex: index)
+  func titleAtindex(index: Int) -> String {
+    if index < Titles.list.count {
+      return Titles.list[index]
+    }
+    return ""
   }
   
-  func removeObjectAtIndex(index: Int) {
-    Titles.list.removeAtIndex(index)
+  func setIndex(index: Int, toTitle newValue: String) {
+    let i = index < 0 ? 0 : index
+    let j = i < Titles.list.count ? i : Titles.list.count - 1
+    Titles.list[j] = newValue
+  }
+  
+  func insertNewTitleAtIndex(index: Int) {
+    let i = index < 0 ? 0 : index
+    if i < Titles.list.count {
+      Titles.list.insert("", atIndex: i)
+    } else {
+      Titles.list.append("")
+    }
+  }
+  
+  func addNewTitle(newValue: String, atIndex index: Int) {
+    let i = index < 0 ? 0 : index
+    if i < Titles.list.count {
+      Titles.list.insert(newValue, atIndex: i)
+    } else {
+      Titles.list.append(newValue)
+    }
+  }
+  
+  func removeTitleAtIndex(index: Int) {
+    let i = index < 0 ? 0 : index
+    let j = i < Titles.list.count ? i : Titles.list.count - 1
+    Titles.list.removeAtIndex(j)
   }
   
   // ==============================
@@ -100,20 +133,11 @@ class Titles: DataSource {
     }
   }
   
-    func tableView(aTableView: NSTableView, objectValueForTableColumn aTableColum: NSTableColumn, row rowIndex: Int) -> AnyObject? {
-      if list.isEmpty {
-        return nil
-      } else {
-        return list[rowIndex] as AnyObject
-      }
+  func tableView(aTableView: NSTableView, objectValueForTableColumn aTableColum: NSTableColumn, row rowIndex: Int) -> AnyObject? {
+    if list.isEmpty {
+      return nil
+    } else {
+      return list[rowIndex] as AnyObject
     }
-    
-    func tableView(aTableView: NSTableView, setObjectValue anObject: AnyObject?, forTableColumn: NSTableColumn?, row rowIndex: Int) {
-      let newValue = anObject as? String
-      if newValue != nil {
-        Titles.list[rowIndex] = newValue!
-      } else {
-        print("Titles setObjectValue passed a non string")
-      }
-    }
+  }
 }

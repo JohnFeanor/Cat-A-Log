@@ -16,9 +16,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   @IBOutlet weak var window: NSWindow!
     
   var mainWindowController: MainWindowController?
-  var coloursEditorController: ColoursWindowController?
+  var coloursEditorController: ColoursWindowController? = nil
+  var criticalAgesWindowController: CriticalAgesWindowController? = nil
+  var titleEditorController: TitleEditorController? = nil
   
   var openPanel: NSOpenPanel? = nil
+  var savePanel: NSSavePanel? = nil
   
   dynamic var writeMenuTitle = "Write catalogue ..."
   dynamic var writeMenuAvailable = true
@@ -39,6 +42,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   func applicationWillTerminate(aNotification: NSNotification) {
     // Insert code here to tear down your application
     Colours.saveColours()
+    Globals.saveCriticalAges()
+    Titles.saveTitles()
   }
   
   // MARK: - Core Data stack
@@ -219,30 +224,56 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
   }
   
-  @IBAction func openColoursEditor(sender: NSObject) {
-    let coloursEditorsController = ColoursWindowController()
-    coloursEditorsController.showWindow(self)
-    self.coloursEditorController = coloursEditorsController
+  private func openEditor(editor: NSWindowController) {
+    if let theWindow = editor.window {
+      if !theWindow.visible {
+        editor.showWindow(self)
+      } else {
+        editor.close()
+      }
+    } else {
+      editor.showWindow(self)
+    }
+  }
+  
+  @IBAction func openColoursEditor(sender: NSMenuItem) {
+    if coloursEditorController == nil {
+      coloursEditorController = ColoursWindowController()
+    }
+    openEditor(coloursEditorController!)
+  }
+  
+  @IBAction func displayCriticalAges(sender: NSMenuItem) {
+    if criticalAgesWindowController == nil {
+      criticalAgesWindowController = CriticalAgesWindowController()
+    }
+    openEditor(criticalAgesWindowController!)
+  }
+  
+  @IBAction func openTitlesEditor(sender: NSMenuItem) {
+    if titleEditorController == nil {
+      titleEditorController = TitleEditorController()
+    }
+    openEditor(titleEditorController!)
   }
   
   @IBAction func importACatFile(sender: NSObject) {
-    if let window = self.window {
-      let panel = NSOpenPanel()
-      panel.canChooseDirectories = false
-      panel.allowsMultipleSelection = false
-      panel.message = "Name of file to import"
-      
-      panel.beginSheetModalForWindow(window) { response in
-        // The sheet has finished. Did the user click 'OK'?
-        if response == NSModalResponseOK {
-          // import the cats
-          let url = self.openPanel?.URL
-          self.importCatsAtURL(url)
-          self.openPanel = nil
-        }
+    let panel = NSOpenPanel()
+    panel.canChooseDirectories = false
+    panel.allowsMultipleSelection = false
+    panel.message = "Name of file to import"
+    panel.allowedFileTypes = ["cats"]
+    
+    panel.beginSheetModalForWindow(window) { response in
+      // The sheet has finished. Did the user click 'OK'?
+      if response == NSModalResponseOK {
+        // import the cats
+        let url = self.openPanel?.URL
+        self.importCatsAtURL(url)
+        self.openPanel = nil
       }
-      openPanel = panel
     }
+    openPanel = panel
   }
   
   func importCatsAtURL(url: NSURL?) {
@@ -288,6 +319,49 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       print("Error trying to save managed object context after importing of cats")
     }
   }
+  
+  @IBAction func exportACatFile(sender: AnyObject) {
+    let panel = NSSavePanel()
+    panel.allowedFileTypes = ["cats"]
+    
+    panel.beginSheetModalForWindow(window) {
+      (result) in
+      if result == NSModalResponseOK {
+        let url = self.savePanel?.URL
+        self.exportCatsToURL(url)
+        self.savePanel = nil
+      }
+    }
+    savePanel = panel
+  }
+  
+  private func exportCatsToURL(url: NSURL?) {
+    guard let context = self.managedObjectContext
+      else { return }
+    let fetchRequest = NSFetchRequest(entityName: Cat.entity)
+    let fetchResult: [Cat]?
+    do {
+      fetchResult = try context.executeFetchRequest(fetchRequest) as? [Cat]
+    } catch {
+      print("\n** Error in fetch request **\n")
+      return
+    }
+    if let fetchResult = fetchResult {
+      print("Exporting \(fetchResult.count) cats")
+      let printData = NSMutableData()
+      for cat in fetchResult {
+        printData.appendData(cat.catString.data)
+      }
+      let ok = printData.writeToURL(url!, atomically: true)
+      if !ok {
+        errorAlert(message: "Could not write cats to file")
+      }
+    } else {
+      print("Did not fetch or export any cats")
+    }
+  }
+  
+
   
 }
 

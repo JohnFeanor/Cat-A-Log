@@ -73,10 +73,13 @@
 		4F38B8881B6D9156006356DD /* Cat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F38B8841B6D9156006356DD /* Cat.swift */; };
 		4F38B8891B6D9156006356DD /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F38B8851B6D9156006356DD /* Entry.swift */; };
 		4F38B88B1B6D9156006356DD /* Show.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F38B8871B6D9156006356DD /* Show.swift */; };
+		4F3AC54E1BAEE29500775611 /* CriticalAges.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F3AC54D1BAEE29500775611 /* CriticalAges.plist */; settings = {ASSET_TAGS = (); }; };
 		4F3EFAE31B6DB98C00DA2F5C /* AddShowWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3EFAE11B6DB98C00DA2F5C /* AddShowWindowController.swift */; };
 		4F3EFAE41B6DB98C00DA2F5C /* AddShowWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F3EFAE21B6DB98C00DA2F5C /* AddShowWindowController.xib */; };
 		4F3EFAE61B6DEE1500DA2F5C /* Breeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3EFAE51B6DEE1500DA2F5C /* Breeds.swift */; };
 		4F7107FE1B77748E00E21AAC /* Challenges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7107FD1B77748E00E21AAC /* Challenges.swift */; };
+		4F8E87321BAFB19E00497D2F /* TitleEditorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8E87301BAFB19E00497D2F /* TitleEditorController.swift */; settings = {ASSET_TAGS = (); }; };
+		4F8E87331BAFB19E00497D2F /* TitleEditorController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F8E87311BAFB19E00497D2F /* TitleEditorController.xib */; settings = {ASSET_TAGS = (); }; };
 		4F9235FE1B7952B70096ADFD /* Titles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9235FD1B7952B70096ADFD /* Titles.swift */; };
 		4F9236001B7953500096ADFD /* Titles.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F9235FF1B7953500096ADFD /* Titles.plist */; };
 		4F9B6C091B7FF6EA00C2964B /* CageTypes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F9B6C081B7FF6EA00C2964B /* CageTypes.plist */; };
@@ -89,6 +92,8 @@
 		4FBD2EE41B81A84500E28D93 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4FBD2EE31B81A84500E28D93 /* Credits.rtf */; };
 		4FBD2EE61B81A91E00E28D93 /* agouti.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4FBD2EE51B81A91E00E28D93 /* agouti.plist */; };
 		4FC1DA071B9BAFA000E321EA /* Printing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC1DA061B9BAFA000E321EA /* Printing.swift */; settings = {ASSET_TAGS = (); }; };
+		4FD75AC21BAE8F5C00A00EEA /* CriticalAgesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD75AC01BAE8F5C00A00EEA /* CriticalAgesWindowController.swift */; settings = {ASSET_TAGS = (); }; };
+		4FD75AC31BAE8F5C00A00EEA /* CriticalAgesWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FD75AC11BAE8F5C00A00EEA /* CriticalAgesWindowController.xib */; settings = {ASSET_TAGS = (); }; };
 		4FD803241B774DA500D7FAD2 /* Colours.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4FD803231B774DA500D7FAD2 /* Colours.plist */; };
 		4FD803261B774E8100D7FAD2 /* Colours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD803251B774E8100D7FAD2 /* Colours.swift */; };
 		4FD8384E1B832F3D00A8C7A7 /* ColoursWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD8384C1B832F3D00A8C7A7 /* ColoursWindowController.swift */; };
@@ -182,10 +187,13 @@
 		4F38B8841B6D9156006356DD /* Cat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat.swift; path = Models/Cat.swift; sourceTree = "<group>"; };
 		4F38B8851B6D9156006356DD /* Entry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Entry.swift; path = Models/Entry.swift; sourceTree = "<group>"; };
 		4F38B8871B6D9156006356DD /* Show.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Show.swift; path = Models/Show.swift; sourceTree = "<group>"; };
+		4F3AC54D1BAEE29500775611 /* CriticalAges.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = CriticalAges.plist; path = pLists/CriticalAges.plist; sourceTree = "<group>"; };
 		4F3EFAE11B6DB98C00DA2F5C /* AddShowWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddShowWindowController.swift; path = Controllers/AddShowWindowController.swift; sourceTree = "<group>"; };
 		4F3EFAE21B6DB98C00DA2F5C /* AddShowWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddShowWindowController.xib; path = Controllers/AddShowWindowController.xib; sourceTree = "<group>"; };
 		4F3EFAE51B6DEE1500DA2F5C /* Breeds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Breeds.swift; path = "Data Sources.swift/Breeds.swift"; sourceTree = "<group>"; };
 		4F7107FD1B77748E00E21AAC /* Challenges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Challenges.swift; path = "Data Sources.swift/Challenges.swift"; sourceTree = "<group>"; };
+		4F8E87301BAFB19E00497D2F /* TitleEditorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TitleEditorController.swift; path = Controllers/TitleEditorController.swift; sourceTree = "<group>"; };
+		4F8E87311BAFB19E00497D2F /* TitleEditorController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TitleEditorController.xib; path = Controllers/TitleEditorController.xib; sourceTree = "<group>"; };
 		4F9235FD1B7952B70096ADFD /* Titles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Titles.swift; path = "Data Sources.swift/Titles.swift"; sourceTree = "<group>"; };
 		4F9235FF1B7953500096ADFD /* Titles.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Titles.plist; path = pLists/Titles.plist; sourceTree = "<group>"; };
 		4F9B6C081B7FF6EA00C2964B /* CageTypes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = CageTypes.plist; path = pLists/CageTypes.plist; sourceTree = "<group>"; };
@@ -199,6 +207,8 @@
 		4FBD2EE51B81A91E00E28D93 /* agouti.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = agouti.plist; sourceTree = "<group>"; };
 		4FBD2EE71B81AF9900E28D93 /* CatBase.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = CatBase.entitlements; sourceTree = "<group>"; };
 		4FC1DA061B9BAFA000E321EA /* Printing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Printing.swift; sourceTree = "<group>"; };
+		4FD75AC01BAE8F5C00A00EEA /* CriticalAgesWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CriticalAgesWindowController.swift; path = Controllers/CriticalAgesWindowController.swift; sourceTree = "<group>"; };
+		4FD75AC11BAE8F5C00A00EEA /* CriticalAgesWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CriticalAgesWindowController.xib; path = Controllers/CriticalAgesWindowController.xib; sourceTree = "<group>"; };
 		4FD803231B774DA500D7FAD2 /* Colours.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Colours.plist; path = pLists/Colours.plist; sourceTree = "<group>"; };
 		4FD803251B774E8100D7FAD2 /* Colours.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Colours.swift; path = "Data Sources.swift/Colours.swift"; sourceTree = "<group>"; };
 		4FD8384C1B832F3D00A8C7A7 /* ColoursWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColoursWindowController.swift; path = Controllers/ColoursWindowController.swift; sourceTree = "<group>"; };
@@ -301,6 +311,7 @@
 				4F9235FF1B7953500096ADFD /* Titles.plist */,
 				4FD803231B774DA500D7FAD2 /* Colours.plist */,
 				4FEB56AD1B70ABEF00EECA78 /* ShowFormats.plist */,
+				4F3AC54D1BAEE29500775611 /* CriticalAges.plist */,
 				4F9B6C081B7FF6EA00C2964B /* CageTypes.plist */,
 			);
 			name = pLists;
@@ -314,6 +325,8 @@
 				4F3EFAE21B6DB98C00DA2F5C /* AddShowWindowController.xib */,
 				4FFE16C71B6E421A0020E1D0 /* EntrySheetController.xib */,
 				4FD8384D1B832F3D00A8C7A7 /* ColoursWindowController.xib */,
+				4FD75AC11BAE8F5C00A00EEA /* CriticalAgesWindowController.xib */,
+				4F8E87311BAFB19E00497D2F /* TitleEditorController.xib */,
 			);
 			name = nibs;
 			sourceTree = "<group>";
@@ -350,6 +363,8 @@
 				4F3EFAE11B6DB98C00DA2F5C /* AddShowWindowController.swift */,
 				4FFE16C61B6E421A0020E1D0 /* EntrySheetController.swift */,
 				4FD8384C1B832F3D00A8C7A7 /* ColoursWindowController.swift */,
+				4FD75AC01BAE8F5C00A00EEA /* CriticalAgesWindowController.swift */,
+				4F8E87301BAFB19E00497D2F /* TitleEditorController.swift */,
 				4F38B8611B6D8CCA006356DD /* Images.xcassets */,
 				4F0F92E21BA3EC9C00724D9C /* nibs */,
 				4F38B85E1B6D8CCA006356DD /* CatBase.xcdatamodeld */,
@@ -541,6 +556,7 @@
 				4F0F92B81BA3DE6F00724D9C /* Box underlined.txt in Resources */,
 				4F0F92CC1BA3DE6F00724D9C /* Header2.txt in Resources */,
 				4FBD2EE61B81A91E00E28D93 /* agouti.plist in Resources */,
+				4F8E87331BAFB19E00497D2F /* TitleEditorController.xib in Resources */,
 				4F0F92B91BA3DE6F00724D9C /* Breed1.txt in Resources */,
 				4F0F92BA1BA3DE6F00724D9C /* Breed2.txt in Resources */,
 				4F0F92CB1BA3DE6F00724D9C /* Header1.txt in Resources */,
@@ -574,10 +590,12 @@
 				4F0F92BF1BA3DE6F00724D9C /* Colour2.txt in Resources */,
 				4F3EFAE41B6DB98C00DA2F5C /* AddShowWindowController.xib in Resources */,
 				4F0F92B21BA3DE6F00724D9C /* BestAward4.txt in Resources */,
+				4FD75AC31BAE8F5C00A00EEA /* CriticalAgesWindowController.xib in Resources */,
 				4F0F92D11BA3DE6F00724D9C /* Name2 litter.txt in Resources */,
 				4F38B8651B6D8CCA006356DD /* MainMenu.xib in Resources */,
 				4F0F92D91BA3DE6F00724D9C /* Table end.txt in Resources */,
 				4F0F92D01BA3DE6F00724D9C /* Name1.txt in Resources */,
+				4F3AC54E1BAEE29500775611 /* CriticalAges.plist in Resources */,
 				4F0F92B51BA3DE6F00724D9C /* Box entered.txt in Resources */,
 				4F0F92D81BA3DE6F00724D9C /* Spacer.txt in Resources */,
 				4F0F92AF1BA3DE6F00724D9C /* BestAward1.txt in Resources */,
@@ -618,6 +636,8 @@
 				4F7107FE1B77748E00E21AAC /* Challenges.swift in Sources */,
 				4F0564EA1BA2B48500285C46 /* CatNameFormatter.swift in Sources */,
 				4FD803261B774E8100D7FAD2 /* Colours.swift in Sources */,
+				4FD75AC21BAE8F5C00A00EEA /* CriticalAgesWindowController.swift in Sources */,
+				4F8E87321BAFB19E00497D2F /* TitleEditorController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

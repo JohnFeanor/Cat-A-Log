@@ -4,27 +4,6 @@
 <dict>
 	<key>ACF Show</key>
 	<dict>
-		<key>litterAges</key>
-		<array>
-			<integer>0</integer>
-			<integer>4</integer>
-		</array>
-		<key>kittenAges</key>
-		<array>
-			<integer>5</integer>
-			<integer>7</integer>
-			<integer>9</integer>
-		</array>
-		<key>MinAge</key>
-		<array>
-			<integer>3</integer>
-			<integer>0</integer>
-		</array>
-		<key>Pending</key>
-		<array>
-			<integer>4</integer>
-			<integer>0</integer>
-		</array>
 		<key>Sexes</key>
 		<array>
 			<string>Male</string>
@@ -148,27 +127,6 @@
 	</dict>
 	<key>COAWA Show</key>
 	<dict>
-		<key>litterAges</key>
-		<array>
-			<integer>0</integer>
-			<integer>4</integer>
-		</array>
-		<key>kittenAges</key>
-		<array>
-			<integer>5</integer>
-			<integer>7</integer>
-			<integer>9</integer>
-		</array>
-		<key>MinAge</key>
-		<array>
-			<integer>3</integer>
-			<integer>0</integer>
-		</array>
-		<key>Pending</key>
-		<array>
-			<integer>4</integer>
-			<integer>0</integer>
-		</array>
 		<key>Sexes</key>
 		<array>
 			<string>Male</string>
@@ -318,27 +276,6 @@
 	</dict>
 	<key>QFA Show</key>
 	<dict>
-		<key>litterAges</key>
-		<array>
-			<integer>0</integer>
-			<integer>4</integer>
-		</array>
-		<key>kittenAges</key>
-		<array>
-			<integer>5</integer>
-			<integer>7</integer>
-			<integer>9</integer>
-		</array>
-		<key>MinAge</key>
-		<array>
-			<integer>3</integer>
-			<integer>0</integer>
-		</array>
-		<key>Pending</key>
-		<array>
-			<integer>4</integer>
-			<integer>0</integer>
-		</array>
 		<key>Sexes</key>
 		<array>
 			<string>Male</string>

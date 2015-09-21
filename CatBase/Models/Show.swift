@@ -94,17 +94,6 @@ class Show: NSManagedObject {
   func setValuesTo(showData: [String : AnyObject]) {
     self.setValuesForKeysWithDictionary(showData)
   }
- 
-  // Private helper methods
-  // ----------------------
-  private func minAges(key: String) -> (months: Int, weeks: Int) {
-    if let showDict = Globals.dataByGroup[self.affiliation] {
-      let ages = showDict.valueForKey(key) as! [Int]
-     return (ages[0], ages[1])
-    }
-    return (0, 0)
-  }
-  
   
   // ************************************
   // MARK: - Queries about the show
@@ -120,7 +109,7 @@ class Show: NSManagedObject {
   // Is a cat born on a given date too young to enter this show?
   // -----------------------------------------------------------
   func isItTooYoungForShow(birthDate: NSDate) -> Bool {
-    let minAge = self.minAges(Headings.minAge)
+    let minAge = Globals.minShowAge
     let isTooYoungForShow = birthDate.lessThan(weeks: minAge.weeks, months: minAge.months, before: self.date)
     return isTooYoungForShow
   }
@@ -128,7 +117,7 @@ class Show: NSManagedObject {
   // Is a cat born on a given date able to be pending at this show?
   // --------------------------------------------------------------
   func canItBePending(birthDate: NSDate) -> Bool {
-    let minAge = self.minAges(Headings.pending)
+    let minAge = Globals.minShowAge
     let canBePending = birthDate.lessThan(weeks: minAge.weeks, months: minAge.months, before: self.date)
     return canBePending
   }
@@ -136,7 +125,7 @@ class Show: NSManagedObject {
   // Is a cat born on a given date able to be in a litter?
   // ------------------------------------------------------
   func canItBeInALitter(birthDate: NSDate) -> Bool {
-    let maxAge = self.minAges(Headings.litterAge)
+    let maxAge = Globals.minShowAge
     let canBeInLitter = birthDate.lessThan(weeks: maxAge.weeks, months: maxAge.months, before: self.date)
     return canBeInLitter
   }

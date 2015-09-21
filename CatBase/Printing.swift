@@ -640,8 +640,6 @@ extension MainWindowController {
           
           // MARK: Write out litters for this group
           if lastEntry.isLitterKitten {
-            print("\(lastEntry.cat.name) is in litter (Y)")
-            print("Writing litters for group: \(lastEntry.cat.groupNumber)")
             writeLittersForGroup(lastEntry.cat.groupNumber)
           }
           
@@ -696,7 +694,7 @@ extension MainWindowController {
         if entry.inDifferentSectionTo(lastEntry) {
           let s: String
           if entry.cat.isCompanion {
-            s = "\(Breeds.nameOfGroupForBreed(entry.cat.breed))s)"
+            s = "\(Breeds.nameOfGroupForBreed(entry.cat.breed))s"
           } else if entry.cat.isKitten || entry.cat.isEntire {
             s = "\(Breeds.nameOfGroupForBreed(entry.cat.breed)) \(entry.cat.sectionName)s"
           } else {
@@ -723,8 +721,14 @@ extension MainWindowController {
           }
           // Write out new breed
           // -------------------
-          addData(breed1, "\(thisBreed) \(entry.cat.sectionName)s", breed2)
-          
+          let breedHeading: String
+          if entry.cat.isEntire || entry.cat.isKitten {
+            breedHeading = "\(thisBreed) \(entry.cat.sectionName)s"
+          } else {
+            breedHeading = "\(thisBreed) \(entry.cat.sectionName)"
+          }
+          addData(breed1, breedHeading, breed2)
+
           lastBreed = thisBreed
           lastColour  = ""
           lastClass   = ""
@@ -970,7 +974,7 @@ extension MainWindowController {
       for sex in 0 ..< 4 {
         if countOfCats[group][sex] > 0 {
           data.appendData(ACFstartRow)
-          data.appendData("Group \(numberNames[group])  \(Sex.nameOf(sex)))".data)
+          data.appendData("Group \(numberNames[group])  \(Sex.nameOf(sex))".data)
           data.appendData(ACFendRow)
         }
       }

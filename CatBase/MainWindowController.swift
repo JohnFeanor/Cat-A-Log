@@ -120,6 +120,7 @@ class MainWindowController: NSWindowController {
       appDelegate.writeMenuAvailable = false
     } else {
       appDelegate.writeMenuTitle = "Write \(Globals.currentShowName) ..."
+      appDelegate.writeMenuAvailable = true
     }
   }
   
@@ -151,7 +152,6 @@ class MainWindowController: NSWindowController {
       
       // Create and configure the window controller to present as a sheet:
       let sheetController = AddShowWindowController()
-      print("\nStarting add show window sheet\n ****")
       window.beginSheet(sheetController.window!, completionHandler: { response in
         // The sheet has finished. Did the user click 'OK'?
         if response == NSModalResponseOK {
@@ -200,7 +200,7 @@ class MainWindowController: NSWindowController {
   }
   
   @IBAction func removeShow(sender: NSButton) {
-    if areYouSure("Do you really want to delete this show?") {
+    if areYouSure("Do you really want to delete the \(Globals.currentShow!.name) show?") {
       undoManager.beginUndoGrouping()
       undoManager.setActionName("remove show")
       theShowController.remove(sender)
@@ -274,10 +274,10 @@ class MainWindowController: NSWindowController {
       undoManager.setActionName("remove entry")
       theEntriesController.remove(sender)
       undoManager.endUndoGrouping()
-//      do { try self.managedObjectContext.save() }
-//      catch{
-//        print("Error trying to save managed object context after removal of entry")
-//      }
+      do { try self.managedObjectContext.save() }
+      catch{
+        print("Error trying to save managed object context after removal of entry")
+      }
     }
   }
   

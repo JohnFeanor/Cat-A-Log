@@ -56,6 +56,14 @@ class Cat: NSManagedObject {
     }
   }
   
+  var catString: String {
+    let dateFormatter = NSDateFormatter()
+    dateFormatter.dateFormat = "dd/MM/yy"
+    let date = dateFormatter.stringFromDate(self.birthDate)
+    let ans = "\(self.name)\t\(self.registration)\t\(self.title)\t\(date)\t\(self.breed)\t\(self.breeder)\t\(self.challenge)\t\(self.colour)\t\(self.dam)\t\(self.exhibitor)\t\(self.sex)\t\(self.sire)"
+    return ans
+  }
+  
   convenience init(array: [String], insertIntoManagedObjectContext context: NSManagedObjectContext?) {
     let catEntity = NSEntityDescription.entityForName(Cat.entity, inManagedObjectContext: context!)
     if catEntity == nil {
@@ -171,17 +179,17 @@ class Cat: NSManagedObject {
   }
   
   var ageCategory: String {
-    if Globals.kittenGroups.count < 3 {
-      fatalError("There are \(Globals.kittenGroups.count) kitten age groups instead of 3")
+    if Globals.kittenAgeGroups.count < 3 {
+      fatalError("There are \(Globals.kittenAgeGroups.count) kitten age groups instead of 3")
     }
     let m = ageInMonths
-    if m < Globals.kittenGroups[0] {
-      return "under \(Globals.kittenGroups[0]) mths"
+    if m < Globals.kittenAgeGroups[0] {
+      return "under \(Globals.kittenAgeGroups[0]) mths"
     }
-    if m < Globals.kittenGroups[1] {
-      return "under \(Globals.kittenGroups[1]) mths"
+    if m < Globals.kittenAgeGroups[1] {
+      return "under \(Globals.kittenAgeGroups[1]) mths"
     }
-    return "under \(Globals.kittenGroups[2]) mths"
+    return "under \(Globals.kittenAgeGroups[2]) mths"
   }
   
   var age: String {
@@ -241,8 +249,7 @@ class Cat: NSManagedObject {
   var ageRank: Int {
     if let showDate = Globals.currentShow?.date {
       let catAge = showDate.monthsDifferenceTo(self.birthDate)
-      let ages = Globals.kittenGroups
-      for age in ages {
+      for age in Globals.kittenAgeGroups {
         if catAge < age {
           return age
         }
