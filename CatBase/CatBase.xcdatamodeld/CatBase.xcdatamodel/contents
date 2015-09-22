@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8193.2" systemVersion="14F27" minimumToolsVersion="Automatic">
-    <entity name="Cat" representedClassName="CatBase.Cat" syncable="YES">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="14F27" minimumToolsVersion="Automatic">
+    <entity name="Cat" representedClassName=".Cat" syncable="YES">
         <attribute name="birthDate" attributeType="Date" syncable="YES"/>
         <attribute name="breed" attributeType="String" syncable="YES"/>
         <attribute name="breeder" attributeType="String" syncable="YES"/>
@@ -16,7 +16,7 @@
         <attribute name="vaccinated" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <relationship name="entries" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Entry" inverseName="cat" inverseEntity="Entry" syncable="YES"/>
     </entity>
-    <entity name="Entry" representedClassName="CatBase.Entry" syncable="YES">
+    <entity name="Entry" representedClassName=".Entry" syncable="YES">
         <attribute name="cageSize" attributeType="Integer 16" defaultValueString="YES" syncable="YES"/>
         <attribute name="catalogueRequired" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="hireCage" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
@@ -31,7 +31,7 @@
         <relationship name="cat" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Cat" inverseName="entries" inverseEntity="Cat" syncable="YES"/>
         <relationship name="show" maxCount="1" deletionRule="Nullify" destinationEntity="Show" inverseName="entries" inverseEntity="Show" syncable="YES"/>
     </entity>
-    <entity name="Show" representedClassName="CatBase.Show" syncable="YES">
+    <entity name="Show" representedClassName=".Show" syncable="YES">
         <attribute name="affiliation" attributeType="String" syncable="YES"/>
         <attribute name="date" attributeType="Date" syncable="YES"/>
         <attribute name="judgeLH1" attributeType="String" defaultValueString="R1" syncable="YES"/>

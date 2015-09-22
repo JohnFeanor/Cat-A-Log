@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4F38B8561B6D8CCA006356DD"
-               BuildableName = "CatBase.app"
-               BlueprintName = "CatBase"
-               ReferencedContainer = "container:CatBase.xcodeproj">
+               BuildableName = "Cat-A-Log.app"
+               BlueprintName = "Cat-A-Log"
+               ReferencedContainer = "container:Cat-A-Log.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4F38B8691B6D8CCA006356DD"
-               BuildableName = "CatBaseTests.xctest"
-               BlueprintName = "CatBaseTests"
-               ReferencedContainer = "container:CatBase.xcodeproj">
+               BuildableName = "Cat-A-Log.xctest"
+               BlueprintName = "Cat-A-LogTests"
+               ReferencedContainer = "container:Cat-A-Log.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4F38B8691B6D8CCA006356DD"
-               BuildableName = "CatBaseTests.xctest"
-               BlueprintName = "CatBaseTests"
-               ReferencedContainer = "container:CatBase.xcodeproj">
+               BuildableName = "Cat-A-Log.xctest"
+               BlueprintName = "Cat-A-LogTests"
+               ReferencedContainer = "container:Cat-A-Log.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4F38B8561B6D8CCA006356DD"
-            BuildableName = "CatBase.app"
-            BlueprintName = "CatBase"
-            ReferencedContainer = "container:CatBase.xcodeproj">
+            BuildableName = "Cat-A-Log.app"
+            BlueprintName = "Cat-A-Log"
+            ReferencedContainer = "container:Cat-A-Log.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4F38B8561B6D8CCA006356DD"
-            BuildableName = "CatBase.app"
-            BlueprintName = "CatBase"
-            ReferencedContainer = "container:CatBase.xcodeproj">
+            BuildableName = "Cat-A-Log.app"
+            BlueprintName = "Cat-A-Log"
+            ReferencedContainer = "container:Cat-A-Log.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -99,9 +99,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4F38B8561B6D8CCA006356DD"
-            BuildableName = "CatBase.app"
-            BlueprintName = "CatBase"
-            ReferencedContainer = "container:CatBase.xcodeproj">
+            BuildableName = "Cat-A-Log.app"
+            BlueprintName = "Cat-A-Log"
+            ReferencedContainer = "container:Cat-A-Log.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

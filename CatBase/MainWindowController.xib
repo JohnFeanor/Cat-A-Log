@@ -5,7 +5,7 @@
         <capability name="box content view" minToolsVersion="7.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController" customModule="CatBase" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController" customModule="Cat_A_Log" customModuleProvider="target">
             <connections>
                 <outlet property="tableView" destination="TL9-CP-4vc" id="fqt-h5-AL7"/>
                 <outlet property="theEntriesController" destination="lq1-w2-pGH" id="2hm-fa-ozN"/>
@@ -244,6 +244,32 @@
                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     </searchFieldCell>
+                                    <connections>
+                                        <binding destination="zuf-cK-OoZ" name="predicate2" keyPath="filterPredicate" previousBinding="7HS-48-dd8" id="2r3-eG-Qab">
+                                            <dictionary key="options">
+                                                <string key="NSDisplayName">Name</string>
+                                                <string key="NSPredicateFormat">name beginswith[c] $value</string>
+                                            </dictionary>
+                                        </binding>
+                                        <binding destination="zuf-cK-OoZ" name="predicate" keyPath="filterPredicate" id="7HS-48-dd8">
+                                            <dictionary key="options">
+                                                <string key="NSDisplayName">All</string>
+                                                <string key="NSPredicateFormat">(name beginswith[c] $value) or (showDateAsString contains $value) or (ringsInShow == $value)</string>
+                                            </dictionary>
+                                        </binding>
+                                        <binding destination="zuf-cK-OoZ" name="predicate3" keyPath="filterPredicate" previousBinding="2r3-eG-Qab" id="Ade-bE-bva">
+                                            <dictionary key="options">
+                                                <string key="NSDisplayName">Date</string>
+                                                <string key="NSPredicateFormat">showDateAsString contains $value</string>
+                                            </dictionary>
+                                        </binding>
+                                        <binding destination="zuf-cK-OoZ" name="predicate4" keyPath="filterPredicate" previousBinding="Ade-bE-bva" id="gnq-5c-YKU">
+                                            <dictionary key="options">
+                                                <string key="NSDisplayName">Number of Rings</string>
+                                                <string key="NSPredicateFormat">ringsInShow == $value</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
                                 </searchField>
                                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vA9-3P-xhO">
                                     <rect key="frame" x="15" y="103" width="85" height="17"/>
@@ -415,6 +441,104 @@ DQ
                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     </searchFieldCell>
+                                    <connections>
+                                        <binding destination="lq1-w2-pGH" name="predicate8" keyPath="filterPredicate" previousBinding="eLo-xL-oOC" id="3DY-TY-BE0">
+                                            <dictionary key="options">
+                                                <string key="NSDisplayName">Birth Date</string>
+                                                <string key="NSPredicateFormat">cat.birthDateAsString contains $value</string>
+                                            </dictionary>
+                                        </binding>
+                                        <binding destination="lq1-w2-pGH" name="predicate4" keyPath="filterPredicate" previousBinding="JkD-D1-mmV" id="7RW-cp-NYE">
+                                            <dictionary key="options">
+                                                <string key="NSDisplayName">Workers (Y or N)</string>
+                                                <string key="NSPredicateFormat">worker beginswith[c] $value</string>
+                                            </dictionary>
+                                        </binding>
+                                        <binding destination="lq1-w2-pGH" name="predicate5" keyPath="filterPredicate" previousBinding="7RW-cp-NYE" id="9nc-9h-dgG">
+                                            <dictionary key="options">
+                                                <string key="NSDisplayName">Name</string>
+                                                <string key="NSPredicateFormat">cat.name contains[c] $value</string>
+                                            </dictionary>
+                                        </binding>
+                                        <binding destination="lq1-w2-pGH" name="predicate" keyPath="filterPredicate" id="Fc4-hk-nbG">
+                                            <dictionary key="options">
+                                                <string key="NSDisplayName">Headings</string>
+                                                <string key="NSPredicateFormat">(cat.registration contains[c] $value) or (cat.title beginswith[c] $value) or (cat.name beginswith[c] $value) or (cat.breed beginswith[c] $value)</string>
+                                            </dictionary>
+                                        </binding>
+                                        <binding destination="lq1-w2-pGH" name="predicate15" keyPath="filterPredicate" previousBinding="pZ0-7T-0KV" id="Fh8-nM-NjS">
+                                            <dictionary key="options">
+                                                <string key="NSDisplayName">Breeder</string>
+                                                <string key="NSPredicateFormat">cat.breeder contains[c] $value</string>
+                                            </dictionary>
+                                        </binding>
+                                        <binding destination="lq1-w2-pGH" name="predicate11" keyPath="filterPredicate" previousBinding="mpB-rL-jwK" id="Grc-KH-O6Y">
+                                            <dictionary key="options">
+                                                <string key="NSDisplayName">Sire</string>
+                                                <string key="NSPredicateFormat">cat.sire beginswith[c] $value</string>
+                                            </dictionary>
+                                        </binding>
+                                        <binding destination="lq1-w2-pGH" name="predicate3" keyPath="filterPredicate" previousBinding="cO7-s5-DeQ" id="JkD-D1-mmV">
+                                            <dictionary key="options">
+                                                <string key="NSDisplayName">Rings</string>
+                                                <string key="NSPredicateFormat">ringsEntered contains $value</string>
+                                            </dictionary>
+                                        </binding>
+                                        <binding destination="lq1-w2-pGH" name="predicate2" keyPath="filterPredicate" previousBinding="Fc4-hk-nbG" id="cO7-s5-DeQ">
+                                            <dictionary key="options">
+                                                <string key="NSDisplayName">Cage Type</string>
+                                                <string key="NSPredicateFormat">typeOfCage beginswith[c] $value</string>
+                                            </dictionary>
+                                        </binding>
+                                        <binding destination="lq1-w2-pGH" name="predicate16" keyPath="filterPredicate" previousBinding="Fh8-nM-NjS" id="eJp-hd-qA3">
+                                            <dictionary key="options">
+                                                <string key="NSDisplayName">Exhibitor</string>
+                                                <string key="NSPredicateFormat">cat.exhibitor contains[c] $value</string>
+                                            </dictionary>
+                                        </binding>
+                                        <binding destination="lq1-w2-pGH" name="predicate7" keyPath="filterPredicate" previousBinding="nzw-gv-VM7" id="eLo-xL-oOC">
+                                            <dictionary key="options">
+                                                <string key="NSDisplayName">Breed</string>
+                                                <string key="NSPredicateFormat">cat.breed beginswith[c] $value</string>
+                                            </dictionary>
+                                        </binding>
+                                        <binding destination="lq1-w2-pGH" name="predicate10" keyPath="filterPredicate" previousBinding="vhT-wM-XrX" id="mpB-rL-jwK">
+                                            <dictionary key="options">
+                                                <string key="NSDisplayName">Colour</string>
+                                                <string key="NSPredicateFormat">cat.colour beginswith[c] $value</string>
+                                            </dictionary>
+                                        </binding>
+                                        <binding destination="lq1-w2-pGH" name="predicate6" keyPath="filterPredicate" previousBinding="9nc-9h-dgG" id="nzw-gv-VM7">
+                                            <dictionary key="options">
+                                                <string key="NSDisplayName">Title</string>
+                                                <string key="NSPredicateFormat">cat.title contains[c] $value</string>
+                                            </dictionary>
+                                        </binding>
+                                        <binding destination="lq1-w2-pGH" name="predicate14" keyPath="filterPredicate" previousBinding="ssI-KZ-Cxm" id="pZ0-7T-0KV">
+                                            <dictionary key="options">
+                                                <string key="NSDisplayName">Sex</string>
+                                                <string key="NSPredicateFormat">cat.sex beginswith[c] $value</string>
+                                            </dictionary>
+                                        </binding>
+                                        <binding destination="lq1-w2-pGH" name="predicate12" keyPath="filterPredicate" previousBinding="Grc-KH-O6Y" id="qeb-8J-yaU">
+                                            <dictionary key="options">
+                                                <string key="NSDisplayName">Dam</string>
+                                                <string key="NSPredicateFormat">cat.dam beginswith[c] $value</string>
+                                            </dictionary>
+                                        </binding>
+                                        <binding destination="lq1-w2-pGH" name="predicate13" keyPath="filterPredicate" previousBinding="qeb-8J-yaU" id="ssI-KZ-Cxm">
+                                            <dictionary key="options">
+                                                <string key="NSDisplayName">Registration</string>
+                                                <string key="NSPredicateFormat">cat.registration beginswith[c] $value</string>
+                                            </dictionary>
+                                        </binding>
+                                        <binding destination="lq1-w2-pGH" name="predicate9" keyPath="filterPredicate" previousBinding="3DY-TY-BE0" id="vhT-wM-XrX">
+                                            <dictionary key="options">
+                                                <string key="NSDisplayName">Class</string>
+                                                <string key="NSPredicateFormat">cat.challenge beginswith[c] $value</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
                                 </searchField>
                                 <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYj-iM-Lz2">
                                     <rect key="frame" x="18" y="68" width="520" height="315"/>
@@ -636,7 +760,7 @@ DQ
                 <outlet property="initialFirstResponder" destination="MAW-BI-f28" id="a9C-bT-5pw"/>
             </connections>
         </window>
-        <customObject id="z8R-RM-aC6" userLabel="Globals" customClass="Globals" customModule="CatBase" customModuleProvider="target">
+        <customObject id="z8R-RM-aC6" userLabel="Globals" customClass="Globals" customModule="Cat_A_Log" customModuleProvider="target">
             <connections>
                 <outlet property="theEntriesController" destination="lq1-w2-pGH" id="DsK-5r-qCj"/>
                 <outlet property="theShowController" destination="zuf-cK-OoZ" id="G6g-ln-WvS"/>

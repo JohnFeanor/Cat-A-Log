@@ -22,6 +22,7 @@ class MainWindowController: NSWindowController {
   
   let  section1      = readFile("Section1")
   let  section2      = readFile("Section2")
+  let  section3      = readFile("Section3")
   let  breed1        = readFile("Breed1")
   let  breed2        = readFile("Breed2")
   let  colour1       = readFile("Colour1")

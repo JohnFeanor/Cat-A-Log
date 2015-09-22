@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8191"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="TitleEditorController" customModule="CatBase" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="TitleEditorController" customModule="Cat_A_Log" customModuleProvider="target">
             <connections>
                 <outlet property="titles" destination="4V8-0u-5XR" id="eJ7-h4-VWj"/>
                 <outlet property="titlesTableView" destination="Tia-vX-xiW" id="0dp-eh-4fe"/>
@@ -36,7 +36,7 @@
                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                     <tableColumns>
                                         <tableColumn width="235" minWidth="40" maxWidth="1000" id="px3-tl-Xpu">
-                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
+                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Cat Titles">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -123,7 +123,7 @@
             </connections>
             <point key="canvasLocation" x="281" y="357.5"/>
         </window>
-        <customObject id="4V8-0u-5XR" customClass="Titles" customModule="CatBase" customModuleProvider="target">
+        <customObject id="4V8-0u-5XR" customClass="Titles" customModule="Cat_A_Log" customModuleProvider="target">
             <connections>
                 <outlet property="titleTable" destination="Tia-vX-xiW" id="k5g-5d-zvM"/>
             </connections>

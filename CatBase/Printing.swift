@@ -245,9 +245,9 @@ extension MainWindowController {
     
     var cagelength    = 0
     
-    let catalogueFile   = newURLfrom(url, with: "catalogue.html")
-    let notesFile       = newURLfrom(url, with: "judges notes.html")
-    let challengesFile  = newURLfrom(url, with: "challenges.xml")
+    let catalogueFile   = newURLfrom(url, with: "\(Globals.currentShowName) catalogue.html")
+    let notesFile       = newURLfrom(url, with: "\(Globals.currentShowName) judges notes.html")
+    let challengesFile  = newURLfrom(url, with: "\(Globals.currentShowName) challenges.xml")
     
     var openChallenges: [Int] = []
     var goldChallenges = PrestigeChallenge(prestige: .gold)
@@ -542,6 +542,7 @@ extension MainWindowController {
     var breedCount  = 1
     
     var cageNumber  = 1
+    var sectionNumber = 2
     
     // **********************************
     // MARK: - Headers
@@ -700,8 +701,9 @@ extension MainWindowController {
           } else {
             s = "\(Breeds.nameOfGroupForBreed(entry.cat.breed)) \(entry.cat.sectionName)"
           }
-          addData(section1, s, section2)
           
+          addData(section1, s, section2, section3)
+          sectionNumber++
           // reset lastBreed
           lastBreed = ""
         }

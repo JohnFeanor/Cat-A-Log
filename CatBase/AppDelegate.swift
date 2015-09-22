@@ -291,10 +291,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     let strings = buffer.componentsSeparatedByString("\t")
-    strings.count
     
     let numberOfCatProperties = Cat.positions.count
     let numberOfCats = strings.count / numberOfCatProperties
+    print("Preparing to import \(numberOfCats) cats")
     
     var start = 0
     var count = 0
@@ -308,8 +308,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       if existingCatsWithRegistration(registration, orName: name, inContext: self.managedObjectContext!) == nil {
         let _ = Cat(array: Array(thisCat), insertIntoManagedObjectContext: self.managedObjectContext)
         count++
-      } else {
-        print("Importing duplicate cat")
       }
       start = end
     }
@@ -355,6 +353,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       let ok = printData.writeToURL(url!, atomically: true)
       if !ok {
         errorAlert(message: "Could not write cats to file")
+      } else {
+        print("Exported \(fetchResult.count) cats")
       }
     } else {
       print("Did not fetch or export any cats")

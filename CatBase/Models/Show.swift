@@ -85,6 +85,18 @@ class Show: NSManagedObject {
     }
   }
   
+  dynamic var showDateAsString: String {
+    let dateFormatter = NSDateFormatter()
+    dateFormatter.dateFormat = "dd/MM/yyyy"
+    let showDate = dateFormatter.stringFromDate(self.date)
+    return showDate
+  }
+  
+  dynamic var ringsInShow: String {
+    let ans: String = "\(self.numberOfRings)"
+    return ans
+  }
+  
   // ************************************
   // MARK: - Methods
   // ************************************

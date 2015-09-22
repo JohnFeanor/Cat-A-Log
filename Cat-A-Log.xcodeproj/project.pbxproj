@@ -54,7 +54,7 @@
 		4F0F92D41BA3DE6F00724D9C /* Name4.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F92A01BA3DE6F00724D9C /* Name4.txt */; settings = {ASSET_TAGS = (); }; };
 		4F0F92D51BA3DE6F00724D9C /* Prestige1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F92A11BA3DE6F00724D9C /* Prestige1.txt */; settings = {ASSET_TAGS = (); }; };
 		4F0F92D61BA3DE6F00724D9C /* Section1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F92A21BA3DE6F00724D9C /* Section1.txt */; settings = {ASSET_TAGS = (); }; };
-		4F0F92D71BA3DE6F00724D9C /* Section2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F92A31BA3DE6F00724D9C /* Section2.txt */; settings = {ASSET_TAGS = (); }; };
+		4F0F92D71BA3DE6F00724D9C /* Section3.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F92A31BA3DE6F00724D9C /* Section3.txt */; settings = {ASSET_TAGS = (); }; };
 		4F0F92D81BA3DE6F00724D9C /* Spacer.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F92A41BA3DE6F00724D9C /* Spacer.txt */; settings = {ASSET_TAGS = (); }; };
 		4F0F92D91BA3DE6F00724D9C /* Table end.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F92A51BA3DE6F00724D9C /* Table end.txt */; settings = {ASSET_TAGS = (); }; };
 		4F0F92DA1BA3DE6F00724D9C /* Table start.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F92A61BA3DE6F00724D9C /* Table start.txt */; settings = {ASSET_TAGS = (); }; };
@@ -78,6 +78,7 @@
 		4F3EFAE41B6DB98C00DA2F5C /* AddShowWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F3EFAE21B6DB98C00DA2F5C /* AddShowWindowController.xib */; };
 		4F3EFAE61B6DEE1500DA2F5C /* Breeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3EFAE51B6DEE1500DA2F5C /* Breeds.swift */; };
 		4F7107FE1B77748E00E21AAC /* Challenges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7107FD1B77748E00E21AAC /* Challenges.swift */; };
+		4F7812B51BB14AEA0036AD80 /* Section2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F7812B41BB14AEA0036AD80 /* Section2.txt */; settings = {ASSET_TAGS = (); }; };
 		4F8E87321BAFB19E00497D2F /* TitleEditorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8E87301BAFB19E00497D2F /* TitleEditorController.swift */; settings = {ASSET_TAGS = (); }; };
 		4F8E87331BAFB19E00497D2F /* TitleEditorController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F8E87311BAFB19E00497D2F /* TitleEditorController.xib */; settings = {ASSET_TAGS = (); }; };
 		4F9235FE1B7952B70096ADFD /* Titles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9235FD1B7952B70096ADFD /* Titles.swift */; };
@@ -164,7 +165,7 @@
 		4F0F92A01BA3DE6F00724D9C /* Name4.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Name4.txt; path = templates/Name4.txt; sourceTree = "<group>"; };
 		4F0F92A11BA3DE6F00724D9C /* Prestige1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Prestige1.txt; path = templates/Prestige1.txt; sourceTree = "<group>"; };
 		4F0F92A21BA3DE6F00724D9C /* Section1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Section1.txt; path = templates/Section1.txt; sourceTree = "<group>"; };
-		4F0F92A31BA3DE6F00724D9C /* Section2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Section2.txt; path = templates/Section2.txt; sourceTree = "<group>"; };
+		4F0F92A31BA3DE6F00724D9C /* Section3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Section3.txt; path = templates/Section3.txt; sourceTree = "<group>"; };
 		4F0F92A41BA3DE6F00724D9C /* Spacer.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Spacer.txt; path = templates/Spacer.txt; sourceTree = "<group>"; };
 		4F0F92A51BA3DE6F00724D9C /* Table end.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Table end.txt"; path = "templates/Table end.txt"; sourceTree = "<group>"; };
 		4F0F92A61BA3DE6F00724D9C /* Table start.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Table start.txt"; path = "templates/Table start.txt"; sourceTree = "<group>"; };
@@ -173,13 +174,13 @@
 		4F0F92DD1BA3E30900724D9C /* general.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = general.strings; sourceTree = "<group>"; };
 		4F0F92E01BA3EC8400724D9C /* Excel list.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Excel list.plist"; path = "pLists/Excel list.plist"; sourceTree = "<group>"; };
 		4F0F92E31BA3EF0E00724D9C /* Places.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Places.plist; path = pLists/Places.plist; sourceTree = "<group>"; };
-		4F38B8571B6D8CCA006356DD /* CatBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatBase.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F38B8571B6D8CCA006356DD /* Cat-A-Log.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cat-A-Log.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F38B85B1B6D8CCA006356DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F38B85C1B6D8CCA006356DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F38B85F1B6D8CCA006356DD /* CatBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CatBase.xcdatamodel; sourceTree = "<group>"; };
 		4F38B8611B6D8CCA006356DD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4F38B8641B6D8CCA006356DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		4F38B86A1B6D8CCA006356DD /* CatBaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CatBaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F38B86A1B6D8CCA006356DD /* Cat-A-Log.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cat-A-Log.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F38B86F1B6D8CCA006356DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F38B8701B6D8CCA006356DD /* CatBaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatBaseTests.swift; sourceTree = "<group>"; };
 		4F38B8801B6D8ED3006356DD /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
@@ -192,6 +193,7 @@
 		4F3EFAE21B6DB98C00DA2F5C /* AddShowWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddShowWindowController.xib; path = Controllers/AddShowWindowController.xib; sourceTree = "<group>"; };
 		4F3EFAE51B6DEE1500DA2F5C /* Breeds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Breeds.swift; path = "Data Sources.swift/Breeds.swift"; sourceTree = "<group>"; };
 		4F7107FD1B77748E00E21AAC /* Challenges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Challenges.swift; path = "Data Sources.swift/Challenges.swift"; sourceTree = "<group>"; };
+		4F7812B41BB14AEA0036AD80 /* Section2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Section2.txt; path = templates/Section2.txt; sourceTree = "<group>"; };
 		4F8E87301BAFB19E00497D2F /* TitleEditorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TitleEditorController.swift; path = Controllers/TitleEditorController.swift; sourceTree = "<group>"; };
 		4F8E87311BAFB19E00497D2F /* TitleEditorController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TitleEditorController.xib; path = Controllers/TitleEditorController.xib; sourceTree = "<group>"; };
 		4F9235FD1B7952B70096ADFD /* Titles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Titles.swift; path = "Data Sources.swift/Titles.swift"; sourceTree = "<group>"; };
@@ -205,7 +207,6 @@
 		4FB9D1201B75B61F00046CBA /* Sex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Sex.swift; path = "Data Sources.swift/Sex.swift"; sourceTree = "<group>"; };
 		4FBD2EE31B81A84500E28D93 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		4FBD2EE51B81A91E00E28D93 /* agouti.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = agouti.plist; sourceTree = "<group>"; };
-		4FBD2EE71B81AF9900E28D93 /* CatBase.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = CatBase.entitlements; sourceTree = "<group>"; };
 		4FC1DA061B9BAFA000E321EA /* Printing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Printing.swift; sourceTree = "<group>"; };
 		4FD75AC01BAE8F5C00A00EEA /* CriticalAgesWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CriticalAgesWindowController.swift; path = Controllers/CriticalAgesWindowController.swift; sourceTree = "<group>"; };
 		4FD75AC11BAE8F5C00A00EEA /* CriticalAgesWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CriticalAgesWindowController.xib; path = Controllers/CriticalAgesWindowController.xib; sourceTree = "<group>"; };
@@ -292,7 +293,8 @@
 				4F0F92A01BA3DE6F00724D9C /* Name4.txt */,
 				4F0F92A11BA3DE6F00724D9C /* Prestige1.txt */,
 				4F0F92A21BA3DE6F00724D9C /* Section1.txt */,
-				4F0F92A31BA3DE6F00724D9C /* Section2.txt */,
+				4F7812B41BB14AEA0036AD80 /* Section2.txt */,
+				4F0F92A31BA3DE6F00724D9C /* Section3.txt */,
 				4F0F92A41BA3DE6F00724D9C /* Spacer.txt */,
 				4F0F92A51BA3DE6F00724D9C /* Table end.txt */,
 				4F0F92A61BA3DE6F00724D9C /* Table start.txt */,
@@ -321,6 +323,7 @@
 			isa = PBXGroup;
 			children = (
 				4F38B8631B6D8CCA006356DD /* MainMenu.xib */,
+				4FBD2EE31B81A84500E28D93 /* Credits.rtf */,
 				4F38B8811B6D8ED3006356DD /* MainWindowController.xib */,
 				4F3EFAE21B6DB98C00DA2F5C /* AddShowWindowController.xib */,
 				4FFE16C71B6E421A0020E1D0 /* EntrySheetController.xib */,
@@ -343,8 +346,8 @@
 		4F38B8581B6D8CCA006356DD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4F38B8571B6D8CCA006356DD /* CatBase.app */,
-				4F38B86A1B6D8CCA006356DD /* CatBaseTests.xctest */,
+				4F38B8571B6D8CCA006356DD /* Cat-A-Log.app */,
+				4F38B86A1B6D8CCA006356DD /* Cat-A-Log.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -352,7 +355,6 @@
 		4F38B8591B6D8CCA006356DD /* CatBase */ = {
 			isa = PBXGroup;
 			children = (
-				4FBD2EE71B81AF9900E28D93 /* CatBase.entitlements */,
 				4FFE16CE1B6ECB400020E1D0 /* Formatters */,
 				4F38B88C1B6D9162006356DD /* Models */,
 				4FB9D11D1B7407C800046CBA /* Data sources */,
@@ -376,7 +378,6 @@
 		4F38B85A1B6D8CCA006356DD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4FBD2EE31B81A84500E28D93 /* Credits.rtf */,
 				4F38B85B1B6D8CCA006356DD /* Info.plist */,
 				4F0F92DD1BA3E30900724D9C /* general.strings */,
 				4F0F92741BA3DC2F00724D9C /* Templates */,
@@ -438,9 +439,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4F38B8561B6D8CCA006356DD /* CatBase */ = {
+		4F38B8561B6D8CCA006356DD /* Cat-A-Log */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4F38B8741B6D8CCA006356DD /* Build configuration list for PBXNativeTarget "CatBase" */;
+			buildConfigurationList = 4F38B8741B6D8CCA006356DD /* Build configuration list for PBXNativeTarget "Cat-A-Log" */;
 			buildPhases = (
 				4F38B8531B6D8CCA006356DD /* Sources */,
 				4F38B8541B6D8CCA006356DD /* Frameworks */,
@@ -450,14 +451,14 @@
 			);
 			dependencies = (
 			);
-			name = CatBase;
+			name = "Cat-A-Log";
 			productName = CatBase;
-			productReference = 4F38B8571B6D8CCA006356DD /* CatBase.app */;
+			productReference = 4F38B8571B6D8CCA006356DD /* Cat-A-Log.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4F38B8691B6D8CCA006356DD /* CatBaseTests */ = {
+		4F38B8691B6D8CCA006356DD /* Cat-A-LogTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4F38B8771B6D8CCA006356DD /* Build configuration list for PBXNativeTarget "CatBaseTests" */;
+			buildConfigurationList = 4F38B8771B6D8CCA006356DD /* Build configuration list for PBXNativeTarget "Cat-A-LogTests" */;
 			buildPhases = (
 				4F38B8661B6D8CCA006356DD /* Sources */,
 				4F38B8671B6D8CCA006356DD /* Frameworks */,
@@ -468,9 +469,9 @@
 			dependencies = (
 				4F38B86C1B6D8CCA006356DD /* PBXTargetDependency */,
 			);
-			name = CatBaseTests;
+			name = "Cat-A-LogTests";
 			productName = CatBaseTests;
-			productReference = 4F38B86A1B6D8CCA006356DD /* CatBaseTests.xctest */;
+			productReference = 4F38B86A1B6D8CCA006356DD /* Cat-A-Log.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -501,7 +502,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4F38B8521B6D8CCA006356DD /* Build configuration list for PBXProject "CatBase" */;
+			buildConfigurationList = 4F38B8521B6D8CCA006356DD /* Build configuration list for PBXProject "Cat-A-Log" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -514,8 +515,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4F38B8561B6D8CCA006356DD /* CatBase */,
-				4F38B8691B6D8CCA006356DD /* CatBaseTests */,
+				4F38B8561B6D8CCA006356DD /* Cat-A-Log */,
+				4F38B8691B6D8CCA006356DD /* Cat-A-LogTests */,
 			);
 		};
 /* End PBXProject section */
@@ -550,6 +551,7 @@
 				4F0F92C81BA3DE6F00724D9C /* End of file judge.txt in Resources */,
 				4F0F92E41BA3EF0E00724D9C /* Places.plist in Resources */,
 				4F0F92C01BA3DE6F00724D9C /* Colour3.txt in Resources */,
+				4F7812B51BB14AEA0036AD80 /* Section2.txt in Resources */,
 				4F0F92C91BA3DE6F00724D9C /* End of file.txt in Resources */,
 				4F0F92D41BA3DE6F00724D9C /* Name4.txt in Resources */,
 				4F0F92B41BA3DE6F00724D9C /* BestOfBreedStart.txt in Resources */,
@@ -579,7 +581,7 @@
 				4F0F92D61BA3DE6F00724D9C /* Section1.txt in Resources */,
 				4F0F92B01BA3DE6F00724D9C /* BestAward2.txt in Resources */,
 				4F0F92D51BA3DE6F00724D9C /* Prestige1.txt in Resources */,
-				4F0F92D71BA3DE6F00724D9C /* Section2.txt in Resources */,
+				4F0F92D71BA3DE6F00724D9C /* Section3.txt in Resources */,
 				4FEB56AE1B70ABEF00EECA78 /* ShowFormats.plist in Resources */,
 				4F0F92DB1BA3DE6F00724D9C /* Top ten end table.txt in Resources */,
 				4F0F92AB1BA3DE6F00724D9C /* ACFAoE start.txt in Resources */,
@@ -654,7 +656,7 @@
 /* Begin PBXTargetDependency section */
 		4F38B86C1B6D8CCA006356DD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4F38B8561B6D8CCA006356DD /* CatBase */;
+			target = 4F38B8561B6D8CCA006356DD /* Cat-A-Log */;
 			targetProxy = 4F38B86B1B6D8CCA006356DD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -761,7 +763,7 @@
 				INFOPLIST_FILE = CatBase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Feanor.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Cat-A-Log";
 			};
 			name = Debug;
 		};
@@ -773,7 +775,7 @@
 				INFOPLIST_FILE = CatBase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Feanor.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Cat-A-Log";
 			};
 			name = Release;
 		};
@@ -793,8 +795,8 @@
 				INFOPLIST_FILE = CatBaseTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Feanor.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CatBase.app/Contents/MacOS/CatBase";
+				PRODUCT_NAME = "Cat-A-Log";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cat-A-Log.app/Contents/MacOS/Cat-A-Log";
 			};
 			name = Debug;
 		};
@@ -810,15 +812,15 @@
 				INFOPLIST_FILE = CatBaseTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Feanor.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CatBase.app/Contents/MacOS/CatBase";
+				PRODUCT_NAME = "Cat-A-Log";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cat-A-Log.app/Contents/MacOS/Cat-A-Log";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4F38B8521B6D8CCA006356DD /* Build configuration list for PBXProject "CatBase" */ = {
+		4F38B8521B6D8CCA006356DD /* Build configuration list for PBXProject "Cat-A-Log" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4F38B8721B6D8CCA006356DD /* Debug */,
@@ -827,7 +829,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4F38B8741B6D8CCA006356DD /* Build configuration list for PBXNativeTarget "CatBase" */ = {
+		4F38B8741B6D8CCA006356DD /* Build configuration list for PBXNativeTarget "Cat-A-Log" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4F38B8751B6D8CCA006356DD /* Debug */,
@@ -836,7 +838,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4F38B8771B6D8CCA006356DD /* Build configuration list for PBXNativeTarget "CatBaseTests" */ = {
+		4F38B8771B6D8CCA006356DD /* Build configuration list for PBXNativeTarget "Cat-A-LogTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4F38B8781B6D8CCA006356DD /* Debug */,

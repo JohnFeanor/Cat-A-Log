@@ -8,6 +8,17 @@
 
 import Cocoa
 
+private extension Character {
+  var bannedChar: Bool {
+    switch self {
+    case ("\0" ... " "):
+      return true
+    default:
+      return false
+    }
+  }
+}
+
 class AllCapsFormatter: NSFormatter {
 
   let exempted: NSArray = ["P", "Pe", "Pen", "Pend", "Pendi", "Pendin", "Pending"]
@@ -60,6 +71,8 @@ class AllCapsFormatter: NSFormatter {
       partialString = partialStringPtr.memory! as String
       partialStringCount = partialString.characters.count
     }
+    
+    if let ch = partialString.characters.last where ch.bannedChar { return false }
     
     let match = capitalized(partialString)
     

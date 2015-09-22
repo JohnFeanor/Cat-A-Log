@@ -31,8 +31,6 @@ class Titles: DataSource {
   }
   
   class func saveTitles() {
-    print("Titles are now:")
-    print(list)
     if !array(list, ToPlist: Titles.entity) {
       print("Could not save the tiles")
     }

@@ -5,7 +5,7 @@
         <capability name="box content view" minToolsVersion="7.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="EntrySheetController" customModule="CatBase" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="EntrySheetController" customModule="Cat_A_Log" customModuleProvider="target">
             <connections>
                 <outlet property="cageSizeTextField" destination="gaI-ya-d8O" id="dIB-I6-tjd"/>
                 <outlet property="initialTextField" destination="iSa-Fu-aCm" id="vxo-ng-sWO"/>
@@ -488,17 +488,17 @@ Gw
             </connections>
         </window>
         <userDefaultsController representsSharedInstance="YES" id="QS3-xg-ubt"/>
-        <customFormatter id="XzH-lI-Qvg" customClass="NameFormatter" customModule="CatBase" customModuleProvider="target"/>
-        <customFormatter id="Ocz-My-xQH" customClass="CatNameFormatter" customModule="CatBase" customModuleProvider="target"/>
-        <customFormatter id="wsP-9s-N2s" customClass="AllCapsFormatter" customModule="CatBase" customModuleProvider="target"/>
-        <customObject id="vma-tc-bSW" customClass="Breeds" customModule="CatBase" customModuleProvider="target"/>
-        <customObject id="jL6-YC-Zvs" customClass="Challenges" customModule="CatBase" customModuleProvider="target"/>
-        <customObject id="U9a-Jd-s8a" customClass="Colours" customModule="CatBase" customModuleProvider="target">
+        <customFormatter id="XzH-lI-Qvg" customClass="NameFormatter" customModule="Cat_A_Log" customModuleProvider="target"/>
+        <customFormatter id="Ocz-My-xQH" customClass="CatNameFormatter" customModule="Cat_A_Log" customModuleProvider="target"/>
+        <customFormatter id="wsP-9s-N2s" customClass="AllCapsFormatter" customModule="Cat_A_Log" customModuleProvider="target"/>
+        <customObject id="vma-tc-bSW" customClass="Breeds" customModule="Cat_A_Log" customModuleProvider="target"/>
+        <customObject id="jL6-YC-Zvs" customClass="Challenges" customModule="Cat_A_Log" customModuleProvider="target"/>
+        <customObject id="U9a-Jd-s8a" customClass="Colours" customModule="Cat_A_Log" customModuleProvider="target">
             <connections>
                 <outlet property="breedSource" destination="ggx-l8-b8A" id="Yta-e3-NZe"/>
             </connections>
         </customObject>
-        <customObject id="y5v-nH-jCQ" customClass="Titles" customModule="CatBase" customModuleProvider="target"/>
-        <customObject id="Aqp-dz-6Vt" customClass="Sex" customModule="CatBase" customModuleProvider="target"/>
+        <customObject id="y5v-nH-jCQ" customClass="Titles" customModule="Cat_A_Log" customModuleProvider="target"/>
+        <customObject id="Aqp-dz-6Vt" customClass="Sex" customModule="Cat_A_Log" customModuleProvider="target"/>
     </objects>
 </document>

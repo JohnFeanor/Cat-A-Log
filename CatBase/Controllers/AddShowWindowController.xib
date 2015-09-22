@@ -4,9 +4,8 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8191"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="AddShowWindowController" customModule="CatBase" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="AddShowWindowController" customModule="Cat_A_Log" customModuleProvider="target">
             <connections>
-                <outlet property="minAgeTextField" destination="hap-fO-xBV" id="jRS-qU-6I5"/>
                 <outlet property="nameTextField" destination="gbw-d5-58k" id="IlS-PG-0K8"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
@@ -41,14 +40,6 @@
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d7c-bY-KEV">
                         <rect key="frame" x="18" y="152" width="61" height="17"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Affiliation" id="pnl-ii-Vqw">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TTu-BM-xqX">
-                        <rect key="frame" x="34" y="101" width="148" height="17"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Minimum age of kittens" id="idO-Rn-2NZ">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -130,7 +121,6 @@
                         </datePickerCell>
                         <connections>
                             <binding destination="-2" name="value" keyPath="date" id="zGh-DV-caG"/>
-                            <outlet property="nextKeyView" destination="hap-fO-xBV" id="GGJ-Ou-vX6"/>
                         </connections>
                     </datePicker>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ll0-MM-w3U">
@@ -277,21 +267,8 @@
                             <outlet property="nextKeyView" destination="gbw-d5-58k" id="FBv-7y-aNJ"/>
                         </connections>
                     </textField>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IFx-M4-cCH">
-                        <rect key="frame" x="339" y="13" width="83" height="32"/>
-                        <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="lme-Rv-2DP">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                            <string key="keyEquivalent" base64-UTF8="YES">
-Gw
-</string>
-                        </buttonCell>
-                        <connections>
-                            <action selector="cancelButtonPressed:" target="-2" id="moD-1L-zvN"/>
-                        </connections>
-                    </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n7Z-RZ-0gK">
-                        <rect key="frame" x="264" y="13" width="60" height="32"/>
+                        <rect key="frame" x="340" y="13" width="82" height="32"/>
                         <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="CdQ-1Q-XAz">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -323,29 +300,6 @@ DQ
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
-                    </textField>
-                    <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6GZ-37-T43">
-                        <rect key="frame" x="188" y="66" width="19" height="27"/>
-                        <stepperCell key="cell" continuous="YES" alignment="left" maxValue="100" doubleValue="1" id="pMf-pE-koW"/>
-                        <connections>
-                            <binding destination="-2" name="value" keyPath="minimumAge" id="yaA-KG-Fqp"/>
-                        </connections>
-                    </stepper>
-                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hap-fO-xBV">
-                        <rect key="frame" x="126" y="69" width="57" height="22"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="G0W-eH-Llv">
-                            <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="VvL-lG-Fre">
-                                <real key="minimum" value="1"/>
-                                <real key="maximum" value="100"/>
-                            </numberFormatter>
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                        <connections>
-                            <binding destination="-2" name="value" keyPath="minimumAge" id="h0e-NG-dR2"/>
-                            <outlet property="nextKeyView" destination="Ll0-MM-w3U" id="T1r-TE-dog"/>
-                        </connections>
                     </textField>
                     <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oap-OJ-g0L">
                         <rect key="frame" x="85" y="147" width="100" height="26"/>
@@ -392,24 +346,19 @@ DQ
                             <outlet property="nextKeyView" destination="QBQ-kn-d6g" id="Ps9-gU-dCJ"/>
                         </connections>
                     </textField>
-                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MyE-aE-xlp">
-                        <rect key="frame" x="18" y="68" width="100" height="26"/>
-                        <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="GHV-MS-S1e" id="79H-Ug-hhW">
-                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="menu"/>
-                            <menu key="menu" id="Mva-0l-VMy">
-                                <items>
-                                    <menuItem title="Item 1" state="on" id="GHV-MS-S1e"/>
-                                    <menuItem title="Item 2" id="Rea-XS-OcB"/>
-                                    <menuItem title="Item 3" id="oFl-7q-LGr"/>
-                                </items>
-                            </menu>
-                        </popUpButtonCell>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IFx-M4-cCH">
+                        <rect key="frame" x="262" y="13" width="82" height="32"/>
+                        <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="lme-Rv-2DP">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                        </buttonCell>
                         <connections>
-                            <binding destination="-2" name="selectedIndex" keyPath="timeUnit" previousBinding="lPl-mD-bcb" id="BuN-fM-yxQ"/>
-                            <binding destination="-2" name="content" keyPath="timeUnits" id="lPl-mD-bcb"/>
+                            <action selector="cancelButtonPressed:" target="-2" id="moD-1L-zvN"/>
                         </connections>
-                    </popUpButton>
+                    </button>
                 </subviews>
             </view>
             <connections>
@@ -418,14 +367,7 @@ DQ
             </connections>
             <point key="canvasLocation" x="258" y="371.5"/>
         </window>
-        <customObject id="9TA-Pb-ICR" userLabel="Breeds" customClass="Breeds" customModule="CatBase" customModuleProvider="target"/>
-        <customObject id="lOg-cF-emU" customClass="Globals" customModule="CatBase" customModuleProvider="target"/>
-        <arrayController id="5dg-KZ-1Wf" userLabel="TimeUnits">
-            <connections>
-                <binding destination="-2" name="contentArray" keyPath="timeUnits" id="6eP-w9-VbS"/>
-            </connections>
-        </arrayController>
+        <customObject id="lOg-cF-emU" customClass="Globals" customModule="Cat_A_Log" customModuleProvider="target"/>
         <userDefaultsController representsSharedInstance="YES" id="own-a1-638"/>
-        <arrayController objectClassName="String" id="TOx-1r-PbH" userLabel="SectionNames"/>
     </objects>
 </document>

@@ -12,7 +12,7 @@ import CoreData
 class Cat: NSManagedObject {
   
   static var entity = "Cat"
-  static var properties = [Cat.birthDate, Cat.breed, Cat.breeder, Cat.challenge, Cat.colour, Cat.dam, Cat.exhibitor, Cat.name, Cat.registration, Cat.sex, Cat.sire, Cat.title, Cat.vaccinated]
+  static var properties = [Cat.name, Cat.registration, Cat.title, Cat.birthDate, Cat.breed, Cat.breeder, Cat.challenge, Cat.colour, Cat.dam, Cat.exhibitor, Cat.sex, Cat.sire, Cat.vaccinated]
   
   static var positions: [String : Int] = [Cat.name : 0, Cat.registration : 1, Cat.title : 2, Cat.birthDate : 3, Cat.breed : 4, Cat.breeder : 5, Cat.challenge : 6, Cat.colour : 7, Cat.dam : 8, Cat.exhibitor : 9, Cat.sex : 10, Cat.sire : 11]
   
@@ -56,11 +56,30 @@ class Cat: NSManagedObject {
     }
   }
   
-  var catString: String {
+  dynamic var birthDateAsString: String {
     let dateFormatter = NSDateFormatter()
     dateFormatter.dateFormat = "dd/MM/yy"
     let date = dateFormatter.stringFromDate(self.birthDate)
-    let ans = "\(self.name)\t\(self.registration)\t\(self.title)\t\(date)\t\(self.breed)\t\(self.breeder)\t\(self.challenge)\t\(self.colour)\t\(self.dam)\t\(self.exhibitor)\t\(self.sex)\t\(self.sire)"
+    return date
+  }
+  
+  var catString: String {
+    var ans: String = ""
+    for key in Cat.properties {
+      switch key {
+      case Cat.birthDate:
+        ans.appendContentsOf("\(self.birthDateAsString )\t")
+      case Cat.vaccinated:
+        break
+      default:
+        let s = self.valueForKey(key) as? String
+        if s != nil && !s!.isEmpty {
+          ans.appendContentsOf("\(s!)\t")
+        } else {
+          ans.appendContentsOf(" \t")
+        }
+      }
+    }
     return ans
   }
   

@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:CatBase.xcodeproj">
+      location = "self:/Users/John Sandercock/Development/Tests/Cat-A-Log copy/Cat-A-Log.xcodeproj">
    </FileRef>
 </Workspace>

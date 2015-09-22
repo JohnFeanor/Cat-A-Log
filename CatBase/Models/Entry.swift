@@ -263,4 +263,28 @@ class Entry: NSManagedObject {
     if cat.isCompanion && other.cat.isCompanion { return false }
     return self.cat.section != other.cat.section
   }
+  
+  //MARK: - searching queries for NSSearchField
+  // --------------------------------------------------
+  
+  dynamic var ringsEntered: String {
+    var ans = ""
+    var count = 0
+    for ring in Entry.rings {
+      count++
+      if let inRing = self.valueForKey(ring) as? NSNumber {
+        if inRing.boolValue { ans.appendContentsOf("\(count)") }
+      }
+    }
+    return ans
+  }
+  
+  dynamic var worker: String {
+    if self.willWork.boolValue {
+      return "Yes"
+    } else {
+      return "No"
+    }
+  }
+  
 }

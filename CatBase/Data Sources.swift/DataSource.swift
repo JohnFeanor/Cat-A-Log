@@ -75,7 +75,6 @@ class DataSource: NSFormatter {
       else { return nil }
     guard let returnString = obj as? String
       else { return "@" }
-    print("Checking for string for: \"\(returnString)\"")
     return firstRowMatchingPrefix(returnString)
   }
   
@@ -91,7 +90,6 @@ class DataSource: NSFormatter {
       } else {
         let index1 = string.endIndex.advancedBy(-1)
         let substring = string.substringToIndex(index1)
-        print("Substring is \"\(substring)\"")
         obj.memory = substring
         return true
       }
