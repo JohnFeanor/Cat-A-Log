@@ -702,7 +702,7 @@ extension MainWindowController {
             s = "\(Breeds.nameOfGroupForBreed(entry.cat.breed)) \(entry.cat.sectionName)"
           }
           
-          addData(section1, s, section2, section3)
+          addData(section1, s, section3)
           sectionNumber++
           // reset lastBreed
           lastBreed = ""

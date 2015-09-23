@@ -845,16 +845,6 @@ div.WordSection2
 	mso-footer:url(":Catalog_files:header.htm") f2;
 	mso-paper-source:0;}
 div.WordSection3
-@page WordSection4
-  {size:595.0pt 842.0pt;
-  margin:53.85pt 34.0pt 53.85pt 45.35pt;
-  mso-header-margin:17.85pt;
-  mso-footer-margin:17.85pt;
-  mso-header:url(":test catalogue_files:header.htm") h4;
-  mso-footer:url(":test catalogue_files:header.htm") f2;
-  mso-paper-source:0;}
-div.WordSection4
-{page:WordSection4;}
 	{page:WordSection3;}
  /* List Definitions */
 
