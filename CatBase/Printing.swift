@@ -690,20 +690,23 @@ extension MainWindowController {
         }
       }
       
-          // MARK: - Write up section heading
+          // MARK: - Write up section heading - add a section-break before kittens & companions
           // --------------------------------
         if entry.inDifferentSectionTo(lastEntry) {
-          let s: String
           if entry.cat.isCompanion {
-            s = "\(Breeds.nameOfGroupForBreed(entry.cat.breed))s"
-          } else if entry.cat.isKitten || entry.cat.isEntire {
-            s = "\(Breeds.nameOfGroupForBreed(entry.cat.breed)) \(entry.cat.sectionName)s"
+            let s = "\(Breeds.nameOfGroupForBreed(entry.cat.breed))s"
+            addData(section1, "\(sectionNumber++)", section2, s, section3)
+          } else if entry.cat.isKitten {
+            let s = "\(Breeds.nameOfGroupForBreed(entry.cat.breed)) \(entry.cat.sectionName)s"
+            addData(section1, "\(sectionNumber++)", section2, s, section3)
+          } else if entry.cat.isEntire {
+            let s = "\(Breeds.nameOfGroupForBreed(entry.cat.breed)) \(entry.cat.sectionName)s"
+            addData(Section1_alt, s, section3)
           } else {
-            s = "\(Breeds.nameOfGroupForBreed(entry.cat.breed)) \(entry.cat.sectionName)"
+            let s = "\(Breeds.nameOfGroupForBreed(entry.cat.breed)) \(entry.cat.sectionName)"
+            addData(Section1_alt, s, section3)
           }
           
-          addData(section1, s, section3)
-          sectionNumber++
           // reset lastBreed
           lastBreed = ""
         }
@@ -717,7 +720,7 @@ extension MainWindowController {
           if entry.cat.isKitten && !entry.cat.isCompanion {
             for litter in litters {
               if entry.cat.breed == litter.breed {
-                cagelength += Globals.cageTypes.sizes[6] // cageType 6 is litter cage
+                cagelength += Globals.litterCageLength
               }
             }
           }

@@ -101,6 +101,7 @@
 		4FD8384F1B832F3D00A8C7A7 /* ColoursWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FD8384D1B832F3D00A8C7A7 /* ColoursWindowController.xib */; };
 		4FEB56AE1B70ABEF00EECA78 /* ShowFormats.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4FEB56AD1B70ABEF00EECA78 /* ShowFormats.plist */; };
 		4FEB56B01B70BFC700EECA78 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEB56AF1B70BFC700EECA78 /* Globals.swift */; };
+		4FFDA68C1BB27C20003B67CB /* Section1 alt.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FFDA68B1BB27C20003B67CB /* Section1 alt.txt */; settings = {ASSET_TAGS = (); }; };
 		4FFE16C81B6E421A0020E1D0 /* EntrySheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFE16C61B6E421A0020E1D0 /* EntrySheetController.swift */; };
 		4FFE16C91B6E421A0020E1D0 /* EntrySheetController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FFE16C71B6E421A0020E1D0 /* EntrySheetController.xib */; };
 		4FFE16CC1B6ECB320020E1D0 /* AllCapsFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFE16CA1B6ECB320020E1D0 /* AllCapsFormatter.swift */; };
@@ -216,6 +217,7 @@
 		4FD8384D1B832F3D00A8C7A7 /* ColoursWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ColoursWindowController.xib; path = Controllers/ColoursWindowController.xib; sourceTree = "<group>"; };
 		4FEB56AD1B70ABEF00EECA78 /* ShowFormats.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ShowFormats.plist; path = pLists/ShowFormats.plist; sourceTree = "<group>"; };
 		4FEB56AF1B70BFC700EECA78 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		4FFDA68B1BB27C20003B67CB /* Section1 alt.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Section1 alt.txt"; path = "templates/Section1 alt.txt"; sourceTree = "<group>"; };
 		4FFE16C61B6E421A0020E1D0 /* EntrySheetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EntrySheetController.swift; path = Controllers/EntrySheetController.swift; sourceTree = "<group>"; };
 		4FFE16C71B6E421A0020E1D0 /* EntrySheetController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EntrySheetController.xib; path = Controllers/EntrySheetController.xib; sourceTree = "<group>"; };
 		4FFE16CA1B6ECB320020E1D0 /* AllCapsFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AllCapsFormatter.swift; path = Formatters/AllCapsFormatter.swift; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 				4F0F92A01BA3DE6F00724D9C /* Name4.txt */,
 				4F0F92A11BA3DE6F00724D9C /* Prestige1.txt */,
 				4F0F92A21BA3DE6F00724D9C /* Section1.txt */,
+				4FFDA68B1BB27C20003B67CB /* Section1 alt.txt */,
 				4F7812B41BB14AEA0036AD80 /* Section2.txt */,
 				4F0F92A31BA3DE6F00724D9C /* Section3.txt */,
 				4F0F92A41BA3DE6F00724D9C /* Spacer.txt */,
@@ -543,6 +546,7 @@
 				4F0F92B61BA3DE6F00724D9C /* Box no ring.txt in Resources */,
 				4F0F92C21BA3DE6F00724D9C /* Details1.txt in Resources */,
 				4F0F92D31BA3DE6F00724D9C /* Name3.txt in Resources */,
+				4FFDA68C1BB27C20003B67CB /* Section1 alt.txt in Resources */,
 				4F0F92C11BA3DE6F00724D9C /* Details1 Litter.txt in Resources */,
 				4F0F92CF1BA3DE6F00724D9C /* Name1 litter.txt in Resources */,
 				4F0F92DE1BA3E30900724D9C /* general.strings in Resources */,

@@ -21,6 +21,7 @@ class MainWindowController: NSWindowController {
   let  rowEnd        = "</tr>".data
   
   let  section1      = readFile("Section1")
+  let  Section1_alt  = readFile("Section1 alt")
   let  section2      = readFile("Section2")
   let  section3      = readFile("Section3")
   let  breed1        = readFile("Breed1")

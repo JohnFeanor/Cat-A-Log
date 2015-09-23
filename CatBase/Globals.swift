@@ -387,6 +387,10 @@ class Globals: NSObject {
     }
   }()
   
+  static var litterCageLength: Int {
+    return Globals.cageTypes.sizes[6]
+  }
+  
   // ========================
   // MARK: - Critical ages
   // ========================
