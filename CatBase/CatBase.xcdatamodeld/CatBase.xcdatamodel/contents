@@ -46,8 +46,6 @@
         <attribute name="judgeSH4" attributeType="String" defaultValueString="R4" syncable="YES"/>
         <attribute name="judgeSH5" attributeType="String" defaultValueString="R5" syncable="YES"/>
         <attribute name="judgeSH6" attributeType="String" defaultValueString="R6" syncable="YES"/>
-        <attribute name="minimumMonths" attributeType="Integer 16" minValueString="0" defaultValueString="3" syncable="YES"/>
-        <attribute name="minimumWeeks" attributeType="Integer 16" minValueString="0" defaultValueString="0" syncable="YES"/>
         <attribute name="name" attributeType="String" defaultValueString="New Show" syncable="YES"/>
         <attribute name="numberOfRings" attributeType="Integer 16" minValueString="1" maxValueString="6" defaultValueString="3" syncable="YES"/>
         <relationship name="entries" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Entry" inverseName="show" inverseEntity="Entry" syncable="YES"/>
@@ -55,6 +53,6 @@
     <elements>
         <element name="Cat" positionX="-27" positionY="18" width="128" height="255"/>
         <element name="Entry" positionX="18" positionY="171" width="128" height="240"/>
-        <element name="Show" positionX="18" positionY="171" width="128" height="330"/>
+        <element name="Show" positionX="18" positionY="171" width="128" height="300"/>
     </elements>
 </model>

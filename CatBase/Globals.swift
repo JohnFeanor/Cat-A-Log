@@ -224,6 +224,7 @@ func fetchCatsWithName(name: String, inContext context: NSManagedObjectContext) 
 // MARK: - reading in and writing arrays and dictionaries to Plists
 // ******************************************************************
 
+
 func dictFromPList(listName: String) -> NSDictionary {
   let url = NSBundle.mainBundle().URLForResource(listName, withExtension:"plist")
   if let url = url {
@@ -251,7 +252,7 @@ func arrayFromPList(listName: String) -> [AnyObject]? {
   }
 }
 
-func array(array: [String], ToPlist listName: String) -> Bool {
+func array(array: [AnyObject], ToPlist listName: String) -> Bool {
   let url = NSBundle.mainBundle().URLForResource(listName, withExtension:"plist")
   if let url = url {
     return (array as NSArray).writeToURL(url, atomically: true)

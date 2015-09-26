@@ -4,8 +4,27 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>.cats</string>
+			</array>
+			<key>CFBundleTypeIconFile</key>
+			<string>Cat on book 512.png</string>
+			<key>CFBundleTypeName</key>
+			<string>Cats source</string>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+		</dict>
+	</array>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleHelpBookFolder</key>
+	<string>Cat-A-Log Help</string>
+	<key>CFBundleHelpBookName</key>
+	<string>Cat-A-Log Help</string>
 	<key>CFBundleIconFile</key>
 	<string></string>
 	<key>CFBundleIdentifier</key>

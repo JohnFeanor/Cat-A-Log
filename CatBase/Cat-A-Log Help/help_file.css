@@ -1,0 +1,78 @@
+@charset "UTF-8";
+/* CSS Document */
+
+<style type="text/css">
+
+	body {
+		font-family:Futura, Helvetica, sans-serif;
+		color:black;
+		text-align:left;
+		line-height:1.5em;
+	}
+	
+	p {
+		font-family:Futura, Helvetica, sans-serif;
+		color:black;
+		text-align:left;
+		line-height:1.5em;
+	}
+	
+	li {
+			font-family:Futura, Helvetica, sans-serif;
+			color:black;
+			text-align:left;
+	}
+	
+	td {
+			font-family:Futura, Helvetica, sans-serif;
+			color:black;
+			text-align:left;
+	}
+
+	h1 {
+		font-family:"Lucida Calligraphy", "Apple Chancery", cursive;
+		font-size:xx-large;
+		color:#000088;
+		text-align:center;
+	}
+	
+	h2 {
+		text-decoration:underline;
+		font-weight:bold;
+		font-style:italic;
+		font-family:"Times New Roman", Times, serif;
+		color:#000022;
+		text-align:center;
+	}
+	
+	table {
+		text-align:left;
+		width:100%;
+		border:hidden;
+		padding:2;
+	}
+	
+	h1.help {
+		font-size:x-large;
+		text-align:center;
+		color:#BB0000;
+		font-family:"Comic Sans MS", cursive;
+	}
+	
+	p.indentLeft {
+		margin-left:25px;
+		text-align:left;
+	}
+		
+	p.indentRight {
+		margin-right:25px;
+		text-align:right;
+	}
+	
+	.wordlink {
+		line-height:1.5em;
+		margin-left:20px;
+	}
+
+
+</style>

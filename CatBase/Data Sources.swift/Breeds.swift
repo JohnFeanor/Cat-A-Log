@@ -86,7 +86,7 @@ class Breeds: DataSource, NSTableViewDataSource {
     return !nonPedigreeBreed(breedName)
   }
   
-  class func groupNumberOf(breedName: String) -> Int? {
+  class func groupNumberOf(breedName: String) -> Int {
     if let groups = Breeds.groups {
       var breedsGroup = 0
       for group in groups {
@@ -95,9 +95,8 @@ class Breeds: DataSource, NSTableViewDataSource {
         }
         breedsGroup++
       }
-      print("group number for \(breedName) not found")
     }
-    return nil
+    fatalError("Cannot find group number of breed: \(breedName)")
   }
   
   class func ACFgroupNumberOf(breedName: String) -> Int {
@@ -127,15 +126,14 @@ class Breeds: DataSource, NSTableViewDataSource {
     fatalError("group name for \(breedName) not found")
   }
   
-  class func nameOfGroupNumber(index: Int) -> String? {
-    if let groups = Breeds.groups {
-      if (index < 0) || (index >= groups.count) {
-        print("name for group \(index) not found")
-      } else {
-        return groups[index].groupName
-      }
+  class func nameOfGroupNumber(index: Int) -> String {
+    guard let groups = Breeds.groups
+      else { fatalError("Breeds.group is nil") }
+    if (index < 0) || (index >= groups.count) {
+      fatalError("name for group \(index) not found")
+    } else {
+      return groups[index].groupName
     }
-    return nil
   }
   
   class func rankOf(breedName: String) -> Int? {

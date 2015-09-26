@@ -30,9 +30,28 @@ extension String: Datamaker {
   }
 }
 
+extension Int: Datamaker {
+  var data: NSData {
+    let sRep = String(self)
+    if let ans = sRep.dataUsingEncoding(NSUTF8StringEncoding) {
+      return ans
+    } else {
+      fatalError("Cannot encode \"\(self)\"")
+    }
+  }
+}
+
 extension NSData: Datamaker {
   var data: NSData {
     return self
+  }
+}
+
+extension NSMutableData {
+  func addData(data: Datamaker ...) {
+    for datum in data {
+      self.appendData(datum.data)
+    }
   }
 }
 
@@ -116,7 +135,7 @@ struct Litter {
   var spays: Int = 0
   
   var groupNumber: Int {
-    return Breeds.groupNumberOf(self.breed) ?? -1
+    return Breeds.groupNumberOf(self.breed)
   }
   
   var age: String {
@@ -237,13 +256,16 @@ extension MainWindowController {
     var kittenData      = NSMutableData()
     var listData        = NSMutableData()
     var statisticsData  = NSMutableData()
-    
+
+    let headerFiles     = NSMutableData()
+
     var workers       = Set<String>()
     var catalogues    = Set<String>()
     var breedsPresent = Set<String>()
     var hiring        = NSCountedSet()
     
     var cagelength    = 0
+    var headerSectionNumber = 2
     
     let catalogueFile   = newURLfrom(url, with: "\(Globals.currentShowName) catalogue.html")
     let notesFile       = newURLfrom(url, with: "\(Globals.currentShowName) judges notes.html")
@@ -262,6 +284,8 @@ extension MainWindowController {
     }
     
     var litters: [Litter] = []
+    
+    headerFiles.addData(head1, Globals.currentShowName, head2, Globals.currentShowName, head3, "\(Globals.currentShowName) \(Globals.currentShowDate)", head4)
     
     // write out boxes for this entry
     // ------------------------------
@@ -399,7 +423,7 @@ extension MainWindowController {
         if litter.groupNumber == currentGroupNumber {
           if first {
             first = false
-            addData(breed1, "\(Breeds.nameOfGroupNumber(currentGroupNumber)!) Litters", breed2)
+            addData(breed1, "\(Breeds.nameOfGroupNumber(currentGroupNumber)) Litters", breed2)
           }
           addData(tableStart)
           addData(name1Litter, "Litter \(litter.number)", name2Litter)
@@ -530,7 +554,6 @@ extension MainWindowController {
     
     let sortedEntrys = theEntriesController.arrangedObjects.sortedArrayUsingSelector(Selector("compareWith:")) as! [Entry]
     
-    var lastBreed   = String()
     var lastColour  = String()
     var lastClass   = String()
     
@@ -645,9 +668,7 @@ extension MainWindowController {
           }
           
           // MARK: Write top ten and prestige challenge boxes
-          judgesNotes.appendData(topTenStartTable)
-          judgesNotes.appendData("\(Breeds.nameOfGroupForBreed(lastEntry.cat.breed)) \(lastEntry.cat.section)".data)
-          judgesNotes.appendData(topTenEndTable)
+          judgesNotes.addData(topTenStartTable, "\(Breeds.nameOfGroupForBreed(lastEntry.cat.breed)) \(lastEntry.cat.section)", topTenEndTable)
           
           doPrestigeChallengesFor(lastEntry, with: &goldChallenges)
           doPrestigeChallengesFor(lastEntry, with: &platinumChallenges)
@@ -669,18 +690,14 @@ extension MainWindowController {
             if Breeds.ACFgroupNumberOf(lastEntry.cat.breed) == 0 {
               for sex in firstSex ..< lastSex {
                 if countOfCats[0][sex] > 0 {
-                  judgesNotes.appendData(ACFAoEstartRow)
-                  judgesNotes.appendData("Group 1 \(Sex.nameOf(sex))".data)
-                  judgesNotes.appendData(ACFAoEendRow)
+                  judgesNotes.addData(ACFAoEstartRow, "Group 1 \(Sex.nameOf(sex))", ACFAoEendRow)
                 }
               }
             } else {
               for g in 2 ... 3 {
                 for sex in firstSex ..< lastSex {
                   if countOfCats[0][sex] > 0 {
-                    judgesNotes.appendData(ACFAoEstartRow)
-                    judgesNotes.appendData("Group \(g) \(Sex.nameOf(sex))".data)
-                    judgesNotes.appendData(ACFAoEendRow)
+                    judgesNotes.addData(ACFAoEstartRow, "Group \(g) \(Sex.nameOf(sex))", ACFAoEendRow)
                   }
                 }
               }
@@ -690,25 +707,31 @@ extension MainWindowController {
         }
       }
       
-          // MARK: - Write up section heading - add a section-break before kittens & companions
+          // MARK: - Write up section heading - add a section-break if a new group
           // --------------------------------
         if entry.inDifferentSectionTo(lastEntry) {
+          let s: String
+          let thisGroup = Breeds.nameOfGroupForBreed(entry.cat.breed)
           if entry.cat.isCompanion {
-            let s = "\(Breeds.nameOfGroupForBreed(entry.cat.breed))s"
-            addData(section1, "\(sectionNumber++)", section2, s, section3)
+            s = "\(thisGroup)s"
           } else if entry.cat.isKitten {
-            let s = "\(Breeds.nameOfGroupForBreed(entry.cat.breed)) \(entry.cat.sectionName)s"
-            addData(section1, "\(sectionNumber++)", section2, s, section3)
+            s = "\(thisGroup) \(entry.cat.sectionName)s"
           } else if entry.cat.isEntire {
-            let s = "\(Breeds.nameOfGroupForBreed(entry.cat.breed)) \(entry.cat.sectionName)s"
-            addData(Section1_alt, s, section3)
+            s = "\(thisGroup) \(entry.cat.sectionName)s"
           } else {
-            let s = "\(Breeds.nameOfGroupForBreed(entry.cat.breed)) \(entry.cat.sectionName)"
-            addData(Section1_alt, s, section3)
+            s = "\(thisGroup) \(entry.cat.sectionName)"
           }
           
-          // reset lastBreed
-          lastBreed = ""
+          if entry.inDifferentGroupTo(lastEntry) {
+            addData(section1, "\(sectionNumber++)", section2, s, section3)
+            headerFiles.addData(headerSectionNumber++, head5)
+            for i in 0 ..< 6 {
+              headerFiles.addData((Globals.currentShow!.judge(i, forBreed: entry.cat.breed)), head5_1)
+            }
+            headerFiles.addData(head5_2)
+          } else {
+            addData(Section1_alt, s, section3)
+          }
         }
       
         
@@ -734,7 +757,6 @@ extension MainWindowController {
           }
           addData(breed1, breedHeading, breed2)
 
-          lastBreed = thisBreed
           lastColour  = ""
           lastClass   = ""
           
@@ -948,7 +970,8 @@ extension MainWindowController {
     doPrestigeChallengesFor(lastEntry, with: &goldChallenges)
     doPrestigeChallengesFor(lastEntry, with: &platinumChallenges)
     
-    addData(endOfEntries)
+    judgesNotes.addData(endOfEntries1, 3, endOfEntries2)
+    data.addData(endOfEntries1, sectionNumber, endOfEntries2)
     
     // MARK: - Do best of breed list
     // ------------------------------
@@ -1059,12 +1082,7 @@ extension MainWindowController {
       fatalError("Cannot create directory for folder Catalog_files.\n error: \(error)")
     }
     
-    let headerFiles = NSMutableData()
-    headerFiles.appendData(readFile("header"))
-    headerFiles.appendData(Globals.currentShowName.data)
-    headerFiles.appendData(" ".data)
-    headerFiles.appendData(Globals.currentShowDate.data)
-    headerFiles.appendData(headerPt2)
+    headerFiles.addData(headerSectionNumber, head6)
     
     let headerURL = dirURL.URLByAppendingPathComponent("header.htm")
     guard headerFiles.writeToURL(headerURL, atomically: true)

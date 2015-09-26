@@ -14,7 +14,8 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
   
   @IBOutlet weak var window: NSWindow!
-    
+  @IBOutlet weak var timesleftToRunString: NSTextField!
+  
   var mainWindowController: MainWindowController?
   var coloursEditorController: ColoursWindowController? = nil
   var criticalAgesWindowController: CriticalAgesWindowController? = nil
@@ -26,7 +27,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   dynamic var writeMenuTitle = "Write catalogue ..."
   dynamic var writeMenuAvailable = true
   
-  func applicationDidFinishLaunching(aNotification: NSNotification) {
+  dynamic var iconImage = NSImage(named: "icon.jpg")
+  
+  var willIexit = false
+  
+  @IBAction func splashWindowClosed(sender: AnyObject) {
+    window.close()
+    if willIexit {
+      exit(EXIT_SUCCESS)
+    }
+    
     // Create a window controller
     let mainWindowController = MainWindowController()
     mainWindowController.managedObjectContext = self.managedObjectContext
@@ -36,8 +46,30 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     //Set the property to point to the window controller
     self.mainWindowController = mainWindowController
+ 
   }
-  
+  func applicationDidFinishLaunching(aNotification: NSNotification) {
+    
+    var authenticate = arrayFromPList("Authentication") as! [String]
+    if let triesLeft = Int(authenticate[0]) {
+      if triesLeft > 0 {
+        if triesLeft > 1 {
+          timesleftToRunString.stringValue = "\(triesLeft) trials left"
+        } else {
+          timesleftToRunString.stringValue = "\(triesLeft) trial left"
+        }
+        authenticate[0] = String(triesLeft - 1)
+        if !array(authenticate, ToPlist: "Authentication") {
+          print("Could not save authentication number")
+        }
+      } else {
+        timesleftToRunString.stringValue = "You have no more free trials left"
+        willIexit = true
+      }
+    } else {
+      timesleftToRunString.stringValue = authenticate[0]
+    }
+  }
   
   func applicationWillTerminate(aNotification: NSNotification) {
     // Insert code here to tear down your application
@@ -263,8 +295,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     panel.allowsMultipleSelection = false
     panel.message = "Name of file to import"
     panel.allowedFileTypes = ["cats"]
+    guard let mainWindow = mainWindowController?.mainWindow
+      else { fatalError("Main window is nil") }
     
-    panel.beginSheetModalForWindow(window) { response in
+    panel.beginSheetModalForWindow(mainWindow) { response in
       // The sheet has finished. Did the user click 'OK'?
       if response == NSModalResponseOK {
         // import the cats
@@ -296,10 +330,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let numberOfCats = strings.count / numberOfCatProperties
     print("Preparing to import \(numberOfCats) cats")
     
+    let progressWindowController = ProgressWindowController()
+    progressWindowController.showWindow(self)
+    progressWindowController.progressBarSize = Double(numberOfCats)
+    speaker.startSpeakingString("This may take a while")
+    
     var start = 0
     var count = 0
+    var duplicates = 0
     
     for _ in 0 ..< numberOfCats {
+      progressWindowController.incrementProgress()
       let end = start + numberOfCatProperties
       let thisCat = Array(strings[start ..< end])
       let registration = thisCat[Cat.positions[Cat.registration]!]
@@ -308,13 +349,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       if existingCatsWithRegistration(registration, orName: name, inContext: self.managedObjectContext!) == nil {
         let _ = Cat(array: Array(thisCat), insertIntoManagedObjectContext: self.managedObjectContext)
         count++
+      } else {
+        duplicates++
       }
       start = end
     }
-    print("Added \(count) cats to the database")
+    runAlertWithMessage("Imported \(count) cats.\nFound \(duplicates) cats which were already in the database.\nDuplicates were not imported.", buttons: "OK")
+
     do { try self.managedObjectContext!.save() }
     catch{
-      print("Error trying to save managed object context after importing of cats")
+      errorAlert(message: "Warning: the imported cats could not be saved into the database")
     }
   }
   

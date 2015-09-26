@@ -82,6 +82,7 @@
                                                     </tableColumn>
                                                 </tableColumns>
                                                 <connections>
+                                                    <action trigger="doubleAction" selector="showWindow:" target="-2" id="SXX-Uf-bcX"/>
                                                     <binding destination="zuf-cK-OoZ" name="content" keyPath="arrangedObjects" id="pBU-y6-svd"/>
                                                     <binding destination="zuf-cK-OoZ" name="selectionIndexes" keyPath="selectionIndexes" previousBinding="pBU-y6-svd" id="njY-9V-0dl"/>
                                                     <binding destination="zuf-cK-OoZ" name="sortDescriptors" keyPath="sortDescriptors" previousBinding="njY-9V-0dl" id="68f-Kg-WuT"/>
@@ -208,7 +209,7 @@
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="BKr-pm-8Mv">
                                         <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" usesGroupingSeparator="NO" paddingCharacter="*" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" decimalSeparator="." groupingSeparator="," currencyDecimalSeparator="." plusSign="+" minusSign="-" notANumberSymbol="NaN" perMillSymbol="‰" percentSymbol="%" exponentSymbol="E" positivePrefix="" positiveSuffix="" negativePrefix="-" negativeSuffix="" id="v96-BK-xaF">
                                             <real key="minimum" value="1"/>
-                                            <real key="maximum" value="4"/>
+                                            <real key="maximum" value="6"/>
                                         </numberFormatter>
                                         <font key="font" metaFont="system"/>
                                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -384,7 +385,9 @@
                                     <buttonCell key="cell" type="push" title="Remove Cat" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="IHI-rd-0oK">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" metaFont="system"/>
-                                        <string key="keyEquivalent">-</string>
+                                        <string key="keyEquivalent" base64-UTF8="YES">
+CA
+</string>
                                     </buttonCell>
                                     <connections>
                                         <action selector="removeEntry:" target="-2" id="ITt-Yc-RYe"/>

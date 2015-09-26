@@ -13,6 +13,7 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Cat_A_Log" customModuleProvider="target">
             <connections>
+                <outlet property="timesleftToRunString" destination="tea-4k-HE9" id="NQh-0R-Fuy"/>
                 <outlet property="window" destination="SvI-4i-wPk" id="tst-r2-Zup"/>
             </connections>
         </customObject>
@@ -379,7 +380,7 @@
                 </menuItem>
             </items>
         </menu>
-        <window title="Splash" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="SvI-4i-wPk">
+        <window title="Splash" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" oneShot="NO" showsToolbarButton="NO" animationBehavior="default" id="SvI-4i-wPk">
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="400" y="250" width="480" height="270"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
@@ -388,27 +389,12 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yqg-Rl-JkY">
-                        <rect key="frame" x="17" y="141" width="117" height="112"/>
+                        <rect key="frame" x="17" y="124" width="134" height="134"/>
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="5he-Jw-Veg"/>
+                        <connections>
+                            <binding destination="Voe-Tx-rLC" name="value" keyPath="iconImage" id="k24-bh-Off"/>
+                        </connections>
                     </imageView>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ugJ-TX-fj8">
-                        <rect key="frame" x="354" y="22" width="103" height="32"/>
-                        <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="NDB-SL-SeC">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                            <string key="keyEquivalent" base64-UTF8="YES">
-DQ
-</string>
-                        </buttonCell>
-                    </button>
-                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LFP-6m-lXc">
-                        <rect key="frame" x="214" y="144" width="143" height="45"/>
-                        <textFieldCell key="cell" enabled="NO" sendsActionOnEndEditing="YES" alignment="right" title="© John Sandercock all rights reserved" id="vTo-Wr-5nk">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VfW-Zr-bAD">
                         <rect key="frame" x="240" y="217" width="125" height="47"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Cat-A-Log" id="jqS-bL-P2v">
@@ -434,15 +420,37 @@ DQ
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tea-4k-HE9">
-                        <rect key="frame" x="33" y="33" width="287" height="17"/>
+                        <rect key="frame" x="18" y="9" width="338" height="41"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" title="Label" id="o5r-Xc-5sl">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LFP-6m-lXc">
+                        <rect key="frame" x="228" y="144" width="128" height="45"/>
+                        <textFieldCell key="cell" enabled="NO" sendsActionOnEndEditing="YES" alignment="right" title="       © Feanor       all rights reserved" id="vTo-Wr-5nk">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ugJ-TX-fj8">
+                        <rect key="frame" x="363" y="22" width="103" height="32"/>
+                        <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="NDB-SL-SeC">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                        </buttonCell>
+                        <connections>
+                            <action selector="splashWindowClosed:" target="Voe-Tx-rLC" id="Joe-Sm-lDJ"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
         </window>
+        <userDefaultsController representsSharedInstance="YES" id="Ybb-4g-7YB"/>
     </objects>
 </document>

@@ -264,6 +264,12 @@ class Entry: NSManagedObject {
     return self.cat.section != other.cat.section
   }
   
+  func inDifferentGroupTo(other: Entry?) -> Bool {
+    guard let other = other
+      else { return true }
+    return Breeds.groupNumberOf(self.cat.breed) != Breeds.groupNumberOf(other.cat.breed)
+  }
+  
   //MARK: - searching queries for NSSearchField
   // --------------------------------------------------
   

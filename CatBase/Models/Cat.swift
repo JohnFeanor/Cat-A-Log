@@ -86,10 +86,8 @@ class Cat: NSManagedObject {
   convenience init(array: [String], insertIntoManagedObjectContext context: NSManagedObjectContext?) {
     let catEntity = NSEntityDescription.entityForName(Cat.entity, inManagedObjectContext: context!)
     if catEntity == nil {
-      print("Cannot create new cat entity")
-      abort()
+      fatalError("Cannot create new cat entity")
     } else {
-      print("Creating new cat entity")
       self.init(entity: catEntity!, insertIntoManagedObjectContext: context)
       for property in Cat.properties {
         switch property {
@@ -230,7 +228,7 @@ class Cat: NSManagedObject {
   // *************************
   
   var groupNumber: Int {
-    return Breeds.groupNumberOf(self.breed) ?? -1
+    return Breeds.groupNumberOf(self.breed)
   }
   
   var breedRank: Int {

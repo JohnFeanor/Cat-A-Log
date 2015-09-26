@@ -51,8 +51,6 @@ class AddShowWindowController: NSWindowController {
   private dynamic var judgeSH5: String = ""
   private dynamic var judgeSH6: String = ""
   
-  private dynamic var minimumMonths: NSNumber = three
-  private dynamic var minimumWeeks: NSNumber = zero
   private dynamic var numberOfRings: NSNumber = three
  
   private dynamic var minimumAge: NSNumber = three
@@ -83,13 +81,6 @@ class AddShowWindowController: NSWindowController {
     for property in Show.properties {
       self.setValue(show.valueForKey(property), forKey: property)
     }
-    if minimumMonths == zero {
-      minimumAge = minimumWeeks
-      timeUnit = weeks
-    } else {
-      minimumAge = minimumMonths
-      timeUnit = months
-    }
     self.window!.makeFirstResponder(self.nameTextField)
   }
   
@@ -101,14 +92,6 @@ class AddShowWindowController: NSWindowController {
   @IBAction func okButtonPressed(sender: NSButton) {
     window?.endEditingFor(nil)
 
-    if timeUnit == months {
-      minimumMonths = minimumAge
-      minimumWeeks = zero
-    } else {
-      minimumWeeks = minimumAge
-      minimumMonths = zero
-    }
-    
     dismissWithModalResponse(NSModalResponseOK)
   }
   

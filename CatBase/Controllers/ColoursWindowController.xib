@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8191"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="ColoursWindowController" customModule="CatBase" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="ColoursWindowController" customModule="Cat_A_Log" customModuleProvider="target">
             <connections>
                 <outlet property="colours" destination="O2U-q1-8Lc" id="Lb9-kf-BEZ"/>
                 <outlet property="coloursTableView" destination="j5r-s8-BSm" id="Egw-bH-NRV"/>
@@ -200,8 +200,8 @@
             </connections>
             <point key="canvasLocation" x="248.5" y="369.5"/>
         </window>
-        <customObject id="JTM-JE-aXP" customClass="Breeds" customModule="CatBase" customModuleProvider="target"/>
-        <customObject id="O2U-q1-8Lc" customClass="Colours" customModule="CatBase" customModuleProvider="target">
+        <customObject id="JTM-JE-aXP" customClass="Breeds" customModule="Cat_A_Log" customModuleProvider="target"/>
+        <customObject id="O2U-q1-8Lc" customClass="Colours" customModule="Cat_A_Log" customModuleProvider="target">
             <connections>
                 <outlet property="breedSource" destination="4l6-eK-Ao8" id="6qx-93-8wx"/>
             </connections>

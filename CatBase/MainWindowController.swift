@@ -12,14 +12,22 @@ class MainWindowController: NSWindowController {
   
   let nbspace        = "&nbsp;".data
   
-  let  headerPt2     = readFile("headerPt2")
   let  header1       = readFile("Header1")
   let  header2       = readFile("Header2")
   let  header2judge  = readFile("Header2judge")
   let  tableStart    = readFile("Table start")
   let  tableEnd      = readFile("Table end")
   let  rowEnd        = "</tr>".data
-  
+
+  let  head1         = readFile("head1")
+  let  head2         = readFile("head2")
+  let  head3         = readFile("head3")
+  let  head4         = readFile("head4")
+  let  head5         = readFile("head5")
+  let  head5_1       = readFile("head5_1")
+  let  head5_2       = readFile("head5_2")
+  let  head6         = readFile("head6")
+
   let  section1      = readFile("Section1")
   let  Section1_alt  = readFile("Section1 alt")
   let  section2      = readFile("Section2")
@@ -54,7 +62,8 @@ class MainWindowController: NSWindowController {
   let  notEntered    = readFile("Box not entered")
   let  underlined    = readFile("Box underlined")
   let  noRing        = readFile("Box no ring")
-  let  endOfEntries      = readFile("EndOfEntries")
+  let  endOfEntries1     = readFile("EndOfEntries1")
+  let  endOfEntries2     = readFile("EndOfEntries2")
   let  bestOfBreedStart  = readFile("BestOfBreedStart")
   let  bestOfBreedEnd    = readFile("BestOfBreedEnd")
   let  spacer            = readFile("Spacer")
@@ -87,6 +96,10 @@ class MainWindowController: NSWindowController {
   
   var addShowWindowController: AddShowWindowController? = nil
   var addEntryWindowController: EntrySheetController? = nil
+  
+  var mainWindow: NSWindow? {
+    return window
+  }
     
   
   dynamic var sortByDate = [NSSortDescriptor(key: "date", ascending: false)]

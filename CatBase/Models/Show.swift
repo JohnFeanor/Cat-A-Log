@@ -14,8 +14,6 @@ struct AddShowDataSheet {
   var affiliation   = Globals.showTypes[0]
   var date          = NSDate()
   var judges        = [["", "", "", "", "", ""], ["", "", "", "", "", ""]]
-  var minimumMonths = NSNumber(integer: 3)
-  var minimumWeeks  = NSNumber(integer: 0)
   var name: String  = "New Show"
   var numberOfRings = NSNumber(integer: 3)
 }
@@ -23,7 +21,7 @@ struct AddShowDataSheet {
 class Show: NSManagedObject {
   
   static var entity = "Show"
-  static var properties = [Show.affiliation, Show.date, Show.judgeLH1, Show.judgeLH2, Show.judgeLH3, Show.judgeLH4, Show.judgeLH5, Show.judgeLH6, Show.judgeSH1, Show.judgeSH2, Show.judgeSH3, Show.judgeSH4, Show.judgeSH5, Show.judgeSH6, Show.minimumMonths, Show.minimumWeeks, Show.name, Show.numberOfRings]
+  static var properties = [Show.affiliation, Show.date, Show.judgeLH1, Show.judgeLH2, Show.judgeLH3, Show.judgeLH4, Show.judgeLH5, Show.judgeLH6, Show.judgeSH1, Show.judgeSH2, Show.judgeSH3, Show.judgeSH4, Show.judgeSH5, Show.judgeSH6, Show.name, Show.numberOfRings]
   let judgesLH = ["judgeLH1", "judgeLH2", "judgeLH3", "judgeLH4", "judgeLH5", "judgeLH6"]
   let judgesSH = ["judgeSH1", "judgeSH2", "judgeSH3", "judgeSH4", "judgeSH5", "judgeSH6"]
   
@@ -41,8 +39,6 @@ class Show: NSManagedObject {
   static var judgeSH4          = "judgeSH4"
   static var judgeSH5          = "judgeSH5"
   static var judgeSH6          = "judgeSH6"
-  static var minimumMonths     = "minimumMonths"
-  static var minimumWeeks      = "minimumWeeks"
   static var name              = "name"
   static var numberOfRings     = "numberOfRings"
   
@@ -64,8 +60,6 @@ class Show: NSManagedObject {
   @NSManaged var judgeSH4: String
   @NSManaged var judgeSH5: String
   @NSManaged var judgeSH6: String
-  @NSManaged var minimumMonths: NSNumber
-  @NSManaged var minimumWeeks:  NSNumber
   @NSManaged var name: String
   @NSManaged var numberOfRings: NSNumber
   @NSManaged var entries: NSMutableSet?
@@ -129,7 +123,7 @@ class Show: NSManagedObject {
   // Is a cat born on a given date able to be pending at this show?
   // --------------------------------------------------------------
   func canItBePending(birthDate: NSDate) -> Bool {
-    let minAge = Globals.minShowAge
+    let minAge = Globals.maxPendingAge
     let canBePending = birthDate.lessThan(weeks: minAge.weeks, months: minAge.months, before: self.date)
     return canBePending
   }
@@ -140,5 +134,24 @@ class Show: NSManagedObject {
     let maxAge = Globals.minShowAge
     let canBeInLitter = birthDate.lessThan(weeks: maxAge.weeks, months: maxAge.months, before: self.date)
     return canBeInLitter
+  }
+  
+  // return initials of judge judging breed <breedName> in ring <ring>
+  // ------------------------------------------------------------------
+  func judge(ring: Int, forBreed breedName: String) -> String {
+    let groupNumber = Breeds.groupNumberOf(breedName)
+    let longhair: Bool
+    if self.affiliation == Globals.showTypes[0] {
+      longhair = groupNumber != 1
+    } else if self.affiliation == Globals.showTypes[1] {
+      longhair = groupNumber == 0 || groupNumber == 1 || groupNumber == 5
+    } else  {
+      longhair = groupNumber == 0 || groupNumber == 3
+    }
+    if longhair {
+      return self.valueForKey(judgesLH[ring]) as! String
+    } else {
+      return self.valueForKey(judgesSH[ring]) as! String
+    }
   }
 }
