@@ -62,8 +62,11 @@ class MainWindowController: NSWindowController {
   let  notEntered    = readFile("Box not entered")
   let  underlined    = readFile("Box underlined")
   let  noRing        = readFile("Box no ring")
+  
   let  endOfEntries1     = readFile("EndOfEntries1")
   let  endOfEntries2     = readFile("EndOfEntries2")
+  let  endOfEntriesJudge = readFile("EndOfEntriesJudge")
+  
   let  bestOfBreedStart  = readFile("BestOfBreedStart")
   let  bestOfBreedEnd    = readFile("BestOfBreedEnd")
   let  spacer            = readFile("Spacer")

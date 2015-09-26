@@ -668,7 +668,7 @@ extension MainWindowController {
           }
           
           // MARK: Write top ten and prestige challenge boxes
-          judgesNotes.addData(topTenStartTable, "\(Breeds.nameOfGroupForBreed(lastEntry.cat.breed)) \(lastEntry.cat.section)", topTenEndTable)
+          judgesNotes.addData(topTenStartTable, "\(Breeds.nameOfGroupForBreed(lastEntry.cat.breed)) \(lastEntry.cat.sectionName)", topTenEndTable)
           
           doPrestigeChallengesFor(lastEntry, with: &goldChallenges)
           doPrestigeChallengesFor(lastEntry, with: &platinumChallenges)
@@ -722,15 +722,16 @@ extension MainWindowController {
             s = "\(thisGroup) \(entry.cat.sectionName)"
           }
           
+          judgesNotes.addData(Section1_alt, s, section3)
           if entry.inDifferentGroupTo(lastEntry) {
-            addData(section1, "\(sectionNumber++)", section2, s, section3)
+            data.addData(section1, "\(sectionNumber++)", section2, s, section3)
             headerFiles.addData(headerSectionNumber++, head5)
             for i in 0 ..< 6 {
               headerFiles.addData((Globals.currentShow!.judge(i, forBreed: entry.cat.breed)), head5_1)
             }
             headerFiles.addData(head5_2)
           } else {
-            addData(Section1_alt, s, section3)
+            data.addData(Section1_alt, s, section3)
           }
         }
       
@@ -909,8 +910,7 @@ extension MainWindowController {
         }
         
         addData(name4)
-        judgesNotes.appendData(name4)
-        
+      
         // Write the birthdate and age
         // ----------------------------
         addData(details1, entry.cat.birthDate.string, details2, entry.cat.age, details3)
@@ -970,7 +970,7 @@ extension MainWindowController {
     doPrestigeChallengesFor(lastEntry, with: &goldChallenges)
     doPrestigeChallengesFor(lastEntry, with: &platinumChallenges)
     
-    judgesNotes.addData(endOfEntries1, 3, endOfEntries2)
+    judgesNotes.addData(endOfEntriesJudge)
     data.addData(endOfEntries1, sectionNumber, endOfEntries2)
     
     // MARK: - Do best of breed list

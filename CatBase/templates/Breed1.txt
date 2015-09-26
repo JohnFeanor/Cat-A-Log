@@ -1,4 +1,4 @@
   <table class=MsoTableGrid border=0 cellspacing=0 cellpadding=0 width=510 style='width:510.0pt; border-collapse:collapse; border:none; mso-yfti-tbllook: 1184; mso-padding-alt:0pt 0pt 0pt 0pt; mso-border-insideh:none; mso-border-insidev:none'>
     <tr style='mso-yfti-irow:0; mso-yfti-firstrow:yes; mso-yfti-lastrow:yes; page-break-inside:avoid'>
-      <td width=340 valign=center style='width:340.0pt; border:solid windowtext 2.25pt; padding:0pt 0pt 0pt 0pt'>
-        <p class=Breed style='mso-bidi-font-family:"Times New Roman"'>
+      <td width=340 valign=top style='width:340pt;border:solid windowtext 2.25pt; padding:0pt 0pt 0pt 0pt'>
+        <p class=Breed>
