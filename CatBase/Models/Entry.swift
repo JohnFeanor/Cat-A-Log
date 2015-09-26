@@ -210,6 +210,7 @@ class Entry: NSManagedObject {
   }
   
   func newBreedTo(other: Entry?) -> Bool {
+    if self.inDifferentSectionTo(other) { return true }
      return !self.cat.isCompanion && self.differentBreedTo(other)
   }
   
