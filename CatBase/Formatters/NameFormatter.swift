@@ -8,6 +8,17 @@
 
 import Cocoa
 
+private extension Character {
+  var bannedChar: Bool {
+    switch self {
+    case ("\0" ..< " "):
+      return true
+    default:
+      return false
+    }
+  }
+}
+
 class NameFormatter: NSFormatter {
   
   enum Action {
@@ -176,6 +187,8 @@ class NameFormatter: NSFormatter {
       partialString = partialStringPtr.memory! as String
       partialStringCount = partialString.characters.count
     }
+    
+    if let ch = partialString.characters.last where ch.bannedChar { return false }
     
     let match = self.firstKeyForPartialString(partialString)
     

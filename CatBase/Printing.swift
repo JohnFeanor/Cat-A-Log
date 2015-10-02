@@ -84,7 +84,6 @@ private let End_sheet           = "End sheet"
 private let End_workbook        = "End workbook"
 
 
-private let TITLE   = "Title"
 
 
 extension NSMutableData{

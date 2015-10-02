@@ -301,7 +301,7 @@
                                         <binding destination="zuf-cK-OoZ" name="selectedValue" keyPath="selection.affiliation" previousBinding="KoG-ge-mqk" id="IRR-xY-gNJ"/>
                                     </connections>
                                 </popUpButton>
-                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PAG-Af-cqE">
+                                <button toolTip="Press here to change details of the show" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PAG-Af-cqE">
                                     <rect key="frame" x="109" y="28" width="85" height="17"/>
                                     <buttonCell key="cell" type="inline" title="Edit Show" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="NVJ-wj-2Zo">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -362,7 +362,7 @@
                             <rect key="frame" x="1" y="1" width="556" height="423"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <button toolTip="Press to add an entry (shortcut opt=)" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vmT-26-8zH">
+                                <button toolTip="Press to add an entry (shortcut =)" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vmT-26-8zH">
                                     <rect key="frame" x="315" y="7" width="110" height="32"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="98" id="CZY-ug-aYQ"/>
@@ -377,7 +377,7 @@
                                         <binding destination="zuf-cK-OoZ" name="enabled" keyPath="canRemove" id="e8r-1d-vpG"/>
                                     </connections>
                                 </button>
-                                <button toolTip="Press to delete selected entry (shortcut ⌘-)" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ics-Lq-c5W">
+                                <button toolTip="Press to delete selected entry (delete)" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ics-Lq-c5W">
                                     <rect key="frame" x="434" y="7" width="110" height="32"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="98" id="5DP-5C-SoC"/>
@@ -434,7 +434,7 @@ DQ
                                         <binding destination="lq1-w2-pGH" name="enabled" keyPath="canRemove" id="7Kt-ue-8IP"/>
                                     </connections>
                                 </button>
-                                <searchField toolTip="Type in here to filter the shows" wantsLayer="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mbC-Ey-1qB">
+                                <searchField toolTip="Type in here to filter the entries" wantsLayer="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mbC-Ey-1qB">
                                     <rect key="frame" x="18" y="391" width="216" height="22"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="216" id="mPd-z2-32F"/>

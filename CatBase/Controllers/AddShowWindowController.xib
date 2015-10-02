@@ -109,7 +109,7 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <datePicker verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7rF-re-d7O">
+                    <datePicker toolTip="Enter the date of the show here" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7rF-re-d7O">
                         <rect key="frame" x="82" y="186" width="104" height="27"/>
                         <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="HEc-Gs-c2X">
                             <font key="font" metaFont="system"/>
@@ -123,7 +123,7 @@
                             <binding destination="-2" name="value" keyPath="date" id="zGh-DV-caG"/>
                         </connections>
                     </datePicker>
-                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ll0-MM-w3U">
+                    <textField toolTip="Type the initials of the Longhair judge in ring 1 here" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ll0-MM-w3U">
                         <rect key="frame" x="271" y="230" width="64" height="22"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Keh-m7-Riq">
                             <font key="font" metaFont="system"/>
@@ -135,7 +135,7 @@
                             <outlet property="nextKeyView" destination="mP9-Lp-zmt" id="4gM-J3-TDs"/>
                         </connections>
                     </textField>
-                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mP9-Lp-zmt">
+                    <textField toolTip="Type the initials of the Shorthair judge in ring 1 here" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mP9-Lp-zmt">
                         <rect key="frame" x="352" y="230" width="64" height="22"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="BNw-XF-Zio">
                             <font key="font" metaFont="system"/>
@@ -147,7 +147,7 @@
                             <outlet property="nextKeyView" destination="EBC-7w-vYw" id="CO3-p3-EJi"/>
                         </connections>
                     </textField>
-                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EBC-7w-vYw">
+                    <textField toolTip="Type the initials of the Longhair judge in ring 2 here" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EBC-7w-vYw">
                         <rect key="frame" x="271" y="198" width="64" height="22"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="iiF-RZ-rYJ">
                             <font key="font" metaFont="system"/>
@@ -159,7 +159,7 @@
                             <outlet property="nextKeyView" destination="vA4-Mf-Ru0" id="XWL-qh-TWg"/>
                         </connections>
                     </textField>
-                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vA4-Mf-Ru0">
+                    <textField toolTip="Type the initials of the Shorthair judge in ring 2 here" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vA4-Mf-Ru0">
                         <rect key="frame" x="352" y="198" width="64" height="22"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="UPP-RC-obm">
                             <font key="font" metaFont="system"/>
@@ -171,7 +171,7 @@
                             <outlet property="nextKeyView" destination="G1e-UJ-nPS" id="6kg-fk-5oS"/>
                         </connections>
                     </textField>
-                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G1e-UJ-nPS">
+                    <textField toolTip="Type the initials of the Longhair judge in ring 3 here" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G1e-UJ-nPS">
                         <rect key="frame" x="271" y="166" width="64" height="22"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="QpW-ef-MSS">
                             <font key="font" metaFont="system"/>
@@ -183,7 +183,7 @@
                             <outlet property="nextKeyView" destination="stk-rU-SZI" id="OUz-m0-W5l"/>
                         </connections>
                     </textField>
-                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="stk-rU-SZI">
+                    <textField toolTip="Type the initials of the Shorthair judge in ring 3 here" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="stk-rU-SZI">
                         <rect key="frame" x="352" y="166" width="64" height="22"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="xc6-hd-CjA">
                             <font key="font" metaFont="system"/>
@@ -195,7 +195,7 @@
                             <outlet property="nextKeyView" destination="bEG-sE-go6" id="w59-tf-Bbe"/>
                         </connections>
                     </textField>
-                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bEG-sE-go6">
+                    <textField toolTip="Type the initials of the Longhair judge in ring 4 here" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bEG-sE-go6">
                         <rect key="frame" x="271" y="134" width="64" height="22"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="2zz-ti-WTt">
                             <font key="font" metaFont="system"/>
@@ -207,7 +207,7 @@
                             <outlet property="nextKeyView" destination="zp6-UA-vyc" id="RTo-Tt-0Yd"/>
                         </connections>
                     </textField>
-                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zp6-UA-vyc">
+                    <textField toolTip="Type the initials of the Shorthair judge in ring 4 here" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zp6-UA-vyc">
                         <rect key="frame" x="352" y="134" width="64" height="22"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="kZw-Su-6X9">
                             <font key="font" metaFont="system"/>
@@ -219,7 +219,7 @@
                             <outlet property="nextKeyView" destination="kiK-hF-f8k" id="4SX-Ua-HU3"/>
                         </connections>
                     </textField>
-                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kiK-hF-f8k">
+                    <textField toolTip="Type the initials of the Longhair judge in ring 5 here" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kiK-hF-f8k">
                         <rect key="frame" x="271" y="102" width="64" height="22"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="7uh-8a-Di4">
                             <font key="font" metaFont="system"/>
@@ -231,7 +231,7 @@
                             <outlet property="nextKeyView" destination="6LO-RT-oUZ" id="tHx-IN-nf6"/>
                         </connections>
                     </textField>
-                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6LO-RT-oUZ">
+                    <textField toolTip="Type the initials of the Shorthair judge in ring 5 here" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6LO-RT-oUZ">
                         <rect key="frame" x="352" y="102" width="64" height="22"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Fu8-mi-u0M">
                             <font key="font" metaFont="system"/>
@@ -243,7 +243,7 @@
                             <outlet property="nextKeyView" destination="IUb-lv-qRu" id="YYB-Jw-s6b"/>
                         </connections>
                     </textField>
-                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IUb-lv-qRu">
+                    <textField toolTip="Type the initials of the Longhair judge in ring 6 here" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IUb-lv-qRu">
                         <rect key="frame" x="271" y="70" width="64" height="22"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="GKb-sd-Ts6">
                             <font key="font" metaFont="system"/>
@@ -255,7 +255,7 @@
                             <outlet property="nextKeyView" destination="yhL-0l-HHU" id="cIH-yw-IMA"/>
                         </connections>
                     </textField>
-                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yhL-0l-HHU">
+                    <textField toolTip="Type the initials of the Shorthair judge in ring 6 here" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yhL-0l-HHU">
                         <rect key="frame" x="352" y="70" width="64" height="22"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="8fB-Vn-EUX">
                             <font key="font" metaFont="system"/>
@@ -280,7 +280,7 @@ DQ
                             <action selector="okButtonPressed:" target="-2" id="PuB-BE-UNf"/>
                         </connections>
                     </button>
-                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QBQ-kn-d6g">
+                    <textField toolTip="Type the number of rings in the show here" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QBQ-kn-d6g">
                         <rect key="frame" x="126" y="230" width="60" height="22"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="TMN-o1-R0O">
                             <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="sjN-X9-wqT"/>
@@ -301,7 +301,7 @@ DQ
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oap-OJ-g0L">
+                    <popUpButton toolTip="QFA is Longhair/Shorthair; ACF is Group 1, 2, 3 &amp; 4" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oap-OJ-g0L">
                         <rect key="frame" x="85" y="147" width="100" height="26"/>
                         <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Lg8-DS-T7P" id="EYP-kh-pRP">
                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -334,7 +334,7 @@ DQ
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gbw-d5-58k">
+                    <textField toolTip="Type the name of the show here" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gbw-d5-58k">
                         <rect key="frame" x="65" y="267" width="185" height="22"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="DHD-pf-Ofx">
                             <font key="font" metaFont="system"/>

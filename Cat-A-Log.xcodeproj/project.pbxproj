@@ -83,11 +83,11 @@
 		4F420B1F1BB6121200105564 /* EndOfEntries2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F420B1E1BB6121200105564 /* EndOfEntries2.txt */; settings = {ASSET_TAGS = (); }; };
 		4F420B211BB61F4800105564 /* head5_1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F420B201BB61F4800105564 /* head5_1.txt */; settings = {ASSET_TAGS = (); }; };
 		4F420B231BB625BF00105564 /* head5_2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F420B221BB625BF00105564 /* head5_2.txt */; settings = {ASSET_TAGS = (); }; };
-		4F420B251BB6426700105564 /* Cat on book 512.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F420B241BB6426700105564 /* Cat on book 512.png */; settings = {ASSET_TAGS = (); }; };
 		4F6214861BB290E400F87183 /* ProgressWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6214841BB290E400F87183 /* ProgressWindowController.swift */; settings = {ASSET_TAGS = (); }; };
 		4F6214871BB290E400F87183 /* ProgressWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F6214851BB290E400F87183 /* ProgressWindowController.xib */; settings = {ASSET_TAGS = (); }; };
 		4F6214891BB34A1B00F87183 /* Authentication.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F6214881BB34A1B00F87183 /* Authentication.plist */; settings = {ASSET_TAGS = (); }; };
 		4F62148B1BB34F2000F87183 /* icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4F62148A1BB34F2000F87183 /* icon.jpg */; settings = {ASSET_TAGS = (); }; };
+		4F63A6B91BB819760009C5A4 /* Cat on book.icns in Resources */ = {isa = PBXBuildFile; fileRef = 4F63A6B81BB819760009C5A4 /* Cat on book.icns */; settings = {ASSET_TAGS = (); }; };
 		4F7107FE1B77748E00E21AAC /* Challenges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7107FD1B77748E00E21AAC /* Challenges.swift */; };
 		4F7812B51BB14AEA0036AD80 /* Section2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F7812B41BB14AEA0036AD80 /* Section2.txt */; settings = {ASSET_TAGS = (); }; };
 		4F8E87321BAFB19E00497D2F /* TitleEditorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8E87301BAFB19E00497D2F /* TitleEditorController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -213,11 +213,11 @@
 		4F420B1E1BB6121200105564 /* EndOfEntries2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = EndOfEntries2.txt; path = templates/EndOfEntries2.txt; sourceTree = "<group>"; };
 		4F420B201BB61F4800105564 /* head5_1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = head5_1.txt; path = templates/head5_1.txt; sourceTree = "<group>"; };
 		4F420B221BB625BF00105564 /* head5_2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = head5_2.txt; path = templates/head5_2.txt; sourceTree = "<group>"; };
-		4F420B241BB6426700105564 /* Cat on book 512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Cat on book 512.png"; path = "../Cat on book 512.png"; sourceTree = "<group>"; };
 		4F6214841BB290E400F87183 /* ProgressWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressWindowController.swift; sourceTree = "<group>"; };
 		4F6214851BB290E400F87183 /* ProgressWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressWindowController.xib; sourceTree = "<group>"; };
 		4F6214881BB34A1B00F87183 /* Authentication.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Authentication.plist; path = pLists/Authentication.plist; sourceTree = "<group>"; };
 		4F62148A1BB34F2000F87183 /* icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon.jpg; sourceTree = "<group>"; };
+		4F63A6B81BB819760009C5A4 /* Cat on book.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "Cat on book.icns"; sourceTree = "<group>"; };
 		4F7107FD1B77748E00E21AAC /* Challenges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Challenges.swift; path = "Data Sources.swift/Challenges.swift"; sourceTree = "<group>"; };
 		4F7812B41BB14AEA0036AD80 /* Section2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Section2.txt; path = templates/Section2.txt; sourceTree = "<group>"; };
 		4F8E87301BAFB19E00497D2F /* TitleEditorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TitleEditorController.swift; path = Controllers/TitleEditorController.swift; sourceTree = "<group>"; };
@@ -283,8 +283,8 @@
 				4F0F927C1BA3DE6F00724D9C /* BestAward2.txt */,
 				4F0F927D1BA3DE6F00724D9C /* BestAward3.txt */,
 				4F0F927E1BA3DE6F00724D9C /* BestAward4.txt */,
-				4F0F927F1BA3DE6F00724D9C /* BestOfBreedEnd.txt */,
 				4F0F92801BA3DE6F00724D9C /* BestOfBreedStart.txt */,
+				4F0F927F1BA3DE6F00724D9C /* BestOfBreedEnd.txt */,
 				4F0F92811BA3DE6F00724D9C /* Box entered.txt */,
 				4F0F92821BA3DE6F00724D9C /* Box no ring.txt */,
 				4F0F92831BA3DE6F00724D9C /* Box not entered.txt */,
@@ -419,7 +419,7 @@
 		4F38B85A1B6D8CCA006356DD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4F420B241BB6426700105564 /* Cat on book 512.png */,
+				4F63A6B81BB819760009C5A4 /* Cat on book.icns */,
 				4F1247A01BB4913A00031CE0 /* Cat-A-Log Help */,
 				4FBD2EE31B81A84500E28D93 /* Credits.rtf */,
 				4F62148A1BB34F2000F87183 /* icon.jpg */,
@@ -642,8 +642,8 @@
 				4F420B231BB625BF00105564 /* head5_2.txt in Resources */,
 				4F0F92DB1BA3DE6F00724D9C /* Top ten end table.txt in Resources */,
 				4F0F92AB1BA3DE6F00724D9C /* ACFAoE start.txt in Resources */,
-				4F420B251BB6426700105564 /* Cat on book 512.png in Resources */,
 				4F0F92A91BA3DE6F00724D9C /* ACFAoE end row.txt in Resources */,
+				4F63A6B91BB819760009C5A4 /* Cat on book.icns in Resources */,
 				4F6214871BB290E400F87183 /* ProgressWindowController.xib in Resources */,
 				4F0F92AD1BA3DE6F00724D9C /* ACFAward start row.txt in Resources */,
 				4F0F92AE1BA3DE6F00724D9C /* ACFAward start table.txt in Resources */,

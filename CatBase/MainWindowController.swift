@@ -194,6 +194,7 @@ class MainWindowController: NSWindowController {
     if let window = window {
       let sheetController = AddShowWindowController()
       if Globals.currentShow != nil {
+        speaker.startSpeakingString("Editing \(Globals.currentShowName)")
         sheetController.setToShow(show: Globals.currentShow!)
         window.beginSheet(sheetController.window!, completionHandler: { response in
           // The sheet has finished. Did the user click 'OK'?

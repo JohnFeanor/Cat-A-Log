@@ -9,10 +9,10 @@
 		<dict>
 			<key>CFBundleTypeExtensions</key>
 			<array>
-				<string>.cats</string>
+				<string>cats</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>Cat on book 512.png</string>
+			<string>Cat on book</string>
 			<key>CFBundleTypeName</key>
 			<string>Cats source</string>
 			<key>CFBundleTypeRole</key>

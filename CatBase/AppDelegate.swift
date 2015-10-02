@@ -365,8 +365,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   @IBAction func exportACatFile(sender: AnyObject) {
     let panel = NSSavePanel()
     panel.allowedFileTypes = ["cats"]
+    guard let mainWindow = mainWindowController?.window
+      else { fatalError("Main window is nil") }
     
-    panel.beginSheetModalForWindow(window) {
+    panel.beginSheetModalForWindow(mainWindow) {
       (result) in
       if result == NSModalResponseOK {
         let url = self.savePanel?.URL
