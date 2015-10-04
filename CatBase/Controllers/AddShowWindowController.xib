@@ -321,7 +321,7 @@ DQ
                     </popUpButton>
                     <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LK8-0v-mnk">
                         <rect key="frame" x="191" y="230" width="19" height="27"/>
-                        <stepperCell key="cell" continuous="YES" alignment="left" minValue="1" maxValue="100" doubleValue="1" id="jSB-vL-EBl"/>
+                        <stepperCell key="cell" continuous="YES" alignment="left" minValue="1" maxValue="6" doubleValue="1" id="jSB-vL-EBl"/>
                         <connections>
                             <binding destination="-2" name="value" keyPath="numberOfRings" id="kLK-Wz-cye"/>
                         </connections>

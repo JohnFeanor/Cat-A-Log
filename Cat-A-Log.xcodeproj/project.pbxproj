@@ -83,6 +83,7 @@
 		4F420B1F1BB6121200105564 /* EndOfEntries2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F420B1E1BB6121200105564 /* EndOfEntries2.txt */; settings = {ASSET_TAGS = (); }; };
 		4F420B211BB61F4800105564 /* head5_1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F420B201BB61F4800105564 /* head5_1.txt */; settings = {ASSET_TAGS = (); }; };
 		4F420B231BB625BF00105564 /* head5_2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F420B221BB625BF00105564 /* head5_2.txt */; settings = {ASSET_TAGS = (); }; };
+		4F4B889B1BC0D35D00CF734B /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4B889A1BC0D35D00CF734B /* DateFormatter.swift */; settings = {ASSET_TAGS = (); }; };
 		4F6214861BB290E400F87183 /* ProgressWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6214841BB290E400F87183 /* ProgressWindowController.swift */; settings = {ASSET_TAGS = (); }; };
 		4F6214871BB290E400F87183 /* ProgressWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F6214851BB290E400F87183 /* ProgressWindowController.xib */; settings = {ASSET_TAGS = (); }; };
 		4F6214891BB34A1B00F87183 /* Authentication.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F6214881BB34A1B00F87183 /* Authentication.plist */; settings = {ASSET_TAGS = (); }; };
@@ -213,6 +214,7 @@
 		4F420B1E1BB6121200105564 /* EndOfEntries2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = EndOfEntries2.txt; path = templates/EndOfEntries2.txt; sourceTree = "<group>"; };
 		4F420B201BB61F4800105564 /* head5_1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = head5_1.txt; path = templates/head5_1.txt; sourceTree = "<group>"; };
 		4F420B221BB625BF00105564 /* head5_2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = head5_2.txt; path = templates/head5_2.txt; sourceTree = "<group>"; };
+		4F4B889A1BC0D35D00CF734B /* DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateFormatter.swift; path = Formatters/DateFormatter.swift; sourceTree = "<group>"; };
 		4F6214841BB290E400F87183 /* ProgressWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressWindowController.swift; sourceTree = "<group>"; };
 		4F6214851BB290E400F87183 /* ProgressWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressWindowController.xib; sourceTree = "<group>"; };
 		4F6214881BB34A1B00F87183 /* Authentication.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Authentication.plist; path = pLists/Authentication.plist; sourceTree = "<group>"; };
@@ -477,6 +479,7 @@
 				4FFE16CA1B6ECB320020E1D0 /* AllCapsFormatter.swift */,
 				4FFE16CB1B6ECB320020E1D0 /* NameFormatter.swift */,
 				4F0564E91BA2B48500285C46 /* CatNameFormatter.swift */,
+				4F4B889A1BC0D35D00CF734B /* DateFormatter.swift */,
 			);
 			name = Formatters;
 			sourceTree = "<group>";
@@ -677,6 +680,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F4B889B1BC0D35D00CF734B /* DateFormatter.swift in Sources */,
 				4FB9D11F1B75ABA800046CBA /* DataSource.swift in Sources */,
 				4F38B8891B6D9156006356DD /* Entry.swift in Sources */,
 				4F38B8881B6D9156006356DD /* Cat.swift in Sources */,

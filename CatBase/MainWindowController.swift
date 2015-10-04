@@ -243,6 +243,7 @@ class MainWindowController: NSWindowController {
         return
       }
       let sheetController = EntrySheetController()
+      assert(self.managedObjectContext != nil)
       sheetController.managedObjectContext = self.managedObjectContext
       speaker.startSpeakingString("adding an entry")
       window.beginSheet(sheetController.window!, completionHandler: { response in

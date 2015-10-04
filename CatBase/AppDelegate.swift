@@ -354,7 +354,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       }
       start = end
     }
-    runAlertWithMessage("Imported \(count) cats.\nFound \(duplicates) cats which were already in the database.\nDuplicates were not imported.", buttons: "OK")
+    runAlertWithMessage("Imported \(count) cats.\nFound \(duplicates) cats already in the database.\nDuplicates were not imported.", buttons: "OK")
 
     do { try self.managedObjectContext!.save() }
     catch{

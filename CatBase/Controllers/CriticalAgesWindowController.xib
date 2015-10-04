@@ -5,7 +5,7 @@
         <capability name="box content view" minToolsVersion="7.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="CriticalAgesWindowController" customModule="CatBase" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="CriticalAgesWindowController" customModule="Cat_A_Log" customModuleProvider="target">
             <connections>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
@@ -61,14 +61,14 @@
                                 </textField>
                                 <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6D9-Yf-UKF">
                                     <rect key="frame" x="87" y="50" width="19" height="27"/>
-                                    <stepperCell key="cell" continuous="YES" alignment="left" maxValue="100" id="k5Q-ej-l0f"/>
+                                    <stepperCell key="cell" continuous="YES" alignment="left" maxValue="24" id="k5Q-ej-l0f"/>
                                     <connections>
                                         <binding destination="-2" name="value" keyPath="showAgeMinMonths" id="wb8-wZ-LOk"/>
                                     </connections>
                                 </stepper>
                                 <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tI8-OO-qp1">
                                     <rect key="frame" x="86" y="18" width="19" height="27"/>
-                                    <stepperCell key="cell" continuous="YES" alignment="left" maxValue="100" id="evH-SA-oXM"/>
+                                    <stepperCell key="cell" continuous="YES" alignment="left" maxValue="52" id="evH-SA-oXM"/>
                                     <connections>
                                         <binding destination="-2" name="value" keyPath="showAgeMinWeeks" id="rR7-hf-fjj"/>
                                     </connections>
@@ -109,7 +109,7 @@
                                 </stepper>
                                 <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xJP-og-aUq">
                                     <rect key="frame" x="87" y="25" width="19" height="27"/>
-                                    <stepperCell key="cell" continuous="YES" alignment="left" maxValue="100" id="ZAT-AP-nZU"/>
+                                    <stepperCell key="cell" continuous="YES" alignment="left" maxValue="24" doubleValue="24" id="ZAT-AP-nZU"/>
                                     <connections>
                                         <binding destination="-2" name="value" keyPath="maxPendingAgeWeeks" id="UVK-J1-mc1"/>
                                     </connections>
@@ -167,14 +167,14 @@
                                 </textField>
                                 <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="07Z-DQ-DCE">
                                     <rect key="frame" x="87" y="47" width="19" height="27"/>
-                                    <stepperCell key="cell" continuous="YES" alignment="left" maxValue="100" id="WOJ-91-Vbw"/>
+                                    <stepperCell key="cell" continuous="YES" alignment="left" maxValue="24" id="WOJ-91-Vbw"/>
                                     <connections>
                                         <binding destination="-2" name="value" keyPath="litterAgeMinMonths" id="knx-OX-ojv"/>
                                     </connections>
                                 </stepper>
                                 <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JMG-3d-9ei">
                                     <rect key="frame" x="87" y="15" width="19" height="27"/>
-                                    <stepperCell key="cell" continuous="YES" alignment="left" maxValue="100" id="F8g-xc-goc"/>
+                                    <stepperCell key="cell" continuous="YES" alignment="left" maxValue="100" doubleValue="52" id="F8g-xc-goc"/>
                                     <connections>
                                         <binding destination="-2" name="value" keyPath="litterAgeMinWeeks" id="w4A-tD-wmD"/>
                                     </connections>
@@ -232,7 +232,7 @@
                                 </textField>
                                 <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hba-LK-ALH">
                                     <rect key="frame" x="87" y="57" width="19" height="27"/>
-                                    <stepperCell key="cell" continuous="YES" alignment="left" maxValue="100" id="wjp-6A-n5j"/>
+                                    <stepperCell key="cell" continuous="YES" alignment="left" maxValue="24" id="wjp-6A-n5j"/>
                                     <connections>
                                         <binding destination="-2" name="value" keyPath="kittenAgeMax" id="2R6-Jz-bBW"/>
                                     </connections>

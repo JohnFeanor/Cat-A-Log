@@ -17,6 +17,7 @@ class EntrySheetController: NSWindowController {
 // -------------------------------
   @IBOutlet weak var cageSizeTextField: NSTextField!
   @IBOutlet weak var initialTextField: NSTextField!
+  @IBOutlet weak var datePicker: NSDatePicker!
   
   var dateSet = false
   
@@ -114,7 +115,8 @@ class EntrySheetController: NSWindowController {
   dynamic var birthDate: NSDate = {
     let showdate = Globals.currentShow?.date ?? NSDate()
     return NSCalendar.currentCalendar().dateByAddingUnit(.Month, value: -5, toDate: showdate, options: []) ?? showdate
-  }()
+    }()
+  
   dynamic var sire      = String()
   dynamic var dam       = String()
   dynamic var exhibitor = String()
@@ -178,6 +180,9 @@ class EntrySheetController: NSWindowController {
   
   override func windowDidLoad() {
     super.windowDidLoad()
+    
+//    let dateFormatter = DateFormatter()
+//    datePicker.delegate = dateFormatter
     
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
   }
@@ -367,8 +372,8 @@ class EntrySheetController: NSWindowController {
     window!.sheetParent!.endSheet(window!, returnCode: response)
   }
   
-  @IBAction func datePressed(sender: AnyObject) {
+  @IBAction func datePressed(sender: AnyObject) {    
     dateSet = true
   }
- 
+
 }

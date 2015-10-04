@@ -17,6 +17,8 @@
 			<string>Cats source</string>
 			<key>CFBundleTypeRole</key>
 			<string>Viewer</string>
+			<key>LSTypeIsPackage</key>
+			<integer>1</integer>
 		</dict>
 	</array>
 	<key>CFBundleExecutable</key>
