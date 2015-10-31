@@ -18,7 +18,7 @@
         <window title="Cat-a-log" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="default" id="5Gn-sJ-p9G">
             <windowStyleMask key="styleMask" titled="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="253" y="236" width="884" height="455"/>
+            <rect key="contentRect" x="226" y="200" width="884" height="455"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
             <value key="minSize" type="size" width="869" height="413"/>
             <view key="contentView" id="m1x-mY-ltb">

@@ -20,8 +20,10 @@ class DateFormatter: NSObject, NSDatePickerCellDelegate {
     if components.year < 2000 || components.year >= 2100 {
       let newValue = components.year % 100 + 2000
       components.year = newValue
-      let newDate = calendar.dateFromComponents(components)
-      proposedDateValue.memory = newDate
+      if let newDate = calendar.dateFromComponents(components) {
+        speaker.startSpeakingString("Did you mean \(newValue)?")
+        proposedDateValue.memory = newDate
+      }
     }
   }
 }

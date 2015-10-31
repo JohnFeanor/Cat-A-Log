@@ -930,8 +930,8 @@ extension MainWindowController {
         } else {
           let breeder = entry.cat.breeder
           let exhibitor = entry.cat.exhibitor
-          if breeder == exhibitor { regoEtc = "Br/Ex:\(breeder)" }
-          else { regoEtc = "Br:\(breeder) Ex:\(exhibitor)" }
+          if breeder == exhibitor { regoEtc = "\(entry.cat.registration) Br/Ex:\(breeder)" }
+          else { regoEtc = "\(entry.cat.registration) Br:\(breeder) Ex:\(exhibitor)" }
         }
         data.appendData(regoEtc.data)
         judgesNotes.appendData(nbspace)
