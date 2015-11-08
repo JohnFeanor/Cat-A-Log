@@ -750,12 +750,14 @@ extension MainWindowController {
           // Write out new breed
           // -------------------
           let breedHeading: String
-          if entry.cat.isEntire || entry.cat.isKitten {
-            breedHeading = "\(thisBreed) \(entry.cat.sectionName)s"
-          } else {
-            breedHeading = "\(thisBreed) \(entry.cat.sectionName)"
+          if !entry.cat.isCompanion {
+            if entry.cat.isEntire || entry.cat.isKitten {
+              breedHeading = "\(thisBreed) \(entry.cat.sectionName)s"
+            } else {
+              breedHeading = "\(thisBreed) \(entry.cat.sectionName)"
+            }
+            addData(breed1, breedHeading, breed2)
           }
-          addData(breed1, breedHeading, breed2)
 
           lastColour  = ""
           lastClass   = ""
@@ -974,7 +976,8 @@ extension MainWindowController {
     
     // MARK: - Do best of breed list
     // ------------------------------
-    for i in 0 ..< Breeds.numberOfBreeds {
+    let bestOfBreedsNumbers = Breeds.numberOfBreeds - 1
+    for i in 0 ..< bestOfBreedsNumbers {
       if breedsPresent.contains(Breeds.nameOf(i)) {
         addData(bestOfBreedStart, Breeds.nameOf(i), bestOfBreedEnd)
       }

@@ -237,6 +237,9 @@ class EntrySheetController: NSWindowController {
     } else {
       cageType = zero
     }
+    if original.hireCage.boolValue {
+      cageType = _hireCage
+    }
   }
   
   private func checkField(field: String) -> Bool {

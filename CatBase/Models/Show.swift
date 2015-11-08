@@ -18,7 +18,7 @@ struct AddShowDataSheet {
   var numberOfRings = NSNumber(integer: 3)
 }
 
-class Show: NSManagedObject {
+class Show: NSManagedObject, CustomDebugStringConvertible {
   
   static var entity = "Show"
   static var properties = [Show.affiliation, Show.date, Show.judgeLH1, Show.judgeLH2, Show.judgeLH3, Show.judgeLH4, Show.judgeLH5, Show.judgeLH6, Show.judgeSH1, Show.judgeSH2, Show.judgeSH3, Show.judgeSH4, Show.judgeSH5, Show.judgeSH6, Show.name, Show.numberOfRings]
@@ -91,6 +91,33 @@ class Show: NSManagedObject {
     return ans
   }
   
+  
+  // Print a list of the cats in the show
+  // ------------------------------------
+  override var debugDescription: String {
+    var ans: String = ""
+    if let entries = self.entries {
+      for entry in entries {
+        if let entry = entry as? Entry {
+          ans = ans + ", " + entry.cat.name
+        }
+      }
+    }
+    return ans
+  }
+  
+  override var description: String {
+    var ans: String = ""
+    if let entries = self.entries {
+      for entry in entries {
+        if let entry = entry as? Entry {
+          ans = ans + ", " + entry.cat.name
+        }
+      }
+    }
+    return ans
+  }
+  
   // ************************************
   // MARK: - Methods
   // ************************************
@@ -104,6 +131,7 @@ class Show: NSManagedObject {
   // ************************************
   // MARK: - Queries about the show
   // ************************************
+  
   
   // Is a cat born on a given date a kitten at this show?
   // ----------------------------------------------------

@@ -179,15 +179,10 @@ func setAge(key: String, toWeeks weeks:Int? = nil, andMonths months: Int? = nil)
 
 func existingCatsWithRegistration(rego: String, orName name: String, inContext context: NSManagedObjectContext) -> [Cat]? {
   // find any cats with the same registration (unless pending)
-  let sameRego: [Cat]
-  if rego != pending {
-    sameRego  = fetchCatsWithName(name, inContext: context)
-  } else {
-    sameRego = []
-  }
+  let sameRego  = fetchCatsWithRegistration(rego, inContext: context)
   
   // find any cats with the same name
-  let sameName = fetchCatsWithRegistration(rego, inContext: context)
+  let sameName = fetchCatsWithName(name, inContext: context)
   
   // put all those found cats into one big array
   let same = sameRego + sameName.filter { !sameRego.contains($0)}
@@ -213,6 +208,9 @@ func fetchEntitiesNamed(entityName: String, inContext context:NSManagedObjectCon
 }
 
 func fetchCatsWithRegistration(registration: String, inContext context: NSManagedObjectContext) -> [Cat] {
+  if registration == pending {
+    return []
+  }
   return fetchEntitiesNamed(Cat.entity, inContext: context, usingFormat: "\(Cat.registration) LIKE[c] \"\(registration)\"") as! [Cat]
 }
 
@@ -299,6 +297,8 @@ func runAlertWithMessage(message: String, buttons: String ...) -> NSModalRespons
 // *******************
 // MARK: - Globals
 //********************
+
+let _hireCageNumber = 5
 
 class Globals: NSObject {
 

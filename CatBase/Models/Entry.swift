@@ -176,6 +176,9 @@ class Entry: NSManagedObject {
   }
   
   var typeOfCage: String {
+    if self.hireCage.boolValue {
+      return Globals.cageTypes.names[_hireCageNumber]
+    }
     if let index = Globals.cageTypes.sizes.indexOf(self.cageSize.integerValue) {
       return Globals.cageTypes.names[index]
     }
@@ -288,6 +291,14 @@ class Entry: NSManagedObject {
   
   dynamic var worker: String {
     if self.willWork.boolValue {
+      return "Yes"
+    } else {
+      return "No"
+    }
+  }
+  
+  dynamic var hiring: String {
+    if self.hireCage.boolValue {
       return "Yes"
     } else {
       return "No"
