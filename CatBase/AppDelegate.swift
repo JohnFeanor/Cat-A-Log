@@ -16,6 +16,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   @IBOutlet weak var window: NSWindow!
   @IBOutlet weak var timesleftToRunString: NSTextField!
   
+  @IBOutlet weak var progressWheel: NSProgressIndicator!
+  
   var mainWindowController: MainWindowController?
   var coloursEditorController: ColoursWindowController? = nil
   var criticalAgesWindowController: CriticalAgesWindowController? = nil
@@ -23,6 +25,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   
   var openPanel: NSOpenPanel? = nil
   var savePanel: NSSavePanel? = nil
+  
+  var progressPanel: ProgressWindowController? = nil
+  
+  var myProgress = 0.0
   
   dynamic var writeMenuTitle = "Write catalogue ..."
   dynamic var writeMenuAvailable = true
@@ -302,45 +308,45 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       // The sheet has finished. Did the user click 'OK'?
       if response == NSModalResponseOK {
         // import the cats
-        let url = self.openPanel?.URL
-        self.importCatsAtURL(url)
+        if let url = self.openPanel?.URL {
+          self.progressPanel = ProgressWindowController()
+          self.performSelector(Selector("importCatsAtURL:"), withObject: url, afterDelay: 0.1)
+        } else {
+          errorAlert(message: "Cannot open the cat file")
+        }
+//        self.progressPanel = ProgressWindowController()
+        
         self.openPanel = nil
       }
     }
     openPanel = panel
   }
   
-  func importCatsAtURL(url: NSURL?) {
-    guard let url = url
-      else {
-        return
-    }
+  func importCatsAtURL(url: NSURL) {
     let buffer: NSString
-    do {
-      buffer = try NSString(contentsOfURL: url, encoding: NSUTF8StringEncoding)
-    }
+    do { buffer = try NSString(contentsOfURL: url, encoding: NSUTF8StringEncoding) }
     catch {
       errorAlert(message: "Error trying to read Cats file")
       return
     }
+    guard let progressPanel = self.progressPanel
+      else { errorAlert(message: "Cannot open progress panel"); return }
     
     let strings = buffer.componentsSeparatedByString("\t")
     
     let numberOfCatProperties = Cat.positions.count
     let numberOfCats = strings.count / numberOfCatProperties
     print("Preparing to import \(numberOfCats) cats")
-    
-    let progressWindowController = ProgressWindowController()
-    progressWindowController.showWindow(self)
-    progressWindowController.progressBarSize = Double(numberOfCats)
     speaker.startSpeakingString("This may take a while")
+    progressPanel.showWindow(self)
+    progressPanel.progressBarSize = Double(numberOfCats)
     
     var start = 0
     var count = 0
     var duplicates = 0
     
     for _ in 0 ..< numberOfCats {
-      progressWindowController.incrementProgress()
+      progressPanel.incrementProgress()
       let end = start + numberOfCatProperties
       let thisCat = Array(strings[start ..< end])
       let registration = thisCat[Cat.positions[Cat.registration]!]
@@ -360,6 +366,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     catch{
       errorAlert(message: "Warning: the imported cats could not be saved into the database")
     }
+    self.progressPanel = nil
   }
   
   @IBAction func exportACatFile(sender: AnyObject) {

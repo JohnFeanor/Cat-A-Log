@@ -549,6 +549,12 @@ DQ
                                                 <string key="NSPredicateFormat">cat.title contains[c] $value</string>
                                             </dictionary>
                                         </binding>
+                                        <binding destination="lq1-w2-pGH" name="predicate17" keyPath="filterPredicate" previousBinding="eJp-hd-qA3" id="pVQ-ee-4Dg">
+                                            <dictionary key="options">
+                                                <string key="NSDisplayName">Hiring (Y or N)</string>
+                                                <string key="NSPredicateFormat">hiring beginswith[c] $value</string>
+                                            </dictionary>
+                                        </binding>
                                         <binding destination="lq1-w2-pGH" name="predicate14" keyPath="filterPredicate" previousBinding="ssI-KZ-Cxm" id="pZ0-7T-0KV">
                                             <dictionary key="options">
                                                 <string key="NSDisplayName">Sex</string>
@@ -571,12 +577,6 @@ DQ
                                             <dictionary key="options">
                                                 <string key="NSDisplayName">Class</string>
                                                 <string key="NSPredicateFormat">cat.challenge beginswith[c] $value</string>
-                                            </dictionary>
-                                        </binding>
-                                        <binding destination="lq1-w2-pGH" name="predicate17" keyPath="filterPredicate" previousBinding="eJp-hd-qA3" id="pVQ-ee-4Dg">
-                                            <dictionary key="options">
-                                                <string key="NSDisplayName">Hiring (Y or N)</string>
-                                                <string key="NSPredicateFormat">hiring beginswith[c] $value</string>
                                             </dictionary>
                                         </binding>
                                     </connections>

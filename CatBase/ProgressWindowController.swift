@@ -8,6 +8,7 @@
 
 import Cocoa
 
+
 class ProgressWindowController: NSWindowController {
   
   @IBOutlet weak var progressBar: NSProgressIndicator!
@@ -18,13 +19,18 @@ class ProgressWindowController: NSWindowController {
   
   override func windowDidLoad() {
     super.windowDidLoad()
-    
   }
   
   var progressBarSize: Double = 100.0
   
   func incrementProgress() {
     progressBar.incrementBy(100.0 / progressBarSize)
+    progressBar.displayIfNeeded()
+  }
+  
+  func  setProgress(newValue: Double) {
+    let percentage = 100.0 / progressBarSize * newValue
+    progressBar.doubleValue = percentage > 100.0 ? 100.0 : percentage
     progressBar.displayIfNeeded()
   }
   
