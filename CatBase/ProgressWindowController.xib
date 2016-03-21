@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9059"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9060"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="ProgressWindowController" customModule="Cat_A_Log" customModuleProvider="target">
             <connections>
-                <outlet property="progressBar" destination="Efk-6i-8Bl" id="w9T-sT-o7J"/>
+                <outlet property="progressBar" destination="Efk-6i-8Bl" id="R18-61-YQB"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -14,24 +14,30 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <window title="ProgressWindow" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="F0z-JX-Cv5" userLabel="ProgressWindow">
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="487" y="391" width="410" height="67"/>
+            <rect key="contentRect" x="487" y="391" width="410" height="116"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
             <view key="contentView" id="se5-gp-TjO">
-                <rect key="frame" x="0.0" y="0.0" width="410" height="67"/>
+                <rect key="frame" x="0.0" y="0.0" width="410" height="116"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kJZ-ic-adr">
-                        <rect key="frame" x="157" y="44" width="96" height="17"/>
+                        <rect key="frame" x="0.0" y="62" width="410" height="17"/>
                         <animations/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Importing Cats" id="l7d-SZ-0i0">
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Importing Cats" id="l7d-SZ-0i0">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
+                        <connections>
+                            <binding destination="-2" name="value" keyPath="progressLabel" id="3uV-is-Pj9"/>
+                        </connections>
                     </textField>
-                    <progressIndicator fixedFrame="YES" maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="Efk-6i-8Bl">
-                        <rect key="frame" x="55" y="19" width="300" height="20"/>
+                    <progressIndicator wantsLayer="YES" fixedFrame="YES" maxValue="100" displayedWhenStopped="NO" indeterminate="YES" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="Efk-6i-8Bl">
+                        <rect key="frame" x="189" y="20" width="32" height="32"/>
                         <animations/>
+                        <connections>
+                            <binding destination="-2" name="value" keyPath="progressValue" id="OUY-Nr-sye"/>
+                        </connections>
                     </progressIndicator>
                 </subviews>
                 <animations/>
@@ -39,7 +45,8 @@
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
             </connections>
-            <point key="canvasLocation" x="250" y="234.5"/>
+            <point key="canvasLocation" x="250" y="259"/>
         </window>
+        <userDefaultsController representsSharedInstance="YES" id="YBo-Xb-i5P"/>
     </objects>
 </document>

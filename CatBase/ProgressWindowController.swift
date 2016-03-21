@@ -13,6 +13,11 @@ class ProgressWindowController: NSWindowController {
   
   @IBOutlet weak var progressBar: NSProgressIndicator!
   
+  dynamic var progressLabel = "Updating cats"
+  dynamic var progressValue = 100.0
+  
+  private var masterWindow: NSWindow? = nil
+  
   override var windowNibName: String {
     return "ProgressWindowController"
   }
@@ -24,14 +29,32 @@ class ProgressWindowController: NSWindowController {
   var progressBarSize: Double = 100.0
   
   func incrementProgress() {
-    progressBar.incrementBy(100.0 / progressBarSize)
-    progressBar.displayIfNeeded()
+    progressValue += 1.0
   }
   
-  func  setProgress(newValue: Double) {
-    let percentage = 100.0 / progressBarSize * newValue
-    progressBar.doubleValue = percentage > 100.0 ? 100.0 : percentage
-    progressBar.displayIfNeeded()
+  func beginCountDown(onWindow master: NSWindow, withLabel label: String? = nil) {
+    progressValue = 0.0
+    if label != nil {
+      self.progressLabel = label!
+    }
+    masterWindow = master
+    master.beginSheet(self.window!) { response in
+    }
+    if progressBar != nil {
+      progressBar.startAnimation(self)
+    } else {
+      print("Progress Bar is nil")
+    }
+  }
+  
+  func endCountDown() {
+    if progressBar != nil {
+      progressBar.stopAnimation(self)
+    }
+    if masterWindow != nil  {
+      masterWindow?.endSheet(self.window!)
+       masterWindow = nil
+    }
   }
   
 }

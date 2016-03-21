@@ -310,12 +310,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // import the cats
         if let url = self.openPanel?.URL {
           self.progressPanel = ProgressWindowController()
+          // delay so that the open panel can close
           self.performSelector(Selector("importCatsAtURL:"), withObject: url, afterDelay: 0.1)
         } else {
           errorAlert(message: "Cannot open the cat file")
         }
-//        self.progressPanel = ProgressWindowController()
-        
         self.openPanel = nil
       }
     }
@@ -338,22 +337,22 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let numberOfCats = strings.count / numberOfCatProperties
     print("Preparing to import \(numberOfCats) cats")
     speaker.startSpeakingString("This may take a while")
-    progressPanel.showWindow(self)
-    progressPanel.progressBarSize = Double(numberOfCats)
-    
+    if let mainWindow = mainWindowController?.window {
+      progressPanel.beginCountDown(onWindow: mainWindow, withLabel: "Preparing to import \(numberOfCats) cats")
+    }
+
     var start = 0
-    var count = 0
     var duplicates = 0
+    var count = 0
     
     for _ in 0 ..< numberOfCats {
-      progressPanel.incrementProgress()
       let end = start + numberOfCatProperties
       let thisCat = Array(strings[start ..< end])
       let registration = thisCat[Cat.positions[Cat.registration]!]
       let name = thisCat[Cat.positions[Cat.name]!]
       
       if existingCatsWithRegistration(registration, orName: name, inContext: self.managedObjectContext!) == nil {
-        let _ = Cat(array: Array(thisCat), insertIntoManagedObjectContext: self.managedObjectContext)
+        let _ = Cat(array:thisCat, insertIntoManagedObjectContext: self.managedObjectContext)
         count++
       } else {
         duplicates++
@@ -361,6 +360,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       start = end
     }
     runAlertWithMessage("Imported \(count) cats.\nFound \(duplicates) cats already in the database.\nDuplicates were not imported.", buttons: "OK")
+    progressPanel.endCountDown()
 
     do { try self.managedObjectContext!.save() }
     catch{

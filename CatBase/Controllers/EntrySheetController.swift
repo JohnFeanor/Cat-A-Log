@@ -151,11 +151,18 @@ class EntrySheetController: NSWindowController {
   dynamic var litterCage  = false
   
   dynamic var ring1 = true
-  dynamic var ring2 = true
-  dynamic var ring3 = true
-  dynamic var ring4 = false
-  dynamic var ring5 = false
-  dynamic var ring6 = false
+  dynamic var ring2 = Globals.currentShow!.numberOfRings.integerValue > 1
+  dynamic var ring3 = Globals.currentShow!.numberOfRings.integerValue > 2
+  dynamic var ring4 = Globals.currentShow!.numberOfRings.integerValue > 3
+  dynamic var ring5 = Globals.currentShow!.numberOfRings.integerValue > 4
+  dynamic var ring6 = Globals.currentShow!.numberOfRings.integerValue > 5
+  
+  dynamic var ring1Available = true
+  dynamic var ring2Available = Globals.currentShow!.numberOfRings.integerValue > 1
+  dynamic var ring3Available = Globals.currentShow!.numberOfRings.integerValue > 2
+  dynamic var ring4Available = Globals.currentShow!.numberOfRings.integerValue > 3
+  dynamic var ring5Available = Globals.currentShow!.numberOfRings.integerValue > 4
+  dynamic var ring6Available = Globals.currentShow!.numberOfRings.integerValue > 5
   
   dynamic var willWork = false
   dynamic var catalogueRequired = false
