@@ -19,7 +19,7 @@ private extension Character {
   }
 }
 
-class NameFormatter: NSFormatter {
+class NameFormatter: Formatter {
   
   enum Action {
     case leave
@@ -47,7 +47,7 @@ class NameFormatter: NSFormatter {
   
   // MARK: - Convenience method to store completion strings
   
-  func addToList(name: String) {
+  func addToList(_ name: String) {
     if !NameFormatter.list.contains(name) {
       NameFormatter.list.append(name)
     }
@@ -55,12 +55,12 @@ class NameFormatter: NSFormatter {
   
   // MARK: - Specific formatter methods
   
-  func  firstKeyForPartialString(prefix: String?) -> String? {
+  func  firstKeyForPartialString(_ prefix: String?) -> String? {
     if let prefix = prefix {
       var currentChoice: String? = nil
-      let lowercaseprefix = prefix.lowercaseString
+      let lowercaseprefix = prefix.lowercased()
       for string in list {
-        if string.lowercaseString.hasPrefix(lowercaseprefix) {
+        if string.lowercased().hasPrefix(lowercaseprefix) {
           if currentChoice == nil {
             currentChoice = string
           } else if string.characters.count < (currentChoice!).characters.count {
@@ -74,7 +74,7 @@ class NameFormatter: NSFormatter {
     }
   }
   
-  private func titleCase(text: String) -> String {
+  fileprivate func titleCase(_ text: String) -> String {
     
     if text.isEmpty {
       return text
@@ -84,7 +84,7 @@ class NameFormatter: NSFormatter {
     
     // Capitialize the first letter of a sentence
     if sentenceLength == 1 {
-      sentence[0] = sentence[0].uppercaseString
+      sentence[0] = sentence[0].uppercased()
       return sentence[0]
     }
     
@@ -92,11 +92,11 @@ class NameFormatter: NSFormatter {
     var startOfWord = 0
     var lengthOfWord = 0
     let endOfSentence = sentenceLength - 1
-    let start = wordCharacter.evaluateWithObject(sentence[endOfSentence]) ? endOfSentence : endOfSentence - 1
-    for x in start.stride(through: 0, by: -1) {
+    let start = wordCharacter.evaluate(with: sentence[endOfSentence]) ? endOfSentence : endOfSentence - 1
+    for x in stride(from: start, through: 0, by: -1) {
       let letter = sentence[x]
-      if alphaCharacter.evaluateWithObject(letter) || x == start {
-        lengthOfWord++
+      if alphaCharacter.evaluate(with: letter) || x == start {
+        lengthOfWord += 1
       } else {
         startOfWord = x + 1
         break
@@ -108,7 +108,7 @@ class NameFormatter: NSFormatter {
     startOfWord = startOfWord > endOfSentence ? endOfSentence : startOfWord
     for x in startOfWord ... endOfSentence {
       let letter = sentence[x]
-      if alphaCharacter.evaluateWithObject(letter) {
+      if alphaCharacter.evaluate(with: letter) {
         lastWord += letter
       } else {
         if letter == apostrophy {
@@ -124,19 +124,19 @@ class NameFormatter: NSFormatter {
     let following: String? = last >= sentenceLength ? nil : sentence[last]
     switch capitalize(lastWord, preceding: preceding, following: following) {
     case .capitalize:
-      sentence[startOfWord] = sentence[startOfWord].uppercaseString
+      sentence[startOfWord] = sentence[startOfWord].uppercased()
     case .uppercase:
       for i in startOfWord ..< last {
-        sentence[i] = sentence[i].uppercaseString
+        sentence[i] = sentence[i].uppercased()
       }
     default:
       break
     }
 
-    return sentence.reduce("", combine: {$0 + $1})
+    return sentence.reduce("", {$0 + $1})
   }
   
-  func capitalize(word: String, preceding: String?, following: String?) -> Action {
+  func capitalize(_ word: String, preceding: String?, following: String?) -> Action {
     
     if !exempted.contains(word) {
       // Words with more than one letter get capitalized
@@ -161,7 +161,7 @@ class NameFormatter: NSFormatter {
   
   // MARK: - general formatter methods that must be overwritten
   
-  override func stringForObjectValue(obj: AnyObject?) -> String? {
+  override func string(for obj: Any?) -> String? {
     // watch out for obj being nil
     if obj == nil {
       return nil
@@ -169,55 +169,53 @@ class NameFormatter: NSFormatter {
     return obj as? String
   }
   
-  override func getObjectValue(obj: AutoreleasingUnsafeMutablePointer<AnyObject?>, forString string: String, errorDescription error: AutoreleasingUnsafeMutablePointer<NSString?>) -> Bool {
-    obj.memory = string
+  override func getObjectValue(_ obj: AutoreleasingUnsafeMutablePointer<AnyObject?>?, for string: String, errorDescription error: AutoreleasingUnsafeMutablePointer<NSString?>?) -> Bool {
+    obj?.pointee = string as AnyObject?
     return true
   }
   
-  override func isPartialStringValid(partialStringPtr: AutoreleasingUnsafeMutablePointer<NSString?>, proposedSelectedRange proposedSelRangePtr: NSRangePointer, originalString origString: String, originalSelectedRange origSelRange: NSRange, errorDescription error: AutoreleasingUnsafeMutablePointer<NSString?>) -> Bool {
+  override func isPartialStringValid(_ partialStringPtr: AutoreleasingUnsafeMutablePointer<NSString>, proposedSelectedRange proposedSelRangePtr: NSRangePointer?, originalString origString: String, originalSelectedRange origSelRange: NSRange, errorDescription error: AutoreleasingUnsafeMutablePointer<NSString?>?) -> Bool {
     
     // allow deletes
-    if (origSelRange.location == proposedSelRangePtr.memory.location) {
+    if (origSelRange.location == proposedSelRangePtr?.pointee.location) {
       return true
     }
     
     var partialString = ""
     var partialStringCount = 0
-    if partialStringPtr.memory != nil {
-      partialString = partialStringPtr.memory! as String
-      partialStringCount = partialString.characters.count
-    }
+    partialString = partialStringPtr.pointee as String
+    partialStringCount = partialString.characters.count
     
-    if let ch = partialString.characters.last where ch.bannedChar { return false }
+    if let ch = partialString.characters.last , ch.bannedChar { return false }
     
     let match = self.firstKeyForPartialString(partialString)
     
     if let match = match {
       
       // if this will not move the cursor forward, it is a delete
-      if origSelRange.location == proposedSelRangePtr.memory.location {
+      if origSelRange.location == proposedSelRangePtr?.pointee.location {
         return true
       }
       
       // if the partial string is shorter than the match, set the selection
       let matchCount = match.characters.count
       if matchCount != partialStringCount {
-        proposedSelRangePtr.memory.length = matchCount - partialStringCount
-        partialStringPtr.memory = match
+        proposedSelRangePtr?.pointee.length = matchCount - partialStringCount
+        partialStringPtr.pointee = match as NSString
         return false
       }
       return true
     } else {
       // no match, so title case it and return false
       let p = titleCase(partialString)
-      partialStringPtr.memory = p
+      partialStringPtr.pointee = p as NSString
       return false
     }
   }
   
   // MARK: - TextField delegate methods
   
-  func control(control: NSControl, textShouldEndEditing fieldEditor: NSText) -> Bool {
+  func control(_ control: NSControl, textShouldEndEditing fieldEditor: NSText) -> Bool {
     let text = control.stringValue
     self.addToList(text)
     return true

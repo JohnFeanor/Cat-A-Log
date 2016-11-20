@@ -1,0 +1,286 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4F0A17331D2B2F1E00212412 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0A17321D2B2F1E00212412 /* AppDelegate.swift */; };
+		4F0A17351D2B2F1E00212412 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F0A17341D2B2F1E00212412 /* Assets.xcassets */; };
+		4F0A17381D2B2F1E00212412 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F0A17361D2B2F1E00212412 /* MainMenu.xib */; };
+		4F0A17411D2B35CB00212412 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0A173F1D2B35CB00212412 /* MainWindowController.swift */; };
+		4F0A17421D2B35CB00212412 /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F0A17401D2B35CB00212412 /* MainWindowController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4F0A172F1D2B2F1E00212412 /* Age_Checker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Age_Checker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F0A17321D2B2F1E00212412 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4F0A17341D2B2F1E00212412 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4F0A17371D2B2F1E00212412 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		4F0A17391D2B2F1E00212412 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F0A173F1D2B35CB00212412 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		4F0A17401D2B35CB00212412 /* MainWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindowController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4F0A172C1D2B2F1E00212412 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4F0A17261D2B2F1E00212412 = {
+			isa = PBXGroup;
+			children = (
+				4F0A17311D2B2F1E00212412 /* Age_Checker */,
+				4F0A17301D2B2F1E00212412 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4F0A17301D2B2F1E00212412 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4F0A172F1D2B2F1E00212412 /* Age_Checker.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4F0A17311D2B2F1E00212412 /* Age_Checker */ = {
+			isa = PBXGroup;
+			children = (
+				4F0A17321D2B2F1E00212412 /* AppDelegate.swift */,
+				4F0A173F1D2B35CB00212412 /* MainWindowController.swift */,
+				4F0A17341D2B2F1E00212412 /* Assets.xcassets */,
+				4F0A17401D2B35CB00212412 /* MainWindowController.xib */,
+				4F0A17361D2B2F1E00212412 /* MainMenu.xib */,
+				4F0A17391D2B2F1E00212412 /* Info.plist */,
+			);
+			path = Age_Checker;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4F0A172E1D2B2F1E00212412 /* Age_Checker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F0A173C1D2B2F1E00212412 /* Build configuration list for PBXNativeTarget "Age_Checker" */;
+			buildPhases = (
+				4F0A172B1D2B2F1E00212412 /* Sources */,
+				4F0A172C1D2B2F1E00212412 /* Frameworks */,
+				4F0A172D1D2B2F1E00212412 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Age_Checker;
+			productName = Age_Checker;
+			productReference = 4F0A172F1D2B2F1E00212412 /* Age_Checker.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4F0A17271D2B2F1E00212412 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Feanor;
+				TargetAttributes = {
+					4F0A172E1D2B2F1E00212412 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 4F0A172A1D2B2F1E00212412 /* Build configuration list for PBXProject "Age_Checker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4F0A17261D2B2F1E00212412;
+			productRefGroup = 4F0A17301D2B2F1E00212412 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4F0A172E1D2B2F1E00212412 /* Age_Checker */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4F0A172D1D2B2F1E00212412 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F0A17351D2B2F1E00212412 /* Assets.xcassets in Resources */,
+				4F0A17421D2B35CB00212412 /* MainWindowController.xib in Resources */,
+				4F0A17381D2B2F1E00212412 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4F0A172B1D2B2F1E00212412 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F0A17411D2B35CB00212412 /* MainWindowController.swift in Sources */,
+				4F0A17331D2B2F1E00212412 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4F0A17361D2B2F1E00212412 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4F0A17371D2B2F1E00212412 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4F0A173A1D2B2F1E00212412 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4F0A173B1D2B2F1E00212412 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		4F0A173D1D2B2F1E00212412 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Age_Checker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Feanor.Age-Checker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4F0A173E1D2B2F1E00212412 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Age_Checker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Feanor.Age-Checker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4F0A172A1D2B2F1E00212412 /* Build configuration list for PBXProject "Age_Checker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F0A173A1D2B2F1E00212412 /* Debug */,
+				4F0A173B1D2B2F1E00212412 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F0A173C1D2B2F1E00212412 /* Build configuration list for PBXNativeTarget "Age_Checker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F0A173D1D2B2F1E00212412 /* Debug */,
+				4F0A173E1D2B2F1E00212412 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4F0A17271D2B2F1E00212412 /* Project object */;
+}

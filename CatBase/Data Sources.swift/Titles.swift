@@ -8,11 +8,20 @@
 
 import Cocoa
 
-var titlesToken: dispatch_once_t = 0
+var titlesToken: Int = 0
 
 class Titles: DataSource {
   
-  static var entity = "Titles"
+  private static var __once: () = {
+      let temp = arrayFromPList(Titles.nomen)
+      if temp != nil {
+        list = temp as! [String]
+      } else {
+        fatalError("Cannot read in Titles list")
+      }
+    }()
+  
+  static var nomen = "Titles"
   static var list = [String]()
   
   var currentBreed: String? = nil
@@ -20,18 +29,11 @@ class Titles: DataSource {
   @IBOutlet weak var titleTable: NSTableView!
   
   override class func initialize() {
-    dispatch_once(&titlesToken) {
-      let temp = arrayFromPList(Titles.entity)
-      if temp != nil {
-        list = temp as! [String]
-      } else {
-        fatalError("Cannot read in Titles list")
-      }
-    }
+    _ = Titles.__once
   }
   
   class func saveTitles() {
-    if !array(list, ToPlist: Titles.entity) {
+    if !array(list, ToPlist: Titles.nomen) {
       print("Could not save the tiles")
     }
   }
@@ -46,55 +48,55 @@ class Titles: DataSource {
   
   // MARK: - Insert or delete titles
   
-  func titleAtindex(index: Int) -> String {
+  func titleAtindex(_ index: Int) -> String {
     if index < Titles.list.count {
       return Titles.list[index]
     }
     return ""
   }
   
-  func setIndex(index: Int, toTitle newValue: String) {
+  func setIndex(_ index: Int, toTitle newValue: String) {
     let i = index < 0 ? 0 : index
     let j = i < Titles.list.count ? i : Titles.list.count - 1
     Titles.list[j] = newValue
   }
   
-  func insertNewTitleAtIndex(index: Int) {
+  func insertNewTitleAtIndex(_ index: Int) {
     let i = index < 0 ? 0 : index
     if i < Titles.list.count {
-      Titles.list.insert("", atIndex: i)
+      Titles.list.insert("", at: i)
     } else {
       Titles.list.append("")
     }
   }
   
-  func addNewTitle(newValue: String, atIndex index: Int) {
+  func addNewTitle(_ newValue: String, atIndex index: Int) {
     let i = index < 0 ? 0 : index
     if i < Titles.list.count {
-      Titles.list.insert(newValue, atIndex: i)
+      Titles.list.insert(newValue, at: i)
     } else {
       Titles.list.append(newValue)
     }
   }
   
-  func removeTitleAtIndex(index: Int) {
+  func removeTitleAtIndex(_ index: Int) {
     let i = index < 0 ? 0 : index
     let j = i < Titles.list.count ? i : Titles.list.count - 1
-    Titles.list.removeAtIndex(j)
+    Titles.list.remove(at: j)
   }
   
   // ==============================
   // MARK: - Combo box data sources
   // ==============================
   
-  override func firstRowMatchingPrefix(prefix: String) -> String? {
+  override func firstRowMatchingPrefix(_ prefix: String) -> String? {
     var currentChoice: String? = nil
-    let words = prefix.componentsSeparatedByString(" ")
-    let lowerCasePrefix = words.last?.lowercaseString
+    let words = prefix.components(separatedBy: " ")
+    let lowerCasePrefix = words.last?.lowercased()
     
     if let lowerCasePrefix = lowerCasePrefix {
       for string in list {
-        if string.lowercaseString.hasPrefix(lowerCasePrefix) {
+        if string.lowercased().hasPrefix(lowerCasePrefix) {
           if currentChoice == nil {
             currentChoice = string
           } else if string.characters.count < currentChoice!.characters.count {
@@ -113,7 +115,8 @@ class Titles: DataSource {
       var answer = ""
       var i = 0
       while i < wordCount {
-        answer += words[i++] + " "
+        answer += words[i] + " "
+        i += 1
       }
       return (answer + currentChoice!)
     }
@@ -123,7 +126,7 @@ class Titles: DataSource {
   // MARK: - Tableview data sources
   // ==============================
   
-  func numberOfRowsInTableView(aTableView: NSTableView) -> Int {
+  func numberOfRowsInTableView(_ aTableView: NSTableView) -> Int {
     if list.isEmpty {
       return 0
     } else {
@@ -131,7 +134,7 @@ class Titles: DataSource {
     }
   }
   
-  func tableView(aTableView: NSTableView, objectValueForTableColumn aTableColum: NSTableColumn, row rowIndex: Int) -> AnyObject? {
+  func tableView(_ aTableView: NSTableView, objectValueForTableColumn aTableColum: NSTableColumn, row rowIndex: Int) -> AnyObject? {
     if list.isEmpty {
       return nil
     } else {

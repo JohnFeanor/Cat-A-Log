@@ -16,7 +16,7 @@ class ProgressWindowController: NSWindowController {
   dynamic var progressLabel = "Updating cats"
   dynamic var progressValue = 100.0
   
-  private var masterWindow: NSWindow? = nil
+  fileprivate var masterWindow: NSWindow? = nil
   
   override var windowNibName: String {
     return "ProgressWindowController"

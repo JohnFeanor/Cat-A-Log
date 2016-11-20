@@ -8,8 +8,8 @@
 
 import Cocoa
 
-private let zero = NSNumber(integer: 0)
-private let three = NSNumber(integer: 3)
+private let zero = NSNumber(value: 0 as Int)
+private let three = NSNumber(value: 3 as Int)
 
 private let months = 0
 private let weeks = 1
@@ -20,10 +20,10 @@ class AddShowWindowController: NSWindowController {
   @IBOutlet weak var minAgeTextField: NSTextField!
   @IBOutlet weak var nameTextField: NSTextField!
 
-  private dynamic let timeUnits = ["Months", "Weeks"]
+  fileprivate dynamic let timeUnits = ["Months", "Weeks"]
   
   var showData: [String : AnyObject]  {
-    return self.dictionaryWithValuesForKeys(Show.properties)
+    return self.dictionaryWithValues(forKeys: Show.properties) as [String : AnyObject]
   }
   
   override var windowNibName: String {
@@ -32,33 +32,33 @@ class AddShowWindowController: NSWindowController {
   
   // MARK: - show properties
   
-  private dynamic var affiliation: String = "QFA Show"
-  private dynamic var name: String = "New Show"
+  fileprivate dynamic var affiliation: String = "QFA Show"
+  fileprivate dynamic var name: String = "New Show"
   
-  private dynamic var date: NSDate = NSDate()
+  fileprivate dynamic var date: Date = Date()
   
-  private dynamic var judgeLH1: String = ""
-  private dynamic var judgeLH2: String = ""
-  private dynamic var judgeLH3: String = ""
-  private dynamic var judgeLH4: String = ""
-  private dynamic var judgeLH5: String = ""
-  private dynamic var judgeLH6: String = ""
+  fileprivate dynamic var judgeLH1: String = ""
+  fileprivate dynamic var judgeLH2: String = ""
+  fileprivate dynamic var judgeLH3: String = ""
+  fileprivate dynamic var judgeLH4: String = ""
+  fileprivate dynamic var judgeLH5: String = ""
+  fileprivate dynamic var judgeLH6: String = ""
   
-  private dynamic var judgeSH1: String = ""
-  private dynamic var judgeSH2: String = ""
-  private dynamic var judgeSH3: String = ""
-  private dynamic var judgeSH4: String = ""
-  private dynamic var judgeSH5: String = ""
-  private dynamic var judgeSH6: String = ""
+  fileprivate dynamic var judgeSH1: String = ""
+  fileprivate dynamic var judgeSH2: String = ""
+  fileprivate dynamic var judgeSH3: String = ""
+  fileprivate dynamic var judgeSH4: String = ""
+  fileprivate dynamic var judgeSH5: String = ""
+  fileprivate dynamic var judgeSH6: String = ""
   
-  private dynamic var numberOfRings: NSNumber = three
+  fileprivate dynamic var numberOfRings: NSNumber = three
  
-  private dynamic var minimumAge: NSNumber = three
+  fileprivate dynamic var minimumAge: NSNumber = three
   
   
   // MARK: - Variables for the entry sheet not part of a show
   
-  private dynamic var timeUnit: Int = months  {
+  fileprivate dynamic var timeUnit: Int = months  {
     didSet {
       self.window!.makeFirstResponder(self.minAgeTextField)
     }
@@ -77,9 +77,9 @@ class AddShowWindowController: NSWindowController {
   
   // initialize the sheet to an existing Show
   
-  func setToShow(show show: Show) {
+  func setToShow(show: Show) {
     for property in Show.properties {
-      self.setValue(show.valueForKey(property), forKey: property)
+      self.setValue(show.value(forKey: property), forKey: property)
     }
     self.window!.makeFirstResponder(self.nameTextField)
   }
@@ -89,18 +89,18 @@ class AddShowWindowController: NSWindowController {
   // ====================
 
   
-  @IBAction func okButtonPressed(sender: NSButton) {
-    window?.endEditingFor(nil)
+  @IBAction func okButtonPressed(_ sender: NSButton) {
+    window?.endEditing(for: nil)
 
     dismissWithModalResponse(NSModalResponseOK)
   }
   
   
-  @IBAction func cancelButtonPressed(sender: NSButton) {
+  @IBAction func cancelButtonPressed(_ sender: NSButton) {
     dismissWithModalResponse(NSModalResponseCancel)
   }
   
-  func dismissWithModalResponse(response: NSModalResponse)
+  func dismissWithModalResponse(_ response: NSModalResponse)
   {
     window!.sheetParent!.endSheet(window!, returnCode: response)
   }

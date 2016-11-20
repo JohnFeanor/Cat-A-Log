@@ -8,7 +8,7 @@
 
 import Cocoa
 
-var breedsToken: dispatch_once_t = 0
+var breedsToken: Int = 0
 
 private struct BreedList {
   var groupName = ""
@@ -17,15 +17,34 @@ private struct BreedList {
 
 class Breeds: DataSource, NSTableViewDataSource {
   
-  static var entity = "Breeds"
-  private static var breedsByGroupAndShowtype   = [String : [BreedList]]()
-  private static var nonPedigreesByShowType = [String : [String]]()
+  private static var __once: () = {       // This will only ever execute once
+      
+      // load in an array of the group names & breeds in the group for each of the show types
+      // for each show type e.g. QFA, ACF or COWOCA
+      for (showTypeName, showTypeData) in Globals.dataByGroup {
+        let groups = showTypeData.value(forKey: Headings.groups) as! [[String : AnyObject]]
+        var tempBreeds = [BreedList]()
+        for group in groups {
+          let groupBreeds = group[Headings.breeds] as! [String]
+          let groupName = group[Headings.group] as! String
+          tempBreeds.append(BreedList(groupName: groupName, breeds: groupBreeds))
+        }
+        if let nonPedigree = groups.last {
+          nonPedigreesByShowType[showTypeName] = (nonPedigree[Headings.breeds] as! [String])
+        }
+        breedsByGroupAndShowtype[showTypeName] = tempBreeds
+      }
+    }()
   
-  private static var groups:[BreedList]? {
+  static var entity = "Breeds"
+  fileprivate static var breedsByGroupAndShowtype   = [String : [BreedList]]()
+  fileprivate static var nonPedigreesByShowType = [String : [String]]()
+  
+  fileprivate static var groups:[BreedList]? {
     return Breeds.breedsByGroupAndShowtype[Globals.currentShowType]
   }
   
-  private static var list: [String]? {
+  fileprivate static var list: [String]? {
       if let groups = Breeds.groups {
         var ans = [String]()
         for group in groups {
@@ -42,24 +61,7 @@ class Breeds: DataSource, NSTableViewDataSource {
   // ************************************
   
   override class func initialize() {
-    dispatch_once(&breedsToken) {       // This will only ever execute once
-      
-      // load in an array of the group names & breeds in the group for each of the show types
-      // for each show type e.g. QFA, ACF or COWOCA
-      for (showTypeName, showTypeData) in Globals.dataByGroup {
-        let groups = showTypeData.valueForKey(Headings.groups) as! [[String : AnyObject]]
-        var tempBreeds = [BreedList]()
-        for group in groups {
-          let groupBreeds = group[Headings.breeds] as! [String]
-          let groupName = group[Headings.group] as! String
-          tempBreeds.append(BreedList(groupName: groupName, breeds: groupBreeds))
-        }
-        if let nonPedigree = groups.last {
-          nonPedigreesByShowType[showTypeName] = (nonPedigree[Headings.breeds] as! [String])
-        }
-        breedsByGroupAndShowtype[showTypeName] = tempBreeds
-      }
-    }
+    _ = Breeds.__once
   }
   
   override init() {
@@ -76,57 +78,57 @@ class Breeds: DataSource, NSTableViewDataSource {
   // MARK: - Class methods
   // ************************************
   
-  class func nonPedigreeBreed(breedName: String) -> Bool {
+  class func nonPedigreeBreed(_ breedName: String) -> Bool {
     guard let currentBreeds = Breeds.nonPedigreesByShowType[Globals.currentShowType]
       else { return false }
     return currentBreeds.contains(breedName)
   }
   
-  class func pedigreeBreed(breedName: String) -> Bool {
+  class func pedigreeBreed(_ breedName: String) -> Bool {
     return !nonPedigreeBreed(breedName)
   }
   
-  class func groupNumberOf(breedName: String) -> Int {
+  class func groupNumberOf(_ breedName: String) -> Int {
     if let groups = Breeds.groups {
       var breedsGroup = 0
       for group in groups {
         if group.breeds.contains(breedName) {
           return breedsGroup
         }
-        breedsGroup++
+        breedsGroup += 1
       }
     }
     fatalError("Cannot find group number of breed: \(breedName)")
   }
   
-  class func ACFgroupNumberOf(breedName: String) -> Int {
+  class func ACFgroupNumberOf(_ breedName: String) -> Int {
     if let groups = Breeds.breedsByGroupAndShowtype["ACF Show"] {
       var breedsGroup = 0
       for group in groups {
         if group.breeds.contains(breedName) {
           return breedsGroup
         }
-        breedsGroup++
+        breedsGroup += 1
       }
       fatalError("Cannot determine ACF group number for \(breedName)")
     }
     fatalError("Cannot find breeds for ACF type show")
   }
   
-  class func nameOfGroupForBreed(breedName: String) -> String {
+  class func nameOfGroupForBreed(_ breedName: String) -> String {
     if let groups = Breeds.groups {
       var breedsGroup = 0
       for group in groups {
         if group.breeds.contains(breedName) {
           return groups[breedsGroup].groupName
         }
-        breedsGroup++
+        breedsGroup += 1
       }
     }
     fatalError("group name for \(breedName) not found")
   }
   
-  class func nameOfGroupNumber(index: Int) -> String {
+  class func nameOfGroupNumber(_ index: Int) -> String {
     guard let groups = Breeds.groups
       else { fatalError("Breeds.group is nil") }
     if (index < 0) || (index >= groups.count) {
@@ -136,14 +138,14 @@ class Breeds: DataSource, NSTableViewDataSource {
     }
   }
   
-  class func rankOf(breedName: String) -> Int? {
+  class func rankOf(_ breedName: String) -> Int? {
     if let list = Breeds.list {
-      return list.indexOf(breedName)
+      return list.index(of: breedName)
     }
     return nil
   }
   
-  class func nameOf(index: Int) -> String {
+  class func nameOf(_ index: Int) -> String {
     if let list = Breeds.list {
       if (index < 0) || (index >= list.count) {
         fatalError("Out of bounds. Breed name for index: \(index)")
@@ -180,13 +182,13 @@ class Breeds: DataSource, NSTableViewDataSource {
   // MARK: - ComboBox datasource methods
   // ************************************
   
-  func comboBox(aComboBox: NSComboBox, indexOfItemWithStringValue aString: String) -> Int {
+  func comboBox(_ aComboBox: NSComboBox, indexOfItemWithStringValue aString: String) -> Int {
     var count = 0
     for s in list {
       if aString == s {
         break
       }
-      count++
+      count += 1
     }
     return count
   }
@@ -195,14 +197,14 @@ class Breeds: DataSource, NSTableViewDataSource {
   // MARK: - TableView datasource methods
   // ************************************
   
-  func numberOfRowsInTableView(tableView: NSTableView) -> Int {
+  func numberOfRows(in tableView: NSTableView) -> Int {
     let count = self.list.count
     return count
   }
   
-  func tableView(aTableView: NSTableView,
-    objectValueForTableColumn aTableColumn: NSTableColumn?,
-    row rowIndex: Int) -> AnyObject? {
+  func tableView(_ aTableView: NSTableView,
+    objectValueFor aTableColumn: NSTableColumn?,
+    row rowIndex: Int) -> Any? {
       if rowIndex < self.list.count && rowIndex > -1 {
         return self.list[rowIndex]
       } else {

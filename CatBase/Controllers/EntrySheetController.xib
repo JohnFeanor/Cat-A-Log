@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9532"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
         <capability name="box content view" minToolsVersion="7.0"/>
     </dependencies>
     <objects>
@@ -382,8 +382,8 @@ Gw
                                         <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                                     </buttonCell>
                                     <connections>
-                                        <binding destination="-2" name="enabled" keyPath="ring1Available" id="ujY-VL-jHP"/>
                                         <binding destination="-2" name="value" keyPath="ring1" id="FEB-5p-Yl2"/>
+                                        <binding destination="-2" name="enabled" keyPath="ring1Available" id="ujY-VL-jHP"/>
                                     </connections>
                                 </button>
                                 <button toolTip="Select this checkbox if the cat is entered into ring two (shortcut ⌘2)" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eTg-i7-0L3">
@@ -395,8 +395,8 @@ Gw
                                         <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                                     </buttonCell>
                                     <connections>
-                                        <binding destination="-2" name="enabled" keyPath="ring2Available" id="LNL-sE-RVr"/>
                                         <binding destination="-2" name="value" keyPath="ring2" id="ckX-Pl-1ns"/>
+                                        <binding destination="-2" name="enabled" keyPath="ring2Available" id="LNL-sE-RVr"/>
                                     </connections>
                                 </button>
                                 <button toolTip="Select this checkbox if the cat is entered into ring three (shortcut ⌘3)" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HSW-5e-Cvq">
@@ -408,8 +408,8 @@ Gw
                                         <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                                     </buttonCell>
                                     <connections>
-                                        <binding destination="-2" name="enabled" keyPath="ring3Available" id="ydF-JL-PsR"/>
                                         <binding destination="-2" name="value" keyPath="ring3" id="bqX-Hn-vxh"/>
+                                        <binding destination="-2" name="enabled" keyPath="ring3Available" id="ydF-JL-PsR"/>
                                     </connections>
                                 </button>
                                 <button toolTip="Select this checkbox if the cat is entered into ring four (shortcut ⌘4)" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vcV-8J-fOv">
@@ -421,8 +421,8 @@ Gw
                                         <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                                     </buttonCell>
                                     <connections>
-                                        <binding destination="-2" name="enabled" keyPath="ring4Available" id="qXl-Rh-aOU"/>
                                         <binding destination="-2" name="value" keyPath="ring4" id="QpC-zf-FL6"/>
+                                        <binding destination="-2" name="enabled" keyPath="ring4Available" id="qXl-Rh-aOU"/>
                                     </connections>
                                 </button>
                                 <button toolTip="Select this checkbox if the cat is entered into ring four (shortcut ⌘4)" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OgS-W1-X5D">
@@ -434,8 +434,8 @@ Gw
                                         <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                                     </buttonCell>
                                     <connections>
-                                        <binding destination="-2" name="enabled" keyPath="ring6Available" id="s4H-oh-Usk"/>
                                         <binding destination="-2" name="value" keyPath="ring6" id="kJ5-ze-Hqv"/>
+                                        <binding destination="-2" name="enabled" keyPath="ring6Available" id="s4H-oh-Usk"/>
                                     </connections>
                                 </button>
                                 <button toolTip="Select this checkbox if the cat is entered into ring four (shortcut ⌘4)" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NdX-OW-AHY">
@@ -447,8 +447,8 @@ Gw
                                         <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                                     </buttonCell>
                                     <connections>
-                                        <binding destination="-2" name="enabled" keyPath="ring5Available" id="Iwr-nx-4q3"/>
                                         <binding destination="-2" name="value" keyPath="ring5" id="myX-TC-CYC"/>
+                                        <binding destination="-2" name="enabled" keyPath="ring5Available" id="Iwr-nx-4q3"/>
                                     </connections>
                                 </button>
                             </subviews>

@@ -10,19 +10,17 @@ import Cocoa
 
 class DateFormatter: NSObject, NSDatePickerCellDelegate {
   
-  func datePickerCell(aDatePickerCell: NSDatePickerCell, validateProposedDateValue proposedDateValue: AutoreleasingUnsafeMutablePointer<NSDate?>, timeInterval proposedTimeInterval: UnsafeMutablePointer<NSTimeInterval>) {
+  private func datePickerCell(_ aDatePickerCell: NSDatePickerCell, validateProposedDateValue proposedDateValue: AutoreleasingUnsafeMutablePointer<Date>, timeInterval proposedTimeInterval: UnsafeMutablePointer<TimeInterval>?) {
     
-    guard let date = proposedDateValue.memory
-      else { return }
+    let date = proposedDateValue.pointee
     
-    let calendar = NSCalendar.currentCalendar()
-    let components = calendar.components([.Year, .Month, .Day], fromDate: date)
-    if components.year < 2000 || components.year >= 2100 {
-      let newValue = components.year % 100 + 2000
-      components.year = newValue
-      if let newDate = calendar.dateFromComponents(components) {
-        speaker.startSpeakingString("Did you mean \(newValue)?")
-        proposedDateValue.memory = newDate
+    let calendar = Calendar.current
+    var components = (calendar as NSCalendar).components([.year, .month, .day], from: date)
+    if let year = components.year, year < 2000 || year >= 2100 {
+      components.year = year % 100 + 2000
+      if let newDate = calendar.date(from: components) {
+        speaker.startSpeaking("Did you mean \(year)?")
+        proposedDateValue.pointee = newDate
       }
     }
   }

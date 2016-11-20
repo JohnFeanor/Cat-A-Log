@@ -22,24 +22,24 @@ class CatNameFormatter: NameFormatter {
     return CatNameFormatter.catList
   }
   
-  override func addToList(name: String) {
+  override func addToList(_ name: String) {
     if !CatNameFormatter.catList.contains(name) {
       CatNameFormatter.catList.append(name)
-      let parts = name.componentsSeparatedByString(" ")
+      let parts = name.components(separatedBy: " ")
       if parts.count > 1 && !CatNameFormatter.catList.contains(parts[0] + " "){
         CatNameFormatter.catList.append(parts[0] + " ")
       }
     }
   }
   
-  override func capitalize(word: String, preceding: String?, following: String?) -> Action {
+  override func capitalize(_ word: String, preceding: String?, following: String?) -> Action {
     
     if exempted.contains(word) { return .leave }
     
     // Words with more than one letter get capitalized
     if word.characters.count > 1 {
       if uppercase.contains(word) {
-        if following != nil && breakCharacter.evaluateWithObject(following!) {
+        if following != nil && breakCharacter.evaluate(with: following!) {
           // if they are an ancronym for a country they get fully uppercased
           return .uppercase
         }

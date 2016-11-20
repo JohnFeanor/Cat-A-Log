@@ -12,15 +12,15 @@ import CoreData
 
 struct AddShowDataSheet {
   var affiliation   = Globals.showTypes[0]
-  var date          = NSDate()
+  var date          = Date()
   var judges        = [["", "", "", "", "", ""], ["", "", "", "", "", ""]]
   var name: String  = "New Show"
-  var numberOfRings = NSNumber(integer: 3)
+  var numberOfRings = NSNumber(value: 3 as Int)
 }
 
-class Show: NSManagedObject, CustomDebugStringConvertible {
+class Show: NSManagedObject {
   
-  static var entity = "Show"
+  static var nomen = "Show"
   static var properties = [Show.affiliation, Show.date, Show.judgeLH1, Show.judgeLH2, Show.judgeLH3, Show.judgeLH4, Show.judgeLH5, Show.judgeLH6, Show.judgeSH1, Show.judgeSH2, Show.judgeSH3, Show.judgeSH4, Show.judgeSH5, Show.judgeSH6, Show.name, Show.numberOfRings]
   let judgesLH = ["judgeLH1", "judgeLH2", "judgeLH3", "judgeLH4", "judgeLH5", "judgeLH6"]
   let judgesSH = ["judgeSH1", "judgeSH2", "judgeSH3", "judgeSH4", "judgeSH5", "judgeSH6"]
@@ -47,7 +47,7 @@ class Show: NSManagedObject, CustomDebugStringConvertible {
   // ************************************
   
   @NSManaged var affiliation: String
-  @NSManaged var date: NSDate
+  @NSManaged var date: Date
   @NSManaged var judgeLH1: String
   @NSManaged var judgeLH2: String
   @NSManaged var judgeLH3: String
@@ -69,20 +69,20 @@ class Show: NSManagedObject, CustomDebugStringConvertible {
   // ************************************
   
   convenience init(showData:[String : AnyObject], insertIntoManagedObjectContext context: NSManagedObjectContext?) {
-    let showEntity = NSEntityDescription.entityForName(Show.entity, inManagedObjectContext: context!)
+    let showEntity = NSEntityDescription.entity(forEntityName: Show.nomen, in: context!)
     if showEntity == nil {
       print("Cannot create new show entity")
       abort()
     } else {
-      self.init(entity: showEntity!, insertIntoManagedObjectContext: context)
+      self.init(entity: showEntity!, insertInto: context)
       self.setValuesTo(showData)
     }
   }
   
   dynamic var showDateAsString: String {
-    let dateFormatter = NSDateFormatter()
+    let dateFormatter = Foundation.DateFormatter()
     dateFormatter.dateFormat = "dd/MM/yyyy"
-    let showDate = dateFormatter.stringFromDate(self.date)
+    let showDate = dateFormatter.string(from: self.date)
     return showDate
   }
   
@@ -124,8 +124,8 @@ class Show: NSManagedObject, CustomDebugStringConvertible {
   
   // Set this show's properties to the values in a supplied dictionary
   // -----------------------------------------------------------------
-  func setValuesTo(showData: [String : AnyObject]) {
-    self.setValuesForKeysWithDictionary(showData)
+  func setValuesTo(_ showData: [String : AnyObject]) {
+    self.setValuesForKeys(showData)
   }
   
   // ************************************
@@ -135,38 +135,38 @@ class Show: NSManagedObject, CustomDebugStringConvertible {
   
   // Is a cat born on a given date a kitten at this show?
   // ----------------------------------------------------
-  func isKittenIfBornOn(birthDate: NSDate) -> Bool {
-    let isAKitten = birthDate.lessThan(weeks: 0, months: 9, before: self.date)
+  func isKittenIfBornOn(_ birthDate: Date) -> Bool {
+    let isAKitten = birthDate.lessThan(months: Globals.maxKittenAge, before: self.date)
     return isAKitten
   }
   
   // Is a cat born on a given date too young to enter this show?
   // -----------------------------------------------------------
-  func isItTooYoungForShow(birthDate: NSDate) -> Bool {
+  func isItTooYoungForShow(_ birthDate: Date) -> Bool {
     let minAge = Globals.minShowAge
-    let isTooYoungForShow = birthDate.lessThan(weeks: minAge.weeks, months: minAge.months, before: self.date)
+    let isTooYoungForShow = birthDate.lessThan(months: minAge.months, weeks: minAge.weeks, before: self.date)
     return isTooYoungForShow
   }
   
   // Is a cat born on a given date able to be pending at this show?
   // --------------------------------------------------------------
-  func canItBePending(birthDate: NSDate) -> Bool {
+  func canItBePending(_ birthDate: Date) -> Bool {
     let minAge = Globals.maxPendingAge
-    let canBePending = birthDate.lessThan(weeks: minAge.weeks, months: minAge.months, before: self.date)
+    let canBePending = birthDate.lessThan(months: minAge.months, weeks: minAge.weeks, before: self.date)
     return canBePending
   }
   
   // Is a cat born on a given date able to be in a litter?
   // ------------------------------------------------------
-  func canItBeInALitter(birthDate: NSDate) -> Bool {
+  func canItBeInALitter(_ birthDate: Date) -> Bool {
     let maxAge = Globals.minShowAge
-    let canBeInLitter = birthDate.lessThan(weeks: maxAge.weeks, months: maxAge.months, before: self.date)
+    let canBeInLitter = !birthDate.lessThan(months: maxAge.months, weeks: maxAge.weeks, before: self.date)
     return canBeInLitter
   }
   
   // return initials of judge judging breed <breedName> in ring <ring>
   // ------------------------------------------------------------------
-  func judge(ring: Int, forBreed breedName: String) -> String {
+  func judge(_ ring: Int, forBreed breedName: String) -> String {
     let groupNumber = Breeds.groupNumberOf(breedName)
     let longhair: Bool
     if self.affiliation == Globals.showTypes[0] {
@@ -177,9 +177,9 @@ class Show: NSManagedObject, CustomDebugStringConvertible {
       longhair = groupNumber == 0 || groupNumber == 3
     }
     if longhair {
-      return self.valueForKey(judgesLH[ring]) as! String
+      return self.value(forKey: judgesLH[ring]) as! String
     } else {
-      return self.valueForKey(judgesSH[ring]) as! String
+      return self.value(forKey: judgesSH[ring]) as! String
     }
   }
 }

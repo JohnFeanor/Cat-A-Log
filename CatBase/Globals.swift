@@ -28,7 +28,7 @@ extension NSTableView {
     get {
       let row = self.selectedRow
       if row > -1 {
-        let view = self.viewAtColumn(0, row: row, makeIfNecessary: false) as? NSTableCellView
+        let view = self.view(atColumn: 0, row: row, makeIfNecessary: false) as? NSTableCellView
         let text = view?.objectValue as? String
         if let text = text {
           return text
@@ -39,54 +39,51 @@ extension NSTableView {
   }
 }
 
-extension NSDate {
+extension Date {
   
   var string: String {
-    let formatter = NSDateFormatter()
-    formatter.dateFormat = "dd-MM-yy"
-    return formatter.stringFromDate(self)
+    let formatter = Foundation.DateFormatter()
+    formatter.dateFormat = "dd MM yy"
+    return formatter.string(from: self)
   }
-
-  func lessThan(weeks weeks:Int = 0, months: Int = 0, before date2: NSDate) -> Bool {
-    let interval = NSDateComponents()
-    interval.day = weeks * 7
-    interval.month = months
-    let calendar = NSCalendar.currentCalendar()
-    let testDate = calendar.dateByAddingComponents(interval, toDate: self, options: [])
-    if let testDate = testDate {
-      if testDate.compare(date2) == NSComparisonResult.OrderedDescending {
+  
+  
+  func lessThan(months: Int = 0, weeks: Int = 0, before date2: Date) -> Bool {
+    
+    let calendar = Calendar.current
+    
+    var maxAge = DateComponents()
+    maxAge.month = months
+    maxAge.day = weeks * 7
+    if let grownUpDate = (calendar as NSCalendar).date(byAdding: maxAge, to: self, options: NSCalendar.Options(rawValue: 0)) {
+      if (calendar as NSCalendar).compare(grownUpDate, to: date2, toUnitGranularity: .day) == .orderedDescending {
         return true
-      } else {
-        return false
       }
     }
-    print("Could not get a date from the calendar")
     return false
   }
   
-  func monthsDifferenceTo(otherDate: NSDate) -> Int {
-    let calendar = NSCalendar.currentCalendar()
-    let components = calendar.components(.Month, fromDate: self, toDate: otherDate, options: [])
-    
-    return components.month < 0 ? components.month * -1 : components.month
+  func monthsDifferenceTo(_ otherDate: Date) -> Int {
+    return Calendar.current.dateComponents([.month], from: otherDate, to: self).month ?? 0
   }
   
-  func differenceInMonthsAndYears(otherDate: NSDate) -> String {
-    let calendar = NSCalendar.currentCalendar()
-    let components = calendar.components([.Month, .Year], fromDate: self, toDate: otherDate, options: [])
-    let month: String
-    if components.month < 10 {
-      month = "0\(components.month)"
+  func differenceInMonthsAndYears(_ otherDate: Date) -> String {
+    let numberMonths = Calendar.current.dateComponents([.month], from: self, to: otherDate).month ?? 0
+    if numberMonths < 0 {
+      return "error"
+    } else if numberMonths < 10 {
+      return "0\(numberMonths)"
+    } else if numberMonths < 12 {
+      return "\(numberMonths)"
     } else {
-      month = "\(components.month)"
+      return "\(numberMonths / 12).\(numberMonths % 12)"
     }
-    return "\(components.year).\(month)"
   }
 }
 
 extension String {
   var isPending: Bool {
-    return self.caseInsensitiveCompare(pending) == NSComparisonResult.OrderedSame
+    return self.caseInsensitiveCompare(pending) == ComparisonResult.orderedSame
   }
 }
 
@@ -142,17 +139,17 @@ struct Agouti {
   static let nonAgoutiWhite  = 3
 }
 
-func isTabby(colour: String) -> Bool {
-  let color = colour.lowercaseString
-  return color.containsString("tabby")
+func isTabby(_ colour: String) -> Bool {
+  let color = colour.lowercased()
+  return color.contains("tabby")
 }
 
-func andWhite(colour: String) -> Bool {
-  let color = colour.lowercaseString
-  if color.containsString(" white")    { return true }
-  if color.containsString("bi-colour") { return true }
-  if color.containsString("bicolour")  { return true }
-  if color.containsString("van")       { return true }
+func andWhite(_ colour: String) -> Bool {
+  let color = colour.lowercased()
+  if color.contains(" white")    { return true }
+  if color.contains("bi-colour") { return true }
+  if color.contains("bicolour")  { return true }
+  if color.contains("van")       { return true }
   
   return false
 }
@@ -161,23 +158,27 @@ func andWhite(colour: String) -> Bool {
 // MARK: - Other helper functions
 // *******************************
 
-func minAges(key: String) -> (months: Int, weeks: Int) {
+func minAges(_ key: String) -> (months: Int, weeks: Int) {
   if let dict = Globals.dataByGroup[Globals.currentShowType] {
-    let ages = dict.valueForKey(key) as! [Int]
+    let ages = dict.value(forKey: key) as! [Int]
     return (ages[0], ages[1])
   }
   return (0, 0)
 }
 
-func setAge(key: String, toWeeks weeks:Int? = nil, andMonths months: Int? = nil) {
+func setAge(_ key: String, toWeeks weeks:Int? = nil, andMonths months: Int? = nil) {
   
+}
+
+func CCCAShow() -> Bool {
+  return Globals.currentShowType == "CCCA Show"
 }
 
 // *************************************************
 // MARK: - fetching from the Managed Object Context
 // *************************************************
 
-func existingCatsWithRegistration(rego: String, orName name: String, inContext context: NSManagedObjectContext) -> [Cat]? {
+func existingCatsWithRegistration(_ rego: String, orName name: String, inContext context: NSManagedObjectContext) -> [Cat]? {
   // find any cats with the same registration (unless pending)
   let sameRego  = fetchCatsWithRegistration(rego, inContext: context)
   
@@ -190,12 +191,12 @@ func existingCatsWithRegistration(rego: String, orName name: String, inContext c
   return same.isEmpty ? nil : same
 }
 
-func fetchEntitiesNamed(entityName: String, inContext context:NSManagedObjectContext, usingFormat format: String) -> [NSManagedObject] {
-  let fetchRequest = NSFetchRequest(entityName: entityName)
+func fetchEntitiesNamed(_ entityName: String, inContext context:NSManagedObjectContext, usingFormat format: String) -> [NSManagedObject] {
+  let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: entityName)
   fetchRequest.predicate = NSPredicate(format: format)
   let fetchResult: [NSManagedObject]?
   do {
-    fetchResult = try context.executeFetchRequest(fetchRequest) as? [NSManagedObject]
+    fetchResult = try context.fetch(fetchRequest) as? [NSManagedObject]
   } catch {
     print("\n** Error in fetch request **\n")
     return []
@@ -207,15 +208,15 @@ func fetchEntitiesNamed(entityName: String, inContext context:NSManagedObjectCon
   }
 }
 
-func fetchCatsWithRegistration(registration: String, inContext context: NSManagedObjectContext) -> [Cat] {
+func fetchCatsWithRegistration(_ registration: String, inContext context: NSManagedObjectContext) -> [Cat] {
   if registration == pending {
     return []
   }
-  return fetchEntitiesNamed(Cat.entity, inContext: context, usingFormat: "\(Cat.registration) LIKE[c] \"\(registration)\"") as! [Cat]
+  return fetchEntitiesNamed(Cat.nomen, inContext: context, usingFormat: "\(Cat.registration) LIKE[c] \"\(registration)\"") as! [Cat]
 }
 
-func fetchCatsWithName(name: String, inContext context: NSManagedObjectContext) -> [Cat] {
-  return fetchEntitiesNamed(Cat.entity, inContext: context, usingFormat: "\(Cat.name) LIKE[c] \"\(name)\"") as! [Cat]
+func fetchCatsWithName(_ name: String, inContext context: NSManagedObjectContext) -> [Cat] {
+  return fetchEntitiesNamed(Cat.nomen, inContext: context, usingFormat: "\(Cat.name) LIKE[c] \"\(name)\"") as! [Cat]
 }
 
 // ******************************************************************
@@ -223,47 +224,47 @@ func fetchCatsWithName(name: String, inContext context: NSManagedObjectContext) 
 // ******************************************************************
 
 
-func dictFromPList(listName: String) -> NSDictionary {
-  let url = NSBundle.mainBundle().URLForResource(listName, withExtension:"plist")
+func dictFromPList(_ listName: String) -> NSDictionary {
+  let url = Bundle.main.url(forResource: listName, withExtension:"plist")
   if let url = url {
-    return NSDictionary(contentsOfURL:url)!
+    return NSDictionary(contentsOf:url)!
   } else {
     fatalError("Cannot load internal data \(listName)")
   }
 }
 
-func dict(dict: NSDictionary, toPlist listName: String) -> Bool {
-  let url = NSBundle.mainBundle().URLForResource(listName, withExtension:"plist")
+func dict(_ dict: NSDictionary, toPlist listName: String) -> Bool {
+  let url = Bundle.main.url(forResource: listName, withExtension:"plist")
   if let url = url {
-    return dict.writeToURL(url, atomically: true)
+    return dict.write(to: url, atomically: true)
   } else {
     return false
   }
 }
 
-func arrayFromPList(listName: String) -> [AnyObject]? {
-  let url = NSBundle.mainBundle().URLForResource(listName, withExtension:"plist")
+func arrayFromPList(_ listName: String) -> [AnyObject]? {
+  let url = Bundle.main.url(forResource: listName, withExtension:"plist")
   if let url = url {
-    return (NSArray(contentsOfURL:url) as [AnyObject]?)
+    return (NSArray(contentsOf:url) as [AnyObject]?)
   } else {
     fatalError("Cannot load internal data \(listName)")
   }
 }
 
-func array(array: [AnyObject], ToPlist listName: String) -> Bool {
-  let url = NSBundle.mainBundle().URLForResource(listName, withExtension:"plist")
+func array(_ array: [Any], ToPlist listName: String) -> Bool {
+  let url = Bundle.main.url(forResource: listName, withExtension:"plist")
   if let url = url {
-    return (array as NSArray).writeToURL(url, atomically: true)
+    return (array as NSArray).write(to: url, atomically: true)
   } else {
     return false
   }
 }
 
-func readFile(fileName: String) -> NSData {
-  let path = NSBundle.mainBundle().pathForResource(fileName, ofType: "txt")
+func readFile(_ fileName: String) -> Data {
+  let path = Bundle.main.path(forResource: fileName, ofType: "txt")
   
   if let path = path {
-    let d = NSFileManager.defaultManager().contentsAtPath(path)
+    let d = FileManager.default.contents(atPath: path)
     if let d = d {
       return d
     }
@@ -275,22 +276,22 @@ func readFile(fileName: String) -> NSData {
 // MARK: - querying the user
 // ***************************
 
-func areYouSure(message: String) -> Bool {
+func areYouSure(_ message: String) -> Bool {
   return runAlertWithMessage(message, buttons: "OK", "Cancel") == NSAlertFirstButtonReturn
 }
 
-func errorAlert(message message: String) {
+func errorAlert(message: String) {
   runAlertWithMessage(message, buttons: "OK")
 }
 
-func runAlertWithMessage(message: String, buttons: String ...) -> NSModalResponse {
+func runAlertWithMessage(_ message: String, buttons: String ...) -> NSModalResponse {
   let alert = NSAlert()
   for button in buttons {
-    alert.addButtonWithTitle(button)
+    alert.addButton(withTitle: button)
   }
   alert.messageText = message
-  alert.alertStyle = .WarningAlertStyle
-  speaker.startSpeakingString("Excuse me, \(message)")
+  alert.alertStyle = .warning
+  speaker.startSpeaking("Excuse me, \(message)")
   return alert.runModal()
 }
 
@@ -307,7 +308,7 @@ class Globals: NSObject {
   
   static var dataByGroup:[String : NSDictionary] = {
     return dictFromPList("ShowFormats") as! [String : [String : [AnyObject]]]
-    }()
+    }() as [String : NSDictionary]
 
   static var currentShow: Show? = nil
   static var currentEntry: Entry? = nil
@@ -327,11 +328,11 @@ class Globals: NSObject {
     if currentShow == nil {
       fatalError("Nil show when trying to get date for nil show")
     }
-    let longDate = NSDateFormatter()
-    longDate.timeStyle = .NoStyle
-    longDate.dateStyle = .LongStyle
-    longDate.locale = NSLocale.currentLocale()
-    return longDate.stringFromDate(currentShow!.date)
+    let longDate = Foundation.DateFormatter()
+    longDate.timeStyle = .none
+    longDate.dateStyle = .long
+    longDate.locale = Locale.current
+    return longDate.string(from: currentShow!.date as Date)
   }
   
   dynamic var showTypes: [String] {
@@ -340,7 +341,7 @@ class Globals: NSObject {
   
   static var showTypes: [String] = {
     let allKeys = Array(dataByGroup.keys)
-    return allKeys.sort(>)
+    return allKeys.sorted(by: >)
     }()
  
   static var currentShowType: String {
@@ -352,13 +353,13 @@ class Globals: NSObject {
   
   static var numberOfRingsInShow: Int {
     if let show = Globals.currentShow {
-      return show.numberOfRings.integerValue
+      return show.numberOfRings.intValue
     } else {
       return 0
     }
   }
   
-  private static var agouti: [String: [String]] = {
+  fileprivate static var agouti: [String: [String]] = {
     return dictFromPList("agouti") as! [String: [String]]
   }()
   
@@ -371,7 +372,7 @@ class Globals: NSObject {
   }
   
   static var cageTypes: (names:[String], sizes:[Int]) = {
-    let path = NSBundle.mainBundle().pathForResource("CageTypes", ofType:"plist")
+    let path = Bundle.main.path(forResource: "CageTypes", ofType:"plist")
     if let path = path {
       let data = NSArray(contentsOfFile:path) as! [NSArray]
       var names: [String] = []
@@ -420,34 +421,34 @@ class Globals: NSObject {
     return kittenAgeGroups[2]
   }
   
-  class func setMinShowAge(weeks weeks:Int? = nil, months: Int? = nil) {
+  class func setMinShowAge(weeks:Int? = nil, months: Int? = nil) {
     if weeks != nil { Globals.criticalAges[Headings.minShowAge]![0] = weeks! }
     if months != nil { Globals.criticalAges[Headings.minShowAge]![1] = months! }
   }
   
-  class func setMaxLitterAge(weeks weeks:Int? = nil, months: Int? = nil) {
+  class func setMaxLitterAge(weeks:Int? = nil, months: Int? = nil) {
     if weeks != nil { Globals.criticalAges[Headings.maxLitterAge]![0] = weeks! }
     if months != nil { Globals.criticalAges[Headings.maxLitterAge]![1] = months! }
   }
   
-  class func setMaxPendingAge(weeks weeks:Int? = nil, months: Int? = nil) {
+  class func setMaxPendingAge(weeks:Int? = nil, months: Int? = nil) {
     if weeks != nil { Globals.criticalAges[Headings.maxPendingAge]![0] = weeks! }
     if months != nil { Globals.criticalAges[Headings.maxPendingAge]![1] = months! }
   }
   
-  class func setKittenAgeGroups(values: [Int]) {
+  class func setKittenAgeGroups(_ values: [Int]) {
     let size = values.count < 3 ? values.count : 3
     for index in 0 ..< size {
       Globals.criticalAges[Headings.kittenAgeGroups]![index] = values[index]
     }
   }
   
-  class func setMaxKittenAge(months months: Int) {
+  class func setMaxKittenAge(months: Int) {
     Globals.criticalAges[Headings.kittenAgeGroups]![2] = months
   }
   
   class func saveCriticalAges() {
-    if !dict(Globals.criticalAges, toPlist: "CriticalAges") {
+    if !dict(Globals.criticalAges as NSDictionary, toPlist: "CriticalAges") {
       print("Could not save critical ages")
     }
   }
@@ -457,7 +458,7 @@ class Globals: NSObject {
   // MARK: - Methods
   // ========================
   
-  func tableViewSelectionDidChange(aNotification: NSNotification) {
+  func tableViewSelectionDidChange(_ aNotification: Notification) {
     Globals.currentShow = theShowController.selectedObjects?.first as? Show
     Globals.currentEntry = theEntriesController.selectedObjects?.first as? Entry
   }

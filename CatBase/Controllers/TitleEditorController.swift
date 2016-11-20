@@ -18,13 +18,13 @@ class TitleEditorController: NSWindowController {
   
   @IBOutlet var titles: Titles!
   
-  let undo = NSUndoManager()
+  let undo = UndoManager()
   
-  override var undoManager: NSUndoManager  {
+  override var undoManager: UndoManager  {
     return undo
   }
   
-  func windowWillReturnUndoManager(window: NSWindow) -> NSUndoManager? {
+  func windowWillReturnUndoManager(_ window: NSWindow) -> UndoManager? {
     // The undo menu item is only enabled if we return a undoManager here
     return self.undoManager
   }
@@ -36,39 +36,39 @@ class TitleEditorController: NSWindowController {
   }
   
   
-  @IBAction func titleUpdated(sender: NSTextField) {
-    let rowIndex = titlesTableView.rowForView(sender)
+  @IBAction func titleUpdated(_ sender: NSTextField) {
+    let rowIndex = titlesTableView.row(for: sender)
     let newTitle = sender.stringValue
     titles.setIndex(rowIndex, toTitle: newTitle)
   }
   
-  func addNewTitle(newTitle: String, atIndex index: Int) {
-    undoManager.prepareWithInvocationTarget(self).removeTitleAtIndex(index)
-    if !undoManager.undoing {
+  func addNewTitle(_ newTitle: String, atIndex index: Int) {
+    (undoManager.prepare(withInvocationTarget: self) as AnyObject).removeTitleAtIndex(index)
+    if !undoManager.isUndoing {
       undoManager.setActionName("add title")
     }
     titles.addNewTitle(newTitle, atIndex: index)
     titlesTableView.reloadData()
   }
   
-  func removeTitleAtIndex(index: Int) {
+  func removeTitleAtIndex(_ index: Int) {
     let oldTitle = titles.titleAtindex(index)
-    undoManager.prepareWithInvocationTarget(self).addNewTitle(oldTitle, atIndex: index)
-    if !undoManager.undoing {
+    (undoManager.prepare(withInvocationTarget: self) as! TitleEditorController).addNewTitle(oldTitle, atIndex: index)
+    if !undoManager.isUndoing {
       undoManager.setActionName("remove title")
     }
     titles.removeTitleAtIndex(index)
     titlesTableView.reloadData()
   }
   
-  @IBAction func addTitleButtonPushed(sender: NSButton) {
+  @IBAction func addTitleButtonPushed(_ sender: NSButton) {
     let index = titlesTableView.selectedRow + 1
     self.addNewTitle("New Title", atIndex: index)
     titlesTableView.reloadData()
-    titlesTableView.editColumn(0, row: index, withEvent: nil, select: true)
+    titlesTableView.editColumn(0, row: index, with: nil, select: true)
   }
   
-  @IBAction func removeTitleButtonPushed(sender: NSButton) {
+  @IBAction func removeTitleButtonPushed(_ sender: NSButton) {
     let index = titlesTableView.selectedRow
     self.removeTitleAtIndex(index)
     titlesTableView.reloadData()

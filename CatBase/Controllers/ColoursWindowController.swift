@@ -17,13 +17,13 @@ class ColoursWindowController: NSWindowController {
     return "ColoursWindowController"
   }
   
-  let undo = NSUndoManager()
+  let undo = UndoManager()
   
-  override var undoManager: NSUndoManager  {
+  override var undoManager: UndoManager  {
     return undo
   }
   
-  func windowWillReturnUndoManager(window: NSWindow) -> NSUndoManager? {
+  func windowWillReturnUndoManager(_ window: NSWindow) -> UndoManager? {
     // The undo menu item is only enabled if we return a undoManager here
     return self.undoManager
   }
@@ -34,44 +34,44 @@ class ColoursWindowController: NSWindowController {
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
   }
   
-  @IBAction func newBreedselected(sender: NSTableView) {
+  @IBAction func newBreedselected(_ sender: NSTableView) {
     coloursTableView.reloadData()
   }
 
   
-  @IBAction func colourUpdated(sender: NSTextField) {
-    let rowIndex = coloursTableView.rowForView(sender)
+  @IBAction func colourUpdated(_ sender: NSTextField) {
+    let rowIndex = coloursTableView.row(for: sender)
     let newColour = sender.stringValue
     colours.setIndex(rowIndex, toColour: newColour)
   }
   
-  func addNewColour(newColour: String, atIndex index: Int) {
-    undoManager.prepareWithInvocationTarget(self).removeColourAtIndex(index)
-    if !undoManager.undoing {
+  func addNewColour(_ newColour: String, atIndex index: Int) {
+    (undoManager.prepare(withInvocationTarget: self) as AnyObject).removeColourAtIndex(index)
+    if !undoManager.isUndoing {
       undoManager.setActionName("add colour")
     }
     colours.addNewColour(newColour, atIndex: index)
     coloursTableView.reloadData()
   }
   
-  func removeColourAtIndex(index: Int) {
+  func removeColourAtIndex(_ index: Int) {
     let oldColour = colours.colourAtIndex(index)
-    undoManager.prepareWithInvocationTarget(self).addNewColour(oldColour, atIndex: index)
-    if !undoManager.undoing {
+    (undoManager.prepare(withInvocationTarget: self) as AnyObject).addNewColour(oldColour, atIndex: index)
+    if !undoManager.isUndoing {
       undoManager.setActionName("remove colour")
     }
     colours.removeColourAtIndex(index)
     coloursTableView.reloadData()
   }
   
-  @IBAction func addColourButtonPushed(sender: NSButton) {
+  @IBAction func addColourButtonPushed(_ sender: NSButton) {
     let index = coloursTableView.selectedRow + 1
     self.addNewColour("New Colour", atIndex: index)
     coloursTableView.reloadData()
-    coloursTableView.editColumn(0, row: index, withEvent: nil, select: true)
+    coloursTableView.editColumn(0, row: index, with: nil, select: true)
   }
   
-  @IBAction func removeColourButtonPushed(sender: NSButton) {
+  @IBAction func removeColourButtonPushed(_ sender: NSButton) {
     let index = coloursTableView.selectedRow
     self.removeColourAtIndex(index)
     coloursTableView.reloadData()

@@ -106,6 +106,7 @@
 					<string>Selkirk Rex</string>
 					<string>Selkirk Rex Longhair</string>
 					<string>Singapura</string>
+					<string>Snowshoe</string>
 					<string>Somali</string>
 					<string>Sphynx</string>
 					<string>Tonkinese</string>
@@ -364,6 +365,116 @@
 					<string>Selkirk Rex Longhair</string>
 					<string>Siamese</string>
 					<string>Singapura</string>
+					<string>Snowshoe</string>
+					<string>Somali</string>
+					<string>Sphynx</string>
+					<string>Tonkinese</string>
+				</array>
+			</dict>
+			<dict>
+				<key>group</key>
+				<string>Companion</string>
+				<key>subgroups</key>
+				<array>
+					<string>Companion</string>
+				</array>
+				<key>breeds</key>
+				<array>
+					<string>Companion</string>
+				</array>
+			</dict>
+		</array>
+	</dict>
+	<key>CCCA Show</key>
+	<dict>
+		<key>Sexes</key>
+		<array>
+			<string>Male</string>
+			<string>Female</string>
+			<string>Neuter</string>
+			<string>Spay</string>
+		</array>
+		<key>Challenges</key>
+		<array>
+			<string>Kitten</string>
+			<string>Open</string>
+			<string>Titled</string>
+		</array>
+		<key>Groups</key>
+		<array>
+			<dict>
+				<key>group</key>
+				<string>Longhair</string>
+				<key>subgroups</key>
+				<array>
+					<string>Kittens</string>
+					<string>Entires</string>
+					<string>Desexed</string>
+				</array>
+				<key>breeds</key>
+				<array>
+					<string>Birman</string>
+					<string>Exotic</string>
+					<string>Maine Coon</string>
+					<string>Norwegian Forest</string>
+					<string>Persian</string>
+					<string>Ragdoll</string>
+					<string>Siberian</string>
+					<string>Turkish Van</string>
+				</array>
+			</dict>
+			<dict>
+				<key>group</key>
+				<string>Shorthair</string>
+				<key>subgroups</key>
+				<array>
+					<string>Kittens</string>
+					<string>Entires</string>
+					<string>Desexed</string>
+				</array>
+				<key>breeds</key>
+				<array>
+					<string>Abyssinian</string>
+					<string>American Curl</string>
+					<string>American Curl Longhair</string>
+					<string>American Shorthair</string>
+					<string>Australian Mist</string>
+					<string>Balinese</string>
+					<string>Bengal</string>
+					<string>Bombay</string>
+					<string>British Shorthair</string>
+					<string>Burmese</string>
+					<string>Burmilla</string>
+					<string>Burmilla Longhair</string>
+					<string>Chartreux</string>
+					<string>Cornish Rex</string>
+					<string>Cymric</string>
+					<string>Cymric Stumpy</string>
+					<string>Devon Rex</string>
+					<string>Egyptian Mau</string>
+					<string>European Shorthair</string>
+					<string>Foreign White</string>
+					<string>German Rex</string>
+					<string>Japanese Bobtail</string>
+					<string>Korat</string>
+					<string>La Perm</string>
+					<string>La Perm Longhair</string>
+					<string>Mandalay</string>
+					<string>Manx</string>
+					<string>Manx Stumpy</string>
+					<string>Ocicat</string>
+					<string>Oriental</string>
+					<string>Pixiebob</string>
+					<string>Russian</string>
+					<string>Scottish Fold</string>
+					<string>Scottish Fold Longhair</string>
+					<string>Scottish Shorthair</string>
+					<string>Scottish Longhair</string>
+					<string>Selkirk Rex</string>
+					<string>Selkirk Rex Longhair</string>
+					<string>Siamese</string>
+					<string>Singapura</string>
+					<string>Snowshoe</string>
 					<string>Somali</string>
 					<string>Sphynx</string>
 					<string>Tonkinese</string>

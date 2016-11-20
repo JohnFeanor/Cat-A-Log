@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class DataSource: NSFormatter {
+class DataSource: Formatter {
   
   var limitToList: Bool = false
   
@@ -37,11 +37,11 @@ class DataSource: NSFormatter {
   // MARK: - Combo box data sources
   // ==============================
   
-  func firstRowMatchingPrefix(prefix: String) -> String? {
-    let lowerCasePrefix = prefix.lowercaseString
+  func firstRowMatchingPrefix(_ prefix: String) -> String? {
+    let lowerCasePrefix = prefix.lowercased()
     // if we find a string that matches, return that
     for string in list {
-      if string.lowercaseString.hasPrefix(lowerCasePrefix) {
+      if string.lowercased().hasPrefix(lowerCasePrefix) {
         return string
       }
     }
@@ -49,19 +49,19 @@ class DataSource: NSFormatter {
     return nil
   }
   
-  func numberOfItemsInComboBox(aComboBox: NSComboBox) -> Int {
+  func numberOfItemsInComboBox(_ aComboBox: NSComboBox) -> Int {
     return list.count
   }
   
-  func comboBox(aComboBox: NSComboBox, objectValueForItemAtIndex index: Int) -> AnyObject {
+  func comboBox(_ aComboBox: NSComboBox, objectValueForItemAtIndex index: Int) -> AnyObject {
     if list.count > 0 && index >= 0 && index < list.count {
-      return list[index]
+      return list[index] as AnyObject
     } else {
-      return ""
+      return "" as AnyObject
     }
   }
   
-  func comboBox(aComboBox: NSComboBox, completedString uncompletedString: String) -> String?{
+  func comboBox(_ aComboBox: NSComboBox, completedString uncompletedString: String) -> String?{
       let candidate = firstRowMatchingPrefix(uncompletedString)
     return candidate ?? uncompletedString
   }
@@ -70,7 +70,7 @@ class DataSource: NSFormatter {
   // Formatter source methods
   // ==========================================================
 
-  override func stringForObjectValue(obj: AnyObject?) -> String? {
+  override func string(for obj: Any?) -> String? {
     guard obj != nil
       else { return nil }
     guard let returnString = obj as? String
@@ -78,25 +78,22 @@ class DataSource: NSFormatter {
     return firstRowMatchingPrefix(returnString)
   }
   
-  override func getObjectValue(obj: AutoreleasingUnsafeMutablePointer<AnyObject?>,
-    forString string: String,
-    errorDescription error: AutoreleasingUnsafeMutablePointer<NSString?>) -> Bool {
+  override func getObjectValue(_ obj: AutoreleasingUnsafeMutablePointer<AnyObject?>?, for string: String, errorDescription error: AutoreleasingUnsafeMutablePointer<NSString?>?) -> Bool {
       if string.isEmpty {
-        obj.memory = ""
+        obj?.pointee = "" as AnyObject?
         return true
       } else if let returnString = firstRowMatchingPrefix(string) {
-        obj.memory = returnString
+        obj?.pointee = returnString as AnyObject?
         return true
       } else {
-        let index1 = string.endIndex.advancedBy(-1)
-        let substring = string.substringToIndex(index1)
-        obj.memory = substring
+        let index1 = string.characters.index(string.endIndex, offsetBy: -1)
+        let substring = string.substring(to: index1)
+        obj?.pointee = substring as AnyObject?
         return true
       }
   }
   
-  
-  override func isPartialStringValid(partialString: String, newEditingString newString: AutoreleasingUnsafeMutablePointer<NSString?>, errorDescription error: AutoreleasingUnsafeMutablePointer<NSString?>) -> Bool {
+  override func isPartialStringValid(_ partialString: String, newEditingString newString: AutoreleasingUnsafeMutablePointer<NSString?>?, errorDescription error: AutoreleasingUnsafeMutablePointer<NSString?>?) -> Bool {
     
     if !limitToList { return true }
     

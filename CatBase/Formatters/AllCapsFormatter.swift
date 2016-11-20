@@ -19,7 +19,7 @@ private extension Character {
   }
 }
 
-class AllCapsFormatter: NSFormatter {
+class AllCapsFormatter: Formatter {
 
   let exempted: NSArray = ["P", "Pe", "Pen", "Pend", "Pendi", "Pendin", "Pending"]
   
@@ -31,9 +31,9 @@ class AllCapsFormatter: NSFormatter {
   
   // MARK: - Specific formatter methods
   
-  private func capitalized(s: String) -> String {
-    if !exempted.containsObject(s) {
-      return s.uppercaseString
+  fileprivate func capitalized(_ s: String) -> String {
+    if !exempted.contains(s) {
+      return s.uppercased()
     } else {
       if exempted.count == 0 {
         return ""
@@ -45,7 +45,7 @@ class AllCapsFormatter: NSFormatter {
   
   // MARK: - general formatter methods that must be overwritten
 
-  override func stringForObjectValue(obj: AnyObject?) -> String? {
+  override func string(for obj: Any?) -> String? {
     // watch out for obj being nil
     if obj == nil {
       return nil
@@ -53,36 +53,34 @@ class AllCapsFormatter: NSFormatter {
     return obj as? String
   }
   
-  override func getObjectValue(obj: AutoreleasingUnsafeMutablePointer<AnyObject?>, forString string: String, errorDescription error: AutoreleasingUnsafeMutablePointer<NSString?>) -> Bool {
-    obj.memory = string
+  override func getObjectValue(_ obj: AutoreleasingUnsafeMutablePointer<AnyObject?>?, for string: String, errorDescription error: AutoreleasingUnsafeMutablePointer<NSString?>?) -> Bool {
+    obj?.pointee = string as AnyObject?
     return true
   }
   
-  override func isPartialStringValid(partialStringPtr: AutoreleasingUnsafeMutablePointer<NSString?>, proposedSelectedRange proposedSelRangePtr: NSRangePointer, originalString origString: String, originalSelectedRange origSelRange: NSRange, errorDescription error: AutoreleasingUnsafeMutablePointer<NSString?>) -> Bool {
+  override func isPartialStringValid(_ partialStringPtr: AutoreleasingUnsafeMutablePointer<NSString>, proposedSelectedRange proposedSelRangePtr: NSRangePointer?, originalString origString: String, originalSelectedRange origSelRange: NSRange, errorDescription error: AutoreleasingUnsafeMutablePointer<NSString?>?) -> Bool {
     
     // allow deletes
-    if (origSelRange.location == proposedSelRangePtr.memory.location) {
+    if (origSelRange.location == proposedSelRangePtr?.pointee.location) {
       return true
     }
     
     var partialString = ""
     var partialStringCount = 0
-    if partialStringPtr.memory != nil {
-      partialString = partialStringPtr.memory! as String
-      partialStringCount = partialString.characters.count
-    }
+    partialString = partialStringPtr.pointee as String
+    partialStringCount = partialString.characters.count
     
-    if let ch = partialString.characters.last where ch.bannedChar { return false }
+    if let ch = partialString.characters.last , ch.bannedChar { return false }
     
     let match = capitalized(partialString)
     
     // if the partial string is shorter than the match, set the selection
     let matchCount = match.characters.count
     if matchCount != partialStringCount {
-      proposedSelRangePtr.memory.length = matchCount - partialStringCount
+      proposedSelRangePtr?.pointee.length = matchCount - partialStringCount
     }
     
-    partialStringPtr.memory = match
+    partialStringPtr.pointee = match as NSString
     return false
     }
 

@@ -11,10 +11,10 @@ import CoreData
 
 class Entry: NSManagedObject {
   
-  static var entity = "Entry"
+  static var nomen = "Entry"
   static var properties = [Entry.cageSize, Entry.catalogueRequired, Entry.hireCage, Entry.litterCage, Entry.ring1, Entry.ring2, Entry.ring3, Entry.ring4, Entry.ring5, Entry.ring6, Entry.willWork]
   
-  private static var rings = ["ring1", "ring2", "ring3", "ring4", "ring5", "ring6"]
+  fileprivate static var rings = ["ring1", "ring2", "ring3", "ring4", "ring5", "ring6"]
   
   static var cageSize           = "cageSize"
   static var catalogueRequired  = "catalogueRequired"
@@ -29,19 +29,19 @@ class Entry: NSManagedObject {
   static var willWork           = "willWork"
   
   
-  @NSManaged private(set) var cageSize: NSNumber
-  @NSManaged private(set) var catalogueRequired: NSNumber
-  @NSManaged private(set) var hireCage: NSNumber
-  @NSManaged private(set) var litterCage: NSNumber
-  @NSManaged private(set) var ring1: NSNumber
-  @NSManaged private(set) var ring2: NSNumber
-  @NSManaged private(set) var ring3: NSNumber
-  @NSManaged private(set) var ring4: NSNumber
-  @NSManaged private(set) var ring5: NSNumber
-  @NSManaged private(set) var ring6: NSNumber
-  @NSManaged private(set) var willWork: NSNumber
-  @NSManaged private(set) var cat: Cat
-  @NSManaged private(set) var show: Show
+  @NSManaged fileprivate(set) var cageSize: NSNumber
+  @NSManaged fileprivate(set) var catalogueRequired: NSNumber
+  @NSManaged fileprivate(set) var hireCage: NSNumber
+  @NSManaged fileprivate(set) var litterCage: NSNumber
+  @NSManaged fileprivate(set) var ring1: NSNumber
+  @NSManaged fileprivate(set) var ring2: NSNumber
+  @NSManaged fileprivate(set) var ring3: NSNumber
+  @NSManaged fileprivate(set) var ring4: NSNumber
+  @NSManaged fileprivate(set) var ring5: NSNumber
+  @NSManaged fileprivate(set) var ring6: NSNumber
+  @NSManaged fileprivate(set) var willWork: NSNumber
+  @NSManaged fileprivate(set) var cat: Cat
+  @NSManaged fileprivate(set) var show: Show
   
   
   override var description: String {
@@ -58,12 +58,12 @@ class Entry: NSManagedObject {
   
   convenience init(entryData: [String : AnyObject], insertIntoManagedObjectContext context: NSManagedObjectContext?) {
     if let context = context {
-      let entryEntity = NSEntityDescription.entityForName(Entry.entity, inManagedObjectContext: context)
+      let entryEntity = NSEntityDescription.entity(forEntityName: Entry.nomen, in: context)
       if entryEntity == nil {
         print("Cannot create new entry entity")
         abort()
       } else {
-        self.init(entity: entryEntity!, insertIntoManagedObjectContext: context)
+        self.init(entity: entryEntity!, insertInto: context)
         self.setValuesTo(entryData)
         
         // find any cats with the same registration (unless pending)
@@ -82,7 +82,7 @@ class Entry: NSManagedObject {
           let excessCats = existingCats.count - 1
           if excessCats > 0 {
             for i in 1 ... excessCats {
-              context.deleteObject(existingCats[i])
+              context.delete(existingCats[i])
             }
           }
           print("deleted \(excessCats) cats from database")
@@ -101,12 +101,12 @@ class Entry: NSManagedObject {
   // MARK: - Changing property values
   // **********************************
   
-  override func setValue(value: AnyObject?, forUndefinedKey key: String) {
+  override func setValue(_ value: Any?, forUndefinedKey key: String) {
     print("Entry given undefined key: \(key)")
   }
   
   func setCageToSmall() {
-    cageSize = NSNumber(integer: 0)
+    cageSize = NSNumber(value: 0 as Int)
   }
   
   var litter: Bool {
@@ -114,14 +114,17 @@ class Entry: NSManagedObject {
       return self.litterCage.boolValue
     }
     set {
-     self.litterCage = NSNumber(bool: newValue)
-      if let size = Globals.cageTypes.sizes.last where newValue {
-        cageSize = size
+     self.litterCage = NSNumber(value: newValue as Bool)
+      if let size = Globals.cageTypes.sizes.last {
+        cageSize = NSNumber(value: size)
       }
+//      if let size = Globals.cageTypes.sizes.last as Int? {
+//        cageSize = NSNumber(size!)
+//      }
     }
   }
   
-  private func setValuesTo(entryData: [String : AnyObject]) {
+  fileprivate func setValuesTo(_ entryData: [String : AnyObject]) {
     for key in Entry.properties {
       if let value = entryData[key] {
         setValue(value, forKey: key)
@@ -130,13 +133,13 @@ class Entry: NSManagedObject {
     }
   }
   
-  func updateTo(entryData: [String : AnyObject]) {
+  func updateTo(_ entryData: [String : AnyObject]) {
     self.setValuesTo(entryData)
     self.cat.setValuesTo(entryData)
   }
   
   func dictionary()  -> [String : AnyObject] {
-    return self.dictionaryWithValuesForKeys(Show.properties)
+    return self.dictionaryWithValues(forKeys: Show.properties) as [String : AnyObject]
   }
   
   
@@ -148,7 +151,7 @@ class Entry: NSManagedObject {
       return litterCage.boolValue
   }
   
-  func isInLitter(litter: Litter) -> Bool {
+  func isInLitter(_ litter: Litter) -> Bool {
     
     // ** must not be a companion
     if cat.isCompanion { return false }
@@ -157,7 +160,7 @@ class Entry: NSManagedObject {
     if !cat.isKitten { return false }
     
     // ** must have the same birthdate
-    if !cat.birthDate.isEqualToDate(litter.birthDate) { return false}
+    if cat.birthDate != litter.birthDate { return false}
     
     // ** must have the same sire
     if cat.sire != litter.sire { return false }
@@ -179,7 +182,7 @@ class Entry: NSManagedObject {
     if self.hireCage.boolValue {
       return Globals.cageTypes.names[_hireCageNumber]
     }
-    if let index = Globals.cageTypes.sizes.indexOf(self.cageSize.integerValue) {
+    if let index = Globals.cageTypes.sizes.index(of: self.cageSize.intValue) {
       return Globals.cageTypes.names[index]
     }
     return Globals.cageTypes.names[0]
@@ -189,35 +192,35 @@ class Entry: NSManagedObject {
     var ans = ""
     var count = 1
     for ring in Entry.rings {
-      if let inThisRing = self.valueForKey(ring) as? NSNumber {
+      if let inThisRing = self.value(forKey: ring) as? NSNumber {
         if inThisRing.boolValue {
           ans += "\(count)"
         }
       }
-      count++
+      count += 1
     }
     return ans
   }
   
-  func inRing(ring: Int) -> Bool {
-    if let inThisRing = self.valueForKey(Entry.rings[ring - 1]) as? NSNumber {
+  func inRing(_ ring: Int) -> Bool {
+    if let inThisRing = self.value(forKey: Entry.rings[ring - 1]) as? NSNumber {
       return inThisRing.boolValue
     }
     return false
   }
  
-  func differentBreedTo(other: Entry?) -> Bool {
+  func differentBreedTo(_ other: Entry?) -> Bool {
     guard let other = other
       else { return true }
     return self.cat.breed != other.cat.breed
   }
   
-  func newBreedTo(other: Entry?) -> Bool {
+  func newBreedTo(_ other: Entry?) -> Bool {
     if self.inDifferentSectionTo(other) { return true }
      return !self.cat.isCompanion && self.differentBreedTo(other)
   }
   
-  func newAgoutiTo(other: Entry? ) -> Bool {
+  func newAgoutiTo(_ other: Entry? ) -> Bool {
     guard let other = other
       else { return true }
     if differentBreedTo(other) { return true }
@@ -226,7 +229,7 @@ class Entry: NSManagedObject {
   
   // return true if other is different breed or colour
   // not concerned about agouti type
-  func newColourTo(other: Entry?) -> Bool {
+  func newColourTo(_ other: Entry?) -> Bool {
     guard let other = other
       else { return true }
     if differentBreedTo(other) { return true }
@@ -235,7 +238,7 @@ class Entry: NSManagedObject {
   
   // return true if other is different challenge colour
   // takes agouti type into account
-  func newColourOrBreedTo(other: Entry?) -> Bool {
+  func newColourOrBreedTo(_ other: Entry?) -> Bool {
     guard let other = other
       else { return true }
     if differentBreedTo(other) { return true }
@@ -244,7 +247,7 @@ class Entry: NSManagedObject {
   
   // return true if other is different challenge colour
   // takes agouti type into account
-  func newChallengeColourTo(other: Entry?) -> Bool {
+  func newChallengeColourTo(_ other: Entry?) -> Bool {
     guard let other = other
       else { return true }
     if differentBreedTo(other) { return true }
@@ -257,18 +260,18 @@ class Entry: NSManagedObject {
     return self.cat.colour != other.cat.colour
   }
   
-  func compareWith(anotherEntry: Entry) -> NSComparisonResult {
+  func compareWith(_ anotherEntry: Entry) -> ComparisonResult {
     return self.cat.compareWith(anotherEntry.cat)
   }
   
-  func inDifferentSectionTo(other: Entry?) -> Bool {
+  func inDifferentSectionTo(_ other: Entry?) -> Bool {
     guard let other = other
       else { return true }
     if cat.isCompanion { return !other.cat.isCompanion }
     return self.cat.section != other.cat.section
   }
   
-  func inDifferentGroupTo(other: Entry?) -> Bool {
+  func inDifferentGroupTo(_ other: Entry?) -> Bool {
     guard let other = other
       else { return true }
     return Breeds.groupNumberOf(self.cat.breed) != Breeds.groupNumberOf(other.cat.breed)
@@ -281,9 +284,9 @@ class Entry: NSManagedObject {
     var ans = ""
     var count = 0
     for ring in Entry.rings {
-      count++
-      if let inRing = self.valueForKey(ring) as? NSNumber {
-        if inRing.boolValue { ans.appendContentsOf("\(count)") }
+      count += 1
+      if let inRing = self.value(forKey: ring) as? NSNumber {
+        if inRing.boolValue { ans.append("\(count)") }
       }
     }
     return ans

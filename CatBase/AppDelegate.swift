@@ -37,7 +37,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   
   var willIexit = false
   
-  @IBAction func splashWindowClosed(sender: AnyObject) {
+  @IBAction func splashWindowClosed(_ sender: AnyObject) {
     window.close()
     if willIexit {
       exit(EXIT_SUCCESS)
@@ -54,7 +54,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     self.mainWindowController = mainWindowController
  
   }
-  func applicationDidFinishLaunching(aNotification: NSNotification) {
+  func applicationDidFinishLaunching(_ aNotification: Notification) {
     
     var authenticate = arrayFromPList("Authentication") as! [String]
     if let triesLeft = Int(authenticate[0]) {
@@ -65,7 +65,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
           timesleftToRunString.stringValue = "\(triesLeft) trial left"
         }
         authenticate[0] = String(triesLeft - 1)
-        if !array(authenticate, ToPlist: "Authentication") {
+        if !array(authenticate as [AnyObject], ToPlist: "Authentication") {
           print("Could not save authentication number")
         }
       } else {
@@ -77,7 +77,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
   }
   
-  func applicationWillTerminate(aNotification: NSNotification) {
+  func applicationWillTerminate(_ aNotification: Notification) {
     // Insert code here to tear down your application
     Colours.saveColours()
     Globals.saveCriticalAges()
@@ -86,30 +86,30 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   
   // MARK: - Core Data stack
   
-  lazy var applicationDocumentsDirectory: NSURL = {
+  lazy var applicationDocumentsDirectory: URL = {
     // The directory the application uses to store the Core Data store file. This code uses a directory named "com.Feanor.CatBase" in the user's Application Support directory.
-    let urls = NSFileManager.defaultManager().URLsForDirectory(.ApplicationSupportDirectory, inDomains: .UserDomainMask)
+    let urls = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)
     let appSupportURL = urls[urls.count - 1] 
-    return appSupportURL.URLByAppendingPathComponent("com.Feanor.CatBase")
+    return appSupportURL.appendingPathComponent("com.Feanor.CatBase")
     }()
   
   lazy var managedObjectModel: NSManagedObjectModel = {
     // The managed object model for the application. This property is not optional. It is a fatal error for the application not to be able to find and load its model.
-    let modelURL = NSBundle.mainBundle().URLForResource("CatBase", withExtension: "momd")!
-    return NSManagedObjectModel(contentsOfURL: modelURL)!
+    let modelURL = Bundle.main.url(forResource: "CatBase", withExtension: "momd")!
+    return NSManagedObjectModel(contentsOf: modelURL)!
     }()
   
   lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator? = {
     // The persistent store coordinator for the application. This implementation creates and return a coordinator, having added the store for the application to it. (The directory for the store is created, if necessary.) This property is optional since there are legitimate error conditions that could cause the creation of the store to fail.
-    let fileManager = NSFileManager.defaultManager()
+    let fileManager = FileManager.default
     var shouldFail = false
     var error: NSError? = nil
     var failureReason = "There was an error creating or loading the application's saved data."
     
     // Make sure the application files directory is there
-    let propertiesOpt: [NSObject: AnyObject]?
+    let propertiesOpt: [AnyHashable: Any]?
     do {
-      propertiesOpt = try self.applicationDocumentsDirectory.resourceValuesForKeys([NSURLIsDirectoryKey])
+      propertiesOpt = try (self.applicationDocumentsDirectory as NSURL).resourceValues(forKeys: [URLResourceKey.isDirectoryKey])
     } catch var error1 as NSError {
       error = error1
       propertiesOpt = nil
@@ -117,14 +117,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       fatalError()
     }
     if let properties = propertiesOpt {
-      if !properties[NSURLIsDirectoryKey]!.boolValue {
+      if !(properties[URLResourceKey.isDirectoryKey]! as AnyObject).boolValue {
         failureReason = "Expected a folder to store application data, found a file \(self.applicationDocumentsDirectory.path)."
         shouldFail = true
       }
     } else if error!.code == NSFileReadNoSuchFileError {
       error = nil
       do {
-        try fileManager.createDirectoryAtPath(self.applicationDocumentsDirectory.path!, withIntermediateDirectories: true, attributes: nil)
+        try fileManager.createDirectory(atPath: self.applicationDocumentsDirectory.path, withIntermediateDirectories: true, attributes: nil)
       } catch var error1 as NSError {
         error = error1
       } catch {
@@ -138,9 +138,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       NSInferMappingModelAutomaticallyOption : true]
     if !shouldFail && (error == nil) {
       coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
-      let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent("CatBase.storedata")
+      let url = self.applicationDocumentsDirectory.appendingPathComponent("CatBase.storedata")
       do {
-        try coordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: options)
+        try coordinator!.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: url, options: options)
       } catch var error1 as NSError {
         error = error1
         coordinator = nil
@@ -153,13 +153,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     if shouldFail || (error != nil) {
       // Report any error we got.
       var dict = [String: AnyObject]()
-      dict[NSLocalizedDescriptionKey] = "Failed to initialize the application's saved data"
-      dict[NSLocalizedFailureReasonErrorKey] = failureReason
+      dict[NSLocalizedDescriptionKey] = "Failed to initialize the application's saved data" as AnyObject?
+      dict[NSLocalizedFailureReasonErrorKey] = failureReason as AnyObject?
       if error != nil {
         dict[NSUnderlyingErrorKey] = error
       }
       error = NSError(domain: "YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict)
-      NSApplication.sharedApplication().presentError(error!)
+      NSApplication.shared().presentError(error!)
       return nil
     } else {
       return coordinator
@@ -172,18 +172,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     if coordinator == nil {
       return nil
     }
-    var managedObjectContext = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
+    var managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
     managedObjectContext.persistentStoreCoordinator = coordinator
     return managedObjectContext
     }()
   
   // MARK: - Core Data Saving and Undo support
   
-  @IBAction func saveAction(sender: AnyObject!) {
+  @IBAction func saveAction(_ sender: AnyObject!) {
     // Performs the save action for the application, which is to send the save: message to the application's managed object context. Any encountered errors are presented to the user.
     if let moc = self.managedObjectContext {
       if !moc.commitEditing() {
-        NSLog("\(NSStringFromClass(self.dynamicType)) unable to commit editing before saving")
+        NSLog("\(NSStringFromClass(type(of: self))) unable to commit editing before saving")
       }
       var error: NSError? = nil
       if moc.hasChanges {
@@ -191,13 +191,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
           try moc.save()
         } catch let error1 as NSError {
           error = error1
-          NSApplication.sharedApplication().presentError(error!)
+          NSApplication.shared().presentError(error!)
         }
       }
     }
   }
   
-  func windowWillReturnUndoManager(window: NSWindow) -> NSUndoManager? {
+  func windowWillReturnUndoManager(_ window: NSWindow) -> UndoManager? {
     // Returns the NSUndoManager for the application. In this case, the manager returned is that of the managed object context for the application.
     if let moc = self.managedObjectContext {
       return moc.undoManager
@@ -206,17 +206,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
   }
   
-  func applicationShouldTerminate(sender: NSApplication) -> NSApplicationTerminateReply {
+  func applicationShouldTerminate(_ sender: NSApplication) -> NSApplicationTerminateReply {
     // Save changes in the application's managed object context before the application terminates.
     
     if let moc = managedObjectContext {
       if !moc.commitEditing() {
-        print("\(NSStringFromClass(self.dynamicType)) unable to commit editing to terminate")
-        return .TerminateCancel
+        print("\(NSStringFromClass(type(of: self))) unable to commit editing to terminate")
+        return .terminateCancel
       }
       
       if !moc.hasChanges {
-        return .TerminateNow
+        return .terminateNow
       }
       
       var error: NSError? = nil
@@ -228,7 +228,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Customize this code block to include application-specific recovery steps.
         let result = sender.presentError(error!)
         if (result) {
-          return .TerminateCancel
+          return .terminateCancel
         }
         
         let question = NSLocalizedString("Could not save changes while quitting. Quit anyway?", comment: "Quit without saves error question message")
@@ -238,17 +238,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let alert = NSAlert()
         alert.messageText = question
         alert.informativeText = info
-        alert.addButtonWithTitle(cancelButton)
-        alert.addButtonWithTitle(quitButton)
+        alert.addButton(withTitle: cancelButton)
+        alert.addButton(withTitle: quitButton)
         
         let answer = alert.runModal()
         if answer == NSAlertFirstButtonReturn {
-          return .TerminateCancel
+          return .terminateCancel
         }
       }
     }
     // If we got here, it is time to quit.
-    return .TerminateNow
+    return .terminateNow
   }
   
   
@@ -256,15 +256,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   // MARK: - Menu actions
   // ========================
   
-  @IBAction func writeFiles(sender: NSMenuItem) {
+  @IBAction func writeFiles(_ sender: NSMenuItem) {
     if let mainWindowController = self.mainWindowController {
       mainWindowController.displaySavePanel()
     }
   }
   
-  private func openEditor(editor: NSWindowController) {
+  fileprivate func openEditor(_ editor: NSWindowController) {
     if let theWindow = editor.window {
-      if !theWindow.visible {
+      if !theWindow.isVisible {
         editor.showWindow(self)
       } else {
         editor.close()
@@ -274,28 +274,28 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
   }
   
-  @IBAction func openColoursEditor(sender: NSMenuItem) {
+  @IBAction func openColoursEditor(_ sender: NSMenuItem) {
     if coloursEditorController == nil {
       coloursEditorController = ColoursWindowController()
     }
     openEditor(coloursEditorController!)
   }
   
-  @IBAction func displayCriticalAges(sender: NSMenuItem) {
+  @IBAction func displayCriticalAges(_ sender: NSMenuItem) {
     if criticalAgesWindowController == nil {
       criticalAgesWindowController = CriticalAgesWindowController()
     }
     openEditor(criticalAgesWindowController!)
   }
   
-  @IBAction func openTitlesEditor(sender: NSMenuItem) {
+  @IBAction func openTitlesEditor(_ sender: NSMenuItem) {
     if titleEditorController == nil {
       titleEditorController = TitleEditorController()
     }
     openEditor(titleEditorController!)
   }
   
-  @IBAction func importACatFile(sender: NSObject) {
+  @IBAction func importACatFile(_ sender: NSObject) {
     let panel = NSOpenPanel()
     panel.canChooseDirectories = false
     panel.allowsMultipleSelection = false
@@ -304,14 +304,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     guard let mainWindow = mainWindowController?.mainWindow
       else { fatalError("Main window is nil") }
     
-    panel.beginSheetModalForWindow(mainWindow) { response in
+    panel.beginSheetModal(for: mainWindow) { response in
       // The sheet has finished. Did the user click 'OK'?
       if response == NSModalResponseOK {
         // import the cats
-        if let url = self.openPanel?.URL {
+        if let url = self.openPanel?.url {
           self.progressPanel = ProgressWindowController()
           // delay so that the open panel can close
-          self.performSelector(Selector("importCatsAtURL:"), withObject: url, afterDelay: 0.1)
+          self.perform(#selector(AppDelegate.importCatsAtURL(_:)), with: url, afterDelay: 0.1)
         } else {
           errorAlert(message: "Cannot open the cat file")
         }
@@ -321,9 +321,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     openPanel = panel
   }
   
-  func importCatsAtURL(url: NSURL) {
+  func importCatsAtURL(_ url: URL) {
     let buffer: NSString
-    do { buffer = try NSString(contentsOfURL: url, encoding: NSUTF8StringEncoding) }
+    do { buffer = try NSString(contentsOf: url, encoding: String.Encoding.utf8.rawValue) }
     catch {
       errorAlert(message: "Error trying to read Cats file")
       return
@@ -331,12 +331,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     guard let progressPanel = self.progressPanel
       else { errorAlert(message: "Cannot open progress panel"); return }
     
-    let strings = buffer.componentsSeparatedByString("\t")
+    let strings = buffer.components(separatedBy: "\t")
     
     let numberOfCatProperties = Cat.positions.count
     let numberOfCats = strings.count / numberOfCatProperties
     print("Preparing to import \(numberOfCats) cats")
-    speaker.startSpeakingString("This may take a while")
+    speaker.startSpeaking("This may take a while")
     if let mainWindow = mainWindowController?.window {
       progressPanel.beginCountDown(onWindow: mainWindow, withLabel: "Preparing to import \(numberOfCats) cats")
     }
@@ -353,9 +353,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       
       if existingCatsWithRegistration(registration, orName: name, inContext: self.managedObjectContext!) == nil {
         let _ = Cat(array:thisCat, insertIntoManagedObjectContext: self.managedObjectContext)
-        count++
+        count += 1
       } else {
-        duplicates++
+        duplicates += 1
       }
       start = end
     }
@@ -369,16 +369,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     self.progressPanel = nil
   }
   
-  @IBAction func exportACatFile(sender: AnyObject) {
+  @IBAction func exportACatFile(_ sender: AnyObject) {
     let panel = NSSavePanel()
     panel.allowedFileTypes = ["cats"]
     guard let mainWindow = mainWindowController?.window
       else { fatalError("Main window is nil") }
     
-    panel.beginSheetModalForWindow(mainWindow) {
+    panel.beginSheetModal(for: mainWindow) {
       (result) in
       if result == NSModalResponseOK {
-        let url = self.savePanel?.URL
+        let url = self.savePanel?.url
         self.exportCatsToURL(url)
         self.savePanel = nil
       }
@@ -386,13 +386,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     savePanel = panel
   }
   
-  private func exportCatsToURL(url: NSURL?) {
+  fileprivate func exportCatsToURL(_ url: URL?) {
     guard let context = self.managedObjectContext
       else { return }
-    let fetchRequest = NSFetchRequest(entityName: Cat.entity)
+    let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: Cat.nomen)
     let fetchResult: [Cat]?
     do {
-      fetchResult = try context.executeFetchRequest(fetchRequest) as? [Cat]
+      fetchResult = try context.fetch(fetchRequest) as? [Cat]
     } catch {
       print("\n** Error in fetch request **\n")
       return
@@ -401,9 +401,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       print("Exporting \(fetchResult.count) cats")
       let printData = NSMutableData()
       for cat in fetchResult {
-        printData.appendData(cat.catString.data)
+        printData.append(cat.catString.data as Data)
       }
-      let ok = printData.writeToURL(url!, atomically: true)
+      let ok = printData.write(to: url!, atomically: true)
       if !ok {
         errorAlert(message: "Could not write cats to file")
       } else {

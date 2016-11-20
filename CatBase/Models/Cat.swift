@@ -11,7 +11,7 @@ import CoreData
 
 class Cat: NSManagedObject {
   
-  static var entity = "Cat"
+  static var nomen = "Cat"
   static var properties = [Cat.name, Cat.registration, Cat.title, Cat.birthDate, Cat.breed, Cat.breeder, Cat.challenge, Cat.colour, Cat.dam, Cat.exhibitor, Cat.sex, Cat.sire, Cat.vaccinated]
   
   static var positions: [String : Int] = [Cat.name : 0, Cat.registration : 1, Cat.title : 2, Cat.birthDate : 3, Cat.breed : 4, Cat.breeder : 5, Cat.challenge : 6, Cat.colour : 7, Cat.dam : 8, Cat.exhibitor : 9, Cat.sex : 10, Cat.sire : 11]
@@ -30,7 +30,7 @@ class Cat: NSManagedObject {
   static var title        = "title"
   static var vaccinated   = "vaccinated"
   
-  @NSManaged var birthDate: NSDate
+  @NSManaged var birthDate: Date
   @NSManaged var breed: String
   @NSManaged var breeder: String
   @NSManaged var challenge: String
@@ -46,20 +46,20 @@ class Cat: NSManagedObject {
   @NSManaged var entries: NSSet?
   
   convenience init(catData: [String : AnyObject], insertIntoManagedObjectContext context: NSManagedObjectContext?) {
-    let catEntity = NSEntityDescription.entityForName(Cat.entity, inManagedObjectContext: context!)
+    let catEntity = NSEntityDescription.entity(forEntityName: Cat.nomen, in: context!)
     if catEntity == nil {
       print("Cannot create new cat entity")
       abort()
     } else {
-      self.init(entity: catEntity!, insertIntoManagedObjectContext: context)
+      self.init(entity: catEntity!, insertInto: context)
       self.setValuesTo(catData)
     }
   }
   
   dynamic var birthDateAsString: String {
-    let dateFormatter = NSDateFormatter()
+    let dateFormatter = Foundation.DateFormatter()
     dateFormatter.dateFormat = "dd/MM/yy"
-    let date = dateFormatter.stringFromDate(self.birthDate)
+    let date = dateFormatter.string(from: self.birthDate)
     return date
   }
   
@@ -68,15 +68,15 @@ class Cat: NSManagedObject {
     for key in Cat.properties {
       switch key {
       case Cat.birthDate:
-        ans.appendContentsOf("\(self.birthDateAsString )\t")
+        ans.append("\(self.birthDateAsString )\t")
       case Cat.vaccinated:
         break
       default:
-        let s = self.valueForKey(key) as? String
+        let s = self.value(forKey: key) as? String
         if s != nil && !s!.isEmpty {
-          ans.appendContentsOf("\(s!)\t")
+          ans.append("\(s!)\t")
         } else {
-          ans.appendContentsOf(" \t")
+          ans.append(" \t")
         }
       }
     }
@@ -84,18 +84,18 @@ class Cat: NSManagedObject {
   }
   
   convenience init(array: [String], insertIntoManagedObjectContext context: NSManagedObjectContext?) {
-    let catEntity = NSEntityDescription.entityForName(Cat.entity, inManagedObjectContext: context!)
+    let catEntity = NSEntityDescription.entity(forEntityName: Cat.nomen, in: context!)
     if catEntity == nil {
       fatalError("Cannot create new cat entity")
     } else {
-      self.init(entity: catEntity!, insertIntoManagedObjectContext: context)
+      self.init(entity: catEntity!, insertInto: context)
       for property in Cat.properties {
         switch property {
         case Cat.birthDate:
-          let dateFormatter = NSDateFormatter()
+          let dateFormatter = Foundation.DateFormatter()
           dateFormatter.dateFormat = "dd/MM/yy"
           let dateString = array[Cat.positions[Cat.birthDate]!]
-          self.birthDate = dateFormatter.dateFromString(dateString)!
+          self.birthDate = dateFormatter.date(from: dateString)!
         case Cat.vaccinated:
           self.vaccinated = false
         case Cat.title:
@@ -111,7 +111,7 @@ class Cat: NSManagedObject {
     }
   }
   
-  func setValuesTo(entryData: [String : AnyObject]) {
+  func setValuesTo(_ entryData: [String : AnyObject]) {
     for key in Cat.properties {
       if let value = entryData[key] {
         setValue(value, forKey: key)
@@ -119,7 +119,7 @@ class Cat: NSManagedObject {
     }
   }
   
-  func setValuesToArray(array: [String]) {
+  func setValuesToArray(_ array: [String]) {
     setValue(array[Cat.positions[Cat.dam]!], forKey: Cat.dam)
     setValue(array[Cat.positions[Cat.sire]!], forKey: Cat.sire)
     setValue(array[Cat.positions[Cat.breeder]!], forKey: Cat.breeder)
@@ -127,16 +127,16 @@ class Cat: NSManagedObject {
 
   }
   
-  override func setValue(value: AnyObject?, forUndefinedKey key: String) {
+  override func setValue(_ value: Any?, forUndefinedKey key: String) {
     print("Cat given undefined key: \(key)")
   }
   
   func dictionary()  -> NSDictionary {
-    return self.dictionaryWithValuesForKeys(Show.properties)
+    return self.dictionaryWithValues(forKeys: Show.properties) as NSDictionary
   }
   
   var prefix: String {
-    let parts = self.name.componentsSeparatedByString(" ")
+    let parts = self.name.components(separatedBy: " ")
     let first = parts.first
     return first ?? ""
   }
@@ -173,7 +173,7 @@ class Cat: NSManagedObject {
   }
   
   var isAgouti: Bool {
-    return Globals.agoutiBreeds.indexOf(self.breed) != nil
+    return Globals.agoutiBreeds.index(of: self.breed) != nil
   }
   
   var isMale: Bool {
@@ -290,76 +290,76 @@ class Cat: NSManagedObject {
   // MARK: - Cat comparision
   // *************************
   
-  func compareWith(anotherCat: Cat) -> NSComparisonResult {
+  func compareWith(_ anotherCat: Cat) -> ComparisonResult {
     
     // first compare on group
     // ----------------------
     if self.groupNumber < anotherCat.groupNumber {
-      return .OrderedAscending
+      return .orderedAscending
     }
     if self.groupNumber > anotherCat.groupNumber {
-      return .OrderedDescending
+      return .orderedDescending
     }
     
     // then compare on section<kitten, entire, desexed>
     // -------------------------------------------------
     if self.section < anotherCat.section {
-      return .OrderedAscending
+      return .orderedAscending
     }
     if self.section > anotherCat.section {
-      return .OrderedDescending
+      return .orderedDescending
     }
     
     // then compare on breed
     // ----------------------
     if self.breedRank < anotherCat.breedRank {
-      return .OrderedAscending
+      return .orderedAscending
     }
     if self.breedRank > anotherCat.breedRank {
-      return .OrderedDescending
+      return .orderedDescending
     }
     
     // then on agouti (if agouti)
     // --------------------------
     if self.agoutiRank < anotherCat.agoutiRank {
-      return .OrderedAscending
+      return .orderedAscending
     }
     if self.agoutiRank > anotherCat.agoutiRank {
-      return .OrderedDescending
+      return .orderedDescending
     }
     
     // then on colour
     // --------------
     if self.colourRank < anotherCat.colourRank {
-      return .OrderedAscending
+      return .orderedAscending
     }
     if self.colourRank > anotherCat.colourRank {
-      return .OrderedDescending
+      return .orderedDescending
     }
     
     // then on age ranking
     // --------------------
     if self.ageRank < anotherCat.ageRank {
-      return .OrderedAscending
+      return .orderedAscending
     }
     if self.ageRank > anotherCat.ageRank {
-      return .OrderedDescending
+      return .orderedDescending
     }
     
     // then on <male>, <female>, <neuter>, <spay>
     // -------------------------------------------
     if self.sexRank < anotherCat.sexRank {
-      return .OrderedAscending
+      return .orderedAscending
     }
     if self.sexRank > anotherCat.sexRank {
-      return .OrderedDescending
+      return .orderedDescending
     }
     
     // then on age
     // ------------
     let comparison = self.birthDate.compare(anotherCat.birthDate)
     switch comparison {
-    case .OrderedAscending, .OrderedDescending:
+    case .orderedAscending, .orderedDescending:
       return comparison
     default:
       break

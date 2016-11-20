@@ -120,19 +120,19 @@ class MainWindowController: NSWindowController {
   override func windowDidLoad() {
     super.windowDidLoad()
     
-    let fetchRequest = NSFetchRequest(entityName: Show.entity)
+    let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: Show.nomen)
     
-    let results = try! managedObjectContext.executeFetchRequest(fetchRequest) as! [Show]
+    let results = try! managedObjectContext.fetch(fetchRequest) as! [Show]
     for object in results {
       theShowController.addObject(object)
     }
     theShowController.rearrangeObjects()
     
-    let centre = NSNotificationCenter.defaultCenter()
-    centre.addObserver(self, selector: Selector("tableViewSelectionDidChange:"), name: NSTableViewSelectionDidChangeNotification, object: tableView)
+    let centre = NotificationCenter.default
+    centre.addObserver(self, selector: #selector(NSTableViewDelegate.tableViewSelectionDidChange(_:)), name: NSNotification.Name.NSTableViewSelectionDidChange, object: tableView)
   }
   
-  func tableViewSelectionDidChange(aNotification: NSNotification) {
+  func tableViewSelectionDidChange(_ aNotification: Notification) {
     if Globals.currentShowName.isEmpty {
       appDelegate.writeMenuTitle = "No show selected"
       appDelegate.writeMenuAvailable = false
@@ -146,26 +146,32 @@ class MainWindowController: NSWindowController {
   // MARK: - Undo methods
   // ================================
   
-  override var undoManager: NSUndoManager {
+  var myUndoManager: UndoManager {
     get {
-      return self.managedObjectContext.undoManager!
+      if let mum = self.managedObjectContext.undoManager {
+        return mum
+      } else {
+        self.managedObjectContext.undoManager = UndoManager()
+        print("created an undoManager")
+        return self.managedObjectContext.undoManager!
+      }
     }
   }
 
-  func windowWillReturnUndoManager(window: NSWindow) -> NSUndoManager? {
+  func windowWillReturnUndoManager(_ window: NSWindow) -> UndoManager {
     // The undo menu item is only enabled if we return a undoManager here
-    return self.undoManager
+    return self.myUndoManager
   }
   
-  @IBAction func undo(sender: NSButton) {
-    undoManager.undo()
+  @IBAction func undo(_ sender: NSButton) {
+    myUndoManager.undo()
   }
   
   // ========================
   // MARK: - Show IBActions
   // ========================
   
-  @IBAction func addShow(sender: NSButton) {
+  @IBAction func addShow(_ sender: NSButton) {
     if let window = window {
       
       // Create and configure the window controller to present as a sheet:
@@ -173,11 +179,11 @@ class MainWindowController: NSWindowController {
       window.beginSheet(sheetController.window!, completionHandler: { response in
         // The sheet has finished. Did the user click 'OK'?
         if response == NSModalResponseOK {
-          self.undoManager.beginUndoGrouping()
-          self.undoManager.setActionName("add show")
+          self.myUndoManager.beginUndoGrouping()
+          self.myUndoManager.setActionName("add show")
           let newShow = Show(showData: self.addShowWindowController!.showData, insertIntoManagedObjectContext: self.managedObjectContext)
           self.theShowController.addObject(newShow)
-          self.undoManager.endUndoGrouping()
+          self.myUndoManager.endUndoGrouping()
           do { try self.managedObjectContext.save() }
           catch{
             print("Error trying to save managed object context after adding of show")
@@ -190,19 +196,19 @@ class MainWindowController: NSWindowController {
     }
   }
   
-  @IBAction func editShow(sender: NSButton) {
+  @IBAction func editShow(_ sender: NSButton) {
     if let window = window {
       let sheetController = AddShowWindowController()
       if Globals.currentShow != nil {
-        speaker.startSpeakingString("Editing \(Globals.currentShowName)")
+        speaker.startSpeaking("Editing \(Globals.currentShowName)")
         sheetController.setToShow(show: Globals.currentShow!)
         window.beginSheet(sheetController.window!, completionHandler: { response in
           // The sheet has finished. Did the user click 'OK'?
           if response == NSModalResponseOK {
-            self.undoManager.beginUndoGrouping()
-            self.undoManager.setActionName("edit show")
+            self.myUndoManager.beginUndoGrouping()
+            self.myUndoManager.setActionName("edit show")
             Globals.currentShow!.setValuesTo(self.addShowWindowController!.showData)
-            self.undoManager.endUndoGrouping()
+            self.myUndoManager.endUndoGrouping()
           }
           // all done with the entry sheet controller
           self.addShowWindowController = nil
@@ -218,12 +224,12 @@ class MainWindowController: NSWindowController {
     }
   }
   
-  @IBAction func removeShow(sender: NSButton) {
+  @IBAction func removeShow(_ sender: NSButton) {
     if areYouSure("Do you really want to delete the \(Globals.currentShow!.name) show?") {
-      undoManager.beginUndoGrouping()
-      undoManager.setActionName("remove show")
+      myUndoManager.beginUndoGrouping()
+      myUndoManager.setActionName("remove show")
       theShowController.remove(sender)
-      undoManager.endUndoGrouping()
+      myUndoManager.endUndoGrouping()
       do { try self.managedObjectContext.save() }
       catch{
         print("Error trying to save managed object context after removal of show")
@@ -235,7 +241,7 @@ class MainWindowController: NSWindowController {
   // MARK: - Entry IBActions
   // ========================
   
-  @IBAction func addEntry(sender: NSButton) {
+  @IBAction func addEntry(_ sender: NSButton) {
     if let window = window {
       
       if Globals.currentShow == nil {
@@ -245,7 +251,7 @@ class MainWindowController: NSWindowController {
       let sheetController = EntrySheetController()
       assert(self.managedObjectContext != nil)
       sheetController.managedObjectContext = self.managedObjectContext
-      speaker.startSpeakingString("adding an entry")
+      speaker.startSpeaking("adding an entry")
       window.beginSheet(sheetController.window!, completionHandler: { response in
         // The sheet has finished. Did the user click 'OK'?
         if response == NSModalResponseOK {
@@ -270,12 +276,12 @@ class MainWindowController: NSWindowController {
           if !problem {
             print("------\nBefore entry show has the following cats:")
             print(Globals.currentShow!)
-            self.undoManager.beginUndoGrouping()
-            self.undoManager.setActionName("add entry")
+            self.myUndoManager.beginUndoGrouping()
+            self.myUndoManager.setActionName("add entry")
             let newEntry = Entry(entryData: sheetController.entryData, insertIntoManagedObjectContext: self.managedObjectContext)
             self.theEntriesController.addObject(newEntry)
             self.theEntriesController.rearrangeObjects()
-            self.undoManager.endUndoGrouping()
+            self.myUndoManager.endUndoGrouping()
             print("------\nAfter entry show has the following cats:")
             print(Globals.currentShow!)
           }
@@ -291,13 +297,13 @@ class MainWindowController: NSWindowController {
     }
   }
   
-  @IBAction func removeEntry(sender: NSButton) {
+  @IBAction func removeEntry(_ sender: NSButton) {
     let name = Globals.currentEntry!.cat.name
     if areYouSure("Do you really want to delete \(name)?") {
-      undoManager.beginUndoGrouping()
-      undoManager.setActionName("remove entry")
+      myUndoManager.beginUndoGrouping()
+      myUndoManager.setActionName("remove entry")
       theEntriesController.remove(sender)
-      undoManager.endUndoGrouping()
+      myUndoManager.endUndoGrouping()
       do { try self.managedObjectContext.save() }
       catch{
         print("Error trying to save managed object context after removal of entry")
@@ -305,7 +311,7 @@ class MainWindowController: NSWindowController {
     }
   }
   
-  @IBAction func editEntry(sender: NSObject) {
+  @IBAction func editEntry(_ sender: NSObject) {
     if let window = window {
       
       if Globals.currentEntry == nil {
@@ -316,18 +322,18 @@ class MainWindowController: NSWindowController {
       sheetController.managedObjectContext = self.managedObjectContext
       sheetController.setSheetTo(Globals.currentEntry!)
       sheetController.dateSet = true
-      speaker.startSpeakingString("editing \(Globals.currentEntry!.cat.name)")
+      speaker.startSpeaking("editing \(Globals.currentEntry!.cat.name)")
       window.beginSheet(sheetController.window!, completionHandler: { response in
         // The sheet has finished. Did the user click 'OK'?
         if response == NSModalResponseOK {
-          self.undoManager.beginUndoGrouping()
-          self.undoManager.setActionName("edit entry")
+          self.myUndoManager.beginUndoGrouping()
+          self.myUndoManager.setActionName("edit entry")
           if Globals.currentEntry == nil {
             print("current entry has become nil while editing it")
           }
           Globals.currentEntry?.updateTo(self.addEntryWindowController!.entryData)
           self.theEntriesController.rearrangeObjects()
-          self.undoManager.endUndoGrouping()
+          self.myUndoManager.endUndoGrouping()
         }
         // all done with the entry sheet controller
         self.addEntryWindowController = nil
@@ -347,14 +353,14 @@ class MainWindowController: NSWindowController {
   func displaySavePanel() {
     let savePanel = NSSavePanel()
     savePanel.allowedFileTypes = ["html"]
-    savePanel.extensionHidden = false
+    savePanel.isExtensionHidden = false
     savePanel.canSelectHiddenExtension = false
     savePanel.nameFieldStringValue = "\(Globals.currentShowName).html"
     
-    savePanel.beginSheetModalForWindow(window!, completionHandler: {
+    savePanel.beginSheetModal(for: window!, completionHandler: {
       [unowned savePanel] (result) in
       if result == NSModalResponseOK {
-        self.printCatalog(savePanel.nameFieldStringValue, to: savePanel.URL!)
+        self.printCatalog(savePanel.nameFieldStringValue, to: savePanel.url!)
       }
     })
   }

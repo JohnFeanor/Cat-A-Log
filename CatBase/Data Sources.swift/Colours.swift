@@ -8,9 +8,13 @@
 
 import Cocoa
 
-var coloursToken: dispatch_once_t = 0
+var coloursToken: Int = 0
 
 class Colours: DataSource, NSTableViewDataSource {
+  
+  private static var __once: () = {
+      list = dictFromPList(Colours.entity) as! DictOfStringArray
+    }()
   
   // breedSource must be bound to a control which will return a valid breed name
   // ----------------------------------------------------------------------------
@@ -33,7 +37,7 @@ class Colours: DataSource, NSTableViewDataSource {
   static var isDirty = false
   
   static var entity = "Colours"
-  private static var list = DictOfStringArray() {
+  fileprivate static var list = DictOfStringArray() {
     didSet {
       isDirty = true
     }
@@ -44,9 +48,7 @@ class Colours: DataSource, NSTableViewDataSource {
   // *************************
   
   override class func initialize() {
-    dispatch_once(&coloursToken) {
-      list = dictFromPList(Colours.entity) as! DictOfStringArray
-    }
+    _ = Colours.__once
   }
   
   class func saveColours() {
@@ -58,10 +60,10 @@ class Colours: DataSource, NSTableViewDataSource {
     }
   }
   
-  class func rankOf(colour: String, forBreed breed: String) -> Int? {
+  class func rankOf(_ colour: String, forBreed breed: String) -> Int? {
     guard let colours = Colours.list[breed]
       else { return nil }
-    return colours.indexOf(colour)
+    return colours.index(of: colour)
   }
   
   
@@ -89,11 +91,11 @@ class Colours: DataSource, NSTableViewDataSource {
   // MARK: - instance methods
   // *************************
   
-  private func indexInBounds(index: Int) -> Bool {
+  fileprivate func indexInBounds(_ index: Int) -> Bool {
     return (index > -1 && index < self.list.count)
   }
   
-  func  colourAtIndex(index: Int) -> String {
+  func  colourAtIndex(_ index: Int) -> String {
     if indexInBounds(index) && currentBreed != nil && !currentBreed!.isEmpty {
       return Colours.list[currentBreed!]![index]
     } else {
@@ -101,21 +103,21 @@ class Colours: DataSource, NSTableViewDataSource {
     }
   }
   
-  func setIndex(index: Int, toColour newColour:String) {
+  func setIndex(_ index: Int, toColour newColour:String) {
     if indexInBounds(index) && currentBreed != nil && !currentBreed!.isEmpty {
       Colours.list[currentBreed!]![index] = newColour
     }
   }
   
-  func addNewColour(newColour: String, atIndex index: Int) {
+  func addNewColour(_ newColour: String, atIndex index: Int) {
     if indexInBounds(index) && currentBreed != nil && !currentBreed!.isEmpty {
-      Colours.list[currentBreed!]!.insert(newColour, atIndex: index)
+      Colours.list[currentBreed!]!.insert(newColour, at: index)
     }
   }
   
-  func removeColourAtIndex(index: Int) {
+  func removeColourAtIndex(_ index: Int) {
     if indexInBounds(index)  && currentBreed != nil && !currentBreed!.isEmpty {
-      Colours.list[currentBreed!]!.removeAtIndex(index)
+      Colours.list[currentBreed!]!.remove(at: index)
     }
   }
   
@@ -123,13 +125,13 @@ class Colours: DataSource, NSTableViewDataSource {
   // MARK: - TableView datasource methods
   // ************************************
   
-  func numberOfRowsInTableView(tableView: NSTableView) -> Int {
+  func numberOfRows(in tableView: NSTableView) -> Int {
     return self.list.count
   }
   
-  func tableView(aTableView: NSTableView,
-    objectValueForTableColumn aTableColumn: NSTableColumn?,
-    row rowIndex: Int) -> AnyObject? {
+  func tableView(_ aTableView: NSTableView,
+    objectValueFor aTableColumn: NSTableColumn?,
+    row rowIndex: Int) -> Any? {
       if indexInBounds(rowIndex) {
         return self.list[rowIndex]
       } else {
@@ -142,13 +144,13 @@ class Colours: DataSource, NSTableViewDataSource {
   // MARK: - Combo box data sources
   // ==============================
   
-  override func firstRowMatchingPrefix(prefix: String) -> String? {
-    let lowerCasePrefix = prefix.lowercaseString
+  override func firstRowMatchingPrefix(_ prefix: String) -> String? {
+    let lowerCasePrefix = prefix.lowercased()
     var currentChoice: String? = nil
     
     // find the smallest string that matches
     for string in list {
-      if string.lowercaseString.hasPrefix(lowerCasePrefix) {
+      if string.lowercased().hasPrefix(lowerCasePrefix) {
         if currentChoice == nil {
           currentChoice = string
         } else if string.characters.count < currentChoice!.characters.count {

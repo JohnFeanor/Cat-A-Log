@@ -6669,7 +6669,77 @@
 		<string>Cinnamon Silver Tortie Tabby Point</string>
 		<string>Fawn Silver Tortie Tabby Point</string>
 		<string>Caramel Silver Tortie Tabby Point</string>
-		<string>Brown Mink</string>
+		<string>Seal Point &amp; White</string>
+		<string>Blue Point &amp; White</string>
+		<string>Chocolate Point &amp; White</string>
+		<string>Lilac Point &amp; White</string>
+		<string>Red Point &amp; White</string>
+		<string>Cream Point &amp; White</string>
+		<string>Cinnamon Point &amp; White</string>
+		<string>Fawn Point &amp; White</string>
+		<string>Caramel Point &amp; White</string>
+		<string>Apricot Point &amp; White</string>
+		<string>Seal Tortie Point &amp; White</string>
+		<string>Blue Tortie Point &amp; White</string>
+		<string>Chocolate Tortie Point &amp; White</string>
+		<string>Lilac Tortie Point &amp; White</string>
+		<string>Cinnamon Tortie Point &amp; White</string>
+		<string>Fawn Tortie Point &amp; White</string>
+		<string>Caramel Tortie Point &amp; White</string>
+		<string>Apricot Tortie Point &amp; White</string>
+		<string>Seal Tabby Point &amp; White</string>
+		<string>Blue Tabby Point &amp; White</string>
+		<string>Chocolate Tabby Point &amp; White</string>
+		<string>Lilac Tabby Point &amp; White</string>
+		<string>Red Tabby Point &amp; White</string>
+		<string>Cream Tabby Point &amp; White</string>
+		<string>Cinnamon Tabby Point &amp; White</string>
+		<string>Fawn Tabby Point &amp; White</string>
+		<string>Caramel Tabby Point &amp; White</string>
+		<string>Apricot Tabby Point &amp; White</string>
+		<string>Seal Tortie Tabby Point &amp; White</string>
+		<string>Blue Tortie Tabby Point &amp; White</string>
+		<string>Chocolate Tortie Tabby Point &amp; White</string>
+		<string>Lilac Tortie Tabby Point &amp; White</string>
+		<string>Cinnamon Tortie Tabby Point &amp; White</string>
+		<string>Fawn Tortie Tabby Point &amp; White</string>
+		<string>Caramel Tortie Tabby Point &amp; White</string>
+		<string>Apricot Tortie Tabby Point &amp; White</string>
+		<string>Seal Smoke Point &amp; White</string>
+		<string>Blue Smoke Point &amp; White</string>
+		<string>Chocolate Smoke Point &amp; White</string>
+		<string>Lilac Smoke Point &amp; White</string>
+		<string>Red Smoke Point &amp; White</string>
+		<string>Cream Smoke Point &amp; White</string>
+		<string>Cinnamon Smoke Point &amp; White</string>
+		<string>Fawn Smoke Point &amp; White</string>
+		<string>Caramel Smoke Point &amp; White</string>
+		<string>Apricot Smoke Point &amp; White</string>
+		<string>Seal Tortie Smoke Tabby Point &amp; White</string>
+		<string>Blue Tortie Smoke Tabby Point &amp; White</string>
+		<string>Chocolate Tortie Smoke Tabby Point &amp; White</string>
+		<string>Lilac Tortie Smoke Tabby Point &amp; White</string>
+		<string>Cinnamon Tortie Smoke Tabby Point &amp; White</string>
+		<string>Fawn Tortie Smoke Tabby Point &amp; White</string>
+		<string>Caramel Tortie Smoke Tabby Point &amp; White</string>
+		<string>Seal Silver Tabby Point &amp; White</string>
+		<string>Blue Silver Tabby Point &amp; White</string>
+		<string>Chocolate Silver Tabby Point &amp; White</string>
+		<string>Lilac Silver Tabby Point &amp; White</string>
+		<string>Red Silver Tabby Point &amp; White</string>
+		<string>Cream Silver Tabby Point &amp; White</string>
+		<string>Cinnamon Silver Tabby Point &amp; White</string>
+		<string>Fawn Silver Tabby Point &amp; White</string>
+		<string>Caramel Silver Tabby Point &amp; White</string>
+		<string>Apricot Silver Tabby Point &amp; White</string>
+		<string>Seal Silver Tortie Tabby Point &amp; White</string>
+		<string>Blue Silver Tortie Tabby Point &amp; White</string>
+		<string>Chocolate Silver Tortie Tabby Point &amp; White</string>
+		<string>Lilac Silver Tortie Tabby Point &amp; White</string>
+		<string>Cinnamon Silver Tortie Tabby Point &amp; White</string>
+		<string>Fawn Silver Tortie Tabby Point &amp; White</string>
+		<string>Caramel Silver Tortie Tabby Point &amp; White</string>
+		<string>Seal Mink</string>
 		<string>Blue Mink</string>
 		<string>Chocolate Mink</string>
 		<string>Lilac Mink</string>
@@ -6686,6 +6756,57 @@
 		<string>Caramel Tortie Mink</string>
 		<string>Apricot Tortie Mink</string>
 		<string>Cinnamon Tortie Mink</string>
+		<string>Seal Silver Mink</string>
+		<string>Blue Silver Mink</string>
+		<string>Chocolate Silver Mink</string>
+		<string>Lilac Silver Mink</string>
+		<string>Red Silver Mink</string>
+		<string>Cream Silver Mink</string>
+		<string>Caramel Silver Mink</string>
+		<string>Apricot Silver Mink</string>
+		<string>Cinnamon Silver Mink</string>
+		<string>Fawn Silver Mink</string>
+		<string>Seal Tortie Silver Mink</string>
+		<string>Blue Tortie Silver Mink</string>
+		<string>Chocolate Tortie Silver Mink</string>
+		<string>Lilac Tortie Silver Mink</string>
+		<string>Caramel Tortie Silver Mink</string>
+		<string>Apricot Tortie Silver Mink</string>
+		<string>Cinnamon Tortie Silver Mink</string>
+		<string>Seal Mink &amp; White</string>
+		<string>Blue Mink &amp; White</string>
+		<string>Chocolate Mink &amp; White</string>
+		<string>Lilac Mink &amp; White</string>
+		<string>Red Mink &amp; White</string>
+		<string>Cream Mink &amp; White</string>
+		<string>Caramel Mink &amp; White</string>
+		<string>Apricot Mink &amp; White</string>
+		<string>Cinnamon Mink &amp; White</string>
+		<string>Fawn Mink &amp; White</string>
+		<string>Seal Tortie Mink &amp; White</string>
+		<string>Blue Tortie Mink &amp; White</string>
+		<string>Chocolate Tortie Mink &amp; White</string>
+		<string>Lilac Tortie Mink &amp; White</string>
+		<string>Caramel Tortie Mink &amp; White</string>
+		<string>Apricot Tortie Mink &amp; White</string>
+		<string>Cinnamon Tortie Mink &amp; White</string>
+		<string>Seal Silver Mink &amp; White</string>
+		<string>Blue Silver Mink &amp; White</string>
+		<string>Chocolate Silver Mink &amp; White</string>
+		<string>Lilac Silver Mink &amp; White</string>
+		<string>Red Silver Mink &amp; White</string>
+		<string>Cream Silver Mink &amp; White</string>
+		<string>Caramel Silver Mink &amp; White</string>
+		<string>Apricot Silver Mink &amp; White</string>
+		<string>Cinnamon Silver Mink &amp; White</string>
+		<string>Fawn Silver Mink &amp; White</string>
+		<string>Seal Tortie Silver Mink &amp; White</string>
+		<string>Blue Tortie Silver Mink &amp; White</string>
+		<string>Chocolate Tortie Silver Mink &amp; White</string>
+		<string>Lilac Tortie Silver Mink &amp; White</string>
+		<string>Caramel Tortie Silver Mink &amp; White</string>
+		<string>Apricot Tortie Silver Mink &amp; White</string>
+		<string>Cinnamon Tortie Silver Mink &amp; White</string>
 	</array>
 	<key>Egyptian Mau</key>
 	<array>
@@ -16055,14 +16176,19 @@
 		<string>Lilac</string>
 		<string>Red</string>
 		<string>Cream</string>
+		<string>Caramel</string>
+		<string>Apricot</string>
 		<string>Golden Shell</string>
-		<string>Black Chinchilla</string>
+		<string>Blue Golden Shell</string>
+		<string>Chocolate Golden Shell</string>
+		<string>Lilac Golden Shell</string>
+		<string>Black Chincilla</string>
 		<string>Black Tipped Pewter</string>
-		<string>Blue Chinchilla</string>
+		<string>Blue Chincilla</string>
 		<string>Blue Tipped Pewter</string>
-		<string>Chocolate Chinchilla</string>
+		<string>Chocolate Chincilla</string>
 		<string>Chocolate Tipped Pewter</string>
-		<string>Lilac Chinchilla</string>
+		<string>Lilac Chincilla</string>
 		<string>Lilac Tipped Pewter</string>
 		<string>Red Shell Cameo</string>
 		<string>Cream Shell Cameo</string>
@@ -16071,6 +16197,9 @@
 		<string>Chocolate Tortie Tipped</string>
 		<string>Lilac Tortie Tipped</string>
 		<string>Golden Shaded</string>
+		<string>Blue Shaded Golden</string>
+		<string>Chocolate Shaded Golden</string>
+		<string>Lilac Shaded Golden</string>
 		<string>Black Shaded Silver</string>
 		<string>Black Shaded Pewter</string>
 		<string>Blue Shaded Silver</string>
@@ -16091,12 +16220,95 @@
 		<string>Lilac Smoke</string>
 		<string>Red Smoke</string>
 		<string>Cream Smoke</string>
+		<string>Caramel Smoke</string>
+		<string>Apricot Smoke</string>
 		<string>Black Tortie Smoke</string>
 		<string>Blue Tortie Smoke</string>
 		<string>Chocolate Tortie Smoke</string>
 		<string>Lilac Tortie Smoke</string>
-		<string>Black Silver Classic Tabby (Green Eyed)</string>
-		<string>Black Silver Classic Tabby (Orange Eyed)</string>
+		<string>Black Silver Tabby</string>
+		<string>Blue Silver Tabby (Green Eyed)</string>
+		<string>Blue Silver Tabby (Orange Eyed)</string>
+		<string>Blue Silver Tabby</string>
+		<string>Chocolate Silver Tabby (Green Eyed)</string>
+		<string>Chocolate Silver Tabby (Orange Eyed)</string>
+		<string>Chocolate Silver Tabby</string>
+		<string>Lilac Silver Tabby (Green Eyed)</string>
+		<string>Lilac Silver Tabby (Orange Eyed)</string>
+		<string>Lilac Silver Tabby</string>
+		<string>Red Silver Tabby (Green Eyed)</string>
+		<string>Red Silver Tabby (Orange Eyed)</string>
+		<string>Red Silver Tabby</string>
+		<string>Cream Silver Tabby (Green Eyed)</string>
+		<string>Cream Silver Tabby (Orange Eyed)</string>
+		<string>Cream Silver Tabby</string>
+		<string>Caramel Silver Tabby</string>
+		<string>Apricot Silver Tabby</string>
+		<string>Black Silver Tortie Tabby (Green Eyed)</string>
+		<string>Black Silver Tortie Tabby (Orange Eyed)</string>
+		<string>Black Silver Tortie Tabby</string>
+		<string>Blue Silver Tortie Tabby (Green Eyed)</string>
+		<string>Blue Silver Tortie Tabby (Orange Eyed)</string>
+		<string>Blue Silver Tortie Tabby</string>
+		<string>Chocolate Silver Tortie Tabby (Green Eyed)</string>
+		<string>Chocolate Silver Tortie Tabby (Orange Eyed)</string>
+		<string>Chocolate Silver Tortie Tabby</string>
+		<string>Lilac Silver Tortie Tabby (Green Eyed)</string>
+		<string>Lilac Silver Tortie Tabby (Orange Eyed)</string>
+		<string>Lilac Silver Tortie Tabby</string>
+		<string>Red Silver Tortie Tabby (Green Eyed)</string>
+		<string>Red Silver Tortie Tabby (Orange Eyed)</string>
+		<string>Red Silver Tortie Tabby</string>
+		<string>Cream Silver Tortie Tabby (Green Eyed)</string>
+		<string>Cream Silver Tortie Tabby (Orange Eyed)</string>
+		<string>Cream Silver Tortie Tabby</string>
+		<string>Caramel Silver Tortie Tabby</string>
+		<string>Apricot Silver Tortie Tabby</string>
+		<string>Black Golden Tabby (Green Eyed)</string>
+		<string>Black Golden Tabby (Orange Eyed)</string>
+		<string>Black Golden Tabby</string>
+		<string>Blue Golden Tabby (Green Eyed)</string>
+		<string>Blue Golden Tabby (Orange Eyed)</string>
+		<string>Blue Golden Tabby</string>
+		<string>Chocolate Golden Tabby (Green Eyed)</string>
+		<string>Chocolate Golden Tabby (Orange Eyed)</string>
+		<string>Chocolate Golden Tabby</string>
+		<string>Lilac Golden Tabby (Green Eyed)</string>
+		<string>Lilac Golden Tabby (Orange Eyed)</string>
+		<string>Lilac Golden Tabby</string>
+		<string>Red Golden Tabby (Green Eyed)</string>
+		<string>Red Golden Tabby (Orange Eyed)</string>
+		<string>Red Golden Tabby</string>
+		<string>Cream Golden Tabby (Green Eyed)</string>
+		<string>Cream Golden Tabby (Orange Eyed)</string>
+		<string>Cream Golden Tabby</string>
+		<string>Caramel Golden Tabby</string>
+		<string>Apricot Golden Tabby</string>
+		<string>Black Golden Tortie Tabby (Green Eyed)</string>
+		<string>Black Golden Tortie Tabby (Orange Eyed)</string>
+		<string>Black Golden Tortie Tabby</string>
+		<string>Blue Golden Tortie Tabby (Green Eyed)</string>
+		<string>Blue Golden Tortie Tabby (Orange Eyed)</string>
+		<string>Blue Golden Tortie Tabby</string>
+		<string>Chocolate Golden Tortie Tabby (Green Eyed)</string>
+		<string>Chocolate Golden Tortie Tabby (Orange Eyed)</string>
+		<string>Chocolate Golden Tortie Tabby</string>
+		<string>Lilac Golden Tortie Tabby (Green Eyed)</string>
+		<string>Lilac Golden Tortie Tabby (Orange Eyed)</string>
+		<string>Lilac Golden Tortie Tabby</string>
+		<string>Black Tabby</string>
+		<string>Black Tabby (Orange Eyed)</string>
+		<string>Blue Tabby</string>
+		<string>Chocolate Tabby</string>
+		<string>Lilac Tabby</string>
+		<string>Red Tabby</string>
+		<string>Cream Tabby</string>
+		<string>Caramel Tabby</string>
+		<string>Apricot Tabby</string>
+		<string>Black Tortie Tabby</string>
+		<string>Blue Tortie Tabby</string>
+		<string>Chocolate Tortie Tabby</string>
+		<string>Lilac Tortie Tabby</string>
 		<string>Black Silver Classic Tabby</string>
 		<string>Blue Silver Classic Tabby (Green Eyed)</string>
 		<string>Blue Silver Classic Tabby (Orange Eyed)</string>
@@ -16107,8 +16319,14 @@
 		<string>Lilac Silver Classic Tabby (Green Eyed)</string>
 		<string>Lilac Silver Classic Tabby (Orange Eyed)</string>
 		<string>Lilac Silver Classic Tabby</string>
+		<string>Red Silver Classic Tabby (Green Eyed)</string>
+		<string>Red Silver Classic Tabby (Orange Eyed)</string>
 		<string>Red Silver Classic Tabby</string>
+		<string>Cream Silver Classic Tabby (Green Eyed)</string>
+		<string>Cream Silver Classic Tabby (Orange Eyed)</string>
 		<string>Cream Silver Classic Tabby</string>
+		<string>Caramel Silver Classic Tabby</string>
+		<string>Apricot Silver Classic Tabby</string>
 		<string>Black Silver Tortie Classic Tabby (Green Eyed)</string>
 		<string>Black Silver Tortie Classic Tabby (Orange Eyed)</string>
 		<string>Black Silver Tortie Classic Tabby</string>
@@ -16121,19 +16339,59 @@
 		<string>Lilac Silver Tortie Classic Tabby (Green Eyed)</string>
 		<string>Lilac Silver Tortie Classic Tabby (Orange Eyed)</string>
 		<string>Lilac Silver Tortie Classic Tabby</string>
-		<string>Golden Classic Tabby</string>
+		<string>Red Silver Tortie Classic Tabby (Green Eyed)</string>
+		<string>Red Silver Tortie Classic Tabby (Orange Eyed)</string>
+		<string>Red Silver Tortie Classic Tabby</string>
+		<string>Cream Silver Tortie Classic Tabby (Green Eyed)</string>
+		<string>Cream Silver Tortie Classic Tabby (Orange Eyed)</string>
+		<string>Cream Silver Tortie Classic Tabby</string>
+		<string>Caramel Silver Tortie Classic Tabby</string>
+		<string>Apricot Silver Tortie Classic Tabby</string>
+		<string>Black Golden Classic Tabby (Green Eyed)</string>
+		<string>Black Golden Classic Tabby (Orange Eyed)</string>
+		<string>Black Golden Classic Tabby</string>
+		<string>Blue Golden Classic Tabby (Green Eyed)</string>
+		<string>Blue Golden Classic Tabby (Orange Eyed)</string>
+		<string>Blue Golden Classic Tabby</string>
+		<string>Chocolate Golden Classic Tabby (Green Eyed)</string>
+		<string>Chocolate Golden Classic Tabby (Orange Eyed)</string>
+		<string>Chocolate Golden Classic Tabby</string>
+		<string>Lilac Golden Classic Tabby (Green Eyed)</string>
+		<string>Lilac Golden Classic Tabby (Orange Eyed)</string>
+		<string>Lilac Golden Classic Tabby</string>
+		<string>Red Golden Classic Tabby (Green Eyed)</string>
+		<string>Red Golden Classic Tabby (Orange Eyed)</string>
+		<string>Red Golden Classic Tabby</string>
+		<string>Cream Golden Classic Tabby (Green Eyed)</string>
+		<string>Cream Golden Classic Tabby (Orange Eyed)</string>
+		<string>Cream Golden Classic Tabby</string>
+		<string>Caramel Golden Classic Tabby</string>
+		<string>Apricot Golden Classic Tabby</string>
+		<string>Black Golden Tortie Classic Tabby (Green Eyed)</string>
+		<string>Black Golden Tortie Classic Tabby (Orange Eyed)</string>
+		<string>Black Golden Tortie Classic Tabby</string>
+		<string>Blue Golden Tortie Classic Tabby (Green Eyed)</string>
+		<string>Blue Golden Tortie Classic Tabby (Orange Eyed)</string>
+		<string>Blue Golden Tortie Classic Tabby</string>
+		<string>Chocolate Golden Tortie Classic Tabby (Green Eyed)</string>
+		<string>Chocolate Golden Tortie Classic Tabby (Orange Eyed)</string>
+		<string>Chocolate Golden Tortie Classic Tabby</string>
+		<string>Lilac Golden Tortie Classic Tabby (Green Eyed)</string>
+		<string>Lilac Golden Tortie Classic Tabby (Orange Eyed)</string>
+		<string>Lilac Golden Tortie Classic Tabby</string>
 		<string>Black Classic Tabby</string>
+		<string>Black Classic Tabby (Orange Eyed)</string>
 		<string>Blue Classic Tabby</string>
 		<string>Chocolate Classic Tabby</string>
 		<string>Lilac Classic Tabby</string>
 		<string>Red Classic Tabby</string>
 		<string>Cream Classic Tabby</string>
+		<string>Caramel Classic Tabby</string>
+		<string>Apricot Classic Tabby</string>
 		<string>Black Tortie Classic Tabby</string>
 		<string>Blue Tortie Classic Tabby</string>
 		<string>Chocolate Tortie Classic Tabby</string>
 		<string>Lilac Tortie Classic Tabby</string>
-		<string>Black Silver Mackerel Tabby (Green Eyed)</string>
-		<string>Black Silver Mackerel Tabby (Orange Eyed)</string>
 		<string>Black Silver Mackerel Tabby</string>
 		<string>Blue Silver Mackerel Tabby (Green Eyed)</string>
 		<string>Blue Silver Mackerel Tabby (Orange Eyed)</string>
@@ -16144,8 +16402,14 @@
 		<string>Lilac Silver Mackerel Tabby (Green Eyed)</string>
 		<string>Lilac Silver Mackerel Tabby (Orange Eyed)</string>
 		<string>Lilac Silver Mackerel Tabby</string>
+		<string>Red Silver Mackerel Tabby (Green Eyed)</string>
+		<string>Red Silver Mackerel Tabby (Orange Eyed)</string>
 		<string>Red Silver Mackerel Tabby</string>
+		<string>Cream Silver Mackerel Tabby (Green Eyed)</string>
+		<string>Cream Silver Mackerel Tabby (Orange Eyed)</string>
 		<string>Cream Silver Mackerel Tabby</string>
+		<string>Caramel Silver Mackerel Tabby</string>
+		<string>Apricot Silver Mackerel Tabby</string>
 		<string>Black Silver Tortie Mackerel Tabby (Green Eyed)</string>
 		<string>Black Silver Tortie Mackerel Tabby (Orange Eyed)</string>
 		<string>Black Silver Tortie Mackerel Tabby</string>
@@ -16158,19 +16422,59 @@
 		<string>Lilac Silver Tortie Mackerel Tabby (Green Eyed)</string>
 		<string>Lilac Silver Tortie Mackerel Tabby (Orange Eyed)</string>
 		<string>Lilac Silver Tortie Mackerel Tabby</string>
-		<string>Golden Mackerel Tabby</string>
+		<string>Red Silver Tortie Mackerel Tabby (Green Eyed)</string>
+		<string>Red Silver Tortie Mackerel Tabby (Orange Eyed)</string>
+		<string>Red Silver Tortie Mackerel Tabby</string>
+		<string>Cream Silver Tortie Mackerel Tabby (Green Eyed)</string>
+		<string>Cream Silver Tortie Mackerel Tabby (Orange Eyed)</string>
+		<string>Cream Silver Tortie Mackerel Tabby</string>
+		<string>Caramel Silver Tortie Mackerel Tabby</string>
+		<string>Apricot Silver Tortie Mackerel Tabby</string>
+		<string>Black Golden Mackerel Tabby (Green Eyed)</string>
+		<string>Black Golden Mackerel Tabby (Orange Eyed)</string>
+		<string>Black Golden Mackerel Tabby</string>
+		<string>Blue Golden Mackerel Tabby (Green Eyed)</string>
+		<string>Blue Golden Mackerel Tabby (Orange Eyed)</string>
+		<string>Blue Golden Mackerel Tabby</string>
+		<string>Chocolate Golden Mackerel Tabby (Green Eyed)</string>
+		<string>Chocolate Golden Mackerel Tabby (Orange Eyed)</string>
+		<string>Chocolate Golden Mackerel Tabby</string>
+		<string>Lilac Golden Mackerel Tabby (Green Eyed)</string>
+		<string>Lilac Golden Mackerel Tabby (Orange Eyed)</string>
+		<string>Lilac Golden Mackerel Tabby</string>
+		<string>Red Golden Mackerel Tabby (Green Eyed)</string>
+		<string>Red Golden Mackerel Tabby (Orange Eyed)</string>
+		<string>Red Golden Mackerel Tabby</string>
+		<string>Cream Golden Mackerel Tabby (Green Eyed)</string>
+		<string>Cream Golden Mackerel Tabby (Orange Eyed)</string>
+		<string>Cream Golden Mackerel Tabby</string>
+		<string>Caramel Golden Mackerel Tabby</string>
+		<string>Apricot Golden Mackerel Tabby</string>
+		<string>Black Golden Tortie Mackerel Tabby (Green Eyed)</string>
+		<string>Black Golden Tortie Mackerel Tabby (Orange Eyed)</string>
+		<string>Black Golden Tortie Mackerel Tabby</string>
+		<string>Blue Golden Tortie Mackerel Tabby (Green Eyed)</string>
+		<string>Blue Golden Tortie Mackerel Tabby (Orange Eyed)</string>
+		<string>Blue Golden Tortie Mackerel Tabby</string>
+		<string>Chocolate Golden Tortie Mackerel Tabby (Green Eyed)</string>
+		<string>Chocolate Golden Tortie Mackerel Tabby (Orange Eyed)</string>
+		<string>Chocolate Golden Tortie Mackerel Tabby</string>
+		<string>Lilac Golden Tortie Mackerel Tabby (Green Eyed)</string>
+		<string>Lilac Golden Tortie Mackerel Tabby (Orange Eyed)</string>
+		<string>Lilac Golden Tortie Mackerel Tabby</string>
 		<string>Black Mackerel Tabby</string>
+		<string>Black Mackerel Tabby (Orange Eyed)</string>
 		<string>Blue Mackerel Tabby</string>
 		<string>Chocolate Mackerel Tabby</string>
 		<string>Lilac Mackerel Tabby</string>
 		<string>Red Mackerel Tabby</string>
 		<string>Cream Mackerel Tabby</string>
+		<string>Caramel Mackerel Tabby</string>
+		<string>Apricot Mackerel Tabby</string>
 		<string>Black Tortie Mackerel Tabby</string>
 		<string>Blue Tortie Mackerel Tabby</string>
 		<string>Chocolate Tortie Mackerel Tabby</string>
 		<string>Lilac Tortie Mackerel Tabby</string>
-		<string>Black Silver Spotted Tabby (Green Eyed)</string>
-		<string>Black Silver Spotted Tabby (Orange Eyed)</string>
 		<string>Black Silver Spotted Tabby</string>
 		<string>Blue Silver Spotted Tabby (Green Eyed)</string>
 		<string>Blue Silver Spotted Tabby (Orange Eyed)</string>
@@ -16181,8 +16485,14 @@
 		<string>Lilac Silver Spotted Tabby (Green Eyed)</string>
 		<string>Lilac Silver Spotted Tabby (Orange Eyed)</string>
 		<string>Lilac Silver Spotted Tabby</string>
+		<string>Red Silver Spotted Tabby (Green Eyed)</string>
+		<string>Red Silver Spotted Tabby (Orange Eyed)</string>
 		<string>Red Silver Spotted Tabby</string>
+		<string>Cream Silver Spotted Tabby (Green Eyed)</string>
+		<string>Cream Silver Spotted Tabby (Orange Eyed)</string>
 		<string>Cream Silver Spotted Tabby</string>
+		<string>Caramel Silver Spotted Tabby</string>
+		<string>Apricot Silver Spotted Tabby</string>
 		<string>Black Silver Tortie Spotted Tabby (Green Eyed)</string>
 		<string>Black Silver Tortie Spotted Tabby (Orange Eyed)</string>
 		<string>Black Silver Tortie Spotted Tabby</string>
@@ -16195,19 +16505,59 @@
 		<string>Lilac Silver Tortie Spotted Tabby (Green Eyed)</string>
 		<string>Lilac Silver Tortie Spotted Tabby (Orange Eyed)</string>
 		<string>Lilac Silver Tortie Spotted Tabby</string>
-		<string>Golden Spotted Tabby</string>
+		<string>Red Silver Tortie Spotted Tabby (Green Eyed)</string>
+		<string>Red Silver Tortie Spotted Tabby (Orange Eyed)</string>
+		<string>Red Silver Tortie Spotted Tabby</string>
+		<string>Cream Silver Tortie Spotted Tabby (Green Eyed)</string>
+		<string>Cream Silver Tortie Spotted Tabby (Orange Eyed)</string>
+		<string>Cream Silver Tortie Spotted Tabby</string>
+		<string>Caramel Silver Tortie Spotted Tabby</string>
+		<string>Apricot Silver Tortie Spotted Tabby</string>
+		<string>Black Golden Spotted Tabby (Green Eyed)</string>
+		<string>Black Golden Spotted Tabby (Orange Eyed)</string>
+		<string>Black Golden Spotted Tabby</string>
+		<string>Blue Golden Spotted Tabby (Green Eyed)</string>
+		<string>Blue Golden Spotted Tabby (Orange Eyed)</string>
+		<string>Blue Golden Spotted Tabby</string>
+		<string>Chocolate Golden Spotted Tabby (Green Eyed)</string>
+		<string>Chocolate Golden Spotted Tabby (Orange Eyed)</string>
+		<string>Chocolate Golden Spotted Tabby</string>
+		<string>Lilac Golden Spotted Tabby (Green Eyed)</string>
+		<string>Lilac Golden Spotted Tabby (Orange Eyed)</string>
+		<string>Lilac Golden Spotted Tabby</string>
+		<string>Red Golden Spotted Tabby (Green Eyed)</string>
+		<string>Red Golden Spotted Tabby (Orange Eyed)</string>
+		<string>Red Golden Spotted Tabby</string>
+		<string>Cream Golden Spotted Tabby (Green Eyed)</string>
+		<string>Cream Golden Spotted Tabby (Orange Eyed)</string>
+		<string>Cream Golden Spotted Tabby</string>
+		<string>Caramel Golden Spotted Tabby</string>
+		<string>Apricot Golden Spotted Tabby</string>
+		<string>Black Golden Tortie Spotted Tabby (Green Eyed)</string>
+		<string>Black Golden Tortie Spotted Tabby (Orange Eyed)</string>
+		<string>Black Golden Tortie Spotted Tabby</string>
+		<string>Blue Golden Tortie Spotted Tabby (Green Eyed)</string>
+		<string>Blue Golden Tortie Spotted Tabby (Orange Eyed)</string>
+		<string>Blue Golden Tortie Spotted Tabby</string>
+		<string>Chocolate Golden Tortie Spotted Tabby (Green Eyed)</string>
+		<string>Chocolate Golden Tortie Spotted Tabby (Orange Eyed)</string>
+		<string>Chocolate Golden Tortie Spotted Tabby</string>
+		<string>Lilac Golden Tortie Spotted Tabby (Green Eyed)</string>
+		<string>Lilac Golden Tortie Spotted Tabby (Orange Eyed)</string>
+		<string>Lilac Golden Tortie Spotted Tabby</string>
 		<string>Black Spotted Tabby</string>
+		<string>Black Spotted Tabby (Orange Eyed)</string>
 		<string>Blue Spotted Tabby</string>
 		<string>Chocolate Spotted Tabby</string>
 		<string>Lilac Spotted Tabby</string>
 		<string>Red Spotted Tabby</string>
 		<string>Cream Spotted Tabby</string>
+		<string>Caramel Spotted Tabby</string>
+		<string>Apricot Spotted Tabby</string>
 		<string>Black Tortie Spotted Tabby</string>
 		<string>Blue Tortie Spotted Tabby</string>
 		<string>Chocolate Tortie Spotted Tabby</string>
 		<string>Lilac Tortie Spotted Tabby</string>
-		<string>Black Silver Ticked Tabby (Green Eyed)</string>
-		<string>Black Silver Ticked Tabby (Orange Eyed)</string>
 		<string>Black Silver Ticked Tabby</string>
 		<string>Blue Silver Ticked Tabby (Green Eyed)</string>
 		<string>Blue Silver Ticked Tabby (Orange Eyed)</string>
@@ -16218,8 +16568,14 @@
 		<string>Lilac Silver Ticked Tabby (Green Eyed)</string>
 		<string>Lilac Silver Ticked Tabby (Orange Eyed)</string>
 		<string>Lilac Silver Ticked Tabby</string>
+		<string>Red Silver Ticked Tabby (Green Eyed)</string>
+		<string>Red Silver Ticked Tabby (Orange Eyed)</string>
 		<string>Red Silver Ticked Tabby</string>
+		<string>Cream Silver Ticked Tabby (Green Eyed)</string>
+		<string>Cream Silver Ticked Tabby (Orange Eyed)</string>
 		<string>Cream Silver Ticked Tabby</string>
+		<string>Caramel Silver Ticked Tabby</string>
+		<string>Apricot Silver Ticked Tabby</string>
 		<string>Black Silver Tortie Ticked Tabby (Green Eyed)</string>
 		<string>Black Silver Tortie Ticked Tabby (Orange Eyed)</string>
 		<string>Black Silver Tortie Ticked Tabby</string>
@@ -16232,13 +16588,55 @@
 		<string>Lilac Silver Tortie Ticked Tabby (Green Eyed)</string>
 		<string>Lilac Silver Tortie Ticked Tabby (Orange Eyed)</string>
 		<string>Lilac Silver Tortie Ticked Tabby</string>
-		<string>Golden Ticked Tabby</string>
+		<string>Red Silver Tortie Ticked Tabby (Green Eyed)</string>
+		<string>Red Silver Tortie Ticked Tabby (Orange Eyed)</string>
+		<string>Red Silver Tortie Ticked Tabby</string>
+		<string>Cream Silver Tortie Ticked Tabby (Green Eyed)</string>
+		<string>Cream Silver Tortie Ticked Tabby (Orange Eyed)</string>
+		<string>Cream Silver Tortie Ticked Tabby</string>
+		<string>Caramel Silver Tortie Ticked Tabby</string>
+		<string>Apricot Silver Tortie Ticked Tabby</string>
+		<string>Black Golden Ticked Tabby (Green Eyed)</string>
+		<string>Black Golden Ticked Tabby (Orange Eyed)</string>
+		<string>Black Golden Ticked Tabby</string>
+		<string>Blue Golden Ticked Tabby (Green Eyed)</string>
+		<string>Blue Golden Ticked Tabby (Orange Eyed)</string>
+		<string>Blue Golden Ticked Tabby</string>
+		<string>Chocolate Golden Ticked Tabby (Green Eyed)</string>
+		<string>Chocolate Golden Ticked Tabby (Orange Eyed)</string>
+		<string>Chocolate Golden Ticked Tabby</string>
+		<string>Lilac Golden Ticked Tabby (Green Eyed)</string>
+		<string>Lilac Golden Ticked Tabby (Orange Eyed)</string>
+		<string>Lilac Golden Ticked Tabby</string>
+		<string>Red Golden Ticked Tabby (Green Eyed)</string>
+		<string>Red Golden Ticked Tabby (Orange Eyed)</string>
+		<string>Red Golden Ticked Tabby</string>
+		<string>Cream Golden Ticked Tabby (Green Eyed)</string>
+		<string>Cream Golden Ticked Tabby (Orange Eyed)</string>
+		<string>Cream Golden Ticked Tabby</string>
+		<string>Caramel Golden Ticked Tabby</string>
+		<string>Apricot Golden Ticked Tabby</string>
+		<string>Black Golden Tortie Ticked Tabby (Green Eyed)</string>
+		<string>Black Golden Tortie Ticked Tabby (Orange Eyed)</string>
+		<string>Black Golden Tortie Ticked Tabby</string>
+		<string>Blue Golden Tortie Ticked Tabby (Green Eyed)</string>
+		<string>Blue Golden Tortie Ticked Tabby (Orange Eyed)</string>
+		<string>Blue Golden Tortie Ticked Tabby</string>
+		<string>Chocolate Golden Tortie Ticked Tabby (Green Eyed)</string>
+		<string>Chocolate Golden Tortie Ticked Tabby (Orange Eyed)</string>
+		<string>Chocolate Golden Tortie Ticked Tabby</string>
+		<string>Lilac Golden Tortie Ticked Tabby (Green Eyed)</string>
+		<string>Lilac Golden Tortie Ticked Tabby (Orange Eyed)</string>
+		<string>Lilac Golden Tortie Ticked Tabby</string>
 		<string>Black Ticked Tabby</string>
+		<string>Black Ticked Tabby (Orange Eyed)</string>
 		<string>Blue Ticked Tabby</string>
 		<string>Chocolate Ticked Tabby</string>
 		<string>Lilac Ticked Tabby</string>
 		<string>Red Ticked Tabby</string>
 		<string>Cream Ticked Tabby</string>
+		<string>Caramel Ticked Tabby</string>
+		<string>Apricot Ticked Tabby</string>
 		<string>Black Tortie Ticked Tabby</string>
 		<string>Blue Tortie Ticked Tabby</string>
 		<string>Chocolate Tortie Ticked Tabby</string>
@@ -16247,336 +16645,462 @@
 		<string>Blue Tortie</string>
 		<string>Chocolate Tortie</string>
 		<string>Lilac Tortie</string>
-		<string>Black Bi-Colour</string>
-		<string>Blue Bi-Colour</string>
-		<string>Chocolate Bi-Colour</string>
-		<string>Lilac Bi-Colour</string>
-		<string>Red Bi-Colour</string>
-		<string>Cream Bi-Colour</string>
-		<string>Black Tortie Bi-Colour</string>
-		<string>Blue Tortie Bi-Colour</string>
-		<string>Chocolate Tortie Bi-Colour</string>
-		<string>Lilac Tortie Bi-Colour</string>
-		<string>Black Classic Tabby Bi-Colour</string>
-		<string>Blue Classic Tabby Bi-Colour</string>
-		<string>Chocolate Classic Tabby Bi-Colour</string>
-		<string>Lilac Classic Tabby Bi-Colour</string>
-		<string>Red Classic Tabby Bi-Colour</string>
-		<string>Cream Classic Tabby Bi-Colour</string>
-		<string>Black Tortie Classic Tabby Bi-Colour</string>
-		<string>Blue Tortie Classic Tabby Bi-Colour</string>
-		<string>Chocolate Tortie Classic Tabby Bi-Colour</string>
-		<string>Lilac Tortie Classic Tabby Bi-Colour</string>
-		<string>Black Silver Classic Tabby Bi-Colour</string>
-		<string>Blue Silver Classic Tabby Bi-Colour</string>
-		<string>Chocolate Silver Classic Tabby Bi-Colour</string>
-		<string>Lilac Silver Classic Tabby Bi-Colour</string>
-		<string>Red Silver Classic Tabby Bi-Colour</string>
-		<string>Cream Silver Classic Tabby Bi-Colour</string>
-		<string>Black Tortie Classic Tabby Bi-Colour</string>
-		<string>Blue Tortie Classic Tabby Bi-Colour</string>
-		<string>Chocolate Tortie Classic Tabby Bi-Colour</string>
-		<string>Lilac Tortie Classic Tabby Bi-Colour</string>
-		<string>Black Mackerel Tabby Bi-Colour</string>
-		<string>Blue Mackerel Tabby Bi-Colour</string>
-		<string>Chocolate Mackerel Tabby Bi-Colour</string>
-		<string>Lilac Mackerel Tabby Bi-Colour</string>
-		<string>Red Mackerel Tabby Bi-Colour</string>
-		<string>Cream Mackerel Tabby Bi-Colour</string>
-		<string>Black Tortie Mackerel Tabby Bi-Colour</string>
-		<string>Blue Tortie Mackerel Tabby Bi-Colour</string>
-		<string>Chocolate Tortie Mackerel Tabby Bi-Colour</string>
-		<string>Lilac Tortie Mackerel Tabby Bi-Colour</string>
-		<string>Black Silver Mackerel Tabby Bi-Colour</string>
-		<string>Blue Silver Mackerel Tabby Bi-Colour</string>
-		<string>Chocolate Silver Mackerel Tabby Bi-Colour</string>
-		<string>Lilac Silver Mackerel Tabby Bi-Colour</string>
-		<string>Red Silver Mackerel Tabby Bi-Colour</string>
-		<string>Cream Silver Mackerel Tabby Bi-Colour</string>
-		<string>Black Tortie Mackerel Tabby Bi-Colour</string>
-		<string>Blue Tortie Mackerel Tabby Bi-Colour</string>
-		<string>Chocolate Tortie Mackerel Tabby Bi-Colour</string>
-		<string>Lilac Tortie Mackerel Tabby Bi-Colour</string>
-		<string>Black Spotted Tabby Bi-Colour</string>
-		<string>Blue Spotted Tabby Bi-Colour</string>
-		<string>Chocolate Spotted Tabby Bi-Colour</string>
-		<string>Lilac Spotted Tabby Bi-Colour</string>
-		<string>Red Spotted Tabby Bi-Colour</string>
-		<string>Cream Spotted Tabby Bi-Colour</string>
-		<string>Black Tortie Spotted Tabby Bi-Colour</string>
-		<string>Blue Tortie Spotted Tabby Bi-Colour</string>
-		<string>Chocolate Tortie Spotted Tabby Bi-Colour</string>
-		<string>Lilac Tortie Spotted Tabby Bi-Colour</string>
-		<string>Black Silver Spotted Tabby Bi-Colour</string>
-		<string>Blue Silver Spotted Tabby Bi-Colour</string>
-		<string>Chocolate Silver Spotted Tabby Bi-Colour</string>
-		<string>Lilac Silver Spotted Tabby Bi-Colour</string>
-		<string>Red Silver Spotted Tabby Bi-Colour</string>
-		<string>Cream Silver Spotted Tabby Bi-Colour</string>
-		<string>Black Tortie Spotted Tabby Bi-Colour</string>
-		<string>Blue Tortie Spotted Tabby Bi-Colour</string>
-		<string>Chocolate Tortie Spotted Tabby Bi-Colour</string>
-		<string>Lilac Tortie Spotted Tabby Bi-Colour</string>
-		<string>Black Ticked Tabby Bi-Colour</string>
-		<string>Blue Ticked Tabby Bi-Colour</string>
-		<string>Chocolate Ticked Tabby Bi-Colour</string>
-		<string>Lilac Ticked Tabby Bi-Colour</string>
-		<string>Red Ticked Tabby Bi-Colour</string>
-		<string>Cream Ticked Tabby Bi-Colour</string>
-		<string>Black Tortie Ticked Tabby Bi-Colour</string>
-		<string>Blue Tortie Ticked Tabby Bi-Colour</string>
-		<string>Chocolate Tortie Ticked Tabby Bi-Colour</string>
-		<string>Lilac Tortie Ticked Tabby Bi-Colour</string>
-		<string>Black Silver Ticked Tabby Bi-Colour</string>
-		<string>Blue Silver Ticked Tabby Bi-Colour</string>
-		<string>Chocolate Silver Ticked Tabby Bi-Colour</string>
-		<string>Lilac Silver Ticked Tabby Bi-Colour</string>
-		<string>Red Silver Ticked Tabby Bi-Colour</string>
-		<string>Cream Silver Ticked Tabby Bi-Colour</string>
-		<string>Black Tortie Ticked Tabby Bi-Colour</string>
-		<string>Blue Tortie Ticked Tabby Bi-Colour</string>
-		<string>Chocolate Tortie Ticked Tabby Bi-Colour</string>
-		<string>Lilac Tortie Ticked Tabby Bi-Colour</string>
-		<string>Black Smoke Bi-Colour</string>
-		<string>Blue Smoke Bi-Colour</string>
-		<string>Chocolate Smoke Bi-Colour</string>
-		<string>Lilac Smoke Bi-Colour</string>
-		<string>Red Smoke Bi-Colour</string>
-		<string>Cream Smoke Bi-Colour</string>
-		<string>Black Tortie Smoke Bi-Colour</string>
-		<string>Blue Tortie Smoke Bi-Colour</string>
-		<string>Chocolate Tortie Smoke Bi-Colour</string>
-		<string>Lilac Tortie Smoke Bi-Colour</string>
-		<string>Black Silver Bi-Colour</string>
-		<string>Blue Silver Bi-Colour</string>
-		<string>Chocolate Silver Bi-Colour</string>
-		<string>Lilac Silver Bi-Colour</string>
-		<string>Red Silver Bi-Colour</string>
-		<string>Cream Silver Bi-Colour</string>
-		<string>Black Tortie Silver Bi-Colour</string>
-		<string>Blue Tortie Silver Bi-Colour</string>
-		<string>Chocolate Tortie Silver Bi-Colour</string>
-		<string>Lilac Tortie Silver Bi-Colour</string>
-		<string>Black Shaded Bi-Colour</string>
-		<string>Blue Shaded Bi-Colour</string>
-		<string>Chocolate Shaded Bi-Colour</string>
-		<string>Lilac Shaded Bi-Colour</string>
-		<string>Red Shaded Bi-Colour</string>
-		<string>Cream Shaded Bi-Colour</string>
-		<string>Black Tortie Shaded Bi-Colour</string>
-		<string>Blue Tortie Shaded Bi-Colour</string>
-		<string>Chocolate Tortie Shaded Bi-Colour</string>
-		<string>Lilac Tortie Shaded Bi-Colour</string>
-		<string>Black Tipped Bi-Colour</string>
-		<string>Blue Tipped Bi-Colour</string>
-		<string>Chocolate Tipped Bi-Colour</string>
-		<string>Lilac Tipped Bi-Colour</string>
-		<string>Red Tipped Bi-Colour</string>
-		<string>Cream Tipped Bi-Colour</string>
-		<string>Black Tortie Tipped Bi-Colour</string>
-		<string>Blue Tortie Tipped Bi-Colour</string>
-		<string>Chocolate Tortie Tipped Bi-Colour</string>
-		<string>Lilac Tortie Tipped Bi-Colour</string>
-		<string>Black Pointed Bi-Colour</string>
-		<string>Blue Pointed Bi-Colour</string>
-		<string>Chocolate Pointed Bi-Colour</string>
-		<string>Lilac Pointed Bi-Colour</string>
-		<string>Red Pointed Bi-Colour</string>
-		<string>Cream Pointed Bi-Colour</string>
-		<string>Caramel Pointed Bi-Colour</string>
-		<string>Apricot Pointed Bi-Colour</string>
-		<string>Black Tortie Pointed Bi-Colour</string>
-		<string>Blue Tortie Pointed Bi-Colour</string>
-		<string>Chocolate Tortie Pointed Bi-Colour</string>
-		<string>Lilac Tortie Pointed Bi-Colour</string>
-		<string>Caramel Tortie Pointed Bi-Colour</string>
-		<string>Apricot Tortie Pointed Bi-Colour</string>
+		<string>Black Bi-colour</string>
+		<string>Blue Bi-colour</string>
+		<string>Chocolate Bi-colour</string>
+		<string>Lilac Bi-colour</string>
+		<string>Red Bi-colour</string>
+		<string>Cream Bi-colour</string>
+		<string>Caramel Bi-colour</string>
+		<string>Apricot Bi-colour</string>
+		<string>Black Tortie Bi-colour</string>
+		<string>Blue Tortie Bi-colour</string>
+		<string>Chocolate Tortie Bi-colour</string>
+		<string>Lilac Tortie Bi-colour</string>
+		<string>Black Bi-colour</string>
+		<string>Blue Bi-colour</string>
+		<string>Chocolate Bi-colour</string>
+		<string>Lilac Bi-colour</string>
+		<string>Red Bi-colour</string>
+		<string>Cream Bi-colour</string>
+		<string>Caramel Bi-colour</string>
+		<string>Apricot Bi-colour</string>
+		<string>Black Tortie Bi-colour</string>
+		<string>Blue Tortie Bi-colour</string>
+		<string>Chocolate Tortie Bi-colour</string>
+		<string>Lilac Tortie Bi-colour</string>
+		<string>Black Tabby Bi-colour</string>
+		<string>Blue Tabby Bi-colour</string>
+		<string>Chocolate Tabby Bi-colour</string>
+		<string>Chocolate Tabby </string>
+		<string>Lilac Tabby Bi-colour</string>
+		<string>Lilac Tabby &amp; White</string>
+		<string>Red Tabby Bi-colour</string>
+		<string>Cream Tabby Bi-colour</string>
+		<string>Caramel Tabby Bi-colour</string>
+		<string>Apricot Tabby Bi-colour</string>
+		<string>Black Tortie Tabby Bi-colour</string>
+		<string>Blue Tortie Tabby Bi-colour</string>
+		<string>Chocolate Tortie Tabby Bi-colour</string>
+		<string>Lilac Tortie Tabby Bi-colour</string>
+		<string>Black Smoke Bi-colour</string>
+		<string>Blue Smoke Bi-colour</string>
+		<string>Chocolate Smoke Bi-colour</string>
+		<string>Lilac Smoke Bi-colour</string>
+		<string>Red Smoke Bi-colour</string>
+		<string>Cream Smoke Bi-colour</string>
+		<string>Caramel Smoke Bi-colour</string>
+		<string>Apricot Smoke Bi-colour</string>
+		<string>Black Tortie Smoke Bi-colour</string>
+		<string>Blue Tortie Smoke Bi-colour</string>
+		<string>Chocolate Tortie Smoke Bi-colour</string>
+		<string>Lilac Tortie Smoke Bi-colour</string>
+		<string>Black Silver Tabby (Green Eyed) Bi-colour</string>
+		<string>Black Silver Tabby (Orange Eyed) Bi-colour</string>
+		<string>Black Silver Tabby Bi-colour</string>
+		<string>Blue Silver Tabby (Green Eyed) Bi-colour</string>
+		<string>Blue Silver Tabby (Orange Eyed) Bi-colour</string>
+		<string>Blue Silver Tabby Bi-colour</string>
+		<string>Chocolate Silver Tabby (Green Eyed) Bi-colour</string>
+		<string>Chocolate Silver Tabby (Orange Eyed) Bi-colour</string>
+		<string>Chocolate Silver Tabby Bi-colour</string>
+		<string>Lilac Silver Tabby (Green Eyed) Bi-colour</string>
+		<string>Lilac Silver Tabby (Orange Eyed) Bi-colour</string>
+		<string>Lilac Silver Tabby Bi-colour</string>
+		<string>Red Silver Tabby (Green Eyed) Bi-colour</string>
+		<string>Red Silver Tabby (Orange Eyed) Bi-colour</string>
+		<string>Red Silver Tabby Bi-colour</string>
+		<string>Cream Silver Tabby (Green Eyed) Bi-colour</string>
+		<string>Cream Silver Tabby (Orange Eyed) Bi-colour</string>
+		<string>Cream Silver Tabby Bi-colour</string>
+		<string>Caramel Silver Tabby Bi-colour</string>
+		<string>Apricot Silver Tabby Bi-colour</string>
+		<string>Black Silver Tortie Tabby (Green Eyed) Bi-colour</string>
+		<string>Black Silver Tortie Tabby (Orange Eyed) Bi-colour</string>
+		<string>Black Silver Tortie Tabby Bi-colour</string>
+		<string>Blue Silver Tortie Tabby (Green Eyed) Bi-colour</string>
+		<string>Blue Silver Tortie Tabby (Orange Eyed) Bi-colour</string>
+		<string>Blue Silver Tortie Tabby Bi-colour</string>
+		<string>Chocolate Silver Tortie Tabby (Green Eyed) Bi-colour</string>
+		<string>Chocolate Silver Tortie Tabby (Orange Eyed) Bi-colour</string>
+		<string>Chocolate Silver Tortie Tabby Bi-colour</string>
+		<string>Lilac Silver Tortie Tabby (Green Eyed) Bi-colour</string>
+		<string>Lilac Silver Tortie Tabby (Orange Eyed) Bi-colour</string>
+		<string>Lilac Silver Tortie Tabby Bi-colour</string>
+		<string>Golden Shell Bi-colour</string>
+		<string>Blue Golden Shell Bi-colour</string>
+		<string>Chocolate Golden Shell Bi-colour</string>
+		<string>Lilac Golden Shell Bi-colour</string>
+		<string>Black Chincilla Bi-colour</string>
+		<string>Black Tipped Pewter Bi-colour</string>
+		<string>Blue Chincilla Bi-colour</string>
+		<string>Blue Tipped Pewter Bi-colour</string>
+		<string>Chocolate Chincilla Bi-colour</string>
+		<string>Chocolate Tipped Pewter Bi-colour</string>
+		<string>Lilac Chincilla Bi-colour</string>
+		<string>Lilac Tipped Pewter Bi-colour</string>
+		<string>Red Shell Cameo Bi-colour</string>
+		<string>Cream Shell Cameo Bi-colour</string>
+		<string>Black Tortie Tipped Bi-colour</string>
+		<string>Blue Tortie Tipped Bi-colour</string>
+		<string>Chocolate Tortie Tipped Bi-colour</string>
+		<string>Lilac Tortie Tipped Bi-colour</string>
+		<string>Golden Shaded Bi-colour</string>
+		<string>Blue Shaded Golden Bi-colour</string>
+		<string>Chocolate Shaded Golden Bi-colour</string>
+		<string>Lilac Shaded Golden Bi-colour</string>
+		<string>Black Shaded Silver Bi-colour</string>
+		<string>Black Shaded Pewter Bi-colour</string>
+		<string>Blue Shaded Silver Bi-colour</string>
+		<string>Blue Shaded Pewter Bi-colour</string>
+		<string>Chocolate Shaded Silver Bi-colour</string>
+		<string>Chocolate Shaded Pewter Bi-colour</string>
+		<string>Lilac Shaded Silver Bi-colour</string>
+		<string>Lilac Shaded Pewter Bi-colour</string>
+		<string>Red Shaded Cameo Bi-colour</string>
+		<string>Cream Shaded Cameo Bi-colour</string>
+		<string>Black Tortie Shaded Bi-colour</string>
+		<string>Blue Tortie Shaded Bi-colour</string>
+		<string>Chocolate Tortie Shaded Bi-colour</string>
+		<string>Lilac Tortie Shaded Bi-colour</string>
+		<string>Seal Point Bi-colour</string>
+		<string>Blue Point Bi-colour</string>
+		<string>Chocolate Point Bi-colour</string>
+		<string>Lilac Point Bi-colour</string>
+		<string>Red Point Bi-colour</string>
+		<string>Cream Point Bi-colour</string>
+		<string>Caramel Point Bi-colour</string>
+		<string>Apricot Point Bi-colour</string>
+		<string>Seal Tortie Point Bi-colour</string>
+		<string>Blue Tortie Point Bi-colour</string>
+		<string>Chocolate Tortie Point Bi-colour</string>
+		<string>Lilac Tortie Point Bi-colour</string>
+		<string>Caramel Tortie Point Bi-colour</string>
+		<string>Seal Tabby Point Bi-colour</string>
+		<string>Blue Tabby Point Bi-colour</string>
+		<string>Chocolate Tabby Point Bi-colour</string>
+		<string>Lilac Tabby Point Bi-colour</string>
+		<string>Red Tabby Point Bi-colour</string>
+		<string>Cream Tabby Point Bi-colour</string>
+		<string>Caramel Tabby Point Bi-colour</string>
+		<string>Apricot Tabby Point Bi-colour</string>
+		<string>Seal Tortie Tabby Point Bi-colour</string>
+		<string>Blue Tortie Tabby Point Bi-colour</string>
+		<string>Chocolate Tortie Tabby Point Bi-colour</string>
+		<string>Lilac Tortie Tabby Point Bi-colour</string>
+		<string>Caramel Tortie Tabby Point Bi-colour</string>
+		<string>Seal Smoke Point Bi-colour</string>
+		<string>Blue Smoke Point Bi-colour</string>
+		<string>Chocolate Smoke Point Bi-colour</string>
+		<string>Lilac Smoke Point Bi-colour</string>
+		<string>Red Smoke Point Bi-colour</string>
+		<string>Cream Smoke Point Bi-colour</string>
+		<string>Caramel Smoke Point Bi-colour</string>
+		<string>Apricot Smoke Point Bi-colour</string>
+		<string>Seal Tortie Smoke Point Bi-colour</string>
+		<string>Blue Tortie Smoke Point Bi-colour</string>
+		<string>Chocolate Tortie Smoke Point Bi-colour</string>
+		<string>Lilac Tortie Smoke Point Bi-colour</string>
+		<string>Caramel Tortie Smoke Point Bi-colour</string>
+		<string>Seal Silver Tabby Point Bi-colour</string>
+		<string>Blue Silver Tabby Point Bi-colour</string>
+		<string>Chocolate Silver Tabby Point Bi-colour</string>
+		<string>Lilac Silver Tabby Point Bi-colour</string>
+		<string>Red Silver Tabby Point Bi-colour</string>
+		<string>Cream Silver Tabby Point Bi-colour</string>
+		<string>Caramel Silver Tabby Point Bi-colour</string>
+		<string>Apricot Silver Tabby Point Bi-colour</string>
+		<string>Seal Silver Tortie Tabby Point Bi-colour</string>
+		<string>Blue Silver Tortie Tabby Point Bi-colour</string>
+		<string>Chocolate Silver Tortie Tabby Point Bi-colour</string>
+		<string>Lilac Silver Tortie Tabby Point Bi-colour</string>
+		<string>Caramel Silver Tortie Tabby Point Bi-colour</string>
+		<string>Black Bi-colour</string>
+		<string>Blue Bi-colour</string>
+		<string>Chocolate Bi-colour</string>
+		<string>Lilac Bi-colour</string>
+		<string>Red Bi-colour</string>
+		<string>Cream Bi-colour</string>
+		<string>Caramel Bi-colour</string>
+		<string>Apricot Bi-colour</string>
+		<string>Black Tortie Bi-colour</string>
+		<string>Blue Tortie Bi-colour</string>
+		<string>Chocolate Tortie Bi-colour</string>
+		<string>Lilac Tortie Bi-colour</string>
+		<string>Black Bi-colour</string>
+		<string>Blue Bi-colour</string>
+		<string>Chocolate Bi-colour</string>
+		<string>Lilac Bi-colour</string>
+		<string>Red Bi-colour</string>
+		<string>Cream Bi-colour</string>
+		<string>Caramel Bi-colour</string>
+		<string>Apricot Bi-colour</string>
+		<string>Black Tortie Bi-colour</string>
+		<string>Blue Tortie Bi-colour</string>
+		<string>Chocolate Tortie Bi-colour</string>
+		<string>Lilac Tortie Bi-colour</string>
+		<string>Black Tabby Bi-colour</string>
+		<string>Blue Tabby Bi-colour</string>
+		<string>Chocolate Tabby Bi-colour</string>
+		<string>Lilac Tabby Bi-colour</string>
+		<string>Red Tabby Bi-colour</string>
+		<string>Cream Tabby Bi-colour</string>
+		<string>Caramel Tabby Bi-colour</string>
+		<string>Apricot Tabby Bi-colour</string>
+		<string>Black Tortie Tabby Bi-colour</string>
+		<string>Blue Tortie Tabby Bi-colour</string>
+		<string>Chocolate Tortie Tabby Bi-colour</string>
+		<string>Lilac Tortie Tabby Bi-colour</string>
+		<string>Black Smoke Bi-colour</string>
+		<string>Blue Smoke Bi-colour</string>
+		<string>Chocolate Smoke Bi-colour</string>
+		<string>Lilac Smoke Bi-colour</string>
+		<string>Red Smoke Bi-colour</string>
+		<string>Cream Smoke Bi-colour</string>
+		<string>Caramel Smoke Bi-colour</string>
+		<string>Apricot Smoke Bi-colour</string>
+		<string>Black Tortie Smoke Bi-colour</string>
+		<string>Blue Tortie Smoke Bi-colour</string>
+		<string>Chocolate Tortie Smoke Bi-colour</string>
+		<string>Lilac Tortie Smoke Bi-colour</string>
+		<string>Black Silver Tabby (Green Eyed) Bi-colour</string>
+		<string>Black Silver Tabby (Orange Eyed) Bi-colour</string>
+		<string>Black Silver Tabby Bi-colour</string>
+		<string>Blue Silver Tabby (Green Eyed) Bi-colour</string>
+		<string>Blue Silver Tabby (Orange Eyed) Bi-colour</string>
+		<string>Blue Silver Tabby Bi-colour</string>
+		<string>Chocolate Silver Tabby (Green Eyed) Bi-colour</string>
+		<string>Chocolate Silver Tabby (Orange Eyed) Bi-colour</string>
+		<string>Chocolate Silver Tabby Bi-colour</string>
+		<string>Lilac Silver Tabby (Green Eyed) Bi-colour</string>
+		<string>Lilac Silver Tabby (Orange Eyed) Bi-colour</string>
+		<string>Lilac Silver Tabby Bi-colour</string>
+		<string>Red Silver Tabby (Green Eyed) Bi-colour</string>
+		<string>Red Silver Tabby (Orange Eyed) Bi-colour</string>
+		<string>Red Silver Tabby Bi-colour</string>
+		<string>Cream Silver Tabby (Green Eyed) Bi-colour</string>
+		<string>Cream Silver Tabby (Orange Eyed) Bi-colour</string>
+		<string>Cream Silver Tabby Bi-colour</string>
+		<string>Caramel Silver Tabby Bi-colour</string>
+		<string>Apricot Silver Tabby Bi-colour</string>
+		<string>Black Silver Tortie Tabby (Green Eyed) Bi-colour</string>
+		<string>Black Silver Tortie Tabby (Orange Eyed) Bi-colour</string>
+		<string>Black Silver Tortie Tabby Bi-colour</string>
+		<string>Blue Silver Tortie Tabby (Green Eyed) Bi-colour</string>
+		<string>Blue Silver Tortie Tabby (Orange Eyed) Bi-colour</string>
+		<string>Blue Silver Tortie Tabby Bi-colour</string>
+		<string>Chocolate Silver Tortie Tabby (Green Eyed) Bi-colour</string>
+		<string>Chocolate Silver Tortie Tabby (Orange Eyed) Bi-colour</string>
+		<string>Chocolate Silver Tortie Tabby Bi-colour</string>
+		<string>Lilac Silver Tortie Tabby (Green Eyed) Bi-colour</string>
+		<string>Lilac Silver Tortie Tabby (Orange Eyed) Bi-colour</string>
+		<string>Lilac Silver Tortie Tabby Bi-colour</string>
+		<string>Golden Shell Bi-colour</string>
+		<string>Blue Golden Shell Bi-colour</string>
+		<string>Chocolate Golden Shell Bi-colour</string>
+		<string>Lilac Golden Shell Bi-colour</string>
+		<string>Black Chincilla Bi-colour</string>
+		<string>Black Tipped Pewter Bi-colour</string>
+		<string>Blue Chincilla Bi-colour</string>
+		<string>Blue Tipped Pewter Bi-colour</string>
+		<string>Chocolate Chincilla Bi-colour</string>
+		<string>Chocolate Tipped Pewter Bi-colour</string>
+		<string>Lilac Chincilla Bi-colour</string>
+		<string>Lilac Tipped Pewter Bi-colour</string>
+		<string>Red Shell Cameo Bi-colour</string>
+		<string>Cream Shell Cameo Bi-colour</string>
+		<string>Black Tortie Tipped Bi-colour</string>
+		<string>Blue Tortie Tipped Bi-colour</string>
+		<string>Chocolate Tortie Tipped Bi-colour</string>
+		<string>Lilac Tortie Tipped Bi-colour</string>
+		<string>Golden Shaded Bi-colour</string>
+		<string>Blue Shaded Golden Bi-colour</string>
+		<string>Chocolate Shaded Golden Bi-colour</string>
+		<string>Lilac Shaded Golden Bi-colour</string>
+		<string>Black Shaded Silver Bi-colour</string>
+		<string>Black Shaded Pewter Bi-colour</string>
+		<string>Blue Shaded Silver Bi-colour</string>
+		<string>Blue Shaded Pewter Bi-colour</string>
+		<string>Chocolate Shaded Silver Bi-colour</string>
+		<string>Chocolate Shaded Pewter Bi-colour</string>
+		<string>Lilac Shaded Silver Bi-colour</string>
+		<string>Lilac Shaded Pewter Bi-colour</string>
+		<string>Red Shaded Cameo Bi-colour</string>
+		<string>Cream Shaded Cameo Bi-colour</string>
+		<string>Black Tortie Shaded Bi-colour</string>
+		<string>Blue Tortie Shaded Bi-colour</string>
+		<string>Chocolate Tortie Shaded Bi-colour</string>
+		<string>Lilac Tortie Shaded Bi-colour</string>
+		<string>Seal Point Bi-colour</string>
+		<string>Blue Point Bi-colour</string>
+		<string>Chocolate Point Bi-colour</string>
+		<string>Lilac Point Bi-colour</string>
+		<string>Red Point Bi-colour</string>
+		<string>Cream Point Bi-colour</string>
+		<string>Caramel Point Bi-colour</string>
+		<string>Apricot Point Bi-colour</string>
+		<string>Seal Tortie Point Bi-colour</string>
+		<string>Blue Tortie Point Bi-colour</string>
+		<string>Chocolate Tortie Point Bi-colour</string>
+		<string>Lilac Tortie Point Bi-colour</string>
+		<string>Caramel Tortie Point Bi-colour</string>
+		<string>Seal Tabby Point Bi-colour</string>
+		<string>Blue Tabby Point Bi-colour</string>
+		<string>Chocolate Tabby Point Bi-colour</string>
+		<string>Lilac Tabby Point Bi-colour</string>
+		<string>Red Tabby Point Bi-colour</string>
+		<string>Cream Tabby Point Bi-colour</string>
+		<string>Caramel Tabby Point Bi-colour</string>
+		<string>Apricot Tabby Point Bi-colour</string>
+		<string>Seal Tortie Tabby Point Bi-colour</string>
+		<string>Blue Tortie Tabby Point Bi-colour</string>
+		<string>Chocolate Tortie Tabby Point Bi-colour</string>
+		<string>Lilac Tortie Tabby Point Bi-colour</string>
+		<string>Caramel Tortie Tabby Point Bi-colour</string>
+		<string>Seal Smoke Point Bi-colour</string>
+		<string>Blue Smoke Point Bi-colour</string>
+		<string>Chocolate Smoke Point Bi-colour</string>
+		<string>Lilac Smoke Point Bi-colour</string>
+		<string>Red Smoke Point Bi-colour</string>
+		<string>Cream Smoke Point Bi-colour</string>
+		<string>Caramel Smoke Point Bi-colour</string>
+		<string>Apricot Smoke Point Bi-colour</string>
+		<string>Seal Tortie Smoke Point Bi-colour</string>
+		<string>Blue Tortie Smoke Point Bi-colour</string>
+		<string>Chocolate Tortie Smoke Point Bi-colour</string>
+		<string>Lilac Tortie Smoke Point Bi-colour</string>
+		<string>Caramel Tortie Smoke Point Bi-colour</string>
+		<string>Seal Silver Tabby Point Bi-colour</string>
+		<string>Blue Silver Tabby Point Bi-colour</string>
+		<string>Chocolate Silver Tabby Point Bi-colour</string>
+		<string>Lilac Silver Tabby Point Bi-colour</string>
+		<string>Red Silver Tabby Point Bi-colour</string>
+		<string>Cream Silver Tabby Point Bi-colour</string>
+		<string>Caramel Silver Tabby Point Bi-colour</string>
+		<string>Apricot Silver Tabby Point Bi-colour</string>
+		<string>Seal Silver Tortie Tabby Point Bi-colour</string>
+		<string>Blue Silver Tortie Tabby Point Bi-colour</string>
+		<string>Chocolate Silver Tortie Tabby Point Bi-colour</string>
+		<string>Lilac Silver Tortie Tabby Point Bi-colour</string>
+		<string>Caramel Silver Tortie Tabby Point Bi-colour</string>
 		<string>Black Van</string>
 		<string>Blue Van</string>
 		<string>Chocolate Van</string>
 		<string>Lilac Van</string>
 		<string>Red Van</string>
 		<string>Cream Van</string>
+		<string>Caramel Van</string>
+		<string>Apricot Van</string>
 		<string>Black Tortie Van</string>
 		<string>Blue Tortie Van</string>
 		<string>Chocolate Tortie Van</string>
 		<string>Lilac Tortie Van</string>
-		<string>Black Classic Tabby Van</string>
-		<string>Blue Classic Tabby Van</string>
-		<string>Chocolate Classic Tabby Van</string>
-		<string>Lilac Classic Tabby Van</string>
-		<string>Red Classic Tabby Van</string>
-		<string>Cream Classic Tabby Van</string>
-		<string>Black Tortie Classic Tabby Van</string>
-		<string>Blue Tortie Classic Tabby Van</string>
-		<string>Chocolate Tortie Classic Tabby Van</string>
-		<string>Lilac Tortie Classic Tabby Van</string>
-		<string>Black Silver Classic Tabby Van</string>
-		<string>Blue Silver Classic Tabby Van</string>
-		<string>Chocolate Silver Classic Tabby Van</string>
-		<string>Lilac Silver Classic Tabby Van</string>
-		<string>Red Silver Classic Tabby Van</string>
-		<string>Cream Silver Classic Tabby Van</string>
-		<string>Black Tortie Classic Tabby Van</string>
-		<string>Blue Tortie Classic Tabby Van</string>
-		<string>Chocolate Tortie Classic Tabby Van</string>
-		<string>Lilac Tortie Classic Tabby Van</string>
-		<string>Black Mackerel Tabby Van</string>
-		<string>Blue Mackerel Tabby Van</string>
-		<string>Chocolate Mackerel Tabby Van</string>
-		<string>Lilac Mackerel Tabby Van</string>
-		<string>Red Mackerel Tabby Van</string>
-		<string>Cream Mackerel Tabby Van</string>
-		<string>Black Tortie Mackerel Tabby Van</string>
-		<string>Blue Tortie Mackerel Tabby Van</string>
-		<string>Chocolate Tortie Mackerel Tabby Van</string>
-		<string>Lilac Tortie Mackerel Tabby Van</string>
-		<string>Black Silver Mackerel Tabby Van</string>
-		<string>Blue Silver Mackerel Tabby Van</string>
-		<string>Chocolate Silver Mackerel Tabby Van</string>
-		<string>Lilac Silver Mackerel Tabby Van</string>
-		<string>Red Silver Mackerel Tabby Van</string>
-		<string>Cream Silver Mackerel Tabby Van</string>
-		<string>Black Tortie Mackerel Tabby Van</string>
-		<string>Blue Tortie Mackerel Tabby Van</string>
-		<string>Chocolate Tortie Mackerel Tabby Van</string>
-		<string>Lilac Tortie Mackerel Tabby Van</string>
-		<string>Black Spotted Tabby Van</string>
-		<string>Blue Spotted Tabby Van</string>
-		<string>Chocolate Spotted Tabby Van</string>
-		<string>Lilac Spotted Tabby Van</string>
-		<string>Red Spotted Tabby Van</string>
-		<string>Cream Spotted Tabby Van</string>
-		<string>Black Tortie Spotted Tabby Van</string>
-		<string>Blue Tortie Spotted Tabby Van</string>
-		<string>Chocolate Tortie Spotted Tabby Van</string>
-		<string>Lilac Tortie Spotted Tabby Van</string>
-		<string>Black Silver Spotted Tabby Van</string>
-		<string>Blue Silver Spotted Tabby Van</string>
-		<string>Chocolate Silver Spotted Tabby Van</string>
-		<string>Lilac Silver Spotted Tabby Van</string>
-		<string>Red Silver Spotted Tabby Van</string>
-		<string>Cream Silver Spotted Tabby Van</string>
-		<string>Black Tortie Spotted Tabby Van</string>
-		<string>Blue Tortie Spotted Tabby Van</string>
-		<string>Chocolate Tortie Spotted Tabby Van</string>
-		<string>Lilac Tortie Spotted Tabby Van</string>
-		<string>Black Ticked Tabby Van</string>
-		<string>Blue Ticked Tabby Van</string>
-		<string>Chocolate Ticked Tabby Van</string>
-		<string>Lilac Ticked Tabby Van</string>
-		<string>Red Ticked Tabby Van</string>
-		<string>Cream Ticked Tabby Van</string>
-		<string>Black Tortie Ticked Tabby Van</string>
-		<string>Blue Tortie Ticked Tabby Van</string>
-		<string>Chocolate Tortie Ticked Tabby Van</string>
-		<string>Lilac Tortie Ticked Tabby Van</string>
-		<string>Black Silver Ticked Tabby Van</string>
-		<string>Blue Silver Ticked Tabby Van</string>
-		<string>Chocolate Silver Ticked Tabby Van</string>
-		<string>Lilac Silver Ticked Tabby Van</string>
-		<string>Red Silver Ticked Tabby Van</string>
-		<string>Cream Silver Ticked Tabby Van</string>
-		<string>Black Tortie Ticked Tabby Van</string>
-		<string>Blue Tortie Ticked Tabby Van</string>
-		<string>Chocolate Tortie Ticked Tabby Van</string>
-		<string>Lilac Tortie Ticked Tabby Van</string>
+		<string>Black Van</string>
+		<string>Blue Van</string>
+		<string>Chocolate Van</string>
+		<string>Lilac Van</string>
+		<string>Red Van</string>
+		<string>Cream Van</string>
+		<string>Caramel Van</string>
+		<string>Apricot Van</string>
+		<string>Black Tortie Van</string>
+		<string>Blue Tortie Van</string>
+		<string>Chocolate Tortie Van</string>
+		<string>Lilac Tortie Van</string>
+		<string>Black Tabby Van</string>
+		<string>Blue Tabby Van</string>
+		<string>Chocolate Tabby Van</string>
+		<string>Chocolate Tabby &amp; White Van</string>
+		<string>Lilac Tabby Van</string>
+		<string>Lilac Tabby &amp; White Van</string>
+		<string>Red Tabby Van</string>
+		<string>Cream Tabby Van</string>
+		<string>Caramel Tabby Van</string>
+		<string>Apricot Tabby Van</string>
+		<string>Black Tortie Tabby Van</string>
+		<string>Blue Tortie Tabby Van</string>
+		<string>Chocolate Tortie Tabby Van</string>
+		<string>Lilac Tortie Tabby Van</string>
 		<string>Black Smoke Van</string>
 		<string>Blue Smoke Van</string>
 		<string>Chocolate Smoke Van</string>
 		<string>Lilac Smoke Van</string>
 		<string>Red Smoke Van</string>
 		<string>Cream Smoke Van</string>
+		<string>Caramel Smoke Van</string>
+		<string>Apricot Smoke Van</string>
 		<string>Black Tortie Smoke Van</string>
 		<string>Blue Tortie Smoke Van</string>
 		<string>Chocolate Tortie Smoke Van</string>
 		<string>Lilac Tortie Smoke Van</string>
-		<string>Black Silver Van</string>
-		<string>Blue Silver Van</string>
-		<string>Chocolate Silver Van</string>
-		<string>Lilac Silver Van</string>
-		<string>Red Silver Van</string>
-		<string>Cream Silver Van</string>
-		<string>Black Tortie Silver Van</string>
-		<string>Blue Tortie Silver Van</string>
-		<string>Chocolate Tortie Silver Van</string>
-		<string>Lilac Tortie Silver Van</string>
-		<string>Black Shaded Van</string>
-		<string>Blue Shaded Van</string>
-		<string>Chocolate Shaded Van</string>
-		<string>Lilac Shaded Van</string>
-		<string>Red Shaded Van</string>
-		<string>Cream Shaded Van</string>
-		<string>Black Tortie Shaded Van</string>
-		<string>Blue Tortie Shaded Van</string>
-		<string>Chocolate Tortie Shaded Van</string>
-		<string>Lilac Tortie Shaded Van</string>
-		<string>Black Tipped Van</string>
-		<string>Blue Tipped Van</string>
-		<string>Chocolate Tipped Van</string>
-		<string>Lilac Tipped Van</string>
-		<string>Red Tipped Van</string>
-		<string>Cream Tipped Van</string>
+		<string>Black Silver Tabby (Green Eyed) Van</string>
+		<string>Black Silver Tabby (Orange Eyed) Van</string>
+		<string>Black Silver Tabby Van</string>
+		<string>Blue Silver Tabby (Green Eyed) Van</string>
+		<string>Blue Silver Tabby (Orange Eyed) Van</string>
+		<string>Blue Silver Tabby Van</string>
+		<string>Chocolate Silver Tabby (Green Eyed) Van</string>
+		<string>Chocolate Silver Tabby (Orange Eyed) Van</string>
+		<string>Chocolate Silver Tabby Van</string>
+		<string>Lilac Silver Tabby (Green Eyed) Van</string>
+		<string>Lilac Silver Tabby (Orange Eyed) Van</string>
+		<string>Lilac Silver Tabby Van</string>
+		<string>Red Silver Tabby (Green Eyed) Van</string>
+		<string>Red Silver Tabby (Orange Eyed) Van</string>
+		<string>Red Silver Tabby Van</string>
+		<string>Cream Silver Tabby (Green Eyed) Van</string>
+		<string>Cream Silver Tabby (Orange Eyed) Van</string>
+		<string>Cream Silver Tabby Van</string>
+		<string>Caramel Silver Tabby Van</string>
+		<string>Apricot Silver Tabby Van</string>
+		<string>Black Silver Tortie Tabby (Green Eyed) Van</string>
+		<string>Black Silver Tortie Tabby (Orange Eyed) Van</string>
+		<string>Black Silver Tortie Tabby Van</string>
+		<string>Blue Silver Tortie Tabby (Green Eyed) Van</string>
+		<string>Blue Silver Tortie Tabby (Orange Eyed) Van</string>
+		<string>Blue Silver Tortie Tabby Van</string>
+		<string>Chocolate Silver Tortie Tabby (Green Eyed) Van</string>
+		<string>Chocolate Silver Tortie Tabby (Orange Eyed) Van</string>
+		<string>Chocolate Silver Tortie Tabby Van</string>
+		<string>Lilac Silver Tortie Tabby (Green Eyed) Van</string>
+		<string>Lilac Silver Tortie Tabby (Orange Eyed) Van</string>
+		<string>Lilac Silver Tortie Tabby Van</string>
+		<string>Golden Shell Van</string>
+		<string>Blue Golden Shell Van</string>
+		<string>Chocolate Golden Shell Van</string>
+		<string>Lilac Golden Shell Van</string>
+		<string>Black Chincilla Van</string>
+		<string>Black Tipped Pewter Van</string>
+		<string>Blue Chincilla Van</string>
+		<string>Blue Tipped Pewter Van</string>
+		<string>Chocolate Chincilla Van</string>
+		<string>Chocolate Tipped Pewter Van</string>
+		<string>Lilac Chincilla Van</string>
+		<string>Lilac Tipped Pewter Van</string>
+		<string>Red Shell Cameo Van</string>
+		<string>Cream Shell Cameo Van</string>
 		<string>Black Tortie Tipped Van</string>
 		<string>Blue Tortie Tipped Van</string>
 		<string>Chocolate Tortie Tipped Van</string>
 		<string>Lilac Tortie Tipped Van</string>
-		<string>Seal Point</string>
-		<string>Blue Point</string>
-		<string>Chocolate Point</string>
-		<string>Lilac Point</string>
-		<string>Red Point</string>
-		<string>Cream Point</string>
-		<string>Caramel Point</string>
-		<string>Apricot Point</string>
-		<string>Seal Tortie Point</string>
-		<string>Blue Tortie Point</string>
-		<string>Chocolate Tortie Point</string>
-		<string>Lilac Tortie Point</string>
-		<string>Caramel Tortie Point</string>
-		<string>Apricot Tortie Point</string>
-		<string>Seal Tabby Point</string>
-		<string>Blue Tabby Point</string>
-		<string>Chocolate Tabby Point</string>
-		<string>Lilac Tabby Point</string>
-		<string>Red Tabby Point</string>
-		<string>Cream Tabby Point</string>
-		<string>Caramel Tabby Point</string>
-		<string>Apricot Tabby Point</string>
-		<string>Seal Tortie Tabby Point</string>
-		<string>Blue Tortie Tabby Point</string>
-		<string>Chocolate Tortie Tabby Point</string>
-		<string>Lilac Tortie Tabby Point</string>
-		<string>Caramel Tortie Tabby Point</string>
-		<string>Apricot Tortie Tabby Point</string>
-		<string>Seal Smoke Point</string>
-		<string>Blue Smoke Point</string>
-		<string>Chocolate Smoke Point</string>
-		<string>Lilac Smoke Point</string>
-		<string>Red Smoke Point</string>
-		<string>Cream Smoke Point</string>
-		<string>Caramel Smoke Point</string>
-		<string>Apricot Smoke Point</string>
-		<string>Seal Tortie Smoke Point</string>
-		<string>Blue Tortie Smoke Point</string>
-		<string>Chocolate Tortie Smoke Point</string>
-		<string>Lilac Tortie Smoke Point</string>
-		<string>Caramel Tortie Smoke Point</string>
-		<string>Apricot Tortie Smoke Point</string>
-		<string>Seal Silver Tabby Point</string>
-		<string>Blue Silver Tabby Point</string>
-		<string>Chocolate Silver Tabby Point</string>
-		<string>Lilac Silver Tabby Point</string>
-		<string>Red Silver Tabby Point</string>
-		<string>Cream Silver Tabby Point</string>
-		<string>Caramel Silver Tabby Point</string>
-		<string>Apricot Silver Tabby Point</string>
-		<string>Seal Tortie Silver Tabby Point</string>
-		<string>Blue Tortie Silver Tabby Point</string>
-		<string>Chocolate Tortie Silver Tabby Point</string>
-		<string>Lilac Tortie Silver Tabby Point</string>
-		<string>Caramel Tortie Silver Tabby Point</string>
-		<string>Apricot Tortie Silver Tabby Point</string>
+		<string>Golden Shaded Van</string>
+		<string>Blue Shaded Golden Van</string>
+		<string>Chocolate Shaded Golden Van</string>
+		<string>Lilac Shaded Golden Van</string>
+		<string>Black Shaded Silver Van</string>
+		<string>Black Shaded Pewter Van</string>
+		<string>Blue Shaded Silver Van</string>
+		<string>Blue Shaded Pewter Van</string>
+		<string>Chocolate Shaded Silver Van</string>
+		<string>Chocolate Shaded Pewter Van</string>
+		<string>Lilac Shaded Silver Van</string>
+		<string>Lilac Shaded Pewter Van</string>
+		<string>Red Shaded Cameo Van</string>
+		<string>Cream Shaded Cameo Van</string>
+		<string>Black Tortie Shaded Van</string>
+		<string>Blue Tortie Shaded Van</string>
+		<string>Chocolate Tortie Shaded Van</string>
+		<string>Lilac Tortie Shaded Van</string>
 	</array>
 	<key>Pixiebob</key>
 	<array>
@@ -21768,6 +22292,149 @@
 	<key>Singapura</key>
 	<array>
 		<string>Sepia Agouti</string>
+	</array>
+	<key>Snowshoe</key>
+	<array>
+		<string>Seal Point Mitted</string>
+		<string>Blue Point Mitted</string>
+		<string>Chocolate Point Mitted</string>
+		<string>Lilac Point Mitted</string>
+		<string>Red Point Mitted</string>
+		<string>Cream Point Mitted</string>
+		<string>Cinnamon Point Mitted</string>
+		<string>Fawn Point Mitted</string>
+		<string>Caramel Point Mitted</string>
+		<string>Apricot Point Mitted</string>
+		<string>Seal Tortie Point Mitted</string>
+		<string>Blue Tortie Point Mitted</string>
+		<string>Chocolate Tortie Point Mitted</string>
+		<string>Lilac Tortie Point Mitted</string>
+		<string>Cinnamon Tortie Point Mitted</string>
+		<string>Fawn Tortie Point Mitted</string>
+		<string>Caramel Tortie Point Mitted</string>
+		<string>Apricot Tortie Point Mitted</string>
+		<string>Seal Tabby Point Mitted</string>
+		<string>Blue Tabby Point Mitted</string>
+		<string>Chocolate Tabby Point Mitted</string>
+		<string>Lilac Tabby Point Mitted</string>
+		<string>Red Tabby Point Mitted</string>
+		<string>Cream Tabby Point Mitted</string>
+		<string>Cinnamon Tabby Point Mitted</string>
+		<string>Fawn Tabby Point Mitted</string>
+		<string>Caramel Tabby Point Mitted</string>
+		<string>Apricot Tabby Point Mitted</string>
+		<string>Seal Tortie Tabby Point Mitted</string>
+		<string>Blue Tortie Tabby Point Mitted</string>
+		<string>Chocolate Tortie Tabby Point Mitted</string>
+		<string>Lilac Tortie Tabby Point Mitted</string>
+		<string>Cinnamon Tortie Tabby Point Mitted</string>
+		<string>Fawn Tortie Tabby Point Mitted</string>
+		<string>Caramel Tortie Tabby Point Mitted</string>
+		<string>Apricot Tortie Tabby Point Mitted</string>
+		<string>Seal Smoke Point Mitted</string>
+		<string>Blue Smoke Point Mitted</string>
+		<string>Chocolate Smoke Point Mitted</string>
+		<string>Lilac Smoke Point Mitted</string>
+		<string>Red Smoke Point Mitted</string>
+		<string>Cream Smoke Point Mitted</string>
+		<string>Cinnamon Smoke Point Mitted</string>
+		<string>Fawn Smoke Point Mitted</string>
+		<string>Caramel Smoke Point Mitted</string>
+		<string>Apricot Smoke Point Mitted</string>
+		<string>Seal Tortie Smoke Tabby Point Mitted</string>
+		<string>Blue Tortie Smoke Tabby Point Mitted</string>
+		<string>Chocolate Tortie Smoke Tabby Point Mitted</string>
+		<string>Lilac Tortie Smoke Tabby Point Mitted</string>
+		<string>Cinnamon Tortie Smoke Tabby Point Mitted</string>
+		<string>Fawn Tortie Smoke Tabby Point Mitted</string>
+		<string>Caramel Tortie Smoke Tabby Point Mitted</string>
+		<string>Seal Silver Tabby Point Mitted</string>
+		<string>Blue Silver Tabby Point Mitted</string>
+		<string>Chocolate Silver Tabby Point Mitted</string>
+		<string>Lilac Silver Tabby Point Mitted</string>
+		<string>Red Silver Tabby Point Mitted</string>
+		<string>Cream Silver Tabby Point Mitted</string>
+		<string>Cinnamon Silver Tabby Point Mitted</string>
+		<string>Fawn Silver Tabby Point Mitted</string>
+		<string>Caramel Silver Tabby Point Mitted</string>
+		<string>Apricot Silver Tabby Point Mitted</string>
+		<string>Seal Silver Tortie Tabby Point Mitted</string>
+		<string>Blue Silver Tortie Tabby Point Mitted</string>
+		<string>Chocolate Silver Tortie Tabby Point Mitted</string>
+		<string>Lilac Silver Tortie Tabby Point Mitted</string>
+		<string>Cinnamon Silver Tortie Tabby Point Mitted</string>
+		<string>Fawn Silver Tortie Tabby Point Mitted</string>
+		<string>Caramel Silver Tortie Tabby Point Mitted</string>
+		<string>Seal Point Bi-Colour</string>
+		<string>Blue Point Bi-Colour</string>
+		<string>Chocolate Point Bi-Colour</string>
+		<string>Lilac Point Bi-Colour</string>
+		<string>Red Point Bi-Colour</string>
+		<string>Cream Point Bi-Colour</string>
+		<string>Cinnamon Point Bi-Colour</string>
+		<string>Fawn Point Bi-Colour</string>
+		<string>Caramel Point Bi-Colour</string>
+		<string>Apricot Point Bi-Colour</string>
+		<string>Seal Tortie Point Bi-Colour</string>
+		<string>Blue Tortie Point Bi-Colour</string>
+		<string>Chocolate Tortie Point Bi-Colour</string>
+		<string>Lilac Tortie Point Bi-Colour</string>
+		<string>Cinnamon Tortie Point Bi-Colour</string>
+		<string>Fawn Tortie Point Bi-Colour</string>
+		<string>Caramel Tortie Point Bi-Colour</string>
+		<string>Apricot Tortie Point Bi-Colour</string>
+		<string>Seal Tabby Point Bi-Colour</string>
+		<string>Blue Tabby Point Bi-Colour</string>
+		<string>Chocolate Tabby Point Bi-Colour</string>
+		<string>Lilac Tabby Point Bi-Colour</string>
+		<string>Red Tabby Point Bi-Colour</string>
+		<string>Cream Tabby Point Bi-Colour</string>
+		<string>Cinnamon Tabby Point Bi-Colour</string>
+		<string>Fawn Tabby Point Bi-Colour</string>
+		<string>Caramel Tabby Point Bi-Colour</string>
+		<string>Apricot Tabby Point Bi-Colour</string>
+		<string>Seal Tortie Tabby Point Bi-Colour</string>
+		<string>Blue Tortie Tabby Point Bi-Colour</string>
+		<string>Chocolate Tortie Tabby Point Bi-Colour</string>
+		<string>Lilac Tortie Tabby Point Bi-Colour</string>
+		<string>Cinnamon Tortie Tabby Point Bi-Colour</string>
+		<string>Fawn Tortie Tabby Point Bi-Colour</string>
+		<string>Caramel Tortie Tabby Point Bi-Colour</string>
+		<string>Apricot Tortie Tabby Point Bi-Colour</string>
+		<string>Seal Smoke Point Bi-Colour</string>
+		<string>Blue Smoke Point Bi-Colour</string>
+		<string>Chocolate Smoke Point Bi-Colour</string>
+		<string>Lilac Smoke Point Bi-Colour</string>
+		<string>Red Smoke Point Bi-Colour</string>
+		<string>Cream Smoke Point Bi-Colour</string>
+		<string>Cinnamon Smoke Point Bi-Colour</string>
+		<string>Fawn Smoke Point Bi-Colour</string>
+		<string>Caramel Smoke Point Bi-Colour</string>
+		<string>Apricot Smoke Point Bi-Colour</string>
+		<string>Seal Tortie Smoke Tabby Point Bi-Colour</string>
+		<string>Blue Tortie Smoke Tabby Point Bi-Colour</string>
+		<string>Chocolate Tortie Smoke Tabby Point Bi-Colour</string>
+		<string>Lilac Tortie Smoke Tabby Point Bi-Colour</string>
+		<string>Cinnamon Tortie Smoke Tabby Point Bi-Colour</string>
+		<string>Fawn Tortie Smoke Tabby Point Bi-Colour</string>
+		<string>Caramel Tortie Smoke Tabby Point Bi-Colour</string>
+		<string>Seal Silver Tabby Point Bi-Colour</string>
+		<string>Blue Silver Tabby Point Bi-Colour</string>
+		<string>Chocolate Silver Tabby Point Bi-Colour</string>
+		<string>Lilac Silver Tabby Point Bi-Colour</string>
+		<string>Red Silver Tabby Point Bi-Colour</string>
+		<string>Cream Silver Tabby Point Bi-Colour</string>
+		<string>Cinnamon Silver Tabby Point Bi-Colour</string>
+		<string>Fawn Silver Tabby Point Bi-Colour</string>
+		<string>Caramel Silver Tabby Point Bi-Colour</string>
+		<string>Apricot Silver Tabby Point Bi-Colour</string>
+		<string>Seal Silver Tortie Tabby Point Bi-Colour</string>
+		<string>Blue Silver Tortie Tabby Point Bi-Colour</string>
+		<string>Chocolate Silver Tortie Tabby Point Bi-Colour</string>
+		<string>Lilac Silver Tortie Tabby Point Bi-Colour</string>
+		<string>Cinnamon Silver Tortie Tabby Point Bi-Colour</string>
+		<string>Fawn Silver Tortie Tabby Point Bi-Colour</string>
+		<string>Caramel Silver Tortie Tabby Point Bi-Colour</string>
 	</array>
 	<key>Somali</key>
 	<array>

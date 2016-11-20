@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Feanor. All rights reserved.
 //
 
-private let zero  = NSNumber(integer: 0)
-private let NO    = NSNumber(bool: false)
-private let YES   = NSNumber(bool: true)
+private let zero  = 0
+private let NO    = false
+private let YES   = true
 
 import Cocoa
 
@@ -25,7 +25,7 @@ class EntrySheetController: NSWindowController {
   
   var entryData: [String : AnyObject] {
     let properties = Entry.properties + Cat.properties
-    return self.dictionaryWithValuesForKeys(properties)
+    return self.dictionaryWithValues(forKeys: properties) as [String : AnyObject]
   }
   
   let cageNames = Globals.cageTypes.names
@@ -74,7 +74,7 @@ class EntrySheetController: NSWindowController {
   dynamic var title = String()
   dynamic var name = String() {
     didSet {
-      let prefixes = name.componentsSeparatedByString(" ")
+      let prefixes = name.components(separatedBy: " ")
       if !prefixes.isEmpty {
         if sire.isEmpty {
           sire = prefixes[0] + " "
@@ -104,17 +104,17 @@ class EntrySheetController: NSWindowController {
   dynamic var challenge = String() {
     didSet {
       if challenge != Challenges.nameOf(ChallengeTypes.kitten) && !dateSet {
-        let showdate = Globals.currentShow?.date ?? NSDate()
-        let calendar = NSCalendar.currentCalendar()
-        if let lastYear = calendar.dateByAddingUnit(NSCalendarUnit.Year, value: -1, toDate: showdate, options: []) {
+        let showdate = Globals.currentShow?.date ?? Date()
+        let calendar = Calendar.current
+        if let lastYear = (calendar as NSCalendar).date(byAdding: NSCalendar.Unit.year, value: -1, to: showdate, options: []) {
           birthDate = lastYear
         }
       }
     }
   }
-  dynamic var birthDate: NSDate = {
-    let showdate = Globals.currentShow?.date ?? NSDate()
-    return NSCalendar.currentCalendar().dateByAddingUnit(.Month, value: -5, toDate: showdate, options: []) ?? showdate
+  dynamic var birthDate: Date = {
+    let showdate = Globals.currentShow?.date ?? Date()
+    return (Calendar.current as NSCalendar).date(byAdding: .month, value: -5, to: showdate, options: []) ?? showdate
     }()
   
   dynamic var sire      = String()
@@ -130,9 +130,8 @@ class EntrySheetController: NSWindowController {
   
   dynamic var cageType = zero {
     didSet {
-      let cageInt = cageType.integerValue
-      cageSize = Globals.cageTypes.sizes[cageInt]
-      if cageInt == _otherCage {
+      cageSize = Globals.cageTypes.sizes[cageType]
+      if cageSize == _otherCage {
         enableCageSizeTextField = true
         self.window?.makeFirstResponder(self.cageSizeTextField)
       } else {
@@ -141,28 +140,28 @@ class EntrySheetController: NSWindowController {
           self.window?.makeFirstResponder(initialTextField)
         }
       }
-      litterCage = (cageInt == _litterCage)
-      hireCage = (cageInt == _hireCage)
+      litterCage = (cageSize == _litterCage)
+      hireCage = (cageSize == _hireCage)
     }
   }
-  dynamic var cageSize = NSNumber(integer: Globals.cageTypes.sizes[0])
+  dynamic var cageSize = Globals.cageTypes.sizes[0]
   
   dynamic var hireCage    = false
   dynamic var litterCage  = false
   
   dynamic var ring1 = true
-  dynamic var ring2 = Globals.currentShow!.numberOfRings.integerValue > 1
-  dynamic var ring3 = Globals.currentShow!.numberOfRings.integerValue > 2
-  dynamic var ring4 = Globals.currentShow!.numberOfRings.integerValue > 3
-  dynamic var ring5 = Globals.currentShow!.numberOfRings.integerValue > 4
-  dynamic var ring6 = Globals.currentShow!.numberOfRings.integerValue > 5
+  dynamic var ring2 = Globals.currentShow!.numberOfRings.intValue > 1
+  dynamic var ring3 = Globals.currentShow!.numberOfRings.intValue > 2
+  dynamic var ring4 = Globals.currentShow!.numberOfRings.intValue > 3
+  dynamic var ring5 = Globals.currentShow!.numberOfRings.intValue > 4
+  dynamic var ring6 = Globals.currentShow!.numberOfRings.intValue > 5
   
   dynamic var ring1Available = true
-  dynamic var ring2Available = Globals.currentShow!.numberOfRings.integerValue > 1
-  dynamic var ring3Available = Globals.currentShow!.numberOfRings.integerValue > 2
-  dynamic var ring4Available = Globals.currentShow!.numberOfRings.integerValue > 3
-  dynamic var ring5Available = Globals.currentShow!.numberOfRings.integerValue > 4
-  dynamic var ring6Available = Globals.currentShow!.numberOfRings.integerValue > 5
+  dynamic var ring2Available = Globals.currentShow!.numberOfRings.intValue > 1
+  dynamic var ring3Available = Globals.currentShow!.numberOfRings.intValue > 2
+  dynamic var ring4Available = Globals.currentShow!.numberOfRings.intValue > 3
+  dynamic var ring5Available = Globals.currentShow!.numberOfRings.intValue > 4
+  dynamic var ring6Available = Globals.currentShow!.numberOfRings.intValue > 5
   
   dynamic var willWork = false
   dynamic var catalogueRequired = false
@@ -177,7 +176,7 @@ class EntrySheetController: NSWindowController {
   // MARK: - Methods
   // ****************
   
-  @IBAction func cageSizeMenuChosen(sender: NSPopUpButton) {
+  @IBAction func cageSizeMenuChosen(_ sender: NSPopUpButton) {
     // not doing anything, just ensuring this class is the target of the popup
   }
   
@@ -197,10 +196,10 @@ class EntrySheetController: NSWindowController {
   
   // Litter cage type not selectable unless the entry is a kitten
   // -------------------------------------------------------------
-  override func validateMenuItem(menuItem: NSMenuItem) -> Bool {
+  override func validateMenuItem(_ menuItem: NSMenuItem) -> Bool {
     let selector = menuItem.action
     let tag = menuItem.tag
-    if (tag == _litterCage) && (selector == Selector("cageSizeMenuChosen:")) {
+    if (tag == _litterCage) && (selector == #selector(EntrySheetController.cageSizeMenuChosen(_:))) {
       return Challenges.isAKitten(self.challenge)
     } else {
       return true
@@ -213,7 +212,7 @@ class EntrySheetController: NSWindowController {
     
   // Helper methods to copy items from an existing Cat or Entry
   // ----------------------------------------------------------
-  func setSheetTo(original: Cat?, except exceptions: [String]?) {
+  func setSheetTo(_ original: Cat?, except exceptions: [String]?) {
     if let original = original {
       dateSet = true
       filledFields = true
@@ -224,33 +223,33 @@ class EntrySheetController: NSWindowController {
         properties = Cat.properties.filter { !exceptions!.contains($0) }
       }
       for key in properties {
-        self.setValue(original.valueForKey(key), forKey: key)
+        self.setValue(original.value(forKey: key), forKey: key)
       }
     }
   }
   
-  func setSheetTo(original: Entry) {
+  func setSheetTo(_ original: Entry) {
     for key in Cat.properties {
       dateSet = true
       filledFields = true
-      self.setValue(original.cat.valueForKey(key), forKey: key)
+      self.setValue(original.cat.value(forKey: key), forKey: key)
     }
     for key in Entry.properties {
-      self.setValue(original.valueForKey(key), forKey: key)
+      self.setValue(original.value(forKey: key), forKey: key)
     }
     // set the cage type menu
-    if let index = Globals.cageTypes.sizes.indexOf(original.cageSize.integerValue) {
-      cageType = NSNumber(integer: index)
+    if let index = Globals.cageTypes.sizes.index(of: original.cageSize.intValue) {
+      cageType = index
     } else {
       cageType = zero
     }
     if original.hireCage.boolValue {
-      cageType = _hireCage
+      cageType = _hireCageNumber
     }
   }
   
-  private func checkField(field: String) -> Bool {
-    if let theField = self.valueForKey(field) as? String {
+  fileprivate func checkField(_ field: String) -> Bool {
+    if let theField = self.value(forKey: field) as? String {
       if theField.isEmpty { return false }
       switch field {
       case Cat.sex:
@@ -272,7 +271,7 @@ class EntrySheetController: NSWindowController {
 
   // list of the fields that must be filled in correctly
   // ----------------------------------------------------
-  private let possibleFaults = ["registration", "name", "breed", "colour", "sex", "challenge", "sire", "dam", "breeder", "exhibitor"]
+  fileprivate let possibleFaults = ["registration", "name", "breed", "colour", "sex", "challenge", "sire", "dam", "breeder", "exhibitor"]
 
   func validateSheet() -> String? {
     
@@ -285,9 +284,10 @@ class EntrySheetController: NSWindowController {
     for fault in possibleFaults {
       
       if !checkField(fault) {
-        if count++ > 0 {
+        if count > 0 {
           faults += ", "
         }
+        count += 1
         faults += fault
         okToGo = false
       }
@@ -362,27 +362,27 @@ class EntrySheetController: NSWindowController {
   //: # MARK: - IBActions
   // =============================================
   
-  @IBAction func okButtonPressed(sender: NSButton) {
+  @IBAction func okButtonPressed(_ sender: NSButton) {
     if let faults = self.validateSheet() {
       errorAlert(message: faults)
     } else {
-      window!.endEditingFor(nil)
-      speaker.startSpeakingString("adding \(self.name)")
+      window!.endEditing(for: nil)
+      speaker.startSpeaking("adding \(self.name)")
       dismissWithModalResponse(NSModalResponseOK)
     }
   }
   
-  @IBAction func cancelButtonPressed(sender: NSButton) {
-    speaker.startSpeakingString("Cancelled")
+  @IBAction func cancelButtonPressed(_ sender: NSButton) {
+    speaker.startSpeaking("Cancelled")
     dismissWithModalResponse(NSModalResponseCancel)
   }
   
-  func dismissWithModalResponse(response: NSModalResponse)
+  func dismissWithModalResponse(_ response: NSModalResponse)
   {
     window!.sheetParent!.endSheet(window!, returnCode: response)
   }
   
-  @IBAction func datePressed(sender: AnyObject) {    
+  @IBAction func datePressed(_ sender: AnyObject) {    
     dateSet = true
   }
 

@@ -7,10 +7,30 @@
 //
 
 import Foundation
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
 
-var sexesToken: dispatch_once_t = 0
+
+var sexesToken: Int = 0
 
 class Sex: DataSource {
+  
+  private static var __once: () = {       // This will only ever execute once
+      // load in an array of the group names & breeds in the group
+      // for each show type e.g. QFA, ACF or COWOCA
+      for (showType, dict1) in Globals.dataByGroup {
+        let sexes = dict1[Headings.sexes] as! [String]
+        list[showType] = sexes
+      }
+    }()
   
   // ******************************
   // Class methods and properties
@@ -23,28 +43,21 @@ class Sex: DataSource {
   }
   
   override class func initialize() {
-    dispatch_once(&sexesToken) {       // This will only ever execute once
-      // load in an array of the group names & breeds in the group
-      // for each show type e.g. QFA, ACF or COWOCA
-      for (showType, dict1) in Globals.dataByGroup {
-        let sexes = dict1[Headings.sexes] as! [String]
-        list[showType] = sexes
-      }
-    }
+    _ = Sex.__once
   }
   
-  class func isEntire(gender: String) -> Bool? {
+  class func isEntire(_ gender: String) -> Bool? {
     let list = Sex.list[Globals.currentShowType]
-    return list?.indexOf(gender) < 2
+    return list?.index(of: gender) < 2
   }
   
-  class func rankOf(gender: String) -> Int? {
-    guard let ans = Sex.list[Globals.currentShowType]?.indexOf(gender)
+  class func rankOf(_ gender: String) -> Int? {
+    guard let ans = Sex.list[Globals.currentShowType]?.index(of: gender)
       else { return nil }
     return ans
   }
   
-  class func nameOf(number: Int) -> String {
+  class func nameOf(_ number: Int) -> String {
     guard let ans = Sex.list[Globals.currentShowType]? [number]
       else { fatalError("Cannot get sex number \(number) for show type \(Globals.currentShowType)") }
     return ans
