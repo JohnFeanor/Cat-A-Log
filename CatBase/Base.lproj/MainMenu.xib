@@ -1,7 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9059"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -68,6 +70,12 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="File" id="UiZ-mY-Vcg">
                         <items>
+                            <menuItem title="Go" id="ze4-pd-moD">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="splashWindowClosed:" target="Voe-Tx-rLC" id="pVW-j5-qoX"/>
+                                </connections>
+                            </menuItem>
                             <menuItem title="Save" keyEquivalent="s" id="ydP-CP-Ob7">
                                 <connections>
                                     <action selector="saveAction:" target="Voe-Tx-rLC" id="aKl-GI-kSZ"/>
@@ -381,8 +389,7 @@
             </items>
         </menu>
         <window title="Splash" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" oneShot="NO" showsToolbarButton="NO" animationBehavior="default" id="SvI-4i-wPk">
-            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="400" y="250" width="480" height="270"/>
+            <rect key="contentRect" x="390" y="240" width="480" height="270"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
             <view key="contentView" id="rq2-uP-7hX">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
@@ -390,7 +397,7 @@
                 <subviews>
                     <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yqg-Rl-JkY">
                         <rect key="frame" x="17" y="124" width="134" height="134"/>
-                        <animations/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="5he-Jw-Veg"/>
                         <connections>
                             <binding destination="Voe-Tx-rLC" name="value" keyPath="iconImage" id="k24-bh-Off"/>
@@ -398,7 +405,7 @@
                     </imageView>
                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VfW-Zr-bAD">
                         <rect key="frame" x="240" y="217" width="125" height="47"/>
-                        <animations/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Cat-A-Log" id="jqS-bL-P2v">
                             <font key="font" size="24" name="Apple-Chancery"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -407,7 +414,7 @@
                     </textField>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c9G-YJ-u27">
                         <rect key="frame" x="146" y="71" width="276" height="17"/>
-                        <animations/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Please do not make illegal copies of this program" id="Nnw-8a-QjJ">
                             <font key="font" metaFont="smallSystem"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -416,7 +423,7 @@
                     </textField>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UQI-Jv-zQ6">
                         <rect key="frame" x="33" y="79" width="389" height="34"/>
-                        <animations/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Registered for use of QFA and QFA affliated clubs" id="ua3-4A-4LN">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -425,7 +432,7 @@
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tea-4k-HE9">
                         <rect key="frame" x="18" y="9" width="338" height="41"/>
-                        <animations/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" title="Label" id="o5r-Xc-5sl">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -434,7 +441,7 @@
                     </textField>
                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LFP-6m-lXc">
                         <rect key="frame" x="228" y="144" width="128" height="45"/>
-                        <animations/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" enabled="NO" sendsActionOnEndEditing="YES" alignment="right" title="       © 2015 Feanor        all rights reserved" id="vTo-Wr-5nk">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -442,8 +449,8 @@
                         </textFieldCell>
                     </textField>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ugJ-TX-fj8">
-                        <rect key="frame" x="363" y="22" width="103" height="32"/>
-                        <animations/>
+                        <rect key="frame" x="323" y="22" width="103" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="NDB-SL-SeC">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -457,7 +464,7 @@ DQ
                     </button>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R5a-Vx-GsQ">
                         <rect key="frame" x="284" y="202" width="36" height="17"/>
-                        <animations/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="V 2.0" id="Yp0-fs-3el">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -465,7 +472,6 @@ DQ
                         </textFieldCell>
                     </textField>
                 </subviews>
-                <animations/>
             </view>
         </window>
         <userDefaultsController representsSharedInstance="YES" id="Ybb-4g-7YB"/>

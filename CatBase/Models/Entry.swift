@@ -129,7 +129,6 @@ class Entry: NSManagedObject {
       if let value = entryData[key] {
         setValue(value, forKey: key)
       }
-      
     }
   }
   
@@ -148,7 +147,7 @@ class Entry: NSManagedObject {
   // **********************************
   
   var isInLitter: Bool {
-      return litterCage.boolValue
+    return litterCage.boolValue
   }
   
   func isInLitter(_ litter: Litter) -> Bool {
@@ -172,10 +171,10 @@ class Entry: NSManagedObject {
     return true
   }
   
-  var isLitterKitten: Bool {
+  var isKittenClass: Bool {
     if Breeds.nonPedigreeBreed(cat.breed) { return false }
     if !cat.isKitten { return false }
-    return isInLitter
+    return true
   }
   
   var typeOfCage: String {
@@ -220,11 +219,11 @@ class Entry: NSManagedObject {
      return !self.cat.isCompanion && self.differentBreedTo(other)
   }
   
-  func newAgoutiTo(_ other: Entry? ) -> Bool {
+  func newJudgingVarietyTo(_ other: Entry? ) -> Bool {
     guard let other = other
       else { return true }
     if differentBreedTo(other) { return true }
-    return cat.agoutiRank != other.cat.agoutiRank
+    return cat.judgingVariety != other.cat.judgingVariety
   }
   
   // return true if other is different breed or colour
@@ -256,7 +255,7 @@ class Entry: NSManagedObject {
     } else {
       if other.cat.isMale { return true }
     }
-    if cat.isAgouti { return cat.agoutiRank != other.cat.agoutiRank }
+    if cat.isLimited { return cat.judgingVariety != other.cat.judgingVariety }
     return self.cat.colour != other.cat.colour
   }
   

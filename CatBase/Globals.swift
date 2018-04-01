@@ -128,31 +128,50 @@ let wordCharacter = NSPredicate(format: "SELF MATCHES %@", wordChar)
 let speaker = NSSpeechSynthesizer()
 
 // ********************************
-// MARK: - Agouti helper functions
+// MARK: - Judging varities
 // *******************************
 
-struct Agouti {
-  static let notAgouti      = -1
-  static let agouti         = 0
-  static let agoutiWhite    = 1
-  static let nonAgouti      = 2
-  static let nonAgoutiWhite  = 3
-}
+let qfaLimitedBreeds = ["Maine Coon", "Norwegian Forest", "Siberian", "American Curl", "American Curl Longhair", "Manx", "Manx Stumpy", "Cymric", "Cymric Stumpy", "Selkirk Rex Shorthair", "Selkirk Rex Longhair", "Cornish Rex", "Devon Rex", "German Rex", "Sphynx", "La Perm", "La Perm Longhair", "Scottish Fold", "Scottish Fold Longhair", "Scottish Shorthair", "Scottish Longhair"]
 
-func isTabby(_ colour: String) -> Bool {
-  let color = colour.lowercased()
-  return color.contains("tabby")
-}
+let cccaLimitedBreeds = ["Maine Coon", "Norwegian Forest", "Siberian", "American Curl", "American Curl Longhair", "Manx", "Manx Stumpy", "Cymric", "Cymric Stumpy", "Selkirk Rex Shorthair", "Selkirk Rex Longhair", "Cornish Rex", "Devon Rex", "German Rex", "Sphynx", "La Perm", "La Perm Longhair", "Scottish Fold", "Scottish Fold Longhair", "Scottish Shorthair", "Scottish Longhair", "Ragdoll", "Bengal"]
 
-func andWhite(_ colour: String) -> Bool {
-  let color = colour.lowercased()
-  if color.contains(" white")    { return true }
-  if color.contains("bi-colour") { return true }
-  if color.contains("bicolour")  { return true }
-  if color.contains("van")       { return true }
+enum JudgingVarities: Int, Comparable {
+  case colourClass = 0
+  case agouti, agoutiWhite, nonAgouti, nonAgoutiWhite
+  case mitted, bicolour
+  case brown, sepia, mink, lynxPoint
+  case solid, patched, patterned, silver, pointed
   
-  return false
+  var name: String {
+    switch self {
+    case .colourClass: return "Standard"
+    case .agouti : return "Agouti"
+    case .agoutiWhite : return "Agouti & White"
+    case .nonAgouti : return "Non Agouti"
+    case .nonAgoutiWhite : return "Non Agouti & White"
+    case .mitted: return "Mitted"
+    case .bicolour: return "BiColour"
+    case .brown : return "Brown"
+    case .sepia : return "Sepia"
+    case .mink : return "Mink"
+    case .lynxPoint: return "Lynx Point"
+    case .solid: return "Solid"
+    case .patched : return "Patched"
+    case .patterned : return "Patterned"
+    case .silver : return "Silver"
+    case .pointed : return "Pointed"
+    }
+  }
+  
+  static func ==(lhs: JudgingVarities, rhs: JudgingVarities) -> Bool {
+    return lhs.rawValue == rhs.rawValue
+  }
+  
+  static func <(lhs: JudgingVarities, rhs: JudgingVarities) -> Bool {
+    return lhs.rawValue < rhs.rawValue
+  }
 }
+
 
 // ********************************
 // MARK: - Other helper functions
@@ -170,7 +189,7 @@ func setAge(_ key: String, toWeeks weeks:Int? = nil, andMonths months: Int? = ni
   
 }
 
-func CCCAShow() -> Bool {
+var isCCCAShow : Bool {
   return Globals.currentShowType == "CCCA Show"
 }
 
@@ -281,7 +300,7 @@ func areYouSure(_ message: String) -> Bool {
 }
 
 func errorAlert(message: String) {
-  runAlertWithMessage(message, buttons: "OK")
+  _ = runAlertWithMessage(message, buttons: "OK")
 }
 
 func runAlertWithMessage(_ message: String, buttons: String ...) -> NSModalResponse {

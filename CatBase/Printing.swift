@@ -146,7 +146,12 @@ struct Litter {
   
   init(entry: Entry) {
     let cat = entry.cat
-    name = cat.name
+    let prefixes = cat.name.components(separatedBy: " ")
+    if prefixes.isEmpty {
+      name = ""
+    } else {
+      name = prefixes[0]
+    }
     birthDate = cat.birthDate as Date
     breed = cat.breed
     sire = cat.sire
@@ -332,8 +337,8 @@ extension MainWindowController {
         if count == 0 { return }
         
         let info: String
-        if thisEntry.cat.isAgouti {
-          info = " \(Globals.agoutiClasses[thisEntry.cat.agoutiRank]) \(thisEntry.cat.breed) \(thisEntry.cat.sectionName)"
+        if thisEntry.cat.isLimited {
+          info = " \(thisEntry.cat.judgingVariety.name) \(thisEntry.cat.breed) \(thisEntry.cat.sectionName)"
         } else if thisEntry.cat.isCompanion {
           info = " \(thisEntry.cat.colour) \(thisEntry.cat.breed)"
         } else {
@@ -407,7 +412,6 @@ extension MainWindowController {
     // ---------------------
     
     func writeLittersForGroup(_ currentGroupNumber: Int) {
-      print(litters)
       var first = true
       for litter in litters {
         if litter.groupNumber == currentGroupNumber {
@@ -418,7 +422,7 @@ extension MainWindowController {
           addData(tableStart)
           addData(name1Litter, "Litter \(litter.number)", name2Litter)
           
-          data.append("\(litter.name)\(litter.breed) Litter".data)
+          data.append("\(litter.name) \(litter.breed) Litter".data)
           judgesNotes.append(nbspace)
           
           addData(name3)
@@ -494,6 +498,8 @@ extension MainWindowController {
     }
     
     func doPrestigeChallengesFor(_ thisEntry: Entry?, with theChallenges: inout PrestigeChallenge) {
+      if isCCCAShow { return }
+      print("Doing prestige challenges")
       if let thisEntry = thisEntry {
         // ** Kittens do not have challenges
         if thisEntry.cat.isKitten { return }
@@ -549,7 +555,7 @@ extension MainWindowController {
     
     var countOfCats   = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
     
-    var lastAgouti  = -1
+    var judgingClass  = JudgingVarities.colourClass
     var thisAgouti  = 0
     var colourCount = 1
     var breedCount  = 1
@@ -625,7 +631,7 @@ extension MainWindowController {
       let thisBreed   = entry.cat.breed
       
       if let lastEntry = lastEntry {
-        lastAgouti = lastEntry.cat.agoutiRank
+        judgingClass = lastEntry.cat.judgingVariety
         
         // MARK: - write out open challenges & best of colour
         // ---------------------------------------------------
@@ -653,7 +659,7 @@ extension MainWindowController {
         if entry.inDifferentSectionTo(lastEntry) {
           
           // MARK: Write out litters for this group
-          if lastEntry.isLitterKitten {
+          if lastEntry.isKittenClass {
             writeLittersForGroup(lastEntry.cat.groupNumber)
           }
           
@@ -793,7 +799,7 @@ extension MainWindowController {
       
         func updateChallengeFor(_ entry: Entry) {
           let maleCat = entry.cat.isMale
-          if CCCAShow() {
+          if isCCCAShow {
             if Challenges.type(entry) != .kitten {
               openChallenges.append(cageNumber)
               if Challenges.type(entry) == .gold {
@@ -825,7 +831,7 @@ extension MainWindowController {
         }
       } else if entry.cat.isKitten {
         kittenData.append(excelDataFor(entry.cat))
-      } else if CCCAShow() {
+      } else if isCCCAShow {
         updateChallengeFor(entry)
         openData.append(excelDataFor(entry.cat))
       } else if Challenges.type(entry) == .gold {
@@ -841,19 +847,19 @@ extension MainWindowController {
       
       // MARK: - Write out new colour
       if entry.newColourOrBreedTo(lastEntry) {
-          if lastAgouti != Agouti.notAgouti {
+          if judgingClass != .colourClass {
             addData(bestAward1)
           }
           addData(colour1)
           
-        if entry.cat.isAgouti {
-          if entry.newAgoutiTo(lastEntry) {
+        if entry.cat.isLimited {
+          if entry.newJudgingVarietyTo(lastEntry) {
             // A new Agouti grouping
             // write agouti heading
-            addData(Globals.agoutiClasses[entry.cat.agoutiRank], colour2, colour3)
+            addData(entry.cat.judgingVariety.name, colour2, colour3)
           }
         } else {
-          lastAgouti = Agouti.notAgouti
+          judgingClass = .colourClass
         }
         
           // then write the new colour

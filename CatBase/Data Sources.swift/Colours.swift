@@ -110,8 +110,14 @@ class Colours: DataSource, NSTableViewDataSource {
   }
   
   func addNewColour(_ newColour: String, atIndex index: Int) {
-    if indexInBounds(index) && currentBreed != nil && !currentBreed!.isEmpty {
-      Colours.list[currentBreed!]!.insert(newColour, at: index)
+    guard index >= 0  else { print("addNewColour given a negative index"); return }
+    guard index <= self.list.count  else { print("addNewColour given too large an index"); return }
+    guard let currentBreed = self.currentBreed else { print("addNewColour: currentBreed is nil"); return }
+    guard Colours.list[currentBreed] != nil else { print("addNewColour: list of colours for /(currentBreed) is nil"); return }
+    if index == self.list.count {     // at end of list, so append a new colour
+      Colours.list[currentBreed]!.append(newColour)
+    } else {                          // otherwise insert it at location index
+      Colours.list[currentBreed]!.insert(newColour, at: index)
     }
   }
   

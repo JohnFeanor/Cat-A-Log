@@ -172,8 +172,8 @@ class Cat: NSManagedObject {
     return Breeds.nonPedigreeBreed(self.breed)
   }
   
-  var isAgouti: Bool {
-    return Globals.agoutiBreeds.index(of: self.breed) != nil
+  var isTabby: Bool {
+    return colour.lowercased().contains("tabby")
   }
   
   var isMale: Bool {
@@ -181,6 +181,25 @@ class Cat: NSManagedObject {
       else { return false }
     return (rank % 2 == 0)
   }
+
+  var isLimited : Bool {
+    if isCCCAShow {
+      return cccaLimitedBreeds.contains(self.breed)
+    } else {
+      return qfaLimitedBreeds.contains(self.breed)
+    }
+  }
+
+  var hasWhite: Bool {
+    let color = colour.lowercased()
+    if color.contains("& white")    { return true }
+    if color.contains("bi-colour") { return true }
+    if color.contains("bicolour")  { return true }
+    if color.contains("van")       { return true }
+    
+    return false
+  }
+
  
   // *************************
   // MARK: - String queries
@@ -241,17 +260,47 @@ class Cat: NSManagedObject {
     return 3
   }
   
-  var agoutiRank: Int {
-    if self.isAgouti {
-      if isTabby(self.colour) {
-        if andWhite(self.colour) { return Agouti.agoutiWhite }
-        return Agouti.agouti
+  var judgingVariety: JudgingVarities {
+    guard isLimited else {
+      return .colourClass
+    }
+    if isCCCAShow {
+      let color = colour.lowercased()
+      if breed == "Ragdoll" {
+        if color.contains("mitted") { return .mitted }
+        if self.hasWhite { return .bicolour }
+        return .pointed
+      } else if breed == "Bengal" {
+        if color.contains("brown") { return .brown }
+        if color.contains("sepia") { return .sepia }
+        if color.contains("mink") { return .mink }
+        if color.contains("silver") { return .silver }
+        return .lynxPoint
       } else {
-        if andWhite(self.colour) { return Agouti.nonAgoutiWhite }
-        return Agouti.nonAgouti
+        if hasWhite { return .patched }
+        if isTabby  { return .patterned }
+        if color.contains("tortie") { return .patterned }
+        if color.contains("point")  { return .pointed }
+        if color.contains("smoke")  { return .silver }
+        if color.contains("silver") { return .silver }
+        if color.contains("tipped") { return .silver }
+        return .solid
+      }
+    } else {        // is a QFA style show
+      if isTabby {
+        if hasWhite {
+          return.agoutiWhite
+        } else {
+          return.agouti
+        }
+      } else {
+        if hasWhite {
+          return .nonAgoutiWhite
+        } else {
+          return .nonAgouti
+        }
       }
     }
-      return Agouti.notAgouti
   }
   
   var colourRank: Int {
@@ -321,10 +370,10 @@ class Cat: NSManagedObject {
     
     // then on agouti (if agouti)
     // --------------------------
-    if self.agoutiRank < anotherCat.agoutiRank {
+    if self.judgingVariety < anotherCat.judgingVariety {
       return .orderedAscending
     }
-    if self.agoutiRank > anotherCat.agoutiRank {
+    if self.judgingVariety > anotherCat.judgingVariety {
       return .orderedDescending
     }
     

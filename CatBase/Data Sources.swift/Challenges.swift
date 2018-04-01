@@ -26,6 +26,13 @@ enum ChallengeTypes: Int {
 
 class Challenges: DataSource {
   
+  class func reloadChallenges() {
+    for (showType, dict1) in Globals.dataByGroup {
+      let challenges = dict1[Headings.challenges] as! [String]
+      Challenges.list[showType] = challenges
+    }
+  }
+  
   private static var __once: () = {       // This will only ever execute once
       // load in an array of the challenge classes in the group
       // for each show type e.g. QFA, ACF or COWOCA
@@ -84,8 +91,12 @@ class Challenges: DataSource {
   }
 
   class func nameOf(_ rank: ChallengeTypes) -> String {
+    if Challenges.list[Globals.currentShowType]?[rank.rawValue] == nil {
+      reloadChallenges()
+    }
     guard let ans = Challenges.list[Globals.currentShowType]?[rank.rawValue]
-      else { fatalError("Cannot determine name of challenge of rank: \(rank) in show type: \(Globals.currentShowType)") }
+      else {
+        fatalError("Challenge type not found for catagory: [\(rank)] and show type: [\(Globals.currentShowType)]\n in list: \(Challenges.list)") }
     return ans
   }
 }

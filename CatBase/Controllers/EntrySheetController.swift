@@ -140,8 +140,8 @@ class EntrySheetController: NSWindowController {
           self.window?.makeFirstResponder(initialTextField)
         }
       }
-      litterCage = (cageSize == _litterCage)
-      hireCage = (cageSize == _hireCage)
+      litterCage = (cageType == _litterCage)
+      hireCage = (cageType == _hireCage)
     }
   }
   dynamic var cageSize = Globals.cageTypes.sizes[0]
