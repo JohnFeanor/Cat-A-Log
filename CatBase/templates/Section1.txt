@@ -3,7 +3,7 @@
   </div>
 
   <b style='mso-bidi-font-weight:normal'>
-    <span style='font-size:14.0pt; font-family:Arial;mso-fareast-font-family:"\FF2D\FF33\660E\671D"; mso-fareast-theme-font:minor-fareast; mso-bidi-font-family:"Times New Roman"; mso-ansi-language:EN-AU; mso-fareast-language:EN-US; mso-bidi-language:AR-SA; mso-no-proof:yes'>
+    <span style='font-size:14.0pt; font-family:Arial; mso-no-proof:yes'>
       <br clear=all style='page-break-before:always; mso-break-type:section-break'>
     </span>
   </b>

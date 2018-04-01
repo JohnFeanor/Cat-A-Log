@@ -910,7 +910,12 @@ extension MainWindowController {
         // -------------------------------------------------
         let catClass: String
         if entry.cat.isKitten {
-          catClass = "\(entry.cat.sex) \(entry.cat.challenge) \(entry.cat.ageCategory)"
+          if Globals.organiseKittensByAgeGroups {
+            catClass = "\(entry.cat.sex) \(entry.cat.challenge) \(entry.cat.ageCategory)"
+          } else {
+            catClass = "\(entry.cat.sex) \(entry.cat.challenge)"
+          }
+          
         } else {
           catClass = "\(entry.cat.sex) class"
         }

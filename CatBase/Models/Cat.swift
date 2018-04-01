@@ -386,13 +386,15 @@ class Cat: NSManagedObject {
       return .orderedDescending
     }
     
-    // then on age ranking
+    // then on age ranking - if used
     // --------------------
-    if self.ageRank < anotherCat.ageRank {
-      return .orderedAscending
-    }
-    if self.ageRank > anotherCat.ageRank {
-      return .orderedDescending
+    if Globals.organiseKittensByAgeGroups {
+      if self.ageRank < anotherCat.ageRank {
+        return .orderedAscending
+      }
+      if self.ageRank > anotherCat.ageRank {
+        return .orderedDescending
+      }
     }
     
     // then on <male>, <female>, <neuter>, <spay>

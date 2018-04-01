@@ -75,6 +75,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     } else {
       timesleftToRunString.stringValue = authenticate[0]
     }
+    
+    Titles.createList()
+    Breeds.createList()
+    Challenges.createList()
+    Colours.createList()
+    Sex.createList()
   }
   
   func applicationWillTerminate(_ aNotification: Notification) {
@@ -144,7 +150,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       } catch var error1 as NSError {
         error = error1
         coordinator = nil
-        print("Could not create managed object coordinator \(error), \(error!.userInfo)")
+        print("Could not create managed object coordinator \(String(describing: error)), \(error!.userInfo)")
       } catch {
         fatalError()
       }
@@ -220,7 +226,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       }
       
       var error: NSError? = nil
-      print("Saving managed object context")
       do {
         try moc.save()
       } catch let error1 as NSError {

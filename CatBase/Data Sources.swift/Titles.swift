@@ -12,15 +12,6 @@ var titlesToken: Int = 0
 
 class Titles: DataSource {
   
-  private static var __once: () = {
-      let temp = arrayFromPList(Titles.nomen)
-      if temp != nil {
-        list = temp as! [String]
-      } else {
-        fatalError("Cannot read in Titles list")
-      }
-    }()
-  
   static var nomen = "Titles"
   static var list = [String]()
   
@@ -28,8 +19,13 @@ class Titles: DataSource {
   
   @IBOutlet weak var titleTable: NSTableView!
   
-  override class func initialize() {
-    _ = Titles.__once
+  class func createList() {
+    let temp = arrayFromPList(Titles.nomen)
+    if temp != nil {
+      list = temp as! [String]
+    } else {
+      fatalError("Cannot read in Titles list")
+    }
   }
   
   class func saveTitles() {
@@ -99,7 +95,7 @@ class Titles: DataSource {
         if string.lowercased().hasPrefix(lowerCasePrefix) {
           if currentChoice == nil {
             currentChoice = string
-          } else if string.characters.count < currentChoice!.characters.count {
+          } else if string.count < currentChoice!.count {
             currentChoice = string
           }
         }

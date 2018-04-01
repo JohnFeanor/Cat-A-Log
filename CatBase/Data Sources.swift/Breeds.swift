@@ -17,25 +17,6 @@ private struct BreedList {
 
 class Breeds: DataSource, NSTableViewDataSource {
   
-  private static var __once: () = {       // This will only ever execute once
-      
-      // load in an array of the group names & breeds in the group for each of the show types
-      // for each show type e.g. QFA, ACF or COWOCA
-      for (showTypeName, showTypeData) in Globals.dataByGroup {
-        let groups = showTypeData.value(forKey: Headings.groups) as! [[String : AnyObject]]
-        var tempBreeds = [BreedList]()
-        for group in groups {
-          let groupBreeds = group[Headings.breeds] as! [String]
-          let groupName = group[Headings.group] as! String
-          tempBreeds.append(BreedList(groupName: groupName, breeds: groupBreeds))
-        }
-        if let nonPedigree = groups.last {
-          nonPedigreesByShowType[showTypeName] = (nonPedigree[Headings.breeds] as! [String])
-        }
-        breedsByGroupAndShowtype[showTypeName] = tempBreeds
-      }
-    }()
-  
   static var entity = "Breeds"
   fileprivate static var breedsByGroupAndShowtype   = [String : [BreedList]]()
   fileprivate static var nonPedigreesByShowType = [String : [String]]()
@@ -57,11 +38,25 @@ class Breeds: DataSource, NSTableViewDataSource {
   }
   
   // ************************************
-  // MARK: - Class initializer
+  // MARK: - Class methods
   // ************************************
   
-  override class func initialize() {
-    _ = Breeds.__once
+  class func createList() {
+    // load in an array of the group names & breeds in the group for each of the show types
+    // for each show type e.g. QFA, ACF or COWOCA
+    for (showTypeName, showTypeData) in Globals.dataByGroup {
+      let groups = showTypeData.value(forKey: Headings.groups) as! [[String : AnyObject]]
+      var tempBreeds = [BreedList]()
+      for group in groups {
+        let groupBreeds = group[Headings.breeds] as! [String]
+        let groupName = group[Headings.group] as! String
+        tempBreeds.append(BreedList(groupName: groupName, breeds: groupBreeds))
+      }
+      if let nonPedigree = groups.last {
+        nonPedigreesByShowType[showTypeName] = (nonPedigree[Headings.breeds] as! [String])
+      }
+      breedsByGroupAndShowtype[showTypeName] = tempBreeds
+    }
   }
   
   override init() {

@@ -12,10 +12,6 @@ var coloursToken: Int = 0
 
 class Colours: DataSource, NSTableViewDataSource {
   
-  private static var __once: () = {
-      list = dictFromPList(Colours.entity) as! DictOfStringArray
-    }()
-  
   // breedSource must be bound to a control which will return a valid breed name
   // ----------------------------------------------------------------------------
   @IBOutlet weak var breedSource: NSControl!
@@ -47,8 +43,8 @@ class Colours: DataSource, NSTableViewDataSource {
   // MARK: - class methods
   // *************************
   
-  override class func initialize() {
-    _ = Colours.__once
+  class func createList() {
+     list = dictFromPList(Colours.entity) as! DictOfStringArray
   }
   
   class func saveColours() {
@@ -159,7 +155,7 @@ class Colours: DataSource, NSTableViewDataSource {
       if string.lowercased().hasPrefix(lowerCasePrefix) {
         if currentChoice == nil {
           currentChoice = string
-        } else if string.characters.count < currentChoice!.characters.count {
+        } else if string.count < currentChoice!.count {
           currentChoice = string
         }
       }

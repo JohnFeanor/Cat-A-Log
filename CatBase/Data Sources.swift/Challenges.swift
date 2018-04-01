@@ -26,28 +26,32 @@ enum ChallengeTypes: Int {
 
 class Challenges: DataSource {
   
+  // ******************************
+  // Class methods and properties
+  // ******************************
+
   class func reloadChallenges() {
     for (showType, dict1) in Globals.dataByGroup {
       let challenges = dict1[Headings.challenges] as! [String]
       Challenges.list[showType] = challenges
     }
   }
-  
-  private static var __once: () = {       // This will only ever execute once
-      // load in an array of the challenge classes in the group
-      // for each show type e.g. QFA, ACF or COWOCA
-      for (showType, dict1) in Globals.dataByGroup {
-        let challenges = dict1[Headings.challenges] as! [String]
-        list[showType] = challenges
-      }
-    }()
-  
+
   static var entity = "Challenges"
   static var list = [String : [String]]()
   
-  override class func initialize() {
-    _ = Challenges.__once
+  class func createList() {
+    // load in an array of the challenge classes in the group
+    // for each show type e.g. QFA, ACF or COWOCA
+    for (showType, dict1) in Globals.dataByGroup {
+      let challenges = dict1[Headings.challenges] as! [String]
+      list[showType] = challenges
+    }
   }
+  
+  // *********************************
+  // Instance methods and properties
+  // ********************************
   
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)

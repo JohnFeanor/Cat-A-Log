@@ -86,7 +86,7 @@ class DataSource: Formatter {
         obj?.pointee = returnString as AnyObject?
         return true
       } else {
-        let index1 = string.characters.index(string.endIndex, offsetBy: -1)
+        let index1 = string.index(string.endIndex, offsetBy: -1)
         let substring = string.substring(to: index1)
         obj?.pointee = substring as AnyObject?
         return true

@@ -3,50 +3,48 @@
 <o:shapedefaults v:ext="edit" spidmax="2049"/>
 </xml><![endif]-->
 </head>
-
 <body lang=EN-AU>
-
 <div style='mso-element:footnote-separator' id=fs>
-
-<p class=MsoNormal><span style='mso-special-character:footnote-separator'><![if !supportFootnotes]>
-
-<hr align=left size=1 width="33%">
-
-<![endif]></span><span style="mso-spacerun:yes">&nbsp;</span></p>
-
+	<p class=MsoNormal>
+		<span style='mso-special-character:footnote-separator'>
+			<![if !supportFootnotes]>
+				<hr align=left size=1 width="33%">
+			<![endif]>
+		</span>
+		<span style="mso-spacerun:yes">&nbsp;</span>
+	</p>
 </div>
-
 <div style='mso-element:footnote-continuation-separator' id=fcs>
-
-<p class=MsoNormal><span style='mso-special-character:footnote-continuation-separator'><![if !supportFootnotes]>
-
-<hr align=left size=1>
-
-<![endif]></span><span style="mso-spacerun:yes">&nbsp;</span></p>
-
+	<p class=MsoNormal>
+		<span style='mso-special-character:footnote-continuation-separator'>
+			<![if !supportFootnotes]>
+				<hr align=left size=1>
+			<![endif]>
+		</span>
+		<span style="mso-spacerun:yes">&nbsp;</span>
+	</p>
 </div>
-
 <div style='mso-element:endnote-separator' id=es>
-
-<p class=MsoNormal><span style='mso-special-character:footnote-separator'><![if !supportFootnotes]>
-
-<hr align=left size=1 width="33%">
-
-<![endif]></span><span style="mso-spacerun:yes">&nbsp;</span></p>
-
+	<p class=MsoNormal>
+		<span style='mso-special-character:footnote-separator'>
+			<![if !supportFootnotes]>
+				<hr align=left size=1 width="33%">
+			<![endif]>
+		</span>
+		<span style="mso-spacerun:yes">&nbsp;</span>
+	</p>
 </div>
 
 <div style='mso-element:endnote-continuation-separator' id=ecs>
-
-<p class=MsoNormal><span style='mso-special-character:footnote-continuation-separator'><![if !supportFootnotes]>
-
-<hr align=left size=1>
-
-<![endif]></span><span style="mso-spacerun:yes">&nbsp;</span></p>
-
+	<p class=MsoNormal>
+		<span style='mso-special-character:footnote-continuation-separator'>
+			<![if !supportFootnotes]>
+				<hr align=left size=1>
+			<![endif]>
+		</span>
+		<span style="mso-spacerun:yes">&nbsp;</span>
+	</p>
 </div>
-
 <div style='mso-element:footer' id=f2>
-
-<p class=MsoFooter style='tab-stops:right 454.4pt'><span lang=UZ-CYR
-style='font-size:11.0pt;font-family:Verdana;mso-ansi-language:UZ-CYR'>
+	<p class=MsoFooter style='tab-stops:right 454.4pt'>
+		<span lang=UZ-CYR style='font-size:11.0pt;font-family:Verdana'>

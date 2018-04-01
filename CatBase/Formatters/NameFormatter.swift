@@ -63,7 +63,7 @@ class NameFormatter: Formatter {
         if string.lowercased().hasPrefix(lowercaseprefix) {
           if currentChoice == nil {
             currentChoice = string
-          } else if string.characters.count < (currentChoice!).characters.count {
+          } else if string.count < (currentChoice!).count {
             currentChoice = string
           }
         }
@@ -79,7 +79,7 @@ class NameFormatter: Formatter {
     if text.isEmpty {
       return text
     }
-    var sentence = text.characters.map({String($0)})
+    var sentence = text.map({String($0)})
     let sentenceLength = sentence.count
     
     // Capitialize the first letter of a sentence
@@ -140,7 +140,7 @@ class NameFormatter: Formatter {
     
     if !exempted.contains(word) {
       // Words with more than one letter get capitalized
-      if word.characters.count > 1 {
+      if word.count > 1 {
         return .capitalize
       }
       
@@ -184,9 +184,9 @@ class NameFormatter: Formatter {
     var partialString = ""
     var partialStringCount = 0
     partialString = partialStringPtr.pointee as String
-    partialStringCount = partialString.characters.count
+    partialStringCount = partialString.count
     
-    if let ch = partialString.characters.last , ch.bannedChar { return false }
+    if let ch = partialString.last , ch.bannedChar { return false }
     
     let match = self.firstKeyForPartialString(partialString)
     
@@ -198,7 +198,7 @@ class NameFormatter: Formatter {
       }
       
       // if the partial string is shorter than the match, set the selection
-      let matchCount = match.characters.count
+      let matchCount = match.count
       if matchCount != partialStringCount {
         proposedSelRangePtr?.pointee.length = matchCount - partialStringCount
         partialStringPtr.pointee = match as NSString

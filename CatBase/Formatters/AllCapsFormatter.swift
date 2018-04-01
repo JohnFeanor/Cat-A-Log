@@ -68,14 +68,14 @@ class AllCapsFormatter: Formatter {
     var partialString = ""
     var partialStringCount = 0
     partialString = partialStringPtr.pointee as String
-    partialStringCount = partialString.characters.count
+    partialStringCount = partialString.count
     
-    if let ch = partialString.characters.last , ch.bannedChar { return false }
+    if let ch = partialString.last , ch.bannedChar { return false }
     
     let match = capitalized(partialString)
     
     // if the partial string is shorter than the match, set the selection
-    let matchCount = match.characters.count
+    let matchCount = match.count
     if matchCount != partialStringCount {
       proposedSelRangePtr?.pointee.length = matchCount - partialStringCount
     }

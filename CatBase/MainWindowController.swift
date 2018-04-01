@@ -274,16 +274,12 @@ class MainWindowController: NSWindowController {
           }
           
           if !problem {
-            print("------\nBefore entry show has the following cats:")
-            print(Globals.currentShow!)
             self.myUndoManager.beginUndoGrouping()
             self.myUndoManager.setActionName("add entry")
             let newEntry = Entry(entryData: sheetController.entryData, insertIntoManagedObjectContext: self.managedObjectContext)
             self.theEntriesController.addObject(newEntry)
             self.theEntriesController.rearrangeObjects()
             self.myUndoManager.endUndoGrouping()
-            print("------\nAfter entry show has the following cats:")
-            print(Globals.currentShow!)
           }
         }
         // all done with the entry sheet controller

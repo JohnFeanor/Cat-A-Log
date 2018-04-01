@@ -378,6 +378,20 @@ class Globals: NSObject {
     }
   }
   
+  static var organiseKittensByAgeGroups: Bool {
+    let answer: Bool
+    switch (Globals.currentShowType) {
+    case "ACF Show", "QFA Show":
+      answer = true
+      break;
+      
+    default:
+      answer = false
+      break;
+    }
+    return answer
+  }
+  
   fileprivate static var agouti: [String: [String]] = {
     return dictFromPList("agouti") as! [String: [String]]
   }()

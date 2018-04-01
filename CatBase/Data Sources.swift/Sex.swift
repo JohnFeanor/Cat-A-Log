@@ -23,15 +23,6 @@ var sexesToken: Int = 0
 
 class Sex: DataSource {
   
-  private static var __once: () = {       // This will only ever execute once
-      // load in an array of the group names & breeds in the group
-      // for each show type e.g. QFA, ACF or COWOCA
-      for (showType, dict1) in Globals.dataByGroup {
-        let sexes = dict1[Headings.sexes] as! [String]
-        list[showType] = sexes
-      }
-    }()
-  
   // ******************************
   // Class methods and properties
   // ******************************
@@ -42,10 +33,15 @@ class Sex: DataSource {
     return Sex.list[Globals.currentShowType] ?? []
   }
   
-  override class func initialize() {
-    _ = Sex.__once
+  class func createList() {
+    // load in an array of the group names & breeds in the group
+    // for each show type e.g. QFA, ACF or COWOCA
+    for (showType, dict1) in Globals.dataByGroup {
+      let sexes = dict1[Headings.sexes] as! [String]
+      list[showType] = sexes
+    }
   }
-  
+
   class func isEntire(_ gender: String) -> Bool? {
     let list = Sex.list[Globals.currentShowType]
     return list?.index(of: gender) < 2

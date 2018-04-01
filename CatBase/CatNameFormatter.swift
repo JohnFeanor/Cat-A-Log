@@ -37,7 +37,7 @@ class CatNameFormatter: NameFormatter {
     if exempted.contains(word) { return .leave }
     
     // Words with more than one letter get capitalized
-    if word.characters.count > 1 {
+    if word.count > 1 {
       if uppercase.contains(word) {
         if following != nil && breakCharacter.evaluate(with: following!) {
           // if they are an ancronym for a country they get fully uppercased
