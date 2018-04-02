@@ -172,6 +172,44 @@ enum JudgingVarities: Int, Comparable {
   }
 }
 
+// ********************************
+// MARK: - General queries
+// *******************************
+
+let ACFShowType   = Globals.showTypes[0]
+let COAWAShowType = Globals.showTypes[1]
+let QFAShowType   = Globals.showTypes[2]
+let NSWShowType   = Globals.showTypes[3]
+let CCCAShowType  = Globals.showTypes[4]
+
+var organiseKittensByAgeGroups: Bool {
+  let answer: Bool
+  let showType = Globals.currentShowType
+  switch (showType) {
+  case ACFShowType, QFAShowType:
+    answer = true
+    break;
+  default:
+    answer = false
+    break;
+  }
+  return answer
+}
+
+var bestInSectionKittens: Bool {
+  let answer: Bool
+  switch (Globals.currentShowType) {
+  case NSWShowType, CCCAShowType:
+    answer = true
+    break;
+  default:
+    answer = false
+    break;
+  }
+  return answer
+}
+
+
 
 // ********************************
 // MARK: - Other helper functions
@@ -376,20 +414,6 @@ class Globals: NSObject {
     } else {
       return 0
     }
-  }
-  
-  static var organiseKittensByAgeGroups: Bool {
-    let answer: Bool
-    switch (Globals.currentShowType) {
-    case "ACF Show", "QFA Show":
-      answer = true
-      break;
-      
-    default:
-      answer = false
-      break;
-    }
-    return answer
   }
   
   fileprivate static var agouti: [String: [String]] = {

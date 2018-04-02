@@ -388,7 +388,7 @@ class Cat: NSManagedObject {
     
     // then on age ranking - if used
     // --------------------
-    if Globals.organiseKittensByAgeGroups {
+    if organiseKittensByAgeGroups {
       if self.ageRank < anotherCat.ageRank {
         return .orderedAscending
       }

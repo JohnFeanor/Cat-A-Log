@@ -481,12 +481,14 @@ extension MainWindowController {
       guard let thisEntry = thisEntry
         else { return }
       // ** Kittens do not have challenges
-      if thisEntry.cat.isKitten { return }
+      if thisEntry.cat.isKitten && !bestInSectionKittens { return }
       
       if !openChallenges.isEmpty {
         addData(spacer)
         if thisEntry.cat.isCompanion {
           writeChallenges(openChallenges, ofType: awardOfMerit)
+        } else if thisEntry.cat.isKitten {
+           writeChallenges(openChallenges, ofType: "Best in Section")
         } else {
           writeChallenges(openChallenges, ofType: challenge)
         }
@@ -800,8 +802,8 @@ extension MainWindowController {
         func updateChallengeFor(_ entry: Entry) {
           let maleCat = entry.cat.isMale
           if isCCCAShow {
+            openChallenges.append(cageNumber)
             if Challenges.type(entry) != .kitten {
-              openChallenges.append(cageNumber)
               if Challenges.type(entry) == .gold {
                 if maleCat { goldChallenges.males.append(cageNumber) }
                 else { goldChallenges.females.append(cageNumber) }
@@ -819,6 +821,9 @@ extension MainWindowController {
             case .open:
               openChallenges.append(cageNumber)
             case .kitten:
+              if bestInSectionKittens {
+                openChallenges.append(cageNumber)
+              }
               break
             }
           }
@@ -830,7 +835,12 @@ extension MainWindowController {
           updateChallengeFor(entry)
         }
       } else if entry.cat.isKitten {
-        kittenData.append(excelDataFor(entry.cat))
+        if bestInSectionKittens {
+          print("best in section kittens printing")
+          updateChallengeFor(entry)
+        } else {
+          kittenData.append(excelDataFor(entry.cat))
+        }
       } else if isCCCAShow {
         updateChallengeFor(entry)
         openData.append(excelDataFor(entry.cat))
@@ -910,7 +920,7 @@ extension MainWindowController {
         // -------------------------------------------------
         let catClass: String
         if entry.cat.isKitten {
-          if Globals.organiseKittensByAgeGroups {
+          if organiseKittensByAgeGroups {
             catClass = "\(entry.cat.sex) \(entry.cat.challenge) \(entry.cat.ageCategory)"
           } else {
             catClass = "\(entry.cat.sex) \(entry.cat.challenge)"
