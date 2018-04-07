@@ -211,6 +211,7 @@ class Cat: NSManagedObject {
   }
   
   var group: String {
+    print("Requesting breed name for \(self.name)")
     return Breeds.nameOfGroupForBreed(self.breed)
   }
   

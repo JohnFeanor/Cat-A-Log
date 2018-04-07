@@ -631,6 +631,9 @@ extension MainWindowController {
     for entry in sortedEntrys {
       
       let thisBreed   = entry.cat.breed
+      if thisBreed == "Norwegian Forest" {
+        print("\(entry.cat.name) is a Norwegian Forest")
+      }
       
       if let lastEntry = lastEntry {
         judgingClass = lastEntry.cat.judgingVariety
@@ -811,6 +814,11 @@ extension MainWindowController {
             }
           } else {
             switch Challenges.type(entry) {
+            case .kitten:
+              if bestInSectionKittens {
+                print("Appending kitten cage number")
+                openChallenges.append(cageNumber)
+              }
             case .gold:
               if maleCat { goldChallenges.males.append(cageNumber) }
               else { goldChallenges.females.append(cageNumber) }
@@ -820,10 +828,6 @@ extension MainWindowController {
               }
             case .open:
               openChallenges.append(cageNumber)
-            case .kitten:
-              if bestInSectionKittens {
-                openChallenges.append(cageNumber)
-              }
               break
             }
           }
@@ -838,9 +842,8 @@ extension MainWindowController {
         if bestInSectionKittens {
           print("best in section kittens printing")
           updateChallengeFor(entry)
-        } else {
-          kittenData.append(excelDataFor(entry.cat))
         }
+        kittenData.append(excelDataFor(entry.cat))
       } else if isCCCAShow {
         updateChallengeFor(entry)
         openData.append(excelDataFor(entry.cat))

@@ -84,10 +84,16 @@ class Breeds: DataSource, NSTableViewDataSource {
   }
   
   class func groupNumberOf(_ breedName: String) -> Int {
+    let nameOfBreed: String
+    if breedName == "Norwegian Forest" {
+      nameOfBreed = "Norwegian Forest Cat"
+    } else {
+      nameOfBreed = breedName
+    }
     if let groups = Breeds.groups {
       var breedsGroup = 0
       for group in groups {
-        if group.breeds.contains(breedName) {
+        if group.breeds.contains(nameOfBreed) {
           return breedsGroup
         }
         breedsGroup += 1
@@ -111,15 +117,22 @@ class Breeds: DataSource, NSTableViewDataSource {
   }
   
   class func nameOfGroupForBreed(_ breedName: String) -> String {
+    let nameOfBreed : String
+    if breedName == "Norwegian Forest" {
+      nameOfBreed = "Norwegian Forest Cat"
+    } else {
+      nameOfBreed = breedName
+    }
     if let groups = Breeds.groups {
       var breedsGroup = 0
       for group in groups {
-        if group.breeds.contains(breedName) {
+        if group.breeds.contains(nameOfBreed) {
           return groups[breedsGroup].groupName
         }
         breedsGroup += 1
       }
     }
+    print("group name for \(nameOfBreed) not found")
     fatalError("group name for \(breedName) not found")
   }
   

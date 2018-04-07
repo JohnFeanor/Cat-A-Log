@@ -408,7 +408,7 @@
 		<array>
 			<dict>
 				<key>group</key>
-				<string>Longhair</string>
+				<string>Group 1</string>
 				<key>subgroups</key>
 				<array>
 					<string>Kittens</string>
@@ -429,7 +429,25 @@
 			</dict>
 			<dict>
 				<key>group</key>
-				<string>Shorthair</string>
+				<string>Group 2</string>
+				<key>subgroups</key>
+				<array>
+					<string>Kittens</string>
+					<string>Entires</string>
+					<string>Desexed</string>
+				</array>
+				<key>breeds</key>
+				<array>
+					<string>Balinese</string>
+					<string>Foreign White</string>
+					<string>Oriental</string>
+					<string>Oriental Longhair</string>
+					<string>Siamese</string>
+				</array>
+			</dict>
+			<dict>
+				<key>group</key>
+				<string>Group 3</string>
 				<key>subgroups</key>
 				<array>
 					<string>Kittens</string>
@@ -443,7 +461,6 @@
 					<string>American Curl Longhair</string>
 					<string>American Shorthair</string>
 					<string>Australian Mist</string>
-					<string>Balinese</string>
 					<string>Bengal</string>
 					<string>Bombay</string>
 					<string>British Shorthair</string>
@@ -457,7 +474,6 @@
 					<string>Devon Rex</string>
 					<string>Egyptian Mau</string>
 					<string>European Shorthair</string>
-					<string>Foreign White</string>
 					<string>German Rex</string>
 					<string>Japanese Bobtail</string>
 					<string>Korat</string>
@@ -467,7 +483,6 @@
 					<string>Manx</string>
 					<string>Manx Stumpy</string>
 					<string>Ocicat</string>
-					<string>Oriental</string>
 					<string>Peterbald</string>
 					<string>Pixiebob</string>
 					<string>Russian</string>
@@ -477,7 +492,6 @@
 					<string>Scottish Longhair</string>
 					<string>Selkirk Rex</string>
 					<string>Selkirk Rex Longhair</string>
-					<string>Siamese</string>
 					<string>Singapura</string>
 					<string>Snowshoe</string>
 					<string>Somali</string>
@@ -487,10 +501,10 @@
 			</dict>
 			<dict>
 				<key>group</key>
-				<string>Companion</string>
+				<string>Group 4</string>
 				<key>subgroups</key>
 				<array>
-					<string>Companion</string>
+					<string>Group 4</string>
 				</array>
 				<key>breeds</key>
 				<array>

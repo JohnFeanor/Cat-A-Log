@@ -43,7 +43,7 @@ class TitleEditorController: NSWindowController {
   }
   
   func addNewTitle(_ newTitle: String, atIndex index: Int) {
-    (undoManager.prepare(withInvocationTarget: self) as AnyObject).removeTitleAtIndex(index)
+    (undoManager.prepare(withInvocationTarget: self) as! TitleEditorController).removeTitleAtIndex(index)
     if !undoManager.isUndoing {
       undoManager.setActionName("add title")
     }

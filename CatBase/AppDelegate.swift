@@ -81,6 +81,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     Challenges.createList()
     Colours.createList()
     Sex.createList()
+    
+    print("ACFShowType is \(ACFShowType)")
+    print("COAWAShowType is \(COAWAShowType)")
+    print("QFAShowType is \(QFAShowType)")
+    print("NSWShowType is \(NSWShowType)")
+    print("CCCAShowType is \(CCCAShowType)")
   }
   
   func applicationWillTerminate(_ aNotification: Notification) {

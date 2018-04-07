@@ -176,11 +176,11 @@ enum JudgingVarities: Int, Comparable {
 // MARK: - General queries
 // *******************************
 
-let ACFShowType   = Globals.showTypes[0]
-let COAWAShowType = Globals.showTypes[1]
-let QFAShowType   = Globals.showTypes[2]
-let NSWShowType   = Globals.showTypes[3]
-let CCCAShowType  = Globals.showTypes[4]
+let QFAShowType   = "QFA Show"
+let NSWShowType   = "Cats NSW"
+let COAWAShowType = "COAWA Show"
+let CCCAShowType  = "CCCA Show"
+let ACFShowType   = "ACF Show"
 
 var organiseKittensByAgeGroups: Bool {
   let answer: Bool
