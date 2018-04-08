@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13771" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13771"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14109"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,7 +15,9 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Cat_A_Log" customModuleProvider="target">
             <connections>
+                <outlet property="registrationTextField" destination="UQI-Jv-zQ6" id="wbn-e6-iLR"/>
                 <outlet property="timesleftToRunString" destination="tea-4k-HE9" id="NQh-0R-Fuy"/>
+                <outlet property="versionTextField" destination="R5a-Vx-GsQ" id="0tx-c9-G71"/>
                 <outlet property="window" destination="SvI-4i-wPk" id="tst-r2-Zup"/>
             </connections>
         </customObject>

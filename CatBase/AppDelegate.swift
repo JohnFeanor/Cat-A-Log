@@ -15,7 +15,30 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   
   @IBOutlet weak var window: NSWindow!
   @IBOutlet weak var timesleftToRunString: NSTextField!
+  @IBOutlet weak var registrationTextField: NSTextField!
+  @IBOutlet weak var versionTextField: NSTextField!
   
+  enum State : Int {
+    case trial = 0
+    case qld = 1
+    case act = 2
+    case nsw = 3
+    case fccq = 4
+    case end = 5
+  }
+  
+  #if DFLAGCCI
+  let CCIRegistered = State.trial
+  #elseif DFLAGCCI
+  let CCIRegistered = State.act
+  #elseif DFLAGNSW
+  let CCIRegistered = State.nsw
+  #elseif DFLAGFCCQ
+  let CCIRegistered = State.fccq
+  #else
+  let CCIRegistered = State.qld
+  #endif
+
   @IBOutlet weak var progressWheel: NSProgressIndicator!
   
   var mainWindowController: MainWindowController?
@@ -57,7 +80,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   func applicationDidFinishLaunching(_ aNotification: Notification) {
     
     var authenticate = arrayFromPList("Authentication") as! [String]
-    if let triesLeft = Int(authenticate[0]) {
+    if  CCIRegistered == State.trial {
+      let triesLeft = Int(authenticate[0]) ?? 0
       if triesLeft > 0 {
         if triesLeft > 1 {
           timesleftToRunString.stringValue = "\(triesLeft) trials left"
@@ -73,9 +97,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         willIexit = true
       }
     } else {
-      timesleftToRunString.stringValue = authenticate[0]
+      timesleftToRunString.stringValue = authenticate[CCIRegistered.rawValue + State.end.rawValue - 1]
     }
     
+    registrationTextField.stringValue = authenticate[CCIRegistered.rawValue]
+    
+    if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+      versionTextField.stringValue = "V " + version
+    }
+
     Titles.createList()
     Breeds.createList()
     Challenges.createList()
