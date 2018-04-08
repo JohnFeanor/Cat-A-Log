@@ -236,7 +236,7 @@ private let xmlEmptyRow: Data = {
 var debugCount = 1
 
 extension MainWindowController {
-  func printCatalog(_ name: String, to url: URL) {
+  @objc func printCatalog(_ name: String, to url: URL) {
     
     var data            = NSMutableData()
     var judgesNotes     = NSMutableData()
@@ -264,8 +264,9 @@ extension MainWindowController {
     let challengesFile  = newURLfrom(url, with: "\(Globals.currentShowName) challenges.xml")
     
     var openChallenges: [Int] = []
-    var goldChallenges = PrestigeChallenge(prestige: .gold)
-    var platinumChallenges = PrestigeChallenge(prestige: .platinum)
+    var goldChallenges      = PrestigeChallenge(prestige: .gold)
+    var platinumChallenges  = PrestigeChallenge(prestige: .platinum)
+    var cccaChallenges      = PrestigeChallenge(prestige: .open)
     
     
     func addData(_ newData: Datamaker...) {
@@ -408,6 +409,27 @@ extension MainWindowController {
     // End of write challenge
     // ----------------------
     
+    // MARK: - write CCCA awards
+    // -------------------------
+    
+    func writeCCCAAwards(_ theChallenges: [Int], ofType title: String) {
+      if theChallenges.count > 0 {
+        addData(bestAward3, title)
+        addData(challenge2)
+        
+        let start: String
+        if theChallenges.count > 1 {
+          start = " between \(theChallenges)"
+        } else {
+          start = "\(theChallenges)"
+        }
+        addData(start, challenge3)
+        
+        writeBoxesFor(nil, usingforJudges: entered)
+        addData(rowEnd)
+      }
+    }
+    
     // MARK: - write litter
     // ---------------------
     
@@ -501,7 +523,6 @@ extension MainWindowController {
     
     func doPrestigeChallengesFor(_ thisEntry: Entry?, with theChallenges: inout PrestigeChallenge) {
       if isCCCAShow { return }
-      print("Doing prestige challenges")
       if let thisEntry = thisEntry {
         // ** Kittens do not have challenges
         if thisEntry.cat.isKitten { return }
@@ -674,36 +695,60 @@ extension MainWindowController {
           doPrestigeChallengesFor(lastEntry, with: &goldChallenges)
           doPrestigeChallengesFor(lastEntry, with: &platinumChallenges)
           
-          // MARK: Do ACF awards for judges notes
+          // MARK: Do ACF/CCCA awards for judges notes
           if !lastEntry.cat.isKitten && !lastEntry.cat.isCompanion {
-            judgesNotes.append(ACFAoEstart)
-            
-            let firstSex: Int
-            let lastSex: Int
-            if lastEntry.cat.isEntire {
-              firstSex = 0
-              lastSex = 2
-            } else {
-              firstSex = 2
-              lastSex = 4
-            }
-            
-            if Breeds.ACFgroupNumberOf(lastEntry.cat.breed) == 0 {
-              for sex in firstSex ..< lastSex {
-                if countOfCats[0][sex] > 0 {
-                  judgesNotes.addData(ACFAoEstartRow, "Group 1 \(Sex.nameOf(sex))", ACFAoEendRow)
-                }
+            if ACFAoEAwards {
+              // Do ACF AoE awards for judges notes
+              judgesNotes.append(ACFAoEstart)
+              
+              let firstSex: Int
+              let lastSex: Int
+              if lastEntry.cat.isEntire {
+                firstSex = 0
+                lastSex = 2
+              } else {
+                firstSex = 2
+                lastSex = 4
               }
-            } else {
-              for g in 2 ... 3 {
+              
+              if Breeds.ACFgroupNumberOf(lastEntry.cat.breed) == 0 {
                 for sex in firstSex ..< lastSex {
                   if countOfCats[0][sex] > 0 {
-                    judgesNotes.addData(ACFAoEstartRow, "Group \(g) \(Sex.nameOf(sex))", ACFAoEendRow)
+                    judgesNotes.addData(ACFAoEstartRow, "Group 1 \(Sex.nameOf(sex))", ACFAoEendRow)
+                  }
+                }
+              } else {
+                for g in 2 ... 3 {
+                  for sex in firstSex ..< lastSex {
+                    if countOfCats[0][sex] > 0 {
+                      judgesNotes.addData(ACFAoEstartRow, "Group \(g) \(Sex.nameOf(sex))", ACFAoEendRow)
+                    }
                   }
                 }
               }
+              judgesNotes.append(tableEnd)
+            } else {
+              // Do CCCA awards for catalogue and judges notes
+              addData(bestAward1)
+              addData(bestAward2)
+
+              let maleSex: Int
+              let femaleSex: Int
+              if lastEntry.cat.isEntire {
+                maleSex = 0
+                femaleSex = 1
+              } else {
+                maleSex = 2
+                femaleSex = 3
+              }
+              let group = lastEntry.cat.group
+              writeCCCAAwards(cccaChallenges.males, ofType: "CCCA \(group) \(Sex.nameOf(maleSex))")
+              cccaChallenges.males = []
+              writeCCCAAwards(cccaChallenges.females, ofType: "CCCA \(group) \(Sex.nameOf(femaleSex))")
+              cccaChallenges.females = []
+
+              addData(bestAward1)
             }
-            judgesNotes.append(tableEnd)
           }
         }
       }
@@ -807,9 +852,9 @@ extension MainWindowController {
           if isCCCAShow {
             openChallenges.append(cageNumber)
             if Challenges.type(entry) != .kitten {
-              if Challenges.type(entry) == .gold {
-                if maleCat { goldChallenges.males.append(cageNumber) }
-                else { goldChallenges.females.append(cageNumber) }
+              if !entry.cat.title.isEmpty {
+                if maleCat { cccaChallenges.males.append(cageNumber) }
+                 else { cccaChallenges.females.append(cageNumber) }
               }
             }
           } else {
@@ -840,7 +885,6 @@ extension MainWindowController {
         }
       } else if entry.cat.isKitten {
         if bestInSectionKittens {
-          print("best in section kittens printing")
           updateChallengeFor(entry)
         }
         kittenData.append(excelDataFor(entry.cat))

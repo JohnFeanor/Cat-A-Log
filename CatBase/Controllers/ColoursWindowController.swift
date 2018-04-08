@@ -13,17 +13,17 @@ class ColoursWindowController: NSWindowController {
   @IBOutlet weak var coloursTableView: NSTableView!
   @IBOutlet var colours: Colours!
   
-  override var windowNibName: String {
-    return "ColoursWindowController"
+  override var windowNibName: NSNib.Name? {
+    return NSNib.Name("ColoursWindowController")
   }
   
-  let undo = UndoManager()
+  @objc let undo = UndoManager()
   
   override var undoManager: UndoManager  {
     return undo
   }
   
-  func windowWillReturnUndoManager(_ window: NSWindow) -> UndoManager? {
+  @objc func windowWillReturnUndoManager(_ window: NSWindow) -> UndoManager? {
     // The undo menu item is only enabled if we return a undoManager here
     return self.undoManager
   }
@@ -45,7 +45,7 @@ class ColoursWindowController: NSWindowController {
     colours.setIndex(rowIndex, toColour: newColour)
   }
   
-  func addNewColour(_ newColour: String, atIndex index: Int) {
+  @objc func addNewColour(_ newColour: String, atIndex index: Int) {
     (undoManager.prepare(withInvocationTarget: self) as AnyObject).removeColourAtIndex(index)
     if !undoManager.isUndoing {
       undoManager.setActionName("add colour")
@@ -54,7 +54,7 @@ class ColoursWindowController: NSWindowController {
     coloursTableView.reloadData()
   }
   
-  func removeColourAtIndex(_ index: Int) {
+  @objc func removeColourAtIndex(_ index: Int) {
     let oldColour = colours.colourAtIndex(index)
     (undoManager.prepare(withInvocationTarget: self) as AnyObject).addNewColour(oldColour, atIndex: index)
     if !undoManager.isUndoing {

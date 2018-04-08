@@ -11,22 +11,22 @@ import CoreData
 
 class Entry: NSManagedObject {
   
-  static var nomen = "Entry"
-  static var properties = [Entry.cageSize, Entry.catalogueRequired, Entry.hireCage, Entry.litterCage, Entry.ring1, Entry.ring2, Entry.ring3, Entry.ring4, Entry.ring5, Entry.ring6, Entry.willWork]
+  @objc static var nomen = "Entry"
+  @objc static var properties = [Entry.cageSize, Entry.catalogueRequired, Entry.hireCage, Entry.litterCage, Entry.ring1, Entry.ring2, Entry.ring3, Entry.ring4, Entry.ring5, Entry.ring6, Entry.willWork]
   
   fileprivate static var rings = ["ring1", "ring2", "ring3", "ring4", "ring5", "ring6"]
   
-  static var cageSize           = "cageSize"
-  static var catalogueRequired  = "catalogueRequired"
-  static var hireCage           = "hireCage"
-  static var litterCage         = "litterCage"
-  static var ring1              = "ring1"
-  static var ring2              = "ring2"
-  static var ring3              = "ring3"
-  static var ring4              = "ring4"
-  static var ring5              = "ring5"
-  static var ring6              = "ring6"
-  static var willWork           = "willWork"
+  @objc static var cageSize           = "cageSize"
+  @objc static var catalogueRequired  = "catalogueRequired"
+  @objc static var hireCage           = "hireCage"
+  @objc static var litterCage         = "litterCage"
+  @objc static var ring1              = "ring1"
+  @objc static var ring2              = "ring2"
+  @objc static var ring3              = "ring3"
+  @objc static var ring4              = "ring4"
+  @objc static var ring5              = "ring5"
+  @objc static var ring6              = "ring6"
+  @objc static var willWork           = "willWork"
   
   
   @NSManaged fileprivate(set) var cageSize: NSNumber
@@ -48,15 +48,15 @@ class Entry: NSManagedObject {
       return "\(self.cat.name)  \(self.cat.breed)"
   }
   
-  dynamic var name: String {
+  @objc dynamic var name: String {
     return cat.name
   }
   
-  dynamic var breed: String {
+  @objc dynamic var breed: String {
     return cat.breed
   }
   
-  convenience init(entryData: [String : AnyObject], insertIntoManagedObjectContext context: NSManagedObjectContext?) {
+  @objc convenience init(entryData: [String : AnyObject], insertIntoManagedObjectContext context: NSManagedObjectContext?) {
     if let context = context {
       let entryEntity = NSEntityDescription.entity(forEntityName: Entry.nomen, in: context)
       if entryEntity == nil {
@@ -105,11 +105,11 @@ class Entry: NSManagedObject {
     print("Entry given undefined key: \(key)")
   }
   
-  func setCageToSmall() {
+  @objc func setCageToSmall() {
     cageSize = NSNumber(value: 0 as Int)
   }
   
-  var litter: Bool {
+  @objc var litter: Bool {
     get {
       return self.litterCage.boolValue
     }
@@ -132,12 +132,12 @@ class Entry: NSManagedObject {
     }
   }
   
-  func updateTo(_ entryData: [String : AnyObject]) {
+  @objc func updateTo(_ entryData: [String : AnyObject]) {
     self.setValuesTo(entryData)
     self.cat.setValuesTo(entryData)
   }
   
-  func dictionary()  -> [String : AnyObject] {
+  @objc func dictionary()  -> [String : AnyObject] {
     return self.dictionaryWithValues(forKeys: Show.properties) as [String : AnyObject]
   }
   
@@ -146,7 +146,7 @@ class Entry: NSManagedObject {
   // MARK: - Queries about the Entry
   // **********************************
   
-  var isInLitter: Bool {
+  @objc var isInLitter: Bool {
     return litterCage.boolValue
   }
   
@@ -171,13 +171,13 @@ class Entry: NSManagedObject {
     return true
   }
   
-  var isKittenClass: Bool {
+  @objc var isKittenClass: Bool {
     if Breeds.nonPedigreeBreed(cat.breed) { return false }
     if !cat.isKitten { return false }
     return true
   }
   
-  var typeOfCage: String {
+  @objc var typeOfCage: String {
     if self.hireCage.boolValue {
       return Globals.cageTypes.names[_hireCageNumber]
     }
@@ -187,7 +187,7 @@ class Entry: NSManagedObject {
     return Globals.cageTypes.names[0]
   }
   
-  var rings: String {
+  @objc var rings: String {
     var ans = ""
     var count = 1
     for ring in Entry.rings {
@@ -201,25 +201,25 @@ class Entry: NSManagedObject {
     return ans
   }
   
-  func inRing(_ ring: Int) -> Bool {
+  @objc func inRing(_ ring: Int) -> Bool {
     if let inThisRing = self.value(forKey: Entry.rings[ring - 1]) as? NSNumber {
       return inThisRing.boolValue
     }
     return false
   }
  
-  func differentBreedTo(_ other: Entry?) -> Bool {
+  @objc func differentBreedTo(_ other: Entry?) -> Bool {
     guard let other = other
       else { return true }
     return self.cat.breed != other.cat.breed
   }
   
-  func newBreedTo(_ other: Entry?) -> Bool {
+  @objc func newBreedTo(_ other: Entry?) -> Bool {
     if self.inDifferentSectionTo(other) { return true }
      return !self.cat.isCompanion && self.differentBreedTo(other)
   }
   
-  func newJudgingVarietyTo(_ other: Entry? ) -> Bool {
+  @objc func newJudgingVarietyTo(_ other: Entry? ) -> Bool {
     guard let other = other
       else { return true }
     if differentBreedTo(other) { return true }
@@ -228,7 +228,7 @@ class Entry: NSManagedObject {
   
   // return true if other is different breed or colour
   // not concerned about agouti type
-  func newColourTo(_ other: Entry?) -> Bool {
+  @objc func newColourTo(_ other: Entry?) -> Bool {
     guard let other = other
       else { return true }
     if differentBreedTo(other) { return true }
@@ -237,7 +237,7 @@ class Entry: NSManagedObject {
   
   // return true if other is different challenge colour
   // takes agouti type into account
-  func newColourOrBreedTo(_ other: Entry?) -> Bool {
+  @objc func newColourOrBreedTo(_ other: Entry?) -> Bool {
     guard let other = other
       else { return true }
     if differentBreedTo(other) { return true }
@@ -246,7 +246,7 @@ class Entry: NSManagedObject {
   
   // return true if other is different challenge colour
   // takes agouti type into account
-  func newChallengeColourTo(_ other: Entry?) -> Bool {
+  @objc func newChallengeColourTo(_ other: Entry?) -> Bool {
     guard let other = other
       else { return true }
     if differentBreedTo(other) { return true }
@@ -259,18 +259,18 @@ class Entry: NSManagedObject {
     return self.cat.colour != other.cat.colour
   }
   
-  func compareWith(_ anotherEntry: Entry) -> ComparisonResult {
+  @objc func compareWith(_ anotherEntry: Entry) -> ComparisonResult {
     return self.cat.compareWith(anotherEntry.cat)
   }
   
-  func inDifferentSectionTo(_ other: Entry?) -> Bool {
+  @objc func inDifferentSectionTo(_ other: Entry?) -> Bool {
     guard let other = other
       else { return true }
     if cat.isCompanion { return !other.cat.isCompanion }
     return self.cat.section != other.cat.section
   }
   
-  func inDifferentGroupTo(_ other: Entry?) -> Bool {
+  @objc func inDifferentGroupTo(_ other: Entry?) -> Bool {
     guard let other = other
       else { return true }
     return Breeds.groupNumberOf(self.cat.breed) != Breeds.groupNumberOf(other.cat.breed)
@@ -279,7 +279,7 @@ class Entry: NSManagedObject {
   //MARK: - searching queries for NSSearchField
   // --------------------------------------------------
   
-  dynamic var ringsEntered: String {
+  @objc dynamic var ringsEntered: String {
     var ans = ""
     var count = 0
     for ring in Entry.rings {
@@ -291,7 +291,7 @@ class Entry: NSManagedObject {
     return ans
   }
   
-  dynamic var worker: String {
+  @objc dynamic var worker: String {
     if self.willWork.boolValue {
       return "Yes"
     } else {
@@ -299,7 +299,7 @@ class Entry: NSManagedObject {
     }
   }
   
-  dynamic var hiring: String {
+  @objc dynamic var hiring: String {
     if self.hireCage.boolValue {
       return "Yes"
     } else {

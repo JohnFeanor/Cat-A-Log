@@ -10,107 +10,109 @@ import Cocoa
 
 class MainWindowController: NSWindowController {
   
-  let nbspace        = "&nbsp;".data
+  @objc let nbspace        = "&nbsp;".data
   
-  let  header1       = readFile("Header1")
-  let  header2       = readFile("Header2")
-  let  header2judge  = readFile("Header2judge")
-  let  tableStart    = readFile("Table start")
-  let  tableEnd      = readFile("Table end")
-  let  rowEnd        = "</tr>".data
+  @objc let  header1       = readFile("Header1")
+  @objc let  header2       = readFile("Header2")
+  @objc let  header2judge  = readFile("Header2judge")
+  @objc let  tableStart    = readFile("Table start")
+  @objc let  tableEnd      = readFile("Table end")
+  @objc let  rowEnd        = "</tr>".data
 
-  let  head1         = readFile("head1")
-  let  head2         = readFile("head2")
-  let  head3         = readFile("head3")
-  let  head4         = readFile("head4")
-  let  head5         = readFile("head5")
-  let  head5_1       = readFile("head5_1")
-  let  head5_2       = readFile("head5_2")
-  let  head6         = readFile("head6")
+  @objc let  head1         = readFile("head1")
+  @objc let  head2         = readFile("head2")
+  @objc let  head3         = readFile("head3")
+  @objc let  head4         = readFile("head4")
+  @objc let  head5         = readFile("head5")
+  @objc let  head5_1       = readFile("head5_1")
+  @objc let  head5_2       = readFile("head5_2")
+  @objc let  head6         = readFile("head6")
 
-  let  section1      = readFile("Section1")
-  let  Section1_alt  = readFile("Section1 alt")
-  let  section2      = readFile("Section2")
-  let  section3      = readFile("Section3")
-  let  breed1        = readFile("Breed1")
-  let  breed2        = readFile("Breed2")
-  let  colour1       = readFile("Colour1")
-  let  colour2       = readFile("Colour2")
-  let  colour3       = readFile("Colour3")
-  let  name1         = readFile("Name1")
-  let  name1Litter   = readFile("Name1 litter")
-  let  name2         = readFile("Name2")
-  let  name2Litter   = readFile("Name2 litter")
-  let  name3         = readFile("Name3")
-  let  name4         = readFile("Name4")
-  let  details1      = readFile("Details1")
-  let  details1Litter = readFile("Details1 Litter")
-  let  details2      = readFile("Details2")
-  let  details3      = readFile("Details3")
-  let  details3Litter = readFile("Details3Litter")
-  let  details4      = readFile("Details4")
-  let  details5      = readFile("Details5")
-  let  challenge1    = readFile("Challenge1")
-  let  challenge2    = readFile("Challenge2")
-  let  challenge3    = readFile("Challenge3")
-  let  prestige1     = readFile("Prestige1")
-  let  bestAward1    = readFile("BestAward1")
-  let  bestAward2    = readFile("BestAward2")
-  let  bestAward3    = readFile("BestAward3")
-  let  bestAward4    = readFile("BestAward4")
-  let  entered       = readFile("Box entered")
-  let  notEntered    = readFile("Box not entered")
-  let  underlined    = readFile("Box underlined")
-  let  noRing        = readFile("Box no ring")
+  @objc let  section1      = readFile("Section1")
+  @objc let  Section1_alt  = readFile("Section1 alt")
+  @objc let  section2      = readFile("Section2")
+  @objc let  section3      = readFile("Section3")
+  @objc let  breed1        = readFile("Breed1")
+  @objc let  breed2        = readFile("Breed2")
+  @objc let  colour1       = readFile("Colour1")
+  @objc let  colour2       = readFile("Colour2")
+  @objc let  colour3       = readFile("Colour3")
+  @objc let  name1         = readFile("Name1")
+  @objc let  name1Litter   = readFile("Name1 litter")
+  @objc let  name2         = readFile("Name2")
+  @objc let  name2Litter   = readFile("Name2 litter")
+  @objc let  name3         = readFile("Name3")
+  @objc let  name4         = readFile("Name4")
+  @objc let  details1      = readFile("Details1")
+  @objc let  details1Litter = readFile("Details1 Litter")
+  @objc let  details2      = readFile("Details2")
+  @objc let  details3      = readFile("Details3")
+  @objc let  details3Litter = readFile("Details3Litter")
+  @objc let  details4      = readFile("Details4")
+  @objc let  details5      = readFile("Details5")
+  @objc let  challenge1    = readFile("Challenge1")
+  @objc let  challenge2    = readFile("Challenge2")
+  @objc let  challenge3    = readFile("Challenge3")
+  @objc let  prestige1     = readFile("Prestige1")
+  @objc let  bestAward1    = readFile("BestAward1")
+  @objc let  bestAward2    = readFile("BestAward2")
+  @objc let  bestAward3    = readFile("BestAward3")
+  @objc let  bestAward4    = readFile("BestAward4")
+  @objc let  entered       = readFile("Box entered")
+  @objc let  notEntered    = readFile("Box not entered")
+  @objc let  underlined    = readFile("Box underlined")
+  @objc let  noRing        = readFile("Box no ring")
   
-  let  endOfEntries1     = readFile("EndOfEntries1")
-  let  endOfEntries2     = readFile("EndOfEntries2")
-  let  endOfEntriesJudge = readFile("EndOfEntriesJudge")
+  @objc let  endOfEntries1     = readFile("EndOfEntries1")
+  @objc let  endOfEntries2     = readFile("EndOfEntries2")
+  @objc let  endOfEntriesJudge = readFile("EndOfEntriesJudge")
   
-  let  bestOfBreedStart  = readFile("BestOfBreedStart")
-  let  bestOfBreedEnd    = readFile("BestOfBreedEnd")
-  let  spacer            = readFile("Spacer")
+  @objc let  bestOfBreedStart  = readFile("BestOfBreedStart")
+  @objc let  bestOfBreedEnd    = readFile("BestOfBreedEnd")
+  @objc let  spacer            = readFile("Spacer")
   
-  let  ACFstartTable     = readFile("ACFAward start table")
-  let  ACFstartRow       = readFile("ACFAward start row")
-  let  ACFendRow         = readFile("ACFAward end row")
+  @objc let  ACFstartTable     = readFile("ACFAward start table")
+  @objc let  ACFstartRow       = readFile("ACFAward start row")
+  @objc let  ACFendRow         = readFile("ACFAward end row")
   
   let  ACFAoEstart       = readFile("ACFAoE start")
   let  ACFAoEstartRow    = readFile("ACFAoE start row")
   let  ACFAoEendRow      = readFile("ACFAoE end row")
   
+  let  CCCAAwardsstart   = readFile("CCCAAwards1")
+
   let  topTenStartTable  = readFile("Top ten start table")
   let  topTenEndTable    = readFile("Top ten end table")
   
   let  endOfFile         = readFile("End of file")
   let  endOfFileJudge    = readFile("End of file judge")
-
+  
   let challenge    = NSLocalizedString("Challenge", tableName: "general", comment: "Challenge")
   let awardOfMerit  = NSLocalizedString("Award of Merit", tableName: "general", comment: "Award of merit")
-    
+  
   @IBOutlet var theShowController: NSArrayController!
   @IBOutlet var theEntriesController: NSArrayController!
-    
+  
   @IBOutlet weak var tableView: NSTableView!
   
-  weak var appDelegate: AppDelegate!
+  @objc weak var appDelegate: AppDelegate!
   
-  var managedObjectContext: NSManagedObjectContext!
+  @objc var managedObjectContext: NSManagedObjectContext!
   
-  var addShowWindowController: AddShowWindowController? = nil
-  var addEntryWindowController: EntrySheetController? = nil
+  @objc var addShowWindowController: AddShowWindowController? = nil
+  @objc var addEntryWindowController: EntrySheetController? = nil
   
-  var mainWindow: NSWindow? {
+  @objc var mainWindow: NSWindow? {
     return window
   }
     
   
-  dynamic var sortByDate = [NSSortDescriptor(key: "date", ascending: false)]
-  dynamic var sortByName = [NSSortDescriptor(key: "name", ascending: true)]
-  dynamic var sortByNameAndBreed  = [NSSortDescriptor(key: "breed", ascending: true), NSSortDescriptor(key: "name", ascending: true)]
+  @objc dynamic var sortByDate = [NSSortDescriptor(key: "date", ascending: false)]
+  @objc dynamic var sortByName = [NSSortDescriptor(key: "name", ascending: true)]
+  @objc dynamic var sortByNameAndBreed  = [NSSortDescriptor(key: "breed", ascending: true), NSSortDescriptor(key: "name", ascending: true)]
   
-  override var windowNibName: String {
-    return "MainWindowController"
+  override var windowNibName: NSNib.Name? {
+    return NSNib.Name("MainWindowController")
   }
   
   // ================================
@@ -129,10 +131,10 @@ class MainWindowController: NSWindowController {
     theShowController.rearrangeObjects()
     
     let centre = NotificationCenter.default
-    centre.addObserver(self, selector: #selector(NSTableViewDelegate.tableViewSelectionDidChange(_:)), name: NSNotification.Name.NSTableViewSelectionDidChange, object: tableView)
+    centre.addObserver(self, selector: #selector(NSTableViewDelegate.tableViewSelectionDidChange(_:)), name: NSTableView.selectionDidChangeNotification, object: tableView)
   }
   
-  func tableViewSelectionDidChange(_ aNotification: Notification) {
+  @objc func tableViewSelectionDidChange(_ aNotification: Notification) {
     if Globals.currentShowName.isEmpty {
       appDelegate.writeMenuTitle = "No show selected"
       appDelegate.writeMenuAvailable = false
@@ -146,19 +148,18 @@ class MainWindowController: NSWindowController {
   // MARK: - Undo methods
   // ================================
   
-  var myUndoManager: UndoManager {
+  @objc var myUndoManager: UndoManager {
     get {
       if let mum = self.managedObjectContext.undoManager {
         return mum
       } else {
         self.managedObjectContext.undoManager = UndoManager()
-        print("created an undoManager")
         return self.managedObjectContext.undoManager!
       }
     }
   }
 
-  func windowWillReturnUndoManager(_ window: NSWindow) -> UndoManager {
+  @objc func windowWillReturnUndoManager(_ window: NSWindow) -> UndoManager {
     // The undo menu item is only enabled if we return a undoManager here
     return self.myUndoManager
   }
@@ -178,7 +179,7 @@ class MainWindowController: NSWindowController {
       let sheetController = AddShowWindowController()
       window.beginSheet(sheetController.window!, completionHandler: { response in
         // The sheet has finished. Did the user click 'OK'?
-        if response == NSModalResponseOK {
+        if response == NSApplication.ModalResponse.OK {
           self.myUndoManager.beginUndoGrouping()
           self.myUndoManager.setActionName("add show")
           let newShow = Show(showData: self.addShowWindowController!.showData, insertIntoManagedObjectContext: self.managedObjectContext)
@@ -204,7 +205,7 @@ class MainWindowController: NSWindowController {
         sheetController.setToShow(show: Globals.currentShow!)
         window.beginSheet(sheetController.window!, completionHandler: { response in
           // The sheet has finished. Did the user click 'OK'?
-          if response == NSModalResponseOK {
+          if response == NSApplication.ModalResponse.OK {
             self.myUndoManager.beginUndoGrouping()
             self.myUndoManager.setActionName("edit show")
             Globals.currentShow!.setValuesTo(self.addShowWindowController!.showData)
@@ -254,7 +255,7 @@ class MainWindowController: NSWindowController {
       speaker.startSpeaking("adding an entry")
       window.beginSheet(sheetController.window!, completionHandler: { response in
         // The sheet has finished. Did the user click 'OK'?
-        if response == NSModalResponseOK {
+        if response == NSApplication.ModalResponse.OK {
           
           // check to make sure this cat is not already in the show
           var problem = false
@@ -321,7 +322,7 @@ class MainWindowController: NSWindowController {
       speaker.startSpeaking("editing \(Globals.currentEntry!.cat.name)")
       window.beginSheet(sheetController.window!, completionHandler: { response in
         // The sheet has finished. Did the user click 'OK'?
-        if response == NSModalResponseOK {
+        if response == NSApplication.ModalResponse.OK {
           self.myUndoManager.beginUndoGrouping()
           self.myUndoManager.setActionName("edit entry")
           if Globals.currentEntry == nil {
@@ -346,7 +347,7 @@ class MainWindowController: NSWindowController {
   // MARK: - Write out catalogue
   // *****************************
   
-  func displaySavePanel() {
+  @objc func displaySavePanel() {
     let savePanel = NSSavePanel()
     savePanel.allowedFileTypes = ["html"]
     savePanel.isExtensionHidden = false
@@ -355,7 +356,7 @@ class MainWindowController: NSWindowController {
     
     savePanel.beginSheetModal(for: window!, completionHandler: {
       [unowned savePanel] (result) in
-      if result == NSModalResponseOK {
+      if result == NSApplication.ModalResponse.OK {
         self.printCatalog(savePanel.nameFieldStringValue, to: savePanel.url!)
       }
     })

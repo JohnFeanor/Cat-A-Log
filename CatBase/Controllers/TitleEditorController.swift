@@ -12,19 +12,19 @@ class TitleEditorController: NSWindowController {
   
   @IBOutlet weak var titlesTableView: NSTableView!
   
-  override var windowNibName: String {
-    return "TitleEditorController"
+  @objc override var windowNibName: NSNib.Name? {
+    return NSNib.Name("TitleEditorController")
   }
   
   @IBOutlet var titles: Titles!
   
-  let undo = UndoManager()
+  @objc let undo = UndoManager()
   
   override var undoManager: UndoManager  {
     return undo
   }
   
-  func windowWillReturnUndoManager(_ window: NSWindow) -> UndoManager? {
+  @objc func windowWillReturnUndoManager(_ window: NSWindow) -> UndoManager? {
     // The undo menu item is only enabled if we return a undoManager here
     return self.undoManager
   }
@@ -42,7 +42,7 @@ class TitleEditorController: NSWindowController {
     titles.setIndex(rowIndex, toTitle: newTitle)
   }
   
-  func addNewTitle(_ newTitle: String, atIndex index: Int) {
+  @objc func addNewTitle(_ newTitle: String, atIndex index: Int) {
     (undoManager.prepare(withInvocationTarget: self) as! TitleEditorController).removeTitleAtIndex(index)
     if !undoManager.isUndoing {
       undoManager.setActionName("add title")
@@ -51,7 +51,7 @@ class TitleEditorController: NSWindowController {
     titlesTableView.reloadData()
   }
   
-  func removeTitleAtIndex(_ index: Int) {
+  @objc func removeTitleAtIndex(_ index: Int) {
     let oldTitle = titles.titleAtindex(index)
     (undoManager.prepare(withInvocationTarget: self) as! TitleEditorController).addNewTitle(oldTitle, atIndex: index)
     if !undoManager.isUndoing {

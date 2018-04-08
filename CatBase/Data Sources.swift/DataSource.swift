@@ -37,7 +37,7 @@ class DataSource: Formatter {
   // MARK: - Combo box data sources
   // ==============================
   
-  func firstRowMatchingPrefix(_ prefix: String) -> String? {
+  @objc func firstRowMatchingPrefix(_ prefix: String) -> String? {
     let lowerCasePrefix = prefix.lowercased()
     // if we find a string that matches, return that
     for string in list {
@@ -49,11 +49,11 @@ class DataSource: Formatter {
     return nil
   }
   
-  func numberOfItemsInComboBox(_ aComboBox: NSComboBox) -> Int {
+  @objc func numberOfItemsInComboBox(_ aComboBox: NSComboBox) -> Int {
     return list.count
   }
   
-  func comboBox(_ aComboBox: NSComboBox, objectValueForItemAtIndex index: Int) -> AnyObject {
+  @objc func comboBox(_ aComboBox: NSComboBox, objectValueForItemAtIndex index: Int) -> AnyObject {
     if list.count > 0 && index >= 0 && index < list.count {
       return list[index] as AnyObject
     } else {
@@ -61,7 +61,7 @@ class DataSource: Formatter {
     }
   }
   
-  func comboBox(_ aComboBox: NSComboBox, completedString uncompletedString: String) -> String?{
+  @objc func comboBox(_ aComboBox: NSComboBox, completedString uncompletedString: String) -> String?{
       let candidate = firstRowMatchingPrefix(uncompletedString)
     return candidate ?? uncompletedString
   }
@@ -86,8 +86,9 @@ class DataSource: Formatter {
         obj?.pointee = returnString as AnyObject?
         return true
       } else {
-        let index1 = string.index(string.endIndex, offsetBy: -1)
-        let substring = string.substring(to: index1)
+       // let index1 = string.index(string.endIndex, offsetBy: -1)
+        let substring = string[..<string.endIndex]
+      //  let substring = string.substring(to: index1)
         obj?.pointee = substring as AnyObject?
         return true
       }

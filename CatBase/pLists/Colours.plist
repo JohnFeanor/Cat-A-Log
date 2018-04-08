@@ -1930,6 +1930,889 @@
 		<string>Caramel Tortie Silver Tabby Point</string>
 		<string>Apricot Tortie Silver Tabby Point</string>
 	</array>
+	<key>Asian</key>
+	<array>
+		<string>White</string>
+		<string>Black</string>
+		<string>Blue</string>
+		<string>Chocolate</string>
+		<string>Lilac</string>
+		<string>Red</string>
+		<string>Cream</string>
+		<string>Cinnamon</string>
+		<string>Fawn</string>
+		<string>Caramel</string>
+		<string>Apricot</string>
+		<string>Black Tipped</string>
+		<string>Blue Tipped</string>
+		<string>Chocolate Tipped</string>
+		<string>Lilac Tipped</string>
+		<string>Red Tipped</string>
+		<string>Cream Tipped</string>
+		<string>Cinnamon Tipped</string>
+		<string>Fawn Tipped</string>
+		<string>Caramel Tipped</string>
+		<string>Apricot Tipped</string>
+		<string>Black Tortie Tipped</string>
+		<string>Blue Tortie Tipped</string>
+		<string>Chocolate Tortie Tipped</string>
+		<string>Lilac Tortie Tipped</string>
+		<string>Cinnamon Tortie Tipped</string>
+		<string>Fawn Tortie Tipped</string>
+		<string>Caramel Tortie Tipped</string>
+		<string>Apricot Tortie Tipped</string>
+		<string>Black Golden Tipped</string>
+		<string>Blue Golden Tipped</string>
+		<string>Chocolate Golden Tipped</string>
+		<string>Lilac Golden Tipped</string>
+		<string>Red Golden Tipped</string>
+		<string>Cream Golden Tipped</string>
+		<string>Cinnamon Golden Tipped</string>
+		<string>Fawn Golden Tipped</string>
+		<string>Caramel Golden Tipped</string>
+		<string>Apricot Golden Tipped</string>
+		<string>Black Tortie Golden Tipped</string>
+		<string>Blue Tortie Golden Tipped</string>
+		<string>Chocolate Tortie Golden Tipped</string>
+		<string>Lilac Tortie Golden Tipped</string>
+		<string>Cinnamon Tortie Golden Tipped</string>
+		<string>Fawn Tortie Golden Tipped</string>
+		<string>Caramel Tortie Golden Tipped</string>
+		<string>Apricot Tortie Golden Tipped</string>
+		<string>Black Shaded</string>
+		<string>Blue Shaded</string>
+		<string>Chocolate Shaded</string>
+		<string>Lilac Shaded</string>
+		<string>Red Shaded</string>
+		<string>Cream Shaded</string>
+		<string>Cinnamon Shaded</string>
+		<string>Fawn Shaded</string>
+		<string>Caramel Shaded</string>
+		<string>Apricot Shaded</string>
+		<string>Black Tortie Shaded</string>
+		<string>Blue Tortie Shaded</string>
+		<string>Chocolate Tortie Shaded</string>
+		<string>Lilac Tortie Shaded</string>
+		<string>Cinnamon Tortie Shaded</string>
+		<string>Fawn Tortie Shaded</string>
+		<string>Caramel Tortie Shaded</string>
+		<string>Apricot Tortie Shaded</string>
+		<string>Black Golden Shaded</string>
+		<string>Blue Golden Shaded</string>
+		<string>Chocolate Golden Shaded</string>
+		<string>Lilac Golden Shaded</string>
+		<string>Red Golden Shaded</string>
+		<string>Cream Golden Shaded</string>
+		<string>Cinnamon Golden Shaded</string>
+		<string>Fawn Golden Shaded</string>
+		<string>Caramel Golden Shaded</string>
+		<string>Apricot Golden Shaded</string>
+		<string>Black Tortie Golden Shaded</string>
+		<string>Blue Tortie Golden Shaded</string>
+		<string>Chocolate Tortie Golden Shaded</string>
+		<string>Lilac Tortie Golden Shaded</string>
+		<string>Cinnamon Tortie Golden Shaded</string>
+		<string>Fawn Tortie Golden Shaded</string>
+		<string>Caramel Tortie Golden Shaded</string>
+		<string>Apricot Tortie Golden Shaded</string>
+		<string>Black Smoke</string>
+		<string>Blue Smoke</string>
+		<string>Chocolate Smoke</string>
+		<string>Lilac Smoke</string>
+		<string>Red Smoke</string>
+		<string>Cream Smoke</string>
+		<string>Cinnamon Smoke</string>
+		<string>Fawn Smoke</string>
+		<string>Caramel Smoke</string>
+		<string>Apricot Smoke</string>
+		<string>Black Tortie Smoke</string>
+		<string>Blue Tortie Smoke</string>
+		<string>Chocolate Tortie Smoke</string>
+		<string>Lilac Tortie Smoke</string>
+		<string>Cinnamon Tortie Smoke</string>
+		<string>Fawn Tortie Smoke</string>
+		<string>Caramel Tortie Smoke</string>
+		<string>Apricot Tortie Smoke</string>
+		<string>Black Silver Classic Tabby</string>
+		<string>Blue Silver Classic Tabby</string>
+		<string>Chocolate Silver Classic Tabby</string>
+		<string>Lilac Silver Classic Tabby</string>
+		<string>Red Silver Classic Tabby</string>
+		<string>Cream Silver Classic Tabby</string>
+		<string>Cinnamon Silver Classic Tabby</string>
+		<string>Fawn Silver Classic Tabby</string>
+		<string>Caramel Silver Classic Tabby</string>
+		<string>Apricot Silver Classic Tabby</string>
+		<string>Black Silver Tortie Classic Tabby</string>
+		<string>Blue Silver Tortie Classic Tabby</string>
+		<string>Chocolate Silver Tortie Classic Tabby</string>
+		<string>Lilac Silver Tortie Classic Tabby</string>
+		<string>Cinnamon Silver Tortie Classic Tabby</string>
+		<string>Fawn Silver Tortie Classic Tabby</string>
+		<string>Caramel Silver Tortie Classic Tabby</string>
+		<string>Apricot Silver Tortie Classic Tabby</string>
+		<string>Golden Classic Tabby</string>
+		<string>Black Classic Tabby</string>
+		<string>Blue Classic Tabby</string>
+		<string>Chocolate Classic Tabby</string>
+		<string>Lilac Classic Tabby</string>
+		<string>Red Classic Tabby</string>
+		<string>Cream Classic Tabby</string>
+		<string>Cinnamon Classic Tabby</string>
+		<string>Fawn Classic Tabby</string>
+		<string>Caramel Classic Tabby</string>
+		<string>Apricot Classic Tabby</string>
+		<string>Black Tortie Classic Tabby</string>
+		<string>Blue Tortie Classic Tabby</string>
+		<string>Chocolate Tortie Classic Tabby</string>
+		<string>Lilac Tortie Classic Tabby</string>
+		<string>Cinnamon Tortie Classic Tabby</string>
+		<string>Fawn Tortie Classic Tabby</string>
+		<string>Caramel Tortie Classic Tabby</string>
+		<string>Apricot Tortie Classic Tabby</string>
+		<string>Black Silver Mackerel Tabby</string>
+		<string>Blue Silver Mackerel Tabby</string>
+		<string>Chocolate Silver Mackerel Tabby</string>
+		<string>Lilac Silver Mackerel Tabby</string>
+		<string>Red Silver Mackerel Tabby</string>
+		<string>Cream Silver Mackerel Tabby</string>
+		<string>Cinnamon Silver Mackerel Tabby</string>
+		<string>Fawn Silver Mackerel Tabby</string>
+		<string>Caramel Silver Mackerel Tabby</string>
+		<string>Apricot Silver Mackerel Tabby</string>
+		<string>Black Silver Tortie Mackerel Tabby</string>
+		<string>Blue Silver Tortie Mackerel Tabby</string>
+		<string>Chocolate Silver Tortie Mackerel Tabby</string>
+		<string>Lilac Silver Tortie Mackerel Tabby</string>
+		<string>Cinnamon Silver Tortie Mackerel Tabby</string>
+		<string>Fawn Silver Tortie Mackerel Tabby</string>
+		<string>Caramel Silver Tortie Mackerel Tabby</string>
+		<string>Apricot Silver Tortie Mackerel Tabby</string>
+		<string>Golden Mackerel Tabby</string>
+		<string>Black Mackerel Tabby</string>
+		<string>Blue Mackerel Tabby</string>
+		<string>Chocolate Mackerel Tabby</string>
+		<string>Lilac Mackerel Tabby</string>
+		<string>Red Mackerel Tabby</string>
+		<string>Cream Mackerel Tabby</string>
+		<string>Cinnamon Mackerel Tabby</string>
+		<string>Fawn Mackerel Tabby</string>
+		<string>Caramel Mackerel Tabby</string>
+		<string>Apricot Mackerel Tabby</string>
+		<string>Black Tortie Mackerel Tabby</string>
+		<string>Blue Tortie Mackerel Tabby</string>
+		<string>Chocolate Tortie Mackerel Tabby</string>
+		<string>Lilac Tortie Mackerel Tabby</string>
+		<string>Cinnamon Tortie Mackerel Tabby</string>
+		<string>Fawn Tortie Mackerel Tabby</string>
+		<string>Caramel Tortie Mackerel Tabby</string>
+		<string>Apricot Tortie Mackerel Tabby</string>
+		<string>Black Silver Spotted Tabby</string>
+		<string>Blue Silver Spotted Tabby</string>
+		<string>Chocolate Silver Spotted Tabby</string>
+		<string>Lilac Silver Spotted Tabby</string>
+		<string>Red Silver Spotted Tabby</string>
+		<string>Cream Silver Spotted Tabby</string>
+		<string>Cinnamon Silver Spotted Tabby</string>
+		<string>Fawn Silver Spotted Tabby</string>
+		<string>Caramel Silver Spotted Tabby</string>
+		<string>Apricot Silver Spotted Tabby</string>
+		<string>Black Silver Tortie Spotted Tabby</string>
+		<string>Blue Silver Tortie Spotted Tabby</string>
+		<string>Chocolate Silver Tortie Spotted Tabby</string>
+		<string>Lilac Silver Tortie Spotted Tabby</string>
+		<string>Cinnamon Silver Tortie Spotted Tabby</string>
+		<string>Fawn Silver Tortie Spotted Tabby</string>
+		<string>Caramel Silver Tortie Spotted Tabby</string>
+		<string>Apricot Silver Tortie Spotted Tabby</string>
+		<string>Golden Spotted Tabby</string>
+		<string>Black Spotted Tabby</string>
+		<string>Blue Spotted Tabby</string>
+		<string>Chocolate Spotted Tabby</string>
+		<string>Lilac Spotted Tabby</string>
+		<string>Red Spotted Tabby</string>
+		<string>Cream Spotted Tabby</string>
+		<string>Cinnamon Spotted Tabby</string>
+		<string>Fawn Spotted Tabby</string>
+		<string>Caramel Spotted Tabby</string>
+		<string>Apricot Spotted Tabby</string>
+		<string>Black Tortie Spotted Tabby</string>
+		<string>Blue Tortie Spotted Tabby</string>
+		<string>Chocolate Tortie Spotted Tabby</string>
+		<string>Lilac Tortie Spotted Tabby</string>
+		<string>Cinnamon Tortie Spotted Tabby</string>
+		<string>Fawn Tortie Spotted Tabby</string>
+		<string>Caramel Tortie Spotted Tabby</string>
+		<string>Apricot Tortie Spotted Tabby</string>
+		<string>Black Silver Ticked Tabby</string>
+		<string>Blue Silver Ticked Tabby</string>
+		<string>Chocolate Silver Ticked Tabby</string>
+		<string>Lilac Silver Ticked Tabby</string>
+		<string>Red Silver Ticked Tabby</string>
+		<string>Cream Silver Ticked Tabby</string>
+		<string>Cinnamon Silver Ticked Tabby</string>
+		<string>Fawn Silver Ticked Tabby</string>
+		<string>Caramel Silver Ticked Tabby</string>
+		<string>Apricot Silver Ticked Tabby</string>
+		<string>Black Silver Tortie Ticked Tabby</string>
+		<string>Blue Silver Tortie Ticked Tabby</string>
+		<string>Chocolate Silver Tortie Ticked Tabby</string>
+		<string>Lilac Silver Tortie Ticked Tabby</string>
+		<string>Cinnamon Silver Tortie Ticked Tabby</string>
+		<string>Fawn Silver Tortie Ticked Tabby</string>
+		<string>Caramel Silver Tortie Ticked Tabby</string>
+		<string>Apricot Silver Tortie Ticked Tabby</string>
+		<string>Golden Ticked Tabby</string>
+		<string>Black Ticked Tabby</string>
+		<string>Blue Ticked Tabby</string>
+		<string>Chocolate Ticked Tabby</string>
+		<string>Lilac Ticked Tabby</string>
+		<string>Red Ticked Tabby</string>
+		<string>Cream Ticked Tabby</string>
+		<string>Cinnamon Ticked Tabby</string>
+		<string>Fawn Ticked Tabby</string>
+		<string>Caramel Ticked Tabby</string>
+		<string>Apricot Ticked Tabby</string>
+		<string>Black Tortie Ticked Tabby</string>
+		<string>Blue Tortie Ticked Tabby</string>
+		<string>Chocolate Tortie Ticked Tabby</string>
+		<string>Lilac Tortie Ticked Tabby</string>
+		<string>Cinnamon Tortie Ticked Tabby</string>
+		<string>Fawn Tortie Ticked Tabby</string>
+		<string>Caramel Tortie Ticked Tabby</string>
+		<string>Apricot Tortie Ticked Tabby</string>
+		<string>Black Silver Marbled Tabby</string>
+		<string>Blue Silver Marbled Tabby</string>
+		<string>Chocolate Silver Marbled Tabby</string>
+		<string>Lilac Silver Marbled Tabby</string>
+		<string>Red Silver Marbled Tabby</string>
+		<string>Cream Silver Marbled Tabby</string>
+		<string>Cinnamon Silver Marbled Tabby</string>
+		<string>Fawn Silver Marbled Tabby</string>
+		<string>Caramel Silver Marbled Tabby</string>
+		<string>Apricot Silver Marbled Tabby</string>
+		<string>Black Silver Tortie Marbled Tabby</string>
+		<string>Blue Silver Tortie Marbled Tabby</string>
+		<string>Chocolate Silver Tortie Marbled Tabby</string>
+		<string>Lilac Silver Tortie Marbled Tabby</string>
+		<string>Cinnamon Silver Tortie Marbled Tabby</string>
+		<string>Fawn Silver Tortie Marbled Tabby</string>
+		<string>Caramel Silver Tortie Marbled Tabby</string>
+		<string>Apricot Silver Tortie Marbled Tabby</string>
+		<string>Golden Marbled Tabby</string>
+		<string>Black Marbled Tabby</string>
+		<string>Blue Marbled Tabby</string>
+		<string>Chocolate Marbled Tabby</string>
+		<string>Lilac Marbled Tabby</string>
+		<string>Red Marbled Tabby</string>
+		<string>Cream Marbled Tabby</string>
+		<string>Cinnamon Marbled Tabby</string>
+		<string>Fawn Marbled Tabby</string>
+		<string>Caramel Marbled Tabby</string>
+		<string>Apricot Marbled Tabby</string>
+		<string>Black Tortie Marbled Tabby</string>
+		<string>Blue Tortie Marbled Tabby</string>
+		<string>Chocolate Tortie Marbled Tabby</string>
+		<string>Lilac Tortie Marbled Tabby</string>
+		<string>Cinnamon Tortie Marbled Tabby</string>
+		<string>Fawn Tortie Marbled Tabby</string>
+		<string>Caramel Tortie Marbled Tabby</string>
+		<string>Apricot Tortie Marbled Tabby</string>
+		<string>Black Tortie</string>
+		<string>Blue Tortie</string>
+		<string>Chocolate Tortie</string>
+		<string>Lilac Tortie</string>
+		<string>Cinnamon Tortie</string>
+		<string>Fawn Tortie</string>
+		<string>Caramel Tortie</string>
+		<string>Apricot Tortie</string>
+		<string>Black Bi-Colour</string>
+		<string>Blue Bi-Colour</string>
+		<string>Chocolate Bi-Colour</string>
+		<string>Lilac Bi-Colour</string>
+		<string>Red Bi-Colour</string>
+		<string>Cream Bi-Colour</string>
+		<string>Cinnamon Bi-Colour</string>
+		<string>Fawn Bi-Colour</string>
+		<string>Caramel Bi-Colour</string>
+		<string>Apricot Bi-Colour</string>
+		<string>Black Tortie Bi-Colour</string>
+		<string>Blue Tortie Bi-Colour</string>
+		<string>Chocolate Tortie Bi-Colour</string>
+		<string>Lilac Tortie Bi-Colour</string>
+		<string>Cinnamon Tortie Bi-Colour</string>
+		<string>Fawn Tortie Bi-Colour</string>
+		<string>Caramel Tortie Bi-Colour</string>
+		<string>Apricot Tortie Bi-Colour</string>
+		<string>Black Smoke Bi-Colour</string>
+		<string>Blue Smoke Bi-Colour</string>
+		<string>Chocolate Smoke Bi-Colour</string>
+		<string>Lilac Smoke Bi-Colour</string>
+		<string>Red Smoke Bi-Colour</string>
+		<string>Cream Smoke Bi-Colour</string>
+		<string>Cinnamon Smoke Bi-Colour</string>
+		<string>Fawn Smoke Bi-Colour</string>
+		<string>Caramel Smoke Bi-Colour</string>
+		<string>Apricot Smoke Bi-Colour</string>
+		<string>Black Tortie Smoke Bi-Colour</string>
+		<string>Blue Tortie Smoke Bi-Colour</string>
+		<string>Chocolate Tortie Smoke Bi-Colour</string>
+		<string>Lilac Tortie Smoke Bi-Colour</string>
+		<string>Cinnamon Tortie Smoke Bi-Colour</string>
+		<string>Fawn Tortie Smoke Bi-Colour</string>
+		<string>Caramel Tortie Smoke Bi-Colour</string>
+		<string>Apricot Tortie Smoke Bi-Colour</string>
+		<string>Black Tipped Bi-Colour</string>
+		<string>Blue Tipped Bi-Colour</string>
+		<string>Chocolate Tipped Bi-Colour</string>
+		<string>Lilac Tipped Bi-Colour</string>
+		<string>Red Tipped Bi-Colour</string>
+		<string>Cream Tipped Bi-Colour</string>
+		<string>Cinnamon Tipped Bi-Colour</string>
+		<string>Fawn Tipped Bi-Colour</string>
+		<string>Caramel Tipped Bi-Colour</string>
+		<string>Apricot Tipped Bi-Colour</string>
+		<string>Black Tortie Tipped Bi-Colour</string>
+		<string>Blue Tortie Tipped Bi-Colour</string>
+		<string>Chocolate Tortie Tipped Bi-Colour</string>
+		<string>Lilac Tortie Tipped Bi-Colour</string>
+		<string>Cinnamon Tortie Tipped Bi-Colour</string>
+		<string>Fawn Tortie Tipped Bi-Colour</string>
+		<string>Caramel Tortie Tipped Bi-Colour</string>
+		<string>Apricot Tortie Tipped Bi-Colour</string>
+		<string>Black Shaded Bi-Colour</string>
+		<string>Blue Shaded Bi-Colour</string>
+		<string>Chocolate Shaded Bi-Colour</string>
+		<string>Lilac Shaded Bi-Colour</string>
+		<string>Red Shaded Bi-Colour</string>
+		<string>Cream Shaded Bi-Colour</string>
+		<string>Cinnamon Shaded Bi-Colour</string>
+		<string>Fawn Shaded Bi-Colour</string>
+		<string>Caramel Shaded Bi-Colour</string>
+		<string>Apricot Shaded Bi-Colour</string>
+		<string>Black Tortie Shaded Bi-Colour</string>
+		<string>Blue Tortie Shaded Bi-Colour</string>
+		<string>Chocolate Tortie Shaded Bi-Colour</string>
+		<string>Lilac Tortie Shaded Bi-Colour</string>
+		<string>Cinnamon Tortie Shaded Bi-Colour</string>
+		<string>Fawn Tortie Shaded Bi-Colour</string>
+		<string>Caramel Tortie Shaded Bi-Colour</string>
+		<string>Apricot Tortie Shaded Bi-Colour</string>
+		<string>Black Golden Tipped Bi-Colour</string>
+		<string>Blue Golden Tipped Bi-Colour</string>
+		<string>Chocolate Golden Tipped Bi-Colour</string>
+		<string>Lilac Golden Tipped Bi-Colour</string>
+		<string>Red Golden Tipped Bi-Colour</string>
+		<string>Cream Golden Tipped Bi-Colour</string>
+		<string>Cinnamon Golden Tipped Bi-Colour</string>
+		<string>Fawn Golden Tipped Bi-Colour</string>
+		<string>Caramel Golden Tipped Bi-Colour</string>
+		<string>Apricot Golden Tipped Bi-Colour</string>
+		<string>Black Tortie Golden Tipped Bi-Colour</string>
+		<string>Blue Tortie Golden Tipped Bi-Colour</string>
+		<string>Chocolate Tortie Golden Tipped Bi-Colour</string>
+		<string>Lilac Tortie Golden Tipped Bi-Colour</string>
+		<string>Cinnamon Tortie Golden Tipped Bi-Colour</string>
+		<string>Fawn Tortie Golden Tipped Bi-Colour</string>
+		<string>Caramel Tortie Golden Tipped Bi-Colour</string>
+		<string>Apricot Tortie Golden Tipped Bi-Colour</string>
+		<string>Black Golden Shaded Bi-Colour</string>
+		<string>Blue Golden Shaded Bi-Colour</string>
+		<string>Chocolate Golden Shaded Bi-Colour</string>
+		<string>Lilac Golden Shaded Bi-Colour</string>
+		<string>Red Golden Shaded Bi-Colour</string>
+		<string>Cream Golden Shaded Bi-Colour</string>
+		<string>Cinnamon Golden Shaded Bi-Colour</string>
+		<string>Fawn Golden Shaded Bi-Colour</string>
+		<string>Caramel Golden Shaded Bi-Colour</string>
+		<string>Apricot Golden Shaded Bi-Colour</string>
+		<string>Black Tortie Golden Shaded Bi-Colour</string>
+		<string>Blue Tortie Golden Shaded Bi-Colour</string>
+		<string>Chocolate Tortie Golden Shaded Bi-Colour</string>
+		<string>Lilac Tortie Golden Shaded Bi-Colour</string>
+		<string>Cinnamon Tortie Golden Shaded Bi-Colour</string>
+		<string>Fawn Tortie Golden Shaded Bi-Colour</string>
+		<string>Caramel Tortie Golden Shaded Bi-Colour</string>
+		<string>Apricot Tortie Golden Shaded Bi-Colour</string>
+		<string>Golden Classic Tabby Bi-Colour</string>
+		<string>Black Classic Tabby Bi-Colour</string>
+		<string>Blue Classic Tabby Bi-Colour</string>
+		<string>Chocolate Classic Tabby Bi-Colour</string>
+		<string>Lilac Classic Tabby Bi-Colour</string>
+		<string>Red Classic Tabby Bi-Colour</string>
+		<string>Cream Classic Tabby Bi-Colour</string>
+		<string>Cinnamon Classic Tabby Bi-Colour</string>
+		<string>Fawn Classic Tabby Bi-Colour</string>
+		<string>Caramel Classic Tabby Bi-Colour</string>
+		<string>Apricot Classic Tabby Bi-Colour</string>
+		<string>Black Tortie Classic Tabby Bi-Colour</string>
+		<string>Blue Tortie Classic Tabby Bi-Colour</string>
+		<string>Chocolate Tortie Classic Tabby Bi-Colour</string>
+		<string>Lilac Tortie Classic Tabby Bi-Colour</string>
+		<string>Cinnamon Tortie Classic Tabby Bi-Colour</string>
+		<string>Fawn Tortie Classic Tabby Bi-Colour</string>
+		<string>Caramel Tortie Classic Tabby Bi-Colour</string>
+		<string>Apricot Tortie Classic Tabby Bi-Colour</string>
+		<string>Golden Mackerel Tabby Bi-Colour</string>
+		<string>Black Mackerel Tabby Bi-Colour</string>
+		<string>Blue Mackerel Tabby Bi-Colour</string>
+		<string>Chocolate Mackerel Tabby Bi-Colour</string>
+		<string>Lilac Mackerel Tabby Bi-Colour</string>
+		<string>Red Mackerel Tabby Bi-Colour</string>
+		<string>Cream Mackerel Tabby Bi-Colour</string>
+		<string>Cinnamon Mackerel Tabby Bi-Colour</string>
+		<string>Fawn Mackerel Tabby Bi-Colour</string>
+		<string>Caramel Mackerel Tabby Bi-Colour</string>
+		<string>Apricot Mackerel Tabby Bi-Colour</string>
+		<string>Black Tortie Mackerel Tabby Bi-Colour</string>
+		<string>Blue Tortie Mackerel Tabby Bi-Colour</string>
+		<string>Chocolate Tortie Mackerel Tabby Bi-Colour</string>
+		<string>Lilac Tortie Mackerel Tabby Bi-Colour</string>
+		<string>Cinnamon Tortie Mackerel Tabby Bi-Colour</string>
+		<string>Fawn Tortie Mackerel Tabby Bi-Colour</string>
+		<string>Caramel Tortie Mackerel Tabby Bi-Colour</string>
+		<string>Apricot Tortie Mackerel Tabby Bi-Colour</string>
+		<string>Golden Spotted Tabby Bi-Colour</string>
+		<string>Black Spotted Tabby Bi-Colour</string>
+		<string>Blue Spotted Tabby Bi-Colour</string>
+		<string>Chocolate Spotted Tabby Bi-Colour</string>
+		<string>Lilac Spotted Tabby Bi-Colour</string>
+		<string>Red Spotted Tabby Bi-Colour</string>
+		<string>Cream Spotted Tabby Bi-Colour</string>
+		<string>Cinnamon Spotted Tabby Bi-Colour</string>
+		<string>Fawn Spotted Tabby Bi-Colour</string>
+		<string>Caramel Spotted Tabby Bi-Colour</string>
+		<string>Apricot Spotted Tabby Bi-Colour</string>
+		<string>Black Tortie Spotted Tabby Bi-Colour</string>
+		<string>Blue Tortie Spotted Tabby Bi-Colour</string>
+		<string>Chocolate Tortie Spotted Tabby Bi-Colour</string>
+		<string>Lilac Tortie Spotted Tabby Bi-Colour</string>
+		<string>Cinnamon Tortie Spotted Tabby Bi-Colour</string>
+		<string>Fawn Tortie Spotted Tabby Bi-Colour</string>
+		<string>Caramel Tortie Spotted Tabby Bi-Colour</string>
+		<string>Apricot Tortie Spotted Tabby Bi-Colour</string>
+		<string>Golden Ticked Tabby Bi-Colour</string>
+		<string>Black Ticked Tabby Bi-Colour</string>
+		<string>Blue Ticked Tabby Bi-Colour</string>
+		<string>Chocolate Ticked Tabby Bi-Colour</string>
+		<string>Lilac Ticked Tabby Bi-Colour</string>
+		<string>Red Ticked Tabby Bi-Colour</string>
+		<string>Cream Ticked Tabby Bi-Colour</string>
+		<string>Cinnamon Ticked Tabby Bi-Colour</string>
+		<string>Fawn Ticked Tabby Bi-Colour</string>
+		<string>Caramel Ticked Tabby Bi-Colour</string>
+		<string>Apricot Ticked Tabby Bi-Colour</string>
+		<string>Black Tortie Ticked Tabby Bi-Colour</string>
+		<string>Blue Tortie Ticked Tabby Bi-Colour</string>
+		<string>Chocolate Tortie Ticked Tabby Bi-Colour</string>
+		<string>Lilac Tortie Ticked Tabby Bi-Colour</string>
+		<string>Cinnamon Tortie Ticked Tabby Bi-Colour</string>
+		<string>Fawn Tortie Ticked Tabby Bi-Colour</string>
+		<string>Caramel Tortie Ticked Tabby Bi-Colour</string>
+		<string>Apricot Tortie Ticked Tabby Bi-Colour</string>
+		<string>Golden Marbled Tabby Bi-Colour</string>
+		<string>Black Marbled Tabby Bi-Colour</string>
+		<string>Blue Marbled Tabby Bi-Colour</string>
+		<string>Chocolate Marbled Tabby Bi-Colour</string>
+		<string>Lilac Marbled Tabby Bi-Colour</string>
+		<string>Red Marbled Tabby Bi-Colour</string>
+		<string>Cream Marbled Tabby Bi-Colour</string>
+		<string>Cinnamon Marbled Tabby Bi-Colour</string>
+		<string>Fawn Marbled Tabby Bi-Colour</string>
+		<string>Caramel Marbled Tabby Bi-Colour</string>
+		<string>Apricot Marbled Tabby Bi-Colour</string>
+		<string>Black Tortie Marbled Tabby Bi-Colour</string>
+		<string>Blue Tortie Marbled Tabby Bi-Colour</string>
+		<string>Chocolate Tortie Marbled Tabby Bi-Colour</string>
+		<string>Lilac Tortie Marbled Tabby Bi-Colour</string>
+		<string>Cinnamon Tortie Marbled Tabby Bi-Colour</string>
+		<string>Fawn Tortie Marbled Tabby Bi-Colour</string>
+		<string>Caramel Tortie Marbled Tabby Bi-Colour</string>
+		<string>Apricot Tortie Marbled Tabby Bi-Colour</string>
+		<string>Black Silver Classic Tabby Bi-Colour</string>
+		<string>Blue Silver Classic Tabby Bi-Colour</string>
+		<string>Chocolate Silver Classic Tabby Bi-Colour</string>
+		<string>Lilac Silver Classic Tabby Bi-Colour</string>
+		<string>Red Silver Classic Tabby Bi-Colour</string>
+		<string>Cream Silver Classic Tabby Bi-Colour</string>
+		<string>Cinnamon Silver Classic Tabby Bi-Colour</string>
+		<string>Fawn Silver Classic Tabby Bi-Colour</string>
+		<string>Caramel Silver Classic Tabby Bi-Colour</string>
+		<string>Apricot Silver Classic Tabby Bi-Colour</string>
+		<string>Black Tortie Silver Classic Tabby Bi-Colour</string>
+		<string>Blue Tortie Silver Classic Tabby Bi-Colour</string>
+		<string>Chocolate Tortie Silver Classic Tabby Bi-Colour</string>
+		<string>Lilac Tortie Silver Classic Tabby Bi-Colour</string>
+		<string>Cinnamon Tortie Silver Classic Tabby Bi-Colour</string>
+		<string>Fawn Tortie Silver Classic Tabby Bi-Colour</string>
+		<string>Caramel Tortie Silver Classic Tabby Bi-Colour</string>
+		<string>Apricot Tortie Silver Classic Tabby Bi-Colour</string>
+		<string>Black Silver Mackerel Tabby Bi-Colour</string>
+		<string>Blue Silver Mackerel Tabby Bi-Colour</string>
+		<string>Chocolate Silver Mackerel Tabby Bi-Colour</string>
+		<string>Lilac Silver Mackerel Tabby Bi-Colour</string>
+		<string>Red Silver Mackerel Tabby Bi-Colour</string>
+		<string>Cream Silver Mackerel Tabby Bi-Colour</string>
+		<string>Cinnamon Silver Mackerel Tabby Bi-Colour</string>
+		<string>Fawn Silver Mackerel Tabby Bi-Colour</string>
+		<string>Caramel Silver Mackerel Tabby Bi-Colour</string>
+		<string>Apricot Silver Mackerel Tabby Bi-Colour</string>
+		<string>Black Tortie Silver Mackerel Tabby Bi-Colour</string>
+		<string>Blue Tortie Silver Mackerel Tabby Bi-Colour</string>
+		<string>Chocolate Tortie Silver Mackerel Tabby Bi-Colour</string>
+		<string>Lilac Tortie Silver Mackerel Tabby Bi-Colour</string>
+		<string>Cinnamon Tortie Silver Mackerel Tabby Bi-Colour</string>
+		<string>Fawn Tortie Silver Mackerel Tabby Bi-Colour</string>
+		<string>Caramel Tortie Silver Mackerel Tabby Bi-Colour</string>
+		<string>Apricot Tortie Silver Mackerel Tabby Bi-Colour</string>
+		<string>Black Silver Spotted Tabby Bi-Colour</string>
+		<string>Blue Silver Spotted Tabby Bi-Colour</string>
+		<string>Chocolate Silver Spotted Tabby Bi-Colour</string>
+		<string>Lilac Silver Spotted Tabby Bi-Colour</string>
+		<string>Red Silver Spotted Tabby Bi-Colour</string>
+		<string>Cream Silver Spotted Tabby Bi-Colour</string>
+		<string>Cinnamon Silver Spotted Tabby Bi-Colour</string>
+		<string>Fawn Silver Spotted Tabby Bi-Colour</string>
+		<string>Caramel Silver Spotted Tabby Bi-Colour</string>
+		<string>Apricot Silver Spotted Tabby Bi-Colour</string>
+		<string>Black Tortie Silver Spotted Tabby Bi-Colour</string>
+		<string>Blue Tortie Silver Spotted Tabby Bi-Colour</string>
+		<string>Chocolate Tortie Silver Spotted Tabby Bi-Colour</string>
+		<string>Lilac Tortie Silver Spotted Tabby Bi-Colour</string>
+		<string>Cinnamon Tortie Silver Spotted Tabby Bi-Colour</string>
+		<string>Fawn Tortie Silver Spotted Tabby Bi-Colour</string>
+		<string>Caramel Tortie Silver Spotted Tabby Bi-Colour</string>
+		<string>Apricot Tortie Silver Spotted Tabby Bi-Colour</string>
+		<string>Black Silver Ticked Tabby Bi-Colour</string>
+		<string>Blue Silver Ticked Tabby Bi-Colour</string>
+		<string>Chocolate Silver Ticked Tabby Bi-Colour</string>
+		<string>Lilac Silver Ticked Tabby Bi-Colour</string>
+		<string>Red Silver Ticked Tabby Bi-Colour</string>
+		<string>Cream Silver Ticked Tabby Bi-Colour</string>
+		<string>Cinnamon Silver Ticked Tabby Bi-Colour</string>
+		<string>Fawn Silver Ticked Tabby Bi-Colour</string>
+		<string>Caramel Silver Ticked Tabby Bi-Colour</string>
+		<string>Apricot Silver Ticked Tabby Bi-Colour</string>
+		<string>Black Tortie Silver Ticked Tabby Bi-Colour</string>
+		<string>Blue Tortie Silver Ticked Tabby Bi-Colour</string>
+		<string>Chocolate Tortie Silver Ticked Tabby Bi-Colour</string>
+		<string>Lilac Tortie Silver Ticked Tabby Bi-Colour</string>
+		<string>Cinnamon Tortie Silver Ticked Tabby Bi-Colour</string>
+		<string>Fawn Tortie Silver Ticked Tabby Bi-Colour</string>
+		<string>Caramel Tortie Silver Ticked Tabby Bi-Colour</string>
+		<string>Apricot Tortie Silver Ticked Tabby Bi-Colour</string>
+		<string>Black Silver Marbled Tabby Bi-Colour</string>
+		<string>Blue Silver Marbled Tabby Bi-Colour</string>
+		<string>Chocolate Silver Marbled Tabby Bi-Colour</string>
+		<string>Lilac Silver Marbled Tabby Bi-Colour</string>
+		<string>Red Silver Marbled Tabby Bi-Colour</string>
+		<string>Cream Silver Marbled Tabby Bi-Colour</string>
+		<string>Cinnamon Silver Marbled Tabby Bi-Colour</string>
+		<string>Fawn Silver Marbled Tabby Bi-Colour</string>
+		<string>Caramel Silver Marbled Tabby Bi-Colour</string>
+		<string>Apricot Silver Marbled Tabby Bi-Colour</string>
+		<string>Black Tortie Silver Marbled Tabby Bi-Colour</string>
+		<string>Blue Tortie Silver Marbled Tabby Bi-Colour</string>
+		<string>Chocolate Tortie Silver Marbled Tabby Bi-Colour</string>
+		<string>Lilac Tortie Silver Marbled Tabby Bi-Colour</string>
+		<string>Cinnamon Tortie Silver Marbled Tabby Bi-Colour</string>
+		<string>Fawn Tortie Silver Marbled Tabby Bi-Colour</string>
+		<string>Caramel Tortie Silver Marbled Tabby Bi-Colour</string>
+		<string>Apricot Tortie Silver Marbled Tabby Bi-Colour</string>
+		<string>Black Van</string>
+		<string>Blue Van</string>
+		<string>Chocolate Van</string>
+		<string>Lilac Van</string>
+		<string>Red Van</string>
+		<string>Cream Van</string>
+		<string>Cinnamon Van</string>
+		<string>Fawn Van</string>
+		<string>Caramel Van</string>
+		<string>Apricot Van</string>
+		<string>Black Tortie Van</string>
+		<string>Blue Tortie Van</string>
+		<string>Chocolate Tortie Van</string>
+		<string>Lilac Tortie Van</string>
+		<string>Cinnamon Tortie Van</string>
+		<string>Fawn Tortie Van</string>
+		<string>Caramel Tortie Van</string>
+		<string>Apricot Tortie Van</string>
+		<string>Black Smoke Van</string>
+		<string>Blue Smoke Van</string>
+		<string>Chocolate Smoke Van</string>
+		<string>Lilac Smoke Van</string>
+		<string>Red Smoke Van</string>
+		<string>Cream Smoke Van</string>
+		<string>Cinnamon Smoke Van</string>
+		<string>Fawn Smoke Van</string>
+		<string>Caramel Smoke Van</string>
+		<string>Apricot Smoke Van</string>
+		<string>Black Tortie Smoke Van</string>
+		<string>Blue Tortie Smoke Van</string>
+		<string>Chocolate Tortie Smoke Van</string>
+		<string>Lilac Tortie Smoke Van</string>
+		<string>Cinnamon Tortie Smoke Van</string>
+		<string>Fawn Tortie Smoke Van</string>
+		<string>Caramel Tortie Smoke Van</string>
+		<string>Apricot Tortie Smoke Van</string>
+		<string>Black Tipped Van</string>
+		<string>Blue Tipped Van</string>
+		<string>Chocolate Tipped Van</string>
+		<string>Lilac Tipped Van</string>
+		<string>Red Tipped Van</string>
+		<string>Cream Tipped Van</string>
+		<string>Cinnamon Tipped Van</string>
+		<string>Fawn Tipped Van</string>
+		<string>Caramel Tipped Van</string>
+		<string>Apricot Tipped Van</string>
+		<string>Black Tortie Tipped Van</string>
+		<string>Blue Tortie Tipped Van</string>
+		<string>Chocolate Tortie Tipped Van</string>
+		<string>Lilac Tortie Tipped Van</string>
+		<string>Cinnamon Tortie Tipped Van</string>
+		<string>Fawn Tortie Tipped Van</string>
+		<string>Caramel Tortie Tipped Van</string>
+		<string>Apricot Tortie Tipped Van</string>
+		<string>Black Shaded Van</string>
+		<string>Blue Shaded Van</string>
+		<string>Chocolate Shaded Van</string>
+		<string>Lilac Shaded Van</string>
+		<string>Red Shaded Van</string>
+		<string>Cream Shaded Van</string>
+		<string>Cinnamon Shaded Van</string>
+		<string>Fawn Shaded Van</string>
+		<string>Caramel Shaded Van</string>
+		<string>Apricot Shaded Van</string>
+		<string>Black Tortie Shaded Van</string>
+		<string>Blue Tortie Shaded Van</string>
+		<string>Chocolate Tortie Shaded Van</string>
+		<string>Lilac Tortie Shaded Van</string>
+		<string>Cinnamon Tortie Shaded Van</string>
+		<string>Fawn Tortie Shaded Van</string>
+		<string>Caramel Tortie Shaded Van</string>
+		<string>Apricot Tortie Shaded Van</string>
+		<string>Black Golden Tipped Van</string>
+		<string>Blue Golden Tipped Van</string>
+		<string>Chocolate Golden Tipped Van</string>
+		<string>Lilac Golden Tipped Van</string>
+		<string>Red Golden Tipped Van</string>
+		<string>Cream Golden Tipped Van</string>
+		<string>Cinnamon Golden Tipped Van</string>
+		<string>Fawn Golden Tipped Van</string>
+		<string>Caramel Golden Tipped Van</string>
+		<string>Apricot Golden Tipped Van</string>
+		<string>Black Tortie Golden Tipped Van</string>
+		<string>Blue Tortie Golden Tipped Van</string>
+		<string>Chocolate Tortie Golden Tipped Van</string>
+		<string>Lilac Tortie Golden Tipped Van</string>
+		<string>Cinnamon Tortie Golden Tipped Van</string>
+		<string>Fawn Tortie Golden Tipped Van</string>
+		<string>Caramel Tortie Golden Tipped Van</string>
+		<string>Apricot Tortie Golden Tipped Van</string>
+		<string>Black Golden Shaded Van</string>
+		<string>Blue Golden Shaded Van</string>
+		<string>Chocolate Golden Shaded Van</string>
+		<string>Lilac Golden Shaded Van</string>
+		<string>Red Golden Shaded Van</string>
+		<string>Cream Golden Shaded Van</string>
+		<string>Cinnamon Golden Shaded Van</string>
+		<string>Fawn Golden Shaded Van</string>
+		<string>Caramel Golden Shaded Van</string>
+		<string>Apricot Golden Shaded Van</string>
+		<string>Black Tortie Golden Shaded Van</string>
+		<string>Blue Tortie Golden Shaded Van</string>
+		<string>Chocolate Tortie Golden Shaded Van</string>
+		<string>Lilac Tortie Golden Shaded Van</string>
+		<string>Cinnamon Tortie Golden Shaded Van</string>
+		<string>Fawn Tortie Golden Shaded Van</string>
+		<string>Caramel Tortie Golden Shaded Van</string>
+		<string>Apricot Tortie Golden Shaded Van</string>
+		<string>Golden Classic Tabby Van</string>
+		<string>Black Classic Tabby Van</string>
+		<string>Blue Classic Tabby Van</string>
+		<string>Chocolate Classic Tabby Van</string>
+		<string>Lilac Classic Tabby Van</string>
+		<string>Red Classic Tabby Van</string>
+		<string>Cream Classic Tabby Van</string>
+		<string>Cinnamon Classic Tabby Van</string>
+		<string>Fawn Classic Tabby Van</string>
+		<string>Caramel Classic Tabby Van</string>
+		<string>Apricot Classic Tabby Van</string>
+		<string>Black Tortie Classic Tabby Van</string>
+		<string>Blue Tortie Classic Tabby Van</string>
+		<string>Chocolate Tortie Classic Tabby Van</string>
+		<string>Lilac Tortie Classic Tabby Van</string>
+		<string>Cinnamon Tortie Classic Tabby Van</string>
+		<string>Fawn Tortie Classic Tabby Van</string>
+		<string>Caramel Tortie Classic Tabby Van</string>
+		<string>Apricot Tortie Classic Tabby Van</string>
+		<string>Golden Mackerel Tabby Van</string>
+		<string>Black Mackerel Tabby Van</string>
+		<string>Blue Mackerel Tabby Van</string>
+		<string>Chocolate Mackerel Tabby Van</string>
+		<string>Lilac Mackerel Tabby Van</string>
+		<string>Red Mackerel Tabby Van</string>
+		<string>Cream Mackerel Tabby Van</string>
+		<string>Cinnamon Mackerel Tabby Van</string>
+		<string>Fawn Mackerel Tabby Van</string>
+		<string>Caramel Mackerel Tabby Van</string>
+		<string>Apricot Mackerel Tabby Van</string>
+		<string>Black Tortie Mackerel Tabby Van</string>
+		<string>Blue Tortie Mackerel Tabby Van</string>
+		<string>Chocolate Tortie Mackerel Tabby Van</string>
+		<string>Lilac Tortie Mackerel Tabby Van</string>
+		<string>Cinnamon Tortie Mackerel Tabby Van</string>
+		<string>Fawn Tortie Mackerel Tabby Van</string>
+		<string>Caramel Tortie Mackerel Tabby Van</string>
+		<string>Apricot Tortie Mackerel Tabby Van</string>
+		<string>Golden Spotted Tabby Van</string>
+		<string>Black Spotted Tabby Van</string>
+		<string>Blue Spotted Tabby Van</string>
+		<string>Chocolate Spotted Tabby Van</string>
+		<string>Lilac Spotted Tabby Van</string>
+		<string>Red Spotted Tabby Van</string>
+		<string>Cream Spotted Tabby Van</string>
+		<string>Cinnamon Spotted Tabby Van</string>
+		<string>Fawn Spotted Tabby Van</string>
+		<string>Caramel Spotted Tabby Van</string>
+		<string>Apricot Spotted Tabby Van</string>
+		<string>Black Tortie Spotted Tabby Van</string>
+		<string>Blue Tortie Spotted Tabby Van</string>
+		<string>Chocolate Tortie Spotted Tabby Van</string>
+		<string>Lilac Tortie Spotted Tabby Van</string>
+		<string>Cinnamon Tortie Spotted Tabby Van</string>
+		<string>Fawn Tortie Spotted Tabby Van</string>
+		<string>Caramel Tortie Spotted Tabby Van</string>
+		<string>Apricot Tortie Spotted Tabby Van</string>
+		<string>Golden Ticked Tabby Van</string>
+		<string>Black Ticked Tabby Van</string>
+		<string>Blue Ticked Tabby Van</string>
+		<string>Chocolate Ticked Tabby Van</string>
+		<string>Lilac Ticked Tabby Van</string>
+		<string>Red Ticked Tabby Van</string>
+		<string>Cream Ticked Tabby Van</string>
+		<string>Cinnamon Ticked Tabby Van</string>
+		<string>Fawn Ticked Tabby Van</string>
+		<string>Caramel Ticked Tabby Van</string>
+		<string>Apricot Ticked Tabby Van</string>
+		<string>Black Tortie Ticked Tabby Van</string>
+		<string>Blue Tortie Ticked Tabby Van</string>
+		<string>Chocolate Tortie Ticked Tabby Van</string>
+		<string>Lilac Tortie Ticked Tabby Van</string>
+		<string>Cinnamon Tortie Ticked Tabby Van</string>
+		<string>Fawn Tortie Ticked Tabby Van</string>
+		<string>Caramel Tortie Ticked Tabby Van</string>
+		<string>Apricot Tortie Ticked Tabby Van</string>
+		<string>Golden Marbled Tabby Van</string>
+		<string>Black Marbled Tabby Van</string>
+		<string>Blue Marbled Tabby Van</string>
+		<string>Chocolate Marbled Tabby Van</string>
+		<string>Lilac Marbled Tabby Van</string>
+		<string>Red Marbled Tabby Van</string>
+		<string>Cream Marbled Tabby Van</string>
+		<string>Cinnamon Marbled Tabby Van</string>
+		<string>Fawn Marbled Tabby Van</string>
+		<string>Caramel Marbled Tabby Van</string>
+		<string>Apricot Marbled Tabby Van</string>
+		<string>Black Tortie Marbled Tabby Van</string>
+		<string>Blue Tortie Marbled Tabby Van</string>
+		<string>Chocolate Tortie Marbled Tabby Van</string>
+		<string>Lilac Tortie Marbled Tabby Van</string>
+		<string>Cinnamon Tortie Marbled Tabby Van</string>
+		<string>Fawn Tortie Marbled Tabby Van</string>
+		<string>Caramel Tortie Marbled Tabby Van</string>
+		<string>Apricot Tortie Marbled Tabby Van</string>
+		<string>Black Silver Classic Tabby Van</string>
+		<string>Blue Silver Classic Tabby Van</string>
+		<string>Chocolate Silver Classic Tabby Van</string>
+		<string>Lilac Silver Classic Tabby Van</string>
+		<string>Red Silver Classic Tabby Van</string>
+		<string>Cream Silver Classic Tabby Van</string>
+		<string>Cinnamon Silver Classic Tabby Van</string>
+		<string>Fawn Silver Classic Tabby Van</string>
+		<string>Caramel Silver Classic Tabby Van</string>
+		<string>Apricot Silver Classic Tabby Van</string>
+		<string>Black Tortie Silver Classic Tabby Van</string>
+		<string>Blue Tortie Silver Classic Tabby Van</string>
+		<string>Chocolate Tortie Silver Classic Tabby Van</string>
+		<string>Lilac Tortie Silver Classic Tabby Van</string>
+		<string>Cinnamon Tortie Silver Classic Tabby Van</string>
+		<string>Fawn Tortie Silver Classic Tabby Van</string>
+		<string>Caramel Tortie Silver Classic Tabby Van</string>
+		<string>Apricot Tortie Silver Classic Tabby Van</string>
+		<string>Black Silver Mackerel Tabby Van</string>
+		<string>Blue Silver Mackerel Tabby Van</string>
+		<string>Chocolate Silver Mackerel Tabby Van</string>
+		<string>Lilac Silver Mackerel Tabby Van</string>
+		<string>Red Silver Mackerel Tabby Van</string>
+		<string>Cream Silver Mackerel Tabby Van</string>
+		<string>Cinnamon Silver Mackerel Tabby Van</string>
+		<string>Fawn Silver Mackerel Tabby Van</string>
+		<string>Caramel Silver Mackerel Tabby Van</string>
+		<string>Apricot Silver Mackerel Tabby Van</string>
+		<string>Black Tortie Silver Mackerel Tabby Van</string>
+		<string>Blue Tortie Silver Mackerel Tabby Van</string>
+		<string>Chocolate Tortie Silver Mackerel Tabby Van</string>
+		<string>Lilac Tortie Silver Mackerel Tabby Van</string>
+		<string>Cinnamon Tortie Silver Mackerel Tabby Van</string>
+		<string>Fawn Tortie Silver Mackerel Tabby Van</string>
+		<string>Caramel Tortie Silver Mackerel Tabby Van</string>
+		<string>Apricot Tortie Silver Mackerel Tabby Van</string>
+		<string>Black Silver Spotted Tabby Van</string>
+		<string>Blue Silver Spotted Tabby Van</string>
+		<string>Chocolate Silver Spotted Tabby Van</string>
+		<string>Lilac Silver Spotted Tabby Van</string>
+		<string>Red Silver Spotted Tabby Van</string>
+		<string>Cream Silver Spotted Tabby Van</string>
+		<string>Cinnamon Silver Spotted Tabby Van</string>
+		<string>Fawn Silver Spotted Tabby Van</string>
+		<string>Caramel Silver Spotted Tabby Van</string>
+		<string>Apricot Silver Spotted Tabby Van</string>
+		<string>Black Tortie Silver Spotted Tabby Van</string>
+		<string>Blue Tortie Silver Spotted Tabby Van</string>
+		<string>Chocolate Tortie Silver Spotted Tabby Van</string>
+		<string>Lilac Tortie Silver Spotted Tabby Van</string>
+		<string>Cinnamon Tortie Silver Spotted Tabby Van</string>
+		<string>Fawn Tortie Silver Spotted Tabby Van</string>
+		<string>Caramel Tortie Silver Spotted Tabby Van</string>
+		<string>Apricot Tortie Silver Spotted Tabby Van</string>
+		<string>Black Silver Ticked Tabby Van</string>
+		<string>Blue Silver Ticked Tabby Van</string>
+		<string>Chocolate Silver Ticked Tabby Van</string>
+		<string>Lilac Silver Ticked Tabby Van</string>
+		<string>Red Silver Ticked Tabby Van</string>
+		<string>Cream Silver Ticked Tabby Van</string>
+		<string>Cinnamon Silver Ticked Tabby Van</string>
+		<string>Fawn Silver Ticked Tabby Van</string>
+		<string>Caramel Silver Ticked Tabby Van</string>
+		<string>Apricot Silver Ticked Tabby Van</string>
+		<string>Black Tortie Silver Ticked Tabby Van</string>
+		<string>Blue Tortie Silver Ticked Tabby Van</string>
+		<string>Chocolate Tortie Silver Ticked Tabby Van</string>
+		<string>Lilac Tortie Silver Ticked Tabby Van</string>
+		<string>Cinnamon Tortie Silver Ticked Tabby Van</string>
+		<string>Fawn Tortie Silver Ticked Tabby Van</string>
+		<string>Caramel Tortie Silver Ticked Tabby Van</string>
+		<string>Apricot Tortie Silver Ticked Tabby Van</string>
+		<string>Black Silver Marbled Tabby Van</string>
+		<string>Blue Silver Marbled Tabby Van</string>
+		<string>Chocolate Silver Marbled Tabby Van</string>
+		<string>Lilac Silver Marbled Tabby Van</string>
+		<string>Red Silver Marbled Tabby Van</string>
+		<string>Cream Silver Marbled Tabby Van</string>
+		<string>Cinnamon Silver Marbled Tabby Van</string>
+		<string>Fawn Silver Marbled Tabby Van</string>
+		<string>Caramel Silver Marbled Tabby Van</string>
+		<string>Apricot Silver Marbled Tabby Van</string>
+		<string>Black Tortie Silver Marbled Tabby Van</string>
+		<string>Blue Tortie Silver Marbled Tabby Van</string>
+		<string>Chocolate Tortie Silver Marbled Tabby Van</string>
+		<string>Lilac Tortie Silver Marbled Tabby Van</string>
+		<string>Cinnamon Tortie Silver Marbled Tabby Van</string>
+		<string>Fawn Tortie Silver Marbled Tabby Van</string>
+		<string>Caramel Tortie Silver Marbled Tabby Van</string>
+		<string>Apricot Tortie Silver Marbled Tabby Van</string>
+	</array>
 	<key>Australian Mist</key>
 	<array>
 		<string>Brown Spotted</string>

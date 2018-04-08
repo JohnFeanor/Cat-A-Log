@@ -89,6 +89,7 @@
 		4F6214891BB34A1B00F87183 /* Authentication.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F6214881BB34A1B00F87183 /* Authentication.plist */; };
 		4F62148B1BB34F2000F87183 /* icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4F62148A1BB34F2000F87183 /* icon.jpg */; };
 		4F63A6B91BB819760009C5A4 /* Cat on book.icns in Resources */ = {isa = PBXBuildFile; fileRef = 4F63A6B81BB819760009C5A4 /* Cat on book.icns */; };
+		4F6A78ED2079E58B006CACF7 /* CCCAAwards1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F6A78EC2079E58B006CACF7 /* CCCAAwards1.txt */; };
 		4F7107FE1B77748E00E21AAC /* Challenges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7107FD1B77748E00E21AAC /* Challenges.swift */; };
 		4F7812B51BB14AEA0036AD80 /* Section2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F7812B41BB14AEA0036AD80 /* Section2.txt */; };
 		4F8E87321BAFB19E00497D2F /* TitleEditorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8E87301BAFB19E00497D2F /* TitleEditorController.swift */; };
@@ -220,6 +221,7 @@
 		4F6214881BB34A1B00F87183 /* Authentication.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Authentication.plist; path = pLists/Authentication.plist; sourceTree = "<group>"; };
 		4F62148A1BB34F2000F87183 /* icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon.jpg; sourceTree = "<group>"; };
 		4F63A6B81BB819760009C5A4 /* Cat on book.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "Cat on book.icns"; sourceTree = "<group>"; };
+		4F6A78EC2079E58B006CACF7 /* CCCAAwards1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = CCCAAwards1.txt; sourceTree = "<group>"; };
 		4F7107FD1B77748E00E21AAC /* Challenges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Challenges.swift; path = "Data Sources.swift/Challenges.swift"; sourceTree = "<group>"; };
 		4F7812B41BB14AEA0036AD80 /* Section2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Section2.txt; path = templates/Section2.txt; sourceTree = "<group>"; };
 		4F8E87301BAFB19E00497D2F /* TitleEditorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TitleEditorController.swift; path = Controllers/TitleEditorController.swift; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 				4F0F92841BA3DE6F00724D9C /* Box underlined.txt */,
 				4F0F92851BA3DE6F00724D9C /* Breed1.txt */,
 				4F0F92861BA3DE6F00724D9C /* Breed2.txt */,
+				4F6A78EC2079E58B006CACF7 /* CCCAAwards1.txt */,
 				4F0F92871BA3DE6F00724D9C /* Challenge1.txt */,
 				4F0F92881BA3DE6F00724D9C /* Challenge2.txt */,
 				4F0F92891BA3DE6F00724D9C /* Challenge3.txt */,
@@ -535,7 +538,7 @@
 				TargetAttributes = {
 					4F38B8561B6D8CCA006356DD = {
 						CreatedOnToolsVersion = 6.4;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0930;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.Mac = {
 								enabled = 0;
@@ -547,7 +550,7 @@
 					};
 					4F38B8691B6D8CCA006356DD = {
 						CreatedOnToolsVersion = 6.4;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0930;
 						TestTargetID = 4F38B8561B6D8CCA006356DD;
 					};
 				};
@@ -652,6 +655,7 @@
 				4F6214871BB290E400F87183 /* ProgressWindowController.xib in Resources */,
 				4F0F92AD1BA3DE6F00724D9C /* ACFAward start row.txt in Resources */,
 				4F0F92AE1BA3DE6F00724D9C /* ACFAward start table.txt in Resources */,
+				4F6A78ED2079E58B006CACF7 /* CCCAAwards1.txt in Resources */,
 				4F0F92DC1BA3DE6F00724D9C /* Top ten start table.txt in Resources */,
 				4F0F92BF1BA3DE6F00724D9C /* Colour2.txt in Resources */,
 				4F3EFAE41B6DB98C00DA2F5C /* AddShowWindowController.xib in Resources */,
@@ -799,7 +803,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Feanor.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "Cat-A-Log";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = NSW;
 		};
@@ -816,7 +820,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Feanor.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "Cat-A-Log";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cat-A-Log.app/Contents/MacOS/Cat-A-Log";
 			};
 			name = NSW;
@@ -880,7 +884,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Feanor.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "Cat-A-Log";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Canberra;
 		};
@@ -897,7 +901,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Feanor.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "Cat-A-Log";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cat-A-Log.app/Contents/MacOS/Cat-A-Log";
 			};
 			name = Canberra;
@@ -962,7 +966,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Feanor.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "Cat-A-Log";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = FCCQ;
 		};
@@ -979,7 +983,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Feanor.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "Cat-A-Log";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cat-A-Log.app/Contents/MacOS/Cat-A-Log";
 			};
 			name = FCCQ;
@@ -1043,7 +1047,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Feanor.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "Cat-A-Log";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Trial;
 		};
@@ -1060,7 +1064,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Feanor.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "Cat-A-Log";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cat-A-Log.app/Contents/MacOS/Cat-A-Log";
 			};
 			name = Trial;
@@ -1178,7 +1182,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Feanor.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "Cat-A-Log";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -1191,7 +1195,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Feanor.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "Cat-A-Log";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -1212,7 +1216,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Feanor.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "Cat-A-Log";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cat-A-Log.app/Contents/MacOS/Cat-A-Log";
 			};
 			name = Debug;
@@ -1230,7 +1234,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Feanor.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "Cat-A-Log";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cat-A-Log.app/Contents/MacOS/Cat-A-Log";
 			};
 			name = Release;

@@ -19,19 +19,19 @@ class EntrySheetController: NSWindowController {
   @IBOutlet weak var initialTextField: NSTextField!
   @IBOutlet weak var datePicker: NSDatePicker!
   
-  var dateSet = false
+  @objc var dateSet = false
   
-  var managedObjectContext: NSManagedObjectContext!
+  @objc var managedObjectContext: NSManagedObjectContext!
   
-  var entryData: [String : AnyObject] {
+  @objc var entryData: [String : AnyObject] {
     let properties = Entry.properties + Cat.properties
     return self.dictionaryWithValues(forKeys: properties) as [String : AnyObject]
   }
   
-  let cageNames = Globals.cageTypes.names
-  let cageSizes = Globals.cageTypes.sizes
+  @objc let cageNames = Globals.cageTypes.names
+  @objc let cageSizes = Globals.cageTypes.sizes
   
-  let _litterCage: Int = {
+  @objc let _litterCage: Int = {
     if Globals.cageTypes.names.count > 0 {
       return Globals.cageTypes.names.count - 1
     } else {
@@ -39,7 +39,7 @@ class EntrySheetController: NSWindowController {
     }
   }()
   
-  let _hireCage: Int = {
+  @objc let _hireCage: Int = {
     if Globals.cageTypes.names.count > 1 {
       return Globals.cageTypes.names.count - 2
     } else {
@@ -47,7 +47,7 @@ class EntrySheetController: NSWindowController {
     }
   }()
   
-  let _otherCage: Int = {
+  @objc let _otherCage: Int = {
     if Globals.cageTypes.names.count > 2 {
       return Globals.cageTypes.names.count - 3
     } else {
@@ -57,7 +57,7 @@ class EntrySheetController: NSWindowController {
 
   // MARK: - Entry sheet items
   // -------------------------
-  dynamic var registration = pending {
+  @objc dynamic var registration = pending {
     didSet {
       // find out if this cat is in the database
       // and fill in the details if it is
@@ -71,8 +71,8 @@ class EntrySheetController: NSWindowController {
       }
     }
   }
-  dynamic var title = String()
-  dynamic var name = String() {
+  @objc dynamic var title = String()
+  @objc dynamic var name = String() {
     didSet {
       let prefixes = name.components(separatedBy: " ")
       if !prefixes.isEmpty {
@@ -98,10 +98,10 @@ class EntrySheetController: NSWindowController {
     }
   }
   
-  dynamic var breed     = String()
-  dynamic var colour    = String()
-  dynamic var sex       = String()
-  dynamic var challenge = String() {
+  @objc dynamic var breed     = String()
+  @objc dynamic var colour    = String()
+  @objc dynamic var sex       = String()
+  @objc dynamic var challenge = String() {
     didSet {
       if challenge != Challenges.nameOf(ChallengeTypes.kitten) && !dateSet {
         let showdate = Globals.currentShow?.date ?? Date()
@@ -112,15 +112,15 @@ class EntrySheetController: NSWindowController {
       }
     }
   }
-  dynamic var birthDate: Date = {
+  @objc dynamic var birthDate: Date = {
     let showdate = Globals.currentShow?.date ?? Date()
     return (Calendar.current as NSCalendar).date(byAdding: .month, value: -5, to: showdate, options: []) ?? showdate
     }()
   
-  dynamic var sire      = String()
-  dynamic var dam       = String()
-  dynamic var exhibitor = String()
-  dynamic var breeder   = String() {
+  @objc dynamic var sire      = String()
+  @objc dynamic var dam       = String()
+  @objc dynamic var exhibitor = String()
+  @objc dynamic var breeder   = String() {
     didSet {
       if self.exhibitor.isEmpty {
         self.exhibitor = breeder
@@ -128,7 +128,7 @@ class EntrySheetController: NSWindowController {
     }
   }
   
-  dynamic var cageType = zero {
+  @objc dynamic var cageType = zero {
     didSet {
       cageSize = Globals.cageTypes.sizes[cageType]
       if cageSize == _otherCage {
@@ -144,33 +144,33 @@ class EntrySheetController: NSWindowController {
       hireCage = (cageType == _hireCage)
     }
   }
-  dynamic var cageSize = Globals.cageTypes.sizes[0]
+  @objc dynamic var cageSize = Globals.cageTypes.sizes[0]
   
-  dynamic var hireCage    = false
-  dynamic var litterCage  = false
+  @objc dynamic var hireCage    = false
+  @objc dynamic var litterCage  = false
   
-  dynamic var ring1 = true
-  dynamic var ring2 = Globals.currentShow!.numberOfRings.intValue > 1
-  dynamic var ring3 = Globals.currentShow!.numberOfRings.intValue > 2
-  dynamic var ring4 = Globals.currentShow!.numberOfRings.intValue > 3
-  dynamic var ring5 = Globals.currentShow!.numberOfRings.intValue > 4
-  dynamic var ring6 = Globals.currentShow!.numberOfRings.intValue > 5
+  @objc dynamic var ring1 = true
+  @objc dynamic var ring2 = Globals.currentShow!.numberOfRings.intValue > 1
+  @objc dynamic var ring3 = Globals.currentShow!.numberOfRings.intValue > 2
+  @objc dynamic var ring4 = Globals.currentShow!.numberOfRings.intValue > 3
+  @objc dynamic var ring5 = Globals.currentShow!.numberOfRings.intValue > 4
+  @objc dynamic var ring6 = Globals.currentShow!.numberOfRings.intValue > 5
   
-  dynamic var ring1Available = true
-  dynamic var ring2Available = Globals.currentShow!.numberOfRings.intValue > 1
-  dynamic var ring3Available = Globals.currentShow!.numberOfRings.intValue > 2
-  dynamic var ring4Available = Globals.currentShow!.numberOfRings.intValue > 3
-  dynamic var ring5Available = Globals.currentShow!.numberOfRings.intValue > 4
-  dynamic var ring6Available = Globals.currentShow!.numberOfRings.intValue > 5
+  @objc dynamic var ring1Available = true
+  @objc dynamic var ring2Available = Globals.currentShow!.numberOfRings.intValue > 1
+  @objc dynamic var ring3Available = Globals.currentShow!.numberOfRings.intValue > 2
+  @objc dynamic var ring4Available = Globals.currentShow!.numberOfRings.intValue > 3
+  @objc dynamic var ring5Available = Globals.currentShow!.numberOfRings.intValue > 4
+  @objc dynamic var ring6Available = Globals.currentShow!.numberOfRings.intValue > 5
   
-  dynamic var willWork = false
-  dynamic var catalogueRequired = false
-  dynamic var vaccinated = false
+  @objc dynamic var willWork = false
+  @objc dynamic var catalogueRequired = false
+  @objc dynamic var vaccinated = false
   
   // MARK: - Other variables for sheet
   // ---------------------------------
-  dynamic var enableCageSizeTextField = false
-  var filledFields = false
+  @objc dynamic var enableCageSizeTextField = false
+  @objc var filledFields = false
 
   // ****************
   // MARK: - Methods
@@ -180,8 +180,8 @@ class EntrySheetController: NSWindowController {
     // not doing anything, just ensuring this class is the target of the popup
   }
   
-  override var windowNibName: String {
-    return "EntrySheetController"
+  override var windowNibName: NSNib.Name? {
+    return NSNib.Name("EntrySheetController")
   }
   
   override func windowDidLoad() {
@@ -212,7 +212,7 @@ class EntrySheetController: NSWindowController {
     
   // Helper methods to copy items from an existing Cat or Entry
   // ----------------------------------------------------------
-  func setSheetTo(_ original: Cat?, except exceptions: [String]?) {
+  @objc func setSheetTo(_ original: Cat?, except exceptions: [String]?) {
     if let original = original {
       dateSet = true
       filledFields = true
@@ -228,7 +228,7 @@ class EntrySheetController: NSWindowController {
     }
   }
   
-  func setSheetTo(_ original: Entry) {
+  @objc func setSheetTo(_ original: Entry) {
     for key in Cat.properties {
       dateSet = true
       filledFields = true
@@ -273,7 +273,7 @@ class EntrySheetController: NSWindowController {
   // ----------------------------------------------------
   fileprivate let possibleFaults = ["registration", "name", "breed", "colour", "sex", "challenge", "sire", "dam", "breeder", "exhibitor"]
 
-  func validateSheet() -> String? {
+  @objc func validateSheet() -> String? {
     
     var faults = "Have not given "
     var okToGo = true
@@ -368,16 +368,16 @@ class EntrySheetController: NSWindowController {
     } else {
       window!.endEditing(for: nil)
       speaker.startSpeaking("adding \(self.name)")
-      dismissWithModalResponse(NSModalResponseOK)
+      dismissWithModalResponse(NSApplication.ModalResponse.OK)
     }
   }
   
   @IBAction func cancelButtonPressed(_ sender: NSButton) {
     speaker.startSpeaking("Cancelled")
-    dismissWithModalResponse(NSModalResponseCancel)
+    dismissWithModalResponse(NSApplication.ModalResponse.cancel)
   }
   
-  func dismissWithModalResponse(_ response: NSModalResponse)
+  @objc func dismissWithModalResponse(_ response: NSApplication.ModalResponse)
   {
     window!.sheetParent!.endSheet(window!, returnCode: response)
   }

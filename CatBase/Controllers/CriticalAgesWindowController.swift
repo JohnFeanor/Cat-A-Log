@@ -10,11 +10,11 @@ import Cocoa
 
 class CriticalAgesWindowController: NSWindowController {
   
-    override var windowNibName: String {
-    return "CriticalAgesWindowController"
+    override var windowNibName: NSNib.Name? {
+    return NSNib.Name("CriticalAgesWindowController")
   }
 
-  dynamic var showAgeMinWeeks: Int {
+  @objc dynamic var showAgeMinWeeks: Int {
     get {
       return Globals.minShowAge.weeks
     }
@@ -23,7 +23,7 @@ class CriticalAgesWindowController: NSWindowController {
     }
   }
   
-  dynamic var showAgeMinMonths: Int {
+  @objc dynamic var showAgeMinMonths: Int {
     get {
       return Globals.minShowAge.months
     }
@@ -32,7 +32,7 @@ class CriticalAgesWindowController: NSWindowController {
     }
   }
   
-  dynamic var litterAgeMinWeeks: Int {
+  @objc dynamic var litterAgeMinWeeks: Int {
     get {
       return Globals.maxLitterAge.weeks
     }
@@ -41,7 +41,7 @@ class CriticalAgesWindowController: NSWindowController {
     }
   }
   
-  dynamic var litterAgeMinMonths: Int {
+  @objc dynamic var litterAgeMinMonths: Int {
     get {
       return Globals.maxLitterAge.months
     }
@@ -50,7 +50,7 @@ class CriticalAgesWindowController: NSWindowController {
     }
   }
   
-  dynamic var maxPendingAgeWeeks: Int {
+  @objc dynamic var maxPendingAgeWeeks: Int {
     get {
       return Globals.maxPendingAge.weeks
     }
@@ -59,7 +59,7 @@ class CriticalAgesWindowController: NSWindowController {
     }
   }
   
-  dynamic var maxPendingAgeMonths: Int {
+  @objc dynamic var maxPendingAgeMonths: Int {
     get {
       return Globals.maxPendingAge.months
     }
@@ -68,7 +68,7 @@ class CriticalAgesWindowController: NSWindowController {
     }
   }
   
-  dynamic var kittenAgeMax: Int {
+  @objc dynamic var kittenAgeMax: Int {
     get {
       return Globals.maxKittenAge
     }

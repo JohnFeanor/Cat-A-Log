@@ -16,7 +16,7 @@ typealias DictOfStringArray = [String : [String]]
 // *******************************
 
 extension NSControl {
-  var currentBreed: String {
+  @objc var currentBreed: String {
     get {
       return stringValue
     }
@@ -210,6 +210,18 @@ var bestInSectionKittens: Bool {
 }
 
 
+var ACFAoEAwards: Bool {
+  let answer: Bool
+  switch (Globals.currentShowType) {
+  case NSWShowType, ACFShowType, QFAShowType:
+    answer = true
+    break;
+  default:
+    answer = false
+    break;
+  }
+  return answer
+}
 
 // ********************************
 // MARK: - Other helper functions
@@ -334,14 +346,14 @@ func readFile(_ fileName: String) -> Data {
 // ***************************
 
 func areYouSure(_ message: String) -> Bool {
-  return runAlertWithMessage(message, buttons: "OK", "Cancel") == NSAlertFirstButtonReturn
+  return runAlertWithMessage(message, buttons: "OK", "Cancel") == NSApplication.ModalResponse.alertFirstButtonReturn
 }
 
 func errorAlert(message: String) {
   _ = runAlertWithMessage(message, buttons: "OK")
 }
 
-func runAlertWithMessage(_ message: String, buttons: String ...) -> NSModalResponse {
+func runAlertWithMessage(_ message: String, buttons: String ...) -> NSApplication.ModalResponse {
   let alert = NSAlert()
   for button in buttons {
     alert.addButton(withTitle: button)
@@ -363,25 +375,25 @@ class Globals: NSObject {
   @IBOutlet var theShowController: NSArrayController!
   @IBOutlet var theEntriesController: NSArrayController!
   
-  static var dataByGroup:[String : NSDictionary] = {
+  @objc static var dataByGroup:[String : NSDictionary] = {
     return dictFromPList("ShowFormats") as! [String : [String : [AnyObject]]]
     }() as [String : NSDictionary]
 
-  static var currentShow: Show? = nil
-  static var currentEntry: Entry? = nil
-  static var defaultShowAffliation: String {
+  @objc static var currentShow: Show? = nil
+  @objc static var currentEntry: Entry? = nil
+  @objc static var defaultShowAffliation: String {
     let ans = Globals.showTypes.first ?? "ACF Show"
     return ans
   }
   
-  static var currentShowName: String {
+  @objc static var currentShowName: String {
     if currentShow == nil {
       return ""
     }
     return currentShow!.name
   }
   
-  static var currentShowDate: String {
+  @objc static var currentShowDate: String {
     if currentShow == nil {
       fatalError("Nil show when trying to get date for nil show")
     }
@@ -392,23 +404,23 @@ class Globals: NSObject {
     return longDate.string(from: currentShow!.date as Date)
   }
   
-  dynamic var showTypes: [String] {
+  @objc dynamic var showTypes: [String] {
     return Globals.showTypes
   }
   
-  static var showTypes: [String] = {
+  @objc static var showTypes: [String] = {
     let allKeys = Array(dataByGroup.keys)
     return allKeys.sorted(by: >)
     }()
  
-  static var currentShowType: String {
+  @objc static var currentShowType: String {
     if currentShow == nil {
       print("Nil show when trying to get type for nil show")
     }
     return Globals.currentShow?.affiliation ?? Globals.defaultShowAffliation
   }
   
-  static var numberOfRingsInShow: Int {
+  @objc static var numberOfRingsInShow: Int {
     if let show = Globals.currentShow {
       return show.numberOfRings.intValue
     } else {
@@ -420,11 +432,11 @@ class Globals: NSObject {
     return dictFromPList("agouti") as! [String: [String]]
   }()
   
-  static var agoutiBreeds: [String]  {
+  @objc static var agoutiBreeds: [String]  {
     return Globals.agouti["breeds"]!
   }
   
-  static var agoutiClasses: [String] {
+  @objc static var agoutiClasses: [String] {
     return Globals.agouti["classes"]!
   }
   
@@ -446,7 +458,7 @@ class Globals: NSObject {
     }
   }()
   
-  static var litterCageLength: Int {
+  @objc static var litterCageLength: Int {
     return Globals.cageTypes.sizes[6]
   }
   
@@ -454,7 +466,7 @@ class Globals: NSObject {
   // MARK: - Critical ages
   // ========================
 
-  static var criticalAges: [String : [Int]] = {
+  @objc static var criticalAges: [String : [Int]] = {
     return dictFromPList("CriticalAges") as! [String : [Int]]
   }()
   
@@ -470,11 +482,11 @@ class Globals: NSObject {
     return (Globals.criticalAges[Headings.maxPendingAge]![0], Globals.criticalAges[Headings.maxPendingAge]![1])
   }
   
-  static var kittenAgeGroups: [Int] {
+  @objc static var kittenAgeGroups: [Int] {
     return Globals.criticalAges[Headings.kittenAgeGroups]!
   }
   
-  static var maxKittenAge: Int {
+  @objc static var maxKittenAge: Int {
     return kittenAgeGroups[2]
   }
   
@@ -493,18 +505,18 @@ class Globals: NSObject {
     if months != nil { Globals.criticalAges[Headings.maxPendingAge]![1] = months! }
   }
   
-  class func setKittenAgeGroups(_ values: [Int]) {
+  @objc class func setKittenAgeGroups(_ values: [Int]) {
     let size = values.count < 3 ? values.count : 3
     for index in 0 ..< size {
       Globals.criticalAges[Headings.kittenAgeGroups]![index] = values[index]
     }
   }
   
-  class func setMaxKittenAge(months: Int) {
+  @objc class func setMaxKittenAge(months: Int) {
     Globals.criticalAges[Headings.kittenAgeGroups]![2] = months
   }
   
-  class func saveCriticalAges() {
+  @objc class func saveCriticalAges() {
     if !dict(Globals.criticalAges as NSDictionary, toPlist: "CriticalAges") {
       print("Could not save critical ages")
     }
@@ -515,7 +527,7 @@ class Globals: NSObject {
   // MARK: - Methods
   // ========================
   
-  func tableViewSelectionDidChange(_ aNotification: Notification) {
+  @objc func tableViewSelectionDidChange(_ aNotification: Notification) {
     Globals.currentShow = theShowController.selectedObjects?.first as? Show
     Globals.currentEntry = theEntriesController.selectedObjects?.first as? Entry
   }

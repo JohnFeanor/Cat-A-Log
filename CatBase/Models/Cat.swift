@@ -11,24 +11,24 @@ import CoreData
 
 class Cat: NSManagedObject {
   
-  static var nomen = "Cat"
-  static var properties = [Cat.name, Cat.registration, Cat.title, Cat.birthDate, Cat.breed, Cat.breeder, Cat.challenge, Cat.colour, Cat.dam, Cat.exhibitor, Cat.sex, Cat.sire, Cat.vaccinated]
+  @objc static var nomen = "Cat"
+  @objc static var properties = [Cat.name, Cat.registration, Cat.title, Cat.birthDate, Cat.breed, Cat.breeder, Cat.challenge, Cat.colour, Cat.dam, Cat.exhibitor, Cat.sex, Cat.sire, Cat.vaccinated]
   
-  static var positions: [String : Int] = [Cat.name : 0, Cat.registration : 1, Cat.title : 2, Cat.birthDate : 3, Cat.breed : 4, Cat.breeder : 5, Cat.challenge : 6, Cat.colour : 7, Cat.dam : 8, Cat.exhibitor : 9, Cat.sex : 10, Cat.sire : 11]
+  @objc static var positions: [String : Int] = [Cat.name : 0, Cat.registration : 1, Cat.title : 2, Cat.birthDate : 3, Cat.breed : 4, Cat.breeder : 5, Cat.challenge : 6, Cat.colour : 7, Cat.dam : 8, Cat.exhibitor : 9, Cat.sex : 10, Cat.sire : 11]
   
-  static var birthDate    = "birthDate"
-  static var breed        = "breed"
-  static var breeder      = "breeder"
-  static var challenge    = "challenge"
-  static var colour       = "colour"
-  static var dam          = "dam"
-  static var exhibitor    = "exhibitor"
-  static var name         = "name"
-  static var registration = "registration"
-  static var sex          = "sex"
-  static var sire         = "sire"
-  static var title        = "title"
-  static var vaccinated   = "vaccinated"
+  @objc static var birthDate    = "birthDate"
+  @objc static var breed        = "breed"
+  @objc static var breeder      = "breeder"
+  @objc static var challenge    = "challenge"
+  @objc static var colour       = "colour"
+  @objc static var dam          = "dam"
+  @objc static var exhibitor    = "exhibitor"
+  @objc static var name         = "name"
+  @objc static var registration = "registration"
+  @objc static var sex          = "sex"
+  @objc static var sire         = "sire"
+  @objc static var title        = "title"
+  @objc static var vaccinated   = "vaccinated"
   
   @NSManaged var birthDate: Date
   @NSManaged var breed: String
@@ -45,7 +45,7 @@ class Cat: NSManagedObject {
   @NSManaged var vaccinated: NSNumber
   @NSManaged var entries: NSSet?
   
-  convenience init(catData: [String : AnyObject], insertIntoManagedObjectContext context: NSManagedObjectContext?) {
+  @objc convenience init(catData: [String : AnyObject], insertIntoManagedObjectContext context: NSManagedObjectContext?) {
     let catEntity = NSEntityDescription.entity(forEntityName: Cat.nomen, in: context!)
     if catEntity == nil {
       print("Cannot create new cat entity")
@@ -56,14 +56,14 @@ class Cat: NSManagedObject {
     }
   }
   
-  dynamic var birthDateAsString: String {
+  @objc dynamic var birthDateAsString: String {
     let dateFormatter = Foundation.DateFormatter()
     dateFormatter.dateFormat = "dd/MM/yy"
     let date = dateFormatter.string(from: self.birthDate)
     return date
   }
   
-  var catString: String {
+  @objc var catString: String {
     var ans: String = ""
     for key in Cat.properties {
       switch key {
@@ -83,7 +83,7 @@ class Cat: NSManagedObject {
     return ans
   }
   
-  convenience init(array: [String], insertIntoManagedObjectContext context: NSManagedObjectContext?) {
+  @objc convenience init(array: [String], insertIntoManagedObjectContext context: NSManagedObjectContext?) {
     let catEntity = NSEntityDescription.entity(forEntityName: Cat.nomen, in: context!)
     if catEntity == nil {
       fatalError("Cannot create new cat entity")
@@ -111,7 +111,7 @@ class Cat: NSManagedObject {
     }
   }
   
-  func setValuesTo(_ entryData: [String : AnyObject]) {
+  @objc func setValuesTo(_ entryData: [String : AnyObject]) {
     for key in Cat.properties {
       if let value = entryData[key] {
         setValue(value, forKey: key)
@@ -119,7 +119,7 @@ class Cat: NSManagedObject {
     }
   }
   
-  func setValuesToArray(_ array: [String]) {
+  @objc func setValuesToArray(_ array: [String]) {
     setValue(array[Cat.positions[Cat.dam]!], forKey: Cat.dam)
     setValue(array[Cat.positions[Cat.sire]!], forKey: Cat.sire)
     setValue(array[Cat.positions[Cat.breeder]!], forKey: Cat.breeder)
@@ -131,11 +131,11 @@ class Cat: NSManagedObject {
     print("Cat given undefined key: \(key)")
   }
   
-  func dictionary()  -> NSDictionary {
+  @objc func dictionary()  -> NSDictionary {
     return self.dictionaryWithValues(forKeys: Show.properties) as NSDictionary
   }
   
-  var prefix: String {
+  @objc var prefix: String {
     let parts = self.name.components(separatedBy: " ")
     let first = parts.first
     return first ?? ""
@@ -145,11 +145,11 @@ class Cat: NSManagedObject {
   // MARK: - YES/NO queries
   // ************************
   
-  var registrationIsPending: Bool {
+  @objc var registrationIsPending: Bool {
     return self.registration.isPending
   }
   
-  var ageinMonths: Int {
+  @objc var ageinMonths: Int {
     if let showDate = Globals.currentShow?.date {
       let ageInMonths = showDate.monthsDifferenceTo(self.birthDate)
       return ageInMonths
@@ -158,31 +158,31 @@ class Cat: NSManagedObject {
     }
   }
   
-  var isKitten: Bool {
+  @objc var isKitten: Bool {
     guard let currentShow = Globals.currentShow
       else { fatalError("CurrentShow is nil when trying to determine if cat is a kitten") }
     return currentShow.isKittenIfBornOn(self.birthDate)
   }
   
-  var isEntire: Bool {
+  @objc var isEntire: Bool {
     return Sex.isEntire(self.sex) ?? false
   }
   
-  var isCompanion: Bool {
+  @objc var isCompanion: Bool {
     return Breeds.nonPedigreeBreed(self.breed)
   }
   
-  var isTabby: Bool {
+  @objc var isTabby: Bool {
     return colour.lowercased().contains("tabby")
   }
   
-  var isMale: Bool {
+  @objc var isMale: Bool {
     guard let rank = Sex.rankOf(self.sex)
       else { return false }
     return (rank % 2 == 0)
   }
 
-  var isLimited : Bool {
+  @objc var isLimited : Bool {
     if isCCCAShow {
       return cccaLimitedBreeds.contains(self.breed)
     } else {
@@ -190,7 +190,7 @@ class Cat: NSManagedObject {
     }
   }
 
-  var hasWhite: Bool {
+  @objc var hasWhite: Bool {
     let color = colour.lowercased()
     if color.contains("& white")    { return true }
     if color.contains("bi-colour") { return true }
@@ -205,17 +205,16 @@ class Cat: NSManagedObject {
   // MARK: - String queries
   // *************************
   
-  var gender: String {
+  @objc var gender: String {
     if self.isKitten { return Challenges.nameOf(.kitten) }
     return self.sex
   }
   
-  var group: String {
-    print("Requesting breed name for \(self.name)")
+  @objc var group: String {
     return Breeds.nameOfGroupForBreed(self.breed)
   }
   
-  var ageCategory: String {
+  @objc var ageCategory: String {
     if Globals.kittenAgeGroups.count < 3 {
       fatalError("There are \(Globals.kittenAgeGroups.count) kitten age groups instead of 3")
     }
@@ -229,14 +228,14 @@ class Cat: NSManagedObject {
     return "under \(Globals.kittenAgeGroups[2]) mths"
   }
   
-  var age: String {
+  @objc var age: String {
     if let showDate = Globals.currentShow?.date {
       return self.birthDate.differenceInMonthsAndYears(showDate)
     }
     fatalError("Could not determine cat: \(self.name)'s age")
   }
   
-  var sectionName: String {
+  @objc var sectionName: String {
     if self.isCompanion { return "Companion" }
     if self.isKitten { return "Kitten" }
     if self.isEntire { return "Entire" }
@@ -247,15 +246,15 @@ class Cat: NSManagedObject {
   // MARK: - Ranking queries
   // *************************
   
-  var groupNumber: Int {
+  @objc var groupNumber: Int {
     return Breeds.groupNumberOf(self.breed)
   }
   
-  var breedRank: Int {
+  @objc var breedRank: Int {
     return Breeds.rankOf(self.breed) ?? 999
   }
   
-  var section: Int {
+  @objc var section: Int {
     if self.isKitten { return 1 }
     if self.isEntire { return 2 }
     return 3
@@ -304,7 +303,7 @@ class Cat: NSManagedObject {
     }
   }
   
-  var colourRank: Int {
+  @objc var colourRank: Int {
     
     if let ans = Colours.rankOf(self.colour, forBreed: self.breed) {
       return ans
@@ -313,7 +312,7 @@ class Cat: NSManagedObject {
     }
   }
   
-  var ageRank: Int {
+  @objc var ageRank: Int {
     if let showDate = Globals.currentShow?.date {
       let catAge = showDate.monthsDifferenceTo(self.birthDate)
       for age in Globals.kittenAgeGroups {
@@ -325,14 +324,14 @@ class Cat: NSManagedObject {
     return 999
   }
   
-  var ageInMonths: Int {
+  @objc var ageInMonths: Int {
     if let showDate = Globals.currentShow?.date {
       return showDate.monthsDifferenceTo(self.birthDate)
     }
     return 0
   }
   
-  var sexRank: Int {
+  @objc var sexRank: Int {
     return Sex.rankOf(self.sex) ?? 999
   }
   
@@ -340,7 +339,7 @@ class Cat: NSManagedObject {
   // MARK: - Cat comparision
   // *************************
   
-  func compareWith(_ anotherCat: Cat) -> ComparisonResult {
+  @objc func compareWith(_ anotherCat: Cat) -> ComparisonResult {
     
     // first compare on group
     // ----------------------

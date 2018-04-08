@@ -13,26 +13,26 @@ class ProgressWindowController: NSWindowController {
   
   @IBOutlet weak var progressBar: NSProgressIndicator!
   
-  dynamic var progressLabel = "Updating cats"
-  dynamic var progressValue = 100.0
+  @objc dynamic var progressLabel = "Updating cats"
+  @objc dynamic var progressValue = 100.0
   
   fileprivate var masterWindow: NSWindow? = nil
   
-  override var windowNibName: String {
-    return "ProgressWindowController"
+  override var windowNibName: NSNib.Name? {
+    return NSNib.Name("ProgressWindowController")
   }
   
   override func windowDidLoad() {
     super.windowDidLoad()
   }
   
-  var progressBarSize: Double = 100.0
+  @objc var progressBarSize: Double = 100.0
   
-  func incrementProgress() {
+  @objc func incrementProgress() {
     progressValue += 1.0
   }
   
-  func beginCountDown(onWindow master: NSWindow, withLabel label: String? = nil) {
+  @objc func beginCountDown(onWindow master: NSWindow, withLabel label: String? = nil) {
     progressValue = 0.0
     if label != nil {
       self.progressLabel = label!
@@ -47,7 +47,7 @@ class ProgressWindowController: NSWindowController {
     }
   }
   
-  func endCountDown() {
+  @objc func endCountDown() {
     if progressBar != nil {
       progressBar.stopAnimation(self)
     }
