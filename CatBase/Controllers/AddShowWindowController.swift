@@ -8,19 +8,21 @@
 
 import Cocoa
 
-private let zero = NSNumber(value: 0 as Int)
-private let three = NSNumber(value: 3 as Int)
-
-private let months = 0
-private let weeks = 1
-
-
 class AddShowWindowController: NSWindowController {
   
-  @IBOutlet weak var minAgeTextField: NSTextField!
   @IBOutlet weak var nameTextField: NSTextField!
-
-  @objc fileprivate dynamic let timeUnits = ["Months", "Weeks"]
+  @IBOutlet weak var LhJudge2: NSTextField!
+  @IBOutlet weak var ShJudge2: NSTextField!
+  @IBOutlet weak var LhJudge3: NSTextField!
+  @IBOutlet weak var ShJudge3: NSTextField!
+  @IBOutlet weak var LhJudge4: NSTextField!
+  @IBOutlet weak var ShJudge4: NSTextField!
+  @IBOutlet weak var LhJudge5: NSTextField!
+  @IBOutlet weak var ShJudge5: NSTextField!
+  @IBOutlet weak var LhJudge6: NSTextField!
+  @IBOutlet weak var ShJudge6: NSTextField!
+  
+  var judgesNames:[[NSTextField]] = []
   
   @objc var showData: [String : AnyObject]  {
     return self.dictionaryWithValues(forKeys: Show.properties) as [String : AnyObject]
@@ -51,33 +53,34 @@ class AddShowWindowController: NSWindowController {
   @objc fileprivate dynamic var judgeSH5: String = ""
   @objc fileprivate dynamic var judgeSH6: String = ""
   
-  @objc fileprivate dynamic var numberOfRings: NSNumber = three
- 
-  @objc fileprivate dynamic var minimumAge: NSNumber = three
-  
-  
-  // MARK: - Variables for the entry sheet not part of a show
-  
-  @objc fileprivate dynamic var timeUnit: Int = months  {
+  @objc fileprivate dynamic var numberOfRings = 3 {
     didSet {
-      self.window!.makeFirstResponder(self.minAgeTextField)
+      var count: Int = 1
+      
+      for judges in judgesNames {
+        judges[0].isEnabled = numberOfRings > count
+        judges[1].isEnabled = numberOfRings > count
+        count += 1
+      }
     }
   }
   
+
   // ====================
   // MARK: - Methods
   // ====================
   
   override func windowDidLoad() {
     super.windowDidLoad()
-    
-    // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+    judgesNames = [[LhJudge2, ShJudge2], [LhJudge3, ShJudge3], [LhJudge4, ShJudge4], [LhJudge5, ShJudge5], [LhJudge6, ShJudge6]]
+
+    // reinitalise the number of shows to enable the proper judges name textfields
+    let n = numberOfRings
+    numberOfRings = n
   }
   
-  
   // initialize the sheet to an existing Show
-  
-  @objc func setToShow(show: Show) {
+    @objc func setToShow(show: Show) {
     for property in Show.properties {
       self.setValue(show.value(forKey: property), forKey: property)
     }
