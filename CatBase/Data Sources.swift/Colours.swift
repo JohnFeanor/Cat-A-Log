@@ -76,10 +76,11 @@ class Colours: DataSource, NSTableViewDataSource {
   override var list: [String] {
     get {
       if currentBreed != nil && !currentBreed!.isEmpty {
-        return Colours.list[currentBreed!]!
-      } else {
-        return []
+        if let answer = Colours.list[currentBreed!] {
+          return answer
+        }
       }
+      return []
     }
   }
   

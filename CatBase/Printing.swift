@@ -64,6 +64,8 @@ private let Gold_sheet          = "Gold sheet"
 private let End_gold            = "End gold"
 private let Platinum_sheet      = "Platinum sheet"
 private let End_platinum        = "End platinum"
+private let Exhibitor_sheet     = "Exhibitor sheet"
+private let End_exhibitor       = "End exhibitor"
 private let Companion_sheet     = "Companion sheet"
 private let End_companion       = "End companion"
 private let Kitten_sheet        = "Kitten sheet"
@@ -168,7 +170,7 @@ struct Litter {
     if self.dam != cat.dam { return false }
     return true
   }
-
+  
   mutating func addKittenOfSex(_ sex: String) {
     switch sex {
     case Sex.sexes[0]:
@@ -199,7 +201,7 @@ private struct PrestigeChallenge {
 // MARK: - Helper functions
 
 private func newURLfrom(_ oldURL : URL, with newName: String) -> URL {
-    return oldURL.deletingLastPathComponent().appendingPathComponent(newName)
+  return oldURL.deletingLastPathComponent().appendingPathComponent(newName)
   //  fatalError("Cannot create a new URL with extension \(newName) from \(oldURL)")
 }
 
@@ -248,9 +250,21 @@ extension MainWindowController {
     var kittenData      = NSMutableData()
     var listData        = NSMutableData()
     var statisticsData  = NSMutableData()
-
+    
     let headerFiles     = NSMutableData()
-
+    
+    struct exhibitDetails {
+      var wantsCatalogue : Bool
+      var cats: [(cage : Int, name: String)]
+      
+      init(catalogue: Bool, cage: Int, cat: String) {
+        wantsCatalogue = catalogue
+        cats = [ (cage, cat)]
+      }
+    }
+    
+    var exhibitors : [String : exhibitDetails] = [:]
+    
     var workers       = Set<String>()
     var catalogues    = Set<String>()
     var breedsPresent = Set<String>()
@@ -510,7 +524,7 @@ extension MainWindowController {
         if thisEntry.cat.isCompanion {
           writeChallenges(openChallenges, ofType: awardOfMerit)
         } else if thisEntry.cat.isKitten {
-           writeChallenges(openChallenges, ofType: "Best in Section")
+          writeChallenges(openChallenges, ofType: "Best in Section")
         } else {
           writeChallenges(openChallenges, ofType: challenge)
         }
@@ -564,7 +578,7 @@ extension MainWindowController {
         
         addData(bestAward1)
       }
-     }
+    }
     
     // End do challenges
     // -----------------------
@@ -679,7 +693,7 @@ extension MainWindowController {
           breedCount += 1
         }
         
-      
+        
         // MARK: Are we on a new section?
         // ---------------------------------
         if entry.inDifferentSectionTo(lastEntry) {
@@ -731,7 +745,7 @@ extension MainWindowController {
               // Do CCCA awards for catalogue and judges notes
               addData(bestAward1)
               addData(bestAward2)
-
+              
               let maleSex: Int
               let femaleSex: Int
               if lastEntry.cat.isEntire {
@@ -746,89 +760,89 @@ extension MainWindowController {
               cccaChallenges.males = []
               writeCCCAAwards(cccaChallenges.females, ofType: "CCCA \(group) \(Sex.nameOf(femaleSex))")
               cccaChallenges.females = []
-
+              
               addData(bestAward1)
             }
           }
         }
       }
       
-          // MARK: - Write up section heading - add a section-break if a new group
-          // --------------------------------
-        if entry.inDifferentSectionTo(lastEntry) {
-          let s: String
-          let thisGroup = Breeds.nameOfGroupForBreed(entry.cat.breed)
-          if entry.cat.isCompanion {
-            s = "\(thisGroup)s"
-          } else if entry.cat.isKitten {
-            s = "\(thisGroup) \(entry.cat.sectionName)s"
-          } else if entry.cat.isEntire {
-            s = "\(thisGroup) \(entry.cat.sectionName)s"
-          } else {
-            s = "\(thisGroup) \(entry.cat.sectionName)"
-          }
-          
-          judgesNotes.addData(Section1_alt, s, section3)
-          if entry.inDifferentGroupTo(lastEntry) {
-            data.addData(section1, "\(sectionNumber)", section2, s, section3)
-            sectionNumber += 1
-            headerFiles.addData(headerSectionNumber, head5)
-            headerSectionNumber += 1
-            for i in 0 ..< 6 {
-              headerFiles.addData((Globals.currentShow!.judge(i, forBreed: entry.cat.breed)), head5_1)
-            }
-            headerFiles.addData(head5_2)
-          } else {
-            data.addData(Section1_alt, s, section3)
-          }
+      // MARK: - Write up section heading - add a section-break if a new group
+      // --------------------------------
+      if entry.inDifferentSectionTo(lastEntry) {
+        let s: String
+        let thisGroup = Breeds.nameOfGroupForBreed(entry.cat.breed)
+        if entry.cat.isCompanion {
+          s = "\(thisGroup)s"
+        } else if entry.cat.isKitten {
+          s = "\(thisGroup) \(entry.cat.sectionName)s"
+        } else if entry.cat.isEntire {
+          s = "\(thisGroup) \(entry.cat.sectionName)s"
+        } else {
+          s = "\(thisGroup) \(entry.cat.sectionName)"
         }
+        
+        judgesNotes.addData(Section1_alt, s, section3)
+        if entry.inDifferentGroupTo(lastEntry) {
+          data.addData(section1, "\(sectionNumber)", section2, s, section3)
+          sectionNumber += 1
+          headerFiles.addData(headerSectionNumber, head5)
+          headerSectionNumber += 1
+          for i in 0 ..< 6 {
+            headerFiles.addData((Globals.currentShow!.judge(i, forBreed: entry.cat.breed)), head5_1)
+          }
+          headerFiles.addData(head5_2)
+        } else {
+          data.addData(Section1_alt, s, section3)
+        }
+      }
       
-        
-        // MARK: - Are we on a new breed
-        // ------------------------------
-        if entry.newBreedTo(lastEntry) {
-          
-          // Check to see if there were any litters
-          if entry.cat.isKitten && !entry.cat.isCompanion {
-            for litter in litters {
-              if entry.cat.breed == litter.breed {
-                cagelength += Globals.litterCageLength
-              }
-            }
-          }
-          // Write out new breed
-          // -------------------
-          let breedHeading: String
-          if !entry.cat.isCompanion {
-            if entry.cat.isEntire || entry.cat.isKitten {
-              breedHeading = "\(thisBreed) \(entry.cat.sectionName)s"
-            } else {
-              breedHeading = "\(thisBreed) \(entry.cat.sectionName)"
-            }
-            addData(breed1, breedHeading, breed2)
-          }
-
-          lastColour  = ""
-          lastClass   = ""
-          
-        }
-        
-        // MARK: - Update the count of cats
-        // ---------------------------------
-        if !entry.cat.isKitten && !entry.cat.isCompanion {
-          let i = Breeds.ACFgroupNumberOf(thisBreed)
-          let j = Sex.rankOf(entry.cat.sex) ?? 4
-          if i < 4 && j < 4 {
-            countOfCats[i][j] += 1
-          } else {
-            print("Given bogus number for updating count of cats. i = \(i); j = \(j)")
-          }
-        }
-        
-        // MARK: - Determine what sort of challenge this is
-        // -------------------------------------------------
       
-        // Add to excel sheet
+      // MARK: - Are we on a new breed
+      // ------------------------------
+      if entry.newBreedTo(lastEntry) {
+        
+        // Check to see if there were any litters
+        if entry.cat.isKitten && !entry.cat.isCompanion {
+          for litter in litters {
+            if entry.cat.breed == litter.breed {
+              cagelength += Globals.litterCageLength
+            }
+          }
+        }
+        // Write out new breed
+        // -------------------
+        let breedHeading: String
+        if !entry.cat.isCompanion {
+          if entry.cat.isEntire || entry.cat.isKitten {
+            breedHeading = "\(thisBreed) \(entry.cat.sectionName)s"
+          } else {
+            breedHeading = "\(thisBreed) \(entry.cat.sectionName)"
+          }
+          addData(breed1, breedHeading, breed2)
+        }
+        
+        lastColour  = ""
+        lastClass   = ""
+        
+      }
+      
+      // MARK: - Update the count of cats
+      // ---------------------------------
+      if !entry.cat.isKitten && !entry.cat.isCompanion {
+        let i = Breeds.ACFgroupNumberOf(thisBreed)
+        let j = Sex.rankOf(entry.cat.sex) ?? 4
+        if i < 4 && j < 4 {
+          countOfCats[i][j] += 1
+        } else {
+          print("Given bogus number for updating count of cats. i = \(i); j = \(j)")
+        }
+      }
+      
+      // MARK: - Determine what sort of challenge this is
+      // -------------------------------------------------
+      
+      // Add to excel sheet
       func excelDataFor(_ cat: Cat) -> Data {
         let myData = NSMutableData()
         myData.append(excelSheet[Start_row]!)
@@ -847,36 +861,36 @@ extension MainWindowController {
         return myData as Data
       }
       
-        func updateChallengeFor(_ entry: Entry) {
-          let maleCat = entry.cat.isMale
-          if isCCCAShow {
-            openChallenges.append(cageNumber)
-            if Challenges.type(entry) != .kitten {
-              if !entry.cat.title.isEmpty {
-                if maleCat { cccaChallenges.males.append(cageNumber) }
-                 else { cccaChallenges.females.append(cageNumber) }
-              }
-            }
-          } else {
-            switch Challenges.type(entry) {
-            case .kitten:
-              if bestInSectionKittens {
-                print("Appending kitten cage number")
-                openChallenges.append(cageNumber)
-              }
-            case .gold:
-              if maleCat { goldChallenges.males.append(cageNumber) }
-              else { goldChallenges.females.append(cageNumber) }
-            case .platinum:
-              if maleCat { platinumChallenges.males.append(cageNumber) }
-              else { platinumChallenges.females.append(cageNumber)
-              }
-            case .open:
-              openChallenges.append(cageNumber)
-              break
+      func updateChallengeFor(_ entry: Entry) {
+        let maleCat = entry.cat.isMale
+        if isCCCAShow {
+          openChallenges.append(cageNumber)
+          if Challenges.type(entry) != .kitten {
+            if !entry.cat.title.isEmpty {
+              if maleCat { cccaChallenges.males.append(cageNumber) }
+              else { cccaChallenges.females.append(cageNumber) }
             }
           }
+        } else {
+          switch Challenges.type(entry) {
+          case .kitten:
+            if bestInSectionKittens {
+              print("Appending kitten cage number")
+              openChallenges.append(cageNumber)
+            }
+          case .gold:
+            if maleCat { goldChallenges.males.append(cageNumber) }
+            else { goldChallenges.females.append(cageNumber) }
+          case .platinum:
+            if maleCat { platinumChallenges.males.append(cageNumber) }
+            else { platinumChallenges.females.append(cageNumber)
+            }
+          case .open:
+            openChallenges.append(cageNumber)
+            break
+          }
         }
+      }
       
       if entry.cat.isCompanion {
         companionData.append(excelDataFor(entry.cat))
@@ -904,11 +918,11 @@ extension MainWindowController {
       
       // MARK: - Write out new colour
       if entry.newColourOrBreedTo(lastEntry) {
-          if judgingClass != .colourClass {
-            addData(bestAward1)
-          }
-          addData(colour1)
-          
+        if judgingClass != .colourClass {
+          addData(bestAward1)
+        }
+        addData(colour1)
+        
         if entry.cat.isLimited {
           if entry.newJudgingVarietyTo(lastEntry) {
             // A new Agouti grouping
@@ -919,118 +933,129 @@ extension MainWindowController {
           judgingClass = .colourClass
         }
         
-          // then write the new colour
-          addData(entry.cat.colour, colour2)
-          lastColour = entry.cat.colour
-          lastClass = ""
-        }
-        // ** end of colour check
-        
-        // MARK: - Write out statistics
-        // ----------------------------
-        listData.append(excelSheet[Start_row]!)
-        listData.append(xmlNumber(cageNumber))
-        listData.append(xmlString(entry.cat.name))
-        listData.append(xmlString(entry.cat.exhibitor))
-        listData.append(xmlString(entry.cat.breed))
-        listData.append(xmlString(entry.cat.gender))
-        if entry.isInLitter {
-          for litter in litters {
-            if entry.isInLitter(litter) {
-              listData.append(xmlString("\(entry.typeOfCage) \(litter.number)"))
-            }
-          }
-        } else {
-          listData.append(xmlString(entry.typeOfCage))
-        }
-        listData.append(excelSheet[End_row]!)
-        
-        // *******************************************
-        // MARK: - Write out this entry in catalogue
-        // *******************************************
-        
-        // Write out the cage number
-        // --------------------------
-        addData(name1, String(cageNumber), name2)
-        
-        // Write out title and name
-        // -------------------------
-        judgesNotes.append(nbspace)
-        if entry.cat.title.isEmpty {
-          data.append(entry.cat.name.data)
-        } else {
-          data.append("\(entry.cat.title) \(entry.cat.name)".data)
-        }
-        addData(name3)
-        
-        // Write out cat sex and class if they have changed
-        // -------------------------------------------------
-        let catClass: String
-        if entry.cat.isKitten {
-          if organiseKittensByAgeGroups {
-            catClass = "\(entry.cat.sex) \(entry.cat.challenge) \(entry.cat.ageCategory)"
-          } else {
-            catClass = "\(entry.cat.sex) \(entry.cat.challenge)"
-          }
-          
-        } else {
-          catClass = "\(entry.cat.sex) class"
-        }
-        
-        if entry.newColourTo(lastEntry) || catClass != lastClass {
-          addData(catClass)
-          lastClass = catClass
-        } else {
-          addData(nbspace)
-        }
-        
-        addData(name4)
+        // then write the new colour
+        addData(entry.cat.colour, colour2)
+        lastColour = entry.cat.colour
+        lastClass = ""
+      }
+      // ** end of colour check
       
-        // Write the birthdate and age
-        // ----------------------------
-        addData(details1, entry.cat.birthDate.string, details2, entry.cat.age, details3)
+      // MARK: - Write out statistics
+      // ----------------------------
+      listData.append(excelSheet[Start_row]!)
+      listData.append(xmlNumber(cageNumber))
+      listData.append(xmlString(entry.cat.name))
+      listData.append(xmlString(entry.cat.exhibitor))
+      listData.append(xmlString(entry.cat.colour))
+      listData.append(xmlString(entry.cat.breed))
+      listData.append(xmlString(entry.cat.sex))
+      listData.append(xmlString(entry.cat.group))
+      listData.append(xmlString(entry.cat.challenge))
+      if entry.isInLitter {
+        for litter in litters {
+          if entry.isInLitter(litter) {
+            listData.append(xmlString("\(entry.typeOfCage) \(litter.number)"))
+          }
+        }
+      } else {
+        listData.append(xmlString(entry.typeOfCage))
+      }
+      listData.append(excelSheet[End_row]!)
       
-        // Write sire and dam names
-        // -------------------------
-        if !entry.cat.isCompanion {
-          data.append("\(entry.cat.sire)/\(entry.cat.dam)".data)
-          judgesNotes.append(nbspace)
-        }
-        addData(details4)
-        
-        // write rego number, breeder and exhibitor
-        let regoEtc: String
-        if entry.cat.isCompanion {
-          if entry.cat.registrationIsPending { regoEtc = entry.cat.exhibitor }
-          else { regoEtc = "\(entry.cat.registration) Ex:\(entry.cat.exhibitor)" }
+      // *******************************************
+      // MARK: - Write out this entry in catalogue
+      // *******************************************
+      
+      // Write out the cage number
+      // --------------------------
+      addData(name1, String(cageNumber), name2)
+      
+      // Write out title and name
+      // -------------------------
+      judgesNotes.append(nbspace)
+      if entry.cat.title.isEmpty {
+        data.append(entry.cat.name.data)
+      } else {
+        data.append("\(entry.cat.title) \(entry.cat.name)".data)
+      }
+      addData(name3)
+      
+      // Write out cat sex and class if they have changed
+      // -------------------------------------------------
+      let catClass: String
+      if entry.cat.isKitten {
+        if organiseKittensByAgeGroups {
+          catClass = "\(entry.cat.sex) \(entry.cat.challenge) \(entry.cat.ageCategory)"
         } else {
-          let breeder = entry.cat.breeder
-          let exhibitor = entry.cat.exhibitor
-          if breeder == exhibitor { regoEtc = "\(entry.cat.registration) Br/Ex:\(breeder)" }
-          else { regoEtc = "\(entry.cat.registration) Br:\(breeder) Ex:\(exhibitor)" }
+          catClass = "\(entry.cat.sex) \(entry.cat.challenge)"
         }
-        data.append(regoEtc.data)
+        
+      } else {
+        catClass = "\(entry.cat.sex) class"
+      }
+      
+      if entry.newColourTo(lastEntry) || catClass != lastClass {
+        addData(catClass)
+        lastClass = catClass
+      } else {
+        addData(nbspace)
+      }
+      
+      addData(name4)
+      
+      // Write the birthdate and age
+      // ----------------------------
+      addData(details1, entry.cat.birthDate.string, details2, entry.cat.age, details3)
+      
+      // Write sire and dam names
+      // -------------------------
+      if !entry.cat.isCompanion {
+        data.append("\(entry.cat.sire) x \(entry.cat.dam)".data)
         judgesNotes.append(nbspace)
-        addData(details5)
-        
-        // MARK: - Write out the boxes for this entry
-        writeBoxesFor(entry, usingforJudges: underlined)
-        addData(rowEnd)
-        
-        // Will they work ??
-        // ------------------
-        if entry.willWork.boolValue { workers.insert(entry.cat.exhibitor) }
-        
-        // Do they need a catalogue ??
-        // ----------------------------
-        if entry.catalogueRequired.boolValue { catalogues.insert(entry.cat.exhibitor) }
-        
-        // Are they hiring a cage ??
-        // --------------------------
-        if entry.hireCage.boolValue { hiring.add(entry.cat.exhibitor) }
-        
-        // Add up cage sizes
-        if !entry.isInLitter { cagelength += entry.cageSize.intValue }
+      }
+      addData(details4)
+      
+      // write rego number, breeder and exhibitor
+      let regoEtc: String
+      if entry.cat.isCompanion {
+        if entry.cat.registrationIsPending { regoEtc = entry.cat.exhibitor }
+        else { regoEtc = "\(entry.cat.registration) Ex:\(entry.cat.exhibitor)" }
+      } else {
+        let breeder = entry.cat.breeder
+        let exhibitor = entry.cat.exhibitor
+        if breeder == exhibitor { regoEtc = "\(entry.cat.registration) Br/Ex:\(breeder)" }
+        else { regoEtc = "\(entry.cat.registration) Br:\(breeder) Ex:\(exhibitor)" }
+      }
+      data.append(regoEtc.data)
+      judgesNotes.append(nbspace)
+      addData(details5)
+      
+      // MARK: - Write out the boxes for this entry
+      writeBoxesFor(entry, usingforJudges: underlined)
+      addData(rowEnd)
+      
+      // MARK: - Put this cat into its exhibitors list of entries
+      // -------------------------------------------------
+      if exhibitors[entry.cat.exhibitor] == nil {
+        exhibitors[entry.cat.exhibitor] = exhibitDetails(catalogue: entry.catalogueRequired.boolValue, cage: cageNumber, cat: entry.cat.name)
+      } else {
+        exhibitors[entry.cat.exhibitor]?.cats.append((cageNumber, entry.cat.name))
+      }
+      
+      // Will they work ??
+      // ------------------
+      if entry.willWork.boolValue { workers.insert(entry.cat.exhibitor) }
+      
+      // Do they need a catalogue ??
+      // ----------------------------
+      if entry.catalogueRequired.boolValue { catalogues.insert(entry.cat.exhibitor) }
+      
+      // Are they hiring a cage ??
+      // --------------------------
+      if entry.hireCage.boolValue { hiring.add(entry.cat.exhibitor) }
+      
+      // Add up cage sizes
+      if !entry.isInLitter { cagelength += entry.cageSize.intValue }
       
       lastEntry = entry
       cageNumber += 1
@@ -1128,7 +1153,7 @@ extension MainWindowController {
     } else {
       openData.appendRow("None")
     }
-
+    
     // MARK: - Check to see who needs catalogues
     // -------------------------------------------
     openData.append(excelSheet[Catalogue_row]!)
@@ -1140,10 +1165,26 @@ extension MainWindowController {
     } else {
       openData.appendRow(xmlString("NONE"))
     }
-    
+
+    openData.append(excelSheet[End_statistics]!)
+
+    // MARK: - Add exhibitor list to data
+    // ----------------------------------
+    openData.append(excelSheet[Exhibitor_sheet]!)
+    for (exhibitor, exhibitDetails) in exhibitors {
+      openData.append(excelSheet[Start_row]!)
+      openData.append(xmlString(exhibitor))
+      openData.append(xmlString(exhibitDetails.wantsCatalogue ? "Yes" : "No"))
+      for (cage, name) in exhibitDetails.cats {
+        openData.append(xmlNumber(cage))
+        openData.append(xmlString(name))
+      }
+      openData.append(excelSheet[End_row]!)
+    }
+    openData.append(excelSheet[End_exhibitor]!)
+
     // MARK: - Finish writing files
     // ------------------------------
-    openData.append(excelSheet[End_statistics]!)
     openData.append(excelSheet[End_workbook]!)
     
     openData.write(to: challengesFile, atomically: true)

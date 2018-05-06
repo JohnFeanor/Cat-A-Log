@@ -50,19 +50,28 @@
  &lt;/Styles&gt;
 </string>
 	<key>Open sheet</key>
-	<string> &lt;Worksheet ss:Name=&quot;Open&quot;&gt;
-  &lt;Table ss:ExpandedColumnCount=&quot;15&quot; x:FullColumns=&quot;1&quot;
-   x:FullRows=&quot;1&quot; ss:DefaultColumnWidth=&quot;65&quot; ss:DefaultRowHeight=&quot;15&quot;&gt;
-   &lt;Column ss:Width=&quot;31&quot;/&gt;
-   &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;107&quot;/&gt;
-   &lt;Column ss:Index=&quot;4&quot; ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;143&quot;/&gt;
-   &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;44&quot;/&gt;
-   &lt;Column ss:Width=&quot;113&quot;/&gt;
-   &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;47&quot;/&gt;
-   &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;98&quot; ss:Span=&quot;1&quot;/&gt;
-   &lt;Column ss:Index=&quot;10&quot; ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;41&quot;/&gt;
-   &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;95&quot; ss:Span=&quot;3&quot;/&gt;
-   &lt;Row ss:AutoFitHeight=&quot;0&quot; ss:StyleID=&quot;s63&quot;&gt;
+	<string>&lt;Worksheet ss:Name=&quot;Open&quot;&gt;
+    &lt;Table ss:ExpandedColumnCount=&quot;18&quot; x:FullColumns=&quot;1&quot;
+    x:FullRows=&quot;1&quot; ss:DefaultColumnWidth=&quot;65&quot; ss:DefaultRowHeight=&quot;15&quot;&gt;
+    &lt;Column ss:Width=&quot;30&quot;/&gt;
+    &lt;Column ss:Width=&quot;90&quot;/&gt;
+    &lt;Column ss:Width=&quot;60&quot;/&gt;
+    &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+    &lt;Column ss:Width=&quot;45&quot;/&gt;
+    &lt;Column ss:Width=&quot;45&quot;/&gt;
+    &lt;Column ss:Width=&quot;60&quot;/&gt;
+    &lt;Column ss:Width=&quot;60&quot;/&gt;
+    &lt;Column ss:Width=&quot;60&quot;/&gt;
+    &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+    &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+    &lt;Column ss:Width=&quot;40&quot;/&gt;
+    &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+    &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+    &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+    &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+    &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+    &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+    &lt;Row ss:AutoFitHeight=&quot;0&quot; ss:StyleID=&quot;s63&quot;&gt;
     &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Cage&lt;/Data&gt;&lt;/Cell&gt;
     &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Rego&lt;/Data&gt;&lt;/Cell&gt;
     &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Title&lt;/Data&gt;&lt;/Cell&gt;
@@ -78,8 +87,10 @@
     &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Judge2&lt;/Data&gt;&lt;/Cell&gt;
     &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Judge3&lt;/Data&gt;&lt;/Cell&gt;
     &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Judge4&lt;/Data&gt;&lt;/Cell&gt;
-   &lt;/Row&gt;
-</string>
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Judge5&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Judge6&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;/Row&gt;
+    </string>
 	<key>End open</key>
 	<string>  &lt;/Table&gt;
   &lt;WorksheetOptions xmlns=&quot;urn:schemas-microsoft-com:office:excel&quot;&gt;
@@ -99,21 +110,28 @@
  &lt;/Worksheet&gt;
 </string>
 	<key>Gold sheet</key>
-	<string> &lt;Worksheet ss:Name=&quot;Gold&quot;&gt;
-  &lt;Table ss:ExpandedColumnCount=&quot;15&quot; x:FullColumns=&quot;1&quot;
-   x:FullRows=&quot;1&quot; ss:DefaultColumnWidth=&quot;65&quot; ss:DefaultRowHeight=&quot;15&quot;&gt;
-   &lt;Column ss:Width=&quot;31&quot;/&gt;
-   &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;107&quot;/&gt;
-   &lt;Column ss:Width=&quot;55&quot;/&gt;
-   &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;121&quot;/&gt;
-   &lt;Column ss:Width=&quot;32&quot;/&gt;
-   &lt;Column ss:Width=&quot;40&quot;/&gt;
-   &lt;Column ss:Width=&quot;67&quot;/&gt;
-   &lt;Column ss:Width=&quot;51&quot;/&gt;
-   &lt;Column ss:Width=&quot;47&quot;/&gt;
-   &lt;Column ss:Width=&quot;32&quot;/&gt;
-   &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;95&quot; ss:Span=&quot;3&quot;/&gt;
-   &lt;Row ss:AutoFitHeight=&quot;0&quot; ss:StyleID=&quot;s63&quot;&gt;
+	<string>&lt;Worksheet ss:Name=&quot;Gold&quot;&gt;
+    &lt;Table ss:ExpandedColumnCount=&quot;18&quot; x:FullColumns=&quot;1&quot;
+    x:FullRows=&quot;1&quot; ss:DefaultColumnWidth=&quot;65&quot; ss:DefaultRowHeight=&quot;15&quot;&gt;
+    &lt;Column ss:Width=&quot;30&quot;/&gt;
+    &lt;Column ss:Width=&quot;90&quot;/&gt;
+    &lt;Column ss:Width=&quot;60&quot;/&gt;
+    &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+    &lt;Column ss:Width=&quot;45&quot;/&gt;
+    &lt;Column ss:Width=&quot;45&quot;/&gt;
+    &lt;Column ss:Width=&quot;60&quot;/&gt;
+    &lt;Column ss:Width=&quot;60&quot;/&gt;
+    &lt;Column ss:Width=&quot;60&quot;/&gt;
+    &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+    &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+    &lt;Column ss:Width=&quot;40&quot;/&gt;
+    &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+    &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+    &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+    &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+    &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+    &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+    &lt;Row ss:AutoFitHeight=&quot;0&quot; ss:StyleID=&quot;s63&quot;&gt;
     &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Cage&lt;/Data&gt;&lt;/Cell&gt;
     &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Rego&lt;/Data&gt;&lt;/Cell&gt;
     &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Title&lt;/Data&gt;&lt;/Cell&gt;
@@ -129,8 +147,10 @@
     &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Judge2&lt;/Data&gt;&lt;/Cell&gt;
     &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Judge3&lt;/Data&gt;&lt;/Cell&gt;
     &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Judge4&lt;/Data&gt;&lt;/Cell&gt;
-   &lt;/Row&gt;
-</string>
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Judge5&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Judge6&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;/Row&gt;
+    </string>
 	<key>End gold</key>
 	<string>  &lt;/Table&gt;
   &lt;WorksheetOptions xmlns=&quot;urn:schemas-microsoft-com:office:excel&quot;&gt;
@@ -149,21 +169,28 @@
  &lt;/Worksheet&gt;
 </string>
 	<key>Platinum sheet</key>
-	<string> &lt;Worksheet ss:Name=&quot;Platinum&quot;&gt;
-  &lt;Table ss:ExpandedColumnCount=&quot;15&quot; x:FullColumns=&quot;1&quot;
-   x:FullRows=&quot;1&quot; ss:DefaultColumnWidth=&quot;65&quot; ss:DefaultRowHeight=&quot;15&quot;&gt;
-   &lt;Column ss:Width=&quot;31&quot;/&gt;
-   &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;107&quot;/&gt;
-   &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;71&quot;/&gt;
-   &lt;Column ss:Width=&quot;115&quot;/&gt;
-   &lt;Column ss:Width=&quot;42&quot;/&gt;
-   &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;102&quot;/&gt;
-   &lt;Column ss:Width=&quot;67&quot;/&gt;
-   &lt;Column ss:Width=&quot;63&quot;/&gt;
-   &lt;Column ss:Width=&quot;74&quot;/&gt;
-   &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;49&quot;/&gt;
-   &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;95&quot; ss:Span=&quot;3&quot;/&gt;
-   &lt;Row ss:AutoFitHeight=&quot;0&quot; ss:StyleID=&quot;s63&quot;&gt;
+	<string>&lt;Worksheet ss:Name=&quot;Platinum&quot;&gt;
+    &lt;Table ss:ExpandedColumnCount=&quot;18&quot; x:FullColumns=&quot;1&quot;
+    x:FullRows=&quot;1&quot; ss:DefaultColumnWidth=&quot;65&quot; ss:DefaultRowHeight=&quot;15&quot;&gt;
+    &lt;Column ss:Width=&quot;30&quot;/&gt;
+    &lt;Column ss:Width=&quot;90&quot;/&gt;
+    &lt;Column ss:Width=&quot;60&quot;/&gt;
+    &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+    &lt;Column ss:Width=&quot;45&quot;/&gt;
+    &lt;Column ss:Width=&quot;45&quot;/&gt;
+    &lt;Column ss:Width=&quot;60&quot;/&gt;
+    &lt;Column ss:Width=&quot;60&quot;/&gt;
+    &lt;Column ss:Width=&quot;60&quot;/&gt;
+    &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+    &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+    &lt;Column ss:Width=&quot;40&quot;/&gt;
+    &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+    &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+    &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+    &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+    &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+    &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+    &lt;Row ss:AutoFitHeight=&quot;0&quot; ss:StyleID=&quot;s63&quot;&gt;
     &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Cage&lt;/Data&gt;&lt;/Cell&gt;
     &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Rego&lt;/Data&gt;&lt;/Cell&gt;
     &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Title&lt;/Data&gt;&lt;/Cell&gt;
@@ -179,9 +206,79 @@
     &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Judge2&lt;/Data&gt;&lt;/Cell&gt;
     &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Judge3&lt;/Data&gt;&lt;/Cell&gt;
     &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Judge4&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Judge5&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Judge6&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;/Row&gt;
+    </string>
+	<key>End platinum</key>
+	<string>  &lt;/Table&gt;
+  &lt;WorksheetOptions xmlns=&quot;urn:schemas-microsoft-com:office:excel&quot;&gt;
+   &lt;Unsynced/&gt;
+   &lt;PageLayoutZoom&gt;0&lt;/PageLayoutZoom&gt;
+   &lt;Panes&gt;
+    &lt;Pane&gt;
+     &lt;Number&gt;3&lt;/Number&gt;
+     &lt;ActiveCol&gt;1&lt;/ActiveCol&gt;
+     &lt;RangeSelection&gt;C2&lt;/RangeSelection&gt;
+    &lt;/Pane&gt;
+   &lt;/Panes&gt;
+   &lt;ProtectObjects&gt;False&lt;/ProtectObjects&gt;
+   &lt;ProtectScenarios&gt;False&lt;/ProtectScenarios&gt;
+  &lt;/WorksheetOptions&gt;
+ &lt;/Worksheet&gt;
+</string>
+	<key>Exhibitor sheet</key>
+	<string> &lt;Worksheet ss:Name=&quot;Exhibitor&quot;&gt;
+  &lt;Table ss:ExpandedColumnCount=&quot;26&quot; x:FullColumns=&quot;1&quot;
+   x:FullRows=&quot;1&quot; ss:DefaultColumnWidth=&quot;65&quot; ss:DefaultRowHeight=&quot;15&quot;&gt;
+   &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+   &lt;Column ss:Width=&quot;56&quot;/&gt;
+   &lt;Column ss:Width=&quot;38&quot;/&gt;
+   &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+   &lt;Column ss:Width=&quot;38&quot;/&gt;
+   &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+   &lt;Column ss:Width=&quot;38&quot;/&gt;
+   &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+   &lt;Column ss:Width=&quot;38&quot;/&gt;
+   &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+   &lt;Column ss:Width=&quot;38&quot;/&gt;
+   &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+   &lt;Column ss:Width=&quot;38&quot;/&gt;
+   &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+   &lt;Column ss:Width=&quot;38&quot;/&gt;
+   &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+   &lt;Column ss:Width=&quot;38&quot;/&gt;
+   &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+   &lt;Row ss:AutoFitHeight=&quot;0&quot; ss:StyleID=&quot;s63&quot;&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Exhibitor&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Catalogue&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Cage1&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Cat1&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Cage2&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Cat2&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Cage3&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Cat3&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Cage4&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Cat4&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Cage5&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Cat5&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Cage6&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Cat6&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Cage7&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Cat7&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Cage8&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Cat8&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Cage9&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Cat9&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Cage10&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Cat10&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Cage11&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Cat11&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Cage12&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Cat12&lt;/Data&gt;&lt;/Cell&gt;
    &lt;/Row&gt;
 </string>
-	<key>End platinum</key>
+	<key>End exhibitor</key>
 	<string>  &lt;/Table&gt;
   &lt;WorksheetOptions xmlns=&quot;urn:schemas-microsoft-com:office:excel&quot;&gt;
    &lt;Unsynced/&gt;
@@ -200,24 +297,33 @@
 </string>
 	<key>Companion sheet</key>
 	<string> &lt;Worksheet ss:Name=&quot;Companion&quot;&gt;
-  &lt;Table ss:ExpandedColumnCount=&quot;15&quot; x:FullColumns=&quot;1&quot;
+  &lt;Table ss:ExpandedColumnCount=&quot;18&quot; x:FullColumns=&quot;1&quot;
    x:FullRows=&quot;1&quot; ss:DefaultColumnWidth=&quot;65&quot; ss:DefaultRowHeight=&quot;15&quot;&gt;
-   &lt;Column ss:Width=&quot;31&quot;/&gt;
-   &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;107&quot;/&gt;
-   &lt;Column ss:Width=&quot;82&quot;/&gt;
-   &lt;Column ss:Width=&quot;87&quot;/&gt;
-   &lt;Column ss:Width=&quot;31&quot;/&gt;
-   &lt;Column ss:Width=&quot;56&quot;/&gt;
-   &lt;Column ss:Width=&quot;63&quot;/&gt;
-   &lt;Column ss:Width=&quot;51&quot;/&gt;
-   &lt;Column ss:Width=&quot;47&quot;/&gt;
-   &lt;Column ss:Width=&quot;34&quot;/&gt;
+   &lt;Column ss:Width=&quot;30&quot;/&gt;
+   &lt;Column ss:Width=&quot;90&quot;/&gt;
+   &lt;Column ss:Width=&quot;60&quot;/&gt;
+   &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+   &lt;Column ss:Width=&quot;45&quot;/&gt;
+   &lt;Column ss:Width=&quot;45&quot;/&gt;
+   &lt;Column ss:Width=&quot;60&quot;/&gt;
+   &lt;Column ss:Width=&quot;60&quot;/&gt;
+   &lt;Column ss:Width=&quot;60&quot;/&gt;
+   &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+   &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+   &lt;Column ss:Width=&quot;40&quot;/&gt;
+   &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+   &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+   &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+   &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+   &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+   &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
    &lt;Row ss:AutoFitHeight=&quot;0&quot; ss:StyleID=&quot;s63&quot;&gt;
     &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Cage&lt;/Data&gt;&lt;/Cell&gt;
     &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Rego&lt;/Data&gt;&lt;/Cell&gt;
     &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Title&lt;/Data&gt;&lt;/Cell&gt;
     &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Name&lt;/Data&gt;&lt;/Cell&gt;
     &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Sex&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Entire&lt;/Data&gt;&lt;/Cell&gt;
     &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Colour&lt;/Data&gt;&lt;/Cell&gt;
     &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Breed&lt;/Data&gt;&lt;/Cell&gt;
     &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Group&lt;/Data&gt;&lt;/Cell&gt;
@@ -228,6 +334,8 @@
     &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Judge2&lt;/Data&gt;&lt;/Cell&gt;
     &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Judge3&lt;/Data&gt;&lt;/Cell&gt;
     &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Judge4&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Judge5&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Judge6&lt;/Data&gt;&lt;/Cell&gt;
    &lt;/Row&gt;
 </string>
 	<key>End companion</key>
@@ -249,19 +357,27 @@
 </string>
 	<key>Kitten sheet</key>
 	<string> &lt;Worksheet ss:Name=&quot;Kitten&quot;&gt;
-  &lt;Table ss:ExpandedColumnCount=&quot;15&quot; x:FullColumns=&quot;1&quot;
-   x:FullRows=&quot;1&quot; ss:DefaultColumnWidth=&quot;65&quot; ss:DefaultRowHeight=&quot;15&quot;&gt;
-   &lt;Column ss:Width=&quot;31&quot;/&gt;
-   &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;107&quot;/&gt;
-   &lt;Column ss:Width=&quot;82&quot;/&gt;
-   &lt;Column ss:Width=&quot;87&quot;/&gt;
-   &lt;Column ss:Width=&quot;31&quot;/&gt;
-   &lt;Column ss:Width=&quot;56&quot;/&gt;
-   &lt;Column ss:Width=&quot;63&quot;/&gt;
-   &lt;Column ss:Width=&quot;51&quot;/&gt;
-   &lt;Column ss:Width=&quot;47&quot;/&gt;
-   &lt;Column ss:Width=&quot;34&quot;/&gt;
-   &lt;Row ss:AutoFitHeight=&quot;0&quot; ss:StyleID=&quot;s63&quot;&gt;
+  &lt;Table ss:ExpandedColumnCount=&quot;18&quot; x:FullColumns=&quot;1&quot;
+    x:FullRows=&quot;1&quot; ss:DefaultColumnWidth=&quot;65&quot; ss:DefaultRowHeight=&quot;15&quot;&gt;
+    &lt;Column ss:Width=&quot;30&quot;/&gt;
+    &lt;Column ss:Width=&quot;90&quot;/&gt;
+    &lt;Column ss:Width=&quot;60&quot;/&gt;
+    &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+    &lt;Column ss:Width=&quot;45&quot;/&gt;
+    &lt;Column ss:Width=&quot;45&quot;/&gt;
+    &lt;Column ss:Width=&quot;60&quot;/&gt;
+    &lt;Column ss:Width=&quot;60&quot;/&gt;
+    &lt;Column ss:Width=&quot;60&quot;/&gt;
+    &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+    &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+    &lt;Column ss:Width=&quot;40&quot;/&gt;
+    &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+    &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+    &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+    &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+    &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+    &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;100&quot;/&gt;
+    &lt;Row ss:AutoFitHeight=&quot;0&quot; ss:StyleID=&quot;s63&quot;&gt;
     &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Cage&lt;/Data&gt;&lt;/Cell&gt;
     &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Rego&lt;/Data&gt;&lt;/Cell&gt;
     &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Title&lt;/Data&gt;&lt;/Cell&gt;
@@ -277,8 +393,10 @@
     &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Judge2&lt;/Data&gt;&lt;/Cell&gt;
     &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Judge3&lt;/Data&gt;&lt;/Cell&gt;
     &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Judge4&lt;/Data&gt;&lt;/Cell&gt;
-   &lt;/Row&gt;
-</string>
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Judge5&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;Judge6&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;/Row&gt;
+  </string>
 	<key>End kitten</key>
 	<string>  &lt;/Table&gt;
   &lt;WorksheetOptions xmlns=&quot;urn:schemas-microsoft-com:office:excel&quot;&gt;
@@ -298,20 +416,24 @@
 </string>
 	<key>List sheet</key>
 	<string> &lt;Worksheet ss:Name=&quot;list&quot;&gt;
-  &lt;Table ss:ExpandedColumnCount=&quot;6&quot; x:FullColumns=&quot;1&quot;
+  &lt;Table ss:ExpandedColumnCount=&quot;9&quot; x:FullColumns=&quot;1&quot;
    x:FullRows=&quot;1&quot; ss:DefaultColumnWidth=&quot;65&quot; ss:DefaultRowHeight=&quot;15&quot;&gt;
    &lt;Column ss:AutoFitWidth=&quot;0&quot; ss:Width=&quot;31&quot;/&gt;
    &lt;Column ss:Width=&quot;166&quot;/&gt;
    &lt;Column ss:Width=&quot;136&quot;/&gt;
    &lt;Column ss:Width=&quot;87&quot;/&gt;
+   &lt;Column ss:Width=&quot;60&quot;/&gt;
    &lt;Column ss:Width=&quot;48&quot;/&gt;
    &lt;Column ss:Width=&quot;61&quot;/&gt;
    &lt;Row ss:AutoFitHeight=&quot;0&quot; ss:StyleID=&quot;s63&quot;&gt;
     &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;CAGE&lt;/Data&gt;&lt;/Cell&gt;
     &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;NAME&lt;/Data&gt;&lt;/Cell&gt;
     &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;EXHIBITOR&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;COLOUR&lt;/Data&gt;&lt;/Cell&gt;
     &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;BREED&lt;/Data&gt;&lt;/Cell&gt;
     &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;GENDER&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;GROUP&lt;/Data&gt;&lt;/Cell&gt;
+    &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;CLASS&lt;/Data&gt;&lt;/Cell&gt;
     &lt;Cell&gt;&lt;Data ss:Type=&quot;String&quot;&gt;CAGE TYPE&lt;/Data&gt;&lt;/Cell&gt;
    &lt;/Row&gt;
 </string>

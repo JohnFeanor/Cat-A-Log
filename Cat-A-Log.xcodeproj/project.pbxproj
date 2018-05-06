@@ -192,6 +192,7 @@
 		4F0F92E01BA3EC8400724D9C /* Excel list.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Excel list.plist"; path = "pLists/Excel list.plist"; sourceTree = "<group>"; };
 		4F0F92E31BA3EF0E00724D9C /* Places.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Places.plist; path = pLists/Places.plist; sourceTree = "<group>"; };
 		4F1247A01BB4913A00031CE0 /* Cat-A-Log Help */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Cat-A-Log Help"; sourceTree = "<group>"; };
+		4F1E9FE0209EFDC900DDD15C /* Cat-A-Log.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Cat-A-Log.entitlements"; sourceTree = "<group>"; };
 		4F38B8571B6D8CCA006356DD /* Cat-A-Log.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cat-A-Log.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F38B85B1B6D8CCA006356DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F38B85C1B6D8CCA006356DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -382,6 +383,7 @@
 		4F38B84E1B6D8CCA006356DD = {
 			isa = PBXGroup;
 			children = (
+				4F1E9FE0209EFDC900DDD15C /* Cat-A-Log.entitlements */,
 				4F38B8591B6D8CCA006356DD /* CatBase */,
 				4F38B86D1B6D8CCA006356DD /* CatBaseTests */,
 				4F38B8581B6D8CCA006356DD /* Products */,
@@ -538,6 +540,7 @@
 				TargetAttributes = {
 					4F38B8561B6D8CCA006356DD = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = MW4BK677PW;
 						LastSwiftMigration = 0930;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.Mac = {
@@ -1177,7 +1180,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = MW4BK677PW;
 				INFOPLIST_FILE = CatBase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Feanor.$(PRODUCT_NAME:rfc1034identifier)";

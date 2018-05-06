@@ -16,7 +16,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   @IBOutlet weak var window: NSWindow!
   @IBOutlet weak var timesleftToRunString: NSTextField!
   @IBOutlet weak var registrationTextField: NSTextField!
-  @IBOutlet weak var versionTextField: NSTextField!
+  // @IBOutlet weak var versionTextField: NSTextField!
   
   enum State : Int {
     case trial = 0
@@ -60,6 +60,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   
   @objc var willIexit = false
   
+  @objc let versionText = "V " + ((Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String) ?? "2.0")
+  
   @IBAction func splashWindowClosed(_ sender: AnyObject) {
     window.close()
     if willIexit {
@@ -101,11 +103,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     registrationTextField.stringValue = authenticate[CCIRegistered.rawValue]
+//
+//    if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+//      let versionText = "V " + version
+//      print("Version is \(versionText)")
+//      print("versionTextField is \(versionTextField)")
+//      versionTextField.stringValue = versionText
+//    }
     
-    if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
-      versionTextField.stringValue = "V " + version
-    }
-
     Titles.createList()
     Breeds.createList()
     Challenges.createList()
@@ -125,7 +130,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   @objc lazy var applicationDocumentsDirectory: URL = {
     // The directory the application uses to store the Core Data store file. This code uses a directory named "com.Feanor.CatBase" in the user's Application Support directory.
     let urls = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)
-    let appSupportURL = urls[urls.count - 1] 
+    let appSupportURL = urls[urls.count - 1]
     return appSupportURL.appendingPathComponent("com.Feanor.CatBase")
     }()
   
