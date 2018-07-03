@@ -47,8 +47,8 @@ extension Data: Datamaker {
   }
 }
 
-extension NSMutableData {
-  func addData(_ data: Datamaker ...) {
+extension Data {
+  mutating func addData(_ data: Datamaker ...) {
     for datum in data {
       self.append(datum.data)
     }
@@ -88,8 +88,8 @@ private let End_workbook        = "End workbook"
 
 
 
-extension NSMutableData{
-  func appendRow(_ data: Datamaker ...) {
+extension Data{
+  mutating func appendRow(_ data: Datamaker ...) {
     self.append(excelSheet[Start_row]!)
     for datum in data {
       self.append(datum.data)
@@ -237,34 +237,84 @@ private let xmlEmptyRow: Data = {
 
 var debugCount = 1
 
+
 extension MainWindowController {
-  @objc func printCatalog(_ name: String, to url: URL) {
+  
+  struct exhibitDetails {
+    var wantsCatalogue : Bool
+    var cats: [(cage : Int, name: String)]
     
-    var data            = NSMutableData()
-    var judgesNotes     = NSMutableData()
+    init(catalogue: Bool, cage: Int, cat: String) {
+      wantsCatalogue = catalogue
+      cats = [ (cage, cat)]
+    }
+  }
+  
+  class Ring {
+    var longhair  = Data()
+    var shorthair = Data()
     
-    var openData        = NSMutableData()
-    var goldData        = NSMutableData()
-    var platinumData    = NSMutableData()
-    var companionData   = NSMutableData()
-    var kittenData      = NSMutableData()
-    var listData        = NSMutableData()
-    var statisticsData  = NSMutableData()
+    var description: String {
+      return String(decoding: longhair, as: UTF8.self) + "; " + String(decoding: shorthair, as: UTF8.self)
+    }
+  }
+  
+  struct JudgesNotes: Sequence, IteratorProtocol {
+    var ring1 = Ring()
+    var ring2 = Ring()
+    var ring3 = Ring()
+    var ring4 = Ring()
+    var ring5 = Ring()
+    var ring6 = Ring()
     
-    let headerFiles     = NSMutableData()
+    var index: Int
+    init() {
+      index = 0
+    }
     
-    struct exhibitDetails {
-      var wantsCatalogue : Bool
-      var cats: [(cage : Int, name: String)]
-      
-      init(catalogue: Bool, cage: Int, cat: String) {
-        wantsCatalogue = catalogue
-        cats = [ (cage, cat)]
+    mutating func next() -> Ring? {
+      guard index < Globals.numberOfRingsInShow else {
+        return nil
+      }
+      index += 1
+      switch index {
+      case 1:
+        return ring1
+      case 2:
+        return ring2
+      case 3:
+        return ring3
+      case 4:
+        return ring4
+      case 5:
+        return ring5
+      case 6:
+        return ring6
+      default:
+        return nil
       }
     }
+  }
+ 
+  @objc func printCatalog(_ name: String, to url: URL) {
+    // MARK:- Instance variables
+    // MARK: data variables
+    var data            = Data()
+    var judgesNotes     = Data()
+    
+    var openData        = Data()
+    var goldData        = Data()
+    var platinumData    = Data()
+    var companionData   = Data()
+    var kittenData      = Data()
+    var listData        = Data()
+    var statisticsData  = Data()
+    
+    var headerFiles     = Data()
     
     var exhibitors : [String : exhibitDetails] = [:]
     
+    // MARK: Sets
     var workers       = Set<String>()
     var catalogues    = Set<String>()
     var breedsPresent = Set<String>()
@@ -273,10 +323,12 @@ extension MainWindowController {
     var cagelength    = 0
     var headerSectionNumber = 2
     
+    // MARK: URLs
     let catalogueFile   = newURLfrom(url, with: "\(Globals.currentShowName) catalogue.html")
     let notesFile       = newURLfrom(url, with: "\(Globals.currentShowName) judges notes.html")
     let challengesFile  = newURLfrom(url, with: "\(Globals.currentShowName) challenges.xml")
     
+    // MARK: Challenges
     var openChallenges: [Int] = []
     var goldChallenges      = PrestigeChallenge(prestige: .gold)
     var platinumChallenges  = PrestigeChallenge(prestige: .platinum)
@@ -1111,8 +1163,16 @@ extension MainWindowController {
     data.append(endOfFile)
     judgesNotes.append(endOfFileJudge)
     
-    data.write(to: catalogueFile, atomically: true)
-    judgesNotes.write(to: notesFile, atomically: true)
+    do {
+      try data.write(to: catalogueFile, options: [.atomic])
+    } catch {
+      errorAlert(message: "Error writing catalogue")
+    }
+    do {
+      try judgesNotes.write(to: notesFile, options: [.atomic])
+    } catch {
+      errorAlert(message: "Error writing judges notes")
+    }
     
     openData.append(excelSheet[End_open]!)
     openData.append(goldData as Data)
@@ -1187,7 +1247,11 @@ extension MainWindowController {
     // ------------------------------
     openData.append(excelSheet[End_workbook]!)
     
-    openData.write(to: challengesFile, atomically: true)
+    do {
+      try openData.write(to: challengesFile, options: [.atomic])
+    } catch {
+      errorAlert(message: "Error writing XML file")
+    }
     
     let fileManager = FileManager.default
     let dirURL = url.deletingLastPathComponent().appendingPathComponent("Catalog_files", isDirectory: true)
@@ -1195,15 +1259,17 @@ extension MainWindowController {
     do {
       try fileManager.createDirectory(at: dirURL, withIntermediateDirectories: true, attributes: nil)
     } catch let error{
-      fatalError("Cannot create directory for folder Catalog_files.\n error: \(error)")
+      errorAlert(message: "Cannot create directory for folder Catalog_files.\n error: \(error)")
     }
     
     headerFiles.addData(headerSectionNumber, head6)
     
     let headerURL = dirURL.appendingPathComponent("header.htm")
-    guard headerFiles.write(to: headerURL, atomically: true)
-      else { fatalError("Cannot write header files") }
-    
+    do {
+      try headerFiles.write(to: headerURL, options: [.atomic])
+    } catch {
+      errorAlert(message: "Error writing header files")
+    }
     let judgeHeaderFiles = NSMutableData()
     judgeHeaderFiles.append(readFile("judge_header"))
     judgeHeaderFiles.append(Globals.currentShowName.data)
