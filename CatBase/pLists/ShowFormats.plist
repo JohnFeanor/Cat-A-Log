@@ -55,8 +55,10 @@
 				<array>
 					<string>Balinese</string>
 					<string>Foreign White</string>
+					<string>Foreign White Longhair</string>
 					<string>Oriental</string>
 					<string>Oriental Longhair</string>
+					<string>Peterbald</string>
 					<string>Siamese</string>
 				</array>
 			</dict>
@@ -99,7 +101,6 @@
 					<string>Manx</string>
 					<string>Manx Stumpy</string>
 					<string>Ocicat</string>
-					<string>Peterbald</string>
 					<string>Pixiebob</string>
 					<string>Russian</string>
 					<string>Scottish Fold</string>
@@ -113,6 +114,7 @@
 					<string>Somali</string>
 					<string>Sphynx</string>
 					<string>Tonkinese</string>
+					<string>Toyger</string>
 				</array>
 			</dict>
 			<dict>
@@ -562,6 +564,7 @@
 					<string>Foreign White</string>
 					<string>Oriental</string>
 					<string>Oriental Longhair</string>
+					<string>Peterbald</string>
 					<string>Siamese</string>
 				</array>
 			</dict>
@@ -604,7 +607,6 @@
 					<string>Manx</string>
 					<string>Manx Stumpy</string>
 					<string>Ocicat</string>
-					<string>Peterbald</string>
 					<string>Pixiebob</string>
 					<string>Russian</string>
 					<string>Scottish Fold</string>
@@ -747,6 +749,161 @@
 					<string>Household Shorthair</string>
 					<string>Domestic Longhair</string>
 					<string>Domestic Shorthair</string>
+					<string>Companion</string>
+				</array>
+			</dict>
+		</array>
+	</dict>
+	<key>GCCFSA Show</key>
+	<dict>
+		<key>Sexes</key>
+		<array>
+			<string>Male</string>
+			<string>Female</string>
+			<string>Neuter</string>
+			<string>Spay</string>
+		</array>
+		<key>Challenges</key>
+		<array>
+			<string>Kitten</string>
+			<string>Open</string>
+		</array>
+		<key>Groups</key>
+		<array>
+			<dict>
+				<key>group</key>
+				<string>Group 1</string>
+				<key>subgroups</key>
+				<array>
+					<string>Kittens</string>
+					<string>Entires</string>
+					<string>Desexed</string>
+				</array>
+				<key>breeds</key>
+				<array>
+					<string>Birman</string>
+					<string>Exotic</string>
+					<string>Maine Coon</string>
+					<string>Neva Masqerade</string>
+					<string>Norwegian Forest Cat</string>
+					<string>Persian</string>
+					<string>Ragdoll</string>
+					<string>Siberian</string>
+					<string>Turkish Angora</string>
+					<string>Turkish Van</string>
+				</array>
+			</dict>
+			<dict>
+				<key>group</key>
+				<string>Group 2</string>
+				<key>subgroups</key>
+				<array>
+					<string>Kittens</string>
+					<string>Entires</string>
+					<string>Desexed</string>
+				</array>
+				<key>breeds</key>
+				<array>
+					<string>Balinese</string>
+					<string>Foreign White</string>
+					<string>Foreign White Longhair</string>
+					<string>Oriental</string>
+					<string>Oriental Longhair</string>
+					<string>Peterbald</string>
+					<string>Siamese</string>
+				</array>
+			</dict>
+			<dict>
+				<key>group</key>
+				<string>Group 3</string>
+				<key>subgroups</key>
+				<array>
+					<string>Kittens</string>
+					<string>Entires</string>
+					<string>Desexed</string>
+				</array>
+				<key>breeds</key>
+				<array>
+					<string>Abyssinian</string>
+					<string>American Curl</string>
+					<string>American Curl Longhair</string>
+					<string>Asian</string>
+					<string>Australian Mist</string>
+					<string>Bengal</string>
+					<string>Bombay</string>
+					<string>Burmese</string>
+					<string>Burmilla</string>
+					<string>Burmilla Longhair</string>
+					<string>Chartreux</string>
+					<string>Cornish Rex</string>
+					<string>Devon Rex</string>
+					<string>Egyptian Mau</string>
+					<string>German Rex</string>
+					<string>Japanese Bobtail</string>
+					<string>Korat</string>
+					<string>La Perm</string>
+					<string>La Perm Longhair</string>
+					<string>Mandalay</string>
+					<string>Ocicat</string>
+					<string>Pixiebob</string>
+					<string>Russian</string>
+					<string>Singapura</string>
+					<string>Snowshoe</string>
+					<string>Somali</string>
+					<string>Sphynx</string>
+					<string>Tonkinese</string>
+					<string>Toyger</string>
+				</array>
+			</dict>
+			<dict>
+				<key>group</key>
+				<string>Group 4</string>
+				<key>subgroups</key>
+				<array>
+					<string>Kittens</string>
+					<string>Entires</string>
+					<string>Desexed</string>
+				</array>
+				<key>breeds</key>
+				<array>
+					<string>American Shorthair</string>
+					<string>British Shorthair</string>
+					<string>Cymric</string>
+					<string>Cymric Stumpy</string>
+					<string>European Shorthair</string>
+					<string>Manx</string>
+					<string>Manx Stumpy</string>
+					<string>Scottish Fold</string>
+					<string>Scottish Fold Longhair</string>
+					<string>Scottish Shorthair</string>
+					<string>Scottish Longhair</string>
+					<string>Selkirk Rex</string>
+					<string>Selkirk Rex Longhair</string>
+				</array>
+			</dict>
+			<dict>
+				<key>group</key>
+				<string>Group 5</string>
+				<key>subgroups</key>
+				<array>
+					<string>Kittens</string>
+					<string>Desexed</string>
+				</array>
+				<key>breeds</key>
+				<array>
+					<string>Domestic</string>
+				</array>
+			</dict>
+			<dict>
+				<key>group</key>
+				<string>Group 6</string>
+				<key>subgroups</key>
+				<array>
+					<string>Kittens</string>
+					<string>Desexed</string>
+				</array>
+				<key>breeds</key>
+				<array>
 					<string>Companion</string>
 				</array>
 			</dict>

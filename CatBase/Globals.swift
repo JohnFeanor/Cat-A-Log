@@ -177,7 +177,7 @@ enum JudgingVarities: Int, Comparable {
 // *******************************
 
 let QFAShowType   = "QFA Show"
-let NSWShowType   = "Cats NSW"
+let NSWShowType   = "Cats NSW Show"
 let COAWAShowType = "COAWA Show"
 let CCCAShowType  = "CCCA Show"
 let ACFShowType   = "ACF Show"

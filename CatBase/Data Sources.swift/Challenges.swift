@@ -100,7 +100,7 @@ class Challenges: DataSource {
     }
     guard let ans = Challenges.list[Globals.currentShowType]?[rank.rawValue]
       else {
-        fatalError("Challenge type not found for catagory: [\(rank)] and show type: [\(Globals.currentShowType)]\n in list: \(Challenges.list)") }
+        fatalError("Challenge type not found for category: [\(rank)] and show type: [\(Globals.currentShowType)]\n in list: \(Challenges.list)") }
     return ans
   }
 }

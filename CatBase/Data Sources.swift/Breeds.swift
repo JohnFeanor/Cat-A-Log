@@ -103,7 +103,13 @@ class Breeds: DataSource, NSTableViewDataSource {
   }
   
   class func ACFgroupNumberOf(_ breedName: String) -> Int {
-    if let groups = Breeds.breedsByGroupAndShowtype["ACF Show"] {
+    let showType: String
+    if Globals.currentShowType == "GCCFSA Show" {
+      showType = "GCCFSA Show"
+    } else {
+       showType = "ACF Show"
+    }
+    if let groups = Breeds.breedsByGroupAndShowtype[showType] {
       let breed: String
       if breedName == "Norwegian Forest" {
         print("Changing Norwegian Forest to Norwegian Forest Cat")

@@ -266,6 +266,7 @@ class Entry: NSManagedObject {
   @objc func inDifferentSectionTo(_ other: Entry?) -> Bool {
     guard let other = other
       else { return true }
+    if inDifferentGroupTo(other) {return true}
     if cat.isCompanion { return !other.cat.isCompanion }
     return self.cat.section != other.cat.section
   }
