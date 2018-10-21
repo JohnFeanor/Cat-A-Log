@@ -1,0 +1,223 @@
+\par}
+
+{\trowd \irow0\irowband-1\trkeep
+
+\clvertalc\clbrdrr\brdrdb\brdrw10\cellx1210
+\clvertalc\clcbpat1\clbrdrt\brdrdb\brdrw10\clbrdrl\brdrdb\brdrw10\clbrdrb\brdrs\brdrw10\clbrdrr\brdrs\brdrw10\cellx4840
+\clvertalc\clcbpat1\clbrdrt\brdrdb\brdrw10\clbrdrl\brdrs\brdrw10\clbrdrb\brdrs\brdrw10\clbrdrr\brdrdb\brdrw10\cellx8470
+\clvertalc\clbrdrl\brdrdb\brdrw10\clbrdrb\brdrdb\brdrw10\cellx10230
+{\pard\intbl \f47\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 Longhair\cell}
+{\pard\intbl \f47\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 Shorthair\cell}
+{\pard\intbl \f47\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+\row}
+
+{\trowd \irow1\irowband0\trkeep
+\clvertalc\clbrdrb\brdrw10\brdrdb\clbrdrr\brdrw10\brdrdb\cellx1210
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrdb\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx2420
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx3630
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx4840
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx6050
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx7260
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx8470
+\clvertalc\clbrdrt\brdrw10\brdrdb\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrdb\cellx10230
+{\pard\intbl \f47\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 Kittens\cell}
+{\pard\intbl \f47\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 Entires\cell}
+{\pard\intbl \f47\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 Desexed\cell}
+{\pard\intbl \f47\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 Kittens\cell}
+{\pard\intbl \f47\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 Entires\cell}
+{\pard\intbl \f47\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 Desexed\cell}
+{\pard\intbl \f47\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 Companions\cell}
+\row}
+
+{\trowd \irow2\irowband1\trkeep
+\clvertalc\clbrdrt\brdrw10\brdrdb\clbrdrl\brdrw10\brdrdb\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx1210
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx2420
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx3630
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx4840
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx6050
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx7260
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx8470
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrdb\cellx10230
+{\pard\intbl \f47\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 Best\cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+\row}
+
+{\trowd \irow3\irowband2\trkeep
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrdb\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx1210
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx2420
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx3630
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx4840
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx6050
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx7260
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx8470
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrdb\cellx10230
+{\pard\intbl \f47\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 Reserve\cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+\row}
+
+{\trowd \irow4\irowband3\trkeep
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrdb\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx1210
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx2420
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx3630
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx4840
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx6050
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx7260
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx8470
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrdb\cellx10230
+
+{\pard\intbl \f47\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 3\super rd \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+\row}
+
+{\trowd \irow5\irowband4\trkeep
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrdb\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx1210
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx2420
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx3630
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx4840
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx6050
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx7260
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx8470
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrdb\cellx10230
+{\pard\intbl \f47\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 4\super th \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+\row}
+
+{\trowd \irow6\irowband5\trkeep
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrdb\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx1210
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx2420
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx3630
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx4840
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx6050
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx7260
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx8470
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrdb\cellx10230
+{\pard\intbl \f47\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 5\super th \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+\row}
+
+{\trowd \irow7\irowband6\trkeep
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrdb\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx1210
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx2420
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx3630
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx4840
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx6050
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx7260
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx8470
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrdb\cellx10230
+{\pard\intbl \f47\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 6\super th \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+\row}
+
+{\trowd \irow8\irowband7\trkeep
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrdb\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx1210
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx2420
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx3630
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx4840
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx6050
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx7260
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx8470
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrdb\cellx10230
+{\pard\intbl \f47\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 7\super th \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+\row}
+
+{\trowd \irow9\irowband8\trkeep
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrdb\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx1210
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx2420
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx3630
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx4840
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx6050
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx7260
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx8470
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrdb\cellx10230
+{\pard\intbl \f47\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 8\super th \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+\row}
+
+{\trowd \irow10\irowband9\trkeep
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrdb\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx1210
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx2420
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx3630
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx4840
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx6050
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx7260
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx8470
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrdb\cellx10230
+{\pard\intbl \f47\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 9\super th \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+\row}
+
+{\trowd \irow11\irowband10\trkeep
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrdb\clbrdrb\brdrw10\brdrdb\clbrdrr\brdrw10\brdrs\cellx1210
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrdb\clbrdrr\brdrw10\brdrs\cellx2420
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrdb\clbrdrr\brdrw10\brdrs\cellx3630
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrdb\clbrdrr\brdrw10\brdrs\cellx4840
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrdb\clbrdrr\brdrw10\brdrs\cellx6050
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrdb\clbrdrr\brdrw10\brdrs\cellx7260
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrdb\clbrdrr\brdrw10\brdrs\cellx8470
+\clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrdb\clbrdrr\brdrw10\brdrdb\cellx10230
+{\pard\intbl \f47\qc\fs22\li0\ri0\sb40\sa40\langnp3081 10\super th \cell}
+{\pard\intbl \f42\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f42\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+\lastrow\row}

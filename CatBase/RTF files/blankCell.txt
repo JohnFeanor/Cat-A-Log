@@ -1,0 +1,4 @@
+{\trowd \trkeep
+\trspdl30\trspdt30\trspdb30\trspdr30\trspdfl3\trspdft3\trspdfb3\trspdfr3
+\cellx10220
+\pard\intbl\plain \cell \row}

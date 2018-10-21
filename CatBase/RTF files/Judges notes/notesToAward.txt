@@ -1,0 +1,5 @@
+{\trowd \trkeep
+\trspdl30\trspdt30\trspdb30\trspdr30\trspdfl3\trspdft3\trspdfb3\trspdfr3
+\cellx6740
+\clvertalc \clbrdrt\brdrw10\brdrs \clbrdrl\brdrw10\brdrs \clbrdrb\brdrw10\brdrs \clbrdrr\brdrw10\brdrs \cellx7320
+{\pard\intbl \f47\qr\fs24\li0\ri20\sb120\sa120\langnp3081 

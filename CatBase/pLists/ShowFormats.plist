@@ -4,6 +4,10 @@
 <dict>
 	<key>ACF Show</key>
 	<dict>
+		<key>organiseKittensByAgeGroups</key>
+		<true/>
+		<key>nationalAffiliation</key>
+		<string>ACF</string>
 		<key>Sexes</key>
 		<array>
 			<string>Male</string>
@@ -133,6 +137,10 @@
 	</dict>
 	<key>COAWA Show</key>
 	<dict>
+		<key>organiseKittensByAgeGroups</key>
+		<false/>
+		<key>nationalAffiliation</key>
+		<string>CCCA</string>
 		<key>Sexes</key>
 		<array>
 			<string>Male</string>
@@ -285,6 +293,10 @@
 	</dict>
 	<key>QFA Show</key>
 	<dict>
+		<key>organiseKittensByAgeGroups</key>
+		<true/>
+		<key>nationalAffiliation</key>
+		<string>ACF</string>
 		<key>Sexes</key>
 		<array>
 			<string>Male</string>
@@ -398,6 +410,10 @@
 	</dict>
 	<key>FCCQ Show</key>
 	<dict>
+		<key>organiseKittensByAgeGroups</key>
+		<false/>
+		<key>nationalAffiliation</key>
+		<string>ACF</string>
 		<key>Sexes</key>
 		<array>
 			<string>Male</string>
@@ -511,6 +527,10 @@
 	</dict>
 	<key>Cats NSW Show</key>
 	<dict>
+		<key>organiseKittensByAgeGroups</key>
+		<false/>
+		<key>nationalAffiliation</key>
+		<string>ACF</string>
 		<key>Sexes</key>
 		<array>
 			<string>Male</string>
@@ -638,6 +658,10 @@
 	</dict>
 	<key>CCCA Show</key>
 	<dict>
+		<key>organiseKittensByAgeGroups</key>
+		<false/>
+		<key>nationalAffiliation</key>
+		<string>CCCA</string>
 		<key>Sexes</key>
 		<array>
 			<string>Male</string>
@@ -649,7 +673,6 @@
 		<array>
 			<string>Kitten</string>
 			<string>Open</string>
-			<string>CCCA Award</string>
 		</array>
 		<key>Groups</key>
 		<array>
@@ -664,15 +687,15 @@
 				</array>
 				<key>breeds</key>
 				<array>
+					<string>Persian</string>
 					<string>Birman</string>
 					<string>Exotic</string>
-					<string>Maine Coon</string>
-					<string>Neva Masqerade</string>
-					<string>Norwegian Forest Cat</string>
-					<string>Persian</string>
 					<string>Ragdoll</string>
+					<string>Maine Coon</string>
+					<string>Norwegian Forest Cat</string>
 					<string>Siberian</string>
 					<string>Turkish Van</string>
+					<string>Neva Masqerade</string>
 				</array>
 			</dict>
 			<dict>
@@ -756,6 +779,10 @@
 	</dict>
 	<key>GCCFSA Show</key>
 	<dict>
+		<key>organiseKittensByAgeGroups</key>
+		<true/>
+		<key>nationalAffiliation</key>
+		<string>ACF</string>
 		<key>Sexes</key>
 		<array>
 			<string>Male</string>

@@ -43,9 +43,12 @@ class Entry: NSManagedObject {
   @NSManaged fileprivate(set) var cat: Cat
   @NSManaged fileprivate(set) var show: Show
   
-  
   override var description: String {
       return "\(self.cat.name)  \(self.cat.breed)"
+  }
+  
+  override var debugDescription: String {
+    return "\(self.cat.name)  \(self.cat.breed)"
   }
   
   @objc dynamic var name: String {
@@ -54,6 +57,10 @@ class Entry: NSManagedObject {
   
   @objc dynamic var breed: String {
     return cat.breed
+  }
+  
+  var rings: [Bool] {
+    return [ring1.boolValue, ring2.boolValue, ring3.boolValue, ring4.boolValue, ring5.boolValue, ring6.boolValue]
   }
   
   @objc convenience init(entryData: [String : AnyObject], insertIntoManagedObjectContext context: NSManagedObjectContext?) {
@@ -85,7 +92,6 @@ class Entry: NSManagedObject {
               context.delete(existingCats[i])
             }
           }
-          print("deleted \(excessCats) cats from database")
         } else {
           let newCat = Cat(catData: entryData, insertIntoManagedObjectContext: context)
           self.cat = newCat
@@ -171,13 +177,33 @@ class Entry: NSManagedObject {
     return true
   }
   
-  @objc var isKittenClass: Bool {
-    if Breeds.nonPedigreeBreed(cat.breed) { return false }
+  var isKittenClass: Bool {
+    if Breeds.nonPedigree(breed: cat.breed) { return false }
     if !cat.isKitten { return false }
     return true
   }
   
-  @objc var typeOfCage: String {
+  var challenge: ChallengeTypes {
+    if cat.isCompanion {
+      if cat.isKitten { return .none }
+      if cat.registrationIsPending { return .none }
+    }
+    if cat.isKitten {
+      if Globals.nationalAffiliation == .CCCA { return .open }
+      else { return .none }
+    }
+
+    switch cat.challenge {
+    case Challenges.currentList[2]:
+      return .platinum
+    case Challenges.currentList[3]:
+      return .gold
+    default:
+      return .open
+    }
+  }
+  
+  var typeOfCage: String {
     if self.hireCage.boolValue {
       return Globals.cageTypes.names[_hireCageNumber]
     }
@@ -187,48 +213,34 @@ class Entry: NSManagedObject {
     return Globals.cageTypes.names[0]
   }
   
-  @objc var rings: String {
-    var ans = ""
-    var count = 1
-    for ring in Entry.rings {
-      if let inThisRing = self.value(forKey: ring) as? NSNumber {
-        if inThisRing.boolValue {
-          ans += "\(count)"
-        }
-      }
-      count += 1
-    }
-    return ans
-  }
-  
-  @objc func inRing(_ ring: Int) -> Bool {
+  func inRing(_ ring: Int) -> Bool {
     if let inThisRing = self.value(forKey: Entry.rings[ring - 1]) as? NSNumber {
       return inThisRing.boolValue
     }
     return false
   }
  
-  @objc func differentBreedTo(_ other: Entry?) -> Bool {
+  func differentBreedTo(_ other: Entry?) -> Bool {
     guard let other = other
       else { return true }
     return self.cat.breed != other.cat.breed
   }
   
-  @objc func newBreedTo(_ other: Entry?) -> Bool {
+  func newBreedTo(_ other: Entry?) -> Bool {
     if self.inDifferentSectionTo(other) { return true }
-     return !self.cat.isCompanion && self.differentBreedTo(other)
+     return self.differentBreedTo(other)
   }
   
-  @objc func newJudgingVarietyTo(_ other: Entry? ) -> Bool {
+  func newJudgingVarietyTo(_ other: Entry? ) -> Bool {
     guard let other = other
       else { return true }
     if differentBreedTo(other) { return true }
-    return cat.judgingVariety != other.cat.judgingVariety
+    return cat.patternRank != other.cat.patternRank
   }
   
   // return true if other is different breed or colour
   // not concerned about agouti type
-  @objc func newColourTo(_ other: Entry?) -> Bool {
+  func newColourTo(_ other: Entry?) -> Bool {
     guard let other = other
       else { return true }
     if differentBreedTo(other) { return true }
@@ -237,25 +249,26 @@ class Entry: NSManagedObject {
   
   // return true if other is different challenge colour
   // takes agouti type into account
-  @objc func newColourOrBreedTo(_ other: Entry?) -> Bool {
+  func newColourClassTo(_ other: Entry?) -> Bool {
     guard let other = other
       else { return true }
     if differentBreedTo(other) { return true }
+    if cat.isLimited { return cat.patternRank != other.cat.patternRank }
     return self.cat.colour != other.cat.colour
   }
   
-  // return true if other is different challenge colour
+  // return true if other is different challenge class
   // takes agouti type into account
-  @objc func newChallengeColourTo(_ other: Entry?) -> Bool {
+  func newChallengeClassTo(_ other: Entry?) -> Bool {
     guard let other = other
-      else { return true }
+      else { return false }
     if differentBreedTo(other) { return true }
     if self.cat.isMale {
       if !other.cat.isMale { return true }
     } else {
       if other.cat.isMale { return true }
     }
-    if cat.isLimited { return cat.judgingVariety != other.cat.judgingVariety }
+    if cat.isLimited { return cat.patternRank != other.cat.patternRank }
     return self.cat.colour != other.cat.colour
   }
   
@@ -263,7 +276,7 @@ class Entry: NSManagedObject {
     return self.cat.compareWith(anotherEntry.cat)
   }
   
-  @objc func inDifferentSectionTo(_ other: Entry?) -> Bool {
+  func inDifferentSectionTo(_ other: Entry?) -> Bool {
     guard let other = other
       else { return true }
     if inDifferentGroupTo(other) {return true}
@@ -271,26 +284,14 @@ class Entry: NSManagedObject {
     return self.cat.section != other.cat.section
   }
   
-  @objc func inDifferentGroupTo(_ other: Entry?) -> Bool {
+  func inDifferentGroupTo(_ other: Entry?) -> Bool {
     guard let other = other
       else { return true }
-    return Breeds.groupNumberOf(self.cat.breed) != Breeds.groupNumberOf(other.cat.breed)
+    return Breeds.groupNumber(of: self.cat.breed) != Breeds.groupNumber(of: other.cat.breed)
   }
   
   //MARK: - searching queries for NSSearchField
   // --------------------------------------------------
-  
-  @objc dynamic var ringsEntered: String {
-    var ans = ""
-    var count = 0
-    for ring in Entry.rings {
-      count += 1
-      if let inRing = self.value(forKey: ring) as? NSNumber {
-        if inRing.boolValue { ans.append("\(count)") }
-      }
-    }
-    return ans
-  }
   
   @objc dynamic var worker: String {
     if self.willWork.boolValue {

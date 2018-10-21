@@ -18,14 +18,38 @@ fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
   }
 }
 
+enum SexType: Int, CustomStringConvertible {
+  case male = 0
+  case female
+  case neuter
+  case spay
+  
+  var description: String {
+    switch self {
+    case .male:
+      return "Male"
+    case .female:
+      return "Female"
+    case .neuter:
+      return "Neuter"
+    case .spay:
+      return "Spay"
+    }
+  }
+  
+  mutating func increment() {
+    self = SexType(rawValue: self.rawValue + 1) ?? .male
+  }
+}
 
 var sexesToken: Int = 0
 
 class Sex: DataSource {
-  
+
   // ******************************
-  // Class methods and properties
+  // Class structures
   // ******************************
+
   
   static var list = DictOfStringArray()
   
@@ -33,6 +57,10 @@ class Sex: DataSource {
     return Sex.list[Globals.currentShowType] ?? []
   }
   
+  // ******************************
+  // Class methods
+  // ******************************
+
   class func createList() {
     // load in an array of the group names & breeds in the group
     // for each show type e.g. QFA, ACF or COWOCA
@@ -43,22 +71,20 @@ class Sex: DataSource {
   }
 
   class func isEntire(_ gender: String) -> Bool? {
-    let list = Sex.list[Globals.currentShowType]
-    return list?.index(of: gender) < 2
+    return Sex.sexes.index(of: gender) < 2
   }
   
-  class func rankOf(_ gender: String) -> Int? {
-    guard let ans = Sex.list[Globals.currentShowType]?.index(of: gender)
+  class func rank(of gender: String) -> Int? {
+    guard let ans = Sex.sexes.index(of: gender)
       else { return nil }
     return ans
   }
   
-  class func nameOf(_ number: Int) -> String {
-    guard let ans = Sex.list[Globals.currentShowType]? [number]
-      else { fatalError("Cannot get sex number \(number) for show type \(Globals.currentShowType)") }
-    return ans
+  class func name(ranked number: Int) -> String? {
+    guard number < Sex.sexes.count
+      else { return nil }
+    return Sex.sexes[number]
   }
-  
   
   // *********************************
   // Instance methods and properties

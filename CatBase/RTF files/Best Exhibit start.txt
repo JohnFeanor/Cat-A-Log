@@ -1,0 +1,11 @@
+
+{\pard \sa120\sb120 \par}
+
+{\trowd \trkeep
+\clbrdrt\brdrw10\brdrs
+\clbrdrl\brdrw10\brdrs
+\clbrdrb\brdrw10\brdrs
+\clbrdrr\brdrw10\brdrs
+\clvertalc\clcbpat1\cellx10200
+{\pard\intbl \s35 \f47\ql\fs24\li0\ri0\sb120\sa120\li120\langnp3081 Best Exhibit\cell}
+\row}

@@ -10,83 +10,6 @@ import Cocoa
 
 class MainWindowController: NSWindowController {
   
-  @objc let nbspace        = "&nbsp;".data
-  
-  @objc let  header1       = readFile("Header1")
-  @objc let  header2       = readFile("Header2")
-  @objc let  header2judge  = readFile("Header2judge")
-  @objc let  tableStart    = readFile("Table start")
-  @objc let  tableEnd      = readFile("Table end")
-  @objc let  rowEnd        = "</tr>".data
-
-  @objc let  head1         = readFile("head1")
-  @objc let  head2         = readFile("head2")
-  @objc let  head3         = readFile("head3")
-  @objc let  head4         = readFile("head4")
-  @objc let  head5         = readFile("head5")
-  @objc let  head5_1       = readFile("head5_1")
-  @objc let  head5_2       = readFile("head5_2")
-  @objc let  head6         = readFile("head6")
-
-  @objc let  section1      = readFile("Section1")
-  @objc let  Section1_alt  = readFile("Section1 alt")
-  @objc let  section2      = readFile("Section2")
-  @objc let  section3      = readFile("Section3")
-  @objc let  breed1        = readFile("Breed1")
-  @objc let  breed2        = readFile("Breed2")
-  @objc let  colour1       = readFile("Colour1")
-  @objc let  colour2       = readFile("Colour2")
-  @objc let  colour3       = readFile("Colour3")
-  @objc let  name1         = readFile("Name1")
-  @objc let  name1Litter   = readFile("Name1 litter")
-  @objc let  name2         = readFile("Name2")
-  @objc let  name2Litter   = readFile("Name2 litter")
-  @objc let  name3         = readFile("Name3")
-  @objc let  name4         = readFile("Name4")
-  @objc let  details1      = readFile("Details1")
-  @objc let  details1Litter = readFile("Details1 Litter")
-  @objc let  details2      = readFile("Details2")
-  @objc let  details3      = readFile("Details3")
-  @objc let  details3Litter = readFile("Details3Litter")
-  @objc let  details4      = readFile("Details4")
-  @objc let  details5      = readFile("Details5")
-  @objc let  challenge1    = readFile("Challenge1")
-  @objc let  challenge2    = readFile("Challenge2")
-  @objc let  challenge3    = readFile("Challenge3")
-  @objc let  prestige1     = readFile("Prestige1")
-  @objc let  bestAward1    = readFile("BestAward1")
-  @objc let  bestAward2    = readFile("BestAward2")
-  @objc let  bestAward3    = readFile("BestAward3")
-  @objc let  bestAward4    = readFile("BestAward4")
-  @objc let  entered       = readFile("Box entered")
-  @objc let  notEntered    = readFile("Box not entered")
-  @objc let  underlined    = readFile("Box underlined")
-  @objc let  noRing        = readFile("Box no ring")
-  
-  @objc let  endOfEntries1     = readFile("EndOfEntries1")
-  @objc let  endOfEntries2     = readFile("EndOfEntries2")
-  @objc let  endOfEntriesJudge = readFile("EndOfEntriesJudge")
-  
-  @objc let  bestOfBreedStart  = readFile("BestOfBreedStart")
-  @objc let  bestOfBreedEnd    = readFile("BestOfBreedEnd")
-  @objc let  spacer            = readFile("Spacer")
-  
-  @objc let  ACFstartTable     = readFile("ACFAward start table")
-  @objc let  ACFstartRow       = readFile("ACFAward start row")
-  @objc let  ACFendRow         = readFile("ACFAward end row")
-  
-  let  ACFAoEstart       = readFile("ACFAoE start")
-  let  ACFAoEstartRow    = readFile("ACFAoE start row")
-  let  ACFAoEendRow      = readFile("ACFAoE end row")
-  
-  let  CCCAAwardsstart   = readFile("CCCAAwards1")
-
-  let  topTenStartTable  = readFile("Top ten start table")
-  let  topTenEndTable    = readFile("Top ten end table")
-  
-  let  endOfFile         = readFile("End of file")
-  let  endOfFileJudge    = readFile("End of file judge")
-  
   let challenge    = NSLocalizedString("Challenge", tableName: "general", comment: "Challenge")
   let awardOfMerit  = NSLocalizedString("Award of Merit", tableName: "general", comment: "Award of merit")
   
@@ -95,14 +18,14 @@ class MainWindowController: NSWindowController {
   
   @IBOutlet weak var tableView: NSTableView!
   
-  @objc weak var appDelegate: AppDelegate!
+  weak var appDelegate: AppDelegate!
   
   @objc var managedObjectContext: NSManagedObjectContext!
   
-  @objc var addShowWindowController: AddShowWindowController? = nil
-  @objc var addEntryWindowController: EntrySheetController? = nil
+  var addShowWindowController: AddShowWindowController? = nil
+  var addEntryWindowController: EntrySheetController? = nil
   
-  @objc var mainWindow: NSWindow? {
+  var mainWindow: NSWindow? {
     return window
   }
     
@@ -349,10 +272,10 @@ class MainWindowController: NSWindowController {
   
   @objc func displaySavePanel() {
     let savePanel = NSSavePanel()
-    savePanel.allowedFileTypes = ["html"]
+    savePanel.allowedFileTypes = ["rtf"]
     savePanel.isExtensionHidden = false
     savePanel.canSelectHiddenExtension = false
-    savePanel.nameFieldStringValue = "\(Globals.currentShowName).html"
+    savePanel.nameFieldStringValue = "\(Globals.currentShowName).rtf"
     
     savePanel.beginSheetModal(for: window!, completionHandler: {
       [unowned savePanel] (result) in

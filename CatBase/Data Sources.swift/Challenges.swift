@@ -16,10 +16,12 @@ enum ChallengeTypes: Int {
   case open
   case gold
   case platinum
+  case companion
+  case none
   
   var description: String {
     guard let ans = Challenges.list[Globals.currentShowType]?[self.rawValue]
-      else { fatalError("Cannot get description of challenge \(self)") }
+      else { return "None" }
     return ans
   }
 }
@@ -39,6 +41,10 @@ class Challenges: DataSource {
 
   static var entity = "Challenges"
   static var list = [String : [String]]()
+  
+  static var currentList: [String] {
+    return Challenges.list[Globals.currentShowType] ?? ["Kitten", "Open", "Gold", "Platinum"]
+  }
   
   class func createList() {
     // load in an array of the challenge classes in the group
@@ -94,7 +100,7 @@ class Challenges: DataSource {
     return ans
   }
 
-  class func nameOf(_ rank: ChallengeTypes) -> String {
+  class func name(ranked rank: ChallengeTypes) -> String {
     if Challenges.list[Globals.currentShowType]?[rank.rawValue] == nil {
       reloadChallenges()
     }

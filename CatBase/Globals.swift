@@ -15,6 +15,72 @@ typealias DictOfStringArray = [String : [String]]
 // MARK: - Extensions
 // *******************************
 
+postfix func ++(c: inout Character) -> Character {
+  let s = String(c).unicodeScalars
+  let i = s[s.startIndex].value
+  c = Character(UnicodeScalar(i + 1)!)
+  return Character(UnicodeScalar(i)!)
+}
+
+extension String {
+  var fileName: String {
+    return NSURL(fileURLWithPath: self).deletingPathExtension?.lastPathComponent ?? ""
+  }
+  
+  var fileExtension: String {
+    return NSURL(fileURLWithPath: self).pathExtension ?? ""
+  }
+}
+protocol Datamaker {
+  var data: Data {get }
+}
+
+extension String: Datamaker {
+  var data: Data {
+    if let ans = self.data(using: String.Encoding.utf8) {
+      return ans
+    } else {
+      fatalError("Cannot encode \"\(self)\"")
+    }
+  }
+}
+
+extension Patterns: Datamaker {
+  var data: Data {
+    let sRep = String(describing: self)
+    if let ans = sRep.data(using: String.Encoding.utf8) {
+      return ans
+    } else {
+      fatalError("Cannot encode \"\(self)\"")
+    }
+  }
+}
+
+extension Int: Datamaker {
+  var data: Data {
+    let sRep = String(self)
+    if let ans = sRep.data(using: String.Encoding.utf8) {
+      return ans
+    } else {
+      fatalError("Cannot encode \"\(self)\"")
+    }
+  }
+}
+
+extension Data: Datamaker {
+  var data: Data {
+    return self
+  }
+}
+
+extension Data {
+  mutating func add(data: Datamaker ...) {
+    for datum in data {
+      self.append(datum.data)
+    }
+  }
+}
+
 extension NSControl {
   @objc var currentBreed: String {
     get {
@@ -47,6 +113,11 @@ extension Date {
     return formatter.string(from: self)
   }
   
+  var description: String {
+    let formatter = Foundation.DateFormatter()
+    formatter.dateFormat = "dd MMM yyyy"
+    return formatter.string(from: self)
+  }
   
   func lessThan(months: Int = 0, weeks: Int = 0, before date2: Date) -> Bool {
     
@@ -85,6 +156,32 @@ extension String {
   var isPending: Bool {
     return self.caseInsensitiveCompare(pending) == ComparisonResult.orderedSame
   }
+  
+  var condensingWhitespace: String {
+    return self.components(separatedBy: .whitespacesAndNewlines)
+      .filter { !$0.isEmpty }
+      .joined(separator: " ")
+  }
+  
+  var initials: String {
+    let name = String(self.prefix(upTo: self.firstIndex(of: "(") ?? self.endIndex))
+    return String(name.components(separatedBy: .whitespaces).compactMap({ $0.first }))
+  }
+  
+  func firstWord() -> String {
+    if let myRange = self.firstIndex(of: " ") {
+      return String(self.prefix(upTo: myRange))
+    }
+    else {
+      return self
+    }
+  }
+}
+
+extension Array where Element == String {
+  var initials: [String] {
+    return self.map({ $0.initials })
+  }
 }
 
 // ********************************
@@ -102,6 +199,68 @@ struct Headings {
   static let group      = "group"
   static let subgroups  = "subgroups"
   static let breeds     = "breeds"
+}
+
+enum NationalAffiliations: String {
+  case ACF
+  case CCCA
+}
+
+struct OrderedList<T:Equatable>: Sequence, IteratorProtocol {
+  private let myArray: [T]
+  private var present: [Bool]
+  private var myCount = 0
+  
+  init(with possibleElements: [T]) {
+    myArray = possibleElements
+    present = Array(repeating: false, count: possibleElements.count)
+  }
+  
+  var array: [T] {
+  return myArray
+  }
+  
+  var last: T? {
+    return myArray.last
+  }
+  
+  mutating func next() -> T? {
+    while myCount < myArray.count {
+      defer { myCount += 1 }
+      if present[myCount] { return  myArray[myCount] }
+    }
+    return nil
+  }
+  
+  mutating func append(_ nextElement: T) {
+    if let i = myArray.firstIndex(of: nextElement) {
+      present[i] = true
+    }
+  }
+}
+
+enum ACFGroup: Int, CustomStringConvertible {
+  mutating func increment() {
+    self = ACFGroup(rawValue: self.rawValue + 1) ?? .exceeded
+  }
+  
+  case group1 = 0
+  case group2, group3, group4, exceeded
+  
+  var description: String {
+    switch self {
+    case .group1:
+      return "Group One"
+    case .group2:
+      return "Group Two"
+    case .group3:
+      return "Group Three"
+    case .group4:
+      return "Group Four"
+    case .exceeded:
+      return "Exceeded"
+    }
+  }
 }
 
 // ********************************
@@ -131,18 +290,14 @@ let speaker = NSSpeechSynthesizer()
 // MARK: - Judging varities
 // *******************************
 
-let qfaLimitedBreeds = ["Maine Coon", "Norwegian Forest", "Siberian", "American Curl", "American Curl Longhair", "Manx", "Manx Stumpy", "Cymric", "Cymric Stumpy", "Selkirk Rex Shorthair", "Selkirk Rex Longhair", "Cornish Rex", "Devon Rex", "German Rex", "Sphynx", "La Perm", "La Perm Longhair", "Scottish Fold", "Scottish Fold Longhair", "Scottish Shorthair", "Scottish Longhair"]
-
-let cccaLimitedBreeds = ["Maine Coon", "Norwegian Forest", "Siberian", "American Curl", "American Curl Longhair", "Manx", "Manx Stumpy", "Cymric", "Cymric Stumpy", "Selkirk Rex Shorthair", "Selkirk Rex Longhair", "Cornish Rex", "Devon Rex", "German Rex", "Sphynx", "La Perm", "La Perm Longhair", "Scottish Fold", "Scottish Fold Longhair", "Scottish Shorthair", "Scottish Longhair", "Ragdoll", "Bengal"]
-
-enum JudgingVarities: Int, Comparable {
+enum Patterns: Int, Comparable, CustomStringConvertible {
   case colourClass = 0
   case agouti, agoutiWhite, nonAgouti, nonAgoutiWhite
   case mitted, bicolour
   case brown, sepia, mink, lynxPoint
   case solid, patched, patterned, silver, pointed
   
-  var name: String {
+  var description: String {
     switch self {
     case .colourClass: return "Standard"
     case .agouti : return "Agouti"
@@ -163,12 +318,23 @@ enum JudgingVarities: Int, Comparable {
     }
   }
   
-  static func ==(lhs: JudgingVarities, rhs: JudgingVarities) -> Bool {
+  static func ==(lhs: Patterns, rhs: Patterns) -> Bool {
     return lhs.rawValue == rhs.rawValue
   }
   
-  static func <(lhs: JudgingVarities, rhs: JudgingVarities) -> Bool {
+  static func <(lhs: Patterns, rhs: Patterns) -> Bool {
     return lhs.rawValue < rhs.rawValue
+  }
+}
+
+func categoryName(for category: Cat.Category) -> String {
+  switch category {
+  case .companion:
+    return " Award of Merit "
+  case .kitten:
+    return " Best in Section "
+  default:
+    return " Challenge "
   }
 }
 
@@ -226,14 +392,6 @@ var ACFAoEAwards: Bool {
 // ********************************
 // MARK: - Other helper functions
 // *******************************
-
-func minAges(_ key: String) -> (months: Int, weeks: Int) {
-  if let dict = Globals.dataByGroup[Globals.currentShowType] {
-    let ages = dict.value(forKey: key) as! [Int]
-    return (ages[0], ages[1])
-  }
-  return (0, 0)
-}
 
 func setAge(_ key: String, toWeeks weeks:Int? = nil, andMonths months: Int? = nil) {
   
@@ -375,27 +533,24 @@ class Globals: NSObject {
   @IBOutlet var theShowController: NSArrayController!
   @IBOutlet var theEntriesController: NSArrayController!
   
-  @objc static var dataByGroup:[String : NSDictionary] = {
-    return dictFromPList("ShowFormats") as! [String : [String : [AnyObject]]]
+  static var dataByGroup:[String : NSDictionary] = {
+    return dictFromPList("ShowFormats") as! [String : [String : AnyObject]]
     }() as [String : NSDictionary]
 
-  @objc static var currentShow: Show? = nil
-  @objc static var currentEntry: Entry? = nil
-  @objc static var defaultShowAffliation: String {
+  static var currentShow: Show? = nil
+  static var currentEntry: Entry? = nil
+  static var defaultShowAffliation: String {
     let ans = Globals.showTypes.first ?? "ACF Show"
     return ans
   }
   
-  @objc static var currentShowName: String {
-    if currentShow == nil {
-      return ""
-    }
-    return currentShow!.name
+ static var currentShowName: String {
+    return currentShow?.name ?? ""
   }
   
-  @objc static var currentShowDate: String {
+  static var currentShowDate: String {
     if currentShow == nil {
-      fatalError("Nil show when trying to get date for nil show")
+      fatalError("Nil show when trying to get date for current show")
     }
     let longDate = Foundation.DateFormatter()
     longDate.timeStyle = .none
@@ -408,19 +563,19 @@ class Globals: NSObject {
     return Globals.showTypes
   }
   
-  @objc static var showTypes: [String] = {
+  static var showTypes: [String] = {
     let allKeys = Array(dataByGroup.keys)
-    return allKeys.sorted(by: >)
+    return allKeys.sorted(by: <)
     }()
  
-  @objc static var currentShowType: String {
+  static var currentShowType: String {
     if currentShow == nil {
-      print("Nil show when trying to get type for nil show")
+      print("Nil show when trying to get type for current show")
     }
     return Globals.currentShow?.affiliation ?? Globals.defaultShowAffliation
   }
   
-  @objc static var numberOfRingsInShow: Int {
+  static var numberOfRingsInShow: Int {
     if let show = Globals.currentShow {
       return show.numberOfRings.intValue
     } else {
@@ -428,16 +583,39 @@ class Globals: NSObject {
     }
   }
   
-  fileprivate static var agouti: [String: [String]] = {
-    return dictFromPList("agouti") as! [String: [String]]
-  }()
-  
-  @objc static var agoutiBreeds: [String]  {
-    return Globals.agouti["breeds"]!
+  static var organiseKittensByAgeGroups: Bool {
+    guard let answer = Globals.dataByGroup[Globals.currentShowType]?["organiseKittensByAgeGroups"] as? Bool
+      else { print("Cannot find switch 'organiseKittensByAgeGroups' for show type '\(Globals.currentShowType)'"); return true }
+    return answer
   }
   
-  @objc static var agoutiClasses: [String] {
-    return Globals.agouti["classes"]!
+  fileprivate static var patternClassed: [String: [String: [String]]] = {
+    return dictFromPList("PatternClassed") as! [String: [String: [String]]]
+  }()
+  
+  fileprivate static var myCount = 0
+  
+  static var patternedBreeds: [String]  {
+    guard let dict = Globals.patternClassed[nationalAffiliation.rawValue.uppercased()]
+      else { fatalError("Cannot get patterned breeds for affliation '\(nationalAffiliation)'")}
+    guard let answer = dict["breeds"]
+      else { print("patternedBreeds is a nil dictionary"); return []}
+    myCount += 1
+    return answer
+  }
+  
+  static var patternClasses: [String] {
+    guard let dict = Globals.patternClassed[nationalAffiliation.rawValue]
+      else { print("Cannot get pattern classes for affliation '\(nationalAffiliation)'"); return []}
+    return dict["classes"] ?? []
+  }
+  
+  static var nationalAffiliation: NationalAffiliations {
+    guard let string = dataByGroup[Globals.currentShowType]?["nationalAffiliation"] as? String
+      else { print("Cannot find the national affiliation for show type '\(Globals.currentShowType)'"); return .ACF}
+    guard let answer = NationalAffiliations(rawValue: string)
+      else { print("Given '\(string)' as the national affiliation for show type '\(Globals.currentShowType)'"); return .ACF}
+    return answer
   }
   
   static var cageTypes: (names:[String], sizes:[Int]) = {
@@ -458,7 +636,7 @@ class Globals: NSObject {
     }
   }()
   
-  @objc static var litterCageLength: Int {
+  static var litterCageLength: Int {
     return Globals.cageTypes.sizes[6]
   }
   

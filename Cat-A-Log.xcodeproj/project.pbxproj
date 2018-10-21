@@ -8,58 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4F0564EA1BA2B48500285C46 /* CatNameFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0564E91BA2B48500285C46 /* CatNameFormatter.swift */; };
-		4F0F92A91BA3DE6F00724D9C /* ACFAoE end row.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F92751BA3DE6F00724D9C /* ACFAoE end row.txt */; };
-		4F0F92AA1BA3DE6F00724D9C /* ACFAoE start row.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F92761BA3DE6F00724D9C /* ACFAoE start row.txt */; };
-		4F0F92AB1BA3DE6F00724D9C /* ACFAoE start.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F92771BA3DE6F00724D9C /* ACFAoE start.txt */; };
-		4F0F92AC1BA3DE6F00724D9C /* ACFAward end row.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F92781BA3DE6F00724D9C /* ACFAward end row.txt */; };
-		4F0F92AD1BA3DE6F00724D9C /* ACFAward start row.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F92791BA3DE6F00724D9C /* ACFAward start row.txt */; };
-		4F0F92AE1BA3DE6F00724D9C /* ACFAward start table.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F927A1BA3DE6F00724D9C /* ACFAward start table.txt */; };
-		4F0F92AF1BA3DE6F00724D9C /* BestAward1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F927B1BA3DE6F00724D9C /* BestAward1.txt */; };
-		4F0F92B01BA3DE6F00724D9C /* BestAward2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F927C1BA3DE6F00724D9C /* BestAward2.txt */; };
-		4F0F92B11BA3DE6F00724D9C /* BestAward3.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F927D1BA3DE6F00724D9C /* BestAward3.txt */; };
-		4F0F92B21BA3DE6F00724D9C /* BestAward4.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F927E1BA3DE6F00724D9C /* BestAward4.txt */; };
-		4F0F92B31BA3DE6F00724D9C /* BestOfBreedEnd.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F927F1BA3DE6F00724D9C /* BestOfBreedEnd.txt */; };
-		4F0F92B41BA3DE6F00724D9C /* BestOfBreedStart.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F92801BA3DE6F00724D9C /* BestOfBreedStart.txt */; };
-		4F0F92B51BA3DE6F00724D9C /* Box entered.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F92811BA3DE6F00724D9C /* Box entered.txt */; };
-		4F0F92B61BA3DE6F00724D9C /* Box no ring.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F92821BA3DE6F00724D9C /* Box no ring.txt */; };
-		4F0F92B71BA3DE6F00724D9C /* Box not entered.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F92831BA3DE6F00724D9C /* Box not entered.txt */; };
-		4F0F92B81BA3DE6F00724D9C /* Box underlined.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F92841BA3DE6F00724D9C /* Box underlined.txt */; };
-		4F0F92B91BA3DE6F00724D9C /* Breed1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F92851BA3DE6F00724D9C /* Breed1.txt */; };
-		4F0F92BA1BA3DE6F00724D9C /* Breed2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F92861BA3DE6F00724D9C /* Breed2.txt */; };
-		4F0F92BB1BA3DE6F00724D9C /* Challenge1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F92871BA3DE6F00724D9C /* Challenge1.txt */; };
-		4F0F92BC1BA3DE6F00724D9C /* Challenge2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F92881BA3DE6F00724D9C /* Challenge2.txt */; };
-		4F0F92BD1BA3DE6F00724D9C /* Challenge3.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F92891BA3DE6F00724D9C /* Challenge3.txt */; };
-		4F0F92BE1BA3DE6F00724D9C /* Colour1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F928A1BA3DE6F00724D9C /* Colour1.txt */; };
-		4F0F92BF1BA3DE6F00724D9C /* Colour2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F928B1BA3DE6F00724D9C /* Colour2.txt */; };
-		4F0F92C01BA3DE6F00724D9C /* Colour3.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F928C1BA3DE6F00724D9C /* Colour3.txt */; };
-		4F0F92C11BA3DE6F00724D9C /* Details1 Litter.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F928D1BA3DE6F00724D9C /* Details1 Litter.txt */; };
-		4F0F92C21BA3DE6F00724D9C /* Details1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F928E1BA3DE6F00724D9C /* Details1.txt */; };
-		4F0F92C31BA3DE6F00724D9C /* Details2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F928F1BA3DE6F00724D9C /* Details2.txt */; };
-		4F0F92C41BA3DE6F00724D9C /* Details3.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F92901BA3DE6F00724D9C /* Details3.txt */; };
-		4F0F92C51BA3DE6F00724D9C /* Details3Litter.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F92911BA3DE6F00724D9C /* Details3Litter.txt */; };
-		4F0F92C61BA3DE6F00724D9C /* Details4.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F92921BA3DE6F00724D9C /* Details4.txt */; };
-		4F0F92C71BA3DE6F00724D9C /* Details5.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F92931BA3DE6F00724D9C /* Details5.txt */; };
-		4F0F92C81BA3DE6F00724D9C /* End of file judge.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F92941BA3DE6F00724D9C /* End of file judge.txt */; };
-		4F0F92C91BA3DE6F00724D9C /* End of file.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F92951BA3DE6F00724D9C /* End of file.txt */; };
-		4F0F92CA1BA3DE6F00724D9C /* EndOfEntries1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F92961BA3DE6F00724D9C /* EndOfEntries1.txt */; };
-		4F0F92CB1BA3DE6F00724D9C /* Header1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F92971BA3DE6F00724D9C /* Header1.txt */; };
-		4F0F92CC1BA3DE6F00724D9C /* Header2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F92981BA3DE6F00724D9C /* Header2.txt */; };
-		4F0F92CD1BA3DE6F00724D9C /* Header2judge.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F92991BA3DE6F00724D9C /* Header2judge.txt */; };
-		4F0F92CE1BA3DE6F00724D9C /* head4.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F929A1BA3DE6F00724D9C /* head4.txt */; };
-		4F0F92CF1BA3DE6F00724D9C /* Name1 litter.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F929B1BA3DE6F00724D9C /* Name1 litter.txt */; };
-		4F0F92D01BA3DE6F00724D9C /* Name1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F929C1BA3DE6F00724D9C /* Name1.txt */; };
-		4F0F92D11BA3DE6F00724D9C /* Name2 litter.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F929D1BA3DE6F00724D9C /* Name2 litter.txt */; };
-		4F0F92D21BA3DE6F00724D9C /* Name2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F929E1BA3DE6F00724D9C /* Name2.txt */; };
-		4F0F92D31BA3DE6F00724D9C /* Name3.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F929F1BA3DE6F00724D9C /* Name3.txt */; };
-		4F0F92D41BA3DE6F00724D9C /* Name4.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F92A01BA3DE6F00724D9C /* Name4.txt */; };
-		4F0F92D51BA3DE6F00724D9C /* Prestige1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F92A11BA3DE6F00724D9C /* Prestige1.txt */; };
-		4F0F92D61BA3DE6F00724D9C /* Section1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F92A21BA3DE6F00724D9C /* Section1.txt */; };
-		4F0F92D71BA3DE6F00724D9C /* Section3.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F92A31BA3DE6F00724D9C /* Section3.txt */; };
-		4F0F92D81BA3DE6F00724D9C /* Spacer.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F92A41BA3DE6F00724D9C /* Spacer.txt */; };
-		4F0F92D91BA3DE6F00724D9C /* Table end.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F92A51BA3DE6F00724D9C /* Table end.txt */; };
-		4F0F92DA1BA3DE6F00724D9C /* Table start.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F92A61BA3DE6F00724D9C /* Table start.txt */; };
-		4F0F92DB1BA3DE6F00724D9C /* Top ten end table.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F92A71BA3DE6F00724D9C /* Top ten end table.txt */; };
-		4F0F92DC1BA3DE6F00724D9C /* Top ten start table.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F92A81BA3DE6F00724D9C /* Top ten start table.txt */; };
 		4F0F92DE1BA3E30900724D9C /* general.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F92DD1BA3E30900724D9C /* general.strings */; };
 		4F0F92E11BA3EC8400724D9C /* Excel list.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F92E01BA3EC8400724D9C /* Excel list.plist */; };
 		4F0F92E41BA3EF0E00724D9C /* Places.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F92E31BA3EF0E00724D9C /* Places.plist */; };
@@ -78,31 +26,80 @@
 		4F3EFAE31B6DB98C00DA2F5C /* AddShowWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3EFAE11B6DB98C00DA2F5C /* AddShowWindowController.swift */; };
 		4F3EFAE41B6DB98C00DA2F5C /* AddShowWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F3EFAE21B6DB98C00DA2F5C /* AddShowWindowController.xib */; };
 		4F3EFAE61B6DEE1500DA2F5C /* Breeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3EFAE51B6DEE1500DA2F5C /* Breeds.swift */; };
-		4F420B1C1BB60B8700105564 /* head5.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F420B1A1BB60B8700105564 /* head5.txt */; };
-		4F420B1D1BB60B8700105564 /* head6.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F420B1B1BB60B8700105564 /* head6.txt */; };
-		4F420B1F1BB6121200105564 /* EndOfEntries2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F420B1E1BB6121200105564 /* EndOfEntries2.txt */; };
-		4F420B211BB61F4800105564 /* head5_1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F420B201BB61F4800105564 /* head5_1.txt */; };
-		4F420B231BB625BF00105564 /* head5_2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F420B221BB625BF00105564 /* head5_2.txt */; };
 		4F4B889B1BC0D35D00CF734B /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4B889A1BC0D35D00CF734B /* DateFormatter.swift */; };
 		4F6214861BB290E400F87183 /* ProgressWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6214841BB290E400F87183 /* ProgressWindowController.swift */; };
 		4F6214871BB290E400F87183 /* ProgressWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F6214851BB290E400F87183 /* ProgressWindowController.xib */; };
 		4F6214891BB34A1B00F87183 /* Authentication.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F6214881BB34A1B00F87183 /* Authentication.plist */; };
 		4F62148B1BB34F2000F87183 /* icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4F62148A1BB34F2000F87183 /* icon.jpg */; };
 		4F63A6B91BB819760009C5A4 /* Cat on book.icns in Resources */ = {isa = PBXBuildFile; fileRef = 4F63A6B81BB819760009C5A4 /* Cat on book.icns */; };
-		4F6A78ED2079E58B006CACF7 /* CCCAAwards1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F6A78EC2079E58B006CACF7 /* CCCAAwards1.txt */; };
 		4F7107FE1B77748E00E21AAC /* Challenges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7107FD1B77748E00E21AAC /* Challenges.swift */; };
-		4F7812B51BB14AEA0036AD80 /* Section2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F7812B41BB14AEA0036AD80 /* Section2.txt */; };
 		4F8E87321BAFB19E00497D2F /* TitleEditorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8E87301BAFB19E00497D2F /* TitleEditorController.swift */; };
 		4F8E87331BAFB19E00497D2F /* TitleEditorController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F8E87311BAFB19E00497D2F /* TitleEditorController.xib */; };
 		4F9235FE1B7952B70096ADFD /* Titles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9235FD1B7952B70096ADFD /* Titles.swift */; };
 		4F9236001B7953500096ADFD /* Titles.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F9235FF1B7953500096ADFD /* Titles.plist */; };
-		4F95B9891BB5FE5500971CE6 /* head2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F95B9871BB5FE5500971CE6 /* head2.txt */; };
-		4F95B98A1BB5FE5500971CE6 /* head3.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F95B9881BB5FE5500971CE6 /* head3.txt */; };
 		4F9B6C091B7FF6EA00C2964B /* CageTypes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F9B6C081B7FF6EA00C2964B /* CageTypes.plist */; };
-		4FAFEA9E1BAAEFE700C3EB89 /* head1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FAFEA9A1BAAEFE700C3EB89 /* head1.txt */; };
-		4FAFEA9F1BAAEFE700C3EB89 /* judge_header.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FAFEA9B1BAAEFE700C3EB89 /* judge_header.txt */; };
-		4FAFEAA01BAAEFE700C3EB89 /* judge_headerPt2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FAFEA9C1BAAEFE700C3EB89 /* judge_headerPt2.txt */; };
-		4FAFEAA11BAAEFE700C3EB89 /* judge_headerPt3.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FAFEA9D1BAAEFE700C3EB89 /* judge_headerPt3.txt */; };
+		4FB3CBD0217D2FD50051C804 /* ACF awards from section name to end.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CB92217D2FD50051C804 /* ACF awards from section name to end.txt */; };
+		4FB3CBD1217D2FD50051C804 /* ACF awards start.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CB93217D2FD50051C804 /* ACF awards start.txt */; };
+		4FB3CBD2217D2FD50051C804 /* ACF awards to section name.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CB94217D2FD50051C804 /* ACF awards to section name.txt */; };
+		4FB3CBD3217D2FD50051C804 /* Best Exhibit from Judges.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CB95217D2FD50051C804 /* Best Exhibit from Judges.txt */; };
+		4FB3CBD4217D2FD50051C804 /* Best Exhibit Judge1 to Judge2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CB96217D2FD50051C804 /* Best Exhibit Judge1 to Judge2.txt */; };
+		4FB3CBD5217D2FD50051C804 /* Best Exhibit start.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CB97217D2FD50051C804 /* Best Exhibit start.txt */; };
+		4FB3CBD6217D2FD50051C804 /* Best Exhibit to Judge 1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CB98217D2FD50051C804 /* Best Exhibit to Judge 1.txt */; };
+		4FB3CBD7217D2FD50051C804 /* Best in Show from number to end of table.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CB99217D2FD50051C804 /* Best in Show from number to end of table.txt */; };
+		4FB3CBD8217D2FD50051C804 /* Best in Show heading.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CB9A217D2FD50051C804 /* Best in Show heading.txt */; };
+		4FB3CBD9217D2FD50051C804 /* Best in Show to ring number.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CB9B217D2FD50051C804 /* Best in Show to ring number.txt */; };
+		4FB3CBDA217D2FD50051C804 /* Best of breed name to end.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CB9C217D2FD50051C804 /* Best of breed name to end.txt */; };
+		4FB3CBDB217D2FD50051C804 /* Best of breed start.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CB9D217D2FD50051C804 /* Best of breed start.txt */; };
+		4FB3CBDC217D2FD50051C804 /* Best of breed to breedname.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CB9E217D2FD50051C804 /* Best of breed to breedname.txt */; };
+		4FB3CBDD217D2FD50051C804 /* Best of breed to last breedname.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CB9F217D2FD50051C804 /* Best of breed to last breedname.txt */; };
+		4FB3CBDE217D2FD50051C804 /* blankCell.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBA0217D2FD50051C804 /* blankCell.txt */; };
+		4FB3CBDF217D2FD50051C804 /* boxBeforeRings.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBA1217D2FD50051C804 /* boxBeforeRings.txt */; };
+		4FB3CBE0217D2FD50051C804 /* cat details to birthdate.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBA2217D2FD50051C804 /* cat details to birthdate.txt */; };
+		4FB3CBE1217D2FD50051C804 /* cat details to class.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBA3217D2FD50051C804 /* cat details to class.txt */; };
+		4FB3CBE2217D2FD50051C804 /* cat details to name.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBA4217D2FD50051C804 /* cat details to name.txt */; };
+		4FB3CBE3217D2FD50051C804 /* cat details to number.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBA5217D2FD50051C804 /* cat details to number.txt */; };
+		4FB3CBE4217D2FD50051C804 /* cat details to parents.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBA6217D2FD50051C804 /* cat details to parents.txt */; };
+		4FB3CBE5217D2FD50051C804 /* cat in ring.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBA7217D2FD50051C804 /* cat in ring.txt */; };
+		4FB3CBE6217D2FD50051C804 /* cat not in ring.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBA8217D2FD50051C804 /* cat not in ring.txt */; };
+		4FB3CBE7217D2FD50051C804 /* closeFooter.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBA9217D2FD50051C804 /* closeFooter.txt */; };
+		4FB3CBE8217D2FD50051C804 /* colour heading row.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBAA217D2FD50051C804 /* colour heading row.txt */; };
+		4FB3CBE9217D2FD50051C804 /* detailsBeforeChallenge.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBAB217D2FD50051C804 /* detailsBeforeChallenge.txt */; };
+		4FB3CBEA217D2FD50051C804 /* detailsFromRingBoxes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBAC217D2FD50051C804 /* detailsFromRingBoxes.txt */; };
+		4FB3CBEB217D2FD50051C804 /* endRingBoxRow.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBAD217D2FD50051C804 /* endRingBoxRow.txt */; };
+		4FB3CBEC217D2FD50051C804 /* fileHeader.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBAE217D2FD50051C804 /* fileHeader.txt */; };
+		4FB3CBED217D2FD50051C804 /* footerText.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBAF217D2FD50051C804 /* footerText.txt */; };
+		4FB3CBEE217D2FD50051C804 /* group heading row.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBB0217D2FD50051C804 /* group heading row.txt */; };
+		4FB3CBEF217D2FD50051C804 /* notesBeginFile.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBB2217D2FD50051C804 /* notesBeginFile.txt */; };
+		4FB3CBF0217D2FD50051C804 /* notesBestExhibit.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBB3217D2FD50051C804 /* notesBestExhibit.txt */; };
+		4FB3CBF1217D2FD50051C804 /* notesBestOfBreedCell.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBB4217D2FD50051C804 /* notesBestOfBreedCell.txt */; };
+		4FB3CBF2217D2FD50051C804 /* notesBestOfBreedCellEnd.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBB5217D2FD50051C804 /* notesBestOfBreedCellEnd.txt */; };
+		4FB3CBF3217D2FD50051C804 /* notesBestOfBreedCellFinal.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBB6217D2FD50051C804 /* notesBestOfBreedCellFinal.txt */; };
+		4FB3CBF4217D2FD50051C804 /* notesBestOfBreedStart.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBB7217D2FD50051C804 /* notesBestOfBreedStart.txt */; };
+		4FB3CBF5217D2FD50051C804 /* notesBlankCell.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBB8217D2FD50051C804 /* notesBlankCell.txt */; };
+		4FB3CBF6217D2FD50051C804 /* notesFromAge.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBB9217D2FD50051C804 /* notesFromAge.txt */; };
+		4FB3CBF7217D2FD50051C804 /* notesFromAwardToEndOfRow.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBBA217D2FD50051C804 /* notesFromAwardToEndOfRow.txt */; };
+		4FB3CBF8217D2FD50051C804 /* notesFromCageToClass.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBBB217D2FD50051C804 /* notesFromCageToClass.txt */; };
+		4FB3CBF9217D2FD50051C804 /* notesFromInfoToHeader.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBBC217D2FD50051C804 /* notesFromInfoToHeader.txt */; };
+		4FB3CBFA217D2FD50051C804 /* notesFromSectionName.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBBD217D2FD50051C804 /* notesFromSectionName.txt */; };
+		4FB3CBFB217D2FD50051C804 /* notesFromSubSectionName.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBBE217D2FD50051C804 /* notesFromSubSectionName.txt */; };
+		4FB3CBFC217D2FD50051C804 /* notesNewSectionBreak.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBBF217D2FD50051C804 /* notesNewSectionBreak.txt */; };
+		4FB3CBFD217D2FD50051C804 /* notesToAge.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBC0217D2FD50051C804 /* notesToAge.txt */; };
+		4FB3CBFE217D2FD50051C804 /* notesToAward.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBC1217D2FD50051C804 /* notesToAward.txt */; };
+		4FB3CBFF217D2FD50051C804 /* notesToCageNumber.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBC2217D2FD50051C804 /* notesToCageNumber.txt */; };
+		4FB3CC00217D2FD50051C804 /* notesToColour.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBC3217D2FD50051C804 /* notesToColour.txt */; };
+		4FB3CC01217D2FD50051C804 /* notesToJudgeName.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBC4217D2FD50051C804 /* notesToJudgeName.txt */; };
+		4FB3CC02217D2FD50051C804 /* notesTopTenFinish.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBC5217D2FD50051C804 /* notesTopTenFinish.txt */; };
+		4FB3CC03217D2FD50051C804 /* notesTopTenStart.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBC6217D2FD50051C804 /* notesTopTenStart.txt */; };
+		4FB3CC04217D2FD50051C804 /* notesToSubSectionName.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBC7217D2FD50051C804 /* notesToSubSectionName.txt */; };
+		4FB3CC05217D2FD50051C804 /* Ring in show.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBC8217D2FD50051C804 /* Ring in show.txt */; };
+		4FB3CC06217D2FD50051C804 /* Ring not in show.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBC9217D2FD50051C804 /* Ring not in show.txt */; };
+		4FB3CC07217D2FD50051C804 /* startBestOfRow.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBCA217D2FD50051C804 /* startBestOfRow.txt */; };
+		4FB3CC08217D2FD50051C804 /* startFirstSection.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBCB217D2FD50051C804 /* startFirstSection.txt */; };
+		4FB3CC09217D2FD50051C804 /* startNewSection.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBCC217D2FD50051C804 /* startNewSection.txt */; };
+		4FB3CC0A217D2FD50051C804 /* sub-group close row.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBCD217D2FD50051C804 /* sub-group close row.txt */; };
+		4FB3CC0B217D2FD50051C804 /* sub-group heading row.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBCE217D2FD50051C804 /* sub-group heading row.txt */; };
+		4FB3CC0C217D2FD50051C804 /* welcomePages.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBCF217D2FD50051C804 /* welcomePages.txt */; };
+		4FB3CC0E217D31330051C804 /* PatternClassed.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CC0D217D31330051C804 /* PatternClassed.plist */; };
 		4FB9D11F1B75ABA800046CBA /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB9D11E1B75ABA800046CBA /* DataSource.swift */; };
 		4FB9D1211B75B61F00046CBA /* Sex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB9D1201B75B61F00046CBA /* Sex.swift */; };
 		4FBD2EE41B81A84500E28D93 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4FBD2EE31B81A84500E28D93 /* Credits.rtf */; };
@@ -114,10 +111,8 @@
 		4FD803261B774E8100D7FAD2 /* Colours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD803251B774E8100D7FAD2 /* Colours.swift */; };
 		4FD8384E1B832F3D00A8C7A7 /* ColoursWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD8384C1B832F3D00A8C7A7 /* ColoursWindowController.swift */; };
 		4FD8384F1B832F3D00A8C7A7 /* ColoursWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FD8384D1B832F3D00A8C7A7 /* ColoursWindowController.xib */; };
-		4FE0370C1BB6AFA7000A5649 /* EndOfEntriesJudge.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FE0370A1BB6AFA7000A5649 /* EndOfEntriesJudge.txt */; };
 		4FEB56AE1B70ABEF00EECA78 /* ShowFormats.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4FEB56AD1B70ABEF00EECA78 /* ShowFormats.plist */; };
 		4FEB56B01B70BFC700EECA78 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEB56AF1B70BFC700EECA78 /* Globals.swift */; };
-		4FFDA68C1BB27C20003B67CB /* Section1 alt.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FFDA68B1BB27C20003B67CB /* Section1 alt.txt */; };
 		4FFE16C81B6E421A0020E1D0 /* EntrySheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFE16C61B6E421A0020E1D0 /* EntrySheetController.swift */; };
 		4FFE16C91B6E421A0020E1D0 /* EntrySheetController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FFE16C71B6E421A0020E1D0 /* EntrySheetController.xib */; };
 		4FFE16CC1B6ECB320020E1D0 /* AllCapsFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFE16CA1B6ECB320020E1D0 /* AllCapsFormatter.swift */; };
@@ -136,58 +131,6 @@
 
 /* Begin PBXFileReference section */
 		4F0564E91BA2B48500285C46 /* CatNameFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatNameFormatter.swift; sourceTree = "<group>"; };
-		4F0F92751BA3DE6F00724D9C /* ACFAoE end row.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "ACFAoE end row.txt"; path = "templates/ACFAoE end row.txt"; sourceTree = "<group>"; };
-		4F0F92761BA3DE6F00724D9C /* ACFAoE start row.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "ACFAoE start row.txt"; path = "templates/ACFAoE start row.txt"; sourceTree = "<group>"; };
-		4F0F92771BA3DE6F00724D9C /* ACFAoE start.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "ACFAoE start.txt"; path = "templates/ACFAoE start.txt"; sourceTree = "<group>"; };
-		4F0F92781BA3DE6F00724D9C /* ACFAward end row.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "ACFAward end row.txt"; path = "templates/ACFAward end row.txt"; sourceTree = "<group>"; };
-		4F0F92791BA3DE6F00724D9C /* ACFAward start row.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "ACFAward start row.txt"; path = "templates/ACFAward start row.txt"; sourceTree = "<group>"; };
-		4F0F927A1BA3DE6F00724D9C /* ACFAward start table.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "ACFAward start table.txt"; path = "templates/ACFAward start table.txt"; sourceTree = "<group>"; };
-		4F0F927B1BA3DE6F00724D9C /* BestAward1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = BestAward1.txt; path = templates/BestAward1.txt; sourceTree = "<group>"; };
-		4F0F927C1BA3DE6F00724D9C /* BestAward2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = BestAward2.txt; path = templates/BestAward2.txt; sourceTree = "<group>"; };
-		4F0F927D1BA3DE6F00724D9C /* BestAward3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = BestAward3.txt; path = templates/BestAward3.txt; sourceTree = "<group>"; };
-		4F0F927E1BA3DE6F00724D9C /* BestAward4.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = BestAward4.txt; path = templates/BestAward4.txt; sourceTree = "<group>"; };
-		4F0F927F1BA3DE6F00724D9C /* BestOfBreedEnd.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = BestOfBreedEnd.txt; path = templates/BestOfBreedEnd.txt; sourceTree = "<group>"; };
-		4F0F92801BA3DE6F00724D9C /* BestOfBreedStart.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = BestOfBreedStart.txt; path = templates/BestOfBreedStart.txt; sourceTree = "<group>"; };
-		4F0F92811BA3DE6F00724D9C /* Box entered.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Box entered.txt"; path = "templates/Box entered.txt"; sourceTree = "<group>"; };
-		4F0F92821BA3DE6F00724D9C /* Box no ring.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Box no ring.txt"; path = "templates/Box no ring.txt"; sourceTree = "<group>"; };
-		4F0F92831BA3DE6F00724D9C /* Box not entered.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Box not entered.txt"; path = "templates/Box not entered.txt"; sourceTree = "<group>"; };
-		4F0F92841BA3DE6F00724D9C /* Box underlined.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Box underlined.txt"; path = "templates/Box underlined.txt"; sourceTree = "<group>"; };
-		4F0F92851BA3DE6F00724D9C /* Breed1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Breed1.txt; path = templates/Breed1.txt; sourceTree = "<group>"; };
-		4F0F92861BA3DE6F00724D9C /* Breed2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Breed2.txt; path = templates/Breed2.txt; sourceTree = "<group>"; };
-		4F0F92871BA3DE6F00724D9C /* Challenge1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Challenge1.txt; path = templates/Challenge1.txt; sourceTree = "<group>"; };
-		4F0F92881BA3DE6F00724D9C /* Challenge2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Challenge2.txt; path = templates/Challenge2.txt; sourceTree = "<group>"; };
-		4F0F92891BA3DE6F00724D9C /* Challenge3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Challenge3.txt; path = templates/Challenge3.txt; sourceTree = "<group>"; };
-		4F0F928A1BA3DE6F00724D9C /* Colour1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Colour1.txt; path = templates/Colour1.txt; sourceTree = "<group>"; };
-		4F0F928B1BA3DE6F00724D9C /* Colour2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Colour2.txt; path = templates/Colour2.txt; sourceTree = "<group>"; };
-		4F0F928C1BA3DE6F00724D9C /* Colour3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Colour3.txt; path = templates/Colour3.txt; sourceTree = "<group>"; };
-		4F0F928D1BA3DE6F00724D9C /* Details1 Litter.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Details1 Litter.txt"; path = "templates/Details1 Litter.txt"; sourceTree = "<group>"; };
-		4F0F928E1BA3DE6F00724D9C /* Details1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Details1.txt; path = templates/Details1.txt; sourceTree = "<group>"; };
-		4F0F928F1BA3DE6F00724D9C /* Details2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Details2.txt; path = templates/Details2.txt; sourceTree = "<group>"; };
-		4F0F92901BA3DE6F00724D9C /* Details3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Details3.txt; path = templates/Details3.txt; sourceTree = "<group>"; };
-		4F0F92911BA3DE6F00724D9C /* Details3Litter.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Details3Litter.txt; path = templates/Details3Litter.txt; sourceTree = "<group>"; };
-		4F0F92921BA3DE6F00724D9C /* Details4.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Details4.txt; path = templates/Details4.txt; sourceTree = "<group>"; };
-		4F0F92931BA3DE6F00724D9C /* Details5.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Details5.txt; path = templates/Details5.txt; sourceTree = "<group>"; };
-		4F0F92941BA3DE6F00724D9C /* End of file judge.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "End of file judge.txt"; path = "templates/End of file judge.txt"; sourceTree = "<group>"; };
-		4F0F92951BA3DE6F00724D9C /* End of file.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "End of file.txt"; path = "templates/End of file.txt"; sourceTree = "<group>"; };
-		4F0F92961BA3DE6F00724D9C /* EndOfEntries1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = EndOfEntries1.txt; path = templates/EndOfEntries1.txt; sourceTree = "<group>"; };
-		4F0F92971BA3DE6F00724D9C /* Header1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Header1.txt; path = templates/Header1.txt; sourceTree = "<group>"; };
-		4F0F92981BA3DE6F00724D9C /* Header2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Header2.txt; path = templates/Header2.txt; sourceTree = "<group>"; };
-		4F0F92991BA3DE6F00724D9C /* Header2judge.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Header2judge.txt; path = templates/Header2judge.txt; sourceTree = "<group>"; };
-		4F0F929A1BA3DE6F00724D9C /* head4.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = head4.txt; path = templates/head4.txt; sourceTree = "<group>"; };
-		4F0F929B1BA3DE6F00724D9C /* Name1 litter.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Name1 litter.txt"; path = "templates/Name1 litter.txt"; sourceTree = "<group>"; };
-		4F0F929C1BA3DE6F00724D9C /* Name1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Name1.txt; path = templates/Name1.txt; sourceTree = "<group>"; };
-		4F0F929D1BA3DE6F00724D9C /* Name2 litter.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Name2 litter.txt"; path = "templates/Name2 litter.txt"; sourceTree = "<group>"; };
-		4F0F929E1BA3DE6F00724D9C /* Name2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Name2.txt; path = templates/Name2.txt; sourceTree = "<group>"; };
-		4F0F929F1BA3DE6F00724D9C /* Name3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Name3.txt; path = templates/Name3.txt; sourceTree = "<group>"; };
-		4F0F92A01BA3DE6F00724D9C /* Name4.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Name4.txt; path = templates/Name4.txt; sourceTree = "<group>"; };
-		4F0F92A11BA3DE6F00724D9C /* Prestige1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Prestige1.txt; path = templates/Prestige1.txt; sourceTree = "<group>"; };
-		4F0F92A21BA3DE6F00724D9C /* Section1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Section1.txt; path = templates/Section1.txt; sourceTree = "<group>"; };
-		4F0F92A31BA3DE6F00724D9C /* Section3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Section3.txt; path = templates/Section3.txt; sourceTree = "<group>"; };
-		4F0F92A41BA3DE6F00724D9C /* Spacer.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Spacer.txt; path = templates/Spacer.txt; sourceTree = "<group>"; };
-		4F0F92A51BA3DE6F00724D9C /* Table end.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Table end.txt"; path = "templates/Table end.txt"; sourceTree = "<group>"; };
-		4F0F92A61BA3DE6F00724D9C /* Table start.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Table start.txt"; path = "templates/Table start.txt"; sourceTree = "<group>"; };
-		4F0F92A71BA3DE6F00724D9C /* Top ten end table.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Top ten end table.txt"; path = "templates/Top ten end table.txt"; sourceTree = "<group>"; };
-		4F0F92A81BA3DE6F00724D9C /* Top ten start table.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Top ten start table.txt"; path = "templates/Top ten start table.txt"; sourceTree = "<group>"; };
 		4F0F92DD1BA3E30900724D9C /* general.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = general.strings; sourceTree = "<group>"; };
 		4F0F92E01BA3EC8400724D9C /* Excel list.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Excel list.plist"; path = "pLists/Excel list.plist"; sourceTree = "<group>"; };
 		4F0F92E31BA3EF0E00724D9C /* Places.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Places.plist; path = pLists/Places.plist; sourceTree = "<group>"; };
@@ -211,31 +154,80 @@
 		4F3EFAE11B6DB98C00DA2F5C /* AddShowWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddShowWindowController.swift; path = Controllers/AddShowWindowController.swift; sourceTree = "<group>"; };
 		4F3EFAE21B6DB98C00DA2F5C /* AddShowWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddShowWindowController.xib; path = Controllers/AddShowWindowController.xib; sourceTree = "<group>"; };
 		4F3EFAE51B6DEE1500DA2F5C /* Breeds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Breeds.swift; path = "Data Sources.swift/Breeds.swift"; sourceTree = "<group>"; };
-		4F420B1A1BB60B8700105564 /* head5.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = head5.txt; path = templates/head5.txt; sourceTree = "<group>"; };
-		4F420B1B1BB60B8700105564 /* head6.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = head6.txt; path = templates/head6.txt; sourceTree = "<group>"; };
-		4F420B1E1BB6121200105564 /* EndOfEntries2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = EndOfEntries2.txt; path = templates/EndOfEntries2.txt; sourceTree = "<group>"; };
-		4F420B201BB61F4800105564 /* head5_1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = head5_1.txt; path = templates/head5_1.txt; sourceTree = "<group>"; };
-		4F420B221BB625BF00105564 /* head5_2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = head5_2.txt; path = templates/head5_2.txt; sourceTree = "<group>"; };
 		4F4B889A1BC0D35D00CF734B /* DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateFormatter.swift; path = Formatters/DateFormatter.swift; sourceTree = "<group>"; };
 		4F6214841BB290E400F87183 /* ProgressWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressWindowController.swift; sourceTree = "<group>"; };
 		4F6214851BB290E400F87183 /* ProgressWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressWindowController.xib; sourceTree = "<group>"; };
 		4F6214881BB34A1B00F87183 /* Authentication.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Authentication.plist; path = pLists/Authentication.plist; sourceTree = "<group>"; };
 		4F62148A1BB34F2000F87183 /* icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon.jpg; sourceTree = "<group>"; };
 		4F63A6B81BB819760009C5A4 /* Cat on book.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "Cat on book.icns"; sourceTree = "<group>"; };
-		4F6A78EC2079E58B006CACF7 /* CCCAAwards1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = CCCAAwards1.txt; sourceTree = "<group>"; };
 		4F7107FD1B77748E00E21AAC /* Challenges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Challenges.swift; path = "Data Sources.swift/Challenges.swift"; sourceTree = "<group>"; };
-		4F7812B41BB14AEA0036AD80 /* Section2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Section2.txt; path = templates/Section2.txt; sourceTree = "<group>"; };
 		4F8E87301BAFB19E00497D2F /* TitleEditorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TitleEditorController.swift; path = Controllers/TitleEditorController.swift; sourceTree = "<group>"; };
 		4F8E87311BAFB19E00497D2F /* TitleEditorController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TitleEditorController.xib; path = Controllers/TitleEditorController.xib; sourceTree = "<group>"; };
 		4F9235FD1B7952B70096ADFD /* Titles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Titles.swift; path = "Data Sources.swift/Titles.swift"; sourceTree = "<group>"; };
 		4F9235FF1B7953500096ADFD /* Titles.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Titles.plist; path = pLists/Titles.plist; sourceTree = "<group>"; };
-		4F95B9871BB5FE5500971CE6 /* head2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = head2.txt; path = templates/head2.txt; sourceTree = "<group>"; };
-		4F95B9881BB5FE5500971CE6 /* head3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = head3.txt; path = templates/head3.txt; sourceTree = "<group>"; };
 		4F9B6C081B7FF6EA00C2964B /* CageTypes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = CageTypes.plist; path = pLists/CageTypes.plist; sourceTree = "<group>"; };
-		4FAFEA9A1BAAEFE700C3EB89 /* head1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = head1.txt; path = templates/head1.txt; sourceTree = "<group>"; };
-		4FAFEA9B1BAAEFE700C3EB89 /* judge_header.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = judge_header.txt; path = templates/judge_header.txt; sourceTree = "<group>"; };
-		4FAFEA9C1BAAEFE700C3EB89 /* judge_headerPt2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = judge_headerPt2.txt; path = templates/judge_headerPt2.txt; sourceTree = "<group>"; };
-		4FAFEA9D1BAAEFE700C3EB89 /* judge_headerPt3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = judge_headerPt3.txt; path = templates/judge_headerPt3.txt; sourceTree = "<group>"; };
+		4FB3CB92217D2FD50051C804 /* ACF awards from section name to end.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "ACF awards from section name to end.txt"; sourceTree = "<group>"; };
+		4FB3CB93217D2FD50051C804 /* ACF awards start.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "ACF awards start.txt"; sourceTree = "<group>"; };
+		4FB3CB94217D2FD50051C804 /* ACF awards to section name.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "ACF awards to section name.txt"; sourceTree = "<group>"; };
+		4FB3CB95217D2FD50051C804 /* Best Exhibit from Judges.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Best Exhibit from Judges.txt"; sourceTree = "<group>"; };
+		4FB3CB96217D2FD50051C804 /* Best Exhibit Judge1 to Judge2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Best Exhibit Judge1 to Judge2.txt"; sourceTree = "<group>"; };
+		4FB3CB97217D2FD50051C804 /* Best Exhibit start.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Best Exhibit start.txt"; sourceTree = "<group>"; };
+		4FB3CB98217D2FD50051C804 /* Best Exhibit to Judge 1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Best Exhibit to Judge 1.txt"; sourceTree = "<group>"; };
+		4FB3CB99217D2FD50051C804 /* Best in Show from number to end of table.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Best in Show from number to end of table.txt"; sourceTree = "<group>"; };
+		4FB3CB9A217D2FD50051C804 /* Best in Show heading.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Best in Show heading.txt"; sourceTree = "<group>"; };
+		4FB3CB9B217D2FD50051C804 /* Best in Show to ring number.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Best in Show to ring number.txt"; sourceTree = "<group>"; };
+		4FB3CB9C217D2FD50051C804 /* Best of breed name to end.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Best of breed name to end.txt"; sourceTree = "<group>"; };
+		4FB3CB9D217D2FD50051C804 /* Best of breed start.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Best of breed start.txt"; sourceTree = "<group>"; };
+		4FB3CB9E217D2FD50051C804 /* Best of breed to breedname.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Best of breed to breedname.txt"; sourceTree = "<group>"; };
+		4FB3CB9F217D2FD50051C804 /* Best of breed to last breedname.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Best of breed to last breedname.txt"; sourceTree = "<group>"; };
+		4FB3CBA0217D2FD50051C804 /* blankCell.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = blankCell.txt; sourceTree = "<group>"; };
+		4FB3CBA1217D2FD50051C804 /* boxBeforeRings.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = boxBeforeRings.txt; sourceTree = "<group>"; };
+		4FB3CBA2217D2FD50051C804 /* cat details to birthdate.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "cat details to birthdate.txt"; sourceTree = "<group>"; };
+		4FB3CBA3217D2FD50051C804 /* cat details to class.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "cat details to class.txt"; sourceTree = "<group>"; };
+		4FB3CBA4217D2FD50051C804 /* cat details to name.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "cat details to name.txt"; sourceTree = "<group>"; };
+		4FB3CBA5217D2FD50051C804 /* cat details to number.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "cat details to number.txt"; sourceTree = "<group>"; };
+		4FB3CBA6217D2FD50051C804 /* cat details to parents.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "cat details to parents.txt"; sourceTree = "<group>"; };
+		4FB3CBA7217D2FD50051C804 /* cat in ring.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "cat in ring.txt"; sourceTree = "<group>"; };
+		4FB3CBA8217D2FD50051C804 /* cat not in ring.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "cat not in ring.txt"; sourceTree = "<group>"; };
+		4FB3CBA9217D2FD50051C804 /* closeFooter.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = closeFooter.txt; sourceTree = "<group>"; };
+		4FB3CBAA217D2FD50051C804 /* colour heading row.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "colour heading row.txt"; sourceTree = "<group>"; };
+		4FB3CBAB217D2FD50051C804 /* detailsBeforeChallenge.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = detailsBeforeChallenge.txt; sourceTree = "<group>"; };
+		4FB3CBAC217D2FD50051C804 /* detailsFromRingBoxes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = detailsFromRingBoxes.txt; sourceTree = "<group>"; };
+		4FB3CBAD217D2FD50051C804 /* endRingBoxRow.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = endRingBoxRow.txt; sourceTree = "<group>"; };
+		4FB3CBAE217D2FD50051C804 /* fileHeader.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fileHeader.txt; sourceTree = "<group>"; };
+		4FB3CBAF217D2FD50051C804 /* footerText.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = footerText.txt; sourceTree = "<group>"; };
+		4FB3CBB0217D2FD50051C804 /* group heading row.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "group heading row.txt"; sourceTree = "<group>"; };
+		4FB3CBB2217D2FD50051C804 /* notesBeginFile.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = notesBeginFile.txt; sourceTree = "<group>"; };
+		4FB3CBB3217D2FD50051C804 /* notesBestExhibit.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = notesBestExhibit.txt; sourceTree = "<group>"; };
+		4FB3CBB4217D2FD50051C804 /* notesBestOfBreedCell.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = notesBestOfBreedCell.txt; sourceTree = "<group>"; };
+		4FB3CBB5217D2FD50051C804 /* notesBestOfBreedCellEnd.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = notesBestOfBreedCellEnd.txt; sourceTree = "<group>"; };
+		4FB3CBB6217D2FD50051C804 /* notesBestOfBreedCellFinal.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = notesBestOfBreedCellFinal.txt; sourceTree = "<group>"; };
+		4FB3CBB7217D2FD50051C804 /* notesBestOfBreedStart.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = notesBestOfBreedStart.txt; sourceTree = "<group>"; };
+		4FB3CBB8217D2FD50051C804 /* notesBlankCell.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = notesBlankCell.txt; sourceTree = "<group>"; };
+		4FB3CBB9217D2FD50051C804 /* notesFromAge.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = notesFromAge.txt; sourceTree = "<group>"; };
+		4FB3CBBA217D2FD50051C804 /* notesFromAwardToEndOfRow.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = notesFromAwardToEndOfRow.txt; sourceTree = "<group>"; };
+		4FB3CBBB217D2FD50051C804 /* notesFromCageToClass.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = notesFromCageToClass.txt; sourceTree = "<group>"; };
+		4FB3CBBC217D2FD50051C804 /* notesFromInfoToHeader.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = notesFromInfoToHeader.txt; sourceTree = "<group>"; };
+		4FB3CBBD217D2FD50051C804 /* notesFromSectionName.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = notesFromSectionName.txt; sourceTree = "<group>"; };
+		4FB3CBBE217D2FD50051C804 /* notesFromSubSectionName.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = notesFromSubSectionName.txt; sourceTree = "<group>"; };
+		4FB3CBBF217D2FD50051C804 /* notesNewSectionBreak.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = notesNewSectionBreak.txt; sourceTree = "<group>"; };
+		4FB3CBC0217D2FD50051C804 /* notesToAge.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = notesToAge.txt; sourceTree = "<group>"; };
+		4FB3CBC1217D2FD50051C804 /* notesToAward.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = notesToAward.txt; sourceTree = "<group>"; };
+		4FB3CBC2217D2FD50051C804 /* notesToCageNumber.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = notesToCageNumber.txt; sourceTree = "<group>"; };
+		4FB3CBC3217D2FD50051C804 /* notesToColour.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = notesToColour.txt; sourceTree = "<group>"; };
+		4FB3CBC4217D2FD50051C804 /* notesToJudgeName.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = notesToJudgeName.txt; sourceTree = "<group>"; };
+		4FB3CBC5217D2FD50051C804 /* notesTopTenFinish.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = notesTopTenFinish.txt; sourceTree = "<group>"; };
+		4FB3CBC6217D2FD50051C804 /* notesTopTenStart.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = notesTopTenStart.txt; sourceTree = "<group>"; };
+		4FB3CBC7217D2FD50051C804 /* notesToSubSectionName.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = notesToSubSectionName.txt; sourceTree = "<group>"; };
+		4FB3CBC8217D2FD50051C804 /* Ring in show.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Ring in show.txt"; sourceTree = "<group>"; };
+		4FB3CBC9217D2FD50051C804 /* Ring not in show.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Ring not in show.txt"; sourceTree = "<group>"; };
+		4FB3CBCA217D2FD50051C804 /* startBestOfRow.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = startBestOfRow.txt; sourceTree = "<group>"; };
+		4FB3CBCB217D2FD50051C804 /* startFirstSection.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = startFirstSection.txt; sourceTree = "<group>"; };
+		4FB3CBCC217D2FD50051C804 /* startNewSection.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = startNewSection.txt; sourceTree = "<group>"; };
+		4FB3CBCD217D2FD50051C804 /* sub-group close row.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "sub-group close row.txt"; sourceTree = "<group>"; };
+		4FB3CBCE217D2FD50051C804 /* sub-group heading row.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "sub-group heading row.txt"; sourceTree = "<group>"; };
+		4FB3CBCF217D2FD50051C804 /* welcomePages.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = welcomePages.txt; sourceTree = "<group>"; };
+		4FB3CC0D217D31330051C804 /* PatternClassed.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PatternClassed.plist; path = pLists/PatternClassed.plist; sourceTree = "<group>"; };
 		4FB9D11E1B75ABA800046CBA /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataSource.swift; path = "Data Sources.swift/DataSource.swift"; sourceTree = "<group>"; };
 		4FB9D1201B75B61F00046CBA /* Sex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Sex.swift; path = "Data Sources.swift/Sex.swift"; sourceTree = "<group>"; };
 		4FBD2EE31B81A84500E28D93 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
@@ -247,10 +239,8 @@
 		4FD803251B774E8100D7FAD2 /* Colours.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Colours.swift; path = "Data Sources.swift/Colours.swift"; sourceTree = "<group>"; };
 		4FD8384C1B832F3D00A8C7A7 /* ColoursWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColoursWindowController.swift; path = Controllers/ColoursWindowController.swift; sourceTree = "<group>"; };
 		4FD8384D1B832F3D00A8C7A7 /* ColoursWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ColoursWindowController.xib; path = Controllers/ColoursWindowController.xib; sourceTree = "<group>"; };
-		4FE0370A1BB6AFA7000A5649 /* EndOfEntriesJudge.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = EndOfEntriesJudge.txt; path = templates/EndOfEntriesJudge.txt; sourceTree = "<group>"; };
 		4FEB56AD1B70ABEF00EECA78 /* ShowFormats.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ShowFormats.plist; path = pLists/ShowFormats.plist; sourceTree = "<group>"; };
 		4FEB56AF1B70BFC700EECA78 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
-		4FFDA68B1BB27C20003B67CB /* Section1 alt.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Section1 alt.txt"; path = "templates/Section1 alt.txt"; sourceTree = "<group>"; };
 		4FFE16C61B6E421A0020E1D0 /* EntrySheetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EntrySheetController.swift; path = Controllers/EntrySheetController.swift; sourceTree = "<group>"; };
 		4FFE16C71B6E421A0020E1D0 /* EntrySheetController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EntrySheetController.xib; path = Controllers/EntrySheetController.xib; sourceTree = "<group>"; };
 		4FFE16CA1B6ECB320020E1D0 /* AllCapsFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AllCapsFormatter.swift; path = Formatters/AllCapsFormatter.swift; sourceTree = "<group>"; };
@@ -275,83 +265,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4F0F92741BA3DC2F00724D9C /* Templates */ = {
-			isa = PBXGroup;
-			children = (
-				4F0F92751BA3DE6F00724D9C /* ACFAoE end row.txt */,
-				4F0F92761BA3DE6F00724D9C /* ACFAoE start row.txt */,
-				4F0F92771BA3DE6F00724D9C /* ACFAoE start.txt */,
-				4F0F92781BA3DE6F00724D9C /* ACFAward end row.txt */,
-				4F0F92791BA3DE6F00724D9C /* ACFAward start row.txt */,
-				4F0F927A1BA3DE6F00724D9C /* ACFAward start table.txt */,
-				4F0F927B1BA3DE6F00724D9C /* BestAward1.txt */,
-				4F0F927C1BA3DE6F00724D9C /* BestAward2.txt */,
-				4F0F927D1BA3DE6F00724D9C /* BestAward3.txt */,
-				4F0F927E1BA3DE6F00724D9C /* BestAward4.txt */,
-				4F0F92801BA3DE6F00724D9C /* BestOfBreedStart.txt */,
-				4F0F927F1BA3DE6F00724D9C /* BestOfBreedEnd.txt */,
-				4F0F92811BA3DE6F00724D9C /* Box entered.txt */,
-				4F0F92821BA3DE6F00724D9C /* Box no ring.txt */,
-				4F0F92831BA3DE6F00724D9C /* Box not entered.txt */,
-				4F0F92841BA3DE6F00724D9C /* Box underlined.txt */,
-				4F0F92851BA3DE6F00724D9C /* Breed1.txt */,
-				4F0F92861BA3DE6F00724D9C /* Breed2.txt */,
-				4F6A78EC2079E58B006CACF7 /* CCCAAwards1.txt */,
-				4F0F92871BA3DE6F00724D9C /* Challenge1.txt */,
-				4F0F92881BA3DE6F00724D9C /* Challenge2.txt */,
-				4F0F92891BA3DE6F00724D9C /* Challenge3.txt */,
-				4F0F928A1BA3DE6F00724D9C /* Colour1.txt */,
-				4F0F928B1BA3DE6F00724D9C /* Colour2.txt */,
-				4F0F928C1BA3DE6F00724D9C /* Colour3.txt */,
-				4F0F928D1BA3DE6F00724D9C /* Details1 Litter.txt */,
-				4F0F928E1BA3DE6F00724D9C /* Details1.txt */,
-				4F0F928F1BA3DE6F00724D9C /* Details2.txt */,
-				4F0F92901BA3DE6F00724D9C /* Details3.txt */,
-				4F0F92911BA3DE6F00724D9C /* Details3Litter.txt */,
-				4F0F92921BA3DE6F00724D9C /* Details4.txt */,
-				4F0F92931BA3DE6F00724D9C /* Details5.txt */,
-				4F0F92941BA3DE6F00724D9C /* End of file judge.txt */,
-				4F0F92951BA3DE6F00724D9C /* End of file.txt */,
-				4F0F92961BA3DE6F00724D9C /* EndOfEntries1.txt */,
-				4F420B1E1BB6121200105564 /* EndOfEntries2.txt */,
-				4FE0370A1BB6AFA7000A5649 /* EndOfEntriesJudge.txt */,
-				4F0F92971BA3DE6F00724D9C /* Header1.txt */,
-				4F0F92981BA3DE6F00724D9C /* Header2.txt */,
-				4F0F92991BA3DE6F00724D9C /* Header2judge.txt */,
-				4FAFEA9A1BAAEFE700C3EB89 /* head1.txt */,
-				4F95B9871BB5FE5500971CE6 /* head2.txt */,
-				4F95B9881BB5FE5500971CE6 /* head3.txt */,
-				4F0F929A1BA3DE6F00724D9C /* head4.txt */,
-				4F420B1A1BB60B8700105564 /* head5.txt */,
-				4F420B201BB61F4800105564 /* head5_1.txt */,
-				4F420B221BB625BF00105564 /* head5_2.txt */,
-				4F420B1B1BB60B8700105564 /* head6.txt */,
-				4FAFEA9B1BAAEFE700C3EB89 /* judge_header.txt */,
-				4FAFEA9C1BAAEFE700C3EB89 /* judge_headerPt2.txt */,
-				4FAFEA9D1BAAEFE700C3EB89 /* judge_headerPt3.txt */,
-				4F0F929B1BA3DE6F00724D9C /* Name1 litter.txt */,
-				4F0F929C1BA3DE6F00724D9C /* Name1.txt */,
-				4F0F929D1BA3DE6F00724D9C /* Name2 litter.txt */,
-				4F0F929E1BA3DE6F00724D9C /* Name2.txt */,
-				4F0F929F1BA3DE6F00724D9C /* Name3.txt */,
-				4F0F92A01BA3DE6F00724D9C /* Name4.txt */,
-				4F0F92A11BA3DE6F00724D9C /* Prestige1.txt */,
-				4F0F92A21BA3DE6F00724D9C /* Section1.txt */,
-				4FFDA68B1BB27C20003B67CB /* Section1 alt.txt */,
-				4F7812B41BB14AEA0036AD80 /* Section2.txt */,
-				4F0F92A31BA3DE6F00724D9C /* Section3.txt */,
-				4F0F92A41BA3DE6F00724D9C /* Spacer.txt */,
-				4F0F92A51BA3DE6F00724D9C /* Table end.txt */,
-				4F0F92A61BA3DE6F00724D9C /* Table start.txt */,
-				4F0F92A71BA3DE6F00724D9C /* Top ten end table.txt */,
-				4F0F92A81BA3DE6F00724D9C /* Top ten start table.txt */,
-			);
-			name = Templates;
-			sourceTree = "<group>";
-		};
 		4F0F92DF1BA3EBEC00724D9C /* pLists */ = {
 			isa = PBXGroup;
 			children = (
+				4FB3CC0D217D31330051C804 /* PatternClassed.plist */,
 				4F6214881BB34A1B00F87183 /* Authentication.plist */,
 				4F0F92E01BA3EC8400724D9C /* Excel list.plist */,
 				4F0F92E31BA3EF0E00724D9C /* Places.plist */,
@@ -432,7 +349,7 @@
 				4F62148A1BB34F2000F87183 /* icon.jpg */,
 				4F38B85B1B6D8CCA006356DD /* Info.plist */,
 				4F0F92DD1BA3E30900724D9C /* general.strings */,
-				4F0F92741BA3DC2F00724D9C /* Templates */,
+				4FB3CB91217D2FD50051C804 /* RTF files */,
 				4F0F92DF1BA3EBEC00724D9C /* pLists */,
 			);
 			name = "Supporting Files";
@@ -463,6 +380,82 @@
 				4F38B8871B6D9156006356DD /* Show.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		4FB3CB91217D2FD50051C804 /* RTF files */ = {
+			isa = PBXGroup;
+			children = (
+				4FB3CB92217D2FD50051C804 /* ACF awards from section name to end.txt */,
+				4FB3CB93217D2FD50051C804 /* ACF awards start.txt */,
+				4FB3CB94217D2FD50051C804 /* ACF awards to section name.txt */,
+				4FB3CB95217D2FD50051C804 /* Best Exhibit from Judges.txt */,
+				4FB3CB96217D2FD50051C804 /* Best Exhibit Judge1 to Judge2.txt */,
+				4FB3CB97217D2FD50051C804 /* Best Exhibit start.txt */,
+				4FB3CB98217D2FD50051C804 /* Best Exhibit to Judge 1.txt */,
+				4FB3CB99217D2FD50051C804 /* Best in Show from number to end of table.txt */,
+				4FB3CB9A217D2FD50051C804 /* Best in Show heading.txt */,
+				4FB3CB9B217D2FD50051C804 /* Best in Show to ring number.txt */,
+				4FB3CB9C217D2FD50051C804 /* Best of breed name to end.txt */,
+				4FB3CB9D217D2FD50051C804 /* Best of breed start.txt */,
+				4FB3CB9E217D2FD50051C804 /* Best of breed to breedname.txt */,
+				4FB3CB9F217D2FD50051C804 /* Best of breed to last breedname.txt */,
+				4FB3CBA0217D2FD50051C804 /* blankCell.txt */,
+				4FB3CBA1217D2FD50051C804 /* boxBeforeRings.txt */,
+				4FB3CBA2217D2FD50051C804 /* cat details to birthdate.txt */,
+				4FB3CBA3217D2FD50051C804 /* cat details to class.txt */,
+				4FB3CBA4217D2FD50051C804 /* cat details to name.txt */,
+				4FB3CBA5217D2FD50051C804 /* cat details to number.txt */,
+				4FB3CBA6217D2FD50051C804 /* cat details to parents.txt */,
+				4FB3CBA7217D2FD50051C804 /* cat in ring.txt */,
+				4FB3CBA8217D2FD50051C804 /* cat not in ring.txt */,
+				4FB3CBA9217D2FD50051C804 /* closeFooter.txt */,
+				4FB3CBAA217D2FD50051C804 /* colour heading row.txt */,
+				4FB3CBAB217D2FD50051C804 /* detailsBeforeChallenge.txt */,
+				4FB3CBAC217D2FD50051C804 /* detailsFromRingBoxes.txt */,
+				4FB3CBAD217D2FD50051C804 /* endRingBoxRow.txt */,
+				4FB3CBAE217D2FD50051C804 /* fileHeader.txt */,
+				4FB3CBAF217D2FD50051C804 /* footerText.txt */,
+				4FB3CBB0217D2FD50051C804 /* group heading row.txt */,
+				4FB3CBB1217D2FD50051C804 /* Judges notes */,
+				4FB3CBC8217D2FD50051C804 /* Ring in show.txt */,
+				4FB3CBC9217D2FD50051C804 /* Ring not in show.txt */,
+				4FB3CBCA217D2FD50051C804 /* startBestOfRow.txt */,
+				4FB3CBCB217D2FD50051C804 /* startFirstSection.txt */,
+				4FB3CBCC217D2FD50051C804 /* startNewSection.txt */,
+				4FB3CBCD217D2FD50051C804 /* sub-group close row.txt */,
+				4FB3CBCE217D2FD50051C804 /* sub-group heading row.txt */,
+				4FB3CBCF217D2FD50051C804 /* welcomePages.txt */,
+			);
+			path = "RTF files";
+			sourceTree = "<group>";
+		};
+		4FB3CBB1217D2FD50051C804 /* Judges notes */ = {
+			isa = PBXGroup;
+			children = (
+				4FB3CBB2217D2FD50051C804 /* notesBeginFile.txt */,
+				4FB3CBB3217D2FD50051C804 /* notesBestExhibit.txt */,
+				4FB3CBB4217D2FD50051C804 /* notesBestOfBreedCell.txt */,
+				4FB3CBB5217D2FD50051C804 /* notesBestOfBreedCellEnd.txt */,
+				4FB3CBB6217D2FD50051C804 /* notesBestOfBreedCellFinal.txt */,
+				4FB3CBB7217D2FD50051C804 /* notesBestOfBreedStart.txt */,
+				4FB3CBB8217D2FD50051C804 /* notesBlankCell.txt */,
+				4FB3CBB9217D2FD50051C804 /* notesFromAge.txt */,
+				4FB3CBBA217D2FD50051C804 /* notesFromAwardToEndOfRow.txt */,
+				4FB3CBBB217D2FD50051C804 /* notesFromCageToClass.txt */,
+				4FB3CBBC217D2FD50051C804 /* notesFromInfoToHeader.txt */,
+				4FB3CBBD217D2FD50051C804 /* notesFromSectionName.txt */,
+				4FB3CBBE217D2FD50051C804 /* notesFromSubSectionName.txt */,
+				4FB3CBBF217D2FD50051C804 /* notesNewSectionBreak.txt */,
+				4FB3CBC0217D2FD50051C804 /* notesToAge.txt */,
+				4FB3CBC1217D2FD50051C804 /* notesToAward.txt */,
+				4FB3CBC2217D2FD50051C804 /* notesToCageNumber.txt */,
+				4FB3CBC3217D2FD50051C804 /* notesToColour.txt */,
+				4FB3CBC4217D2FD50051C804 /* notesToJudgeName.txt */,
+				4FB3CBC5217D2FD50051C804 /* notesTopTenFinish.txt */,
+				4FB3CBC6217D2FD50051C804 /* notesTopTenStart.txt */,
+				4FB3CBC7217D2FD50051C804 /* notesToSubSectionName.txt */,
+			);
+			path = "Judges notes";
 			sourceTree = "<group>";
 		};
 		4FB9D11D1B7407C800046CBA /* Data sources */ = {
@@ -583,96 +576,91 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FAFEAA01BAAEFE700C3EB89 /* judge_headerPt2.txt in Resources */,
-				4F0F92BE1BA3DE6F00724D9C /* Colour1.txt in Resources */,
+				4FB3CBF1217D2FD50051C804 /* notesBestOfBreedCell.txt in Resources */,
 				4FD803241B774DA500D7FAD2 /* Colours.plist in Resources */,
-				4F0F92CA1BA3DE6F00724D9C /* EndOfEntries1.txt in Resources */,
-				4F0F92DA1BA3DE6F00724D9C /* Table start.txt in Resources */,
-				4F0F92C31BA3DE6F00724D9C /* Details2.txt in Resources */,
-				4F0F92C41BA3DE6F00724D9C /* Details3.txt in Resources */,
+				4FB3CBE7217D2FD50051C804 /* closeFooter.txt in Resources */,
+				4FB3CC01217D2FD50051C804 /* notesToJudgeName.txt in Resources */,
 				4F9B6C091B7FF6EA00C2964B /* CageTypes.plist in Resources */,
+				4FB3CBE0217D2FD50051C804 /* cat details to birthdate.txt in Resources */,
+				4FB3CBFA217D2FD50051C804 /* notesFromSectionName.txt in Resources */,
 				4F38B8621B6D8CCA006356DD /* Images.xcassets in Resources */,
-				4F0F92B31BA3DE6F00724D9C /* BestOfBreedEnd.txt in Resources */,
-				4FAFEA9E1BAAEFE700C3EB89 /* head1.txt in Resources */,
-				4F0F92C51BA3DE6F00724D9C /* Details3Litter.txt in Resources */,
-				4F0F92C61BA3DE6F00724D9C /* Details4.txt in Resources */,
-				4F420B1D1BB60B8700105564 /* head6.txt in Resources */,
+				4FB3CC00217D2FD50051C804 /* notesToColour.txt in Resources */,
 				4FD8384F1B832F3D00A8C7A7 /* ColoursWindowController.xib in Resources */,
-				4FE0370C1BB6AFA7000A5649 /* EndOfEntriesJudge.txt in Resources */,
-				4F0F92B61BA3DE6F00724D9C /* Box no ring.txt in Resources */,
-				4F0F92C21BA3DE6F00724D9C /* Details1.txt in Resources */,
-				4F0F92D31BA3DE6F00724D9C /* Name3.txt in Resources */,
-				4F95B9891BB5FE5500971CE6 /* head2.txt in Resources */,
-				4FFDA68C1BB27C20003B67CB /* Section1 alt.txt in Resources */,
-				4F0F92C11BA3DE6F00724D9C /* Details1 Litter.txt in Resources */,
-				4F0F92CF1BA3DE6F00724D9C /* Name1 litter.txt in Resources */,
+				4FB3CBDF217D2FD50051C804 /* boxBeforeRings.txt in Resources */,
+				4FB3CBEB217D2FD50051C804 /* endRingBoxRow.txt in Resources */,
+				4FB3CBE9217D2FD50051C804 /* detailsBeforeChallenge.txt in Resources */,
+				4FB3CBEC217D2FD50051C804 /* fileHeader.txt in Resources */,
+				4FB3CC08217D2FD50051C804 /* startFirstSection.txt in Resources */,
 				4F62148B1BB34F2000F87183 /* icon.jpg in Resources */,
+				4FB3CBF8217D2FD50051C804 /* notesFromCageToClass.txt in Resources */,
+				4FB3CBF2217D2FD50051C804 /* notesBestOfBreedCellEnd.txt in Resources */,
+				4FB3CBD0217D2FD50051C804 /* ACF awards from section name to end.txt in Resources */,
 				4F0F92DE1BA3E30900724D9C /* general.strings in Resources */,
-				4F0F92BD1BA3DE6F00724D9C /* Challenge3.txt in Resources */,
-				4FAFEAA11BAAEFE700C3EB89 /* judge_headerPt3.txt in Resources */,
-				4F420B1C1BB60B8700105564 /* head5.txt in Resources */,
-				4F0F92C81BA3DE6F00724D9C /* End of file judge.txt in Resources */,
+				4FB3CBFE217D2FD50051C804 /* notesToAward.txt in Resources */,
+				4FB3CBFB217D2FD50051C804 /* notesFromSubSectionName.txt in Resources */,
+				4FB3CBF4217D2FD50051C804 /* notesBestOfBreedStart.txt in Resources */,
+				4FB3CBE6217D2FD50051C804 /* cat not in ring.txt in Resources */,
+				4FB3CBDB217D2FD50051C804 /* Best of breed start.txt in Resources */,
 				4F0F92E41BA3EF0E00724D9C /* Places.plist in Resources */,
-				4F0F92C01BA3DE6F00724D9C /* Colour3.txt in Resources */,
-				4F95B98A1BB5FE5500971CE6 /* head3.txt in Resources */,
-				4F7812B51BB14AEA0036AD80 /* Section2.txt in Resources */,
-				4F0F92C91BA3DE6F00724D9C /* End of file.txt in Resources */,
-				4F0F92D41BA3DE6F00724D9C /* Name4.txt in Resources */,
-				4F0F92B41BA3DE6F00724D9C /* BestOfBreedStart.txt in Resources */,
-				4F0F92B81BA3DE6F00724D9C /* Box underlined.txt in Resources */,
-				4F0F92CC1BA3DE6F00724D9C /* Header2.txt in Resources */,
+				4FB3CBDE217D2FD50051C804 /* blankCell.txt in Resources */,
 				4FBD2EE61B81A91E00E28D93 /* agouti.plist in Resources */,
 				4F8E87331BAFB19E00497D2F /* TitleEditorController.xib in Resources */,
+				4FB3CBD4217D2FD50051C804 /* Best Exhibit Judge1 to Judge2.txt in Resources */,
+				4FB3CC02217D2FD50051C804 /* notesTopTenFinish.txt in Resources */,
 				4F6214891BB34A1B00F87183 /* Authentication.plist in Resources */,
-				4F0F92B91BA3DE6F00724D9C /* Breed1.txt in Resources */,
-				4F0F92BA1BA3DE6F00724D9C /* Breed2.txt in Resources */,
-				4F420B211BB61F4800105564 /* head5_1.txt in Resources */,
-				4F0F92CB1BA3DE6F00724D9C /* Header1.txt in Resources */,
+				4FB3CBD7217D2FD50051C804 /* Best in Show from number to end of table.txt in Resources */,
 				4F38B8831B6D8ED3006356DD /* MainWindowController.xib in Resources */,
-				4F0F92B11BA3DE6F00724D9C /* BestAward3.txt in Resources */,
-				4F0F92C71BA3DE6F00724D9C /* Details5.txt in Resources */,
-				4F0F92B71BA3DE6F00724D9C /* Box not entered.txt in Resources */,
+				4FB3CBDC217D2FD50051C804 /* Best of breed to breedname.txt in Resources */,
 				4F9236001B7953500096ADFD /* Titles.plist in Resources */,
 				4FBD2EE41B81A84500E28D93 /* Credits.rtf in Resources */,
 				4F1247A11BB4913A00031CE0 /* Cat-A-Log Help in Resources */,
-				4F0F92D21BA3DE6F00724D9C /* Name2.txt in Resources */,
+				4FB3CBEF217D2FD50051C804 /* notesBeginFile.txt in Resources */,
+				4FB3CBDD217D2FD50051C804 /* Best of breed to last breedname.txt in Resources */,
+				4FB3CBE5217D2FD50051C804 /* cat in ring.txt in Resources */,
+				4FB3CC09217D2FD50051C804 /* startNewSection.txt in Resources */,
+				4FB3CBF7217D2FD50051C804 /* notesFromAwardToEndOfRow.txt in Resources */,
 				4F0F92E11BA3EC8400724D9C /* Excel list.plist in Resources */,
-				4F0F92BB1BA3DE6F00724D9C /* Challenge1.txt in Resources */,
-				4F0F92BC1BA3DE6F00724D9C /* Challenge2.txt in Resources */,
+				4FB3CC05217D2FD50051C804 /* Ring in show.txt in Resources */,
 				4FFE16C91B6E421A0020E1D0 /* EntrySheetController.xib in Resources */,
-				4F0F92CE1BA3DE6F00724D9C /* head4.txt in Resources */,
-				4F0F92AA1BA3DE6F00724D9C /* ACFAoE start row.txt in Resources */,
-				4F0F92AC1BA3DE6F00724D9C /* ACFAward end row.txt in Resources */,
-				4FAFEA9F1BAAEFE700C3EB89 /* judge_header.txt in Resources */,
-				4F0F92CD1BA3DE6F00724D9C /* Header2judge.txt in Resources */,
-				4F420B1F1BB6121200105564 /* EndOfEntries2.txt in Resources */,
-				4F0F92D61BA3DE6F00724D9C /* Section1.txt in Resources */,
-				4F0F92B01BA3DE6F00724D9C /* BestAward2.txt in Resources */,
-				4F0F92D51BA3DE6F00724D9C /* Prestige1.txt in Resources */,
-				4F0F92D71BA3DE6F00724D9C /* Section3.txt in Resources */,
 				4FEB56AE1B70ABEF00EECA78 /* ShowFormats.plist in Resources */,
-				4F420B231BB625BF00105564 /* head5_2.txt in Resources */,
-				4F0F92DB1BA3DE6F00724D9C /* Top ten end table.txt in Resources */,
-				4F0F92AB1BA3DE6F00724D9C /* ACFAoE start.txt in Resources */,
-				4F0F92A91BA3DE6F00724D9C /* ACFAoE end row.txt in Resources */,
+				4FB3CBF3217D2FD50051C804 /* notesBestOfBreedCellFinal.txt in Resources */,
+				4FB3CBD3217D2FD50051C804 /* Best Exhibit from Judges.txt in Resources */,
 				4F63A6B91BB819760009C5A4 /* Cat on book.icns in Resources */,
+				4FB3CBE3217D2FD50051C804 /* cat details to number.txt in Resources */,
+				4FB3CC0A217D2FD50051C804 /* sub-group close row.txt in Resources */,
+				4FB3CC0E217D31330051C804 /* PatternClassed.plist in Resources */,
+				4FB3CBED217D2FD50051C804 /* footerText.txt in Resources */,
+				4FB3CBEE217D2FD50051C804 /* group heading row.txt in Resources */,
+				4FB3CBE8217D2FD50051C804 /* colour heading row.txt in Resources */,
 				4F6214871BB290E400F87183 /* ProgressWindowController.xib in Resources */,
-				4F0F92AD1BA3DE6F00724D9C /* ACFAward start row.txt in Resources */,
-				4F0F92AE1BA3DE6F00724D9C /* ACFAward start table.txt in Resources */,
-				4F6A78ED2079E58B006CACF7 /* CCCAAwards1.txt in Resources */,
-				4F0F92DC1BA3DE6F00724D9C /* Top ten start table.txt in Resources */,
-				4F0F92BF1BA3DE6F00724D9C /* Colour2.txt in Resources */,
+				4FB3CBE4217D2FD50051C804 /* cat details to parents.txt in Resources */,
+				4FB3CBFF217D2FD50051C804 /* notesToCageNumber.txt in Resources */,
+				4FB3CBF5217D2FD50051C804 /* notesBlankCell.txt in Resources */,
 				4F3EFAE41B6DB98C00DA2F5C /* AddShowWindowController.xib in Resources */,
-				4F0F92B21BA3DE6F00724D9C /* BestAward4.txt in Resources */,
+				4FB3CBFD217D2FD50051C804 /* notesToAge.txt in Resources */,
 				4FD75AC31BAE8F5C00A00EEA /* CriticalAgesWindowController.xib in Resources */,
-				4F0F92D11BA3DE6F00724D9C /* Name2 litter.txt in Resources */,
+				4FB3CC06217D2FD50051C804 /* Ring not in show.txt in Resources */,
 				4F38B8651B6D8CCA006356DD /* MainMenu.xib in Resources */,
-				4F0F92D91BA3DE6F00724D9C /* Table end.txt in Resources */,
-				4F0F92D01BA3DE6F00724D9C /* Name1.txt in Resources */,
+				4FB3CBD2217D2FD50051C804 /* ACF awards to section name.txt in Resources */,
+				4FB3CBF6217D2FD50051C804 /* notesFromAge.txt in Resources */,
+				4FB3CC0C217D2FD50051C804 /* welcomePages.txt in Resources */,
+				4FB3CC03217D2FD50051C804 /* notesTopTenStart.txt in Resources */,
 				4F3AC54E1BAEE29500775611 /* CriticalAges.plist in Resources */,
-				4F0F92B51BA3DE6F00724D9C /* Box entered.txt in Resources */,
-				4F0F92D81BA3DE6F00724D9C /* Spacer.txt in Resources */,
-				4F0F92AF1BA3DE6F00724D9C /* BestAward1.txt in Resources */,
+				4FB3CBF0217D2FD50051C804 /* notesBestExhibit.txt in Resources */,
+				4FB3CBD8217D2FD50051C804 /* Best in Show heading.txt in Resources */,
+				4FB3CBD5217D2FD50051C804 /* Best Exhibit start.txt in Resources */,
+				4FB3CBD9217D2FD50051C804 /* Best in Show to ring number.txt in Resources */,
+				4FB3CC04217D2FD50051C804 /* notesToSubSectionName.txt in Resources */,
+				4FB3CBF9217D2FD50051C804 /* notesFromInfoToHeader.txt in Resources */,
+				4FB3CBE2217D2FD50051C804 /* cat details to name.txt in Resources */,
+				4FB3CBDA217D2FD50051C804 /* Best of breed name to end.txt in Resources */,
+				4FB3CBD1217D2FD50051C804 /* ACF awards start.txt in Resources */,
+				4FB3CBD6217D2FD50051C804 /* Best Exhibit to Judge 1.txt in Resources */,
+				4FB3CBE1217D2FD50051C804 /* cat details to class.txt in Resources */,
+				4FB3CC0B217D2FD50051C804 /* sub-group heading row.txt in Resources */,
+				4FB3CBEA217D2FD50051C804 /* detailsFromRingBoxes.txt in Resources */,
+				4FB3CBFC217D2FD50051C804 /* notesNewSectionBreak.txt in Resources */,
+				4FB3CC07217D2FD50051C804 /* startBestOfRow.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

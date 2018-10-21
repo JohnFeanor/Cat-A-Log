@@ -1,0 +1,32 @@
+{\rtf1\ansi\ansicpg1252\uc1\deff0\deflang3081
+{\fonttbl
+{\f0 \froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}
+{\f1 \fswiss\fcharset0\fprq2{\*\panose 020b0604020202020204}Arial;}
+{\f2 \fmodern\fcharset0\fprq1{\*\panose 02070309020205020404}Courier New;}
+{\f42 \froman\fcharset0\fprq2{\*\panose 02040503050406030204}Cambria;}
+{\f43 \fnil\fcharset0\fprq2{\*\panose 02000500000000000000}Times;}
+{\f44 \fswiss\fcharset0\fprq2{\*\panose 020b0606020202030204}Arial Narrow;}
+{\f47 \fswiss\fcharset77\fprq2{\*\panose 020f0704030504030204}Arial Rounded MT Bold;}
+{\fhiminor\f31506 \froman\fcharset0\fprq2{\*\panose 02040503050406030204}Cambria;}
+{\fbiminor\f31507 \froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}
+}
+
+{\stylesheet
+{\ql \li0\ri0\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0 \rtlch\fcs0 \fs24\lang3081\langfe3081\loch\f1\hich\af1\dbch\af1\cgrid\langnp3081\langfenp3081 \snext0 \sqformat \spriority0 \styrsid1446842 Normal;}
+{\*\cs10 \additive \ssemihidden \sunhideused \spriority1 Default Paragraph Font;}
+{\s4 \f1\qr\fs20\li0\ri0\sb80\sa80\langnp3081 \sbasedon29 \snext4 \sqformat footer;}
+{\s20 \ql\li0\ri0 \tqc\tx6840 \tqc\tx7420 \tqc\tx8000 \tqc\tx8580 \tqc\tx9160 \tqc\tx9740 \langnp3081 \sbasedon0 \snext20 \sunhideused header;}
+{\s29 \f1\qc\b\fs28\li0\ri0\sb120\sa60\keepn\lang3081 \sbasedon0 \snext29 \sqformat Breed;}
+{\s30 \f1\ql\b\ul\fs24\li0\ri0\sb120\sa80\keepn\lang3081 \sbasedon0 \snext30 \sqformat  Colour;}
+{\s31 \f1\ql\b\fs24\li0\ri0\sb120\sa80\keepn\lang3081 \sbasedon0 \snext31 \sqformat  Number;}
+{\s32 \f44\ql\b\caps\fs24\li0\ri0\sb120\sa80\lang3081 \sbasedon31 \snext32 \sqformat  Name;}
+{\s33 \f44\ql\fs22\li0\ri0\charscalex90 \sbasedon0 \snext33 \sqformat Cat Details;}
+{\s35 \f47\qr\fs24\li0\ri20\sb120\sa120\langnp3081 \sbasedon0 \snext35 \sqformat Best of;}
+{\s36 \f47\qc\fs24\li0\ri0\langnp3081 \sbasedon0 \snext36 \sqformat Box;}
+{\s37 \f47\ql\fs22\li0\ri0\sb120\sa80\keepn\langnp3081 \sbasedon0 \snext37 \sqformat Challenge header;}
+{\s39 \f1\qc\b\fs28\li0\ri0\sb120\sa60\keepn\langnp3081\noproof\pagebb \sbasedon29 \snext39 \sqformat Section;}
+
+{\*\ts40\tsrowd\trbrdrt\brdrs\brdrw10 \trbrdrl\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrh\brdrs\brdrw10 \trbrdrv\brdrs\brdrw10 \trftsWidthB3\trpaddl108\trpaddr108\trpaddfl3\trpaddft3\trpaddfb3\trpaddfr3\tblind0\tblindtype0\tsvertalt\tsbrdrt\tsbrdrl\tsbrdrb\tsbrdrr\tsbrdrdgl\tsbrdrdgr\tsbrdrh\tsbrdrv \ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0 \rtlch\fcs1 \af31507\afs24\alang1025 \ltrch\fcs0 \fs24\lang1033\langfe1033\loch\f31506\hich\af31506\dbch\af31505\cgrid\langnp1033\langfenp1033 \sbasedon0 \snext40 \spriority59 Table Grid;}
+}
+{\colortbl;\cbackgroundone\ctint255\cshade242\red242\green242\blue242;}
+

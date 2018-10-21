@@ -1,0 +1,13 @@
+
+{\pard \pagebb\f1\qc\b\fs28\li0\ri0\sb0\sa240\keepn\lang3081 {\*\bkmkstart ACF_AoE}ACF AoE Awards of Excellence{\*\bkmkend ACF_AoE}\par}
+
+{\trowd\trkeep
+\clvertalc\clbrdrb\brdrw30\brdrdb\clbrdrr\brdrw30\brdrdb\cellx2760
+\clvertalc\clcbpat1\clbrdrt\brdrw10\brdrdb\clbrdrl\brdrw30\brdrdb\clbrdrb\brdrw30\brdrs\clbrdrr\brdrw30\brdrs\cellx4195
+\clvertalc\clcbpat1\clbrdrt\brdrw10\brdrdb\clbrdrl\brdrw30\brdrs\clbrdrb\brdrw30\brdrs\clbrdrr\brdrw30\brdrs\cellx5630
+\clvertalc\clcbpat1\clbrdrt\brdrw10\brdrdb\clbrdrl\brdrw30\brdrs\clbrdrb\brdrw30\brdrs\clbrdrr\brdrw10\brdrdb\cellx7065
+{\pard\intbl \s35 \f47\ql\fs24\li0\ri20\sb60\sa60\langnp3081 \cell}
+{\pard\intbl \s35 \f47\qc\fs24\li0\ri20\sb60\sa60\langnp3081 Ring 1\cell}
+{\pard\intbl \s35 \f47\qc\fs24\li0\ri20\sb60\sa60\langnp3081 Ring 2\cell}
+{\pard\intbl \s35 \f47\qc\fs24\li0\ri20\sb60\sa60\langnp3081 Ring 3\cell}
+\row}

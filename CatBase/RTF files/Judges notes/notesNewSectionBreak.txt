@@ -1,0 +1,5 @@
+\sect\sectd\sectdefaultcl
+
+
+{\header 
+\pard \f42\ql\fs24\li0\ri0\sb0\sa0 \tqr\tx9800\lang3081

@@ -19,7 +19,7 @@ private extension Character {
   }
 }
 
-class NameFormatter: Formatter {
+class NameFormatter: Formatter, NSControlTextEditingDelegate {
   
   enum Action {
     case leave

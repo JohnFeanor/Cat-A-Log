@@ -1,0 +1,4 @@
+{\trowd
+\trspdl30\trspdt30\trspdb30\trspdr30\trspdfl3\trspdft3\trspdfb3\trspdfr3
+\cellx10220
+{\pard\intbl \f1\ql\b\ul\fs24\li0\ri0\sb120\sa80\keepn\lang3081 

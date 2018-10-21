@@ -1,0 +1,12 @@
+\paperw11900\paperh16840\margl907\margr680\margt1077\margb1077\gutter0 
+\noqfpromote \widowctrl \stylesortmethod0 \nofeaturethrottle1
+
+{\*\wgrffmtfilter 0008}
+{\footer 
+{\pard \f42\ql\fs24\li0\ri0\sb0\sa0\langnp3081 Signatures\par}
+{\pard \f1\ql\fs24\li0\ri0\sb0\sa0\tldot\tx4550\tqr\tldot\tx9800\langnp3081
+Judge: \tab Steward / Ring clerk: \tab \par}
+{\pard \f42\ql\fs20\li0\ri0\sb120\sa0\tqr\tx9800\langnp3081 13 May 2018\tab
+Page {\field{\*\fldinst PAGE }{\fldrslt 1}} of {\field{\*\fldinst NUMPAGES }{\fldrslt 1}}
+\par}}
+

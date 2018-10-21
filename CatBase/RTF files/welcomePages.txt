@@ -1,0 +1,14 @@
+\paperw11900\paperh16840\margl907\margr680\margt1077\margb1077\gutter0 
+\noqfpromote \widowctrl \stylesortmethod0 \nofeaturethrottle1
+
+{\*\wgrffmtfilter 0008}
+{\pard \f1\qc\fs40 Welcome\par}
+\sect
+{\pard \f1\qc\fs40 Judges' Profiles\par}
+\sect
+{\pard \f1\qc\fs40 Sponsors\par}
+\sect
+{\pard \f1\qc\fs40 Upcoming Shows\par}
+\sect
+{\pard \f1\qc\fs40 Show details\par}
+

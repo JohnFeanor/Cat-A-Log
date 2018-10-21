@@ -10,7 +10,15 @@ import Foundation
 import CoreData
 
 class Cat: NSManagedObject {
-  
+ 
+  enum Category {
+    case companion
+    case kitten
+    case open
+    case gold
+    case platinum
+  }
+
   @objc static var nomen = "Cat"
   @objc static var properties = [Cat.name, Cat.registration, Cat.title, Cat.birthDate, Cat.breed, Cat.breeder, Cat.challenge, Cat.colour, Cat.dam, Cat.exhibitor, Cat.sex, Cat.sire, Cat.vaccinated]
   
@@ -63,7 +71,7 @@ class Cat: NSManagedObject {
     return date
   }
   
-  @objc var catString: String {
+  var catString: String {
     var ans: String = ""
     for key in Cat.properties {
       switch key {
@@ -111,7 +119,7 @@ class Cat: NSManagedObject {
     }
   }
   
-  @objc func setValuesTo(_ entryData: [String : AnyObject]) {
+  func setValuesTo(_ entryData: [String : AnyObject]) {
     for key in Cat.properties {
       if let value = entryData[key] {
         setValue(value, forKey: key)
@@ -119,7 +127,7 @@ class Cat: NSManagedObject {
     }
   }
   
-  @objc func setValuesToArray(_ array: [String]) {
+  func setValuesToArray(_ array: [String]) {
     setValue(array[Cat.positions[Cat.dam]!], forKey: Cat.dam)
     setValue(array[Cat.positions[Cat.sire]!], forKey: Cat.sire)
     setValue(array[Cat.positions[Cat.breeder]!], forKey: Cat.breeder)
@@ -135,7 +143,7 @@ class Cat: NSManagedObject {
     return self.dictionaryWithValues(forKeys: Show.properties) as NSDictionary
   }
   
-  @objc var prefix: String {
+  var prefix: String {
     let parts = self.name.components(separatedBy: " ")
     let first = parts.first
     return first ?? ""
@@ -145,7 +153,7 @@ class Cat: NSManagedObject {
   // MARK: - YES/NO queries
   // ************************
   
-  @objc var registrationIsPending: Bool {
+  var registrationIsPending: Bool {
     return self.registration.isPending
   }
   
@@ -158,39 +166,35 @@ class Cat: NSManagedObject {
     }
   }
   
-  @objc var isKitten: Bool {
+  var isKitten: Bool {
     guard let currentShow = Globals.currentShow
       else { fatalError("CurrentShow is nil when trying to determine if cat is a kitten") }
     return currentShow.isKittenIfBornOn(self.birthDate)
   }
   
-  @objc var isEntire: Bool {
+  var isEntire: Bool {
     return Sex.isEntire(self.sex) ?? false
   }
   
-  @objc var isCompanion: Bool {
-    return Breeds.nonPedigreeBreed(self.breed)
+  var isCompanion: Bool {
+    return Breeds.nonPedigree(breed: self.breed)
   }
   
-  @objc var isTabby: Bool {
+  var isTabby: Bool {
     return colour.lowercased().contains("tabby")
   }
   
-  @objc var isMale: Bool {
-    guard let rank = Sex.rankOf(self.sex)
+  var isMale: Bool {
+    guard let rank = Sex.rank(of: self.sex)
       else { return false }
     return (rank % 2 == 0)
   }
 
-  @objc var isLimited : Bool {
-    if isCCCAShow {
-      return cccaLimitedBreeds.contains(self.breed)
-    } else {
-      return qfaLimitedBreeds.contains(self.breed)
-    }
+  var isLimited : Bool {
+     return Globals.patternedBreeds.contains(self.breed)
   }
 
-  @objc var hasWhite: Bool {
+  var hasWhite: Bool {
     let color = colour.lowercased()
     if color.contains("& white")    { return true }
     if color.contains("bi-colour") { return true }
@@ -205,16 +209,45 @@ class Cat: NSManagedObject {
   // MARK: - String queries
   // *************************
   
-  @objc var gender: String {
-    if self.isKitten { return Challenges.nameOf(.kitten) }
+  var titleAndName: String {
+    let ans = title + " " + name
+    return ans.condensingWhitespace
+  }
+  
+  var ownerAndBreeder: String {
+    if isCompanion { return "Ex:\(exhibitor)" }
+    if breeder.caseInsensitiveCompare(exhibitor) == .orderedSame {
+      return "Br/Ex:\(breeder)"
+    }
+    return "Br:\(breeder) Ex:\(exhibitor)"
+  }
+  
+  var parents: String {
+    if isCompanion { return "" }
+    return sire + " \\'d7 " + dam
+  }
+
+  var gender: String {
+    if self.isKitten { return Challenges.name(ranked: .kitten) }
     return self.sex
   }
   
-  @objc var group: String {
-    return Breeds.nameOfGroupForBreed(self.breed)
+  var classDetails: String {
+    if Globals.organiseKittensByAgeGroups && self.isKitten {
+      return "\(sex) Kitten under \(ageRank) months"
+    }
+    return "\(sex) class"
+  }
+
+  var group: String {
+    return Breeds.groupName(for: self.breed)
   }
   
-  @objc var ageCategory: String {
+  var subGroup: String {
+    return self.group + " " + self.sectionName
+  }
+  
+  var ageCategory: String {
     if Globals.kittenAgeGroups.count < 3 {
       fatalError("There are \(Globals.kittenAgeGroups.count) kitten age groups instead of 3")
     }
@@ -228,43 +261,63 @@ class Cat: NSManagedObject {
     return "under \(Globals.kittenAgeGroups[2]) mths"
   }
   
-  @objc var age: String {
+  var age: String {
     if let showDate = Globals.currentShow?.date {
       return self.birthDate.differenceInMonthsAndYears(showDate)
     }
     fatalError("Could not determine cat: \(self.name)'s age")
   }
   
-  @objc var sectionName: String {
-    if self.isCompanion { return "Companion" }
+  var sectionName: String {
+    if self.isCompanion { return "" }
+    if self.isKitten { return "Kittens" }
+    if self.isEntire { return "Entires" }
+    return "Desexed"
+  }
+  
+  var sectionNameAsSingle: String {
+    if self.isCompanion { return "" }
     if self.isKitten { return "Kitten" }
     if self.isEntire { return "Entire" }
     return "Desexed"
   }
   
+  var breedSection: String {
+    if isCompanion {return breed }
+    return self.breed + " " + self.sectionName
+  }
+
   // *************************
   // MARK: - Ranking queries
   // *************************
   
-  @objc var groupNumber: Int {
-    return Breeds.groupNumberOf(self.breed)
+  var category: Category {
+    if isCompanion { return .companion }
+    if isKitten { return .kitten }
+    if Challenges.currentList.count > 2, challenge == Challenges.currentList[2] { return .gold }
+    if Challenges.currentList.count > 3, challenge == Challenges.currentList[3] { return .platinum}
+    return .open
   }
   
-  @objc var breedRank: Int {
-    return Breeds.rankOf(self.breed) ?? 999
+  var groupNumber: Int {
+    return Breeds.groupNumber(of: self.breed)
   }
   
-  @objc var section: Int {
+  var breedRank: Int {
+    return Breeds.rank(of: self.breed) ?? 999
+  }
+  
+  var section: Int {
     if self.isKitten { return 1 }
     if self.isEntire { return 2 }
     return 3
   }
   
-  var judgingVariety: JudgingVarities {
+  var patternRank: Patterns {
     guard isLimited else {
       return .colourClass
     }
-    if isCCCAShow {
+    if Globals.nationalAffiliation == .CCCA {
       let color = colour.lowercased()
       if breed == "Ragdoll" {
         if color.contains("mitted") { return .mitted }
@@ -303,16 +356,16 @@ class Cat: NSManagedObject {
     }
   }
   
-  @objc var colourRank: Int {
+  var colourRank: Int {
     
-    if let ans = Colours.rankOf(self.colour, forBreed: self.breed) {
+    if let ans = Colours.rank(of: self.colour, forBreed: self.breed) {
       return ans
     } else {
       return 999
     }
   }
   
-  @objc var ageRank: Int {
+  var ageRank: Int {
     if let showDate = Globals.currentShow?.date {
       let catAge = showDate.monthsDifferenceTo(self.birthDate)
       for age in Globals.kittenAgeGroups {
@@ -324,15 +377,15 @@ class Cat: NSManagedObject {
     return 999
   }
   
-  @objc var ageInMonths: Int {
+  var ageInMonths: Int {
     if let showDate = Globals.currentShow?.date {
       return showDate.monthsDifferenceTo(self.birthDate)
     }
     return 0
   }
   
-  @objc var sexRank: Int {
-    return Sex.rankOf(self.sex) ?? 999
+  var sexRank: Int {
+    return Sex.rank(of: self.sex) ?? 999
   }
   
   // *************************
@@ -368,12 +421,12 @@ class Cat: NSManagedObject {
       return .orderedDescending
     }
     
-    // then on agouti (if agouti)
+    // then on pattern
     // --------------------------
-    if self.judgingVariety < anotherCat.judgingVariety {
+    if self.patternRank < anotherCat.patternRank {
       return .orderedAscending
     }
-    if self.judgingVariety > anotherCat.judgingVariety {
+    if self.patternRank > anotherCat.patternRank {
       return .orderedDescending
     }
     

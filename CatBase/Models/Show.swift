@@ -9,7 +9,6 @@
 import Foundation
 import CoreData
 
-
 struct AddShowDataSheet {
   var affiliation   = Globals.showTypes[0]
   var date          = Date()
@@ -124,25 +123,24 @@ class Show: NSManagedObject {
   
   // Set this show's properties to the values in a supplied dictionary
   // -----------------------------------------------------------------
-  @objc func setValuesTo(_ showData: [String : AnyObject]) {
+  func setValuesTo(_ showData: [String : AnyObject]) {
     self.setValuesForKeys(showData)
   }
   
   // ************************************
   // MARK: - Queries about the show
   // ************************************
-  
-  
+
   // Is a cat born on a given date a kitten at this show?
   // ----------------------------------------------------
-  @objc func isKittenIfBornOn(_ birthDate: Date) -> Bool {
+  func isKittenIfBornOn(_ birthDate: Date) -> Bool {
     let isAKitten = birthDate.lessThan(months: Globals.maxKittenAge, before: self.date)
     return isAKitten
   }
   
   // Is a cat born on a given date too young to enter this show?
   // -----------------------------------------------------------
-  @objc func isItTooYoungForShow(_ birthDate: Date) -> Bool {
+  func isItTooYoungForShow(_ birthDate: Date) -> Bool {
     let minAge = Globals.minShowAge
     let isTooYoungForShow = birthDate.lessThan(months: minAge.months, weeks: minAge.weeks, before: self.date)
     return isTooYoungForShow
@@ -150,7 +148,7 @@ class Show: NSManagedObject {
   
   // Is a cat born on a given date able to be pending at this show?
   // --------------------------------------------------------------
-  @objc func canItBePending(_ birthDate: Date) -> Bool {
+  func canItBePending(_ birthDate: Date) -> Bool {
     let minAge = Globals.maxPendingAge
     let canBePending = birthDate.lessThan(months: minAge.months, weeks: minAge.weeks, before: self.date)
     return canBePending
@@ -158,16 +156,29 @@ class Show: NSManagedObject {
   
   // Is a cat born on a given date able to be in a litter?
   // ------------------------------------------------------
-  @objc func canItBeInALitter(_ birthDate: Date) -> Bool {
+  func canItBeInALitter(_ birthDate: Date) -> Bool {
     let maxAge = Globals.minShowAge
     let canBeInLitter = !birthDate.lessThan(months: maxAge.months, weeks: maxAge.weeks, before: self.date)
     return canBeInLitter
   }
   
+  // return array of initials of judges judging <group>
+  // ------------------------------------------------------------------
+  
+  func judges(for group: String) -> [String] {
+    switch group {
+    case "Shorthair", "Group 2", "Group 3", "ShortHair":
+      return [judgeSH1, judgeSH2, judgeSH3, judgeSH4, judgeSH5, judgeSH6]
+    default:
+      return [judgeLH1, judgeLH2, judgeLH3, judgeLH4, judgeLH5, judgeLH6]
+    }
+  }
+  
   // return initials of judge judging breed <breedName> in ring <ring>
   // ------------------------------------------------------------------
-  @objc func judge(_ ring: Int, forBreed breedName: String) -> String {
-    let groupNumber = Breeds.groupNumberOf(breedName)
+
+  func judge(_ ring: Int, forBreed breedName: String) -> String {
+    let groupNumber = Breeds.groupNumber(of: breedName)
     let longhair: Bool
     if self.affiliation == Globals.showTypes[0] {
       longhair = groupNumber != 1

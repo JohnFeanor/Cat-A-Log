@@ -56,7 +56,7 @@ class Colours: DataSource, NSTableViewDataSource {
     }
   }
   
-  class func rankOf(_ colour: String, forBreed breed: String) -> Int? {
+  class func rank(of colour: String, forBreed breed: String) -> Int? {
     guard let colours = Colours.list[breed]
       else { return nil }
     return colours.index(of: colour)

@@ -20,21 +20,24 @@ class Breeds: DataSource, NSTableViewDataSource {
   static var entity = "Breeds"
   fileprivate static var breedsByGroupAndShowtype   = [String : [BreedList]]()
   fileprivate static var nonPedigreesByShowType = [String : [String]]()
+  static let companions: Set<String> = {
+    let i = Set(nonPedigreesByShowType.flatMap{ $0.value })
+    return i
+  } ()
   
   fileprivate static var groups:[BreedList]? {
-    return Breeds.breedsByGroupAndShowtype[Globals.currentShowType]
+    if let ans = Breeds.breedsByGroupAndShowtype[Globals.currentShowType] { return ans }
+    // if nil value returned, try to return the breed list of ACF
+    return Breeds.breedsByGroupAndShowtype.sorted { return $0.key < $1.key }.first?.value
   }
   
   fileprivate static var list: [String]? {
-      if let groups = Breeds.groups {
-        var ans = [String]()
-        for group in groups {
-          ans += group.breeds
-        }
-        return ans
-      }
-    print("Breeds: breedsByGroupAndShowtype is nil")
-    return nil
+    guard let groups = Breeds.groups
+    else {
+      print("Breeds: breedsByGroupAndShowtype is nil")
+      return nil
+    }
+    return groups.reduce([], { $0 + $1.breeds })
   }
   
   // ************************************
@@ -46,12 +49,9 @@ class Breeds: DataSource, NSTableViewDataSource {
     // for each show type e.g. QFA, ACF or COWOCA
     for (showTypeName, showTypeData) in Globals.dataByGroup {
       let groups = showTypeData.value(forKey: Headings.groups) as! [[String : AnyObject]]
-      var tempBreeds = [BreedList]()
-      for group in groups {
-        let groupBreeds = group[Headings.breeds] as! [String]
-        let groupName = group[Headings.group] as! String
-        tempBreeds.append(BreedList(groupName: groupName, breeds: groupBreeds))
-      }
+      let tempBreeds: [BreedList] = groups.reduce([], { total, g in
+        return total + [BreedList(groupName: g[Headings.group] as! String, breeds: g[Headings.breeds] as! [String])] })
+
       if let nonPedigree = groups.last {
         nonPedigreesByShowType[showTypeName] = (nonPedigree[Headings.breeds] as! [String])
       }
@@ -73,108 +73,119 @@ class Breeds: DataSource, NSTableViewDataSource {
   // MARK: - Class methods
   // ************************************
   
-  class func nonPedigreeBreed(_ breedName: String) -> Bool {
-    guard let currentBreeds = Breeds.nonPedigreesByShowType[Globals.currentShowType]
-      else { return false }
-    return currentBreeds.contains(breedName)
+  class func nonPedigree(breed breedName: String) -> Bool {
+    return companions.contains(breedName)
   }
   
-  class func pedigreeBreed(_ breedName: String) -> Bool {
-    return !nonPedigreeBreed(breedName)
+  class func pedigree(breed breedName: String) -> Bool {
+    return !companions.contains(breedName)
   }
   
-  class func groupNumberOf(_ breedName: String) -> Int {
-    let nameOfBreed: String
-    if breedName == "Norwegian Forest" {
-      nameOfBreed = "Norwegian Forest Cat"
-    } else {
-      nameOfBreed = breedName
-    }
-    if let groups = Breeds.groups {
-      var breedsGroup = 0
-      for group in groups {
-        if group.breeds.contains(nameOfBreed) {
-          return breedsGroup
-        }
-        breedsGroup += 1
-      }
-    }
-    fatalError("Cannot find group number of breed: \(breedName)")
+  class func belongingTo(group: String) -> [String] {
+    guard let showAffiliation = Globals.currentShow?.affiliation
+      else { errorAlert(message: "No show is selected"); return [] }
+    guard let breeds = Breeds.breedsByGroupAndShowtype[showAffiliation] else { errorAlert(message: "Internal error\nNo show type '\(showAffiliation)'"); return [] }
+    let ans = breeds.first(where: { $0.groupName == group })?.breeds ?? []
+    return ans
   }
   
-  class func ACFgroupNumberOf(_ breedName: String) -> Int {
-    let showType: String
-    if Globals.currentShowType == "GCCFSA Show" {
-      showType = "GCCFSA Show"
-    } else {
-       showType = "ACF Show"
+  fileprivate class func groupNumber(of breedName: String, in groups: [BreedList]) -> Int {
+    if let ans = groups.firstIndex(where: { $0.breeds.contains(breedName) }) {
+      return ans
     }
-    if let groups = Breeds.breedsByGroupAndShowtype[showType] {
-      let breed: String
-      if breedName == "Norwegian Forest" {
-        print("Changing Norwegian Forest to Norwegian Forest Cat")
-        breed = "Norwegian Forest Cat"
-      } else {
-        breed = breedName
-      }
-      var breedsGroup = 0
-      for group in groups {
-        if group.breeds.contains(breed) {
-          return breedsGroup
-        }
-        breedsGroup += 1
-      }
-      fatalError("Cannot determine ACF group number for \(breedName)")
+    
+    // handle the case where an exact match cannot be found
+    let lcBreedName = breedName.firstWord().lowercased()
+    if let ans = groups.firstIndex(where: { group in
+      return group.breeds.contains(where: { $0.lowercased().hasPrefix(lcBreedName) || $0.lowercased().hasSuffix(lcBreedName)})
+    }) {
+      return ans
     }
-    fatalError("Cannot find breeds for ACF type show")
+    
+    // cannot find this breed anywhere - is it a companion?
+    if companions.contains(breedName), groups.count - 1 >= 0 {
+      return groups.count - 1
+   }
+    
+    // can not find any match with a breed - report an error
+    fatalError("Cannot find group number of breed: \(breedName) in groupNumberOf")
   }
   
-  class func nameOfGroupForBreed(_ breedName: String) -> String {
-    let nameOfBreed : String
-    if breedName == "Norwegian Forest" {
-      nameOfBreed = "Norwegian Forest Cat"
-    } else {
-      nameOfBreed = breedName
+  class func groupNumber(of breedName: String) -> Int {
+    guard let groups = Breeds.groups else {
+      fatalError("Breeds.groups is nil in groupNumberOf")
     }
-    if let groups = Breeds.groups {
-      var breedsGroup = 0
-      for group in groups {
-        if group.breeds.contains(nameOfBreed) {
-          return groups[breedsGroup].groupName
-        }
-        breedsGroup += 1
-      }
+    return groupNumber(of: breedName, in: groups)
+  }
+  
+  class func ACFgroupNumber(of breedName: String) -> ACFGroup {
+    let showAffiliation = Globals.defaultShowAffliation
+    guard let groups = Breeds.breedsByGroupAndShowtype[showAffiliation]
+    else {
+      fatalError("Breeds.group is nil for ACFgroupNumberOf")
     }
-    print("group name for \(nameOfBreed) not found")
+    return ACFGroup(rawValue: groupNumber(of: breedName, in: groups)) ?? .group1
+  }
+  
+  class func groupName(for breedName: String) -> String {
+    guard let groups = Breeds.groups
+      else { fatalError("Breeds.group is nil for groupName for:") }
+    
+    if let ans = groups.first(where:
+      { $0.breeds.contains(breedName)})?.groupName {
+      return ans
+    }
+    
+    // handle the case where an exact match cannot be found
+    let lcBreedName = breedName.firstWord().lowercased()
+    if let ans = groups.first(where: { group in
+      return group.breeds.contains(where:
+        { $0.lowercased().hasPrefix(lcBreedName) || $0.lowercased().hasSuffix(lcBreedName) }
+      )
+    }) {
+      return ans.groupName
+    }
+    
+    if companions.contains(breedName) {
+      return groups[groups.count - 1].groupName
+    }
+    
     fatalError("group name for \(breedName) not found")
+  }
+  
+  class func breedsInGroupWith(breed: String) -> Int {
+    guard let groups = Breeds.groups
+      else { fatalError("Breeds.group is nil for breedsInGroupWith breed:") }
+    let ans = groups.filter({ $0.breeds.contains(breed)}).first?.breeds.count ?? 0
+    return ans
   }
   
   class func nameOfGroupNumber(_ index: Int) -> String {
     guard let groups = Breeds.groups
-      else { fatalError("Breeds.group is nil") }
-    if (index < 0) || (index >= groups.count) {
-      fatalError("name for group \(index) not found")
-    } else {
-      return groups[index].groupName
-    }
+      else { fatalError("Breeds.groups is nil") }
+    guard (0 ..< groups.count) ~= index
+      else { fatalError("\(index) out of range for Breeds.groups in nameOfGroupNumber") }
+    return groups[index].groupName
   }
   
-  class func rankOf(_ breedName: String) -> Int? {
-    if let list = Breeds.list {
-      return list.index(of: breedName)
-    }
-    return nil
+  class func rank(of breedName: String) -> Int? {
+    guard let list = Breeds.list
+      else { return nil }
+    return list.index(of: breedName)
   }
   
-  class func nameOf(_ index: Int) -> String {
-    if let list = Breeds.list {
-      if (index < 0) || (index >= list.count) {
-        fatalError("Out of bounds. Breed name for index: \(index)")
-      } else {
-        return list[index]
-      }
-    }
-    fatalError("Cannot access Breed name list in nameOf:")
+  class func name(of index: Int) -> String {
+    guard let list = Breeds.list
+      else { fatalError("Breeds.list is nil") }
+    guard (0 ..< list.count) ~= index
+      else { fatalError("\(index) out of range for Breeds.list in name of:") }
+    return list[index]
+  }
+  
+  static var currentList: [String] {
+    guard let groups = Breeds.breedsByGroupAndShowtype[Globals.currentShowType]
+      else { return [] }
+    return groups.reduce([], { $0 + $1.breeds})
   }
   
   static var numberOfBreeds: Int {
@@ -189,14 +200,7 @@ class Breeds: DataSource, NSTableViewDataSource {
   // ************************************
   
   override var list: [String] {
-    guard let groups = Breeds.breedsByGroupAndShowtype[Globals.currentShowType]
-      else { return [] }
-    
-    var answer = [String]()
-    for group in groups {
-      answer += group.breeds
-    }
-    return answer
+    return Breeds.currentList
   }
   
   // ************************************

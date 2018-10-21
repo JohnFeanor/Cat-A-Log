@@ -1,0 +1,4 @@
+{\trowd \trkeep
+\trspdl30\trspdt30\trspdb30\trspdr30\trspdfl3\trspdft3\trspdfb3\trspdfr3
+\cellx960\cellx7320
+{\pard\intbl \s31 \f1\ql\b\fs24\li0\ri0\sb120\sa80\keepn\lang3081\keepn 

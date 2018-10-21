@@ -16,7 +16,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   @IBOutlet weak var window: NSWindow!
   @IBOutlet weak var timesleftToRunString: NSTextField!
   @IBOutlet weak var registrationTextField: NSTextField!
-  // @IBOutlet weak var versionTextField: NSTextField!
   
   enum State : Int {
     case trial = 0
@@ -41,26 +40,26 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
   @IBOutlet weak var progressWheel: NSProgressIndicator!
   
-  @objc var mainWindowController: MainWindowController?
-  @objc var coloursEditorController: ColoursWindowController? = nil
-  @objc var criticalAgesWindowController: CriticalAgesWindowController? = nil
-  @objc var titleEditorController: TitleEditorController? = nil
+  var mainWindowController: MainWindowController?
+  var coloursEditorController: ColoursWindowController? = nil
+  var criticalAgesWindowController: CriticalAgesWindowController? = nil
+  var titleEditorController: TitleEditorController? = nil
   
-  @objc var openPanel: NSOpenPanel? = nil
-  @objc var savePanel: NSSavePanel? = nil
+  var openPanel: NSOpenPanel? = nil
+  var savePanel: NSSavePanel? = nil
   
-  @objc var progressPanel: ProgressWindowController? = nil
+  var progressPanel: ProgressWindowController? = nil
   
-  @objc var myProgress = 0.0
+  var myProgress = 0.0
   
   @objc dynamic var writeMenuTitle = "Write catalogue ..."
   @objc dynamic var writeMenuAvailable = true
   
   @objc dynamic var iconImage = NSImage(named: NSImage.Name(rawValue: "icon.jpg"))
   
-  @objc var willIexit = false
+  var willIexit = false
   
-  @objc let versionText = "V " + ((Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String) ?? "2.0")
+  @objc dynamic let versionText = "V " + ((Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String) ?? "2.0")
   
   @IBAction func splashWindowClosed(_ sender: AnyObject) {
     window.close()
@@ -103,13 +102,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     registrationTextField.stringValue = authenticate[CCIRegistered.rawValue]
-//
-//    if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
-//      let versionText = "V " + version
-//      print("Version is \(versionText)")
-//      print("versionTextField is \(versionTextField)")
-//      versionTextField.stringValue = versionText
-//    }
     
     Titles.createList()
     Breeds.createList()

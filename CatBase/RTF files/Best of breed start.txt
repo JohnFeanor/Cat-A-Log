@@ -1,0 +1,16 @@
+
+{\sect \linex0\headery357\footery357\sectdefaultcl}
+{\header \pard \f1\b\fs28\ql \li0\ri0 \lang3081\par}
+
+{\pard \pagebb\f1\qc\b\fs28\li0\ri0\sb0\sa240\keepn\lang3081 {\*\bkmkstart Best_of_breed}Best of Breed{\*\bkmkend Best_of_breed}\par}
+
+{\trowd\trqc\trleft-23\tblind0\tblindtype3
+\clvertalc\clcbpat1\clbrdrt\brdrw10\brdrdb\clbrdrl\brdrw10\brdrdb\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx2760
+\clvertalc\clcbpat1\clbrdrt\brdrw10\brdrdb\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx4195
+\clvertalc\clcbpat1\clbrdrt\brdrw10\brdrdb\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx5630
+\clvertalc\clcbpat1\clbrdrt\brdrw10\brdrdb\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrdb\cellx7065
+{\pard\intbl \s35 \f47\ql\fs24\li0\ri20\sb60\sa60\li57\langnp3081 Breed\cell}
+{\pard\intbl \s35 \f47\qc\fs24\li0\ri20\sb60\sa60\langnp3081 Ring 1\cell}
+{\pard\intbl \s35 \f47\qc\fs24\li0\ri20\sb60\sa60\langnp3081 Ring 2\cell}
+{\pard\intbl \s35 \f47\qc\fs24\li0\ri20\sb60\sa60\langnp3081 Ring 3\cell}
+\row}

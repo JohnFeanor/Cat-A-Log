@@ -1,0 +1,7 @@
+{\trowd \lastrow
+\clbrdrt\brdrw45\brdrs
+\clbrdrl\brdrw45\brdrs
+\clbrdrb\brdrw45\brdrs
+\clbrdrr\brdrw45\brdrs
+\clvertalc\cellx6823\cellx10220
+{\pard\intbl \s29 \f1\qc\b\fs28\li0\ri0\sb120\sa60\keepn\lang3081 

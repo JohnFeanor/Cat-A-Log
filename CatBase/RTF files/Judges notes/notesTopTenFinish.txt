@@ -1,0 +1,153 @@
+ Top Ten\cell}
+\row}
+
+{\trowd \irow1\irowband0\trkeep
+\clbrdrt\brdrs\brdrw30
+\clbrdrl\brdrdb\brdrw10 
+\clbrdrb\brdrs\brdrw10 
+\clbrdrr\brdrs\brdrw10 
+\clvertalc \cellx3500
+\clbrdrt\brdrs\brdrw30 
+\clbrdrl\brdrs\brdrw10 
+\clbrdrb\brdrs\brdrw10 
+\clbrdrr\brdrdb\brdrw10 
+\clvertalc \cellx5000
+{\pard\intbl \s35 \f47\qr\fs24\li0\ri60\sb60\sa60\keepn\langnp3081 Best in show\cell}
+{\pard\intbl \f2\qc\fs24\li0\ri0\sb60\sa60\langnp3081 \cell}
+\row}
+
+{\trowd \irow2\irowband1
+\clbrdrt\brdrs\brdrw10 
+\clbrdrl\brdrdb\brdrw10 
+\clbrdrb\brdrs\brdrw10 
+\clbrdrr\brdrs\brdrw10 
+\clvertalc \cellx3500
+\clbrdrt\brdrs\brdrw10 
+\clbrdrl\brdrs\brdrw10 
+\clbrdrb\brdrs\brdrw10 
+\clbrdrr\brdrdb\brdrw10 
+\clvertalc \cellx5000
+{\pard\intbl \s35 \f47\qr\fs24\li0\ri60\sb60\sa60\keepn\langnp3081 Reserve\cell}
+{\pard\intbl \f2\qc\fs24\li0\ri0\sb60\sa60\langnp3081 \cell}
+\row}
+
+{\trowd \irow3\irowband2
+\clbrdrt\brdrs\brdrw10 
+\clbrdrl\brdrdb\brdrw10 
+\clbrdrb\brdrs\brdrw10 
+\clbrdrr\brdrs\brdrw10 
+\clvertalc \cellx3500
+\clbrdrt\brdrs\brdrw10 
+\clbrdrl\brdrs\brdrw10 
+\clbrdrb\brdrs\brdrw10 
+\clbrdrr\brdrdb\brdrw10 
+\clvertalc \cellx5000
+{\pard\intbl \s35 \f47\qr\fs24\li0\ri60\sb60\sa60\keepn\langnp3081 Third\cell}
+{\pard\intbl \f2\qc\fs24\li0\ri0\sb60\sa60\langnp3081 \cell}
+\row}
+
+{\trowd \irow4\irowband3
+\clbrdrt\brdrs\brdrw10 
+\clbrdrl\brdrdb\brdrw10 
+\clbrdrb\brdrs\brdrw10 
+\clbrdrr\brdrs\brdrw10 
+\clvertalc \cellx3500
+\clbrdrt\brdrs\brdrw10 
+\clbrdrl\brdrs\brdrw10 
+\clbrdrb\brdrs\brdrw10 
+\clbrdrr\brdrdb\brdrw10 
+\clvertalc \cellx5000
+{\pard\intbl \s35 \f47\qr\fs24\li0\ri60\sb60\sa60\keepn\langnp3081 Fourth\cell}
+{\pard\intbl \f2\qc\fs24\li0\ri0\sb60\sa60\langnp3081 \cell}
+\row}
+
+{\trowd \irow5\irowband4
+\clbrdrt\brdrs\brdrw10 
+\clbrdrl\brdrdb\brdrw10 
+\clbrdrb\brdrs\brdrw10 
+\clbrdrr\brdrs\brdrw10 
+\clvertalc \cellx3500
+\clbrdrt\brdrs\brdrw10 
+\clbrdrl\brdrs\brdrw10 
+\clbrdrb\brdrs\brdrw10 
+\clbrdrr\brdrdb\brdrw10 
+\clvertalc \cellx5000
+{\pard\intbl \s35 \f47\qr\fs24\li0\ri60\sb60\sa60\keepn\langnp3081 Fifth\cell}
+{\pard\intbl \f2\qc\fs24\li0\ri0\sb60\sa60\langnp3081 \cell}
+\row}
+
+{\trowd \irow6\irowband5
+\clbrdrt\brdrs\brdrw10 
+\clbrdrl\brdrdb\brdrw10 
+\clbrdrb\brdrs\brdrw10 
+\clbrdrr\brdrs\brdrw10 
+\clvertalc \cellx3500
+\clbrdrt\brdrs\brdrw10 
+\clbrdrl\brdrs\brdrw10 
+\clbrdrb\brdrs\brdrw10 
+\clbrdrr\brdrdb\brdrw10 
+\clvertalc \cellx5000
+{\pard\intbl \s35 \f47\qr\fs24\li0\ri60\sb60\sa60\keepn\langnp3081 Sixth\cell}
+{\pard\intbl \f2\qc\fs24\li0\ri0\sb60\sa60\langnp3081 \cell}
+\row}
+
+{\trowd \irow7\irowband6
+\clbrdrt\brdrs\brdrw10 
+\clbrdrl\brdrdb\brdrw10 
+\clbrdrb\brdrs\brdrw10 
+\clbrdrr\brdrs\brdrw10 
+\clvertalc \cellx3500
+\clbrdrt\brdrs\brdrw10 
+\clbrdrl\brdrs\brdrw10 
+\clbrdrb\brdrs\brdrw10 
+\clbrdrr\brdrdb\brdrw10 
+\clvertalc \cellx5000
+{\pard\intbl \s35 \f47\qr\fs24\li0\ri60\sb60\sa60\keepn\langnp3081 Seventh\cell}
+{\pard\intbl \f2\qc\fs24\li0\ri0\sb60\sa60\langnp3081 \cell}
+\row}
+
+{\trowd \irow8\irowband7
+\clbrdrt\brdrs\brdrw10 
+\clbrdrl\brdrdb\brdrw10 
+\clbrdrb\brdrs\brdrw10 
+\clbrdrr\brdrs\brdrw10 
+\clvertalc \cellx3500
+\clbrdrt\brdrs\brdrw10 
+\clbrdrl\brdrs\brdrw10 
+\clbrdrb\brdrs\brdrw10 
+\clbrdrr\brdrdb\brdrw10 
+\clvertalc \cellx5000
+{\pard\intbl \s35 \f47\qr\fs24\li0\ri60\sb60\sa60\keepn\langnp3081 Eighth\cell}
+{\pard\intbl \f2\qc\fs24\li0\ri0\sb60\sa60\langnp3081 \cell}
+\row}
+
+{\trowd \irow9\irowband8
+\clbrdrt\brdrs\brdrw10 
+\clbrdrl\brdrdb\brdrw10 
+\clbrdrb\brdrs\brdrw10 
+\clbrdrr\brdrs\brdrw10 
+\clvertalc \cellx3500
+\clbrdrt\brdrs\brdrw10 
+\clbrdrl\brdrs\brdrw10 
+\clbrdrb\brdrs\brdrw10 
+\clbrdrr\brdrdb\brdrw10 
+\clvertalc \cellx5000
+{\pard\intbl \s35 \f47\qr\fs24\li0\ri60\sb60\sa60\keepn\langnp3081 Ninth\cell}
+{\pard\intbl \f2\qc\fs24\li0\ri0\sb60\sa60\langnp3081 \cell}
+\row}
+
+{\trowd \irow10\irowband9
+\clbrdrt\brdrs\brdrw10 
+\clbrdrl\brdrdb\brdrw10 
+\clbrdrb\brdrdb\brdrw10 
+\clbrdrr\brdrs\brdrw10 
+\clvertalc \cellx3500
+\clbrdrt\brdrs\brdrw10 
+\clbrdrl\brdrs\brdrw10 
+\clbrdrb\brdrdb\brdrw10 
+\clbrdrr\brdrdb\brdrw10 
+\clvertalc \cellx5000
+{\pard\intbl \s35 \f47\qr\fs24\li0\ri60\sb60\sa60\langnp3081 Tenth\cell}
+{\pard\intbl \f2\qc\fs24\li0\ri0\sb60\sa60\langnp3081 \cell}
+\row}
+

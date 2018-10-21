@@ -1,0 +1,12 @@
+{\pard \par}
+
+{\trowd \irow0\irowband0\trkeep
+\clbrdrt\brdrdb\brdrw10 
+\clbrdrl\brdrdb\brdrw10 
+\clbrdrb\brdrs\brdrw10 
+\clbrdrr\brdrdb\brdrw10 
+\clvertalc\clcbpat1\cellx5000
+{\pard\intbl \s35 \f47\qc\fs24\li0\ri0\sb60\sa60\langnp3081 
+Best of Breed\cell}
+\row}
+

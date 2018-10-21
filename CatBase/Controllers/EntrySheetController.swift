@@ -103,7 +103,7 @@ class EntrySheetController: NSWindowController {
   @objc dynamic var sex       = String()
   @objc dynamic var challenge = String() {
     didSet {
-      if challenge != Challenges.nameOf(ChallengeTypes.kitten) && !dateSet {
+      if challenge != Challenges.name(ranked: ChallengeTypes.kitten) && !dateSet {
         let showdate = Globals.currentShow?.date ?? Date()
         let calendar = Calendar.current
         if let lastYear = (calendar as NSCalendar).date(byAdding: NSCalendar.Unit.year, value: -1, to: showdate, options: []) {
@@ -253,9 +253,9 @@ class EntrySheetController: NSWindowController {
       if theField.isEmpty { return false }
       switch field {
       case Cat.sex:
-        return Sex.rankOf(theField) != nil
+        return Sex.rank(of: theField) != nil
       case Cat.breed:
-        return Breeds.rankOf(theField) != nil
+        return Breeds.rank(of: theField) != nil
       default:
         break;
       }
@@ -343,7 +343,7 @@ class EntrySheetController: NSWindowController {
       
       // Ensure 'Pending' is not used as registration for pedigree cats older than 4 months
       // -----------------------------------------------------------------------------------
-      if registration.isPending && Breeds.pedigreeBreed(self.breed) && !currentShow.canItBePending(self.birthDate) {
+      if registration.isPending && Breeds.pedigree(breed: self.breed) && !currentShow.canItBePending(self.birthDate) {
         okToGo = false
         faults += "This kitten is too old for pending.\n"
       }

@@ -1,0 +1,7 @@
+
+{\trowd\trqc\trleft-23\tblind0\tblindtype3
+\clvertalc\clbrdrt\brdrw30\brdrs\clbrdrl\brdrw10\brdrdb\clbrdrb\brdrw10\brdrdb\clbrdrr\brdrw10\brdrs\cellx2760
+\clvertalc\clbrdrt\brdrw30\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrdb\clbrdrr\brdrw10\brdrs\cellx4195
+\clvertalc\clbrdrt\brdrw30\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrdb\clbrdrr\brdrw10\brdrs\cellx5630
+\clvertalc\clbrdrt\brdrw30\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrdb\clbrdrr\brdrw10\brdrdb\cellx7065
+{\pard\intbl \s35 \f47\ql\fs22\li0\ri0\sb60\sa60\li57\langnp3081 
