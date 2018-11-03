@@ -12,6 +12,11 @@
 		4F0F92E11BA3EC8400724D9C /* Excel list.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F92E01BA3EC8400724D9C /* Excel list.plist */; };
 		4F0F92E41BA3EF0E00724D9C /* Places.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F0F92E31BA3EF0E00724D9C /* Places.plist */; };
 		4F1247A11BB4913A00031CE0 /* Cat-A-Log Help in Resources */ = {isa = PBXBuildFile; fileRef = 4F1247A01BB4913A00031CE0 /* Cat-A-Log Help */; };
+		4F1696172187145100EC5823 /* top5RingToSection.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F1696142187145000EC5823 /* top5RingToSection.txt */; };
+		4F1696182187145100EC5823 /* top5Start.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F1696152187145100EC5823 /* top5Start.txt */; };
+		4F1696192187145100EC5823 /* top5RingToRing.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F1696162187145100EC5823 /* top5RingToRing.txt */; };
+		4F1A380C217D915F00A4217F /* RTF generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A380B217D915F00A4217F /* RTF generator.swift */; };
+		4F1A380D217D915F00A4217F /* RTF generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A380B217D915F00A4217F /* RTF generator.swift */; };
 		4F38B85D1B6D8CCA006356DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F38B85C1B6D8CCA006356DD /* AppDelegate.swift */; };
 		4F38B8601B6D8CCA006356DD /* CatBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4F38B85E1B6D8CCA006356DD /* CatBase.xcdatamodeld */; };
 		4F38B8621B6D8CCA006356DD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F38B8611B6D8CCA006356DD /* Images.xcassets */; };
@@ -32,6 +37,7 @@
 		4F6214891BB34A1B00F87183 /* Authentication.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F6214881BB34A1B00F87183 /* Authentication.plist */; };
 		4F62148B1BB34F2000F87183 /* icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4F62148A1BB34F2000F87183 /* icon.jpg */; };
 		4F63A6B91BB819760009C5A4 /* Cat on book.icns in Resources */ = {isa = PBXBuildFile; fileRef = 4F63A6B81BB819760009C5A4 /* Cat on book.icns */; };
+		4F6E0B1E21859E6E0040A590 /* top5table.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F6E0B1D21859E6E0040A590 /* top5table.txt */; };
 		4F7107FE1B77748E00E21AAC /* Challenges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7107FD1B77748E00E21AAC /* Challenges.swift */; };
 		4F8E87321BAFB19E00497D2F /* TitleEditorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8E87301BAFB19E00497D2F /* TitleEditorController.swift */; };
 		4F8E87331BAFB19E00497D2F /* TitleEditorController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F8E87311BAFB19E00497D2F /* TitleEditorController.xib */; };
@@ -111,6 +117,8 @@
 		4FD803261B774E8100D7FAD2 /* Colours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD803251B774E8100D7FAD2 /* Colours.swift */; };
 		4FD8384E1B832F3D00A8C7A7 /* ColoursWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD8384C1B832F3D00A8C7A7 /* ColoursWindowController.swift */; };
 		4FD8384F1B832F3D00A8C7A7 /* ColoursWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FD8384D1B832F3D00A8C7A7 /* ColoursWindowController.xib */; };
+		4FE2F2B8218D03C400C582A8 /* notesTop5Finish.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FE2F2B6218D03C300C582A8 /* notesTop5Finish.txt */; };
+		4FE2F2B9218D03C400C582A8 /* notesTop5Start.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FE2F2B7218D03C300C582A8 /* notesTop5Start.txt */; };
 		4FEB56AE1B70ABEF00EECA78 /* ShowFormats.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4FEB56AD1B70ABEF00EECA78 /* ShowFormats.plist */; };
 		4FEB56B01B70BFC700EECA78 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEB56AF1B70BFC700EECA78 /* Globals.swift */; };
 		4FFE16C81B6E421A0020E1D0 /* EntrySheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFE16C61B6E421A0020E1D0 /* EntrySheetController.swift */; };
@@ -135,6 +143,10 @@
 		4F0F92E01BA3EC8400724D9C /* Excel list.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Excel list.plist"; path = "pLists/Excel list.plist"; sourceTree = "<group>"; };
 		4F0F92E31BA3EF0E00724D9C /* Places.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Places.plist; path = pLists/Places.plist; sourceTree = "<group>"; };
 		4F1247A01BB4913A00031CE0 /* Cat-A-Log Help */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Cat-A-Log Help"; sourceTree = "<group>"; };
+		4F1696142187145000EC5823 /* top5RingToSection.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = top5RingToSection.txt; sourceTree = "<group>"; };
+		4F1696152187145100EC5823 /* top5Start.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = top5Start.txt; sourceTree = "<group>"; };
+		4F1696162187145100EC5823 /* top5RingToRing.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = top5RingToRing.txt; sourceTree = "<group>"; };
+		4F1A380B217D915F00A4217F /* RTF generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RTF generator.swift"; sourceTree = "<group>"; };
 		4F1E9FE0209EFDC900DDD15C /* Cat-A-Log.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Cat-A-Log.entitlements"; sourceTree = "<group>"; };
 		4F38B8571B6D8CCA006356DD /* Cat-A-Log.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cat-A-Log.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F38B85B1B6D8CCA006356DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -160,6 +172,7 @@
 		4F6214881BB34A1B00F87183 /* Authentication.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Authentication.plist; path = pLists/Authentication.plist; sourceTree = "<group>"; };
 		4F62148A1BB34F2000F87183 /* icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon.jpg; sourceTree = "<group>"; };
 		4F63A6B81BB819760009C5A4 /* Cat on book.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "Cat on book.icns"; sourceTree = "<group>"; };
+		4F6E0B1D21859E6E0040A590 /* top5table.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = top5table.txt; sourceTree = "<group>"; };
 		4F7107FD1B77748E00E21AAC /* Challenges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Challenges.swift; path = "Data Sources.swift/Challenges.swift"; sourceTree = "<group>"; };
 		4F8E87301BAFB19E00497D2F /* TitleEditorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TitleEditorController.swift; path = Controllers/TitleEditorController.swift; sourceTree = "<group>"; };
 		4F8E87311BAFB19E00497D2F /* TitleEditorController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TitleEditorController.xib; path = Controllers/TitleEditorController.xib; sourceTree = "<group>"; };
@@ -239,6 +252,8 @@
 		4FD803251B774E8100D7FAD2 /* Colours.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Colours.swift; path = "Data Sources.swift/Colours.swift"; sourceTree = "<group>"; };
 		4FD8384C1B832F3D00A8C7A7 /* ColoursWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColoursWindowController.swift; path = Controllers/ColoursWindowController.swift; sourceTree = "<group>"; };
 		4FD8384D1B832F3D00A8C7A7 /* ColoursWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ColoursWindowController.xib; path = Controllers/ColoursWindowController.xib; sourceTree = "<group>"; };
+		4FE2F2B6218D03C300C582A8 /* notesTop5Finish.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = notesTop5Finish.txt; path = "Judges notes/notesTop5Finish.txt"; sourceTree = "<group>"; };
+		4FE2F2B7218D03C300C582A8 /* notesTop5Start.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = notesTop5Start.txt; path = "Judges notes/notesTop5Start.txt"; sourceTree = "<group>"; };
 		4FEB56AD1B70ABEF00EECA78 /* ShowFormats.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ShowFormats.plist; path = pLists/ShowFormats.plist; sourceTree = "<group>"; };
 		4FEB56AF1B70BFC700EECA78 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		4FFE16C61B6E421A0020E1D0 /* EntrySheetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EntrySheetController.swift; path = Controllers/EntrySheetController.swift; sourceTree = "<group>"; };
@@ -323,6 +338,7 @@
 				4F38B88C1B6D9162006356DD /* Models */,
 				4FB9D11D1B7407C800046CBA /* Data sources */,
 				4FEB56AF1B70BFC700EECA78 /* Globals.swift */,
+				4F1A380B217D915F00A4217F /* RTF generator.swift */,
 				4F38B85C1B6D8CCA006356DD /* AppDelegate.swift */,
 				4FC1DA061B9BAFA000E321EA /* Printing.swift */,
 				4F38B8801B6D8ED3006356DD /* MainWindowController.swift */,
@@ -385,6 +401,12 @@
 		4FB3CB91217D2FD50051C804 /* RTF files */ = {
 			isa = PBXGroup;
 			children = (
+				4F6E0B1D21859E6E0040A590 /* top5table.txt */,
+				4F1696162187145100EC5823 /* top5RingToRing.txt */,
+				4F1696142187145000EC5823 /* top5RingToSection.txt */,
+				4F1696152187145100EC5823 /* top5Start.txt */,
+				4FE2F2B7218D03C300C582A8 /* notesTop5Start.txt */,
+				4FE2F2B6218D03C300C582A8 /* notesTop5Finish.txt */,
 				4FB3CB92217D2FD50051C804 /* ACF awards from section name to end.txt */,
 				4FB3CB93217D2FD50051C804 /* ACF awards start.txt */,
 				4FB3CB94217D2FD50051C804 /* ACF awards to section name.txt */,
@@ -593,6 +615,7 @@
 				4FB3CC08217D2FD50051C804 /* startFirstSection.txt in Resources */,
 				4F62148B1BB34F2000F87183 /* icon.jpg in Resources */,
 				4FB3CBF8217D2FD50051C804 /* notesFromCageToClass.txt in Resources */,
+				4F1696182187145100EC5823 /* top5Start.txt in Resources */,
 				4FB3CBF2217D2FD50051C804 /* notesBestOfBreedCellEnd.txt in Resources */,
 				4FB3CBD0217D2FD50051C804 /* ACF awards from section name to end.txt in Resources */,
 				4F0F92DE1BA3E30900724D9C /* general.strings in Resources */,
@@ -606,6 +629,7 @@
 				4FBD2EE61B81A91E00E28D93 /* agouti.plist in Resources */,
 				4F8E87331BAFB19E00497D2F /* TitleEditorController.xib in Resources */,
 				4FB3CBD4217D2FD50051C804 /* Best Exhibit Judge1 to Judge2.txt in Resources */,
+				4F1696192187145100EC5823 /* top5RingToRing.txt in Resources */,
 				4FB3CC02217D2FD50051C804 /* notesTopTenFinish.txt in Resources */,
 				4F6214891BB34A1B00F87183 /* Authentication.plist in Resources */,
 				4FB3CBD7217D2FD50051C804 /* Best in Show from number to end of table.txt in Resources */,
@@ -625,6 +649,7 @@
 				4FEB56AE1B70ABEF00EECA78 /* ShowFormats.plist in Resources */,
 				4FB3CBF3217D2FD50051C804 /* notesBestOfBreedCellFinal.txt in Resources */,
 				4FB3CBD3217D2FD50051C804 /* Best Exhibit from Judges.txt in Resources */,
+				4F6E0B1E21859E6E0040A590 /* top5table.txt in Resources */,
 				4F63A6B91BB819760009C5A4 /* Cat on book.icns in Resources */,
 				4FB3CBE3217D2FD50051C804 /* cat details to number.txt in Resources */,
 				4FB3CC0A217D2FD50051C804 /* sub-group close row.txt in Resources */,
@@ -640,11 +665,13 @@
 				4FB3CBFD217D2FD50051C804 /* notesToAge.txt in Resources */,
 				4FD75AC31BAE8F5C00A00EEA /* CriticalAgesWindowController.xib in Resources */,
 				4FB3CC06217D2FD50051C804 /* Ring not in show.txt in Resources */,
+				4F1696172187145100EC5823 /* top5RingToSection.txt in Resources */,
 				4F38B8651B6D8CCA006356DD /* MainMenu.xib in Resources */,
 				4FB3CBD2217D2FD50051C804 /* ACF awards to section name.txt in Resources */,
 				4FB3CBF6217D2FD50051C804 /* notesFromAge.txt in Resources */,
 				4FB3CC0C217D2FD50051C804 /* welcomePages.txt in Resources */,
 				4FB3CC03217D2FD50051C804 /* notesTopTenStart.txt in Resources */,
+				4FE2F2B9218D03C400C582A8 /* notesTop5Start.txt in Resources */,
 				4F3AC54E1BAEE29500775611 /* CriticalAges.plist in Resources */,
 				4FB3CBF0217D2FD50051C804 /* notesBestExhibit.txt in Resources */,
 				4FB3CBD8217D2FD50051C804 /* Best in Show heading.txt in Resources */,
@@ -657,6 +684,7 @@
 				4FB3CBD1217D2FD50051C804 /* ACF awards start.txt in Resources */,
 				4FB3CBD6217D2FD50051C804 /* Best Exhibit to Judge 1.txt in Resources */,
 				4FB3CBE1217D2FD50051C804 /* cat details to class.txt in Resources */,
+				4FE2F2B8218D03C400C582A8 /* notesTop5Finish.txt in Resources */,
 				4FB3CC0B217D2FD50051C804 /* sub-group heading row.txt in Resources */,
 				4FB3CBEA217D2FD50051C804 /* detailsFromRingBoxes.txt in Resources */,
 				4FB3CBFC217D2FD50051C804 /* notesNewSectionBreak.txt in Resources */,
@@ -696,6 +724,7 @@
 				4F6214861BB290E400F87183 /* ProgressWindowController.swift in Sources */,
 				4FFE16CC1B6ECB320020E1D0 /* AllCapsFormatter.swift in Sources */,
 				4F38B8821B6D8ED3006356DD /* MainWindowController.swift in Sources */,
+				4F1A380C217D915F00A4217F /* RTF generator.swift in Sources */,
 				4FFE16CD1B6ECB320020E1D0 /* NameFormatter.swift in Sources */,
 				4F7107FE1B77748E00E21AAC /* Challenges.swift in Sources */,
 				4F0564EA1BA2B48500285C46 /* CatNameFormatter.swift in Sources */,
@@ -710,6 +739,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F38B8711B6D8CCA006356DD /* CatBaseTests.swift in Sources */,
+				4F1A380D217D915F00A4217F /* RTF generator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

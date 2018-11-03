@@ -136,6 +136,13 @@ fileprivate let notesBestOfBreedCellEnd = readFile("notesBestOfBreedCellEnd")
 fileprivate let notesBestOfBreedCellFinal = readFile("notesBestOfBreedCellFinal")
 fileprivate let notesBestExhibit = readFile("notesBestExhibit")
 
+fileprivate let top5Table = readFile("top5table")
+fileprivate let top5RingToRing = readFile("top5RingToRing")
+fileprivate let top5RingToSection = readFile("top5RingToSection")
+fileprivate let top5Start = readFile("top5Start")
+fileprivate let notesTop5Start = readFile("notesTop5Start")
+fileprivate let notesTop5Finish = readFile("notesTop5Finish")
+
 fileprivate func beginRTF(row i:Int) -> String {
   return "{\\trowd \\irow\(i)\\irowband\(i)\\trkeep\n"
 }
@@ -320,7 +327,20 @@ struct exhibitDetails {
   }
 }
 
-struct ListOfCompetingCats: CustomStringConvertible, Sequence, IteratorProtocol {
+struct OpenChallenge {
+  private var competitors: [Int] = []
+  private var category: Cat.Category = .open
+  
+  mutating func append(_ number: Int) {
+    competitors.append(number)
+  }
+  
+  mutating func empty() {
+    competitors = []
+  }
+}
+
+struct PrestigeChallenge: CustomStringConvertible, Sequence, IteratorProtocol {
   private var _male: [Int] = []
   private var _female: [Int] = []
   private var _neuter: [Int] = []
@@ -400,13 +420,13 @@ struct ListOfCompetingCats: CustomStringConvertible, Sequence, IteratorProtocol 
     }
   }
   
-  mutating func clear() {
+  mutating func empty() {
     _male = []
     _female = []
     _neuter = []
     _spay = []
   }
-} // End of ListOfCompetingCats
+} // End of PrestigeChallenge
 
 struct ACFAward: Sequence, IteratorProtocol {
   private var group1 = [false, false, false, false]
@@ -491,7 +511,7 @@ struct JudgeData {
     }
   }
   
-  mutating func add(prestigeChallenges: ListOfCompetingCats, for category: Cat.Category) {
+  mutating func add(prestigeChallenges: PrestigeChallenge, for category: Cat.Category) {
     // add a prestige challenge
     for (index, _) in myData.enumerated() {
       if prestigeChallenges.count > 0 {
@@ -553,9 +573,20 @@ struct JudgeData {
   
   mutating func add(topTen cat: Cat) {
 // Add the top ten table at the end of section (e.g Longhair Kittens)
-    if cat.category == .companion { print("adding top ten for companions")}
+    guard Globals.currentShow?.affiliation != Affiliation.NSWCFA
+      else { return }
      for (index, _) in myData.enumerated() {
       myData[index].add(data: newLine, notesTopTenStart, cat.subGroup, notesTopTenFinish)
+    }
+  }
+  
+  mutating func add(top5 cat:Cat) {
+    guard Globals.currentShow?.affiliation == Affiliation.NSWCFA
+      else { return }
+    guard !cat.isCompanion else { return }
+    let grp = cat.isKitten ? "Kittens" : "Cats"
+    for (index, _) in myData.enumerated() {
+      myData[index].add(data: notesTop5Start, grp, notesTop5Finish)
     }
   }
 
@@ -649,7 +680,7 @@ struct CatalogueData {
       myData.add(data: "\(openChallenges)", endRingBoxRow)
   }
   
-  mutating func add(prestigeChallenges: ListOfCompetingCats, for category: Cat.Category) {
+  mutating func add(prestigeChallenges: PrestigeChallenge, for category: Cat.Category) {
     // add a prestige challenge
       if prestigeChallenges.count > 0 {
         myData.add(data: blankCell)
@@ -699,7 +730,7 @@ struct CatalogueData {
 
   mutating func add(cage cageNumber: Int, entry: Entry, classDetails: String) {
     myData.add(data: catDetailsToNumber, cageNumber, catDetailsToName)
-    myData.add(data: entry.cat.titleAndName, catDetailsToClass, endCellEndRow)
+    myData.add(data: entry.cat.titleAndName, catDetailsToClass, classDetails, endCellEndRow)
     
     let birthDateAndAge = "\(entry.cat.birthDate.string)\\line \(entry.cat.age)"
     myData.add(data: boxBeforeRings, ringBoxes, detailsFromRingBoxes, birthDateAndAge, catDetailsToParents)
@@ -738,6 +769,8 @@ struct CatalogueData {
   
   mutating func addBestInShow() {
 // Write out Best in Show awards
+    guard Globals.currentShow?.affiliation != Affiliation.NSWCFA
+      else { return }
     let numberOfRings = show.numberOfRings.intValue
     myData.add(data: bestInShowStart)
     for i in 0 ..< numberOfRings {
@@ -753,6 +786,19 @@ struct CatalogueData {
     let numberOfRings = show.numberOfRings.intValue
     for i in 0 ..< numberOfRings {
       myData.add(data: bestExhibitToJudge1, lhJudges[i], bestExhibitJudge1ToJudge2, shJudges[i], bestExhibitFromJudges)
+    }
+  }
+  
+  mutating func add(top5 cat: Cat) {
+    // Write out the Top 5 table for NSWCFA shows
+    guard Globals.currentShow?.affiliation == Affiliation.NSWCFA
+      else { return }
+    guard !cat.isCompanion else { return }
+    let grp = cat.isKitten ? "Kitten" : "Cat"
+    let nmbRings = Globals.currentShow?.numberOfRings.intValue ?? 4
+    let number = (nmbRings + 1) / 2
+    for i in (0 ..< number) {
+      myData.add(data: top5Start, i * 2 + 1, top5RingToRing, i * 2 + 2, top5RingToSection, grp, top5Table)
     }
   }
   
@@ -829,9 +875,9 @@ extension MainWindowController {
 
     // Challenges
     var openChallenges: [Int] = []
-    var goldChallenges = ListOfCompetingCats(challenge: "Gold")
-    var platinumChallenges = ListOfCompetingCats(challenge: "Platinum")
-    var cccaAwards = ListOfCompetingCats(challenge: "CCCA")
+    var goldChallenges = PrestigeChallenge(challenge: "Gold")
+    var platinumChallenges = PrestigeChallenge(challenge: "Platinum")
+    var cccaAwards = PrestigeChallenge(challenge: "CCCA")
 
     var exhibitors : [String : exhibitDetails] = [:]
     
@@ -844,7 +890,12 @@ extension MainWindowController {
 
     let unsortedEntries = theEntriesController.arrangedObjects as AnyObject
     let sortEntries = unsortedEntries as! [Entry]
-    let sortedEntrys = (theEntriesController.arrangedObjects as AnyObject).sortedArray(using: #selector(Cat.compareWith(_:))) as! [Entry]
+    let sortedEntrys: [Entry]
+    if currentShow.affiliation == .NSWCFA {
+      sortedEntrys = sortEntries.sorted(by: { return $0.cat.NSWcompare(with: $1.cat) })
+    } else {
+      sortedEntrys = sortEntries.sorted(by: { return $0.cat.compare(with: $1.cat) })
+    }
     
     // MARK: sub routines
     // -------------------
@@ -875,29 +926,42 @@ extension MainWindowController {
       catalogueFile.add(award: info, for: numCats)
     }
     
-    func doPrestigeChallenges( for listOfCats: inout ListOfCompetingCats, of category: Cat.Category) {
-      
+    func doPrestigeChallenges( for listOfCats: inout PrestigeChallenge, of category: Cat.Category) {
       judgesFile.add(prestigeChallenges: listOfCats, for: category)
       catalogueFile.add(prestigeChallenges: listOfCats, for: category)
 
-      listOfCats.clear()
+      listOfCats.empty()
     }
-
-    func doOpenChallenges(for thisCat: Cat? ) {
+/**
+Prints out the open challenges
+  - parameter category: the category for this challenge [.kitten, .companion, .open, .gold or .platinum]
+  - important: will empty the open challenges array if it prints challenges
+  - Remark:
+    - returns without doing anything if category is nil
+    - returns without doing anything if the open challenges array is empty
+    - if the category is `.kitten` and there is not a best in section for them, will return without doing anything
+  - todo: possibly make this a method of the open challenge struct
+ */
+    func doOpenChallenges(for category: Cat.Category? ) {
       // ** check to make sure this is an entry
-      guard let thisCat = thisCat
+      guard let category = category
         else { return }
       // ** Kittens do not have challenges
-      if thisCat.isKitten && !bestInSectionKittens { return }
+      if category == .kitten && !bestInSectionKittens { return }
       guard !openChallenges.isEmpty else { return }
       // start RTF table row
-      judgesFile.add(openChallenges: openChallenges, for: thisCat.category)
-      catalogueFile.add(openChallenges: openChallenges, for: thisCat.category)
+      judgesFile.add(openChallenges: openChallenges, for: category)
+      catalogueFile.add(openChallenges: openChallenges, for: category)
       
       // Clear the list of cats competing for challenge
       openChallenges = []
     }
     
+/**
+Check the entry `entry` in cage number `cage` for the challenge type required, and record it for when the challenges are printed out
+  - parameter cage: The cage number of the cat
+  - parameter entry: Optional entry - if nil, the function just returns
+*/
     func recordChallenge(cage: Int, entry: Entry?) {
       guard let entry = entry else { return }
       guard !entry.cat.isKitten else { return }
@@ -946,7 +1010,7 @@ extension MainWindowController {
       
       // Check to see if we should print out challenges for last entry
       if thisEntry.newChallengeClassTo(previousEntry) {
-        doOpenChallenges(for: previousEntry?.cat)
+        doOpenChallenges(for: previousEntry?.cat.category)
       }
 
       // Print out Best of colour for last entry
@@ -971,6 +1035,9 @@ extension MainWindowController {
         doPrestigeChallenges(for: &platinumChallenges, of: previousEntry.cat.category)
         doPrestigeChallenges(for: &cccaAwards, of: previousEntry.cat.category)
         judgesFile.add(topTen: previousEntry.cat)
+        
+        catalogueFile.add(top5: previousEntry.cat)
+        judgesFile.add(top5: previousEntry.cat)
       }
       
       // finish last section
@@ -1101,13 +1168,15 @@ extension MainWindowController {
     // ***************************************
     // MARK: Write challenges for last cat
     if let previousEntry = previousEntry {
-      doOpenChallenges(for: previousEntry.cat)
+      doOpenChallenges(for: previousEntry.cat.category)
       doBestOfColour(for: colourCount, of: previousEntry)
       doBestOfBreed(for: breedCount, of: previousEntry.cat)
       judgesFile.add(topTen: previousEntry.cat)
       doPrestigeChallenges(for: &goldChallenges, of: previousEntry.cat.category)
       doPrestigeChallenges(for: &platinumChallenges, of: previousEntry.cat.category)
       doPrestigeChallenges(for: &cccaAwards, of: previousEntry.cat.category)
+      catalogueFile.add(top5: previousEntry.cat)
+      judgesFile.add(top5: previousEntry.cat)
     }
 
     // MARK: Finish and write the catalogue file

@@ -1,0 +1,18 @@
+\pard\par
+{\trowd \trkeep\irow1\irowband1
+\clvertalc\clcbpat1\cellx1180
+\clvertalc\cellx1350
+\clbrdrt\brdrw45\brdrs
+\clbrdrl\brdrw45\brdrs
+\clbrdrb\brdrw45\brdrs
+\clbrdrr\brdrw45\brdrs
+\clvertalc\clcbpat1\cellx5430
+\clvertalc\cellx5600
+\clbrdrt\brdrw45\brdrs
+\clbrdrl\brdrw45\brdrs
+\clbrdrb\brdrw45\brdrs
+\clbrdrr\brdrw45\brdrs
+\clvertalc\clcbpat1\cellx9680
+{\pard\intbl\s1 \f1\fs26\ri0\li0\sa80\sb80\qc\keepn \lang3081 TOP 5\cell}
+{\pard\intbl\s1 \f1\fs24\ri0\li0\sa0\sb0\ql\keepn \lang3081 \cell}
+{\pard\intbl\s1 \f1\fs26\ri0\li0\sa80\sb80\qc\keepn \lang3081 RING 

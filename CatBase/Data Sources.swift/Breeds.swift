@@ -111,16 +111,9 @@ class Breeds: DataSource, NSTableViewDataSource {
     fatalError("Cannot find group number of breed: \(breedName) in groupNumberOf")
   }
   
-  class func groupNumber(of breedName: String) -> Int {
-    guard let groups = Breeds.groups else {
-      fatalError("Breeds.groups is nil in groupNumberOf")
-    }
-    return groupNumber(of: breedName, in: groups)
-  }
-  
   class func ACFgroupNumber(of breedName: String) -> ACFGroup {
     let showAffiliation = Globals.defaultShowAffliation
-    guard let groups = Breeds.breedsByGroupAndShowtype[showAffiliation]
+    guard let groups = Breeds.breedsByGroupAndShowtype[showAffiliation.rawValue]
     else {
       fatalError("Breeds.group is nil for ACFgroupNumberOf")
     }
@@ -168,6 +161,13 @@ class Breeds: DataSource, NSTableViewDataSource {
     return groups[index].groupName
   }
   
+  class func groupNumber(of breedName: String) -> Int {
+    guard let groups = Breeds.groups else {
+      fatalError("Breeds.groups is nil in groupNumberOf")
+    }
+    return groupNumber(of: breedName, in: groups)
+  }
+
   class func rank(of breedName: String) -> Int? {
     guard let list = Breeds.list
       else { return nil }

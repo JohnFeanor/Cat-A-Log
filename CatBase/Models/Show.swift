@@ -180,9 +180,9 @@ class Show: NSManagedObject {
   func judge(_ ring: Int, forBreed breedName: String) -> String {
     let groupNumber = Breeds.groupNumber(of: breedName)
     let longhair: Bool
-    if self.affiliation == Globals.showTypes[0] {
+    if self.affiliation == Globals.showTypes[0].rawValue {
       longhair = groupNumber != 1
-    } else if self.affiliation == Globals.showTypes[1] {
+    } else if self.affiliation == Globals.showTypes[1].rawValue {
       longhair = groupNumber == 0 || groupNumber == 1 || groupNumber == 5
     } else  {
       longhair = groupNumber == 0 || groupNumber == 3

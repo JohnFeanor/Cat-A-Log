@@ -31,6 +31,13 @@ extension String {
     return NSURL(fileURLWithPath: self).pathExtension ?? ""
   }
 }
+
+extension String {
+  var singular: String {
+    return self.replacingOccurrences(of: "s+$", with: "", options: .regularExpression)
+  }
+}
+
 protocol Datamaker {
   var data: Data {get }
 }
@@ -188,7 +195,7 @@ extension Array where Element == String {
 // MARK: - Structures
 // *******************************
 
-struct Headings {
+enum Headings {
   static let maxLitterAge     = "maxLitterAge"
   static let minShowAge       = "minShowAge"
   static let kittenAgeGroups  = "kittenAgeGroups"
@@ -199,11 +206,45 @@ struct Headings {
   static let group      = "group"
   static let subgroups  = "subgroups"
   static let breeds     = "breeds"
+  static let sections   = "Sections"
+}
+
+enum Affiliation : String {
+  case ACF = "ACF Show"
+  case COWA = "COAWA Show"
+  case QFA = "QFA Show"
+  case FCCQ = "FCCQ Show"
+  case catsNSW = "Cats NSW Show"
+  case CCCA = "CCCA Show"
+  case GCCFSA = "GCCFSA Show"
+  case NSWCFA = "NSWCFA Show"
+}
+
+extension Affiliation {
+  static func ==(lhs: String, rhs: Affiliation) -> Bool {
+    return lhs == rhs.rawValue
+  }
+  
+  static func ==(lhs: String?, rhs: Affiliation) -> Bool {
+    guard let lhs = lhs
+      else { return false }
+    return lhs == rhs.rawValue
+  }
+
+  static func !=(lhs: String, rhs: Affiliation) -> Bool {
+    return !(lhs == rhs.rawValue)
+  }
+  
+  static func !=(lhs: String?, rhs: Affiliation) -> Bool {
+    guard let lhs = lhs
+      else { return false }
+    return !(lhs == rhs.rawValue)
+  }
 }
 
 enum NationalAffiliations: String {
-  case ACF
-  case CCCA
+  case ACF = "ACF"
+  case CCCA = "CCCA"
 }
 
 struct OrderedList<T:Equatable>: Sequence, IteratorProtocol {
@@ -537,10 +578,17 @@ class Globals: NSObject {
     return dictFromPList("ShowFormats") as! [String : [String : AnyObject]]
     }() as [String : NSDictionary]
 
+  static var currentSections: [String] {
+    guard let showData = Globals.dataByGroup[currentShowType]
+      else { print("Cannot get data for '\(currentShowType)'"); return [] }
+    let e = (showData[Headings.sections] as? [String]) ?? []
+    return e
+  }
+  
   static var currentShow: Show? = nil
   static var currentEntry: Entry? = nil
-  static var defaultShowAffliation: String {
-    let ans = Globals.showTypes.first ?? "ACF Show"
+  static var defaultShowAffliation: Affiliation {
+    let ans = Globals.showTypes.first ?? .ACF
     return ans
   }
   
@@ -560,19 +608,22 @@ class Globals: NSObject {
   }
   
   @objc dynamic var showTypes: [String] {
-    return Globals.showTypes
+    return Globals.showTypes.map { $0.rawValue }
   }
   
-  static var showTypes: [String] = {
+  static var showTypes: [Affiliation] = {
     let allKeys = Array(dataByGroup.keys)
-    return allKeys.sorted(by: <)
+    return allKeys.sorted(by: <).map { return Affiliation(rawValue: $0) ?? .ACF }
     }()
  
+  /**
+   returns the state body that this show is affiliated to
+ */
   static var currentShowType: String {
     if currentShow == nil {
-      print("Nil show when trying to get type for current show")
+      errorAlert(message: "No show selected")
     }
-    return Globals.currentShow?.affiliation ?? Globals.defaultShowAffliation
+    return Globals.currentShow?.affiliation ?? Globals.defaultShowAffliation.rawValue
   }
   
   static var numberOfRingsInShow: Int {
@@ -585,22 +636,21 @@ class Globals: NSObject {
   
   static var organiseKittensByAgeGroups: Bool {
     guard let answer = Globals.dataByGroup[Globals.currentShowType]?["organiseKittensByAgeGroups"] as? Bool
-      else { print("Cannot find switch 'organiseKittensByAgeGroups' for show type '\(Globals.currentShowType)'"); return true }
+      else { errorAlert(message: "Cannot find switch 'organiseKittensByAgeGroups' for show type '\(Globals.currentShowType)'"); return true }
     return answer
   }
   
   fileprivate static var patternClassed: [String: [String: [String]]] = {
-    return dictFromPList("PatternClassed") as! [String: [String: [String]]]
+    guard let ans = dictFromPList("PatternClassed") as? [String: [String: [String]]]
+      else { errorAlert(message: "Cannot load the data base of pattern restricted breeds"); return [:]}
+    return ans
   }()
-  
-  fileprivate static var myCount = 0
   
   static var patternedBreeds: [String]  {
     guard let dict = Globals.patternClassed[nationalAffiliation.rawValue.uppercased()]
-      else { fatalError("Cannot get patterned breeds for affliation '\(nationalAffiliation)'")}
+      else { errorAlert(message: "Cannot get patterned breeds for affliation '\(nationalAffiliation)'"); return [] }
     guard let answer = dict["breeds"]
-      else { print("patternedBreeds is a nil dictionary"); return []}
-    myCount += 1
+      else { errorAlert(message: "Cannot load the list pattern restricted breeds"); return []}
     return answer
   }
   
@@ -612,9 +662,9 @@ class Globals: NSObject {
   
   static var nationalAffiliation: NationalAffiliations {
     guard let string = dataByGroup[Globals.currentShowType]?["nationalAffiliation"] as? String
-      else { print("Cannot find the national affiliation for show type '\(Globals.currentShowType)'"); return .ACF}
+      else { errorAlert(message: "Cannot find the national affiliation for show type '\(Globals.currentShowType)'"); return .ACF}
     guard let answer = NationalAffiliations(rawValue: string)
-      else { print("Given '\(string)' as the national affiliation for show type '\(Globals.currentShowType)'"); return .ACF}
+      else { errorAlert(message: "Erronous value '\(string)' given as the national affiliation for show type '\(Globals.currentShowType)'"); return .ACF}
     return answer
   }
   

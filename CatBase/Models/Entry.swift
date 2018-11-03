@@ -271,11 +271,7 @@ class Entry: NSManagedObject {
     if cat.isLimited { return cat.patternRank != other.cat.patternRank }
     return self.cat.colour != other.cat.colour
   }
-  
-  @objc func compareWith(_ anotherEntry: Entry) -> ComparisonResult {
-    return self.cat.compareWith(anotherEntry.cat)
-  }
-  
+
   func inDifferentSectionTo(_ other: Entry?) -> Bool {
     guard let other = other
       else { return true }

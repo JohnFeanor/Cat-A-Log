@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 class Cat: NSManagedObject {
- 
+  
   enum Category {
     case companion
     case kitten
@@ -18,7 +18,7 @@ class Cat: NSManagedObject {
     case gold
     case platinum
   }
-
+  
   @objc static var nomen = "Cat"
   @objc static var properties = [Cat.name, Cat.registration, Cat.title, Cat.birthDate, Cat.breed, Cat.breeder, Cat.challenge, Cat.colour, Cat.dam, Cat.exhibitor, Cat.sex, Cat.sire, Cat.vaccinated]
   
@@ -132,7 +132,7 @@ class Cat: NSManagedObject {
     setValue(array[Cat.positions[Cat.sire]!], forKey: Cat.sire)
     setValue(array[Cat.positions[Cat.breeder]!], forKey: Cat.breeder)
     setValue(array[Cat.positions[Cat.exhibitor]!], forKey: Cat.exhibitor)
-
+    
   }
   
   override func setValue(_ value: Any?, forUndefinedKey key: String) {
@@ -189,11 +189,14 @@ class Cat: NSManagedObject {
       else { return false }
     return (rank % 2 == 0)
   }
-
+  
   var isLimited : Bool {
-     return Globals.patternedBreeds.contains(self.breed)
+    if Globals.currentShowType == Affiliation.NSWCFA {
+      return false
+    }
+    return Globals.patternedBreeds.contains(self.breed)
   }
-
+  
   var hasWhite: Bool {
     let color = colour.lowercased()
     if color.contains("& white")    { return true }
@@ -203,8 +206,8 @@ class Cat: NSManagedObject {
     
     return false
   }
-
- 
+  
+  
   // *************************
   // MARK: - String queries
   // *************************
@@ -226,7 +229,7 @@ class Cat: NSManagedObject {
     if isCompanion { return "" }
     return sire + " \\'d7 " + dam
   }
-
+  
   var gender: String {
     if self.isKitten { return Challenges.name(ranked: .kitten) }
     return self.sex
@@ -235,10 +238,12 @@ class Cat: NSManagedObject {
   var classDetails: String {
     if Globals.organiseKittensByAgeGroups && self.isKitten {
       return "\(sex) Kitten under \(ageRank) months"
+    } else if self.isKitten {
+      return "\(sex) Kitten"
     }
     return "\(sex) class"
   }
-
+  
   var group: String {
     return Breeds.groupName(for: self.breed)
   }
@@ -270,27 +275,29 @@ class Cat: NSManagedObject {
   
   var sectionName: String {
     if self.isCompanion { return "" }
-    if self.isKitten { return "Kittens" }
-    if self.isEntire { return "Entires" }
-    return "Desexed"
+    if self.isKitten { return Globals.currentSections[0] }
+    if self.isEntire { return Globals.currentSections[1] }
+    return Globals.currentSections.last ?? "Desexed"
   }
   
   var sectionNameAsSingle: String {
     if self.isCompanion { return "" }
-    if self.isKitten { return "Kitten" }
-    if self.isEntire { return "Entire" }
-    return "Desexed"
+    if self.isKitten { return Globals.currentSections[0].singular }
+    if self.isEntire { return Globals.currentSections[1].singular }
+    return Globals.currentSections.last?.singular ?? "Desexed"
   }
   
   var breedSection: String {
     if isCompanion {return breed }
     return self.breed + " " + self.sectionName
   }
-
+  
   // *************************
   // MARK: - Ranking queries
   // *************************
-  
+/**
+is the cat a `.companion, .kitten, .open, .gold or .platinum`
+ */
   var category: Category {
     if isCompanion { return .companion }
     if isKitten { return .kitten }
@@ -298,26 +305,34 @@ class Cat: NSManagedObject {
     if Challenges.currentList.count > 3, challenge == Challenges.currentList[3] { return .platinum}
     return .open
   }
-  
+/**
+returns the ranking value of the group which this breed of this cat is in
+*/
   var groupNumber: Int {
     return Breeds.groupNumber(of: self.breed)
   }
-  
+/**
+ returns the ranking value of the breed of this cat
+ */
   var breedRank: Int {
     return Breeds.rank(of: self.breed) ?? 999
   }
-  
+/**
+ ranks the cat, kitten = 1, entire = 2, desexed = 3
+ */
   var section: Int {
     if self.isKitten { return 1 }
     if self.isEntire { return 2 }
     return 3
   }
-  
+/**
+ ranks the cat on its pattern
+ */
   var patternRank: Patterns {
     guard isLimited else {
       return .colourClass
     }
-    if Globals.nationalAffiliation == .CCCA {
+    if Globals.currentShowType == Affiliation.CCCA {
       let color = colour.lowercased()
       if breed == "Ragdoll" {
         if color.contains("mitted") { return .mitted }
@@ -339,7 +354,7 @@ class Cat: NSManagedObject {
         if color.contains("tipped") { return .silver }
         return .solid
       }
-    } else {        // is a QFA style show
+    } else if Globals.nationalAffiliation == .ACF {        // is a ACF style show
       if isTabby {
         if hasWhite {
           return.agoutiWhite
@@ -354,10 +369,10 @@ class Cat: NSManagedObject {
         }
       }
     }
+    return .colourClass
   }
   
   var colourRank: Int {
-    
     if let ans = Colours.rank(of: self.colour, forBreed: self.breed) {
       return ans
     } else {
@@ -392,85 +407,168 @@ class Cat: NSManagedObject {
   // MARK: - Cat comparision
   // *************************
   
-  @objc func compareWith(_ anotherCat: Cat) -> ComparisonResult {
+  func compare(with anotherCat: Cat) -> Bool {
     
     // first compare on group
     // ----------------------
     if self.groupNumber < anotherCat.groupNumber {
-      return .orderedAscending
+      return true
     }
     if self.groupNumber > anotherCat.groupNumber {
-      return .orderedDescending
+      return false
     }
     
     // then compare on section<kitten, entire, desexed>
     // -------------------------------------------------
     if self.section < anotherCat.section {
-      return .orderedAscending
+      return true
     }
     if self.section > anotherCat.section {
-      return .orderedDescending
+      return false
     }
     
     // then compare on breed
     // ----------------------
     if self.breedRank < anotherCat.breedRank {
-      return .orderedAscending
+      return true
     }
     if self.breedRank > anotherCat.breedRank {
-      return .orderedDescending
+      return false
     }
     
     // then on pattern
     // --------------------------
     if self.patternRank < anotherCat.patternRank {
-      return .orderedAscending
+      return true
     }
     if self.patternRank > anotherCat.patternRank {
-      return .orderedDescending
+      return false
     }
     
     // then on colour
     // --------------
     if self.colourRank < anotherCat.colourRank {
-      return .orderedAscending
+      return true
     }
     if self.colourRank > anotherCat.colourRank {
-      return .orderedDescending
+      return false
     }
     
     // then on age ranking - if used
     // --------------------
     if organiseKittensByAgeGroups {
       if self.ageRank < anotherCat.ageRank {
-        return .orderedAscending
+        return true
       }
       if self.ageRank > anotherCat.ageRank {
-        return .orderedDescending
+        return false
       }
     }
     
     // then on <male>, <female>, <neuter>, <spay>
     // -------------------------------------------
     if self.sexRank < anotherCat.sexRank {
-      return .orderedAscending
+      return true
     }
     if self.sexRank > anotherCat.sexRank {
-      return .orderedDescending
+      return false
     }
     
     // then on age
     // ------------
     let comparison = self.birthDate.compare(anotherCat.birthDate)
     switch comparison {
-    case .orderedAscending, .orderedDescending:
-      return comparison
+    case .orderedAscending:
+      return true
+    case .orderedDescending:
+      return false
     default:
       break
     }
     
     //lastly on name
-    return self.name.caseInsensitiveCompare(anotherCat.name)
+    switch self.name.caseInsensitiveCompare(anotherCat.name) {
+    case .orderedAscending:
+      return true
+    default:
+      return false
+    }
+  }
+
+  func NSWcompare(with anotherCat: Cat) -> Bool {
+    
+    // first compare on group
+    // ----------------------
+    if self.groupNumber < anotherCat.groupNumber {
+      return true
+    }
+    if self.groupNumber > anotherCat.groupNumber {
+      return false
+    }
+    
+    // then kittens first
+    // -------------------------------------------------
+    if self.isKitten && !anotherCat.isKitten {
+      return true
+    }
+    if !self.isKitten && anotherCat.isKitten {
+      return false
+    }
+    
+    // then on <male>, <female>, <neuter>, <spay>
+    // -------------------------------------------
+    if self.sexRank < anotherCat.sexRank {
+      return true
+    }
+    if self.sexRank > anotherCat.sexRank {
+      return false
+    }
+    
+    // then compare on breed
+    // ----------------------
+    if self.breedRank < anotherCat.breedRank {
+      return true
+    }
+    if self.breedRank > anotherCat.breedRank {
+      return false
+    }
+    
+    // then on pattern
+    // --------------------------
+    if self.patternRank < anotherCat.patternRank {
+      return true
+    }
+    if self.patternRank > anotherCat.patternRank {
+      return false
+    }
+    
+    // then on colour
+    // --------------
+    if self.colourRank < anotherCat.colourRank {
+      return true
+    }
+    if self.colourRank > anotherCat.colourRank {
+      return false
+    }
+    
+    // then on age
+    // ------------
+    switch self.birthDate.compare(anotherCat.birthDate) {
+    case .orderedAscending:
+      return true
+    case .orderedDescending:
+      return false
+    default:
+      break
+    }
+    
+    //lastly on name
+    switch self.name.caseInsensitiveCompare(anotherCat.name) {
+    case .orderedAscending:
+      return true
+    default:
+      return false
+    }
   }
 }
 
