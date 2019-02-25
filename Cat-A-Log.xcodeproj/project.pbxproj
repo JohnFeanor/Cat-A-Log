@@ -39,6 +39,7 @@
 		4F63A6B91BB819760009C5A4 /* Cat on book.icns in Resources */ = {isa = PBXBuildFile; fileRef = 4F63A6B81BB819760009C5A4 /* Cat on book.icns */; };
 		4F6E0B1E21859E6E0040A590 /* top5table.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F6E0B1D21859E6E0040A590 /* top5table.txt */; };
 		4F7107FE1B77748E00E21AAC /* Challenges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7107FD1B77748E00E21AAC /* Challenges.swift */; };
+		4F74C55322236FC500371D2B /* notesBeginFilePart2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F74C55222236FC500371D2B /* notesBeginFilePart2.txt */; };
 		4F8E87321BAFB19E00497D2F /* TitleEditorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8E87301BAFB19E00497D2F /* TitleEditorController.swift */; };
 		4F8E87331BAFB19E00497D2F /* TitleEditorController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F8E87311BAFB19E00497D2F /* TitleEditorController.xib */; };
 		4F9235FE1B7952B70096ADFD /* Titles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9235FD1B7952B70096ADFD /* Titles.swift */; };
@@ -174,6 +175,7 @@
 		4F63A6B81BB819760009C5A4 /* Cat on book.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "Cat on book.icns"; sourceTree = "<group>"; };
 		4F6E0B1D21859E6E0040A590 /* top5table.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = top5table.txt; sourceTree = "<group>"; };
 		4F7107FD1B77748E00E21AAC /* Challenges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Challenges.swift; path = "Data Sources.swift/Challenges.swift"; sourceTree = "<group>"; };
+		4F74C55222236FC500371D2B /* notesBeginFilePart2.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = notesBeginFilePart2.txt; sourceTree = "<group>"; };
 		4F8E87301BAFB19E00497D2F /* TitleEditorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TitleEditorController.swift; path = Controllers/TitleEditorController.swift; sourceTree = "<group>"; };
 		4F8E87311BAFB19E00497D2F /* TitleEditorController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TitleEditorController.xib; path = Controllers/TitleEditorController.xib; sourceTree = "<group>"; };
 		4F9235FD1B7952B70096ADFD /* Titles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Titles.swift; path = "Data Sources.swift/Titles.swift"; sourceTree = "<group>"; };
@@ -455,6 +457,7 @@
 			isa = PBXGroup;
 			children = (
 				4FB3CBB2217D2FD50051C804 /* notesBeginFile.txt */,
+				4F74C55222236FC500371D2B /* notesBeginFilePart2.txt */,
 				4FB3CBB3217D2FD50051C804 /* notesBestExhibit.txt */,
 				4FB3CBB4217D2FD50051C804 /* notesBestOfBreedCell.txt */,
 				4FB3CBB5217D2FD50051C804 /* notesBestOfBreedCellEnd.txt */,
@@ -624,6 +627,7 @@
 				4FB3CBF4217D2FD50051C804 /* notesBestOfBreedStart.txt in Resources */,
 				4FB3CBE6217D2FD50051C804 /* cat not in ring.txt in Resources */,
 				4FB3CBDB217D2FD50051C804 /* Best of breed start.txt in Resources */,
+				4F74C55322236FC500371D2B /* notesBeginFilePart2.txt in Resources */,
 				4F0F92E41BA3EF0E00724D9C /* Places.plist in Resources */,
 				4FB3CBDE217D2FD50051C804 /* blankCell.txt in Resources */,
 				4FBD2EE61B81A91E00E28D93 /* agouti.plist in Resources */,
@@ -796,6 +800,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -882,6 +887,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -967,6 +973,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1053,6 +1060,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1137,6 +1145,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1193,6 +1202,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;

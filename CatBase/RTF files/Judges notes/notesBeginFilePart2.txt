@@ -1,0 +1,3 @@
+\tab
+Page {\field{\*\fldinst PAGE }{\fldrslt 1}} of {\field{\*\fldinst NUMPAGES }{\fldrslt 1}}
+\par}}

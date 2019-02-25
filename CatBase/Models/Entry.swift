@@ -195,9 +195,9 @@ class Entry: NSManagedObject {
 
     switch cat.challenge {
     case Challenges.currentList[2]:
-      return .platinum
-    case Challenges.currentList[3]:
       return .gold
+    case Challenges.currentList[3]:
+      return .platinum
     default:
       return .open
     }

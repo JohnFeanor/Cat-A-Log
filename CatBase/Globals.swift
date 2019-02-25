@@ -434,12 +434,8 @@ var ACFAoEAwards: Bool {
 // MARK: - Other helper functions
 // *******************************
 
-func setAge(_ key: String, toWeeks weeks:Int? = nil, andMonths months: Int? = nil) {
-  
-}
-
 var isCCCAShow : Bool {
-  return Globals.currentShowType == "CCCA Show"
+  return Globals.currentShowType == Affiliation.CCCA
 }
 
 // *************************************************

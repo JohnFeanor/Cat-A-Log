@@ -115,6 +115,7 @@ fileprivate let bestExhibitToJudge1 = readFile("Best Exhibit to Judge 1")
 fileprivate let bestExhibitJudge1ToJudge2 = readFile("Best Exhibit Judge1 to Judge2")
 fileprivate let bestExhibitFromJudges = readFile("Best Exhibit from Judges")
 
+fileprivate let notesBeginFilePart2 = readFile("notesBeginFilePart2")
 fileprivate let notesToJudgeName = readFile("notesToJudgeName")
 fileprivate let notesFromSectionName = readFile("notesFromSectionName")
 fileprivate let notesToSubSectionName = readFile("notesToSubSectionName")
@@ -491,9 +492,10 @@ struct ACFAward: Sequence, IteratorProtocol {
 struct JudgeData {
   var myData: [Data] = []
   let show: Show
-  
+  let showDate: String
   init(show: Show) {
     self.show = show
+    showDate = show.date.description
     let i = show.numberOfRings.intValue
     for _ in 1 ... i {
       myData.append(Data())
@@ -622,6 +624,8 @@ struct JudgeData {
   
   mutating func write(to url: URL) throws {
     var finalData = readFile("notesBeginFile")
+    finalData.add(data: showDate)
+    finalData.add(data: notesBeginFilePart2)
     finalData.add(data: infoBlock)
     for d in myData {
       finalData.append(d)
@@ -906,7 +910,9 @@ extension MainWindowController {
       let info: String
       info = " \(entry.breed) \(entry.sectionNameAsSingle)"
       statisticsData.appendRow(xmlString(info), xmlNumber(numCats), xmlString("cages"), xmlString("length"), xmlNumber(cagelength), xmlString("mm"))
-      breedsPresent.append(entry.breed)
+      if Breeds.pedigree(breed: entry.breed) {
+        breedsPresent.append(entry.breed)
+      }
       catalogueFile.add(award: info, for: numCats)
       
       if !entry.isCompanion {

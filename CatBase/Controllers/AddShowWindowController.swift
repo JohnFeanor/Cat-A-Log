@@ -13,19 +13,14 @@ class AddShowWindowController: NSWindowController {
   @IBOutlet weak var nameTextField: NSTextField!
   @IBOutlet weak var LhJudge2: NSTextField!
   @IBOutlet weak var ShJudge2: NSTextField!
-  @IBOutlet weak var compJudge2: NSTextField!
   @IBOutlet weak var LhJudge3: NSTextField!
   @IBOutlet weak var ShJudge3: NSTextField!
-  @IBOutlet weak var compJudge3: NSTextField!
   @IBOutlet weak var LhJudge4: NSTextField!
   @IBOutlet weak var ShJudge4: NSTextField!
-  @IBOutlet weak var compJudge4: NSTextField!
   @IBOutlet weak var LhJudge5: NSTextField!
   @IBOutlet weak var ShJudge5: NSTextField!
-  @IBOutlet weak var compJudge5: NSTextField!
   @IBOutlet weak var LhJudge6: NSTextField!
   @IBOutlet weak var ShJudge6: NSTextField!
-  @IBOutlet weak var compJudge6: NSTextField!
   
   var judgesNames:[[NSTextField]] = []
   
@@ -83,7 +78,7 @@ class AddShowWindowController: NSWindowController {
   
   override func windowDidLoad() {
     super.windowDidLoad()
-    judgesNames = [[LhJudge2, ShJudge2, compJudge2], [LhJudge3, ShJudge3, compJudge3], [LhJudge4, ShJudge4, compJudge4], [LhJudge5, ShJudge5, compJudge5], [LhJudge6, ShJudge6, compJudge6]]
+    judgesNames = [[LhJudge2, ShJudge2], [LhJudge3, ShJudge3], [LhJudge4, ShJudge4], [LhJudge5, ShJudge5], [LhJudge6, ShJudge6]]
 
     // reinitalise the number of shows to enable the proper judges name textfields
     let n = numberOfRings
