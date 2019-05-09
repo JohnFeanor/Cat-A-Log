@@ -149,6 +149,9 @@ extension Date {
     let numberMonths = Calendar.current.dateComponents([.month], from: self, to: otherDate).month ?? 0
     if numberMonths < 0 {
       return "error"
+    } else if numberMonths < 4 {
+      let numberWeeks = (Calendar.current.dateComponents([.day], from: self, to: otherDate).day  ?? 0) / 7
+      return "\(numberWeeks) Weeks"
     } else if numberMonths < 10 {
       return "0\(numberMonths)"
     } else if numberMonths < 12 {

@@ -272,10 +272,40 @@ struct Litter {
   
   var age: String {
     if let showDate = Globals.currentShow?.date {
-      return showDate.differenceInMonthsAndYears(self.birthDate)
+      return self.birthDate.differenceInMonthsAndYears(showDate)
     }
     return "No show date"
   }
+  
+  var ownerAndBreeder: String {
+    if breeder.caseInsensitiveCompare(exhibitor) == .orderedSame {
+      return "Br/Ex:\(breeder)"
+    }
+    return "Br:\(breeder) Ex:\(exhibitor)"
+  }
+  
+  var kittens: String {
+    // write out number of male & female kittens
+    var numberOfKittens = String()
+    if males > 0 {
+      numberOfKittens += "\(males) \(Sex.name(ranked: 0))"
+      if males > 1 { numberOfKittens += "s" }
+    }
+    if neuters > 0 {
+      numberOfKittens += "\(neuters) \(Sex.name(ranked: 2))"
+      if neuters > 1 { numberOfKittens += "s" }
+    }
+    if females > 0 {
+      numberOfKittens += "\(females) \(Sex.name(ranked: 1))"
+      if females > 1 { numberOfKittens += "s" }
+    }
+    if spays > 0 {
+      numberOfKittens += "\(spays) \(Sex.name(ranked: 3))"
+      if spays > 1 { numberOfKittens += "s" }
+    }
+    return numberOfKittens
+  }
+
   
   init(entry: Entry) {
     let cat = entry.cat
@@ -305,13 +335,13 @@ struct Litter {
   mutating func addKittenOfSex(_ sex: String) {
     switch sex {
     case Sex.sexes[0]:
-      self.males += 1
+      males += 1
     case Sex.sexes[1]:
-      self.females += 1
+      females += 1
     case Sex.sexes[2]:
-      self.neuters += 1
+      neuters += 1
     case Sex.sexes[3]:
-      self.spays += 1
+     spays += 1
     default:
       break
     }
@@ -622,6 +652,15 @@ struct JudgeData {
     }
   }
   
+  mutating func add(litter: Litter) {
+    for (index, _) in myData.enumerated() {
+      myData[index].add(data: notesToCageNumber, "Litter \(litter.number)", notesFromCageToClass, "\(litter.breed) Litter \(litter.kittens)", endCellEndRow)
+      let birthDateAndAge = "\(litter.birthDate.string)\\line \(litter.age)"
+      let entered = ""
+      myData[index].add(data: notesToAge, birthDateAndAge, notesFromAge, entered, endCellEndRow)
+    }
+  }
+
   mutating func write(to url: URL) throws {
     var finalData = readFile("notesBeginFile")
     finalData.add(data: showDate)
@@ -753,6 +792,27 @@ struct CatalogueData {
     myData.add(data: endTableRow)
   }
   
+  mutating func add(litter: Litter) {
+    myData.add(data: catDetailsToNumber, "Litter \(litter.number)", catDetailsToName)
+    myData.add(data: "\(litter.name) \(litter.breed) Litter", catDetailsToClass, litter.kittens, endCellEndRow)
+    
+    print("\(litter.name) \(litter.breed) Litter :: \(litter.kittens)")
+    let birthDateAndAge = "\(litter.birthDate.string)\\line \(litter.age)"
+    print(birthDateAndAge)
+    myData.add(data: boxBeforeRings, ringBoxes, detailsFromRingBoxes, birthDateAndAge, catDetailsToParents)
+    let catParents = "\(litter.sire) \\'d7 \(litter.dam)\\line \(litter.ownerAndBreeder)"
+    myData.add(data: catParents, endTableCell)
+    let numberOfRings = show.numberOfRings.intValue
+    for count in 1 ... maxNumberOfRings {
+      if count > numberOfRings {
+        myData.append(catInRing)
+      } else {
+        myData.append(catInRing)
+      }
+    }
+    myData.add(data: endTableRow)
+  }
+
   // create Best of Breed table
   mutating func add(breedTable: OrderedList<String>) {
     myData.add(data: bestOfBreedStart)
@@ -990,9 +1050,9 @@ Check the entry `entry` in cage number `cage` for the challenge type required, a
       }
     }
     
-    // MARK: Begin creating catalogue
+    // MARK: - Begin creating catalogue
     
-    // MARK: Sort through and find litters
+    // MARK:  - Sort through and find litters
     for entry in sortedEntrys {
       var newLitter = true
       if entry.isInLitter {
@@ -1006,6 +1066,26 @@ Check the entry `entry` in cage number `cage` for the challenge type required, a
           litters += [Litter(entry: entry)]
         }
       }
+    }
+    
+    // MARK: Find all kittens in the litters
+    //         Update them to show they are in litters
+    for entry in sortedEntrys {
+      for i in 0 ..< litters.count {
+        guard entry.isInLitter(litters[i])
+          else { continue }
+        entry.litter = true
+        litters[i].addKittenOfSex(entry.cat.sex)
+    }
+      
+//      for var litter in litters {
+//        guard entry.isInLitter(litter)
+//          else { continue }
+//        entry.litter = true
+//        litter.addKittenOfSex(entry.cat.sex)
+//
+//        break
+//      }
     }
 
     // ***************************************
@@ -1046,7 +1126,7 @@ Check the entry `entry` in cage number `cage` for the challenge type required, a
         judgesFile.add(top5: previousEntry.cat)
       }
       
-      // finish last section
+      // MARK: finish last section
       if thisEntry.cat.group != previousEntry?.cat.group {
         if let previousEntry = previousEntry {
           let available = breedsPresent.array
@@ -1063,6 +1143,23 @@ Check the entry `entry` in cage number `cage` for the challenge type required, a
       
       // Add the group heading - e.g. Longhair Kittens
       if fallOn || thisEntry.cat.subGroup != previousEntry?.cat.subGroup {
+ 
+        // Write out litters for last group
+        if let previousEntry = previousEntry, previousEntry.isKittenClass {
+          var first = true
+          for litter in litters {
+            if litter.groupNumber == previousEntry.cat.groupNumber {
+              if first {
+                first = false
+                judgesFile.add(subgroup: "\(previousEntry.cat.group) Litters")
+                catalogueFile.add(subgroup: "\(previousEntry.cat.group) Litters")
+              }
+              catalogueFile.add(litter: litter)
+              judgesFile.add(litter: litter)
+            }
+          }
+        }
+
         judgesFile.add(group: thisEntry.cat.subGroup)
         catalogueFile.add(group: thisEntry.cat.subGroup)
         fallOn = true

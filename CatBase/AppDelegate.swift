@@ -35,7 +35,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   #elseif DFLAGFCCQ
   let CCIRegistered = State.fccq
   #else
-  let CCIRegistered = State.act
+  let CCIRegistered = State.qld
   #endif
 
   @IBOutlet weak var progressWheel: NSProgressIndicator!

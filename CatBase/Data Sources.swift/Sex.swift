@@ -80,9 +80,9 @@ class Sex: DataSource {
     return ans
   }
   
-  class func name(ranked number: Int) -> String? {
+  class func name(ranked number: Int) -> String {
     guard number < Sex.sexes.count
-      else { return nil }
+      else { return "" }
     return Sex.sexes[number]
   }
   
