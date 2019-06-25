@@ -17,6 +17,10 @@
 		4F1696192187145100EC5823 /* top5RingToRing.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F1696162187145100EC5823 /* top5RingToRing.txt */; };
 		4F1A380C217D915F00A4217F /* RTF generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A380B217D915F00A4217F /* RTF generator.swift */; };
 		4F1A380D217D915F00A4217F /* RTF generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A380B217D915F00A4217F /* RTF generator.swift */; };
+		4F1ECD1F22C211A90028FC33 /* judgesACFawards4.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F1ECD1C22C211A90028FC33 /* judgesACFawards4.txt */; };
+		4F1ECD2022C211A90028FC33 /* judgesACFawards1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F1ECD1D22C211A90028FC33 /* judgesACFawards1.txt */; };
+		4F1ECD2122C211A90028FC33 /* judgesACFawards3.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F1ECD1E22C211A90028FC33 /* judgesACFawards3.txt */; };
+		4F1ECD2322C217930028FC33 /* judgesACFawards2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F1ECD2222C217930028FC33 /* judgesACFawards2.txt */; };
 		4F38B85D1B6D8CCA006356DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F38B85C1B6D8CCA006356DD /* AppDelegate.swift */; };
 		4F38B8601B6D8CCA006356DD /* CatBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4F38B85E1B6D8CCA006356DD /* CatBase.xcdatamodeld */; };
 		4F38B8621B6D8CCA006356DD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F38B8611B6D8CCA006356DD /* Images.xcassets */; };
@@ -80,7 +84,6 @@
 		4FB3CBF0217D2FD50051C804 /* notesBestExhibit.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBB3217D2FD50051C804 /* notesBestExhibit.txt */; };
 		4FB3CBF1217D2FD50051C804 /* notesBestOfBreedCell.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBB4217D2FD50051C804 /* notesBestOfBreedCell.txt */; };
 		4FB3CBF2217D2FD50051C804 /* notesBestOfBreedCellEnd.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBB5217D2FD50051C804 /* notesBestOfBreedCellEnd.txt */; };
-		4FB3CBF3217D2FD50051C804 /* notesBestOfBreedCellFinal.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBB6217D2FD50051C804 /* notesBestOfBreedCellFinal.txt */; };
 		4FB3CBF4217D2FD50051C804 /* notesBestOfBreedStart.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBB7217D2FD50051C804 /* notesBestOfBreedStart.txt */; };
 		4FB3CBF5217D2FD50051C804 /* notesBlankCell.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBB8217D2FD50051C804 /* notesBlankCell.txt */; };
 		4FB3CBF6217D2FD50051C804 /* notesFromAge.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FB3CBB9217D2FD50051C804 /* notesFromAge.txt */; };
@@ -149,6 +152,10 @@
 		4F1696162187145100EC5823 /* top5RingToRing.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = top5RingToRing.txt; sourceTree = "<group>"; };
 		4F1A380B217D915F00A4217F /* RTF generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RTF generator.swift"; sourceTree = "<group>"; };
 		4F1E9FE0209EFDC900DDD15C /* Cat-A-Log.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Cat-A-Log.entitlements"; sourceTree = "<group>"; };
+		4F1ECD1C22C211A90028FC33 /* judgesACFawards4.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = judgesACFawards4.txt; sourceTree = "<group>"; };
+		4F1ECD1D22C211A90028FC33 /* judgesACFawards1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = judgesACFawards1.txt; sourceTree = "<group>"; };
+		4F1ECD1E22C211A90028FC33 /* judgesACFawards3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = judgesACFawards3.txt; sourceTree = "<group>"; };
+		4F1ECD2222C217930028FC33 /* judgesACFawards2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = judgesACFawards2.txt; sourceTree = "<group>"; };
 		4F38B8571B6D8CCA006356DD /* Cat-A-Log.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cat-A-Log.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F38B85B1B6D8CCA006356DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F38B85C1B6D8CCA006356DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -216,7 +223,6 @@
 		4FB3CBB3217D2FD50051C804 /* notesBestExhibit.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = notesBestExhibit.txt; sourceTree = "<group>"; };
 		4FB3CBB4217D2FD50051C804 /* notesBestOfBreedCell.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = notesBestOfBreedCell.txt; sourceTree = "<group>"; };
 		4FB3CBB5217D2FD50051C804 /* notesBestOfBreedCellEnd.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = notesBestOfBreedCellEnd.txt; sourceTree = "<group>"; };
-		4FB3CBB6217D2FD50051C804 /* notesBestOfBreedCellFinal.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = notesBestOfBreedCellFinal.txt; sourceTree = "<group>"; };
 		4FB3CBB7217D2FD50051C804 /* notesBestOfBreedStart.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = notesBestOfBreedStart.txt; sourceTree = "<group>"; };
 		4FB3CBB8217D2FD50051C804 /* notesBlankCell.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = notesBlankCell.txt; sourceTree = "<group>"; };
 		4FB3CBB9217D2FD50051C804 /* notesFromAge.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = notesFromAge.txt; sourceTree = "<group>"; };
@@ -456,12 +462,15 @@
 		4FB3CBB1217D2FD50051C804 /* Judges notes */ = {
 			isa = PBXGroup;
 			children = (
+				4F1ECD1D22C211A90028FC33 /* judgesACFawards1.txt */,
+				4F1ECD2222C217930028FC33 /* judgesACFawards2.txt */,
+				4F1ECD1E22C211A90028FC33 /* judgesACFawards3.txt */,
+				4F1ECD1C22C211A90028FC33 /* judgesACFawards4.txt */,
 				4FB3CBB2217D2FD50051C804 /* notesBeginFile.txt */,
 				4F74C55222236FC500371D2B /* notesBeginFilePart2.txt */,
 				4FB3CBB3217D2FD50051C804 /* notesBestExhibit.txt */,
 				4FB3CBB4217D2FD50051C804 /* notesBestOfBreedCell.txt */,
 				4FB3CBB5217D2FD50051C804 /* notesBestOfBreedCellEnd.txt */,
-				4FB3CBB6217D2FD50051C804 /* notesBestOfBreedCellFinal.txt */,
 				4FB3CBB7217D2FD50051C804 /* notesBestOfBreedStart.txt */,
 				4FB3CBB8217D2FD50051C804 /* notesBlankCell.txt */,
 				4FB3CBB9217D2FD50051C804 /* notesFromAge.txt */,
@@ -572,7 +581,7 @@
 					};
 					4F38B8691B6D8CCA006356DD = {
 						CreatedOnToolsVersion = 6.4;
-						LastSwiftMigration = 0930;
+						LastSwiftMigration = 1020;
 						TestTargetID = 4F38B8561B6D8CCA006356DD;
 					};
 				};
@@ -635,6 +644,7 @@
 				4FB3CBD4217D2FD50051C804 /* Best Exhibit Judge1 to Judge2.txt in Resources */,
 				4F1696192187145100EC5823 /* top5RingToRing.txt in Resources */,
 				4FB3CC02217D2FD50051C804 /* notesTopTenFinish.txt in Resources */,
+				4F1ECD2322C217930028FC33 /* judgesACFawards2.txt in Resources */,
 				4F6214891BB34A1B00F87183 /* Authentication.plist in Resources */,
 				4FB3CBD7217D2FD50051C804 /* Best in Show from number to end of table.txt in Resources */,
 				4F38B8831B6D8ED3006356DD /* MainWindowController.xib in Resources */,
@@ -651,7 +661,6 @@
 				4FB3CC05217D2FD50051C804 /* Ring in show.txt in Resources */,
 				4FFE16C91B6E421A0020E1D0 /* EntrySheetController.xib in Resources */,
 				4FEB56AE1B70ABEF00EECA78 /* ShowFormats.plist in Resources */,
-				4FB3CBF3217D2FD50051C804 /* notesBestOfBreedCellFinal.txt in Resources */,
 				4FB3CBD3217D2FD50051C804 /* Best Exhibit from Judges.txt in Resources */,
 				4F6E0B1E21859E6E0040A590 /* top5table.txt in Resources */,
 				4F63A6B91BB819760009C5A4 /* Cat on book.icns in Resources */,
@@ -660,14 +669,17 @@
 				4FB3CC0E217D31330051C804 /* PatternClassed.plist in Resources */,
 				4FB3CBED217D2FD50051C804 /* footerText.txt in Resources */,
 				4FB3CBEE217D2FD50051C804 /* group heading row.txt in Resources */,
+				4F1ECD2122C211A90028FC33 /* judgesACFawards3.txt in Resources */,
 				4FB3CBE8217D2FD50051C804 /* colour heading row.txt in Resources */,
 				4F6214871BB290E400F87183 /* ProgressWindowController.xib in Resources */,
+				4F1ECD2022C211A90028FC33 /* judgesACFawards1.txt in Resources */,
 				4FB3CBE4217D2FD50051C804 /* cat details to parents.txt in Resources */,
 				4FB3CBFF217D2FD50051C804 /* notesToCageNumber.txt in Resources */,
 				4FB3CBF5217D2FD50051C804 /* notesBlankCell.txt in Resources */,
 				4F3EFAE41B6DB98C00DA2F5C /* AddShowWindowController.xib in Resources */,
 				4FB3CBFD217D2FD50051C804 /* notesToAge.txt in Resources */,
 				4FD75AC31BAE8F5C00A00EEA /* CriticalAgesWindowController.xib in Resources */,
+				4F1ECD1F22C211A90028FC33 /* judgesACFawards4.txt in Resources */,
 				4FB3CC06217D2FD50051C804 /* Ring not in show.txt in Resources */,
 				4F1696172187145100EC5823 /* top5RingToSection.txt in Resources */,
 				4F38B8651B6D8CCA006356DD /* MainMenu.xib in Resources */,
@@ -852,7 +864,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Feanor.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "Cat-A-Log";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cat-A-Log.app/Contents/MacOS/Cat-A-Log";
 			};
 			name = NSW;
@@ -939,7 +951,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Feanor.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "Cat-A-Log";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cat-A-Log.app/Contents/MacOS/Cat-A-Log";
 			};
 			name = Canberra;
@@ -1027,7 +1039,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Feanor.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "Cat-A-Log";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cat-A-Log.app/Contents/MacOS/Cat-A-Log";
 			};
 			name = FCCQ;
@@ -1114,7 +1126,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Feanor.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "Cat-A-Log";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cat-A-Log.app/Contents/MacOS/Cat-A-Log";
 			};
 			name = Trial;
@@ -1278,7 +1290,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Feanor.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "Cat-A-Log";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cat-A-Log.app/Contents/MacOS/Cat-A-Log";
 			};
 			name = Debug;
@@ -1296,7 +1308,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Feanor.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "Cat-A-Log";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cat-A-Log.app/Contents/MacOS/Cat-A-Log";
 			};
 			name = Release;

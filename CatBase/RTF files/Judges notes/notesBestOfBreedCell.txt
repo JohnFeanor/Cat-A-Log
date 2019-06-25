@@ -8,4 +8,4 @@
 \clbrdrb\brdrs\brdrw10 
 \clbrdrr\brdrdb\brdrw10 
 \clvertalc \cellx5000
-{\pard\intbl \s35 \f47\qr\fs24\li0\ri60\sb60\sa60\langnp3081 
+{\pard\intbl \s35 \f47\qr\keepn\fs24\li0\ri60\sb60\sa60\langnp3081

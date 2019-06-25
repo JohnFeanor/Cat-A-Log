@@ -138,6 +138,11 @@ fileprivate let notesBestOfBreedCellEnd = readFile("notesBestOfBreedCellEnd")
 fileprivate let notesBestOfBreedCellFinal = readFile("notesBestOfBreedCellFinal")
 fileprivate let notesBestExhibit = readFile("notesBestExhibit")
 
+fileprivate let judgesACFAwards1 = readFile("judgesACFawards1")
+fileprivate let judgesACFAwards2 = readFile("judgesACFawards2")
+fileprivate let judgesACFAwards3 = readFile("judgesACFawards3")
+fileprivate let judgesACFAwards4 = readFile("judgesACFawards4")
+
 fileprivate let top5Table = readFile("top5table")
 fileprivate let top5RingToRing = readFile("top5RingToRing")
 fileprivate let top5RingToSection = readFile("top5RingToSection")
@@ -217,12 +222,12 @@ func excelDataFor(cage: Int, cat: Cat) -> Data {
   myData.append(xmlString(cat.sex))
   myData.append(xmlString(cat.colour))
   myData.append(xmlString(cat.breed))
-  myData.append(xmlString(cat.group))
+  myData.append(xmlString(cat.group.rawValue))
   myData.append(xmlString(cat.exhibitor))
   myData.append(xmlString(cat.breeder))
   myData.append(xmlString(cat.challenge))
   if let currentShow = Globals.currentShow {
-    let judges = currentShow.judges(for: cat.group)
+    let judges = currentShow.judges(for: cat.group.rawValue)
     for judge in judges {
       myData.append(xmlString(judge))
     }
@@ -518,6 +523,17 @@ struct ACFAward: Sequence, IteratorProtocol {
     }
     return "\(groupCount) \(sexCount)"
   }
+    
+    func awardsFor(group: GroupName, isEntire: Bool) -> [AwardList] {
+        let male = isEntire ? 0 : 2
+        let female = isEntire ? 1 : 3
+        var ans: [AwardList] = []
+        let acfGroups = group.acfEquivalent
+        for acfGroup in acfGroups {
+            ans.append(AwardList(group: acfGroup, male: self[acfGroup][male], female: self[acfGroup][female]))
+        }
+        return ans
+    }
 } // end struct ACFAward
 
 struct JudgeData {
@@ -571,35 +587,31 @@ struct JudgeData {
     }
   }
   
-  private var _privCount = false
+  private var _privCount = [false, false, false, false, false, false]
   
   mutating func add(section: String) {
 // insert a section break, and create a new header
     let judgename = show.judges(for: section)
     for (index, _) in myData.enumerated() {
-      if _privCount {
+      if _privCount[index] {
         myData[index].add(data: "\n\\sect\\sectd\\sectdefaultcl\n")
       } else {
-        _privCount = true
+        _privCount[index] = true
       }
       myData[index].add(data: notesToJudgeName, "\(show.name) \(ringName[index])\tJudge:  \(judgename[index])", endParagraph)
     }
   }
   
   mutating func addBestOf (breeds: [String]) {
-// Add the Best Of Breed table for the judge
+    // Add the Best Of Breed table for the judge
     for (index, _) in myData.enumerated() {
       guard !breeds.isEmpty else { return }
       guard Breeds.pedigree(breed: breeds[0]) else { return }
       myData[index].add(data: notesBestOfBreedStart)
-      var i = 0
-      for breed in breeds.dropLast() {
+      for (i, breed) in breeds.enumerated() {
         myData[index].add(data: beginRTF(row: i), notesBestOfBreedCell, breed, notesBestOfBreedCellEnd)
-        i += 1
       }
-      if let lastBreed = breeds.last {
-        myData[index].add(data: beginRTF(row: i), notesBestOfBreedCellFinal, lastBreed, notesBestOfBreedCellEnd)
-      }
+      
       myData[index].add(data: notesBestExhibit, blankParagraph)
     }
   }
@@ -668,25 +680,43 @@ struct JudgeData {
             myData[index].add(data: blankParagraph)
         }
     }
-
-  mutating func write(to url: URL) throws {
-    var finalData = readFile("notesBeginFile")
-    finalData.add(data: showDate)
-    finalData.add(data: notesBeginFilePart2)
-    finalData.add(data: infoBlock)
-    for d in myData {
-      finalData.append(d)
-    }
-    finalData.add(data: endParagraph)
     
-    var dirURL = url.deletingPathExtension().path
-    dirURL.append(" judges files.rtf")
-    let newURL = URL(fileURLWithPath: dirURL)
-
-    do {
-      try finalData.write(to: newURL)
+    mutating func add(acfAwards: ACFAward, for cat: Cat) {
+        if cat.isKitten { return }
+        if cat.isCompanion { return }
+        let values = acfAwards.awardsFor(group: cat.group, isEntire: cat.isEntire)
+        let isEntire = cat.isEntire
+        let male = isEntire ? SexType.male : SexType.neuter
+        let female = isEntire ? SexType.female : SexType.spay
+        for value in values {
+            let groupName = value.group.description
+            for (index, _) in myData.enumerated() {
+                myData[index].add(data: judgesACFAwards1, groupName, judgesACFAwards2)
+                if value.male { myData[index].add(data: judgesACFAwards3, "\(groupName) \(male)", judgesACFAwards4) }
+                if value.female { myData[index].add(data: judgesACFAwards3, "\(groupName) \(female)", judgesACFAwards4) }
+                myData[index].add(data: blankParagraph)
+           }
+        }
     }
-  }
+
+    mutating func write(to url: URL) throws {
+        let dirURL = url.deletingPathExtension().path
+        for (index, data) in myData.enumerated() {
+            var finalData = readFile("notesBeginFile")
+            finalData.add(data: showDate)
+            finalData.add(data: notesBeginFilePart2)
+            finalData.add(data: infoBlock)
+            finalData.append(data)
+            finalData.add(data: endParagraph)
+          
+            let newURL = URL(fileURLWithPath: "\(dirURL) judges files ring \(index+1).rtf")
+          
+            do {
+                try finalData.write(to: newURL)
+            }
+          
+        }
+    }
   
 } // end struct JudgeData
 
@@ -1105,187 +1135,192 @@ Check the entry `entry` in cage number `cage` for the challenge type required, a
     // MARK: - Begin loop
     // ***************************************
     for thisEntry in sortedEntrys {
-      var fallOn = false
-      
-      // Check to see if we should print out challenges for last entry
-      if thisEntry.newChallengeClassTo(previousEntry) {
-        doOpenChallenges(for: previousEntry?.cat.category)
-      }
-
-      // Print out Best of colour for last entry
-      if thisEntry.newColourClassTo(previousEntry) {
-        doBestOfColour(for: colourCount, of: previousEntry)
-        colourCount = 1
-      } else {
-        colourCount += 1
-      }
-      
-      // Print out Best of breed for last entry
-      if thisEntry.newBreedTo(previousEntry) {
-        doBestOfBreed(for: breedCount, of: previousEntry?.cat)
-        breedCount = 1
-      } else {
-        breedCount += 1
-      }
-      
-      // write prestige challenges and top ten if required
-      if let previousEntry = previousEntry, thisEntry.cat.subGroup != previousEntry.cat.subGroup {
-        doPrestigeChallenges(for: &goldChallenges, of: previousEntry.cat.category)
-        doPrestigeChallenges(for: &platinumChallenges, of: previousEntry.cat.category)
-        doPrestigeChallenges(for: &cccaAwards, of: previousEntry.cat.category)
-        judgesFile.add(topTen: previousEntry.cat)
+        var fallOn = false
         
-        catalogueFile.add(top5: previousEntry.cat)
-        judgesFile.add(top5: previousEntry.cat)
-      }
-      
-        var newSectionStarted = false
-      // MARK: finish last section
-      if thisEntry.cat.group != previousEntry?.cat.group {
-        if let previousEntry = previousEntry {
-          let available = breedsPresent.array
-          let inShow = Breeds.belongingTo(group: previousEntry.cat.group)
-          judgesFile.addBestOf(breeds: available.filter { inShow.contains($0) })
-          
-          catalogueFile.add(newSection: thisEntry.cat.group)
+        // Check to see if we should print out challenges for last entry
+        if thisEntry.newChallengeClassTo(previousEntry) {
+            doOpenChallenges(for: previousEntry?.cat.category)
+        }
+        
+        // Print out Best of colour for last entry
+        if thisEntry.newColourClassTo(previousEntry) {
+            doBestOfColour(for: colourCount, of: previousEntry)
+            colourCount = 1
         } else {
-          catalogueFile.add(firstSection: thisEntry.cat.group)
-       }
-        judgesFile.add(section: thisEntry.cat.group)
-        fallOn = true
-        newSectionStarted = true
-      }
-      
-      // Add the group heading - e.g. Longhair Kittens
-      if fallOn || thisEntry.cat.subGroup != previousEntry?.cat.subGroup {
- 
-        // Write out litters for last group
-        if let previousEntry = previousEntry, previousEntry.isKittenClass {
-          var first = true
-          for litter in litters {
-            if litter.groupNumber == previousEntry.cat.groupNumber {
-              if first {
-                first = false
-                judgesFile.add(subgroup: "\(previousEntry.cat.group) Litters")
-                catalogueFile.add(subgroup: "\(previousEntry.cat.group) Litters")
-              }
-              catalogueFile.add(litter: litter)
-              judgesFile.add(litter: litter)
+            colourCount += 1
+        }
+        
+        // Print out Best of breed for last entry
+        if thisEntry.newBreedTo(previousEntry) {
+            doBestOfBreed(for: breedCount, of: previousEntry?.cat)
+            
+            breedCount = 1
+        } else {
+            breedCount += 1
+        }
+        
+        // write prestige challenges and top ten if required
+        if let previousEntry = previousEntry, thisEntry.cat.subGroup != previousEntry.cat.subGroup {
+            doPrestigeChallenges(for: &goldChallenges, of: previousEntry.cat.category)
+            doPrestigeChallenges(for: &platinumChallenges, of: previousEntry.cat.category)
+            doPrestigeChallenges(for: &cccaAwards, of: previousEntry.cat.category)
+            judgesFile.add(topTen: previousEntry.cat)
+            
+            catalogueFile.add(top5: previousEntry.cat)
+            judgesFile.add(top5: previousEntry.cat)
+            
+            judgesFile.add(acfAwards: acfAwardsPresent, for: previousEntry.cat)
+        }
+        
+        var newSectionStarted = false
+        // MARK: finish last section
+        if thisEntry.cat.group != previousEntry?.cat.group {
+            if let previousEntry = previousEntry {
+                
+                let breedsInThisGroup = Breeds.belongingTo(group: previousEntry.cat.group.rawValue)
+                let breedsInTheShow = breedsPresent.dropLast()
+                let breedsToList = breedsInTheShow.filter { breedsInThisGroup.contains($0) }
+                judgesFile.addBestOf(breeds: breedsToList)
+                
+                catalogueFile.add(newSection: thisEntry.cat.group.rawValue)
+            } else {
+                catalogueFile.add(firstSection: thisEntry.cat.group.rawValue)
             }
-          }
+            judgesFile.add(section: thisEntry.cat.group.rawValue)
+            fallOn = true
+            newSectionStarted = true
         }
-
-        if !newSectionStarted {
-            judgesFile.addLine()
-            catalogueFile.addLine()
+        
+        // Add the group heading - e.g. Longhair Kittens
+        if fallOn || thisEntry.cat.subGroup != previousEntry?.cat.subGroup {
+            
+            // Write out litters for last group
+            if let previousEntry = previousEntry, previousEntry.isKittenClass {
+                var first = true
+                for litter in litters {
+                    if litter.groupNumber == previousEntry.cat.groupNumber {
+                        if first {
+                            first = false
+                            judgesFile.add(subgroup: "\(previousEntry.cat.group) Litters")
+                            catalogueFile.add(subgroup: "\(previousEntry.cat.group) Litters")
+                        }
+                        catalogueFile.add(litter: litter)
+                        judgesFile.add(litter: litter)
+                    }
+                }
+            }
+            
+            if !newSectionStarted {
+                judgesFile.addLine()
+                catalogueFile.addLine()
+            }
+            judgesFile.add(group: thisEntry.cat.subGroup)
+            catalogueFile.add(group: thisEntry.cat.subGroup)
+            fallOn = true
         }
-        judgesFile.add(group: thisEntry.cat.subGroup)
-        catalogueFile.add(group: thisEntry.cat.subGroup)
-        fallOn = true
-      }
-      
-      // Add the sub group heading - e.g. Birman Kittens
-      if Breeds.breedsInGroupWith(breed: thisEntry.cat.breed) > 1 && (fallOn || thisEntry.cat.breed != previousEntry?.cat.breed) {
-        judgesFile.add(subgroup: thisEntry.cat.breedSection)
-        catalogueFile.add(subgroup: thisEntry.cat.breedSection)
-        fallOn = true
-      }
-      
-      if thisEntry.cat.isLimited {
-        if fallOn || thisEntry.cat.patternRank != previousEntry?.cat.patternRank {
-          judgesFile.add(colour: thisEntry.cat.patternRank.description)
-          catalogueFile.add(colour: thisEntry.cat.patternRank.description)
-          fallOn = true
+        
+        // Add the sub group heading - e.g. Birman Kittens
+        if Breeds.breedsInGroupWith(breed: thisEntry.cat.breed) > 1 && (fallOn || thisEntry.cat.breed != previousEntry?.cat.breed) {
+            judgesFile.add(subgroup: thisEntry.cat.breedSection)
+            catalogueFile.add(subgroup: thisEntry.cat.breedSection)
+            fallOn = true
         }
-      }
-      
-      if fallOn || thisEntry.cat.colour != previousEntry?.cat.colour {
-        // Add the colour
-        judgesFile.add(colour: thisEntry.cat.colour)
-        catalogueFile.add(colour: thisEntry.cat.colour)
-        fallOn = true
-      }
-      
-      // Add the cat details
-      let classDetails: String
-      if thisEntry.cat.classDetails != previousEntry?.cat.classDetails || fallOn {
-        classDetails = thisEntry.cat.classDetails
-      } else {
-        classDetails = ""
-      }
-      catalogueFile.add(cage: cageNumber, entry: thisEntry, classDetails: classDetails)
-      judgesFile.add(cage: cageNumber, entry: thisEntry, classDetails: classDetails)
-      
-      // MARK: record challenge
-      recordChallenge(cage: cageNumber, entry: thisEntry)
-      acfAwardsPresent.add(cat: thisEntry.cat)
-
-      // MARK: write details to spreadsheet
-      // ----------------------------
-      listData.append(excelSheet[Start_row]!)
-      listData.append(xmlNumber(cageNumber))
-      listData.append(xmlString(thisEntry.cat.name))
-      listData.append(xmlString(thisEntry.cat.exhibitor))
-      listData.append(xmlString(thisEntry.cat.colour))
-      listData.append(xmlString(thisEntry.cat.breed))
-      listData.append(xmlString(thisEntry.cat.sex))
-      listData.append(xmlString(thisEntry.cat.group))
-      listData.append(xmlString(thisEntry.cat.challenge))
-      if thisEntry.isInLitter {
-        for litter in litters {
-          if thisEntry.isInLitter(litter) {
-            listData.append(xmlString("\(thisEntry.typeOfCage) \(litter.number)"))
-          }
+        
+        if thisEntry.cat.isLimited {
+            if fallOn || thisEntry.cat.patternRank != previousEntry?.cat.patternRank {
+                judgesFile.add(colour: thisEntry.cat.patternRank.description)
+                catalogueFile.add(colour: thisEntry.cat.patternRank.description)
+                fallOn = true
+            }
         }
-      } else {
-        listData.append(xmlString(thisEntry.typeOfCage))
-      }
-      listData.append(excelSheet[End_row]!)
-      
-      if thisEntry.cat.isCompanion {
-        companionData.append(excelDataFor(cage: cageNumber, cat: thisEntry.cat))
-      } else if thisEntry.cat.isKitten {
-        kittenData.append(excelDataFor(cage: cageNumber, cat: thisEntry.cat))
-      }  else {
-        switch Challenges.type(thisEntry) {
-        case .gold:
-          goldData.append(excelDataFor(cage: cageNumber, cat: thisEntry.cat))
-        case .platinum:
-          platinumData.append(excelDataFor(cage: cageNumber, cat: thisEntry.cat))
-        case .open:
-           openData.append(excelDataFor(cage: cageNumber, cat: thisEntry.cat))
-        default:
-          break
+        
+        if fallOn || thisEntry.cat.colour != previousEntry?.cat.colour {
+            // Add the colour
+            judgesFile.add(colour: thisEntry.cat.colour)
+            catalogueFile.add(colour: thisEntry.cat.colour)
+            fallOn = true
         }
-      }
-      
-      // Put this cat into its exhibitors list of entries
-      // -------------------------------------------------
-      if exhibitors[thisEntry.cat.exhibitor] == nil {
-        exhibitors[thisEntry.cat.exhibitor] = exhibitDetails(catalogue: thisEntry.catalogueRequired.boolValue, cage: cageNumber, cat: thisEntry.cat.name)
-      } else {
-        exhibitors[thisEntry.cat.exhibitor]?.cats.append((cageNumber, thisEntry.cat.name))
-      }
-      
-      // Will they work ??
-      // ------------------
-      if thisEntry.willWork.boolValue { workers.insert(thisEntry.cat.exhibitor) }
-      
-      // Do they need a catalogue ??
-      // ----------------------------
-      if thisEntry.catalogueRequired.boolValue { catalogues.insert(thisEntry.cat.exhibitor) }
-      
-      // Are they hiring a cage ??
-      // --------------------------
-      if thisEntry.hireCage.boolValue { hiring.add(thisEntry.cat.exhibitor) }
-      
-      // Add up cage sizes
-      if !thisEntry.isInLitter { cagelength += thisEntry.cageSize.intValue }
-      
-
-      
-      cageNumber += 1
-      previousEntry = thisEntry
+        
+        // Add the cat details
+        let classDetails: String
+        if thisEntry.cat.classDetails != previousEntry?.cat.classDetails || fallOn {
+            classDetails = thisEntry.cat.classDetails
+        } else {
+            classDetails = ""
+        }
+        catalogueFile.add(cage: cageNumber, entry: thisEntry, classDetails: classDetails)
+        judgesFile.add(cage: cageNumber, entry: thisEntry, classDetails: classDetails)
+        
+        // MARK: record challenge
+        recordChallenge(cage: cageNumber, entry: thisEntry)
+        acfAwardsPresent.add(cat: thisEntry.cat)
+        
+        // MARK: write details to spreadsheet
+        // ----------------------------
+        listData.append(excelSheet[Start_row]!)
+        listData.append(xmlNumber(cageNumber))
+        listData.append(xmlString(thisEntry.cat.name))
+        listData.append(xmlString(thisEntry.cat.exhibitor))
+        listData.append(xmlString(thisEntry.cat.colour))
+        listData.append(xmlString(thisEntry.cat.breed))
+        listData.append(xmlString(thisEntry.cat.sex))
+        listData.append(xmlString(thisEntry.cat.group.rawValue))
+        listData.append(xmlString(thisEntry.cat.challenge))
+        if thisEntry.isInLitter {
+            for litter in litters {
+                if thisEntry.isInLitter(litter) {
+                    listData.append(xmlString("\(thisEntry.typeOfCage) \(litter.number)"))
+                }
+            }
+        } else {
+            listData.append(xmlString(thisEntry.typeOfCage))
+        }
+        listData.append(excelSheet[End_row]!)
+        
+        if thisEntry.cat.isCompanion {
+            companionData.append(excelDataFor(cage: cageNumber, cat: thisEntry.cat))
+        } else if thisEntry.cat.isKitten {
+            kittenData.append(excelDataFor(cage: cageNumber, cat: thisEntry.cat))
+        }  else {
+            switch Challenges.type(thisEntry) {
+            case .gold:
+                goldData.append(excelDataFor(cage: cageNumber, cat: thisEntry.cat))
+            case .platinum:
+                platinumData.append(excelDataFor(cage: cageNumber, cat: thisEntry.cat))
+            case .open:
+                openData.append(excelDataFor(cage: cageNumber, cat: thisEntry.cat))
+            default:
+                break
+            }
+        }
+        
+        // Put this cat into its exhibitors list of entries
+        // -------------------------------------------------
+        if exhibitors[thisEntry.cat.exhibitor] == nil {
+            exhibitors[thisEntry.cat.exhibitor] = exhibitDetails(catalogue: thisEntry.catalogueRequired.boolValue, cage: cageNumber, cat: thisEntry.cat.name)
+        } else {
+            exhibitors[thisEntry.cat.exhibitor]?.cats.append((cageNumber, thisEntry.cat.name))
+        }
+        
+        // Will they work ??
+        // ------------------
+        if thisEntry.willWork.boolValue { workers.insert(thisEntry.cat.exhibitor) }
+        
+        // Do they need a catalogue ??
+        // ----------------------------
+        if thisEntry.catalogueRequired.boolValue { catalogues.insert(thisEntry.cat.exhibitor) }
+        
+        // Are they hiring a cage ??
+        // --------------------------
+        if thisEntry.hireCage.boolValue { hiring.add(thisEntry.cat.exhibitor) }
+        
+        // Add up cage sizes
+        if !thisEntry.isInLitter { cagelength += thisEntry.cageSize.intValue }
+        
+        
+        
+        cageNumber += 1
+        previousEntry = thisEntry
     } // End of main loop
     // ***************************************
     // MARK: Write challenges for last cat

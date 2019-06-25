@@ -283,6 +283,32 @@ struct OrderedList<T:Equatable>: Sequence, IteratorProtocol {
   }
 }
 
+
+struct AwardList {
+    var group: ACFGroup
+    var male, female: Bool
+}
+
+enum GroupName: String {
+    case group1 = "Group One", group2 = "Group Two", group3 = "Group Three", group4 = "Group Four", longhair = "Longhair", shorthair = "Shorthair", companion = "Companion"
+    
+    var acfEquivalent: [ACFGroup] {
+        switch self {
+        case .group1, .longhair:
+            return [ACFGroup.group1]
+        case .group2:
+            return [ACFGroup.group2]
+        case .group3:
+            return [ACFGroup.group3]
+        case .group4, .companion:
+            return [ACFGroup.group4]
+        case .shorthair:
+            return [ACFGroup.group2, ACFGroup.group3]
+        }
+    }
+    
+}
+
 enum ACFGroup: Int, CustomStringConvertible {
   mutating func increment() {
     self = ACFGroup(rawValue: self.rawValue + 1) ?? .exceeded

@@ -244,12 +244,12 @@ class Cat: NSManagedObject {
     return "\(sex) class"
   }
   
-  var group: String {
+  var group: GroupName {
     return Breeds.groupName(for: self.breed)
   }
   
   var subGroup: String {
-    return self.group + " " + self.sectionName
+    return self.group.rawValue + " " + self.sectionName
   }
   
   var ageCategory: String {

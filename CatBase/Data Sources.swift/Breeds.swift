@@ -120,31 +120,32 @@ class Breeds: DataSource, NSTableViewDataSource {
     return ACFGroup(rawValue: groupNumber(of: breedName, in: groups)) ?? .group1
   }
   
-  class func groupName(for breedName: String) -> String {
-    guard let groups = Breeds.groups
-      else { fatalError("Breeds.group is nil for groupName for:") }
-    
-    if let ans = groups.first(where:
-      { $0.breeds.contains(breedName)})?.groupName {
-      return ans
+    class func groupName(for breedName: String) -> GroupName {
+        guard let groups = Breeds.groups
+            else { fatalError("Breeds.group is nil for groupName for:") }
+        
+        if let ans = groups.first(where:{ $0.breeds.contains(breedName)})?.groupName {
+            if GroupName(rawValue: ans) != nil {
+                return GroupName(rawValue: ans)!
+            }
+        }
+        
+        // handle the case where an exact match cannot be found
+        let lcBreedName = breedName.firstWord().lowercased()
+        if let ans = groups.first(where: { group in
+            return group.breeds.contains(where:
+                { $0.lowercased().hasPrefix(lcBreedName) || $0.lowercased().hasSuffix(lcBreedName) }
+            )
+        }) {
+            if let result = GroupName(rawValue:ans.groupName) { return result }
+        }
+        
+        if companions.contains(breedName) {
+            if let result = GroupName(rawValue:groups[groups.count - 1].groupName) { return result }
+        }
+        
+        fatalError("group name for \(breedName) not found")
     }
-    
-    // handle the case where an exact match cannot be found
-    let lcBreedName = breedName.firstWord().lowercased()
-    if let ans = groups.first(where: { group in
-      return group.breeds.contains(where:
-        { $0.lowercased().hasPrefix(lcBreedName) || $0.lowercased().hasSuffix(lcBreedName) }
-      )
-    }) {
-      return ans.groupName
-    }
-    
-    if companions.contains(breedName) {
-      return groups[groups.count - 1].groupName
-    }
-    
-    fatalError("group name for \(breedName) not found")
-  }
   
   class func breedsInGroupWith(breed: String) -> Int {
     guard let groups = Breeds.groups
