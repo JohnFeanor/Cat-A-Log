@@ -40,14 +40,14 @@
 \clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx7260
 \clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx8470
 \clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrdb\cellx10230
-{\pard\intbl \f47\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 Best\cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qc\fs22\li0\ri280\sb40\sa40\langnp3081 Best\cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
 \row}
 
 {\trowd \irow3\irowband2\trkeep
@@ -60,13 +60,13 @@
 \clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx8470
 \clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrdb\cellx10230
 {\pard\intbl \f47\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 Reserve\cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
 \row}
 
 {\trowd \irow4\irowband3\trkeep
@@ -78,15 +78,14 @@
 \clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx7260
 \clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx8470
 \clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrdb\cellx10230
-
 {\pard\intbl \f47\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 3\super rd \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
 \row}
 
 {\trowd \irow5\irowband4\trkeep
@@ -99,13 +98,13 @@
 \clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx8470
 \clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrdb\cellx10230
 {\pard\intbl \f47\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 4\super th \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
 \row}
 
 {\trowd \irow6\irowband5\trkeep
@@ -118,13 +117,13 @@
 \clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx8470
 \clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrdb\cellx10230
 {\pard\intbl \f47\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 5\super th \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
 \row}
 
 {\trowd \irow7\irowband6\trkeep
@@ -137,13 +136,13 @@
 \clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx8470
 \clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrdb\cellx10230
 {\pard\intbl \f47\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 6\super th \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
 \row}
 
 {\trowd \irow8\irowband7\trkeep
@@ -156,13 +155,13 @@
 \clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx8470
 \clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrdb\cellx10230
 {\pard\intbl \f47\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 7\super th \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
 \row}
 
 {\trowd \irow9\irowband8\trkeep
@@ -175,13 +174,13 @@
 \clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx8470
 \clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrdb\cellx10230
 {\pard\intbl \f47\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 8\super th \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
 \row}
 
 {\trowd \irow10\irowband9\trkeep
@@ -194,13 +193,13 @@
 \clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\cellx8470
 \clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrs\clbrdrr\brdrw10\brdrdb\cellx10230
 {\pard\intbl \f47\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 9\super th \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\keepn\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\keepn\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
 \row}
 
 {\trowd \irow11\irowband10\trkeep
@@ -212,12 +211,12 @@
 \clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrdb\clbrdrr\brdrw10\brdrs\cellx7260
 \clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrdb\clbrdrr\brdrw10\brdrs\cellx8470
 \clvertalc\clbrdrt\brdrw10\brdrs\clbrdrl\brdrw10\brdrs\clbrdrb\brdrw10\brdrdb\clbrdrr\brdrw10\brdrdb\cellx10230
-{\pard\intbl \f47\qc\fs22\li0\ri0\sb40\sa40\langnp3081 10\super th \cell}
-{\pard\intbl \f42\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\qr\fs22\li0\ri280\sb40\sa40\langnp3081 10\super th \cell}
+{\pard\intbl \f47\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
 \lastrow\row}

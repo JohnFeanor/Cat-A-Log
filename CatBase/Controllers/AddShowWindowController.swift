@@ -29,7 +29,7 @@ class AddShowWindowController: NSWindowController {
   }
   
   override var windowNibName: NSNib.Name? {
-    return NSNib.Name("AddShowWindowController")
+    return "AddShowWindowController"
   }
   
   // MARK: - show properties

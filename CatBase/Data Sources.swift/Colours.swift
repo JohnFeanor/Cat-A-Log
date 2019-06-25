@@ -59,7 +59,7 @@ class Colours: DataSource, NSTableViewDataSource {
   class func rank(of colour: String, forBreed breed: String) -> Int? {
     guard let colours = Colours.list[breed]
       else { return nil }
-    return colours.index(of: colour)
+    return colours.firstIndex(of: colour)
   }
   
   

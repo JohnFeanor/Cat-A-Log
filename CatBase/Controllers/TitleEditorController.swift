@@ -13,7 +13,7 @@ class TitleEditorController: NSWindowController {
   @IBOutlet weak var titlesTableView: NSTableView!
   
   @objc override var windowNibName: NSNib.Name? {
-    return NSNib.Name("TitleEditorController")
+    return "TitleEditorController"
   }
   
   @IBOutlet var titles: Titles!

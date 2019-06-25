@@ -60,7 +60,8 @@ fileprivate let End_workbook        = "End workbook"
 // MARK: RTF data
 fileprivate let newLine = "\\pard\\par\n"
 fileprivate let ninePoint = "\\f1\\fs18 "
-fileprivate let blankParagraph = "{\\pard\\keepn\\par}\n\n"
+fileprivate let blankParagraph = "{\\pard\\fs24\\par}\n\n"
+fileprivate let smallSpace = "{\\pard\\fs8\\keepn\\par}\n\n"
 fileprivate let endParagraph = "\\par}\n"
 fileprivate let endTableRow = "\\row}\n"
 fileprivate let endTableCell = "\\cell}\n"
@@ -632,7 +633,7 @@ struct JudgeData {
   mutating func add(subgroup: String) {
 // Add the sub group heading - e.g. Birman Kittens
     for (index, _) in myData.enumerated() {
-      myData[index].add(data: blankParagraph, notesToSubSectionName, subgroup, notesFromSubSectionName, blankParagraph)
+      myData[index].add(data: blankParagraph, notesToSubSectionName, subgroup, notesFromSubSectionName, smallSpace)
     }
   }
   
@@ -660,6 +661,13 @@ struct JudgeData {
       myData[index].add(data: notesToAge, birthDateAndAge, notesFromAge, entered, endCellEndRow)
     }
   }
+    
+    mutating func addLine() {
+        // Write out a blank paragraph
+        for (index, _) in myData.enumerated() {
+            myData[index].add(data: blankParagraph)
+        }
+    }
 
   mutating func write(to url: URL) throws {
     var finalData = readFile("notesBeginFile")
@@ -753,7 +761,7 @@ struct CatalogueData {
   
   mutating func add(newSection: String) {
     // insert a section break, and create a new header
-      myData.add(data: newLine, startNewSection, judgeInitials(for: newSection), endParagraph)
+      myData.add(data: blankParagraph, startNewSection, judgeInitials(for: newSection), endParagraph)
   }
 
   mutating func add(group: String) {
@@ -763,7 +771,7 @@ struct CatalogueData {
 
   mutating func add(subgroup: String) {
     // Add the sub group heading - e.g. Birman Kittens
-      myData.add(data: blankParagraph, subGroupHeadingRow, subgroup, subGroupCloseRow, blankParagraph)
+      myData.add(data: blankParagraph, subGroupHeadingRow, subgroup, subGroupCloseRow, smallSpace)
   }
 
   mutating func add(colour: String) {
@@ -865,6 +873,11 @@ struct CatalogueData {
       myData.add(data: top5Start, i * 2 + 1, top5RingToRing, i * 2 + 2, top5RingToSection, grp, top5Table)
     }
   }
+    
+    mutating func addLine() {
+    // Write out a blank paragraph
+        myData.add(data: blankParagraph)
+    }
   
   mutating func write(to url: URL) throws {
     myData.add(data: endParagraph)
@@ -1126,6 +1139,7 @@ Check the entry `entry` in cage number `cage` for the challenge type required, a
         judgesFile.add(top5: previousEntry.cat)
       }
       
+        var newSectionStarted = false
       // MARK: finish last section
       if thisEntry.cat.group != previousEntry?.cat.group {
         if let previousEntry = previousEntry {
@@ -1139,6 +1153,7 @@ Check the entry `entry` in cage number `cage` for the challenge type required, a
        }
         judgesFile.add(section: thisEntry.cat.group)
         fallOn = true
+        newSectionStarted = true
       }
       
       // Add the group heading - e.g. Longhair Kittens
@@ -1160,6 +1175,10 @@ Check the entry `entry` in cage number `cage` for the challenge type required, a
           }
         }
 
+        if !newSectionStarted {
+            judgesFile.addLine()
+            catalogueFile.addLine()
+        }
         judgesFile.add(group: thisEntry.cat.subGroup)
         catalogueFile.add(group: thisEntry.cat.subGroup)
         fallOn = true

@@ -1,3 +1,3 @@
 \cell}
-{\pard\intbl \f47\qc\fs22\li0\ri0\sb60\sa60\langnp3081 \cell}
+{\pard\intbl \f47\qr\fs22\li0\ri166\sb60\sa60\langnp3081 \cell}
 {\pard\intbl \f47\ql\fs22\li0\ri0\sb60\sa60\li60\langnp3081 

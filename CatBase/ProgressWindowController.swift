@@ -19,7 +19,7 @@ class ProgressWindowController: NSWindowController {
   fileprivate var masterWindow: NSWindow? = nil
   
   override var windowNibName: NSNib.Name? {
-    return NSNib.Name("ProgressWindowController")
+    return "ProgressWindowController"
   }
   
   override func windowDidLoad() {

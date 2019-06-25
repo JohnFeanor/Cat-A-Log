@@ -89,7 +89,7 @@ class Challenges: DataSource {
   // *****************
   
   class func type(_ entry: Entry) -> ChallengeTypes {
-    var index = Challenges.list[Globals.currentShowType]?.index(of: entry.cat.challenge)
+    var index = Challenges.list[Globals.currentShowType]?.firstIndex(of: entry.cat.challenge)
     if index == nil {
       //        fatalError("Cannot get challenge type of entry for show type: \(Globals.currentShowType)")
       index = 2

@@ -181,7 +181,7 @@ class EntrySheetController: NSWindowController {
   }
   
   override var windowNibName: NSNib.Name? {
-    return NSNib.Name("EntrySheetController")
+    return "EntrySheetController"
   }
   
   override func windowDidLoad() {
@@ -196,7 +196,7 @@ class EntrySheetController: NSWindowController {
   
   // Litter cage type not selectable unless the entry is a kitten
   // -------------------------------------------------------------
-  override func validateMenuItem(_ menuItem: NSMenuItem) -> Bool {
+  func validateMenuItem(_ menuItem: NSMenuItem) -> Bool {
     let selector = menuItem.action
     let tag = menuItem.tag
     if (tag == _litterCage) && (selector == #selector(EntrySheetController.cageSizeMenuChosen(_:))) {
@@ -238,7 +238,7 @@ class EntrySheetController: NSWindowController {
       self.setValue(original.value(forKey: key), forKey: key)
     }
     // set the cage type menu
-    if let index = Globals.cageTypes.sizes.index(of: original.cageSize.intValue) {
+    if let index = Globals.cageTypes.sizes.firstIndex(of: original.cageSize.intValue) {
       cageType = index
     } else {
       cageType = zero

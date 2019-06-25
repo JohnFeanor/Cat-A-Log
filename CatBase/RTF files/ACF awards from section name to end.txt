@@ -1,5 +1,5 @@
 \cell}
-{\pard\intbl \f42\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
-{\pard\intbl \f42\qc\fs22\li0\ri0\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
+{\pard\intbl \f47\qr\fs22\li0\ri280\sb40\sa40\langnp3081 \cell}
 \row}

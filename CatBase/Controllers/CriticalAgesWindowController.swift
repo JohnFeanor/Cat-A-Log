@@ -11,7 +11,7 @@ import Cocoa
 class CriticalAgesWindowController: NSWindowController {
   
     override var windowNibName: NSNib.Name? {
-    return NSNib.Name("CriticalAgesWindowController")
+    return "CriticalAgesWindowController"
   }
 
   @objc dynamic var showAgeMinWeeks: Int {

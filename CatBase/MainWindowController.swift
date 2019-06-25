@@ -35,7 +35,7 @@ class MainWindowController: NSWindowController {
   @objc dynamic var sortByNameAndBreed  = [NSSortDescriptor(key: "breed", ascending: true), NSSortDescriptor(key: "name", ascending: true)]
   
   override var windowNibName: NSNib.Name? {
-    return NSNib.Name("MainWindowController")
+    return "MainWindowController"
   }
   
   // ================================

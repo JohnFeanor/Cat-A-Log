@@ -171,7 +171,7 @@ class Breeds: DataSource, NSTableViewDataSource {
   class func rank(of breedName: String) -> Int? {
     guard let list = Breeds.list
       else { return nil }
-    return list.index(of: breedName)
+    return list.firstIndex(of: breedName)
   }
   
   class func name(of index: Int) -> String {

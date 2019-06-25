@@ -14,7 +14,7 @@ class ColoursWindowController: NSWindowController {
   @IBOutlet var colours: Colours!
   
   override var windowNibName: NSNib.Name? {
-    return NSNib.Name("ColoursWindowController")
+    return "ColoursWindowController"
   }
   
   @objc let undo = UndoManager()

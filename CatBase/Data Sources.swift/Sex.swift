@@ -71,11 +71,11 @@ class Sex: DataSource {
   }
 
   class func isEntire(_ gender: String) -> Bool? {
-    return Sex.sexes.index(of: gender) < 2
+    return Sex.sexes.firstIndex(of: gender) < 2
   }
   
   class func rank(of gender: String) -> Int? {
-    guard let ans = Sex.sexes.index(of: gender)
+    guard let ans = Sex.sexes.firstIndex(of: gender)
       else { return nil }
     return ans
   }

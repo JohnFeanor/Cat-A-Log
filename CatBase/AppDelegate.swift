@@ -55,7 +55,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   @objc dynamic var writeMenuTitle = "Write catalogue ..."
   @objc dynamic var writeMenuAvailable = true
   
-  @objc dynamic var iconImage = NSImage(named: NSImage.Name(rawValue: "icon.jpg"))
+  @objc dynamic var iconImage = NSImage(named: "icon.jpg")
   
   var willIexit = false
   

@@ -207,7 +207,7 @@ class Entry: NSManagedObject {
     if self.hireCage.boolValue {
       return Globals.cageTypes.names[_hireCageNumber]
     }
-    if let index = Globals.cageTypes.sizes.index(of: self.cageSize.intValue) {
+    if let index = Globals.cageTypes.sizes.firstIndex(of: self.cageSize.intValue) {
       return Globals.cageTypes.names[index]
     }
     return Globals.cageTypes.names[0]
