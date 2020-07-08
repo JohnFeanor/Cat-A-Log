@@ -606,9 +606,9 @@ struct JudgeData {
     // Add the Best Of Breed table for the judge
     for (index, _) in myData.enumerated() {
       guard !breeds.isEmpty else { return }
-      guard Breeds.pedigree(breed: breeds[0]) else { return }
       myData[index].add(data: notesBestOfBreedStart)
       for (i, breed) in breeds.enumerated() {
+        guard Breeds.pedigree(breed: breed) else { break }
         myData[index].add(data: beginRTF(row: i), notesBestOfBreedCell, breed, notesBestOfBreedCellEnd)
       }
       
@@ -853,12 +853,12 @@ struct CatalogueData {
 
   // create Best of Breed table
   mutating func add(breedTable: OrderedList<String>) {
+    let breeds = breedTable.filter { Breeds.pedigree(breed: $0) }
+    let lastElement = breeds.count - 1
     myData.add(data: bestOfBreedStart)
-    for breed in breedTable.dropLast() where Breeds.pedigree(breed: breed) {
-        myData.add(data: bestOfBreedToName, breed, bestOfBreedNameToEnd)
-    }
-    if let lastBreed = breedTable.last {
-    myData.add(data: bestOfBreedToLastName, lastBreed, bestOfBreedNameToEnd, blankParagraph)
+    for (index,breed) in breeds.enumerated() {
+      if index == lastElement { myData.add(data: bestOfBreedToLastName, breed, bestOfBreedNameToEnd, blankParagraph) }
+      else { myData.add(data: bestOfBreedToName, breed, bestOfBreedNameToEnd) }
     }
   }
 
@@ -961,7 +961,7 @@ extension MainWindowController {
     let name = filename.fileName
     var catalogueFile = CatalogueData(show: currentShow, name: name)
     var judgesFile = JudgeData(show: currentShow)
-    let numberOfRings = currentShow.numberOfRings.intValue
+//    let numberOfRings = currentShow.numberOfRings.intValue
     
     // Excel spreadsheet data files
     var openData        = excelSheet[Start_workbook]! + excelSheet[Open_sheet]!
@@ -1119,16 +1119,7 @@ Check the entry `entry` in cage number `cage` for the challenge type required, a
           else { continue }
         entry.litter = true
         litters[i].addKittenOfSex(entry.cat.sex)
-    }
-      
-//      for var litter in litters {
-//        guard entry.isInLitter(litter)
-//          else { continue }
-//        entry.litter = true
-//        litter.addKittenOfSex(entry.cat.sex)
-//
-//        break
-//      }
+      }
     }
 
     // ***************************************
@@ -1176,15 +1167,14 @@ Check the entry `entry` in cage number `cage` for the challenge type required, a
         // MARK: finish last section
         if thisEntry.cat.group != previousEntry?.cat.group {
             if let previousEntry = previousEntry {
-                
-                let breedsInThisGroup = Breeds.belongingTo(group: previousEntry.cat.group.rawValue)
-                let breedsInTheShow = breedsPresent.dropLast()
-                let breedsToList = breedsInTheShow.filter { breedsInThisGroup.contains($0) }
-                judgesFile.addBestOf(breeds: breedsToList)
-                
-                catalogueFile.add(newSection: thisEntry.cat.group.rawValue)
+              
+              let breedsInThisGroup = Breeds.belongingTo(group: previousEntry.cat.group.rawValue)
+              let breedsToList = breedsPresent.filter { breedsInThisGroup.contains($0) }
+              judgesFile.addBestOf(breeds: breedsToList)
+              
+              catalogueFile.add(newSection: thisEntry.cat.group.rawValue)
             } else {
-                catalogueFile.add(firstSection: thisEntry.cat.group.rawValue)
+              catalogueFile.add(firstSection: thisEntry.cat.group.rawValue)
             }
             judgesFile.add(section: thisEntry.cat.group.rawValue)
             fallOn = true

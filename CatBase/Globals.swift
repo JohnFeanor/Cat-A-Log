@@ -268,6 +268,10 @@ struct OrderedList<T:Equatable>: Sequence, IteratorProtocol {
     return myArray.last
   }
   
+  var count: Int {
+    return myArray.count
+  }
+  
   mutating func next() -> T? {
     while myCount < myArray.count {
       defer { myCount += 1 }

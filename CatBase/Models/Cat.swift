@@ -332,7 +332,7 @@ returns the ranking value of the group which this breed of this cat is in
     guard isLimited else {
       return .colourClass
     }
-    if Globals.currentShowType == Affiliation.CCCA {
+    if Globals.currentShowType == Affiliation.CCCA  {
       let color = colour.lowercased()
       if breed == "Ragdoll" {
         if color.contains("mitted") { return .mitted }
@@ -345,14 +345,15 @@ returns the ranking value of the group which this breed of this cat is in
         if color.contains("silver") { return .silver }
         return .lynxPoint
       } else {
-        if hasWhite { return .patched }
-        if isTabby  { return .patterned }
-        if color.contains("tortie") { return .patterned }
-        if color.contains("point")  { return .pointed }
-        if color.contains("smoke")  { return .silver }
-        if color.contains("silver") { return .silver }
-        if color.contains("tipped") { return .silver }
-        return .solid
+        return .colourClass
+        //              if hasWhite { return .patched }
+        //              if isTabby  { return .patterned }
+        //              if color.contains("tortie") { return .patterned }
+        //              if color.contains("point")  { return .pointed }
+        //              if color.contains("smoke")  { return .silver }
+        //              if color.contains("silver") { return .silver }
+        //              if color.contains("tipped") { return .silver }
+        //              return .solid
       }
     } else if Globals.nationalAffiliation == .ACF {        // is a ACF style show
       if isTabby {
@@ -436,22 +437,23 @@ returns the ranking value of the group which this breed of this cat is in
       return false
     }
     
-    // then on pattern
-    // --------------------------
-    if self.patternRank < anotherCat.patternRank {
-      return true
-    }
-    if self.patternRank > anotherCat.patternRank {
-      return false
-    }
-    
-    // then on colour
-    // --------------
-    if self.colourRank < anotherCat.colourRank {
-      return true
-    }
-    if self.colourRank > anotherCat.colourRank {
-      return false
+    // if organised on pattern rather than just colour
+    if self.isLimited {
+      // then compare on pattern
+      if self.patternRank < anotherCat.patternRank {
+        return true
+      }
+      if self.patternRank > anotherCat.patternRank {
+        return false
+      }
+    } else {
+      // otherwise compare on colour
+      if self.colourRank < anotherCat.colourRank {
+        return true
+      }
+      if self.colourRank > anotherCat.colourRank {
+        return false
+      }
     }
     
     // then on age ranking - if used
@@ -472,6 +474,18 @@ returns the ranking value of the group which this breed of this cat is in
     }
     if self.sexRank > anotherCat.sexRank {
       return false
+    }
+    
+    // if organised on pattern
+    // compare on colour now
+    // --------------------------
+    if self.isLimited {
+      if self.colourRank < anotherCat.colourRank {
+        return true
+      }
+      if self.colourRank > anotherCat.colourRank {
+        return false
+      }
     }
     
     // then on age
