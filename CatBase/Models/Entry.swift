@@ -219,6 +219,16 @@ class Entry: NSManagedObject {
     }
     return false
   }
+  
+  func differentSexTo(_ other:Entry?) -> Bool {
+    guard let other = other
+    else { return false }
+    let kitten = self.isKittenClass
+    let otherKitten = other.isKittenClass
+    let same = kitten == otherKitten
+    if !same { return true }
+    return self.cat.sex != other.cat.sex
+  }
  
   func differentBreedTo(_ other: Entry?) -> Bool {
     guard let other = other

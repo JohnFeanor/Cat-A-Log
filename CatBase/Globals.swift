@@ -294,7 +294,7 @@ struct AwardList {
 }
 
 enum GroupName: String {
-    case group1 = "Group One", group2 = "Group Two", group3 = "Group Three", group4 = "Group Four", longhair = "Longhair", shorthair = "Shorthair", companion = "Companion"
+    case group1 = "Group 1", group2 = "Group 2", group3 = "Group 3", group4 = "Group 4", longhair = "Longhair", shorthair = "Shorthair", companion = "Companion"
     
     var acfEquivalent: [ACFGroup] {
         switch self {
@@ -469,6 +469,23 @@ var ACFAoEAwards: Bool {
 
 var isCCCAShow : Bool {
   return Globals.currentShowType == Affiliation.CCCA
+}
+
+func endRingRow(places :Int = 5) -> Data {
+  var data = Data()
+  guard places > 0 else { return data }
+  let num = places > 6 ? 6 : places
+  for i in 1...num {
+    let s = "\\cell}\n{\\pard\\intbl \\s36 \\f47\\qc\\fs24\\li0\\ri0\\langnp3081 \(i)"
+    data.add(data: s)
+  }
+  
+  for _ in num ... 5 {
+    data.add(data: "\\cell}\n{\\pard\\intbl \\s36 \\f47\\qc\\fs24\\li0\\ri0\\langnp3081")
+  }
+  data.add(data: "\\cell}\n\\row}")
+  
+  return data
 }
 
 // *************************************************

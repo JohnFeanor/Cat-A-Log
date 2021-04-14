@@ -625,14 +625,36 @@ struct JudgeData {
     }
   }
   
-  mutating func add(top5 cat:Cat) {
+  func awardRow(_ boxes:Int = Globals.numberOfRingsInShow) -> Data {
+    var i = 0
+    var data = Data(startBestOfRow)
+    while i < boxes {
+      data.add(data: ringInShow, "\(boxEndingLocations[i])\n")
+      i += 1
+    }
+    while i < 6 {
+      data.add(data: ringNotInShow, "\(boxEndingLocations[i])\n")
+      i += 1
+    }
+    data.add(data: detailsBeforeChallenge)
+    return data
+  }
+  
+  mutating func add(top5 cat:Cat?, competing: Int) {
     guard Globals.currentShow?.affiliation == Affiliation.NSWCFA
       else { return }
+    guard let cat = cat else { return }
     guard !cat.isCompanion else { return }
     let grp = cat.isKitten ? "Kittens" : "Cats"
+    let sex = cat.sex
+    let size = competing > 5 ? 5 : competing
+    let info = "Top \(size) \(sex) \(grp)"
+
     for (index, _) in myData.enumerated() {
-      myData[index].add(data: notesTop5Start, grp, notesTop5Finish)
-    }
+      myData[index].add(data: blankCell)
+      myData[index].add(data: awardRow(0), info, endRingRow(places: size))
+      myData[index].add(data: awardRow(size), endRingBoxRow)
+   }
   }
 
   mutating func add(group: String) {
@@ -736,11 +758,10 @@ struct CatalogueData {
       myData.add(data: footerText, "\(name) \(showDate)", closeFooter)
   }
   
-  var awardRow: Data {
-    let numberOfRings = show.numberOfRings.intValue
+  func awardRow(_ boxes:Int = Globals.numberOfRingsInShow) -> Data {
     var i = 0
     var data = Data(startBestOfRow)
-    while i < numberOfRings {
+    while i < boxes {
       data.add(data: ringInShow, "\(boxEndingLocations[i])\n")
       i += 1
     }
@@ -751,10 +772,10 @@ struct CatalogueData {
     data.add(data: detailsBeforeChallenge)
     return data
   }
-
+  
   mutating func add(openChallenges: [Int], for category: Cat.Category) {
     // add an open challenge
-      myData.add(data: blankCell, awardRow, categoryName(for: category), ninePoint)
+      myData.add(data: blankCell, awardRow(), categoryName(for: category), ninePoint)
       if openChallenges.count > 1 {
         myData.add(data: "between ")
       }
@@ -768,19 +789,18 @@ struct CatalogueData {
       }
       for (challenge, contestants) in prestigeChallenges {
         if !challenge.isEmpty {
-          myData.add(data: awardRow, challenge, categoryName(for: category), ninePoint, contestants, endRingBoxRow)
+          myData.add(data: awardRow(), challenge, categoryName(for: category), ninePoint, contestants, endRingBoxRow)
         }
       }
   }
   
   mutating func add(award info: String, for numberOfCats: Int) {
-    // for judges notes, always write at least one award
     let numberPlaces: Int = placesFor(cats: numberOfCats)
     guard numberPlaces > 0 else { return }
 
       myData.add(data: blankCell)
       for i in 0 ..< numberPlaces {
-        myData.add(data: awardRow, places[i], info, endRingBoxRow)
+        myData.add(data: awardRow(), places[i], info, endRingBoxRow)
       }
   }
 
@@ -891,17 +911,21 @@ struct CatalogueData {
     }
   }
   
-  mutating func add(top5 cat: Cat) {
+  mutating func add(top5 cat: Cat?, competing: Int) {
     // Write out the Top 5 table for NSWCFA shows
     guard Globals.currentShow?.affiliation == Affiliation.NSWCFA
       else { return }
+    guard let cat = cat else { return }
     guard !cat.isCompanion else { return }
-    let grp = cat.isKitten ? "Kitten" : "Cat"
-    let nmbRings = Globals.currentShow?.numberOfRings.intValue ?? 4
-    let number = (nmbRings + 1) / 2
-    for i in (0 ..< number) {
-      myData.add(data: top5Start, i * 2 + 1, top5RingToRing, i * 2 + 2, top5RingToSection, grp, top5Table)
-    }
+    
+    let grp = cat.isKitten ? "Kittens" : "Cats"
+    let sex = cat.sex
+    let size = competing > 5 ? 5 : competing
+    let info = "Top \(size) \(sex) \(grp)"
+
+    myData.add(data: blankCell)
+    myData.add(data: awardRow(0), info, endRingRow(places: size))
+    myData.add(data: awardRow(size), endRingBoxRow)
   }
     
     mutating func addLine() {
@@ -979,6 +1003,9 @@ extension MainWindowController {
     var acfAwardsPresent = ACFAward()
     let hiring        = NSCountedSet()
     var litters: [Litter] = []
+    
+    // number of cats to choose from for top 5
+    var inTop5 = -1
 
     // Challenges
     var openChallenges: [Int] = []
@@ -1127,6 +1154,7 @@ Check the entry `entry` in cage number `cage` for the challenge type required, a
     // ***************************************
     for thisEntry in sortedEntrys {
         var fallOn = false
+      inTop5 += 1
         
         // Check to see if we should print out challenges for last entry
         if thisEntry.newChallengeClassTo(previousEntry) {
@@ -1149,16 +1177,20 @@ Check the entry `entry` in cage number `cage` for the challenge type required, a
         } else {
             breedCount += 1
         }
-        
+      
+      //  top 5 male/female/spay/neuter kitten/cat for NSWCFA
+      if currentShow.affiliation == Affiliation.NSWCFA && thisEntry.differentSexTo(previousEntry) {
+        judgesFile.add(top5: previousEntry?.cat, competing: inTop5)
+        catalogueFile.add(top5: previousEntry?.cat, competing: inTop5)
+        inTop5 = 0
+      }
+      
         // write prestige challenges and top ten if required
         if let previousEntry = previousEntry, thisEntry.cat.subGroup != previousEntry.cat.subGroup {
             doPrestigeChallenges(for: &goldChallenges, of: previousEntry.cat.category)
             doPrestigeChallenges(for: &platinumChallenges, of: previousEntry.cat.category)
             doPrestigeChallenges(for: &cccaAwards, of: previousEntry.cat.category)
             judgesFile.add(topTen: previousEntry.cat)
-            
-            catalogueFile.add(top5: previousEntry.cat)
-            judgesFile.add(top5: previousEntry.cat)
             
             judgesFile.add(acfAwards: acfAwardsPresent, for: previousEntry.cat)
         }
@@ -1322,8 +1354,6 @@ Check the entry `entry` in cage number `cage` for the challenge type required, a
       doPrestigeChallenges(for: &goldChallenges, of: previousEntry.cat.category)
       doPrestigeChallenges(for: &platinumChallenges, of: previousEntry.cat.category)
       doPrestigeChallenges(for: &cccaAwards, of: previousEntry.cat.category)
-      catalogueFile.add(top5: previousEntry.cat)
-      judgesFile.add(top5: previousEntry.cat)
     }
 
     // MARK: Finish and write the catalogue file

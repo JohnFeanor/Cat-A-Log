@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -391,22 +391,22 @@
         </menu>
         <window title="Splash" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" animationBehavior="default" id="SvI-4i-wPk">
             <rect key="contentRect" x="390" y="240" width="480" height="270"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="2048" height="1129"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2048" height="1127"/>
             <value key="minSize" type="size" width="480" height="270"/>
             <value key="maxSize" type="size" width="480" height="270"/>
-            <view key="contentView" id="rq2-uP-7hX">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+            <view key="contentView" misplaced="YES" id="rq2-uP-7hX">
+                <rect key="frame" x="0.0" y="0.0" width="488" height="269"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView translatesAutoresizingMaskIntoConstraints="NO" id="Yqg-Rl-JkY">
-                        <rect key="frame" x="17" y="124" width="134" height="134"/>
+                        <rect key="frame" x="17" y="123" width="134" height="134"/>
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="5he-Jw-Veg"/>
                         <connections>
                             <binding destination="Voe-Tx-rLC" name="value" keyPath="iconImage" id="k24-bh-Off"/>
                         </connections>
                     </imageView>
                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VfW-Zr-bAD">
-                        <rect key="frame" x="240" y="217" width="125" height="47"/>
+                        <rect key="frame" x="248" y="225" width="125" height="38"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="121" id="rbv-i2-K1m"/>
                         </constraints>
@@ -417,18 +417,18 @@
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c9G-YJ-u27">
-                        <rect key="frame" x="160" y="71" width="262" height="17"/>
+                        <rect key="frame" x="168" y="70" width="262" height="17"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="17" id="dU4-01-bxw"/>
                         </constraints>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Please do not make illegal copies of this program" id="Nnw-8a-QjJ">
-                            <font key="font" metaFont="smallSystem"/>
+                            <font key="font" metaFont="message" size="11"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UQI-Jv-zQ6">
-                        <rect key="frame" x="33" y="79" width="389" height="34"/>
+                        <rect key="frame" x="33" y="78" width="397" height="34"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Please ensure that this is a registered copy" id="ua3-4A-4LN">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -436,7 +436,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tea-4k-HE9">
-                        <rect key="frame" x="18" y="9" width="338" height="41"/>
+                        <rect key="frame" x="18" y="9" width="338" height="40"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="334" id="GhF-mJ-Qxg"/>
                         </constraints>
@@ -447,18 +447,18 @@
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LFP-6m-lXc">
-                        <rect key="frame" x="228" y="144" width="128" height="45"/>
+                        <rect key="frame" x="228" y="143" width="128" height="45"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="45" id="XYS-eK-jXc"/>
                         </constraints>
-                        <textFieldCell key="cell" enabled="NO" sendsActionOnEndEditing="YES" alignment="right" title="       © 2018 Feanor        all rights reserved" id="vTo-Wr-5nk">
+                        <textFieldCell key="cell" enabled="NO" sendsActionOnEndEditing="YES" alignment="right" title="       © 2021 Feanor        all rights reserved" id="vTo-Wr-5nk">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ugJ-TX-fj8">
-                        <rect key="frame" x="367" y="22" width="59" height="32"/>
+                        <rect key="frame" x="382" y="22" width="53" height="32"/>
                         <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="NDB-SL-SeC">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -470,9 +470,9 @@ DQ
                             <action selector="splashWindowClosed:" target="Voe-Tx-rLC" id="Joe-Sm-lDJ"/>
                         </connections>
                     </button>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R5a-Vx-GsQ">
-                        <rect key="frame" x="299" y="202" width="36" height="17"/>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="V 2.2" id="Yp0-fs-3el">
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R5a-Vx-GsQ">
+                        <rect key="frame" x="299" y="201" width="57" height="16"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="V 2.2b" id="Yp0-fs-3el">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -490,10 +490,13 @@ DQ
                     <constraint firstAttribute="bottom" secondItem="tea-4k-HE9" secondAttribute="bottom" constant="9" id="EDa-h4-3iY"/>
                     <constraint firstItem="VfW-Zr-bAD" firstAttribute="top" secondItem="rq2-uP-7hX" secondAttribute="top" constant="6" id="Eba-oU-dnT"/>
                     <constraint firstItem="LFP-6m-lXc" firstAttribute="top" secondItem="R5a-Vx-GsQ" secondAttribute="bottom" constant="13" id="LuF-zm-c9S"/>
+                    <constraint firstItem="ugJ-TX-fj8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tea-4k-HE9" secondAttribute="trailing" constant="8" symbolic="YES" id="Mdn-5m-ojT"/>
                     <constraint firstItem="Yqg-Rl-JkY" firstAttribute="leading" secondItem="tea-4k-HE9" secondAttribute="leading" id="QQi-tc-eAv"/>
                     <constraint firstAttribute="bottom" secondItem="ugJ-TX-fj8" secondAttribute="bottom" constant="29" id="QsI-3y-Yrk"/>
                     <constraint firstAttribute="trailing" secondItem="R5a-Vx-GsQ" secondAttribute="trailing" constant="147" id="RUV-oo-AIS"/>
+                    <constraint firstItem="c9G-YJ-u27" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="rq2-uP-7hX" secondAttribute="leading" constant="20" symbolic="YES" id="S1i-Kz-ak6"/>
                     <constraint firstItem="tea-4k-HE9" firstAttribute="top" secondItem="ugJ-TX-fj8" secondAttribute="top" id="Sli-ZS-Fbh"/>
+                    <constraint firstItem="VfW-Zr-bAD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Yqg-Rl-JkY" secondAttribute="trailing" constant="8" symbolic="YES" id="TRV-Qy-I6r"/>
                     <constraint firstItem="UQI-Jv-zQ6" firstAttribute="trailing" secondItem="c9G-YJ-u27" secondAttribute="trailing" id="Xjk-LB-4k3"/>
                     <constraint firstItem="c9G-YJ-u27" firstAttribute="top" secondItem="LFP-6m-lXc" secondAttribute="bottom" constant="56" id="YQ5-Zb-cRa"/>
                     <constraint firstItem="UQI-Jv-zQ6" firstAttribute="top" secondItem="Yqg-Rl-JkY" secondAttribute="bottom" constant="14" id="a9d-hB-Rxo"/>
@@ -510,6 +513,7 @@ DQ
                     <constraint firstItem="LFP-6m-lXc" firstAttribute="leading" secondItem="Yqg-Rl-JkY" secondAttribute="trailing" constant="82" id="zgm-P8-rRh"/>
                 </constraints>
             </view>
+            <point key="canvasLocation" x="139" y="153.5"/>
         </window>
         <userDefaultsController representsSharedInstance="YES" id="Ybb-4g-7YB"/>
     </objects>

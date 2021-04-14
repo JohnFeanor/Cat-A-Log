@@ -333,28 +333,29 @@ returns the ranking value of the group which this breed of this cat is in
       return .colourClass
     }
     if Globals.currentShowType == Affiliation.CCCA  {
-      let color = colour.lowercased()
-      if breed == "Ragdoll" {
-        if color.contains("mitted") { return .mitted }
-        if self.hasWhite { return .bicolour }
-        return .pointed
-      } else if breed == "Bengal" {
-        if color.contains("brown") { return .brown }
-        if color.contains("sepia") { return .sepia }
-        if color.contains("mink") { return .mink }
-        if color.contains("silver") { return .silver }
-        return .lynxPoint
-      } else {
-        return .colourClass
-        //              if hasWhite { return .patched }
-        //              if isTabby  { return .patterned }
-        //              if color.contains("tortie") { return .patterned }
-        //              if color.contains("point")  { return .pointed }
-        //              if color.contains("smoke")  { return .silver }
-        //              if color.contains("silver") { return .silver }
-        //              if color.contains("tipped") { return .silver }
-        //              return .solid
-      }
+      // There is no more pattern classification according to Carol
+      return .colourClass
+//      let color = colour.lowercased()
+//      if breed == "Ragdoll" {
+//        if color.contains("mitted") { return .mitted }
+//        if self.hasWhite { return .bicolour }
+//        return .pointed
+//      } else if breed == "Bengal" {
+//        if color.contains("brown") { return .brown }
+//        if color.contains("sepia") { return .sepia }
+//        if color.contains("mink") { return .mink }
+//        if color.contains("silver") { return .silver }
+//        return .lynxPoint
+//      } else {
+//        if hasWhite { return .patched }
+//        if isTabby  { return .patterned }
+//        if color.contains("tortie") { return .patterned }
+//        if color.contains("point")  { return .pointed }
+//        if color.contains("smoke")  { return .silver }
+//        if color.contains("silver") { return .silver }
+//        if color.contains("tipped") { return .silver }
+//        return .solid
+//      }
     } else if Globals.nationalAffiliation == .ACF {        // is a ACF style show
       if isTabby {
         if hasWhite {

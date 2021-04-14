@@ -42,9 +42,6 @@
 	<dict>
 		<key>breeds</key>
 		<array>
-			<string>Maine Coon</string>
-			<string>Norwegian Forest Cat</string>
-			<string>Siberian</string>
 			<string>American Curl</string>
 			<string>American Curl Longhair</string>
 			<string>Manx</string>
